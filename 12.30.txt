@@ -1,0 +1,18 @@
+지금까지 통합한 내용을 정리해보면:
+1. ✅ OrderFormatter 통합
+format_order와 format_order_info 메서드 통합
+주문 포맷팅 일관성 확보
+✅ 분석 로직 통합
+ai_trader.py의 run_complete_analysis 메서드로 통합
+auto_analyzer.py와 analysis_handler.py에서 동일한 메서드 사용
+3. ✅ 거래 실행 로직 통합
+trade_manager.py로 거래 실행 로직 통합
+ai_trader.py는 자동매매 설정만 담당
+✅ 포맷팅/저장 로직 통합
+storage_formatter.py로 저장 로직 통합
+analysis_formatter.py는 포맷팅만 담당
+아직 검토가 필요한 부분:
+1. gpt_analyzer.py와 market_data_service.py 간의 데이터 조회 로직
+telegram_bot의 메시지 전송 로직 (여러 곳에서 중복 사용)
+설정 관련 로직 (config.py, trading_config.py 등)
+이 부분들도 검토하고 통합할까요?

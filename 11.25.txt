@@ -1,0 +1,6 @@
+.\.venv\Scripts\activate
+
+python src/main.py
+
+python src/test_analysis.py
+

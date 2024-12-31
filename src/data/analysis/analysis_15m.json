@@ -1,0 +1,38 @@
+{
+  "market_summary": {
+    "market_phase": "하락",
+    "overall_sentiment": "부정적",
+    "short_term_sentiment": "부정적",
+    "risk_level": "높음",
+    "volume_trend": "중립",
+    "confidence": 85
+  },
+  "technical_analysis": {
+    "trend": "하락",
+    "strength": 60,
+    "indicators": {
+      "rsi": 50.0,
+      "macd": "하락",
+      "bollinger": "중단",
+      "divergence": {
+        "type": "없음",
+        "description": "다이버전스 설명",
+        "timeframe": "15m"
+      }
+    }
+  },
+  "trading_strategy": {
+    "entry_points": [
+      91977.7
+    ],
+    "stop_loss": 90138.146,
+    "leverage": 5,
+    "position_size": 10,
+    "position_suggestion": "매수",
+    "take_profit": [
+      93817.254,
+      95656.808
+    ]
+  },
+  "saved_at": "2024-12-31 13:45:20 KST"
+}

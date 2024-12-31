@@ -1,0 +1,49 @@
+이러한 수정을 통해:
+GPT 분석 결과를 바탕으로 자동매매 신호가 생성됩니다
+신뢰도가 75% 이상일 때만 자동매매가 활성화됩니다
+포지션 관리(진입/청산/조정)가 자동으로 이루어집니다
+리스크 관리를 위한 손절가와 익절가가 자동으로 설정됩니다
+추가로 필요한 작업:
+거래 기록 저장 및 모니터링
+2. 텔레그램 알림 연동
+에러 처리 및 복구 로직 강화
+
+네, 전체 구조를 다시 정리하면:
+분석 흐름:
+auto_analyzer.py -> ai_trader.py -> gpt_analyzer.py
+(시간대별 분석 실행) -> (GPT 분석 & 파일 저장) -> (GPT API 호출)
+매매 실행 흐름:
+auto_analyzer.py -> trade_manager.py -> position_service.py -> order_service.py -> bybit_client.py
+(final 분석 전달) -> (매매 로직/리스크 관리) -> (포지션 관리) -> (주문 실행) -> (API 호출)
+각 컴포넌트의 역할:
+trade_manager.py: 매매 전략 실행, 리스크 관리, 포지션 관리 총괄
+position_service.py: 포지션 상태에 따른 진입/청산/조정 로직
+order_service.py: 실제 주문 생성/수정/취소 처리
+bybit_client.py: 거래소 API 직접 호출
+
+분석
+auto_analyzer.py (시간대별 분석 스케줄링)
+  -> ai_trader.py (분석 요청 및 파일 저장)
+    -> gpt_analyzer.py (GPT API 호출)
+
+수동분석
+/analyze [timeframe] 명령어
+-> telegram_bot/bot.py
+  -> ai_trader.py (분석 요청)
+    -> gpt_analyzer.py (GPT 분석)
+      -> analysis_data/에 저장
+  -> trade_manager.py (4h 또는 final 분석 시 매매 실행)
+
+자동분석
+auto_analyzer.py (스케줄러)
+-> ai_trader.py (분석 요청)
+  -> gpt_analyzer.py (GPT 분석)
+    -> analysis_data/에 저장
+-> trade_manager.py (4h 분석 후 매매 실행)
+
+매매
+auto_analyzer.py (final 분석 후 매매 신호)
+  -> trade_manager.py (매매 전략/리스크 관리)
+    -> position_service.py (포지션 관리)
+      -> order_service.py (주문 실행)
+        -> bybit_client.py (API 호출)

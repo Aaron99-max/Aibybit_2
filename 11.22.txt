@@ -1,0 +1,57 @@
+python main.py
+
+바이비트 api로 연결해서 데이터를 가져오고 챗지피티에게 분석을 받아서
+텔레그램에 알람을주고 자동매매를 실행하는 프로젝트를 하는중인데 
+현재 텔레그램에 알람을 주는 단계인데 프로그램을 실행하면 지피티분석을 실행하고 
+이후에는 15분,1시간, 4시간, 일봉마감하면 자동분석을 해야하는데 프로그램을 실행해도
+분석을 하지 않고 15분이 되어도 분석을 하지않네 어떤화일들을 공유하면 될까?
+
+1. 오라클 클라우드 계정 생성 및 로그인
+오라클 클라우드 계정이 없다면 오라클 클라우드에 가입하세요.
+계정이 있다면 로그인합니다.
+
+2. 컴퓨트 인스턴스 생성
+1)대시보드에서 "Compute"를 선택한 후 "Instances"를 클릭합니다.
+2) "Create Instance" 버튼을 클릭합니다.
+3)인스턴스의 이름을 입력하고, 원하는 이미지를 선택합니다 (예: Ubuntu).
+4)인스턴스의 모양을 선택하고, SSH 키를 생성하여 다운로드합니다.
+5) "Create" 버튼을 클릭하여 인스턴스를 생성합니다.
+
+3. SSH를 통해 인스턴스에 접속
+터미널(또는 Git Bash)을 열고, 다음 명령어를 사용하여 인스턴스에 접속합니다.
+Bash
+ssh -i /path/to/your/private/key opc@<your_instance_public_ip>
+- /path/to/your/private/key는 다운로드한 SSH 키의 경로로 변경하고, 
+<your_instance_public_ip>는 생성한 인스턴스의 공인 IP 주소로 변경합니다.
+
+4. 필요한 패키지 설치
+인스턴스에 접속한 후, 필요한 패키지를 설치합니다. 예를 들어, Python과 pip를 설치합니다.
+Bash
+sudo apt update
+sudo apt install python3 python3-pip
+
+5. 코드 업로드
+로컬에서 작성한 코드를 인스턴스로 업로드합니다. scp 명령어를 
+사용하여 파일을 전송할 수 있습니다.
+Bash
+scp -i /path/to/your/private/key /path/to/your/local/file opc@<your_instance_public_ip>:/home/opc/
+- /path/to/your/local/file는 로컬 파일의 경로로 변경하고, /home/opc/는 인스턴스의 경로입니다.
+
+6. 필요한 라이브러리 설치
+업로드한 코드가 사용하는 라이브러리를 설치합니다. 예를 들어, requirements.txt 파일이 있다면 다음 명령어로 설치합니다.
+Bash
+pip3 install -r requirements.txt
+
+7. 코드 실행
+이제 코드를 실행할 수 있습니다. 예를 들어, telegram_bot.py 파일을 실행하려면 다음과 같이 입력합니다.
+Bash
+python3 telegram_bot.py
+
+8. 서버에서 코드 실행 유지
+서버에서 코드를 계속 실행하려면 nohup 명령어를 사용하거나 screen 
+또는 tmux와 같은 세션 관리 도구를 사용할 수 있습니다.
+Bash
+nohup python3 telegram_bot.py &
+이제 오라클 클라우드에서 코드가 실행되고 있어야 합니다. 문제가 발생하면 
+오류 메시지를 확인하고, 필요한 경우 추가적인 조치를 취하세요. 
+도움이 필요하면 언제든지 질문해 주세요!

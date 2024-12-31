@@ -1,0 +1,12 @@
+[
+  {
+    "type": "close",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "size": 0.006,
+    "price": 96406.14,
+    "realized_pnl": 3.59864,
+    "leverage": 3.0,
+    "timestamp": "2024-12-22T15:12:40.179513"
+  }
+]

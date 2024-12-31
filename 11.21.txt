@@ -1,0 +1,52 @@
+.\.venv\Scripts\activate
+python main.py
+python src/main.py
+
+가상환경 생성 및 활성화:
+새로운 디렉토리에서 가상환경을 생성합니다.
+   python -m venv .venv
+- 가상환경을 활성화합니다.
+Windows:
+     .venv\Scripts\activate
+- macOS/Linux:
+     source .venv/bin/activate
+패키지 설치:
+requirements.txt 파일을 사용하여 필요한 패키지를 설치합니다.
+   pip install -r requirements.txt
+설치 확인:
+설치된 패키지를 확인하여 모든 것이 올바르게 설치되었는지 확인합니다.
+   pip list
+이렇게 하면 새로운 디렉토리에서 필요한 모든 패키지가 설치된 가상환경을 사용할 수 있습니다. 이후 프로그램을 실행하여 문제가 해결되었는지 확인해보세요.
+
+네, 이제 분석 결과가 깔끔하게 잘 나오네요! 현재 구현된 기능들을 정리해보면:
+
+기술적 지표 분석
+
+RSI, MACD, 스토캐스틱, ADX
+볼린저 밴드, 일목균형표
+이동평균선 (20, 50, 200)
+거래량 분석
+
+GPT 분석
+
+시장 단계 분석
+단기 심리 분석
+거래량 동향 분석
+매매 전략 제안
+리스크 관리 제안
+
+텔레그램 명령어
+
+self.send_message(
+    '바이빗 트레이딩 봇이 시작되었습니다! 👋\n\n'
+    '사용 가능한 명령어:\n'
+    '/status - 현재 시장 상태 확인\n'
+    '/balance - 계정 잔고 확인\n'
+    '/position - 현재 포지션 확인\n'
+    '/price - 현재 BTC 가격 확인\n'
+    '/analyze [timeframe] - 상세 시장 분석\n'
+    '  (timeframe: 15m, 1h, 4h, 1d)\n'
+    '  예: /analyze 4h\n'
+    '/last - 모든 시간프레임의 마지막 분석 결과 보기\n'
+    '/stop - 트레이딩 중지'
+)

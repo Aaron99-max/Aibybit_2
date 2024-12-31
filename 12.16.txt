@@ -1,0 +1,43 @@
+GPT 분석의 제한 사항을 확인해보겠습니다. 현재 코드에서 GPT 분석에 대한 주요 제한은 다음과 같습니다:
+
+gpt_config.json에서 정의한 응답 형식 제한:
+{
+    "market_phase": ["상승", "하락", "축적", "분배"] 중에서만 선택 가능
+    "overall_sentiment": ["긍정적", "부정적", "중립"] 중에서만 선택 가능
+    "risk_level": ["높음", "중간", "낮음"] 중에서만 선택 가능
+    "leverage": "number:5-10" 범위로 제한
+    "position_size": "number:15-30" 범위로 제한
+}
+trading_rules에서 정의한 거래 제한:
+{
+    "min_confidence": 70,        // 최소 신뢰도 70% 이상
+    "min_trend_strength": 60,    // 최소 추세 강도 60% 이상
+    "max_daily_trades": 3,       // 하루 최대 3회 거래
+    "cooldown_minutes": 60,      // 거래 간 60분 대기
+    "max_loss_percent": 2,       // 최대 손실 2%로 제한
+    "profit_targets": [2, 4, 6]  // 목표 수익률 2%, 4%, 6%로 제한
+}
+ai_trader.py의 검증 로직:
+def _validate_trading_rules(self, analysis: Dict) -> bool:
+    try:
+        # 최소 신뢰도 검증
+        if analysis['market_summary']['confidence'] < rules['min_confidence']:
+            return False
+        
+        # 최소 추세 강도 검증
+        if analysis['market_conditions']['trend_strength'] < rules['min_trend_strength']:
+            return False
+        
+        # 손실 제한 검증
+        loss_percent = abs((stop_loss - entry_price) / entry_price * 100)
+        if loss_percent > rules['max_loss_percent']:
+            return False
+리스크 레벨에 따른 레버리지 제한:
+# 리스크에 따른 레버리지 조정
+if risk_level == "높음":
+    strategy['leverage'] = min(strategy['leverage'], 10)  # 최대 10배
+    strategy['position_size'] = min(strategy['position_size'], 30)
+elif risk_level == "중간":
+    strategy['leverage'] = min(strategy['leverage'], 5)   # 최대 5배
+    strategy['position_size'] = min(strategy['position_size'], 20)
+이러한 제한들이 하드코딩되어 있는 부분이 있어서, 이를 모두 gpt_config.json에서 관리하도록 수정하는 것이 좋을 것 같습니다. 수정할까요?

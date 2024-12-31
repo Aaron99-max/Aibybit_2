@@ -1,0 +1,96 @@
+현재 문제점 분석:
+중복되는 기능:
+formatters 폴더에 너무 많은 formatter 클래스들이 있음
+base_formatter.py와 message_formatter.py의 역할이 불명확
+analysis_formatter.py와 storage_formatter.py가 비슷한 기능을 할 수 있음
+복잡한 디렉토리 구조:
+telegram_bot 폴더 내부가 너무 세분화되어 있음
+monitors와 handlers의 역할 구분이 모호함
+자동매매 연결 문제:
+auto_analyzer.py와 trade_manager.py 사이의 연결이 불명확
+final 분석 결과가 매매로 이어지는 flow가 복잡함
+
+src/
+├── __init__.py
+├── main.py
+├── data_collector.py
+├── logger_config.py
+│
+├── ai/
+│   ├── __init__.py
+│   ├── analyzer.py        # ai_trader.py + gpt_analyzer.py 통합
+│   └── gpt_client.py
+│
+├── config/
+│   ├── __init__.py
+│   └── settings.py        # 모든 설정을 통합
+│
+├── exchange/
+│   ├── __init__.py
+│   └── bybit_client.py
+│
+├── services/
+│   ├── __init__.py
+│   ├── market_service.py  # market_data_service.py 이름 단순화
+│   ├── order_service.py
+│   └── position_service.py
+│
+├── telegram/              # telegram_bot을 단순화
+│   ├── __init__.py
+│   ├── bot.py
+│   ├── formatter.py       # 모든 formatter 통합
+│   ├── handler.py        # 핵심 handler만 유지
+│   └── monitor.py        # auto_analyzer + profit_monitor 통합
+│
+├── trading/              # trade를 trading으로 변경
+│   ├── __init__.py
+│   ├── analyzer.py       # 자동 분석 담당
+│   └── executor.py       # 매매 실행 담당
+│
+└── utils/
+    ├── __init__.py
+    └── helpers.py        # 모든 유틸리티 통합
+
+주요 개선사항:
+단순화된 분석-매매 흐름:
+class TradingAnalyzer:
+    def analyze_and_trade(self, timeframe):
+        # 분석 수행
+        analysis_result = self.perform_analysis(timeframe)
+        
+        # final 분석인 경우 바로 매매 실행
+        if timeframe == "final":
+            self.execute_trade(analysis_result)
+통합된 Formatter:
+class MessageFormatter:
+    def format_analysis(self, data):
+        # 분석 결과 포맷팅
+        
+    def format_position(self, data):
+        # 포지션 정보 포맷팅
+        
+    def format_order(self, data):
+        # 주문 정보 포맷팅
+단순화된 모니터링:
+class TradingMonitor:
+    def start_monitoring(self):
+        # 자동 분석 스케줄링
+        # 수익률 모니터링
+        # 알림 전송
+권장사항:
+trading/executor.py에서 매매 로직을 단순화하고 명확하게 구현
+분석 결과를 저장하고 매매로 이어지는 flow를 단순화:
+analysis_data/ 폴더의 JSON 구조 개선
+final 분석 즉시 매매 실행
+설정 파일 통합:
+여러 config 파일들을 settings.py로 통합
+환경변수 활용
+이러한 구조 개선을 통해 자동매매 연결이 더 명확해지고 유지보수가 쉬워질 것입니다. 구체적인 구현이 필요하신 부분이 있다면 말씀해 주세요.
+
+네, 두 가지 문제가 있네요:
+fetch_positions 메서드의 인자 문제
+create_order의 'type' 파라미터 문제
+
+ ai_trader.py의 execute_trade 메서드에서 create_order 호출 부분을 수정하겠습니다:
+
+

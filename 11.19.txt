@@ -1,0 +1,141 @@
+1. data_collector.py
+역할: 바이빗 거래소에서 OHLCV 데이터를 가져오고, 기술적 지표를 계산하는 기능을 포함합니다.
+구현 예시:
+fetch_data 메서드에서 OHLCV 데이터를 가져온 후, TechnicalIndicators 클래스를 사용하여 기술적 지표를 계산합니다.
+2. technical.py
+역할: 기술적 지표(RSI, VWAP, MACD 등)를 계산하는 기능을 제공합니다.
+구현 예시:
+calculate_indicators 메서드에서 다양한 기술적 지표를 계산하고, 이를 data_collector.py에서 호출하여 사용할 수 있습니다.
+예시 코드
+data_collector.py
+data_collector.py
+from indicators.technical import TechnicalIndicators  # technical.py에서 import
+
+class DataCollector:
+    def __init__(self, exchange, symbol, timeframes):
+        self.exchange = exchange
+        self.symbol = symbol
+        self.timeframes = timeframes
+    
+    async def fetch_data(self):
+        data = {}
+        for timeframe in self.timeframes:
+            ohlcv = await self.exchange.fetch_ohlcv(self.symbol, timeframe)
+            df = TechnicalIndicators.calculate_indicators(ohlcv)  # 기술적 지표 계산
+            data[timeframe] = {
+                "ohlcv": ohlcv,
+                "indicators": df  # 계산된 지표 포함
+            }
+        return data
+technical.py
+technical.py
+import pandas as pd
+import numpy as np
+from ta.momentum import RSIIndicator
+from ta.volume import VolumeWeightedAveragePrice
+from ta.trend import MACD
+
+class TechnicalIndicators:
+    @staticmethod
+    def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
+        """기술적 지표 계산"""
+        # RSI
+        rsi = RSIIndicator(close=df['close'], window=14)
+        df['rsi'] = rsi.rsi()
+        
+        # VWAP
+        vwap = VolumeWeightedAveragePrice(
+            high=df['high'],
+            low=df['low'],
+            close=df['close'],
+            volume=df['volume']
+        )
+        df['vwap'] = vwap.volume_weighted_average_price()
+        
+        # MACD
+        macd = MACD(close=df['close'])
+        df['macd'] = macd.macd()
+        df['macd_signal'] = macd.macd_signal()
+        df['macd_diff'] = macd.macd_diff()
+        
+        return df
+결론
+두 파일을 유지함으로써 각 기능을 명확히 분리하고, 필요할 때마다 쉽게 수정하거나 확장할 수 있습니다.
+data_collector.py에서 technical.py의 기능을 활용하여 기술적 지표를 계산하는 구조로 잘 설계되어 있습니다.
+추가적인 질문이나 도움이 필요하면 언제든지 말씀해 주세요!
+
+현재 get_market_data 메서드에서 가져오는 데이터는 바이빗 거래소의 OHLCV 데이터입니다. OHLCV는 다음과 같은 정보를 포함합니다:
+OHLCV 데이터 설명
+Open (시가): 특정 시간대의 첫 거래 가격.
+2. High (고가): 특정 시간대의 최고 거래 가격.
+Low (저가): 특정 시간대의 최저 거래 가격.
+4. Close (종가): 특정 시간대의 마지막 거래 가격.
+5. Volume (거래량): 특정 시간대에 거래된 총량.
+
+get_market_data 메서드에서의 데이터 흐름
+1. OHLCV 데이터 가져오기:
+self.bybit_client.fetch_ohlcv('BTC/USDT', '1h', limit=100)를 통해 BTC/USDT의 1시간 OHLCV 데이터를 최대 100개까지 가져옵니다.
+2. 기술적 지표 계산:
+가져온 OHLCV 데이터를 TechnicalIndicators.calculate_indicators(ohlcv) 메서드를 통해 
+RSI, MACD, VWAP 등의 기술적 지표로 변환합니다.
+필요한 데이터 추출:
+마지막 종가(close), RSI 값, MACD 값을 추출하여 market_data 딕셔너리에 저장합니다.
+최종적으로 반환되는 데이터
+market_data 딕셔너리는 다음과 같은 구조를 가집니다:
+{
+    'price': 마지막 종가,
+    'rsi': RSI 값,
+    'macd': MACD 값,
+}
+이 데이터는 /analyze 명령어를 통해 챗GPT API에 전달되어 분석 요청에 사용됩니다.
+추가적인 질문이나 더 알고 싶은 내용이 있으면 언제든지 말씀해 주세요!
+
+1. 변경 사항 확인
+먼저, 변경된 파일을 확인합니다. 터미널에서 다음 명령어를 입력하세요:
+Bash
+git status
+2. 변경 사항 스테이징
+변경된 파일을 스테이징합니다. 모든 변경된 파일을 스테이징하려면 다음 명령어를 사용하세요:
+Bash
+git add .
+특정 파일만 스테이징하려면 파일 경로를 지정할 수 있습니다:
+Bash
+git add path/to/your/file.py
+3. 커밋
+변경 사항을 커밋합니다. 커밋 메시지를 작성하여 변경 내용을 설명하세요:
+Bash
+git commit -m "feat: improve trading system  0.2"
+
+- Unify manual and automated trading systems
+- Standardize analysis data structure
+- Improve order creation and notification
+- Enhance error handling and logging
+
+Details:
+1. Restructure manual trade (/trade) command
+2. Apply consistent analysis format
+3. Remove duplicate notifications
+4. Improve error handling logic" 
+
+- Standardize analysis process between auto and manual analysis
+- Fix divergence analysis by removing timeframe dependency
+- Simplify divergence check logic using RSI and MACD indicators
+- Clean up redundant code in GPTAnalyzer class
+
+The changes ensure consistent behavior between automatic and manual analysis,
+while maintaining the same analysis format and divergence detection across
+all timeframes."
+4. 푸시
+로컬 커밋을 원격 저장소에 푸시합니다. 기본적으로 main 브랜치에 푸시하려면 다음 명령어를 사용하세요:
+Bash
+git push origin main
+브랜치 이름이 다르다면 해당 브랜치 이름으로 변경하세요.
+
+강제푸쉬
+git push -f origin main
+
+5. 확인
+푸시가 완료되면 원격 저장소에서 변경 사항이 반영되었는지 확인합니다.
+이 과정을 통해 변경 사항을 안전하게 커밋하고 푸시할 수 있습니다. 추가적인 질문이나 도움이 필요하면 언제든지 말씀해 주세요!
+
+

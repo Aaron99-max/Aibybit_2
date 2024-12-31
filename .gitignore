@@ -1,0 +1,36 @@
+# 환경 변수 파일
+.env
+*.env
+src/.env
+
+# 캐시 파일
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# 가상환경
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 기타
+*.log
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 빌드 파일
+*.egg-info/
+dist/
+build/ 

@@ -1,0 +1,154 @@
+2024-12-24 13:25:22,157 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 941ms
+2024-12-24 13:25:22,160 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 13:25:34,645 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 13:25:34,998 - bybit - INFO - bybit_client.py:59 - [1h] 바이빗 데이터 조회 시작
+2024-12-24 13:25:37,590 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:25:44,486 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:26:32,422 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 13:26:38,909 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 13:26:58,445 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:26:58,646 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.03158043449884506@93944.0
+2024-12-24 13:26:58,835 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:43:51,689 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.031@93944.0
+2024-12-24 13:48:59,030 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 821ms
+2024-12-24 13:48:59,030 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 13:49:20,415 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 13:49:27,373 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 13:49:46,389 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.031@93944.0
+2024-12-24 13:49:48,986 - bybit - ERROR - bybit_client.py:289 - API 호출 실패: bybit {"retCode":110017,"retMsg":"reduce-only order has same side with current position","result":{},"retExtInfo":{},"time":1735015788777}
+2024-12-24 13:49:49,167 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:49:49,364 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031163156919461775@94272.0
+2024-12-24 13:49:49,557 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:49:49,650 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.062@94006.72580645
+2024-12-24 13:53:37,626 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 419ms
+2024-12-24 13:53:37,627 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 13:53:48,683 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 13:53:55,011 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 13:54:16,349 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:54:16,543 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.03170585905510287@93516.0
+2024-12-24 13:54:16,726 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:57:21,944 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 738ms
+2024-12-24 13:57:21,945 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 13:57:39,278 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 13:57:46,419 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 13:58:05,149 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.031@93516.0
+2024-12-24 13:58:07,215 - bybit - ERROR - bybit_client.py:289 - API 호출 실패: bybit {"retCode":110017,"retMsg":"reduce-only order has same side with current position","result":{},"retExtInfo":{},"time":1735016287008}
+2024-12-24 13:58:07,715 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:58:07,901 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.03126947465955068@93920.0
+2024-12-24 13:58:08,102 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 13:58:08,190 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.031@93516.0
+2024-12-24 14:01:13,222 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1001ms
+2024-12-24 14:01:13,223 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:01:28,482 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 14:01:34,990 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 14:01:57,475 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:01:57,965 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031221863140652634@95000.0
+2024-12-24 14:01:58,159 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:01:58,252 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.031@94775.7516129
+2024-12-24 14:03:32,859 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 637ms
+2024-12-24 14:03:32,859 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:03:41,864 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 14:03:49,184 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 14:04:10,372 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:04:10,569 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.03155839231516116@93944.0
+2024-12-24 14:04:11,055 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:05:24,797 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 595ms
+2024-12-24 14:05:24,797 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:05:35,937 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 14:05:42,148 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 14:06:02,116 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.031@93944.0
+2024-12-24 14:06:04,230 - bybit - ERROR - bybit_client.py:289 - API 호출 실패: bybit {"retCode":110017,"retMsg":"reduce-only order has same side with current position","result":{},"retExtInfo":{},"time":1735016764026}
+2024-12-24 14:06:04,412 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:06:04,607 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.03149657224459309@93214.0
+2024-12-24 14:06:04,942 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:06:05,033 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.036@93840.38888889
+2024-12-24 14:06:50,858 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 14:06:56,814 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:06:57,141 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.03174071967076554@93359.0
+2024-12-24 14:06:57,470 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:06:57,559 - bybit - INFO - bybit_client.py:243 - 활성 포지션 감지: LONG 0.031@93199.30645161
+2024-12-24 14:07:35,333 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 14:07:41,157 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:07:41,339 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031792303730486145@93203.0
+2024-12-24 14:07:41,536 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:12:45,801 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 594ms
+2024-12-24 14:12:45,804 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:16:59,649 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 447ms
+2024-12-24 14:16:59,649 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:17:46,316 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:21:02,543 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1337ms
+2024-12-24 14:21:02,544 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:21:27,071 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:22:49,837 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 637ms
+2024-12-24 14:22:49,838 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:22:55,721 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 516ms
+2024-12-24 14:22:55,721 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:23:01,528 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 330ms
+2024-12-24 14:23:01,529 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:23:07,390 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1190ms
+2024-12-24 14:23:07,390 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:23:13,165 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 967ms
+2024-12-24 14:23:13,165 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:23:19,003 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 803ms
+2024-12-24 14:23:19,004 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:23:24,835 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 635ms
+2024-12-24 14:23:24,835 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:24:10,735 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 536ms
+2024-12-24 14:24:10,736 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:24:41,408 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:26:36,302 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1103ms
+2024-12-24 14:26:36,302 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:27:05,784 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:27:08,050 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:27:08,246 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031@94201.0
+2024-12-24 14:32:51,476 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1282ms
+2024-12-24 14:32:51,477 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:33:43,504 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 14:33:49,762 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 14:34:11,509 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:34:11,695 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031341348438379935@94539.0
+2024-12-24 14:34:11,875 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:38:29,007 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 813ms
+2024-12-24 14:38:29,007 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:38:56,127 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:38:58,235 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:38:58,428 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031@94801.0
+2024-12-24 14:39:13,232 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 14:39:18,836 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:39:19,159 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031407595328930074@94324.0
+2024-12-24 14:39:19,359 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:49:19,778 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 585ms
+2024-12-24 14:49:19,789 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 14:49:52,889 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:49:54,848 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 14:49:55,040 - bybit - INFO - bybit_client.py:282 - API 호출 성공: BTCUSDT buy 0.031@94801.0
+2024-12-24 14:50:23,247 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 14:50:30,723 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 15:05:10,325 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1137ms
+2024-12-24 15:05:10,326 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:05:21,574 - bybit - INFO - bybit_client.py:59 - [4h] 바이빗 데이터 조회 시작
+2024-12-24 15:05:27,728 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 15:07:11,590 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 403ms
+2024-12-24 15:07:11,591 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:07:21,257 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 15:08:31,674 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 486ms
+2024-12-24 15:08:31,675 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:08:39,819 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 15:10:31,167 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 982ms
+2024-12-24 15:10:31,167 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:10:39,918 - bybit - INFO - bybit_client.py:59 - [1m] 바이빗 데이터 조회 시작
+2024-12-24 15:30:58,980 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 798ms
+2024-12-24 15:30:58,981 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:33:04,896 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 716ms
+2024-12-24 15:33:04,897 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:33:22,622 - bybit - INFO - bybit_client.py:153 - 잔고 조회 성공
+2024-12-24 15:35:48,766 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 585ms
+2024-12-24 15:35:48,767 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:35:54,277 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1097ms
+2024-12-24 15:35:54,277 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:35:59,756 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 576ms
+2024-12-24 15:35:59,756 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:36:05,290 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 1112ms
+2024-12-24 15:36:05,290 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-24 15:36:10,972 - bybit - INFO - bybit_client.py:180 - 서버 시간 동기화 완료: offset 793ms
+2024-12-24 15:36:10,972 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료

@@ -1,0 +1,239 @@
+2024-12-20 13:24:53,938 - bybit - INFO - bybit_client.py:178 - 서버 시간 동기화 완료: offset 1225ms
+2024-12-20 13:24:53,941 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 13:26:30,724 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 1m (데이터 개수: 1)
+2024-12-20 13:26:30,982 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 1h (데이터 개수: 24)
+2024-12-20 13:26:30,988 - bybit - INFO - bybit_client.py:185 - BybitClient fetch_positions 시작: symbols=['BTCUSDT']
+2024-12-20 13:26:31,232 - bybit - INFO - bybit_client.py:223 - V5 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'nextPageCursor': 'BTCUSDT%2C1734592607096%2C0', 'category': 'linear', 'list': [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '10226.51', 'adlRankIndicator': 0, 'cumRealisedPnl': '-69493.88008812', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9405005039, 'updatedTime': '1734592607096', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}]}, 'retExtInfo': {}, 'time': 1734668791564}
+2024-12-20 13:26:31,234 - bybit - INFO - bybit_client.py:230 - 포지션 처리 중: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '10226.51', 'adlRankIndicator': 0, 'cumRealisedPnl': '-69493.88008812', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9405005039, 'updatedTime': '1734592607096', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2024-12-20 13:26:33,457 - bybit - INFO - bybit_client.py:151 - 잔고 조회 성공
+2024-12-20 13:26:45,884 - bybit - INFO - bybit_client.py:151 - 잔고 조회 성공
+2024-12-20 13:27:15,993 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 15m (데이터 개수: 64)
+2024-12-20 13:27:45,736 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 4h (데이터 개수: 90)
+2024-12-20 13:27:50,415 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 1m (데이터 개수: 1)
+2024-12-20 13:28:10,052 - bybit - INFO - bybit_client.py:185 - BybitClient fetch_positions 시작: symbols=['BTCUSDT']
+2024-12-20 13:28:10,236 - bybit - INFO - bybit_client.py:223 - V5 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'nextPageCursor': 'BTCUSDT%2C1734592607096%2C0', 'category': 'linear', 'list': [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '10124.44', 'adlRankIndicator': 0, 'cumRealisedPnl': '-69493.88008812', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9405005039, 'updatedTime': '1734592607096', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}]}, 'retExtInfo': {}, 'time': 1734668890570}
+2024-12-20 13:28:10,240 - bybit - INFO - bybit_client.py:230 - 포지션 처리 중: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '10124.44', 'adlRankIndicator': 0, 'cumRealisedPnl': '-69493.88008812', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9405005039, 'updatedTime': '1734592607096', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2024-12-20 13:28:10,475 - bybit - INFO - bybit_client.py:151 - 잔고 조회 성공
+2024-12-20 13:28:10,665 - bybit - INFO - bybit_client.py:151 - 잔고 조회 성공
+2024-12-20 13:28:10,862 - bybit - INFO - bybit_client.py:335 - 레버리지가 이미 5x로 설정되어 있습니다
+2024-12-20 13:28:11,390 - bybit - INFO - bybit_client.py:151 - 잔고 조회 성공
+2024-12-20 13:28:11,393 - bybit - INFO - bybit_client.py:185 - BybitClient fetch_positions 시작: symbols=['BTCUSDT']
+2024-12-20 13:28:11,484 - bybit - INFO - bybit_client.py:223 - V5 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'nextPageCursor': 'BTCUSDT%2C1734668891549%2C0', 'category': 'linear', 'list': [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '9998.999', 'liqPrice': '4114.89724073', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '99989.99', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '1162.51', 'markPrice': '10115.25', 'adlRankIndicator': 2, 'cumRealisedPnl': '-69548.87458262', 'positionMM': '543.9455456', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '20041.9935956', 'seq': 9405539111, 'updatedTime': '1734668891549', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-54.9944945', 'size': '10', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}]}, 'retExtInfo': {}, 'time': 1734668891820}
+2024-12-20 13:28:11,486 - bybit - INFO - bybit_client.py:230 - 포지션 처리 중: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '9998.999', 'liqPrice': '4114.89724073', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '99989.99', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '1162.51', 'markPrice': '10115.25', 'adlRankIndicator': 2, 'cumRealisedPnl': '-69548.87458262', 'positionMM': '543.9455456', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '20041.9935956', 'seq': 9405539111, 'updatedTime': '1734668891549', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-54.9944945', 'size': '10', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2024-12-20 13:28:11,487 - bybit - INFO - bybit_client.py:253 - 활성 포지션 추가됨: {'side': 'LONG', 'size': 10.0, 'leverage': 5.0, 'entryPrice': 9998.999, 'liquidationPrice': 4114.89724073, 'unrealizedPnl': 1162.51, 'markPrice': 10115.25}
+2024-12-20 13:28:14,553 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 1d (데이터 개수: 45)
+2024-12-20 13:30:10,789 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 15m (데이터 개수: 64)
+2024-12-20 13:34:19,259 - bybit - INFO - bybit_client.py:178 - 서버 시간 동기화 완료: offset 1597ms
+2024-12-20 13:34:19,260 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 13:35:14,564 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 1m (데이터 개수: 1)
+2024-12-20 13:36:00,113 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 4h (데이터 개수: 90)
+2024-12-20 13:36:04,706 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 1m (데이터 개수: 1)
+2024-12-20 13:36:24,238 - bybit - INFO - bybit_client.py:185 - BybitClient fetch_positions 시작: symbols=['BTCUSDT']
+2024-12-20 13:36:24,411 - bybit - INFO - bybit_client.py:223 - V5 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'nextPageCursor': 'BTCUSDT%2C1734669293731%2C0', 'category': 'linear', 'list': [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '9999', 'adlRankIndicator': 0, 'cumRealisedPnl': '-71912.03852027', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9405540429, 'updatedTime': '1734669293731', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}]}, 'retExtInfo': {}, 'time': 1734669384751}
+2024-12-20 13:36:24,412 - bybit - INFO - bybit_client.py:230 - 포지션 처리 중: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '9999', 'adlRankIndicator': 0, 'cumRealisedPnl': '-71912.03852027', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9405540429, 'updatedTime': '1734669293731', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2024-12-20 13:36:26,812 - bybit - INFO - bybit_client.py:151 - 잔고 조회 성공
+2024-12-20 13:36:27,278 - bybit - ERROR - bybit_client.py:324 - [오류] 주문 생성 실패: bybit {"retCode":10001,"retMsg":"TakeProfit:100948000 set for Sell position should be lower than base_price:98995000??LastPrice","result":{},"retExtInfo":{},"time":1734669387614}
+2024-12-20 13:38:31,558 - bybit - INFO - bybit_client.py:178 - 서버 시간 동기화 완료: offset 895ms
+2024-12-20 13:38:31,558 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 13:38:45,863 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 4h (데이터 개수: 90)
+2024-12-20 13:38:51,207 - bybit - INFO - bybit_client.py:115 - OHLCV 데이터 조회 성공: BTCUSDT 1m (데이터 개수: 1)
+2024-12-20 13:43:44,244 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1584ms
+2024-12-20 13:43:44,245 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 13:44:17,702 - bybit - INFO - bybit_client.py:222 - V5 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'nextPageCursor': 'BTCUSDT%2C1734669293731%2C0', 'category': 'linear', 'list': [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '9999.35', 'adlRankIndicator': 0, 'cumRealisedPnl': '-71912.03852027', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9405540429, 'updatedTime': '1734669293731', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}]}, 'retExtInfo': {}, 'time': 1734669858043}
+2024-12-20 13:44:19,764 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 13:44:19,958 - bybit - INFO - bybit_client.py:308 - 주문 생성 성공: BTCUSDT buy 15.0@9999.0
+2024-12-20 13:44:20,156 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 13:44:20,252 - bybit - INFO - bybit_client.py:222 - V5 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'nextPageCursor': 'BTCUSDT%2C1734669860302%2C0', 'category': 'linear', 'list': [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '9999', 'liqPrice': '6256.97803355', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '149985', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '0', 'markPrice': '9999', 'adlRankIndicator': 2, 'cumRealisedPnl': '-71994.53027027', 'positionMM': '815.9184', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '30062.9934', 'seq': 9405542234, 'updatedTime': '1734669860302', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-82.49175', 'size': '15', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}]}, 'retExtInfo': {}, 'time': 1734669860595}
+2024-12-20 13:54:56,029 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1371ms
+2024-12-20 13:54:56,030 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 13:55:34,215 - bybit - ERROR - bybit_client.py:222 - 포지션 조회 실패: name 'param_str' is not defined
+2024-12-20 13:55:36,359 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 13:55:36,553 - bybit - INFO - bybit_client.py:282 - 주문 생성 성공: BTCUSDT buy 10.0@11795.3
+2024-12-20 13:55:36,746 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 13:55:36,753 - bybit - ERROR - bybit_client.py:222 - 포지션 조회 실패: name 'param_str' is not defined
+2024-12-20 13:59:34,611 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 958ms
+2024-12-20 13:59:34,611 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:00:20,362 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 14:00:20,588 - bybit - INFO - bybit_client.py:304 - 주문 생성 성공: BTCUSDT buy 15.0@12831.6
+2024-12-20 14:00:20,796 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 14:17:00,037 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1387ms
+2024-12-20 14:17:00,038 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:35:27,831 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1185ms
+2024-12-20 14:35:27,831 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:37:08,883 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1244ms
+2024-12-20 14:37:08,884 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:43:14,599 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 958ms
+2024-12-20 14:43:14,600 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:46:27,485 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1845ms
+2024-12-20 14:46:27,486 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:53:28,381 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1744ms
+2024-12-20 14:53:28,382 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:53:47,732 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 14:53:47,934 - bybit - INFO - bybit_client.py:304 - 주문 생성 성공: BTCUSDT buy 1.996@12830.0
+2024-12-20 14:56:59,240 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1606ms
+2024-12-20 14:56:59,240 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 14:57:09,596 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 14:57:09,792 - bybit - INFO - bybit_client.py:304 - 주문 생성 성공: BTCUSDT buy 1.996@12830.0
+2024-12-20 14:59:51,150 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1517ms
+2024-12-20 14:59:51,151 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:00:03,143 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:00:03,143 - bybit - INFO - bybit_client.py:290 - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '1.796', 'timeInForce': 'GoodTillCancel', 'positionIdx': 0, 'price': '12830.0'}
+2024-12-20 15:00:03,581 - bybit - INFO - bybit_client.py:303 - 주문 생성 성공: BTCUSDT buy 1.796@12830.0
+2024-12-20 15:00:48,777 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:00:48,778 - bybit - INFO - bybit_client.py:290 - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '1.996', 'timeInForce': 'GoodTillCancel', 'positionIdx': 0, 'price': '12830.0'}
+2024-12-20 15:00:49,009 - bybit - INFO - bybit_client.py:303 - 주문 생성 성공: BTCUSDT buy 1.996@12830.0
+2024-12-20 15:02:24,962 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1328ms
+2024-12-20 15:02:24,963 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:02:46,182 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:02:46,182 - bybit - INFO - bybit_client.py:290 - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '1.996', 'timeInForce': 'GoodTillCancel', 'positionIdx': 0, 'price': '12830.0'}
+2024-12-20 15:02:46,374 - bybit - INFO - bybit_client.py:303 - 주문 생성 성공: BTCUSDT buy 1.996@12830.0
+2024-12-20 15:04:43,386 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1751ms
+2024-12-20 15:04:43,387 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:04:54,919 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:04:54,920 - bybit - INFO - bybit_client.py:294 - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '1.796', 'timeInForce': 'GoodTillCancel', 'positionIdx': 0, 'price': '12830.0'}
+2024-12-20 15:04:55,123 - bybit - INFO - bybit_client.py:307 - 주문 생성 성공: BTCUSDT buy 1.796@12830.0
+2024-12-20 15:06:24,309 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1675ms
+2024-12-20 15:06:24,309 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:06:35,822 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:06:35,823 - bybit - INFO - bybit_client.py:285 - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '1.996', 'timeInForce': 'GoodTillCancel', 'positionIdx': 0, 'price': '12830.0'}
+2024-12-20 15:06:36,024 - bybit - INFO - bybit_client.py:298 - 주문 생성 성공: BTCUSDT buy 1.996@12830.0
+2024-12-20 15:08:17,931 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1299ms
+2024-12-20 15:08:17,931 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:08:29,543 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:08:29,545 - bybit - INFO - bybit_client.py:285 - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '1.996', 'timeInForce': 'GoodTillCancel', 'positionIdx': 0, 'price': '12830.0'}
+2024-12-20 15:08:29,910 - bybit - INFO - bybit_client.py:298 - 주문 생성 성공: BTCUSDT buy 1.996@12830.0
+2024-12-20 15:17:35,197 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1570ms
+2024-12-20 15:17:35,198 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:18:01,592 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:18:51,663 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1035ms
+2024-12-20 15:18:51,664 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:19:10,587 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:19:10,985 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.996@12830.0
+2024-12-20 15:21:34,669 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1042ms
+2024-12-20 15:21:34,669 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:24:20,379 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 15:24:22,867 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:24:23,069 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 2.993@12832.0
+2024-12-20 15:31:59,927 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1302ms
+2024-12-20 15:31:59,928 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:32:34,561 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:32:34,756 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.993@12831.7
+2024-12-20 15:34:52,709 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 15:34:53,358 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:34:53,672 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 2.989@12832.0
+2024-12-20 15:38:19,933 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1313ms
+2024-12-20 15:38:19,934 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:38:43,752 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:38:44,089 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.991@12831.7
+2024-12-20 15:39:34,942 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 15:39:35,392 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:39:35,727 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 2.985@12832.0
+2024-12-20 15:41:30,403 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1781ms
+2024-12-20 15:41:30,404 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:41:46,793 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:41:46,984 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.988@12831.7
+2024-12-20 15:42:32,116 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 15:42:32,829 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:42:33,182 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 2.981@12832.0
+2024-12-20 15:44:03,649 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1029ms
+2024-12-20 15:44:03,650 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:44:49,724 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:44:49,914 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.993@12831.7
+2024-12-20 15:45:37,565 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 15:45:42,995 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:45:43,323 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.985@12832.0
+2024-12-20 15:54:40,542 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1925ms
+2024-12-20 15:54:40,544 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 15:55:04,405 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:55:04,603 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.992@12831.7
+2024-12-20 15:55:39,688 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 15:55:40,159 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 15:55:40,354 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.983@12832.0
+2024-12-20 16:03:02,780 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1166ms
+2024-12-20 16:03:02,781 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 16:09:15,312 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:09:15,869 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.817@15571.0
+2024-12-20 16:11:57,191 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:11:57,382 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.746@17051.0
+2024-12-20 16:12:36,283 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:12:36,604 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.706@18000.0
+2024-12-20 16:13:49,302 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 16:13:49,906 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:13:50,086 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.437@17701.0
+2024-12-20 16:22:03,816 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1165ms
+2024-12-20 16:22:03,816 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 16:23:22,584 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:23:22,779 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.662@19501.0
+2024-12-20 16:24:53,591 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:24:53,917 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 1.275@20241.0
+2024-12-20 16:26:34,922 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:26:35,234 - bybit - ERROR - bybit_client.py:277 - API 호출 실패: bybit {"retCode":10001,"retMsg":"TakeProfit:220000000 set for Buy position should be higher than base_price:222010000??LastPrice","result":{},"retExtInfo":{},"time":1734679595630}
+2024-12-20 16:29:49,470 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:29:49,645 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.496@26000.0
+2024-12-20 16:35:09,120 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 16:35:09,680 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 16:35:09,872 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.912@28301.0
+2024-12-20 17:07:14,498 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1903ms
+2024-12-20 17:07:14,499 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:09:05,632 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1041ms
+2024-12-20 17:09:05,633 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:09:20,102 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:09:26,780 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:10:36,157 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:10:36,349 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.317@45000.0
+2024-12-20 17:11:11,476 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 17:11:11,965 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:11:12,147 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.648@44001.0
+2024-12-20 17:23:36,968 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1380ms
+2024-12-20 17:23:36,969 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:25:04,654 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 17:26:08,784 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 17:27:06,173 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 17:27:08,735 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:27:08,932 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.518@55001.0
+2024-12-20 17:27:37,388 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 17:28:26,494 - bybit - ERROR - bybit_client.py:244 - 포지션 조회 실패: could not convert string to float: ''
+2024-12-20 17:28:27,105 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:28:27,304 - bybit - INFO - bybit_client.py:273 - API 호출 성공: BTCUSDT buy 0.504@56501.0
+2024-12-20 17:35:09,875 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1294ms
+2024-12-20 17:35:09,876 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:35:42,075 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:35:42,271 - bybit - INFO - bybit_client.py:277 - API 호출 성공: BTCUSDT buy 0.053@56701.0
+2024-12-20 17:36:07,906 - bybit - ERROR - bybit_client.py:240 - 포지션 데이터 변환 오류: could not convert string to float: '', 데이터: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '56318.9', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '89499', 'positionValue': '2984.9017', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '-1.21423', 'markPrice': '56295.99', 'adlRankIndicator': 2, 'cumRealisedPnl': '-68571.86547483', 'positionMM': '16.23786525', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '598.29369675', 'seq': 9405595394, 'updatedTime': '1734683742691', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-1.64169594', 'size': '0.053', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '20001', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2024-12-20 17:36:08,508 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:36:08,846 - bybit - INFO - bybit_client.py:277 - API 호출 성공: BTCUSDT buy 0.107@56701.0
+2024-12-20 17:42:27,549 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1970ms
+2024-12-20 17:42:27,551 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:43:41,748 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:43:41,936 - bybit - INFO - bybit_client.py:279 - API 호출 성공: BTCUSDT buy 0.053@56501.0
+2024-12-20 17:44:20,785 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:44:20,966 - bybit - INFO - bybit_client.py:279 - API 호출 성공: BTCUSDT buy 0.107@56701.0
+2024-12-20 17:45:11,086 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:45:11,261 - bybit - INFO - bybit_client.py:279 - API 호출 성공: BTCUSDT buy 0.053@56501.0
+2024-12-20 17:45:35,625 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.053@55534.71132075
+2024-12-20 17:47:53,790 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1214ms
+2024-12-20 17:47:53,790 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:48:16,980 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:48:17,176 - bybit - INFO - bybit_client.py:279 - API 호출 성공: BTCUSDT buy 0.011@56201.0
+2024-12-20 17:48:44,844 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:48:45,021 - bybit - INFO - bybit_client.py:279 - API 호출 성공: BTCUSDT buy 0.021@56521.0
+2024-12-20 17:49:13,068 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.021@56521.0
+2024-12-20 17:50:54,550 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1966ms
+2024-12-20 17:50:54,551 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:51:32,774 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.021@56521.0
+2024-12-20 17:53:00,033 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1454ms
+2024-12-20 17:53:00,035 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 17:53:34,753 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:53:34,943 - bybit - INFO - bybit_client.py:279 - API 호출 성공: BTCUSDT buy 0.011@56401.0
+2024-12-20 17:54:51,241 - bybit - INFO - bybit_client.py:150 - 잔고 조회 성공
+2024-12-20 17:54:51,426 - bybit - INFO - bybit_client.py:279 - API 호출 성공: BTCUSDT buy 0.011@56701.0
+2024-12-20 17:55:17,384 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.011@56701.0
+2024-12-20 18:01:29,886 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1311ms
+2024-12-20 18:01:29,887 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 18:02:14,220 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.011@56701.0
+2024-12-20 18:02:14,309 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.011@56701.0
+2024-12-20 18:02:16,439 - bybit - ERROR - bybit_client.py:286 - API 호출 실패: bybit {"retCode":110017,"retMsg":"reduce-only order has same side with current position","result":{},"retExtInfo":{},"time":1734685336868}
+2024-12-20 18:06:49,250 - bybit - INFO - bybit_client.py:177 - 서버 시간 동기화 완료: offset 1677ms
+2024-12-20 18:06:49,251 - bybit - INFO - bybit_client.py:50 - BybitClient 초기화 완료
+2024-12-20 18:07:17,459 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.011@56701.0
+2024-12-20 18:08:01,090 - bybit - INFO - bybit_client.py:240 - 활성 포지션 감지: LONG 0.011@56701.0

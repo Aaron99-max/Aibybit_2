@@ -1,0 +1,1599 @@
+2024-12-05 13:32:18,905 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:32:18,909 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:32:18,910 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:32:18,916 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:32:18,917 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:38:21,223 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:38:49,778 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:38:49,780 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:38:49,781 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:38:49,786 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:38:49,787 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:39:30,970 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:39:56,901 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:39:56,903 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:39:56,903 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:39:56,909 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:39:56,910 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:40:08,726 - telegram - INFO - telegram_bot.py:534 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 03:45:00  95000.0  96375.5  92922.4  96375.5  22.103
+2024-12-04 04:00:00  96375.5  96375.5  94539.7  94827.8  19.432
+2024-12-04 04:15:00  94827.8  96375.5  94005.1  95000.0  22.440
+2024-12-04 04:30:00  95000.0  96375.5  93920.4  94961.3  22.482
+2024-12-04 04:45:00  94961.3  96375.5  94545.7  96375.5  17.663
+2024-12-05 13:40:08,766 - telegram - INFO - telegram_bot.py:542 - 기술적 지표 계산 완료
+2024-12-05 13:40:08,792 - telegram - INFO - telegram_bot.py:550 - 다이버전스 체크 완료
+2024-12-05 13:40:12,680 - telegram - INFO - telegram_bot.py:558 - 15m 분석 완료
+2024-12-05 13:40:12,682 - telegram - INFO - telegram_bot.py:595 - 15m 분석 결과 파일 저장 완료
+2024-12-05 13:40:12,683 - telegram - INFO - telegram_bot.py:568 - 15m 분석 결과 저장 완료: 1733373612
+2024-12-05 13:40:13,845 - telegram - INFO - telegram_bot.py:534 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-01 01:00:00  96342.0  97000.0  86638.6  96200.0  145.216
+2024-12-01 02:00:00  96200.0  96200.0  94005.1  95762.1   87.002
+2024-12-01 03:00:00  95762.1  96200.0  94381.1  95256.3   91.758
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0   98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1  204.245
+2024-12-05 13:40:13,866 - telegram - INFO - telegram_bot.py:542 - 기술적 지표 계산 완료
+2024-12-05 13:40:13,897 - telegram - INFO - telegram_bot.py:550 - 다이버전스 체크 완료
+2024-12-05 13:40:16,656 - telegram - INFO - telegram_bot.py:558 - 1h 분석 완료
+2024-12-05 13:40:16,660 - telegram - INFO - telegram_bot.py:595 - 1h 분석 결과 파일 저장 완료
+2024-12-05 13:40:16,661 - telegram - INFO - telegram_bot.py:568 - 1h 분석 결과 저장 완료: 1733373616
+2024-12-05 13:40:17,846 - telegram - INFO - telegram_bot.py:534 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 13:40:17,870 - telegram - INFO - telegram_bot.py:542 - 기술적 지표 계산 완료
+2024-12-05 13:40:17,891 - telegram - INFO - telegram_bot.py:550 - 다이버전스 체크 완료
+2024-12-05 13:40:21,014 - telegram - INFO - telegram_bot.py:558 - 4h 분석 완료
+2024-12-05 13:40:21,015 - telegram - INFO - telegram_bot.py:595 - 4h 분석 결과 파일 저장 완료
+2024-12-05 13:40:21,016 - telegram - INFO - telegram_bot.py:568 - 4h 분석 결과 저장 완료: 1733373621
+2024-12-05 13:40:22,162 - telegram - INFO - telegram_bot.py:534 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 13:40:22,176 - telegram - INFO - telegram_bot.py:542 - 기술적 지표 계산 완료
+2024-12-05 13:40:22,193 - telegram - INFO - telegram_bot.py:550 - 다이버전스 체크 완료
+2024-12-05 13:40:25,394 - telegram - INFO - telegram_bot.py:558 - 1d 분석 완료
+2024-12-05 13:40:25,398 - telegram - INFO - telegram_bot.py:595 - 1d 분석 결과 파일 저장 완료
+2024-12-05 13:40:25,399 - telegram - INFO - telegram_bot.py:568 - 1d 분석 결과 저장 완료: 1733373625
+2024-12-05 13:43:14,217 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:43:36,208 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:43:36,209 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:43:36,211 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:43:36,216 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:43:36,217 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:44:58,144 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:45:24,645 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:45:24,646 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:45:24,647 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:45:24,653 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:45:24,654 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:46:25,548 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:46:35,687 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:46:35,688 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:46:35,689 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:46:35,694 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:46:35,695 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:47:48,415 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:48:00,541 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:48:00,542 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:48:00,542 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:48:00,547 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:48:00,548 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:49:15,369 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:49:26,235 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:49:26,236 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:49:26,236 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:49:26,242 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:49:26,243 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:50:22,038 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 13:55:30,773 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 13:55:30,774 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 13:55:30,775 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:55:30,781 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 13:55:30,781 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 13:56:49,462 - telegram - INFO - telegram_bot.py:403 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 14:02:02,354 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:02:02,355 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:02:02,356 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:02:02,362 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:02:02,364 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:03:40,002 - telegram - INFO - telegram_bot.py:391 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 14:03:57,981 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:03:57,983 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:03:57,984 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:03:57,990 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:03:57,991 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:05:25,152 - telegram - INFO - telegram_bot.py:391 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 14:05:31,699 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:05:31,699 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:05:31,700 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:05:31,706 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:05:31,707 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:05:31,707 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:05:31,707 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:05:32,487 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994684]
+2024-12-05 14:05:32,488 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 5, 26, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3782, supergroup_chat_created=False, text='/stop'), update_id=836994684),)
+2024-12-05 14:05:32,490 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:05:32,490 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:05:32,686 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 5, 33, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3485, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:05:32,687 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:05:33,690 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:05:34,125 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 5, 35, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3783, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:05:34,125 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:05:35,126 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:05:35,594 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 5, 36, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3486, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:05:35,597 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:05:36,598 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:05:37,051 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 5, 38, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3784, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:05:37,055 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:05:48,771 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994685]
+2024-12-05 14:05:48,772 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 5, 49, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3785, supergroup_chat_created=False, text='/analyze final'), update_id=836994685),)
+2024-12-05 14:05:48,776 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:05:48,779 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:05:48,894 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:05:49,779 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 5, 50, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3487, supergroup_chat_created=False, text='❌ 최종 분석 생성 실패')
+2024-12-05 14:05:49,781 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:05:50,783 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:05:51,236 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 5, 52, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3786, supergroup_chat_created=False, text='❌ 최종 분석 생성 실패')
+2024-12-05 14:05:51,237 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:06:19,196 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:06:19,197 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:06:19,200 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:06:19,309 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:06:49,627 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:06:49,627 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:06:49,628 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:06:49,740 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:07:20,008 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:07:20,008 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:07:20,009 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:07:20,125 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:07:49,712 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994686]
+2024-12-05 14:07:49,713 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 7, 50, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3787, supergroup_chat_created=False, text='/stop'), update_id=836994686),)
+2024-12-05 14:07:49,717 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:07:49,718 - telegram - INFO - telegram_bot.py:391 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 14:07:49,719 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:17:37,016 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:17:37,017 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:17:37,018 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:17:37,024 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:17:37,025 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:17:37,025 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:17:37,027 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:17:37,796 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994686]
+2024-12-05 14:17:37,797 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 7, 50, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3787, supergroup_chat_created=False, text='/stop'), update_id=836994686),)
+2024-12-05 14:17:37,800 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:17:37,801 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:17:37,982 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 17, 38, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3488, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:17:37,983 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:17:38,985 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:17:39,405 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 17, 40, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3788, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:17:39,407 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:17:40,408 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:17:40,870 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 17, 41, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3489, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:17:40,873 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:17:41,875 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:17:42,341 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 17, 43, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3789, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:17:42,343 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:17:51,876 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994687]
+2024-12-05 14:17:51,877 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 17, 52, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3790, supergroup_chat_created=False, text='/analyze final'), update_id=836994687),)
+2024-12-05 14:17:51,878 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:17:51,879 - telegram - DEBUG - telegram_bot.py:266 - 명령어 처리: analyze final
+2024-12-05 14:17:51,879 - telegram - DEBUG - telegram_bot.py:272 - 최종 분석 시작
+2024-12-05 14:17:51,880 - telegram - DEBUG - telegram_bot.py:280 - 15m 분석 파일 로드 시도: analysis_data/analysis_15m.json
+2024-12-05 14:17:51,880 - telegram - DEBUG - telegram_bot.py:285 - 15m 분석 데이터 로드 완료
+2024-12-05 14:17:51,881 - telegram - DEBUG - telegram_bot.py:280 - 1h 분석 파일 로드 시도: analysis_data/analysis_1h.json
+2024-12-05 14:17:51,882 - telegram - DEBUG - telegram_bot.py:285 - 1h 분석 데이터 로드 완료
+2024-12-05 14:17:51,882 - telegram - DEBUG - telegram_bot.py:280 - 4h 분석 파일 로드 시도: analysis_data/analysis_4h.json
+2024-12-05 14:17:51,883 - telegram - DEBUG - telegram_bot.py:285 - 4h 분석 데이터 로드 완료
+2024-12-05 14:17:51,884 - telegram - DEBUG - telegram_bot.py:280 - 1d 분석 파일 로드 시도: analysis_data/analysis_1d.json
+2024-12-05 14:17:51,885 - telegram - DEBUG - telegram_bot.py:285 - 1d 분석 데이터 로드 완료
+2024-12-05 14:17:51,886 - telegram - DEBUG - telegram_bot.py:287 - 로드된 분석 개수: 4
+2024-12-05 14:17:51,886 - telegram - DEBUG - telegram_bot.py:289 - 최종 분석 생성 시작
+2024-12-05 14:17:51,891 - telegram - DEBUG - telegram_bot.py:292 - 최종 분석 생성 성공
+2024-12-05 14:17:51,892 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:17:51,893 - telegram - DEBUG - telegram_bot.py:299 - 최종 분석 결과 저장 완료
+2024-12-05 14:17:52,003 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:17:52,820 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 17, 53, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3490, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:17:51)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 감소하고 있으나 상승 추세 지속 가능성 있음\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $101,234.00\n- 손절가: $99,209.00\n- 목표: $105,283.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 6/10\n- 주요 리스크: 시장 변동성 크게 확대 가능, 발표 이벤트에 대한 불확실성')
+2024-12-05 14:17:52,824 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:17:53,826 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:17:54,274 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 17, 55, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3791, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:17:51)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 감소하고 있으나 상승 추세 지속 가능성 있음\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $101,234.00\n- 손절가: $99,209.00\n- 목표: $105,283.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 6/10\n- 주요 리스크: 시장 변동성 크게 확대 가능, 발표 이벤트에 대한 불확실성')
+2024-12-05 14:17:54,279 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:18:22,263 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:18:22,263 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:18:22,264 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:18:22,378 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:18:36,142 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994688]
+2024-12-05 14:18:36,143 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 18, 37, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=7, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3792, supergroup_chat_created=False, text='/status'), update_id=836994688),)
+2024-12-05 14:18:36,144 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:18:36,259 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:19:00,371 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994689]
+2024-12-05 14:19:00,373 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 19, 1, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3793, supergroup_chat_created=False, text='/balance'), update_id=836994689),)
+2024-12-05 14:19:00,374 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:19:00,477 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:19:30,722 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:19:30,723 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:19:30,723 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:19:30,839 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:20:01,084 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:20:01,084 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:20:01,086 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:20:01,199 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:20:31,458 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:20:31,459 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:20:31,459 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:20:31,575 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:21:01,820 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:21:01,820 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:21:01,821 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:21:01,931 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:21:32,178 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:21:32,179 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:21:32,179 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:21:32,289 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:22:02,537 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:22:02,538 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:22:02,538 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:22:02,639 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:22:32,885 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:22:32,886 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:22:32,886 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:22:32,995 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:23:03,242 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:23:03,242 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:23:03,243 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:23:03,347 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:23:23,270 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994690]
+2024-12-05 14:23:23,273 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 23, 24, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3794, supergroup_chat_created=False, text='/stop'), update_id=836994690),)
+2024-12-05 14:23:23,276 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:23:23,392 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:26:53,559 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:26:53,561 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:26:53,561 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:26:53,566 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:26:53,567 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:26:53,567 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:26:53,568 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:26:54,523 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 26, 55, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3491, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:26:54,529 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:26:55,330 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:26:55,331 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:26:55,331 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:26:55,331 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:26:55,531 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:26:55,951 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 26, 56, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3795, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:26:55,954 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:26:56,955 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:26:57,397 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 26, 58, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3492, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:26:57,406 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:26:58,409 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:26:58,936 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 26, 59, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3796, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:26:58,941 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:27:05,661 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994691]
+2024-12-05 14:27:05,662 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 27, 6, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3797, supergroup_chat_created=False, text='/last all'), update_id=836994691),)
+2024-12-05 14:27:05,663 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:27:05,663 - telegram - DEBUG - telegram_bot.py:266 - 명령어 처리: last all
+2024-12-05 14:27:05,769 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:27:36,021 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:27:36,022 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:27:36,023 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:27:36,125 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:27:44,468 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994692]
+2024-12-05 14:27:44,469 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 27, 45, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3798, supergroup_chat_created=False, text='/stop'), update_id=836994692),)
+2024-12-05 14:27:44,470 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:27:44,576 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:28:14,826 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:28:14,827 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:28:14,827 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:28:14,937 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:28:52,733 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:28:52,735 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:28:52,736 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:28:52,745 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:28:52,745 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:28:52,745 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:28:52,747 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:28:54,312 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 28, 55, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3493, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:28:54,322 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:28:54,360 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994693]
+2024-12-05 14:28:54,361 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 28, 44, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3799, supergroup_chat_created=False, text='/stop'), update_id=836994693),)
+2024-12-05 14:28:54,364 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:28:54,364 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:28:55,324 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:28:55,833 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 28, 56, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3800, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:28:55,834 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:28:56,835 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:28:57,361 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 28, 58, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3494, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:28:57,368 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:28:58,370 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:28:58,814 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 28, 59, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3801, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:28:58,817 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:04,339 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994694]
+2024-12-05 14:29:04,343 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 5, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=7, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3802, supergroup_chat_created=False, text='/status'), update_id=836994694),)
+2024-12-05 14:29:04,344 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:29:04,345 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: status
+2024-12-05 14:29:04,345 - telegram - DEBUG - telegram_bot.py:250 - 상태 조회 명령어 실행
+2024-12-05 14:29:04,345 - telegram - DEBUG - telegram_bot.py:502 - 시장 상태 조회 시작
+2024-12-05 14:29:06,323 - telegram - DEBUG - telegram_bot.py:510 - 현재가 데이터:                         open     high      low    close  volume
+timestamp                                                      
+2024-12-05 05:29:00  96000.0  96000.0  96000.0  96000.0     0.0
+2024-12-05 14:29:06,466 - telegram - DEBUG - telegram_bot.py:528 - 상태 메시지: 📊 현재 시장 상태
+
+현재가: $96,000.00
+24시간 변동: -0.35%
+24시간 고가: $113,789.50
+24시간 저가: $88,766.00
+
+2024-12-05 14:29:06,468 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:06,574 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:29:07,401 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 29, 8, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3495, supergroup_chat_created=False, text='📊 현재 시장 상태\n\n현재가: $96,000.00\n24시간 변동: -0.35%\n24시간 고가: $113,789.50\n24시간 저가: $88,766.00')
+2024-12-05 14:29:07,403 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:08,404 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:08,837 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 9, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3803, supergroup_chat_created=False, text='📊 현재 시장 상태\n\n현재가: $96,000.00\n24시간 변동: -0.35%\n24시간 고가: $113,789.50\n24시간 저가: $88,766.00')
+2024-12-05 14:29:08,839 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:14,975 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994695]
+2024-12-05 14:29:14,977 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 15, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3804, supergroup_chat_created=False, text='/balance'), update_id=836994695),)
+2024-12-05 14:29:14,981 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:29:14,982 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: balance
+2024-12-05 14:29:14,983 - telegram - DEBUG - telegram_bot.py:255 - 잔고 조회 명령어 실행
+2024-12-05 14:29:15,359 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:15,460 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:29:16,275 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 29, 17, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3496, supergroup_chat_created=False, text='💰 계정 잔고\n\n📈 USDT:\n- 총 자산: $9,977.25\n- 사용 중: $0.00\n- 사용 가능: $9,977.25\n\n₿ BTC:\n- 총 자산: 1.00000000\n- 사용 중: 0.00000000\n- 사용 가능: 1.00000000')
+2024-12-05 14:29:16,278 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:17,281 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:17,706 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 18, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3805, supergroup_chat_created=False, text='💰 계정 잔고\n\n📈 USDT:\n- 총 자산: $9,977.25\n- 사용 중: $0.00\n- 사용 가능: $9,977.25\n\n₿ BTC:\n- 총 자산: 1.00000000\n- 사용 중: 0.00000000\n- 사용 가능: 1.00000000')
+2024-12-05 14:29:17,709 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:24,780 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994696]
+2024-12-05 14:29:24,780 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 25, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=9, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3806, supergroup_chat_created=False, text='/position'), update_id=836994696),)
+2024-12-05 14:29:24,782 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:29:24,782 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: position
+2024-12-05 14:29:24,783 - telegram - DEBUG - telegram_bot.py:260 - 포지션 조회 명령어 실행
+2024-12-05 14:29:24,978 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:25,080 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:29:25,885 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 29, 26, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3497, supergroup_chat_created=False, text='재 오픈된 포지션이 없습니다')
+2024-12-05 14:29:25,887 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:26,887 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:27,309 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 28, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3807, supergroup_chat_created=False, text='재 오픈된 포지션이 없습니다')
+2024-12-05 14:29:27,312 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:33,477 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994697]
+2024-12-05 14:29:33,479 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 34, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3808, supergroup_chat_created=False, text='/last all'), update_id=836994697),)
+2024-12-05 14:29:33,482 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:29:33,483 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: last
+2024-12-05 14:29:33,713 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 04:30:00  95000.0  96375.5  93920.4  94961.3  22.482
+2024-12-04 04:45:00  94961.3  96375.5  94545.7  96375.5  17.663
+2024-12-04 05:00:00  96375.5  96375.5  94807.0  95839.7  22.577
+2024-12-04 05:15:00  95839.7  96375.5  94672.8  96029.0  26.891
+2024-12-04 05:30:00  96029.0  96375.5  94964.5  95938.4  25.424
+2024-12-05 14:29:33,762 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:33,782 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:36,857 - telegram - INFO - telegram_bot.py:458 - 15m 분석 완료
+2024-12-05 14:29:36,859 - telegram - INFO - telegram_bot.py:495 - 15m 분석 결과 파일 저장 완료
+2024-12-05 14:29:36,860 - telegram - INFO - telegram_bot.py:468 - 15m 분석 결과 저장 완료: 1733376576
+2024-12-05 14:29:37,155 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-01 02:00:00  96200.0  96200.0  94005.1  95762.1   87.002
+2024-12-01 03:00:00  95762.1  96200.0  94381.1  95256.3   91.758
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0   98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1  204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3  156.919
+2024-12-05 14:29:37,172 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:37,195 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:40,389 - telegram - INFO - telegram_bot.py:458 - 1h 분석 완료
+2024-12-05 14:29:40,392 - telegram - INFO - telegram_bot.py:495 - 1h 분석 결과 파일 저장 완료
+2024-12-05 14:29:40,393 - telegram - INFO - telegram_bot.py:468 - 1h 분석 결과 저장 완료: 1733376580
+2024-12-05 14:29:40,534 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 14:29:40,553 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:40,573 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:43,172 - telegram - INFO - telegram_bot.py:458 - 4h 분석 완료
+2024-12-05 14:29:43,173 - telegram - INFO - telegram_bot.py:495 - 4h 분석 결과 파일 저장 완료
+2024-12-05 14:29:43,174 - telegram - INFO - telegram_bot.py:468 - 4h 분석 결과 저장 완료: 1733376583
+2024-12-05 14:29:43,319 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 14:29:43,340 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:43,359 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:46,329 - telegram - INFO - telegram_bot.py:458 - 1d 분석 완료
+2024-12-05 14:29:46,331 - telegram - INFO - telegram_bot.py:495 - 1d 분석 결과 파일 저장 완료
+2024-12-05 14:29:46,331 - telegram - INFO - telegram_bot.py:468 - 1d 분석 결과 저장 완료: 1733376586
+2024-12-05 14:29:46,333 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:46,495 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 04:30:00  95000.0  96375.5  93920.4  94961.3  22.482
+2024-12-04 04:45:00  94961.3  96375.5  94545.7  96375.5  17.663
+2024-12-04 05:00:00  96375.5  96375.5  94807.0  95839.7  22.577
+2024-12-04 05:15:00  95839.7  96375.5  94672.8  96029.0  26.891
+2024-12-04 05:30:00  96029.0  96375.5  94964.5  95938.4  25.424
+2024-12-05 14:29:46,519 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:46,537 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:47,323 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 29, 48, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3498, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:29:46)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 거래량이 감소하며 시장은 하락 중\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매도\n- 신호 강도: 8.5/10\n- 진입가: $96,131.00\n- 손절가: $98,254.00\n- 목표: $94,208.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 7/10\n- 주요 리스크: 시장 변동성 상승, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:29:47,326 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:48,327 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:29:48,775 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 29, 49, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3809, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:29:46)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 거래량이 감소하며 시장은 하락 중\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매도\n- 신호 강도: 8.5/10\n- 진입가: $96,131.00\n- 손절가: $98,254.00\n- 목표: $94,208.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 7/10\n- 주요 리스크: 시장 변동성 상승, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:29:48,779 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:29:49,726 - telegram - INFO - telegram_bot.py:458 - 15m 분석 완료
+2024-12-05 14:29:49,729 - telegram - INFO - telegram_bot.py:495 - 15m 분석 결과 파일 저장 완료
+2024-12-05 14:29:49,730 - telegram - INFO - telegram_bot.py:468 - 15m 분석 결과 저장 완료: 1733376589
+2024-12-05 14:29:49,876 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-01 02:00:00  96200.0  96200.0  94005.1  95762.1   87.002
+2024-12-01 03:00:00  95762.1  96200.0  94381.1  95256.3   91.758
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0   98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1  204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3  156.919
+2024-12-05 14:29:49,907 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:49,933 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:53,188 - telegram - INFO - telegram_bot.py:458 - 1h 분석 완료
+2024-12-05 14:29:53,192 - telegram - INFO - telegram_bot.py:495 - 1h 분석 결과 파일 저장 완료
+2024-12-05 14:29:53,193 - telegram - INFO - telegram_bot.py:468 - 1h 분석 결과 저장 완료: 1733376593
+2024-12-05 14:29:53,345 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 14:29:53,370 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:53,409 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:56,227 - telegram - INFO - telegram_bot.py:458 - 4h 분석 완료
+2024-12-05 14:29:56,231 - telegram - INFO - telegram_bot.py:495 - 4h 분석 결과 파일 저장 완료
+2024-12-05 14:29:56,232 - telegram - INFO - telegram_bot.py:468 - 4h 분석 결과 저장 완료: 1733376596
+2024-12-05 14:29:56,372 - telegram - INFO - telegram_bot.py:434 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 14:29:56,385 - telegram - INFO - telegram_bot.py:442 - 기술적 지표 계산 완료
+2024-12-05 14:29:56,401 - telegram - INFO - telegram_bot.py:450 - 다이버전스 체크 완료
+2024-12-05 14:29:59,963 - telegram - INFO - telegram_bot.py:458 - 1d 분석 완료
+2024-12-05 14:29:59,968 - telegram - INFO - telegram_bot.py:495 - 1d 분석 결과 파일 저장 완료
+2024-12-05 14:29:59,970 - telegram - INFO - telegram_bot.py:468 - 1d 분석 결과 저장 완료: 1733376599
+2024-12-05 14:29:59,980 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:30:00,091 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:30:00,883 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 30, 1, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3499, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:29:59)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 거래량이 감소하고 있습니다.\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매도\n- 신호 강도: 8.5/10\n- 진입가: $96,131.00\n- 손절가: $98,054.00\n- 목표: $94,208.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 7/10\n- 주요 리스크: 시장 변동성 증가, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:30:00,885 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:30:01,886 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:30:02,336 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 30, 3, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3810, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:29:59)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 거래량이 감소하고 있습니다.\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매도\n- 신호 강도: 8.5/10\n- 진입가: $96,131.00\n- 손절가: $98,054.00\n- 목표: $94,208.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 7/10\n- 주요 리스크: 시장 변동성 증가, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:30:02,337 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:30:17,325 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994698]
+2024-12-05 14:30:17,326 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 30, 18, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3811, supergroup_chat_created=False, text='/stop'), update_id=836994698),)
+2024-12-05 14:30:17,329 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:30:17,329 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: stop
+2024-12-05 14:30:17,330 - telegram - INFO - telegram_bot.py:284 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 14:30:17,330 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:30:17,331 - telegram - ERROR - telegram_bot.py:302 - 명령어 처리 중 에러: 'TelegramBot' object has no attribute 'cleanup'
+2024-12-05 14:30:17,340 - telegram - ERROR - telegram_bot.py:304 - 상세 에러 스택:
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 285, in handle_command
+    await self.cleanup()
+          ^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'cleanup'
+
+2024-12-05 14:30:17,446 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:30:18,286 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 30, 19, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3500, supergroup_chat_created=False, text='봇을 종료합니다... 👋')
+2024-12-05 14:30:18,288 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:30:19,290 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:30:19,849 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 30, 20, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3812, supergroup_chat_created=False, text='봇을 종료합니다... 👋')
+2024-12-05 14:30:19,852 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:30:20,855 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:30:21,305 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 30, 22, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3501, supergroup_chat_created=False, text='명령어 처리 중 오류가 발생했습니다.')
+2024-12-05 14:30:21,308 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:30:22,310 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:30:22,770 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 30, 23, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3813, supergroup_chat_created=False, text='명령어 처리 중 오류가 발생했습니다.')
+2024-12-05 14:30:22,771 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:30:47,693 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:30:47,694 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:30:47,695 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:30:47,804 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:31:18,049 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:31:18,050 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:31:18,051 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:31:18,160 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:37:01,790 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:37:01,791 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:37:01,792 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:37:01,798 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:37:01,798 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:01,798 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:37:01,800 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:37:04,177 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 37, 4, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3502, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:37:04,186 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:04,575 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:37:04,575 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:37:04,576 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:37:04,577 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:37:05,188 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:05,624 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 37, 6, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3814, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:37:05,625 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:06,627 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:07,080 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 37, 8, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3503, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:37:07,083 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:08,084 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:08,512 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 37, 9, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3815, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:37:08,513 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:16,320 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994699]
+2024-12-05 14:37:16,322 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 37, 17, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=7, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3816, supergroup_chat_created=False, text='/status'), update_id=836994699),)
+2024-12-05 14:37:16,324 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:37:16,325 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: status
+2024-12-05 14:37:16,326 - telegram - DEBUG - telegram_bot.py:250 - 상태 조회 명령어 실행
+2024-12-05 14:37:16,326 - telegram - DEBUG - telegram_bot.py:509 - 시장 상태 조회 시작
+2024-12-05 14:37:18,241 - telegram - DEBUG - telegram_bot.py:517 - 현재가 데이터:                         open     high      low    close  volume
+timestamp                                                      
+2024-12-05 05:37:00  96423.2  96656.2  96400.0  96656.2   0.669
+2024-12-05 14:37:18,366 - telegram - DEBUG - telegram_bot.py:535 - 상태 메시지: 📊 현재 시장 상태
+
+현재가: $96,656.20
+24시간 변동: +0.33%
+24시간 고가: $113,789.50
+24시간 저가: $88,766.00
+
+2024-12-05 14:37:18,367 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:18,477 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:37:19,313 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 37, 20, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3504, supergroup_chat_created=False, text='📊 현재 시장 상태\n\n현재가: $96,656.20\n24시간 변동: +0.33%\n24시간 고가: $113,789.50\n24시간 저가: $88,766.00')
+2024-12-05 14:37:19,316 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:20,318 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:20,794 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 37, 21, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3817, supergroup_chat_created=False, text='📊 현재 시장 상태\n\n현재가: $96,656.20\n24시간 변동: +0.33%\n24시간 고가: $113,789.50\n24시간 저가: $88,766.00')
+2024-12-05 14:37:20,795 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:26,384 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994700]
+2024-12-05 14:37:26,385 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 37, 27, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3818, supergroup_chat_created=False, text='/last all'), update_id=836994700),)
+2024-12-05 14:37:26,385 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:37:26,386 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: last
+2024-12-05 14:37:26,547 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 04:45:00  94961.3  96375.5  94545.7  96375.5  17.663
+2024-12-04 05:00:00  96375.5  96375.5  94807.0  95839.7  22.577
+2024-12-04 05:15:00  95839.7  96375.5  94672.8  96029.0  26.891
+2024-12-04 05:30:00  96029.0  96375.5  94964.5  95938.4  25.424
+2024-12-04 05:45:00  95938.4  96375.5  94408.0  96342.0  23.612
+2024-12-05 14:37:26,592 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:26,640 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:29,755 - telegram - INFO - telegram_bot.py:465 - 15m 분석 완료
+2024-12-05 14:37:29,756 - telegram - INFO - telegram_bot.py:502 - 15m 분석 결과 파일 저장 완료
+2024-12-05 14:37:29,756 - telegram - INFO - telegram_bot.py:475 - 15m 분석 결과 저장 완료: 1733377049
+2024-12-05 14:37:29,912 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-01 02:00:00  96200.0  96200.0  94005.1  95762.1   87.002
+2024-12-01 03:00:00  95762.1  96200.0  94381.1  95256.3   91.758
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0   98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1  204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3  156.919
+2024-12-05 14:37:29,935 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:29,969 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:32,823 - telegram - INFO - telegram_bot.py:465 - 1h 분석 완료
+2024-12-05 14:37:32,824 - telegram - INFO - telegram_bot.py:502 - 1h 분석 결과 파일 저장 완료
+2024-12-05 14:37:32,824 - telegram - INFO - telegram_bot.py:475 - 1h 분석 결과 저장 완료: 1733377052
+2024-12-05 14:37:32,972 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 14:37:32,989 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:33,014 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:36,351 - telegram - INFO - telegram_bot.py:465 - 4h 분석 완료
+2024-12-05 14:37:36,352 - telegram - INFO - telegram_bot.py:502 - 4h 분석 결과 파일 저장 완료
+2024-12-05 14:37:36,353 - telegram - INFO - telegram_bot.py:475 - 4h 분석 결과 저장 완료: 1733377056
+2024-12-05 14:37:36,503 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 14:37:36,526 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:36,559 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:39,628 - telegram - INFO - telegram_bot.py:465 - 1d 분석 완료
+2024-12-05 14:37:39,630 - telegram - INFO - telegram_bot.py:502 - 1d 분석 결과 파일 저장 완료
+2024-12-05 14:37:39,630 - telegram - INFO - telegram_bot.py:475 - 1d 분석 결과 저장 완료: 1733377059
+2024-12-05 14:37:39,636 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:39,784 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 04:45:00  94961.3  96375.5  94545.7  96375.5  17.663
+2024-12-04 05:00:00  96375.5  96375.5  94807.0  95839.7  22.577
+2024-12-04 05:15:00  95839.7  96375.5  94672.8  96029.0  26.891
+2024-12-04 05:30:00  96029.0  96375.5  94964.5  95938.4  25.424
+2024-12-04 05:45:00  95938.4  96375.5  94408.0  96342.0  23.612
+2024-12-05 14:37:39,796 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:39,814 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:40,607 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 37, 41, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3505, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:37:39)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 줄어들면서 하락세 지속됨\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매도\n- 신호 강도: 8.5/10\n- 진입가: $98,221.00\n- 손절가: $100,148.00\n- 목표: $94,370.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 8/10\n- 주요 리스크: 시장 변동성 급증, 대규모 매도 주체 등장')
+2024-12-05 14:37:40,613 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:41,615 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:42,070 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 37, 43, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3819, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:37:39)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 줄어들면서 하락세 지속됨\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매도\n- 신호 강도: 8.5/10\n- 진입가: $98,221.00\n- 손절가: $100,148.00\n- 목표: $94,370.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 8/10\n- 주요 리스크: 시장 변동성 급증, 대규모 매도 주체 등장')
+2024-12-05 14:37:42,073 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:42,790 - telegram - INFO - telegram_bot.py:465 - 15m 분석 완료
+2024-12-05 14:37:42,791 - telegram - INFO - telegram_bot.py:502 - 15m 분석 결과 파일 저장 완료
+2024-12-05 14:37:42,791 - telegram - INFO - telegram_bot.py:475 - 15m 분석 결과 저장 완료: 1733377062
+2024-12-05 14:37:43,002 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-01 02:00:00  96200.0  96200.0  94005.1  95762.1   87.002
+2024-12-01 03:00:00  95762.1  96200.0  94381.1  95256.3   91.758
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0   98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1  204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3  156.919
+2024-12-05 14:37:43,035 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:43,055 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:45,865 - telegram - INFO - telegram_bot.py:465 - 1h 분석 완료
+2024-12-05 14:37:45,869 - telegram - INFO - telegram_bot.py:502 - 1h 분석 결과 파일 저장 완료
+2024-12-05 14:37:45,870 - telegram - INFO - telegram_bot.py:475 - 1h 분석 결과 저장 완료: 1733377065
+2024-12-05 14:37:46,017 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 14:37:46,036 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:46,055 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:49,298 - telegram - INFO - telegram_bot.py:465 - 4h 분석 완료
+2024-12-05 14:37:49,300 - telegram - INFO - telegram_bot.py:502 - 4h 분석 결과 파일 저장 완료
+2024-12-05 14:37:49,301 - telegram - INFO - telegram_bot.py:475 - 4h 분석 결과 저장 완료: 1733377069
+2024-12-05 14:37:49,471 - telegram - INFO - telegram_bot.py:441 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 14:37:49,495 - telegram - INFO - telegram_bot.py:449 - 기술적 지표 계산 완료
+2024-12-05 14:37:49,517 - telegram - INFO - telegram_bot.py:457 - 다이버전스 체크 완료
+2024-12-05 14:37:52,169 - telegram - INFO - telegram_bot.py:465 - 1d 분석 완료
+2024-12-05 14:37:52,170 - telegram - INFO - telegram_bot.py:502 - 1d 분석 결과 파일 저장 완료
+2024-12-05 14:37:52,170 - telegram - INFO - telegram_bot.py:475 - 1d 분석 결과 저장 완료: 1733377072
+2024-12-05 14:37:52,173 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:52,280 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:37:53,184 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 37, 54, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3506, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:37:52)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 감소하면서 시장은 하락세를 보이고 있습니다.\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $96,296.00\n- 손절가: $94,000.00\n- 목표: $100,000.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 8/10\n- 주요 리스크: 시장 변동성 증가, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:37:53,186 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:37:54,187 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:37:54,635 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 37, 55, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3820, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:37:52)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 감소하면서 시장은 하락세를 보이고 있습니다.\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $96,296.00\n- 손절가: $94,000.00\n- 목표: $100,000.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 8/10\n- 주요 리스크: 시장 변동성 증가, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:37:54,637 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:38:01,283 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994701]
+2024-12-05 14:38:01,285 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 38, 2, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3821, supergroup_chat_created=False, text='/stop'), update_id=836994701),)
+2024-12-05 14:38:01,287 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:38:01,288 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: stop
+2024-12-05 14:38:01,289 - telegram - INFO - telegram_bot.py:284 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 14:38:01,289 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:39:18,151 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:39:18,152 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:39:18,153 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:39:18,159 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:39:18,159 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:39:18,159 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 14:39:18,160 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:39:18,925 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994701]
+2024-12-05 14:39:18,927 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 38, 2, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3821, supergroup_chat_created=False, text='/stop'), update_id=836994701),)
+2024-12-05 14:39:18,932 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:39:18,933 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:39:19,172 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 39, 20, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3507, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:39:19,174 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:39:20,175 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:39:20,645 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 39, 21, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3822, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다.')
+2024-12-05 14:39:20,646 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:39:21,648 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:39:22,183 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 39, 23, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3508, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:39:22,187 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:39:23,188 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:39:23,637 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 39, 24, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=36, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=59, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=81, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=103, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=123, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=145, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=7, offset=186, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=8, offset=205, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=9, offset=222, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=253, type=<MessageEntityType.BOT_COMMAND>), MessageEntity(length=5, offset=265, type=<MessageEntityType.BOT_COMMAND>)), from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3823, supergroup_chat_created=False, text='🤖 바이빗 트레이딩 봇이 시작되었습니다!\n\n📊 분석 명령어:\n/analyze 15m - 15분봉 분석\n/analyze 1h - 1시간봉 분석\n/analyze 4h - 4시간봉 분석\n/analyze 1d - 일봉 분석\n/analyze all - 종합 분��\n/last [timeframe] - 마지막 분석 결과\n\n💰 거래 정보:\n/status - 현재 시장 상태\n/balance - 계정 잔고\n/position - 현재 포지션\n\n⚙️ 기타 명령어:\n/help - 도움말\n/stop - 봇 종료')
+2024-12-05 14:39:23,642 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:39:34,059 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994702]
+2024-12-05 14:39:34,059 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 39, 35, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3824, supergroup_chat_created=False, text='/last all'), update_id=836994702),)
+2024-12-05 14:39:34,061 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:39:34,061 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: last
+2024-12-05 14:39:34,062 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:39:34,176 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:39:35,271 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 39, 36, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3509, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:39:34)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 감소하면서 시장은 하락세를 보이고 있습니다.\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $96,296.00\n- 손절가: $94,000.00\n- 목표: $100,000.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 8/10\n- 주요 리스크: 시장 변동성 증가, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:39:35,275 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:39:36,277 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:39:36,727 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 39, 37, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3825, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:39:34)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 감소하면서 시장은 하락세를 보이고 있습니다.\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $96,296.00\n- 손절가: $94,000.00\n- 목표: $100,000.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 8/10\n- 주요 리스크: 시장 변동성 증가, 대규모 매도 주문 발생 가능성')
+2024-12-05 14:39:36,729 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:40:04,421 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:40:04,422 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:40:04,423 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:40:04,530 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:40:34,779 - telegram.Bot - DEBUG - _bot.py:3598 - No new updates found.
+2024-12-05 14:40:34,780 - telegram.Bot - DEBUG - _bot.py:526 - ()
+2024-12-05 14:40:34,781 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:40:34,881 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:40:48,159 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994703]
+2024-12-05 14:40:48,161 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 40, 49, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=8, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3826, supergroup_chat_created=False, text='/analyze all'), update_id=836994703),)
+2024-12-05 14:40:48,163 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:40:48,164 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: analyze
+2024-12-05 14:40:50,090 - telegram - INFO - telegram_bot.py:474 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 04:45:00  94961.3  96375.5  94545.7  96375.5  17.663
+2024-12-04 05:00:00  96375.5  96375.5  94807.0  95839.7  22.577
+2024-12-04 05:15:00  95839.7  96375.5  94672.8  96029.0  26.891
+2024-12-04 05:30:00  96029.0  96375.5  94964.5  95938.4  25.424
+2024-12-04 05:45:00  95938.4  96375.5  94408.0  96342.0  23.612
+2024-12-05 14:40:50,112 - telegram - INFO - telegram_bot.py:482 - 기술적 지표 계산 완료
+2024-12-05 14:40:50,130 - telegram - INFO - telegram_bot.py:490 - 다이버전스 체크 완료
+2024-12-05 14:40:53,222 - telegram - INFO - telegram_bot.py:498 - 15m 분석 완료
+2024-12-05 14:40:53,226 - telegram - INFO - telegram_bot.py:535 - 15m 분석 결과 파일 저장 완료
+2024-12-05 14:40:53,227 - telegram - INFO - telegram_bot.py:508 - 15m 분석 결과 저장 완료: 1733377253
+2024-12-05 14:40:53,369 - telegram - INFO - telegram_bot.py:474 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-01 02:00:00  96200.0  96200.0  94005.1  95762.1   87.002
+2024-12-01 03:00:00  95762.1  96200.0  94381.1  95256.3   91.758
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0   98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1  204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3  156.919
+2024-12-05 14:40:53,384 - telegram - INFO - telegram_bot.py:482 - 기술적 지표 계산 완료
+2024-12-05 14:40:53,402 - telegram - INFO - telegram_bot.py:490 - 다이버전스 체크 완료
+2024-12-05 14:40:57,568 - telegram - INFO - telegram_bot.py:498 - 1h 분석 완료
+2024-12-05 14:40:57,572 - telegram - INFO - telegram_bot.py:535 - 1h 분석 결과 파일 저장 완료
+2024-12-05 14:40:57,574 - telegram - INFO - telegram_bot.py:508 - 1h 분석 결과 저장 완료: 1733377257
+2024-12-05 14:40:57,736 - telegram - INFO - telegram_bot.py:474 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 14:40:57,752 - telegram - INFO - telegram_bot.py:482 - 기술적 지표 계산 완료
+2024-12-05 14:40:57,768 - telegram - INFO - telegram_bot.py:490 - 다이버전스 체크 완료
+2024-12-05 14:41:01,099 - telegram - INFO - telegram_bot.py:498 - 4h 분석 완료
+2024-12-05 14:41:01,102 - telegram - INFO - telegram_bot.py:535 - 4h 분석 결과 파일 저장 완료
+2024-12-05 14:41:01,103 - telegram - INFO - telegram_bot.py:508 - 4h 분석 결과 저장 완료: 1733377261
+2024-12-05 14:41:01,251 - telegram - INFO - telegram_bot.py:474 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 14:41:01,263 - telegram - INFO - telegram_bot.py:482 - 기술적 지표 계산 완료
+2024-12-05 14:41:01,279 - telegram - INFO - telegram_bot.py:490 - 다이버전스 체크 완료
+2024-12-05 14:41:04,359 - telegram - INFO - telegram_bot.py:498 - 1d 분석 완료
+2024-12-05 14:41:04,362 - telegram - INFO - telegram_bot.py:535 - 1d 분석 결과 파일 저장 완료
+2024-12-05 14:41:04,363 - telegram - INFO - telegram_bot.py:508 - 1d 분석 결과 저장 완료: 1733377264
+2024-12-05 14:41:04,373 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:41:04,489 - telegram.Bot - DEBUG - _bot.py:524 - Entering: get_updates
+2024-12-05 14:41:05,484 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(id=-1002464784986, title='김치펌프', type=<ChatType.SUPERGROUP>, username='kimchipump'), date=datetime.datetime(2024, 12, 5, 5, 41, 6, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3510, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:41:04)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 줄어들고 있으며 하락세를 확인할 수 있음\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $94,342.00\n- 손절가: $92,488.00\n- 목표: $98,268.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 7/10\n- 주요 리스크: 시장 변동성 상승, 급격한 가격 하락')
+2024-12-05 14:41:05,485 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:41:06,486 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:41:06,960 - telegram.Bot - DEBUG - _bot.py:526 - Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 41, 7, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='Aaron', id=7727960498, is_bot=True, username='Aaron99_bot'), group_chat_created=False, message_id=3827, supergroup_chat_created=False, text='🎯 최종 분석 결과:\n🎯 최종 분석 결과 (2024-12-05 14:41:04)\n\n📊 시장 요약:\n- 전체 추세: N/A\n- 신뢰도: 0.0%\n- 거래량: 최근 거래량이 줄어들고 있으며 하락세를 확인할 수 있음\n- 자동매매: ✅ 가능\n\n💰 매매 신호:\n- 포지션: 매수\n- 신호 강도: 8.5/10\n- 진입가: $94,342.00\n- 손절가: $92,488.00\n- 목표: $98,268.00\n- 레버리지: 3x\n- 포지션 크기: 50.0%\n\n⚠️ 리스크 평가:\n- 종합 리스크: 7/10\n- 주요 리스크: 시장 변동성 상승, 급격한 가격 하락')
+2024-12-05 14:41:06,962 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: send_message
+2024-12-05 14:41:18,990 - telegram.Bot - DEBUG - _bot.py:3596 - Getting updates: [836994704]
+2024-12-05 14:41:18,992 - telegram.Bot - DEBUG - _bot.py:526 - (Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Aaron', id=583881676, type=<ChatType.PRIVATE>, username='mhyoon99'), date=datetime.datetime(2024, 12, 5, 5, 41, 19, tzinfo=<UTC>), delete_chat_photo=False, entities=(MessageEntity(length=5, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Aaron', id=583881676, is_bot=False, language_code='ko', username='mhyoon99'), group_chat_created=False, message_id=3828, supergroup_chat_created=False, text='/stop'), update_id=836994704),)
+2024-12-05 14:41:18,996 - telegram.Bot - DEBUG - _bot.py:527 - Exiting: get_updates
+2024-12-05 14:41:18,997 - telegram - DEBUG - telegram_bot.py:246 - 명령어 수신: stop
+2024-12-05 14:41:18,999 - telegram - INFO - telegram_bot.py:284 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 14:41:18,999 - telegram.Bot - DEBUG - _bot.py:524 - Entering: send_message
+2024-12-05 14:59:06,307 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 14:59:06,308 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 14:59:06,310 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:59:06,316 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 14:59:06,318 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:00:51,032 - telegram - INFO - telegram_bot.py:405 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:27:38,823 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:27:38,825 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:27:38,826 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:27:38,831 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:27:38,834 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:29:58,898 - telegram - INFO - telegram_bot.py:421 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:30:11,432 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:30:11,433 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:30:11,434 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:30:11,440 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:30:11,441 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:30:34,631 - telegram - ERROR - telegram_bot.py:482 - 분석 결과 포맷팅 중 에러: name 'safe_price' is not defined
+2024-12-05 15:30:35,633 - telegram - ERROR - telegram_bot.py:482 - 분석 결과 포맷팅 중 에러: name 'safe_price' is not defined
+2024-12-05 15:30:36,647 - telegram - ERROR - telegram_bot.py:482 - 분석 결과 포맷팅 중 에러: name 'safe_price' is not defined
+2024-12-05 15:30:37,660 - telegram - ERROR - telegram_bot.py:482 - 분석 결과 포맷팅 중 에러: name 'safe_price' is not defined
+2024-12-05 15:31:48,526 - telegram - INFO - telegram_bot.py:420 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:32:08,073 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:32:08,075 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:32:08,076 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:32:08,081 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:32:08,082 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:32:25,114 - telegram - ERROR - telegram_bot.py:760 - 포지션 조회 중 에러: bybit {"retCode":10002,"retMsg":"invalid request, please check your server timestamp or recv_window param. req_timestamp[1733380339329],server_timestamp[1733380346293],recv_window[5000]","result":{},"retExtInfo":{},"time":1733380346293}
+2024-12-05 15:33:08,599 - telegram - INFO - telegram_bot.py:420 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:38:03,390 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:38:03,392 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:38:03,393 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:38:03,881 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:38:03,882 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:39:45,339 - telegram - INFO - telegram_bot.py:423 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:40:01,596 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:40:01,596 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:40:01,597 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:40:02,104 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:40:02,105 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:42:01,847 - telegram - INFO - telegram_bot.py:423 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:43:58,052 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:43:58,053 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:43:58,054 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:43:58,533 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:43:58,533 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:47:05,615 - telegram - INFO - telegram_bot.py:432 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:47:16,249 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:47:16,251 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:47:16,252 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:47:16,771 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:47:16,771 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:48:10,447 - telegram - INFO - telegram_bot.py:579 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 06:00:00  96342.0  96375.5  95131.2  96000.0  23.818
+2024-12-04 06:15:00  96000.0  96375.5  95411.7  96296.0  23.706
+2024-12-04 06:30:00  96296.0  96375.5  96000.0  96375.5  35.683
+2024-12-04 06:45:00  96375.5  96375.5  96000.0  96000.0  30.229
+2024-12-04 07:00:00  96000.0  96375.5  95228.2  95938.4  26.298
+2024-12-05 15:48:10,481 - telegram - INFO - telegram_bot.py:587 - 기술적 지표 계산 완료
+2024-12-05 15:48:10,499 - telegram - INFO - telegram_bot.py:595 - 다이버전스 체크 완료
+2024-12-05 15:48:14,910 - telegram - INFO - telegram_bot.py:603 - 15m 분석 완료
+2024-12-05 15:48:14,914 - telegram - INFO - telegram_bot.py:640 - 15m 분석 결과 파일 저장 완료
+2024-12-05 15:48:14,915 - telegram - INFO - telegram_bot.py:613 - 15m 분석 결과 저장 완료: 1733381294
+2024-12-05 15:48:16,075 - telegram - INFO - telegram_bot.py:579 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-01 03:00:00  95762.1  96200.0  94381.1  95256.3    91.758
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0    98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1   204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3   156.919
+2024-12-01 07:00:00  94961.3  96200.0  86638.6  88400.0  4292.719
+2024-12-05 15:48:16,094 - telegram - INFO - telegram_bot.py:587 - 기술적 지표 계산 완료
+2024-12-05 15:48:16,119 - telegram - INFO - telegram_bot.py:595 - 다이버전스 체크 완료
+2024-12-05 15:48:20,057 - telegram - INFO - telegram_bot.py:603 - 1h 분석 완료
+2024-12-05 15:48:20,059 - telegram - INFO - telegram_bot.py:640 - 1h 분석 결과 파일 저장 완료
+2024-12-05 15:48:20,060 - telegram - INFO - telegram_bot.py:613 - 1h 분석 결과 저장 완료: 1733381300
+2024-12-05 15:48:21,218 - telegram - INFO - telegram_bot.py:579 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 15:48:21,238 - telegram - INFO - telegram_bot.py:587 - 기술적 지표 계산 완료
+2024-12-05 15:48:21,268 - telegram - INFO - telegram_bot.py:595 - 다이버전스 체크 완료
+2024-12-05 15:48:25,398 - telegram - INFO - telegram_bot.py:603 - 4h 분석 완료
+2024-12-05 15:48:25,401 - telegram - INFO - telegram_bot.py:640 - 4h 분석 결과 파일 저장 완료
+2024-12-05 15:48:25,402 - telegram - INFO - telegram_bot.py:613 - 4h 분석 결과 저장 완료: 1733381305
+2024-12-05 15:48:25,402 - telegram - ERROR - telegram_bot.py:503 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 15:48:25,403 - telegram - ERROR - telegram_bot.py:503 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 15:48:25,404 - telegram - ERROR - telegram_bot.py:503 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 15:48:26,575 - telegram - INFO - telegram_bot.py:579 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 15:48:26,597 - telegram - INFO - telegram_bot.py:587 - 기술적 지표 계산 완료
+2024-12-05 15:48:26,626 - telegram - INFO - telegram_bot.py:595 - 다이버전스 체크 완료
+2024-12-05 15:48:31,753 - telegram - ERROR - telegram_bot.py:620 - GPT 분석 결과가 없습니다
+2024-12-05 15:48:31,753 - telegram - ERROR - telegram_bot.py:326 - 최종 분석 중 에러: AITrader.create_final_analysis() missing 1 required positional argument: 'timeframe_results'
+2024-12-05 15:48:52,768 - telegram - INFO - telegram_bot.py:435 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:51:08,361 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:51:08,363 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:51:08,364 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:51:08,902 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:51:08,902 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 15:51:19,843 - telegram - ERROR - telegram_bot.py:503 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 15:51:19,844 - telegram - ERROR - telegram_bot.py:503 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 15:51:19,845 - telegram - ERROR - telegram_bot.py:503 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 15:58:03,580 - telegram - INFO - telegram_bot.py:435 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 15:58:17,586 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 15:58:17,587 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 15:58:17,588 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:58:18,139 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 15:58:18,140 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 16:00:04,544 - telegram - INFO - telegram_bot.py:441 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 16:00:24,325 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 16:00:24,325 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 16:00:24,327 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 16:00:24,833 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 16:00:24,833 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 16:00:52,789 - telegram - ERROR - telegram_bot.py:509 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 16:00:52,790 - telegram - ERROR - telegram_bot.py:509 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 16:00:52,790 - telegram - ERROR - telegram_bot.py:509 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 16:06:00,319 - telegram - INFO - telegram_bot.py:441 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 16:15:16,851 - telegram - INFO - telegram_bot.py:83 - 저장된 분석 결과 로드 완료
+2024-12-05 16:15:16,853 - telegram - INFO - telegram_bot.py:103 - 저장된 분석 시간 로드 완료
+2024-12-05 16:15:16,855 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 16:15:17,340 - telegram - INFO - telegram_bot.py:191 - 텔레그램 봇 초기화 완료
+2024-12-05 16:15:17,340 - telegram - INFO - telegram_bot.py:202 - 봇 시작됨
+2024-12-05 16:15:49,977 - telegram - ERROR - telegram_bot.py:507 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 16:15:49,978 - telegram - ERROR - telegram_bot.py:507 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 16:15:49,982 - telegram - ERROR - telegram_bot.py:507 - 가격 변환 중 에러: could not convert string to float: '95601.65 - 97552.70'
+2024-12-05 16:16:17,752 - telegram - INFO - telegram_bot.py:583 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 06:30:00  96296.0  96375.5  96000.0  96375.5  35.683
+2024-12-04 06:45:00  96375.5  96375.5  96000.0  96000.0  30.229
+2024-12-04 07:00:00  96000.0  96375.5  95228.2  95938.4  26.298
+2024-12-04 07:15:00  95938.4  96375.5  95246.3  95400.0  31.022
+2024-12-04 07:30:00  95400.0  96375.5  95246.3  95938.4  25.147
+2024-12-05 16:16:17,786 - telegram - INFO - telegram_bot.py:591 - 기술적 지표 계산 완료
+2024-12-05 16:16:17,803 - telegram - INFO - telegram_bot.py:599 - 다이버전스 체크 완료
+2024-12-05 16:16:23,559 - telegram - INFO - telegram_bot.py:607 - 15m 분석 완료
+2024-12-05 16:16:23,561 - telegram - INFO - telegram_bot.py:644 - 15m 분석 결과 파일 저장 완료
+2024-12-05 16:16:23,562 - telegram - INFO - telegram_bot.py:617 - 15m 분석 결과 저장 완료: 1733382983
+2024-12-05 16:16:23,562 - telegram - ERROR - telegram_bot.py:507 - 가격 변환 중 에러: could not convert string to float: '+4% ~ +10%'
+2024-12-05 16:16:24,729 - telegram - INFO - telegram_bot.py:583 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0    98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1   204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3   156.919
+2024-12-01 07:00:00  94961.3  96200.0  86638.6  88400.0  4292.719
+2024-12-01 08:00:00  88400.0  96000.0  88200.0  95341.5  1673.880
+2024-12-05 16:16:24,756 - telegram - INFO - telegram_bot.py:591 - 기술적 지표 계산 완료
+2024-12-05 16:16:24,789 - telegram - INFO - telegram_bot.py:599 - 다이버전스 체크 완료
+2024-12-05 16:16:29,405 - telegram - INFO - telegram_bot.py:607 - 1h 분석 완료
+2024-12-05 16:16:29,406 - telegram - INFO - telegram_bot.py:644 - 1h 분석 결과 파일 저장 완료
+2024-12-05 16:16:29,407 - telegram - INFO - telegram_bot.py:617 - 1h 분석 결과 저장 완료: 1733382989
+2024-12-05 16:16:30,562 - telegram - INFO - telegram_bot.py:583 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 16:16:30,580 - telegram - INFO - telegram_bot.py:591 - 기술적 지표 계산 완료
+2024-12-05 16:16:30,608 - telegram - INFO - telegram_bot.py:599 - 다이버전스 체크 완료
+2024-12-05 16:16:35,197 - telegram - INFO - telegram_bot.py:607 - 4h 분석 완료
+2024-12-05 16:16:35,199 - telegram - INFO - telegram_bot.py:644 - 4h 분석 결과 파일 저장 완료
+2024-12-05 16:16:35,200 - telegram - INFO - telegram_bot.py:617 - 4h 분석 결과 저장 완료: 1733382995
+2024-12-05 16:16:35,200 - telegram - ERROR - telegram_bot.py:507 - 가격 변환 중 에러: could not convert string to float: '+4% to +10% from entry price'
+2024-12-05 16:16:36,353 - telegram - INFO - telegram_bot.py:583 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 16:16:36,375 - telegram - INFO - telegram_bot.py:591 - 기술적 지표 계산 완료
+2024-12-05 16:16:36,413 - telegram - INFO - telegram_bot.py:599 - 다이버전스 체크 완료
+2024-12-05 16:16:40,607 - telegram - INFO - telegram_bot.py:607 - 1d 분석 완료
+2024-12-05 16:16:40,608 - telegram - INFO - telegram_bot.py:644 - 1d 분석 결과 파일 저장 완료
+2024-12-05 16:16:40,609 - telegram - INFO - telegram_bot.py:617 - 1d 분석 결과 저장 완료: 1733383000
+2024-12-05 16:16:41,614 - telegram - INFO - telegram_bot.py:644 - final 분석 결과 파일 저장 완료
+2024-12-05 16:18:13,746 - telegram - ERROR - telegram_bot.py:507 - 가격 변환 중 에러: could not convert string to float: '+4% ~ +10%'
+2024-12-05 16:18:15,773 - telegram - ERROR - telegram_bot.py:507 - 가격 변환 중 에러: could not convert string to float: '+4% to +10% from entry price'
+2024-12-05 16:18:41,603 - telegram - INFO - telegram_bot.py:439 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 16:22:56,690 - telegram - INFO - telegram_bot.py:87 - 저장된 분석 결과 로드 완료
+2024-12-05 16:22:56,690 - telegram - INFO - telegram_bot.py:107 - 저장된 분석 시간 로드 완료
+2024-12-05 16:22:56,692 - telegram - INFO - telegram_bot.py:195 - 텔레그램 봇 초기화 완료
+2024-12-05 16:22:57,186 - telegram - INFO - telegram_bot.py:195 - 텔레그램 봇 초기화 완료
+2024-12-05 16:22:57,186 - telegram - INFO - telegram_bot.py:206 - 봇 시작됨
+2024-12-05 16:23:27,457 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+4% ~ +10%'
+2024-12-05 16:23:29,477 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+4% to +10% from entry price'
+2024-12-05 16:24:08,736 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 06:30:00  96296.0  96375.5  96000.0  96375.5  35.683
+2024-12-04 06:45:00  96375.5  96375.5  96000.0  96000.0  30.229
+2024-12-04 07:00:00  96000.0  96375.5  95228.2  95938.4  26.298
+2024-12-04 07:15:00  95938.4  96375.5  95246.3  95400.0  31.022
+2024-12-04 07:30:00  95400.0  96375.5  95246.3  95938.4  25.147
+2024-12-05 16:24:08,769 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 16:24:08,786 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 16:24:13,326 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 16:24:13,329 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 16:24:13,329 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733383453
+2024-12-05 16:24:14,470 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-01 04:00:00  95256.3  96200.0  94005.1  95548.0    98.544
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1   204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3   156.919
+2024-12-01 07:00:00  94961.3  96200.0  86638.6  88400.0  4292.719
+2024-12-01 08:00:00  88400.0  96000.0  88200.0  95341.5  1673.880
+2024-12-05 16:24:14,484 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 16:24:14,507 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 16:24:19,288 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 16:24:19,292 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 16:24:19,293 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733383459
+2024-12-05 16:24:20,481 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 16:00:00   94000.0  172500.0  32105.5   89481.4  21916.924
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-12-05 16:24:20,528 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 16:24:20,558 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 16:24:24,820 - telegram - INFO - telegram_bot.py:612 - 4h 분석 완료
+2024-12-05 16:24:24,821 - telegram - INFO - telegram_bot.py:649 - 4h 분석 결과 파일 저장 완료
+2024-12-05 16:24:24,822 - telegram - INFO - telegram_bot.py:622 - 4h 분석 결과 저장 완료: 1733383464
+2024-12-05 16:24:24,822 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+5.88%'
+2024-12-05 16:24:25,977 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+               open     high      low    close     volume
+timestamp                                                
+2024-08-28  59202.8  66000.0  57500.0  58984.0  68065.472
+2024-08-29  58984.0  61822.8  58400.0  58666.6   4297.613
+2024-08-30  58666.6  65061.3  53281.2  58750.0   7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2   5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0   5122.513
+2024-12-05 16:24:25,987 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 16:24:26,004 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 16:24:30,626 - telegram - INFO - telegram_bot.py:612 - 1d 분석 완료
+2024-12-05 16:24:30,627 - telegram - INFO - telegram_bot.py:649 - 1d 분석 결과 파일 저장 완료
+2024-12-05 16:24:30,627 - telegram - INFO - telegram_bot.py:622 - 1d 분석 결과 저장 완료: 1733383470
+2024-12-05 16:24:30,628 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+4% to +10%'
+2024-12-05 16:24:31,638 - telegram - INFO - telegram_bot.py:649 - final 분석 결과 파일 저장 완료
+2024-12-05 16:26:47,752 - telegram - INFO - telegram_bot.py:443 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-05 16:27:52,389 - telegram - INFO - telegram_bot.py:87 - 저장된 분석 결과 로드 완료
+2024-12-05 16:27:52,390 - telegram - INFO - telegram_bot.py:107 - 저장된 분석 시간 로드 완료
+2024-12-05 16:27:52,391 - telegram - INFO - telegram_bot.py:195 - 텔레그램 봇 초기화 완료
+2024-12-05 16:27:53,161 - telegram - INFO - telegram_bot.py:195 - 텔레그램 봇 초기화 완료
+2024-12-05 16:27:53,161 - telegram - INFO - telegram_bot.py:206 - 봇 시작됨
+2024-12-05 16:30:04,564 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 06:45:00  96375.5  96375.5  96000.0  96000.0  30.229
+2024-12-04 07:00:00  96000.0  96375.5  95228.2  95938.4  26.298
+2024-12-04 07:15:00  95938.4  96375.5  95246.3  95400.0  31.022
+2024-12-04 07:30:00  95400.0  96375.5  95246.3  95938.4  25.147
+2024-12-04 07:45:00  95938.4  96375.5  95400.0  96162.5   2.572
+2024-12-05 16:30:04,597 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 16:30:04,615 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 16:30:08,933 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 16:30:08,937 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 16:30:08,938 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733383808
+2024-12-05 16:45:00,698 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 06:45:00  96375.5  96375.5  96000.0  96000.0  30.229
+2024-12-04 07:00:00  96000.0  96375.5  95228.2  95938.4  26.298
+2024-12-04 07:15:00  95938.4  96375.5  95246.3  95400.0  31.022
+2024-12-04 07:30:00  95400.0  96375.5  95246.3  95938.4  25.147
+2024-12-04 07:45:00  95938.4  96375.5  95400.0  96162.5   2.572
+2024-12-05 16:45:00,716 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 16:45:00,738 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 16:45:05,096 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 16:45:05,097 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 16:45:05,098 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733384705
+2024-12-05 16:45:05,099 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+4%'
+2024-12-05 17:00:01,757 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-04 07:15:00  95938.4  96375.5  95246.3  95400.0    31.022
+2024-12-04 07:30:00  95400.0  96375.5  95246.3  95938.4    25.147
+2024-12-04 07:45:00  95938.4  96375.5  95400.0  96162.5     2.572
+2024-12-04 08:00:00  96162.5  97003.4  91480.0  96901.0  1663.423
+2024-12-04 08:15:00  96901.0  96901.0  96765.0  96765.0    64.500
+2024-12-05 17:00:01,779 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 17:00:01,800 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 17:00:05,873 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 17:00:05,874 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 17:00:05,875 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733385605
+2024-12-05 17:00:36,167 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-01 05:00:00  95548.0  96200.0  86638.6  91224.1   204.245
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3   156.919
+2024-12-01 07:00:00  94961.3  96200.0  86638.6  88400.0  4292.719
+2024-12-01 08:00:00  88400.0  96000.0  88200.0  95341.5  1673.880
+2024-12-01 09:00:00  95341.5  96200.0  93641.8  95800.0   202.532
+2024-12-05 17:00:36,217 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 17:00:36,258 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 17:00:41,136 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 17:00:41,138 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 17:00:41,138 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733385641
+2024-12-05 17:01:11,442 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-18 20:00:00   89481.4   89775.8  86212.4   89775.8    462.296
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-11-19 12:00:00   91795.3  103660.8  90000.0   92218.4   6110.905
+2024-12-05 17:01:11,468 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 17:01:11,484 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 17:01:16,186 - telegram - INFO - telegram_bot.py:612 - 4h 분석 완료
+2024-12-05 17:01:16,188 - telegram - INFO - telegram_bot.py:649 - 4h 분석 결과 파일 저장 완료
+2024-12-05 17:01:16,189 - telegram - INFO - telegram_bot.py:622 - 4h 분석 결과 저장 완료: 1733385676
+2024-12-05 17:01:16,189 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+6%'
+2024-12-05 17:01:16,192 - telegram - INFO - telegram_bot.py:649 - final 분석 결과 파일 저장 완료
+2024-12-05 17:15:02,631 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-04 07:30:00  95400.0  96375.5  95246.3  95938.4    25.147
+2024-12-04 07:45:00  95938.4  96375.5  95400.0  96162.5     2.572
+2024-12-04 08:00:00  96162.5  97003.4  91480.0  96901.0  1663.423
+2024-12-04 08:15:00  96901.0  96901.0  96765.0  96765.0    64.500
+2024-12-04 08:30:00  96765.0  96766.0  96400.0  96677.9    12.123
+2024-12-05 17:15:02,650 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 17:15:02,669 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 17:15:06,810 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 17:15:06,813 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 17:15:06,814 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733386506
+2024-12-05 17:15:06,815 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '-8%'
+2024-12-05 17:19:32,393 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '-8%'
+2024-12-05 17:19:34,408 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+6%'
+2024-12-05 17:19:35,409 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+4% to +10%'
+2024-12-05 17:30:03,403 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-04 07:45:00  95938.4  96375.5  95400.0  96162.5     2.572
+2024-12-04 08:00:00  96162.5  97003.4  91480.0  96901.0  1663.423
+2024-12-04 08:15:00  96901.0  96901.0  96765.0  96765.0    64.500
+2024-12-04 08:30:00  96765.0  96766.0  96400.0  96677.9    12.123
+2024-12-04 08:45:00  96677.9  96766.0  96131.5  96766.0    13.901
+2024-12-05 17:30:03,430 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 17:30:03,457 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 17:30:08,256 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 17:30:08,260 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 17:30:08,261 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733387408
+2024-12-05 17:45:04,772 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-04 08:00:00  96162.5  97003.4  91480.0  96901.0  1663.423
+2024-12-04 08:15:00  96901.0  96901.0  96765.0  96765.0    64.500
+2024-12-04 08:30:00  96765.0  96766.0  96400.0  96677.9    12.123
+2024-12-04 08:45:00  96677.9  96766.0  96131.5  96766.0    13.901
+2024-12-04 09:00:00  96766.0  96766.0  95548.0  96429.4    17.828
+2024-12-05 17:45:04,805 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 17:45:04,836 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 17:45:09,744 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 17:45:09,745 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 17:45:09,745 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733388309
+2024-12-05 18:00:01,307 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 08:15:00  96901.0  96901.0  96765.0  96765.0  64.500
+2024-12-04 08:30:00  96765.0  96766.0  96400.0  96677.9  12.123
+2024-12-04 08:45:00  96677.9  96766.0  96131.5  96766.0  13.901
+2024-12-04 09:00:00  96766.0  96766.0  95548.0  96429.4  17.828
+2024-12-04 09:15:00  96429.4  96766.0  94545.7  96543.8  20.939
+2024-12-05 18:00:01,325 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 18:00:01,346 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 18:00:05,705 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 18:00:05,706 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 18:00:05,707 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733389205
+2024-12-05 18:00:05,707 - telegram - ERROR - telegram_bot.py:548 - 분석 결과 포맷팅 중 에러: list index out of range
+2024-12-05 18:00:35,926 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-01 06:00:00  91224.1  95100.0  90588.5  94961.3   156.919
+2024-12-01 07:00:00  94961.3  96200.0  86638.6  88400.0  4292.719
+2024-12-01 08:00:00  88400.0  96000.0  88200.0  95341.5  1673.880
+2024-12-01 09:00:00  95341.5  96200.0  93641.8  95800.0   202.532
+2024-12-01 10:00:00  95800.0  99000.0  86638.6  97149.1   187.182
+2024-12-05 18:00:35,939 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 18:00:35,956 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 18:00:40,562 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 18:00:40,565 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 18:00:40,566 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733389240
+2024-12-05 18:15:02,083 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 08:30:00  96765.0  96766.0  96400.0  96677.9  12.123
+2024-12-04 08:45:00  96677.9  96766.0  96131.5  96766.0  13.901
+2024-12-04 09:00:00  96766.0  96766.0  95548.0  96429.4  17.828
+2024-12-04 09:15:00  96429.4  96766.0  94545.7  96543.8  20.939
+2024-12-04 09:30:00  96543.8  96766.0  94539.7  95839.7  17.109
+2024-12-05 18:15:02,105 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 18:15:02,127 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 18:15:06,034 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 18:15:06,035 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 18:15:06,036 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733390106
+2024-12-05 18:15:06,036 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '-10% 이내'
+2024-12-05 18:30:02,658 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 08:45:00  96677.9  96766.0  96131.5  96766.0  13.901
+2024-12-04 09:00:00  96766.0  96766.0  95548.0  96429.4  17.828
+2024-12-04 09:15:00  96429.4  96766.0  94545.7  96543.8  20.939
+2024-12-04 09:30:00  96543.8  96766.0  94539.7  95839.7  17.109
+2024-12-04 09:45:00  95839.7  96766.0  94760.9  94807.0  15.946
+2024-12-05 18:30:02,677 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 18:30:02,696 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 18:30:07,194 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 18:30:07,198 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 18:30:07,199 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733391007
+2024-12-05 18:45:03,962 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 09:00:00  96766.0  96766.0  95548.0  96429.4  17.828
+2024-12-04 09:15:00  96429.4  96766.0  94545.7  96543.8  20.939
+2024-12-04 09:30:00  96543.8  96766.0  94539.7  95839.7  17.109
+2024-12-04 09:45:00  95839.7  96766.0  94760.9  94807.0  15.946
+2024-12-04 10:00:00  94807.0  96766.0  94530.0  96143.4  14.283
+2024-12-05 18:45:04,008 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 18:45:04,043 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 18:45:08,726 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 18:45:08,727 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 18:45:08,727 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733391908
+2024-12-05 18:45:08,728 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '-6%'
+2024-12-05 19:00:05,382 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 09:15:00  96429.4  96766.0  94545.7  96543.8  20.939
+2024-12-04 09:30:00  96543.8  96766.0  94539.7  95839.7  17.109
+2024-12-04 09:45:00  95839.7  96766.0  94760.9  94807.0  15.946
+2024-12-04 10:00:00  94807.0  96766.0  94530.0  96143.4  14.283
+2024-12-04 10:15:00  96143.4  96766.0  95534.8  96765.9  17.954
+2024-12-05 19:00:05,396 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 19:00:05,413 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 19:00:10,310 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 19:00:10,311 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 19:00:10,311 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733392810
+2024-12-05 19:00:10,312 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+6%'
+2024-12-05 19:00:40,621 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-01 07:00:00  94961.3  96200.0  86638.6  88400.0  4292.719
+2024-12-01 08:00:00  88400.0  96000.0  88200.0  95341.5  1673.880
+2024-12-01 09:00:00  95341.5  96200.0  93641.8  95800.0   202.532
+2024-12-01 10:00:00  95800.0  99000.0  86638.6  97149.1   187.182
+2024-12-01 11:00:00  97149.1  98465.4  94964.5  97096.8    90.021
+2024-12-05 19:00:40,642 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 19:00:40,662 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 19:00:45,932 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 19:00:45,936 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 19:00:45,937 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733392845
+2024-12-05 19:00:45,938 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+6%'
+2024-12-05 19:15:02,467 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-04 09:30:00  96543.8  96766.0  94539.7  95839.7  17.109
+2024-12-04 09:45:00  95839.7  96766.0  94760.9  94807.0  15.946
+2024-12-04 10:00:00  94807.0  96766.0  94530.0  96143.4  14.283
+2024-12-04 10:15:00  96143.4  96766.0  95534.8  96765.9  17.954
+2024-12-04 10:30:00  96765.9  96766.0  96765.9  96765.9  18.071
+2024-12-05 19:15:02,488 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 19:15:02,512 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 19:15:07,954 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 19:15:07,956 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 19:15:07,956 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733393707
+2024-12-05 19:30:04,543 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-04 09:45:00  95839.7  96766.0  94760.9  94807.0   15.946
+2024-12-04 10:00:00  94807.0  96766.0  94530.0  96143.4   14.283
+2024-12-04 10:15:00  96143.4  96766.0  95534.8  96765.9   17.954
+2024-12-04 10:30:00  96765.9  96766.0  96765.9  96765.9   18.071
+2024-12-04 10:45:00  96765.9  96766.0  96765.9  96766.0  137.375
+2024-12-05 19:30:04,568 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 19:30:04,584 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 19:30:08,784 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 19:30:08,785 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 19:30:08,786 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733394608
+2024-12-05 19:30:08,786 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+4.1%'
+2024-12-05 19:45:00,399 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-04 09:45:00  95839.7  96766.0  94760.9  94807.0   15.946
+2024-12-04 10:00:00  94807.0  96766.0  94530.0  96143.4   14.283
+2024-12-04 10:15:00  96143.4  96766.0  95534.8  96765.9   17.954
+2024-12-04 10:30:00  96765.9  96766.0  96765.9  96765.9   18.071
+2024-12-04 10:45:00  96765.9  96766.0  96765.9  96766.0  137.375
+2024-12-05 19:45:00,421 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 19:45:00,440 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 19:45:04,407 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 19:45:04,410 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 19:45:04,411 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733395504
+2024-12-05 20:00:01,362 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 10:15:00  96143.4   96766.0  95534.8  96765.9    17.954
+2024-12-04 10:30:00  96765.9   96766.0  96765.9  96765.9    18.071
+2024-12-04 10:45:00  96765.9   96766.0  96765.9  96766.0   137.375
+2024-12-04 11:00:00  96766.0  102395.8  93113.3  99340.6  1050.198
+2024-12-04 11:15:00  99340.6  102258.0  94000.0  96200.0   125.286
+2024-12-05 20:00:01,383 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 20:00:01,401 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 20:00:06,301 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 20:00:06,305 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 20:00:06,306 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733396406
+2024-12-05 20:00:36,551 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-01 08:00:00  88400.0  96000.0  88200.0  95341.5  1673.880
+2024-12-01 09:00:00  95341.5  96200.0  93641.8  95800.0   202.532
+2024-12-01 10:00:00  95800.0  99000.0  86638.6  97149.1   187.182
+2024-12-01 11:00:00  97149.1  98465.4  94964.5  97096.8    90.021
+2024-12-01 12:00:00  97096.8  98172.8  90220.0  95341.5   366.561
+2024-12-05 20:00:36,574 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 20:00:36,596 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 20:00:41,051 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 20:00:41,053 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 20:00:41,054 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733396441
+2024-12-05 20:00:41,055 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+6%'
+2024-12-05 20:15:02,528 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 10:30:00  96765.9   96766.0  96765.9  96765.9    18.071
+2024-12-04 10:45:00  96765.9   96766.0  96765.9  96766.0   137.375
+2024-12-04 11:00:00  96766.0  102395.8  93113.3  99340.6  1050.198
+2024-12-04 11:15:00  99340.6  102258.0  94000.0  96200.0   125.286
+2024-12-04 11:30:00  96200.0  101800.0  90122.0  93493.1  4044.505
+2024-12-05 20:15:02,549 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 20:15:02,567 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 20:15:07,896 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 20:15:07,898 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 20:15:07,898 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733397307
+2024-12-05 20:30:04,817 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 10:45:00  96765.9   96766.0  96765.9  96766.0   137.375
+2024-12-04 11:00:00  96766.0  102395.8  93113.3  99340.6  1050.198
+2024-12-04 11:15:00  99340.6  102258.0  94000.0  96200.0   125.286
+2024-12-04 11:30:00  96200.0  101800.0  90122.0  93493.1  4044.505
+2024-12-04 11:45:00  93493.1   95976.4  92578.5  93203.3    24.470
+2024-12-05 20:30:04,841 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 20:30:04,868 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 20:30:09,413 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 20:30:09,415 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 20:30:09,415 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733398209
+2024-12-05 20:45:01,133 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 11:00:00  96766.0  102395.8  93113.3  99340.6  1050.198
+2024-12-04 11:15:00  99340.6  102258.0  94000.0  96200.0   125.286
+2024-12-04 11:30:00  96200.0  101800.0  90122.0  93493.1  4044.505
+2024-12-04 11:45:00  93493.1   95976.4  92578.5  93203.3    24.470
+2024-12-04 12:00:00  93203.3   97011.4  90220.0  95000.0   277.034
+2024-12-05 20:45:01,147 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 20:45:01,164 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 20:45:05,873 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 20:45:05,876 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 20:45:05,877 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733399105
+2024-12-05 21:00:02,408 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 11:15:00  99340.6  102258.0  94000.0  96200.0   125.286
+2024-12-04 11:30:00  96200.0  101800.0  90122.0  93493.1  4044.505
+2024-12-04 11:45:00  93493.1   95976.4  92578.5  93203.3    24.470
+2024-12-04 12:00:00  93203.3   97011.4  90220.0  95000.0   277.034
+2024-12-04 12:15:00  95000.0   97006.7  91154.0  95299.1    73.701
+2024-12-05 21:00:02,421 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 21:00:02,438 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 21:00:06,880 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 21:00:06,882 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 21:00:06,882 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733400006
+2024-12-05 21:00:37,142 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-01 09:00:00  95341.5   96200.0  93641.8  95800.0  202.532
+2024-12-01 10:00:00  95800.0   99000.0  86638.6  97149.1  187.182
+2024-12-01 11:00:00  97149.1   98465.4  94964.5  97096.8   90.021
+2024-12-01 12:00:00  97096.8   98172.8  90220.0  95341.5  366.561
+2024-12-01 13:00:00  95341.5  102600.0  92047.2  96945.2  996.508
+2024-12-05 21:00:37,166 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 21:00:37,182 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 21:00:42,172 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 21:00:42,176 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 21:00:42,177 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733400042
+2024-12-05 21:01:12,416 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                         open      high      low     close     volume
+timestamp                                                            
+2024-11-19 00:00:00   89775.8  100000.0  85000.0   90774.5   2265.678
+2024-11-19 04:00:00   90774.5  138025.9  84500.0  133875.6  13560.079
+2024-11-19 08:00:00  133875.6  180000.0  89143.9   91795.3  21430.357
+2024-11-19 12:00:00   91795.3  103660.8  90000.0   92218.4   6110.905
+2024-11-19 16:00:00   92218.4   97747.0  92210.3   93203.3    397.690
+2024-12-05 21:01:12,429 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 21:01:12,446 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 21:01:18,401 - telegram - INFO - telegram_bot.py:612 - 4h 분석 완료
+2024-12-05 21:01:18,405 - telegram - INFO - telegram_bot.py:649 - 4h 분석 결과 파일 저장 완료
+2024-12-05 21:01:18,406 - telegram - INFO - telegram_bot.py:622 - 4h 분석 결과 저장 완료: 1733400078
+2024-12-05 21:01:18,406 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '92444.18 - 94097.46'
+2024-12-05 21:01:18,407 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '92444.18 - 94097.46'
+2024-12-05 21:01:18,408 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '92444.18 - 94097.46'
+2024-12-05 21:01:18,411 - telegram - INFO - telegram_bot.py:649 - final 분석 결과 파일 저장 완료
+2024-12-05 21:15:04,850 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 11:30:00  96200.0  101800.0  90122.0  93493.1  4044.505
+2024-12-04 11:45:00  93493.1   95976.4  92578.5  93203.3    24.470
+2024-12-04 12:00:00  93203.3   97011.4  90220.0  95000.0   277.034
+2024-12-04 12:15:00  95000.0   97006.7  91154.0  95299.1    73.701
+2024-12-04 12:30:00  95299.1   96700.0  90122.0  94694.3   641.202
+2024-12-05 21:15:04,863 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 21:15:04,880 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 21:15:09,673 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 21:15:09,676 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 21:15:09,677 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733400909
+2024-12-05 21:30:01,236 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-04 11:45:00  93493.1  95976.4  92578.5  93203.3   24.470
+2024-12-04 12:00:00  93203.3  97011.4  90220.0  95000.0  277.034
+2024-12-04 12:15:00  95000.0  97006.7  91154.0  95299.1   73.701
+2024-12-04 12:30:00  95299.1  96700.0  90122.0  94694.3  641.202
+2024-12-04 12:45:00  94694.3  95950.0  92080.8  93548.5   21.035
+2024-12-05 21:30:01,256 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 21:30:01,279 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 21:30:06,082 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 21:30:06,087 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 21:30:06,088 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733401806
+2024-12-05 21:45:02,782 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-04 12:00:00  93203.3  97011.4  90220.0  95000.0  277.034
+2024-12-04 12:15:00  95000.0  97006.7  91154.0  95299.1   73.701
+2024-12-04 12:30:00  95299.1  96700.0  90122.0  94694.3  641.202
+2024-12-04 12:45:00  94694.3  95950.0  92080.8  93548.5   21.035
+2024-12-04 13:00:00  93548.5  97000.0  91480.0  96131.5  810.814
+2024-12-05 21:45:02,795 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 21:45:02,812 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 21:45:07,482 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 21:45:07,486 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 21:45:07,487 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733402707
+2024-12-05 21:45:07,488 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+6.2%'
+2024-12-05 22:00:04,035 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-04 12:15:00  95000.0  97006.7  91154.0  95299.1   73.701
+2024-12-04 12:30:00  95299.1  96700.0  90122.0  94694.3  641.202
+2024-12-04 12:45:00  94694.3  95950.0  92080.8  93548.5   21.035
+2024-12-04 13:00:00  93548.5  97000.0  91480.0  96131.5  810.814
+2024-12-04 13:15:00  96131.5  96999.0  90981.1  94964.5  714.098
+2024-12-05 22:00:04,070 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 22:00:04,095 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 22:00:08,019 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 22:00:08,023 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 22:00:08,024 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733403608
+2024-12-05 22:00:38,355 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-01 10:00:00  95800.0   99000.0  86638.6  97149.1   187.182
+2024-12-01 11:00:00  97149.1   98465.4  94964.5  97096.8    90.021
+2024-12-01 12:00:00  97096.8   98172.8  90220.0  95341.5   366.561
+2024-12-01 13:00:00  95341.5  102600.0  92047.2  96945.2   996.508
+2024-12-01 14:00:00  96945.2  102600.0  90200.0  92888.0  3014.300
+2024-12-05 22:00:38,382 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 22:00:38,402 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 22:00:42,822 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 22:00:42,823 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 22:00:42,824 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733403642
+2024-12-05 22:15:04,302 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-04 12:30:00  95299.1  96700.0  90122.0  94694.3  641.202
+2024-12-04 12:45:00  94694.3  95950.0  92080.8  93548.5   21.035
+2024-12-04 13:00:00  93548.5  97000.0  91480.0  96131.5  810.814
+2024-12-04 13:15:00  96131.5  96999.0  90981.1  94964.5  714.098
+2024-12-04 13:30:00  94964.5  95500.0  90981.1  92740.0   69.474
+2024-12-05 22:15:04,315 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 22:15:04,334 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 22:15:09,039 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 22:15:09,044 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 22:15:09,045 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733404509
+2024-12-05 22:30:00,536 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-04 12:30:00  95299.1  96700.0  90122.0  94694.3  641.202
+2024-12-04 12:45:00  94694.3  95950.0  92080.8  93548.5   21.035
+2024-12-04 13:00:00  93548.5  97000.0  91480.0  96131.5  810.814
+2024-12-04 13:15:00  96131.5  96999.0  90981.1  94964.5  714.098
+2024-12-04 13:30:00  94964.5  95500.0  90981.1  92740.0   69.474
+2024-12-05 22:30:00,552 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 22:30:00,568 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 22:30:04,996 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 22:30:05,000 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 22:30:05,001 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733405404
+2024-12-05 22:45:01,613 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-04 13:00:00  93548.5  97000.0  91480.0  96131.5   810.814
+2024-12-04 13:15:00  96131.5  96999.0  90981.1  94964.5   714.098
+2024-12-04 13:30:00  94964.5  95500.0  90981.1  92740.0    69.474
+2024-12-04 13:45:00  92740.0  95500.0  91755.4  94672.8    25.322
+2024-12-04 14:00:00  94672.8  95500.0  88766.0  90289.9  1122.149
+2024-12-05 22:45:01,647 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 22:45:01,679 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 22:45:06,060 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 22:45:06,064 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 22:45:06,065 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733406306
+2024-12-05 22:45:06,066 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '+4%'
+2024-12-05 23:00:02,577 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-04 13:15:00  96131.5  96999.0  90981.1  94964.5   714.098
+2024-12-04 13:30:00  94964.5  95500.0  90981.1  92740.0    69.474
+2024-12-04 13:45:00  92740.0  95500.0  91755.4  94672.8    25.322
+2024-12-04 14:00:00  94672.8  95500.0  88766.0  90289.9  1122.149
+2024-12-04 14:15:00  90289.9  94000.0  89421.5  91491.1    25.757
+2024-12-05 23:00:02,590 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 23:00:02,607 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 23:00:07,371 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 23:00:07,373 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 23:00:07,373 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733407207
+2024-12-05 23:00:37,601 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-01 11:00:00  97149.1   98465.4  94964.5  97096.8    90.021
+2024-12-01 12:00:00  97096.8   98172.8  90220.0  95341.5   366.561
+2024-12-01 13:00:00  95341.5  102600.0  92047.2  96945.2   996.508
+2024-12-01 14:00:00  96945.2  102600.0  90200.0  92888.0  3014.300
+2024-12-01 15:00:00  92888.0   99999.0  91379.8  97800.0  2973.956
+2024-12-05 23:00:37,617 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 23:00:37,635 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 23:00:41,695 - telegram - INFO - telegram_bot.py:612 - 1h 분석 완료
+2024-12-05 23:00:41,697 - telegram - INFO - telegram_bot.py:649 - 1h 분석 결과 파일 저장 완료
+2024-12-05 23:00:41,697 - telegram - INFO - telegram_bot.py:622 - 1h 분석 결과 저장 완료: 1733407241
+2024-12-05 23:15:03,338 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-04 13:30:00  94964.5  95500.0  90981.1  92740.0    69.474
+2024-12-04 13:45:00  92740.0  95500.0  91755.4  94672.8    25.322
+2024-12-04 14:00:00  94672.8  95500.0  88766.0  90289.9  1122.149
+2024-12-04 14:15:00  90289.9  94000.0  89421.5  91491.1    25.757
+2024-12-04 14:30:00  91491.1  95628.6  90200.0  92425.4   737.653
+2024-12-05 23:15:03,375 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 23:15:03,410 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 23:15:07,293 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 23:15:07,294 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 23:15:07,295 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733408107
+2024-12-05 23:30:03,782 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 13:45:00  92740.0   95500.0  91755.4  94672.8    25.322
+2024-12-04 14:00:00  94672.8   95500.0  88766.0  90289.9  1122.149
+2024-12-04 14:15:00  90289.9   94000.0  89421.5  91491.1    25.757
+2024-12-04 14:30:00  91491.1   95628.6  90200.0  92425.4   737.653
+2024-12-04 14:45:00  92425.4  101267.7  90556.8  93226.2    99.148
+2024-12-05 23:30:03,792 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 23:30:03,809 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 23:30:08,174 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 23:30:08,177 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 23:30:08,179 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733409008
+2024-12-05 23:30:08,180 - telegram - ERROR - telegram_bot.py:512 - 가격 변환 중 에러: could not convert string to float: '진입가의 -5'
+2024-12-05 23:45:04,708 - telegram - INFO - telegram_bot.py:588 - 데이터 조회 결과: 
+                        open      high      low    close    volume
+timestamp                                                         
+2024-12-04 14:00:00  94672.8   95500.0  88766.0  90289.9  1122.149
+2024-12-04 14:15:00  90289.9   94000.0  89421.5  91491.1    25.757
+2024-12-04 14:30:00  91491.1   95628.6  90200.0  92425.4   737.653
+2024-12-04 14:45:00  92425.4  101267.7  90556.8  93226.2    99.148
+2024-12-04 15:00:00  93226.2   97000.0  91463.7  93893.5    27.319
+2024-12-05 23:45:04,734 - telegram - INFO - telegram_bot.py:596 - 기술적 지표 계산 완료
+2024-12-05 23:45:04,759 - telegram - INFO - telegram_bot.py:604 - 다이버전스 체크 완료
+2024-12-05 23:45:09,470 - telegram - INFO - telegram_bot.py:612 - 15m 분석 완료
+2024-12-05 23:45:09,474 - telegram - INFO - telegram_bot.py:649 - 15m 분석 결과 파일 저장 완료
+2024-12-05 23:45:09,475 - telegram - INFO - telegram_bot.py:622 - 15m 분석 결과 저장 완료: 1733409909

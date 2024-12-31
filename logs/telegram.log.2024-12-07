@@ -1,0 +1,1304 @@
+2024-12-07 01:39:41,450 - telegram - ERROR - telegram_bot.py:234 - 업데이트 처리 중 에러: httpx.ReadError: 
+2024-12-07 13:14:37,732 - telegram - ERROR - telegram_bot.py:493 - 명령어 처리 중 에러: 'BybitClient' object has no attribute 'fetch_time'
+2024-12-07 13:15:47,276 - telegram - INFO - telegram_bot.py:569 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-06 03:30:00  98610.9   98758.5  95938.4  97552.7   18.442
+2024-12-06 03:45:00  97552.7   98757.1  96715.0  97479.8   15.411
+2024-12-06 04:00:00  97479.8   98757.1  96143.4  96829.8   18.753
+2024-12-06 04:15:00  96829.8   98281.6  88546.3  97282.6  196.063
+2024-12-06 04:30:00  97282.6  100687.1  94727.6  97747.0  660.139
+2024-12-07 13:15:47,309 - telegram - INFO - telegram_bot.py:577 - 기술적 지표 계 완료
+2024-12-07 13:15:47,333 - telegram - INFO - telegram_bot.py:585 - 다이버전스 체크 완료
+2024-12-07 13:15:52,465 - telegram - INFO - telegram_bot.py:593 - 15m 분석 완료
+2024-12-07 13:15:52,467 - telegram - INFO - telegram_bot.py:630 - 15m 분석 결과 파일 저장 완료
+2024-12-07 13:15:52,467 - telegram - INFO - telegram_bot.py:603 - 15m 분석 결과 저장 완료: 1733544952
+2024-12-07 13:15:53,619 - telegram - INFO - telegram_bot.py:569 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-03 01:00:00  95938.4  97212.5  93500.0  94727.6  89.395
+2024-12-03 02:00:00  94727.6  97410.7  93500.0  96715.0  97.759
+2024-12-03 03:00:00  96715.0  97956.3  94005.1  95628.6  94.775
+2024-12-03 04:00:00  95628.6  97590.2  94324.0  96029.0  86.104
+2024-12-03 05:00:00  96029.0  97410.7  93516.9  96201.0  86.705
+2024-12-07 13:15:53,642 - telegram - INFO - telegram_bot.py:577 - 기술적 지표 계 완료
+2024-12-07 13:15:53,683 - telegram - INFO - telegram_bot.py:585 - 다이버전스 체크 완료
+2024-12-07 13:15:56,665 - telegram - INFO - telegram_bot.py:593 - 1h 분석 완료
+2024-12-07 13:15:56,666 - telegram - INFO - telegram_bot.py:630 - 1h 분석 결과 파일 저장 완료
+2024-12-07 13:15:56,667 - telegram - INFO - telegram_bot.py:603 - 1h 분석 결과 저장 완료: 1733544956
+2024-12-07 13:15:57,819 - telegram - INFO - telegram_bot.py:569 - 데이터 조회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 13:15:57,842 - telegram - INFO - telegram_bot.py:577 - 기술적 지표 계 완료
+2024-12-07 13:15:57,873 - telegram - INFO - telegram_bot.py:585 - 다이버전스 체크 완료
+2024-12-07 13:16:00,940 - telegram - INFO - telegram_bot.py:593 - 4h 분석 완료
+2024-12-07 13:16:00,943 - telegram - INFO - telegram_bot.py:630 - 4h 분석 결과 파일 저장 완료
+2024-12-07 13:16:00,943 - telegram - INFO - telegram_bot.py:603 - 4h 분석 결과 저장 완료: 1733544960
+2024-12-07 13:16:02,268 - telegram - INFO - telegram_bot.py:569 - 데이터 조회 결과: 
+               open     high      low    close    volume
+timestamp                                               
+2024-08-30  58666.6  65061.3  53281.2  58750.0  7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2  5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0  5122.513
+2024-09-02  56250.0  64558.6  54444.0  58437.5  4739.551
+2024-09-03  58437.5  62420.7  54444.0  57691.9  3888.179
+2024-12-07 13:16:02,293 - telegram - INFO - telegram_bot.py:577 - 기술적 지표 계 완료
+2024-12-07 13:16:02,317 - telegram - INFO - telegram_bot.py:585 - 다이버전스 체크 완료
+2024-12-07 13:16:05,991 - telegram - ERROR - telegram_bot.py:610 - GPT 분 결과가 없습니다
+2024-12-07 13:16:05,992 - telegram - INFO - telegram_bot.py:630 - final 분석 결과 파일 저장 완료
+2024-12-07 13:18:40,731 - telegram - INFO - telegram_bot.py:481 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:18:55,551 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:18:55,552 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:18:55,559 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:18:56,051 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:18:56,052 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:21:53,817 - telegram - INFO - telegram_bot.py:481 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:22:07,882 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:22:07,883 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:22:07,888 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:22:08,688 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:22:08,688 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:27:47,232 - telegram - INFO - telegram_bot.py:478 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:27:56,482 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:27:56,483 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:27:56,488 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:27:57,070 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:27:57,070 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:28:03,716 - telegram - INFO - telegram_bot.py:564 - 데이터 조회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 13:28:03,745 - telegram - INFO - telegram_bot.py:572 - 기술적 지표 계 완료
+2024-12-07 13:28:03,762 - telegram - INFO - telegram_bot.py:580 - 다이버전스 체크 완료
+2024-12-07 13:28:08,306 - telegram - ERROR - telegram_bot.py:605 - GPT 분 결과가 없습니다
+2024-12-07 13:29:37,369 - telegram - INFO - telegram_bot.py:476 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:29:50,606 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:29:50,606 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:29:50,616 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:29:51,109 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:29:51,110 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:30:02,352 - telegram - INFO - telegram_bot.py:564 - 데이터 ���회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 13:30:02,394 - telegram - INFO - telegram_bot.py:572 - 기술적 지표 계산 완료
+2024-12-07 13:30:02,420 - telegram - INFO - telegram_bot.py:580 - 다이버전스 체크 완료
+2024-12-07 13:30:09,706 - telegram - ERROR - telegram_bot.py:622 - GPT 분석 결과가 없습니다
+2024-12-07 13:31:08,361 - telegram - INFO - telegram_bot.py:476 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:31:18,547 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:31:18,549 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:31:18,554 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:31:19,082 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:31:19,082 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:31:30,770 - telegram - INFO - telegram_bot.py:564 - 데이터 ��회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 13:31:30,796 - telegram - INFO - telegram_bot.py:572 - 기술적 지표 계산 완료
+2024-12-07 13:31:30,816 - telegram - INFO - telegram_bot.py:580 - 다이버전스 체크 완료
+2024-12-07 13:31:34,253 - telegram - INFO - telegram_bot.py:622 - 4h 분석 완료
+2024-12-07 13:31:34,254 - telegram - INFO - telegram_bot.py:660 - 4h 분석 결과 파일 저장 완료
+2024-12-07 13:31:34,255 - telegram - INFO - telegram_bot.py:632 - 4h 분석 결과 저장 완료: 1733545894
+2024-12-07 13:31:34,255 - telegram - INFO - telegram_bot.py:362 - Final 분석 시작
+2024-12-07 13:31:34,256 - telegram - INFO - telegram_bot.py:368 - Final 분석 완료
+2024-12-07 13:31:34,258 - telegram - INFO - telegram_bot.py:660 - final 분석 결과 파일 저장 완료
+2024-12-07 13:33:24,537 - telegram - INFO - telegram_bot.py:476 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:33:41,761 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:33:41,762 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:33:41,769 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:33:42,279 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:33:42,280 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:37:26,651 - telegram - INFO - telegram_bot.py:472 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:41:24,644 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:41:24,647 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:41:24,652 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:41:25,141 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:41:25,141 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:41:36,639 - telegram - INFO - telegram_bot.py:672 - final 분석 결과 파일 저장 완료
+2024-12-07 13:44:57,054 - telegram - INFO - telegram_bot.py:488 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:45:11,721 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:45:11,723 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:45:11,741 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:45:12,233 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:45:12,234 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:45:31,823 - telegram - INFO - telegram_bot.py:672 - final 분석 결과 파일 저장 완료
+2024-12-07 13:47:10,558 - telegram - INFO - telegram_bot.py:488 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:47:56,112 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:47:56,114 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:47:56,122 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:47:56,607 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:47:56,607 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:48:19,911 - telegram - INFO - telegram_bot.py:672 - final 분석 결과 파일 저장 완료
+2024-12-07 13:49:45,600 - telegram - INFO - telegram_bot.py:488 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:49:56,375 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:49:56,376 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:49:56,383 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:49:56,909 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:49:56,909 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:50:09,700 - telegram - INFO - telegram_bot.py:675 - final 분석 결과 파일 저장 완료
+2024-12-07 13:51:14,284 - telegram - INFO - telegram_bot.py:491 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 13:54:10,865 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:54:10,867 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:54:10,879 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:54:11,381 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:54:11,381 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 13:54:24,943 - telegram - INFO - telegram_bot.py:675 - final 분석 결과 파일 저장 완료
+2024-12-07 13:57:46,256 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 13:57:46,257 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 13:57:46,262 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:57:46,739 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 13:57:46,739 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 14:03:25,218 - telegram - INFO - telegram_bot.py:491 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 14:03:43,337 - telegram - INFO - telegram_bot.py:88 - 저장된 분석 결과 로드 완료
+2024-12-07 14:03:43,338 - telegram - INFO - telegram_bot.py:108 - 저장된 분석 시간 로드 완료
+2024-12-07 14:03:43,343 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 14:03:43,832 - telegram - INFO - telegram_bot.py:196 - 텔레그램 봇 초기화 완료
+2024-12-07 14:03:43,832 - telegram - INFO - telegram_bot.py:207 - 봇 시작됨
+2024-12-07 14:03:52,652 - telegram - INFO - telegram_bot.py:675 - final 분석 결과 파일 저장 완료
+2024-12-07 14:07:49,309 - telegram - INFO - telegram_bot.py:675 - final 분석 결과 파일 저장 완료
+2024-12-07 14:23:30,704 - telegram - INFO - telegram_bot.py:491 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 14:26:27,121 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 14:26:27,123 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 14:26:27,135 - telegram - INFO - telegram_bot.py:892 - 자동 분석 �케줄러 시작됨
+2024-12-07 14:26:27,136 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:26:27,148 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:26:27 KST
+2024-12-07 14:26:27,689 - telegram - INFO - telegram_bot.py:811 - 이미 자동 �석이 실행 중입니다
+2024-12-07 14:26:27,689 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:26:27,689 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 14:26:32,138 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:26:32 KST
+2024-12-07 14:26:37,148 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:26:37 KST
+2024-12-07 14:26:42,158 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:26:42 KST
+2024-12-07 14:26:44,379 - telegram - INFO - telegram_bot.py:592 - 데이터 조회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 14:26:44,421 - telegram - INFO - telegram_bot.py:600 - 기술적 지표 계산 완료
+2024-12-07 14:26:44,444 - telegram - INFO - telegram_bot.py:608 - 다이버전스 체크 완료
+2024-12-07 14:26:46,750 - telegram - INFO - telegram_bot.py:650 - 4h 분석 완료
+2024-12-07 14:26:46,754 - telegram - INFO - telegram_bot.py:688 - 4h 분석 결과 파일 저장 완료
+2024-12-07 14:26:46,756 - telegram - INFO - telegram_bot.py:660 - 4h 분석 결과 저장 완료: 1733549206
+2024-12-07 14:26:46,757 - telegram - INFO - telegram_bot.py:371 - Final 분석 시작
+2024-12-07 14:26:46,761 - telegram - INFO - telegram_bot.py:377 - Final 분석 완료
+2024-12-07 14:26:46,766 - telegram - INFO - telegram_bot.py:688 - final 분석 결과 파일 저장 완료
+2024-12-07 14:26:47,163 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:26:47 KST
+2024-12-07 14:26:52,167 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:26:52 KST
+2024-12-07 14:26:57,174 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:26:57 KST
+2024-12-07 14:27:02,185 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:02 KST
+2024-12-07 14:27:07,196 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:07 KST
+2024-12-07 14:27:12,209 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:12 KST
+2024-12-07 14:27:17,206 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:17 KST
+2024-12-07 14:27:22,210 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:22 KST
+2024-12-07 14:27:27,214 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:27 KST
+2024-12-07 14:27:32,223 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:32 KST
+2024-12-07 14:27:37,224 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:37 KST
+2024-12-07 14:27:42,230 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:42 KST
+2024-12-07 14:27:47,235 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:47 KST
+2024-12-07 14:27:52,244 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:52 KST
+2024-12-07 14:27:57,250 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:27:57 KST
+2024-12-07 14:28:02,255 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:02 KST
+2024-12-07 14:28:07,259 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:07 KST
+2024-12-07 14:28:12,271 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:12 KST
+2024-12-07 14:28:17,280 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:17 KST
+2024-12-07 14:28:22,292 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:22 KST
+2024-12-07 14:28:27,304 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:27 KST
+2024-12-07 14:28:32,294 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:32 KST
+2024-12-07 14:28:37,296 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:37 KST
+2024-12-07 14:28:42,304 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:42 KST
+2024-12-07 14:28:47,305 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:47 KST
+2024-12-07 14:28:52,307 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:52 KST
+2024-12-07 14:28:57,310 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:28:57 KST
+2024-12-07 14:29:02,317 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:02 KST
+2024-12-07 14:29:07,324 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:07 KST
+2024-12-07 14:29:12,336 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:12 KST
+2024-12-07 14:29:17,350 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:17 KST
+2024-12-07 14:29:22,355 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:22 KST
+2024-12-07 14:29:27,356 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:27 KST
+2024-12-07 14:29:32,367 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:32 KST
+2024-12-07 14:29:37,369 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:37 KST
+2024-12-07 14:29:42,371 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:42 KST
+2024-12-07 14:29:47,383 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:47 KST
+2024-12-07 14:29:52,384 - telegram - INFO - telegram_bot.py:826 - 자동 분석 시간 체크: 2024-12-07 23:29:52 KST
+2024-12-07 14:29:56,243 - telegram - INFO - telegram_bot.py:504 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 14:30:12,326 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 14:30:12,327 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 14:30:12,336 - telegram - INFO - telegram_bot.py:910 - 자동 분석 케줄러 시작됨
+2024-12-07 14:30:12,337 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:30:12,349 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:12 KST
+2024-12-07 14:30:12,349 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:12,349 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:12,352 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:12,832 - telegram - INFO - telegram_bot.py:830 - 이미 자동 �석이 실행 중입니다
+2024-12-07 14:30:12,833 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:30:12,833 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 14:30:17,355 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:17 KST
+2024-12-07 14:30:17,355 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:17,355 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:17,357 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:22,370 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:22 KST
+2024-12-07 14:30:22,370 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:22,371 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:22,372 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:27,377 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:27 KST
+2024-12-07 14:30:27,378 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:27,378 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:27,381 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:32,394 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:32 KST
+2024-12-07 14:30:32,394 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:32,395 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:32,397 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:37,412 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:37 KST
+2024-12-07 14:30:37,413 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:37,415 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:37,421 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:42,433 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:42 KST
+2024-12-07 14:30:42,433 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:42,434 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:42,435 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:47,450 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:47 KST
+2024-12-07 14:30:47,451 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:47,452 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:47,456 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:52,470 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:52 KST
+2024-12-07 14:30:52,470 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:52,471 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:52,473 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:57,481 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:30:57 KST
+2024-12-07 14:30:57,481 - telegram - INFO - telegram_bot.py:848 - 15분봉 석 시간: 30분
+2024-12-07 14:30:57,482 - telegram - ERROR - telegram_bot.py:891 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+2024-12-07 14:30:57,485 - telegram - ERROR - telegram_bot.py:892 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 849, in run_analysis
+    await self._execute_timeframe_analysis('15m', formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_timeframe_analysis'
+
+2024-12-07 14:30:58,306 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 14:32:25,091 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 14:32:25,092 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 14:32:25,101 - telegram - INFO - telegram_bot.py:897 - 자동 분석 �케줄러 시작됨
+2024-12-07 14:32:25,101 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:32:25,109 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:32:25 KST
+2024-12-07 14:32:25,581 - telegram - INFO - telegram_bot.py:830 - 이미 자동 �석이 실행 중입니다
+2024-12-07 14:32:25,581 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:32:25,582 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 14:32:30,122 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:32:30 KST
+2024-12-07 14:32:35,128 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:32:35 KST
+2024-12-07 14:32:40,129 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:32:40 KST
+2024-12-07 14:32:45,144 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:32:45 KST
+2024-12-07 14:32:50,151 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:32:50 KST
+2024-12-07 14:32:53,245 - telegram - INFO - telegram_bot.py:611 - 데이터 조회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 14:32:53,271 - telegram - INFO - telegram_bot.py:619 - 기술적 지표 계산 완료
+2024-12-07 14:32:53,288 - telegram - INFO - telegram_bot.py:627 - 다이버전스 체크 완료
+2024-12-07 14:32:55,165 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:32:55 KST
+2024-12-07 14:32:57,414 - telegram - ERROR - telegram_bot.py:686 - GPT 분석 결과가 없습니다
+2024-12-07 14:33:00,165 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:00 KST
+2024-12-07 14:33:05,174 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:05 KST
+2024-12-07 14:33:10,190 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:10 KST
+2024-12-07 14:33:15,200 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:15 KST
+2024-12-07 14:33:20,214 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:20 KST
+2024-12-07 14:33:25,216 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:25 KST
+2024-12-07 14:33:30,232 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:30 KST
+2024-12-07 14:33:35,238 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:35 KST
+2024-12-07 14:33:40,248 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:40 KST
+2024-12-07 14:33:45,262 - telegram - INFO - telegram_bot.py:844 - 자동 분석 시간 체크: 2024-12-07 23:33:45 KST
+2024-12-07 14:33:48,714 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 작업
+2024-12-07 14:41:16,072 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 14:41:16,074 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 14:41:16,085 - telegram - INFO - telegram_bot.py:926 - 자동 분석 스케줄러 시작됨
+2024-12-07 14:41:16,085 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:41:16,096 - telegram - INFO - telegram_bot.py:872 - 자동 분석 ��기 중... (2024-12-07 23:41:16 KST)
+2024-12-07 14:41:16,739 - telegram - INFO - telegram_bot.py:854 - 이미 자동 분석이 실행 중입니다
+2024-12-07 14:41:16,739 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:41:16,739 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 14:41:32,661 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 14:41:32,692 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 14:41:32,711 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 14:41:35,416 - telegram - INFO - telegram_bot.py:687 - 4h 분석 완료
+2024-12-07 14:41:35,417 - telegram - INFO - telegram_bot.py:731 - 4h 분석 결과 파일 저장 완료
+2024-12-07 14:41:35,418 - telegram - INFO - telegram_bot.py:697 - 4h 분석 결과 저장 완료: 1733550095
+2024-12-07 14:41:35,418 - telegram - INFO - telegram_bot.py:371 - Final 분석 시작
+2024-12-07 14:41:35,420 - telegram - INFO - telegram_bot.py:377 - Final 분석 완료
+2024-12-07 14:41:35,421 - telegram - INFO - telegram_bot.py:731 - final 분석 결과 파일 저장 완료
+2024-12-07 14:42:16,177 - telegram - INFO - telegram_bot.py:872 - 자동 분석 ��기 중... (2024-12-07 23:42:16 KST)
+2024-12-07 14:43:16,225 - telegram - INFO - telegram_bot.py:872 - 자동 분석 ��기 중... (2024-12-07 23:43:16 KST)
+2024-12-07 14:44:16,336 - telegram - INFO - telegram_bot.py:872 - 자동 분석 ��기 중... (2024-12-07 23:44:16 KST)
+2024-12-07 14:45:01,415 - telegram - INFO - telegram_bot.py:877 - === 15분봉 분석 시작 (2024-12-07 23:45:01 KST) ===
+2024-12-07 14:45:01,416 - telegram - INFO - telegram_bot.py:931 - === 15m 분석 시작 (2024-12-07 23:45:01 KST) ===
+2024-12-07 14:45:01,701 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-06 05:00:00  97006.7  98465.4  96945.2  97356.4   18.153
+2024-12-06 05:15:00  97356.4  98757.1  95131.2  95228.2   25.661
+2024-12-06 05:30:00  95228.2  97479.8  93500.0  93726.0   30.528
+2024-12-06 05:45:00  93726.0  95842.9  92320.1  93214.1   32.151
+2024-12-06 06:00:00  93214.1  97917.1  87197.2  94921.2  569.814
+2024-12-07 14:45:01,721 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 14:45:01,758 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 14:45:07,579 - telegram - ERROR - telegram_bot.py:705 - GPT 분석 결과가 없습니다
+2024-12-07 14:45:42,605 - telegram - INFO - telegram_bot.py:872 - 자동 분석 ��기 중... (2024-12-07 23:45:42 KST)
+2024-12-07 14:45:42,606 - telegram - INFO - telegram_bot.py:877 - === 15분봉 분석 시작 (2024-12-07 23:45:42 KST) ===
+2024-12-07 14:45:42,607 - telegram - INFO - telegram_bot.py:931 - === 15m 분석 시작 (2024-12-07 23:45:42 KST) ===
+2024-12-07 14:45:42,834 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-06 05:00:00  97006.7  98465.4  96945.2  97356.4   18.153
+2024-12-06 05:15:00  97356.4  98757.1  95131.2  95228.2   25.661
+2024-12-06 05:30:00  95228.2  97479.8  93500.0  93726.0   30.528
+2024-12-06 05:45:00  93726.0  95842.9  92320.1  93214.1   32.151
+2024-12-06 06:00:00  93214.1  97917.1  87197.2  94921.2  569.814
+2024-12-07 14:45:42,870 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 14:45:42,922 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 14:45:46,102 - telegram - INFO - telegram_bot.py:687 - 15m 분석 완료
+2024-12-07 14:45:46,103 - telegram - INFO - telegram_bot.py:731 - 15m 분석 결과 파일 저장 완료
+2024-12-07 14:45:46,103 - telegram - INFO - telegram_bot.py:697 - 15m 분석 결과 저장 완료: 1733550346
+2024-12-07 14:45:46,103 - telegram - INFO - telegram_bot.py:934 - 15m 분석 완료
+2024-12-07 14:46:46,132 - telegram - INFO - telegram_bot.py:872 - 자동 분석 ��기 중... (2024-12-07 23:46:46 KST)
+2024-12-07 14:47:46,224 - telegram - INFO - telegram_bot.py:872 - 자동 분석 ��기 중... (2024-12-07 23:47:46 KST)
+2024-12-07 14:48:21,734 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 업
+2024-12-07 14:50:35,827 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 14:50:35,829 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 14:50:35,838 - telegram - INFO - telegram_bot.py:916 - 자동 분석 스케줄러 시작됨
+2024-12-07 14:50:35,839 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:50:36,350 - telegram - INFO - telegram_bot.py:824 - 이미 자동 분석이 실행 중입니다
+2024-12-07 14:50:36,351 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 14:50:36,351 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 14:50:59,675 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 14:50:59,703 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 14:50:59,722 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 14:51:02,374 - telegram - INFO - telegram_bot.py:665 - 4h 분석 완료
+2024-12-07 14:51:02,377 - telegram - INFO - telegram_bot.py:701 - 4h 분석 결과 파일 저장 완료
+2024-12-07 14:51:02,377 - telegram - INFO - telegram_bot.py:371 - Final 분석 시작
+2024-12-07 14:51:02,382 - telegram - INFO - telegram_bot.py:377 - Final 분석 완료
+2024-12-07 14:51:02,384 - telegram - INFO - telegram_bot.py:701 - final 분석 결과 파일 저장 완료
+2024-12-07 15:00:01,772 - telegram - INFO - telegram_bot.py:848 - === 15분봉 분석 시작 (2024-12-08 00:00:01 KST) ===
+2024-12-07 15:00:01,772 - telegram - INFO - telegram_bot.py:921 - === 15m 분석 시작 (2024-12-08 00:00:01 KST) ===
+2024-12-07 15:00:02,038 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open     high      low    close   volume
+timestamp                                                       
+2024-12-06 05:15:00  97356.4  98757.1  95131.2  95228.2   25.661
+2024-12-06 05:30:00  95228.2  97479.8  93500.0  93726.0   30.528
+2024-12-06 05:45:00  93726.0  95842.9  92320.1  93214.1   32.151
+2024-12-06 06:00:00  93214.1  97917.1  87197.2  94921.2  569.814
+2024-12-06 06:15:00  94921.2  97917.1  88500.0  92740.0  758.275
+2024-12-07 15:00:02,054 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 15:00:02,072 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 15:00:04,614 - telegram - INFO - telegram_bot.py:665 - 15m 분석 완료
+2024-12-07 15:00:04,615 - telegram - INFO - telegram_bot.py:701 - 15m 분석 결과 파일 저장 완료
+2024-12-07 15:00:04,617 - telegram - INFO - telegram_bot.py:924 - 15m 분석 완료
+2024-12-07 15:00:34,617 - telegram - INFO - telegram_bot.py:854 - === 1시간봉 분�� 시작 (2024-12-08 00:00:01 KST) ===
+2024-12-07 15:00:34,618 - telegram - INFO - telegram_bot.py:921 - === 1h 분석 시작 (2024-12-08 00:00:01 KST) ===
+2024-12-07 15:00:35,186 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-03 03:00:00  96715.0   97956.3  94005.1  95628.6   94.775
+2024-12-03 04:00:00  95628.6   97590.2  94324.0  96029.0   86.104
+2024-12-03 05:00:00  96029.0   97410.7  93516.9  96201.0   86.705
+2024-12-03 06:00:00  96201.0  102600.0  94964.5  96745.6  179.194
+2024-12-03 07:00:00  96745.6  102600.0  92584.8  94672.8  316.685
+2024-12-07 15:00:35,219 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 15:00:35,268 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 15:00:40,453 - telegram - ERROR - telegram_bot.py:675 - GPT 분석 결과가 없습니다
+2024-12-07 15:01:10,455 - telegram - INFO - telegram_bot.py:903 - === 일봉 분석 시작 (2024-12-08 00:00:01 KST) ===
+2024-12-07 15:01:10,456 - telegram - INFO - telegram_bot.py:921 - === 1d 분석 시작 (2024-12-08 00:00:01 KST) ===
+2024-12-07 15:01:10,711 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+               open     high      low    close    volume
+timestamp                                               
+2024-08-30  58666.6  65061.3  53281.2  58750.0  7808.486
+2024-08-31  58750.0  64395.6  39000.0  59080.2  5349.248
+2024-09-01  59080.2  70885.7  55468.7  56250.0  5122.513
+2024-09-02  56250.0  64558.6  54444.0  58437.5  4739.551
+2024-09-03  58437.5  62420.7  54444.0  57691.9  3888.179
+2024-12-07 15:01:10,730 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 15:01:10,748 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 15:01:13,653 - telegram - INFO - telegram_bot.py:665 - 1d 분석 완료
+2024-12-07 15:01:13,657 - telegram - INFO - telegram_bot.py:701 - 1d 분석 결과 파일 저장 완료
+2024-12-07 15:01:13,658 - telegram - INFO - telegram_bot.py:924 - 1d 분석 완료
+2024-12-07 15:05:04,351 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 업
+2024-12-07 15:08:12,591 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 15:08:12,593 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 15:08:12,601 - telegram - INFO - telegram_bot.py:881 - 자동 분석 스케줄러 시작됨
+2024-12-07 15:08:12,601 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:08:13,070 - telegram - INFO - telegram_bot.py:822 - 이미 자동 분석이 실행 중입니다
+2024-12-07 15:08:13,070 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:08:13,070 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 15:08:22,799 - telegram - INFO - telegram_bot.py:699 - final 분석 결과 파일 저장 완료
+2024-12-07 15:08:50,080 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 업
+2024-12-07 15:12:48,080 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 15:12:48,081 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 15:12:48,087 - telegram - INFO - telegram_bot.py:881 - 자동 분석 스케줄러 시작됨
+2024-12-07 15:12:48,092 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:12:48,613 - telegram - INFO - telegram_bot.py:822 - 이미 자동 분석이 실행 중입니다
+2024-12-07 15:12:48,614 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:12:48,614 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 15:15:00,107 - telegram - INFO - telegram_bot.py:843 - === 15분봉 분석 시작 (2024-12-08 00:15:00 KST) ===
+2024-12-07 15:15:00,107 - telegram - INFO - telegram_bot.py:886 - === 15m 분석 시작 (2024-12-08 00:15:00 KST) ===
+2024-12-07 15:15:02,112 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open     high      low    close    volume
+timestamp                                                        
+2024-12-06 05:30:00  95228.2  97479.8  93500.0  93726.0    30.528
+2024-12-06 05:45:00  93726.0  95842.9  92320.1  93214.1    32.151
+2024-12-06 06:00:00  93214.1  97917.1  87197.2  94921.2   569.814
+2024-12-06 06:15:00  94921.2  97917.1  88500.0  92740.0   758.275
+2024-12-06 06:30:00  92740.0  94035.6  88815.6  90797.8  1068.533
+2024-12-07 15:15:02,149 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 15:15:02,170 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 15:15:04,983 - telegram - INFO - telegram_bot.py:663 - 15m 석 완료
+2024-12-07 15:15:04,984 - telegram - INFO - telegram_bot.py:699 - 15m 분석 결과 파일 저장 완료
+2024-12-07 15:15:04,984 - telegram - INFO - telegram_bot.py:889 - 15m 분석 완료
+2024-12-07 15:24:06,233 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 업
+2024-12-07 15:24:24,513 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 15:24:24,516 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 15:24:24,526 - telegram - INFO - telegram_bot.py:875 - 자동 분석 스케줄러 시작됨
+2024-12-07 15:24:24,527 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:24:25,036 - telegram - INFO - telegram_bot.py:822 - 이미 자동 분석이 실행 중입니다
+2024-12-07 15:24:25,037 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:24:25,037 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 15:24:34,410 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open     high      low    close     volume
+timestamp                                                         
+2024-11-20 16:00:00  96143.4  98500.0  80286.1  93505.8   9988.862
+2024-11-20 20:00:00  93505.8  98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3  96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0  98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8  99990.0  71111.0  95256.3  14169.392
+2024-12-07 15:24:34,436 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 15:24:34,458 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 15:24:37,435 - telegram - INFO - telegram_bot.py:663 - 4h 석 완료
+2024-12-07 15:24:37,440 - telegram - INFO - telegram_bot.py:699 - 4h 분석 결과 파일 저장 완료
+2024-12-07 15:24:37,441 - telegram - INFO - telegram_bot.py:371 - Final 분석 시작
+2024-12-07 15:24:37,442 - telegram - INFO - telegram_bot.py:377 - Final 분석 완료
+2024-12-07 15:24:37,444 - telegram - INFO - telegram_bot.py:699 - final 분석 결과 파일 저장 완료
+2024-12-07 15:30:00,594 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:00,598 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:05,608 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:05,610 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:10,616 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:10,617 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:15,610 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:15,614 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:20,618 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:20,621 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:25,645 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:25,648 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:30,664 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:30,665 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:35,680 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:35,681 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:40,693 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:40,694 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:45,698 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:45,701 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:50,706 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:50,709 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:30:55,718 - telegram - ERROR - telegram_bot.py:869 - 자동 분석 중 오류: cannot access local variable 'last_15m' where it is not associated with a value
+2024-12-07 15:30:55,720 - telegram - ERROR - telegram_bot.py:870 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 836, in run_analysis
+    if current_min % 15 == 0 and current_min != last_15m:
+                                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_15m' where it is not associated with a value
+
+2024-12-07 15:35:19,485 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 업
+2024-12-07 15:35:32,285 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 15:35:32,286 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 15:35:32,291 - telegram - INFO - telegram_bot.py:881 - 자동 분석 스케줄러 시작됨
+2024-12-07 15:35:32,294 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:35:32,783 - telegram - INFO - telegram_bot.py:822 - 이미 자동 분석이 실행 중입니다
+2024-12-07 15:35:32,784 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:35:32,784 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 15:39:57,581 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 업
+2024-12-07 15:43:50,722 - telegram - INFO - telegram_bot.py:98 - 저장된 분석 결과 로드 완료
+2024-12-07 15:43:50,723 - telegram - INFO - telegram_bot.py:118 - 저장된 분석 시간 로드 완료
+2024-12-07 15:43:50,729 - telegram - INFO - telegram_bot.py:881 - 자동 분석 스케줄러 시작됨
+2024-12-07 15:43:50,729 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:43:51,220 - telegram - INFO - telegram_bot.py:822 - 이미 자동 분석이 실행 중입니다
+2024-12-07 15:43:51,220 - telegram - INFO - telegram_bot.py:209 - 텔레그램 봇 초기화 완료
+2024-12-07 15:43:51,221 - telegram - INFO - telegram_bot.py:220 - 봇 시작됨
+2024-12-07 15:45:00,751 - telegram - INFO - telegram_bot.py:843 - === 15분봉 분석 시작 (2024-12-07 15:45:00 KST) ===
+2024-12-07 15:45:00,752 - telegram - INFO - telegram_bot.py:886 - === 15m 분석 시작 (2024-12-07 15:45:00 KST) ===
+2024-12-07 15:45:02,801 - telegram - INFO - telegram_bot.py:613 - 데이터 조회 결과: 
+                        open      high      low    close     volume
+timestamp                                                          
+2024-12-06 06:00:00  93214.1   97917.1  87197.2  94921.2    569.814
+2024-12-06 06:15:00  94921.2   97917.1  88500.0  92740.0    758.275
+2024-12-06 06:30:00  92740.0   94035.6  88815.6  90797.8   1068.533
+2024-12-06 06:45:00  90797.8   97917.1  88400.0  89000.0    456.871
+2024-12-06 07:00:00  89000.0  102226.8  89000.0  98020.5  10240.874
+2024-12-07 15:45:02,832 - telegram - INFO - telegram_bot.py:623 - 기술적 지표 계산 완료
+2024-12-07 15:45:02,851 - telegram - INFO - telegram_bot.py:633 - 다이버전스 체크 완료
+2024-12-07 15:45:05,405 - telegram - INFO - telegram_bot.py:663 - 15m 석 완료
+2024-12-07 15:45:05,406 - telegram - INFO - telegram_bot.py:699 - 15m 분석 결과 파일 저장 완료
+2024-12-07 15:45:05,407 - telegram - INFO - telegram_bot.py:892 - 15m 분석 완료
+2024-12-07 15:55:01,551 - telegram - INFO - telegram_bot.py:523 - '/stop' 명령어 수신, 봇 종료 업
+2024-12-07 15:55:16,204 - telegram - INFO - telegram_bot.py:147 - 저장된 분석 결과 로드 완료
+2024-12-07 15:55:16,206 - telegram - INFO - telegram_bot.py:167 - 저장된 분석 시간 로드 완료
+2024-12-07 15:55:16,212 - telegram - INFO - telegram_bot.py:933 - 자동 분석 스케줄러 시작됨
+2024-12-07 15:55:16,212 - telegram - INFO - telegram_bot.py:258 - 텔레그램 ��� 초기화 완료
+2024-12-07 15:55:16,718 - telegram - INFO - telegram_bot.py:874 - 이미 자동 분석이 실행 중입니다
+2024-12-07 15:55:16,719 - telegram - INFO - telegram_bot.py:258 - 텔레그램 ��� 초기화 완료
+2024-12-07 15:55:16,719 - telegram - INFO - telegram_bot.py:269 - 봇 시작됨
+2024-12-07 16:00:00,246 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 16:00:00 KST) ===
+2024-12-07 16:00:00,248 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 16:00:00 KST) ===
+2024-12-07 16:00:00,536 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close     volume
+timestamp                                                          
+2024-12-06 06:15:00  94921.2   97917.1  88500.0  92740.0    758.275
+2024-12-06 06:30:00  92740.0   94035.6  88815.6  90797.8   1068.533
+2024-12-06 06:45:00  90797.8   97917.1  88400.0  89000.0    456.871
+2024-12-06 07:00:00  89000.0  102226.8  89000.0  98020.5  10240.874
+2024-12-06 07:15:00  98020.5   98763.5  96945.2  97997.0     26.890
+2024-12-07 16:00:00,561 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 16:00:00,577 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 16:00:03,017 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 16:00:03,021 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 16:00:03,023 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 16:00:03,024 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 16:00:00 KST) ===
+2024-12-07 16:00:03,027 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 16:00:00 KST) ===
+2024-12-07 16:00:03,188 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-03 04:00:00  95628.6   97590.2  94324.0  96029.0   86.104
+2024-12-03 05:00:00  96029.0   97410.7  93516.9  96201.0   86.705
+2024-12-03 06:00:00  96201.0  102600.0  94964.5  96745.6  179.194
+2024-12-03 07:00:00  96745.6  102600.0  92584.8  94672.8  316.685
+2024-12-03 08:00:00  94672.8  100152.5  92584.8  95074.2  182.136
+2024-12-07 16:00:03,210 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 16:00:03,230 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 16:00:06,811 - telegram - INFO - telegram_bot.py:715 - 1h 석 완료
+2024-12-07 16:00:06,815 - telegram - INFO - telegram_bot.py:751 - 1h 분석 결과 파일 저장 완료
+2024-12-07 16:00:06,816 - telegram - INFO - telegram_bot.py:944 - 1h 분석 완료
+2024-12-07 16:15:00,952 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 16:15:00 KST) ===
+2024-12-07 16:15:00,953 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 16:15:00 KST) ===
+2024-12-07 16:15:01,245 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close     volume
+timestamp                                                          
+2024-12-06 06:30:00  92740.0   94035.6  88815.6  90797.8   1068.533
+2024-12-06 06:45:00  90797.8   97917.1  88400.0  89000.0    456.871
+2024-12-06 07:00:00  89000.0  102226.8  89000.0  98020.5  10240.874
+2024-12-06 07:15:00  98020.5   98763.5  96945.2  97997.0     26.890
+2024-12-06 07:30:00  97997.0  101091.0  89889.5  96445.3     51.878
+2024-12-07 16:15:01,266 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 16:15:01,286 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 16:15:03,815 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 16:15:03,818 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 16:15:03,819 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 16:30:00,982 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 16:30:00 KST) ===
+2024-12-07 16:30:00,983 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 16:30:00 KST) ===
+2024-12-07 16:30:01,307 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close     volume
+timestamp                                                          
+2024-12-06 06:45:00  90797.8   97917.1  88400.0  89000.0    456.871
+2024-12-06 07:00:00  89000.0  102226.8  89000.0  98020.5  10240.874
+2024-12-06 07:15:00  98020.5   98763.5  96945.2  97997.0     26.890
+2024-12-06 07:30:00  97997.0  101091.0  89889.5  96445.3     51.878
+2024-12-06 07:45:00  96445.3   98465.4  95876.1  97590.2     16.831
+2024-12-07 16:30:01,331 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 16:30:01,354 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 16:30:04,643 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 16:30:04,644 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 16:30:04,645 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 16:45:00,732 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 16:45:00 KST) ===
+2024-12-07 16:45:00,733 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 16:45:00 KST) ===
+2024-12-07 16:45:00,912 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close     volume
+timestamp                                                          
+2024-12-06 07:00:00  89000.0  102226.8  89000.0  98020.5  10240.874
+2024-12-06 07:15:00  98020.5   98763.5  96945.2  97997.0     26.890
+2024-12-06 07:30:00  97997.0  101091.0  89889.5  96445.3     51.878
+2024-12-06 07:45:00  96445.3   98465.4  95876.1  97590.2     16.831
+2024-12-06 08:00:00  97590.2  102673.7  89786.3  91808.4    535.183
+2024-12-07 16:45:00,923 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 16:45:00,938 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 16:45:03,373 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 16:45:03,375 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 16:45:03,376 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 17:00:00,506 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 17:00:00 KST) ===
+2024-12-07 17:00:00,507 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 17:00:00 KST) ===
+2024-12-07 17:00:00,716 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-06 07:15:00  98020.5   98763.5  96945.2  97997.0   26.890
+2024-12-06 07:30:00  97997.0  101091.0  89889.5  96445.3   51.878
+2024-12-06 07:45:00  96445.3   98465.4  95876.1  97590.2   16.831
+2024-12-06 08:00:00  97590.2  102673.7  89786.3  91808.4  535.183
+2024-12-06 08:15:00  91808.4   97777.0  91808.4  97777.0  154.104
+2024-12-07 17:00:00,734 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 17:00:00,752 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 17:00:03,355 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 17:00:03,357 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 17:00:03,357 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 17:00:03,358 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 17:00:00 KST) ===
+2024-12-07 17:00:03,362 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 17:00:00 KST) ===
+2024-12-07 17:00:03,529 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-03 05:00:00  96029.0   97410.7  93516.9  96201.0   86.705
+2024-12-03 06:00:00  96201.0  102600.0  94964.5  96745.6  179.194
+2024-12-03 07:00:00  96745.6  102600.0  92584.8  94672.8  316.685
+2024-12-03 08:00:00  94672.8  100152.5  92584.8  95074.2  182.136
+2024-12-03 09:00:00  95074.2  102569.0  92047.2  95839.7  998.373
+2024-12-07 17:00:03,554 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 17:00:03,574 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 17:00:06,208 - telegram - INFO - telegram_bot.py:715 - 1h 석 완료
+2024-12-07 17:00:06,209 - telegram - INFO - telegram_bot.py:751 - 1h 분석 결과 파일 저장 완료
+2024-12-07 17:00:06,210 - telegram - INFO - telegram_bot.py:944 - 1h 분석 완료
+2024-12-07 17:00:06,210 - telegram - INFO - telegram_bot.py:907 - === 4시간봉 분석 시작 (2024-12-07 17:00:00 KST) ===
+2024-12-07 17:00:06,211 - telegram - INFO - telegram_bot.py:938 - === 4h 분석 시작 (2024-12-07 17:00:00 KST) ===
+2024-12-07 17:00:06,356 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close     volume
+timestamp                                                          
+2024-11-20 20:00:00  93505.8   98500.0  87671.1  94089.3    444.228
+2024-11-21 00:00:00  94089.3   96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0   98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8   99990.0  71111.0  95256.3  14169.392
+2024-11-21 12:00:00  95256.3  109200.0  80488.9  95000.0  25348.330
+2024-12-07 17:00:06,367 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 17:00:06,382 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 17:00:09,392 - telegram - INFO - telegram_bot.py:715 - 4h 석 완료
+2024-12-07 17:00:09,393 - telegram - INFO - telegram_bot.py:751 - 4h 분석 결과 파일 저장 완료
+2024-12-07 17:00:09,394 - telegram - INFO - telegram_bot.py:944 - 4h 분석 완료
+2024-12-07 17:00:09,394 - telegram - ERROR - telegram_bot.py:927 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_final_analysis'
+2024-12-07 17:00:09,398 - telegram - ERROR - telegram_bot.py:928 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 912, in run_analysis
+    await self._execute_final_analysis(formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_final_analysis'. Did you mean: '_execute_timeframe_analysis'?
+
+2024-12-07 17:15:00,553 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 17:15:00 KST) ===
+2024-12-07 17:15:00,554 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 17:15:00 KST) ===
+2024-12-07 17:15:00,835 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-06 07:30:00  97997.0  101091.0  89889.5  96445.3   51.878
+2024-12-06 07:45:00  96445.3   98465.4  95876.1  97590.2   16.831
+2024-12-06 08:00:00  97590.2  102673.7  89786.3  91808.4  535.183
+2024-12-06 08:15:00  91808.4   97777.0  91808.4  97777.0  154.104
+2024-12-06 08:30:00  97777.0  101360.8  95534.8  97675.5  692.885
+2024-12-07 17:15:00,859 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 17:15:00,875 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 17:15:03,578 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 17:15:03,582 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 17:15:03,583 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 17:30:00,655 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 17:30:00 KST) ===
+2024-12-07 17:30:00,657 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 17:30:00 KST) ===
+2024-12-07 17:30:00,931 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-06 07:45:00  96445.3   98465.4  95876.1  97590.2   16.831
+2024-12-06 08:00:00  97590.2  102673.7  89786.3  91808.4  535.183
+2024-12-06 08:15:00  91808.4   97777.0  91808.4  97777.0  154.104
+2024-12-06 08:30:00  97777.0  101360.8  95534.8  97675.5  692.885
+2024-12-06 08:45:00  97675.5   99618.0  96131.5  98014.3   21.895
+2024-12-07 17:30:00,943 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 17:30:00,959 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 17:30:03,500 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 17:30:03,501 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 17:30:03,502 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 17:45:00,558 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 17:45:00 KST) ===
+2024-12-07 17:45:00,559 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 17:45:00 KST) ===
+2024-12-07 17:45:00,841 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low     close   volume
+timestamp                                                         
+2024-12-06 08:00:00  97590.2  102673.7  89786.3   91808.4  535.183
+2024-12-06 08:15:00  91808.4   97777.0  91808.4   97777.0  154.104
+2024-12-06 08:30:00  97777.0  101360.8  95534.8   97675.5  692.885
+2024-12-06 08:45:00  97675.5   99618.0  96131.5   98014.3   21.895
+2024-12-06 09:00:00  98014.3  101360.8  97410.7  100152.5   25.484
+2024-12-07 17:45:00,864 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 17:45:00,886 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 17:45:03,614 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 17:45:03,618 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 17:45:03,619 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 18:00:00,755 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 18:00:00 KST) ===
+2024-12-07 18:00:00,756 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 18:00:00 KST) ===
+2024-12-07 18:00:01,075 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                         open      high      low     close   volume
+timestamp                                                          
+2024-12-06 08:15:00   91808.4   97777.0  91808.4   97777.0  154.104
+2024-12-06 08:30:00   97777.0  101360.8  95534.8   97675.5  692.885
+2024-12-06 08:45:00   97675.5   99618.0  96131.5   98014.3   21.895
+2024-12-06 09:00:00   98014.3  101360.8  97410.7  100152.5   25.484
+2024-12-06 09:15:00  100152.5  100800.0  97479.8   98437.7   33.503
+2024-12-07 18:00:01,107 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 18:00:01,132 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 18:00:03,805 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 18:00:03,808 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 18:00:03,809 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 18:00:03,810 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 18:00:00 KST) ===
+2024-12-07 18:00:03,815 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 18:00:00 KST) ===
+2024-12-07 18:00:03,989 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-03 06:00:00  96201.0  102600.0  94964.5  96745.6  179.194
+2024-12-03 07:00:00  96745.6  102600.0  92584.8  94672.8  316.685
+2024-12-03 08:00:00  94672.8  100152.5  92584.8  95074.2  182.136
+2024-12-03 09:00:00  95074.2  102569.0  92047.2  95839.7  998.373
+2024-12-03 10:00:00  95839.7  101756.2  92959.2  97800.0  253.671
+2024-12-07 18:00:04,019 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 18:00:04,038 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 18:00:06,822 - telegram - INFO - telegram_bot.py:715 - 1h 석 완료
+2024-12-07 18:00:06,823 - telegram - INFO - telegram_bot.py:751 - 1h 분석 결과 파일 저장 완료
+2024-12-07 18:00:06,824 - telegram - INFO - telegram_bot.py:944 - 1h 분석 완료
+2024-12-07 18:15:00,956 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 18:15:00 KST) ===
+2024-12-07 18:15:00,958 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 18:15:00 KST) ===
+2024-12-07 18:15:01,248 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                         open      high      low     close   volume
+timestamp                                                          
+2024-12-06 08:30:00   97777.0  101360.8  95534.8   97675.5  692.885
+2024-12-06 08:45:00   97675.5   99618.0  96131.5   98014.3   21.895
+2024-12-06 09:00:00   98014.3  101360.8  97410.7  100152.5   25.484
+2024-12-06 09:15:00  100152.5  100800.0  97479.8   98437.7   33.503
+2024-12-06 09:30:00   98437.7   98763.5  96342.0   98031.0   27.787
+2024-12-07 18:15:01,265 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 18:15:01,287 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 18:15:06,143 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 18:30:00,291 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 18:30:00 KST) ===
+2024-12-07 18:30:00,293 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 18:30:00 KST) ===
+2024-12-07 18:30:00,571 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                         open      high      low     close  volume
+timestamp                                                         
+2024-12-06 08:45:00   97675.5   99618.0  96131.5   98014.3  21.895
+2024-12-06 09:00:00   98014.3  101360.8  97410.7  100152.5  25.484
+2024-12-06 09:15:00  100152.5  100800.0  97479.8   98437.7  33.503
+2024-12-06 09:30:00   98437.7   98763.5  96342.0   98031.0  27.787
+2024-12-06 09:45:00   98031.0   98173.7  96000.0   97212.5  17.714
+2024-12-07 18:30:00,591 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 18:30:00,606 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 18:30:03,630 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 18:30:03,634 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 18:30:03,636 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 18:45:00,780 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 18:45:00 KST) ===
+2024-12-07 18:45:00,781 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 18:45:00 KST) ===
+2024-12-07 18:45:01,002 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                         open      high      low     close  volume
+timestamp                                                         
+2024-12-06 09:00:00   98014.3  101360.8  97410.7  100152.5  25.484
+2024-12-06 09:15:00  100152.5  100800.0  97479.8   98437.7  33.503
+2024-12-06 09:30:00   98437.7   98763.5  96342.0   98031.0  27.787
+2024-12-06 09:45:00   98031.0   98173.7  96000.0   97212.5  17.714
+2024-12-06 10:00:00   97212.5   98173.7  96342.0   98160.8  18.711
+2024-12-07 18:45:01,031 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 18:45:01,059 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 18:45:05,222 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 19:00:00,372 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 19:00:00 KST) ===
+2024-12-07 19:00:00,373 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 19:00:00 KST) ===
+2024-12-07 19:00:00,569 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                         open      high      low    close  volume
+timestamp                                                        
+2024-12-06 09:15:00  100152.5  100800.0  97479.8  98437.7  33.503
+2024-12-06 09:30:00   98437.7   98763.5  96342.0  98031.0  27.787
+2024-12-06 09:45:00   98031.0   98173.7  96000.0  97212.5  17.714
+2024-12-06 10:00:00   97212.5   98173.7  96342.0  98160.8  18.711
+2024-12-06 10:15:00   98160.8   98173.7  96745.6  98091.7  17.262
+2024-12-07 19:00:00,581 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 19:00:00,598 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 19:00:03,357 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 19:00:03,359 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 19:00:03,359 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 19:00:03,359 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 19:00:00 KST) ===
+2024-12-07 19:00:03,360 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 19:00:00 KST) ===
+2024-12-07 19:00:03,506 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-03 07:00:00  96745.6  102600.0  92584.8  94672.8  316.685
+2024-12-03 08:00:00  94672.8  100152.5  92584.8  95074.2  182.136
+2024-12-03 09:00:00  95074.2  102569.0  92047.2  95839.7  998.373
+2024-12-03 10:00:00  95839.7  101756.2  92959.2  97800.0  253.671
+2024-12-03 11:00:00  97800.0  102402.8  93470.6  95341.5  237.343
+2024-12-07 19:00:03,517 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 19:00:03,533 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 19:00:06,369 - telegram - INFO - telegram_bot.py:715 - 1h 석 완료
+2024-12-07 19:00:06,374 - telegram - INFO - telegram_bot.py:751 - 1h 분석 결과 파일 저장 완료
+2024-12-07 19:00:06,375 - telegram - INFO - telegram_bot.py:944 - 1h 분석 완료
+2024-12-07 19:15:00,467 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 19:15:00 KST) ===
+2024-12-07 19:15:00,467 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 19:15:00 KST) ===
+2024-12-07 19:15:00,725 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 09:30:00  98437.7  98763.5  96342.0  98031.0  27.787
+2024-12-06 09:45:00  98031.0  98173.7  96000.0  97212.5  17.714
+2024-12-06 10:00:00  97212.5  98173.7  96342.0  98160.8  18.711
+2024-12-06 10:15:00  98160.8  98173.7  96745.6  98091.7  17.262
+2024-12-06 10:30:00  98091.7  98173.7  96945.2  98031.0  15.200
+2024-12-07 19:15:00,735 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 19:15:00,756 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 19:15:03,542 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 19:15:03,544 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 19:15:03,544 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 19:30:00,645 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 19:30:00 KST) ===
+2024-12-07 19:30:00,645 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 19:30:00 KST) ===
+2024-12-07 19:30:00,944 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 09:45:00  98031.0  98173.7  96000.0  97212.5  17.714
+2024-12-06 10:00:00  97212.5  98173.7  96342.0  98160.8  18.711
+2024-12-06 10:15:00  98160.8  98173.7  96745.6  98091.7  17.262
+2024-12-06 10:30:00  98091.7  98173.7  96945.2  98031.0  15.200
+2024-12-06 10:45:00  98031.0  98173.7  96945.2  98100.4  18.999
+2024-12-07 19:30:00,964 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 19:30:00,985 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 19:30:04,096 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 19:30:04,099 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 19:30:04,099 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 19:45:00,209 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 19:45:00 KST) ===
+2024-12-07 19:45:00,210 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 19:45:00 KST) ===
+2024-12-07 19:45:00,496 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 10:00:00  97212.5  98173.7  96342.0  98160.8  18.711
+2024-12-06 10:15:00  98160.8  98173.7  96745.6  98091.7  17.262
+2024-12-06 10:30:00  98091.7  98173.7  96945.2  98031.0  15.200
+2024-12-06 10:45:00  98031.0  98173.7  96945.2  98100.4  18.999
+2024-12-06 11:00:00  98100.4  98173.7  90900.0  92848.8  97.242
+2024-12-07 19:45:00,515 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 19:45:00,537 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 19:45:04,596 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 19:45:04,598 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 19:45:04,598 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 20:00:00,726 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 20:00:00 KST) ===
+2024-12-07 20:00:00,726 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 20:00:00 KST) ===
+2024-12-07 20:00:01,295 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 10:15:00  98160.8  98173.7  96745.6  98091.7  17.262
+2024-12-06 10:30:00  98091.7  98173.7  96945.2  98031.0  15.200
+2024-12-06 10:45:00  98031.0  98173.7  96945.2  98100.4  18.999
+2024-12-06 11:00:00  98100.4  98173.7  90900.0  92848.8  97.242
+2024-12-06 11:15:00  92848.8  95978.2  92848.8  95367.0  20.599
+2024-12-07 20:00:01,320 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 20:00:01,341 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 20:00:04,194 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 20:00:04,198 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 20:00:04,199 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 20:00:04,200 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 20:00:00 KST) ===
+2024-12-07 20:00:04,208 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 20:00:00 KST) ===
+2024-12-07 20:00:04,354 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close      volume
+timestamp                                                           
+2024-12-03 08:00:00  94672.8  100152.5  92584.8  95074.2     182.136
+2024-12-03 09:00:00  95074.2  102569.0  92047.2  95839.7     998.373
+2024-12-03 10:00:00  95839.7  101756.2  92959.2  97800.0     253.671
+2024-12-03 11:00:00  97800.0  102402.8  93470.6  95341.5     237.343
+2024-12-03 12:00:00  95341.5  102569.0  82500.0  96562.9  330890.358
+2024-12-07 20:00:04,366 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 20:00:04,385 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 20:00:07,703 - telegram - INFO - telegram_bot.py:715 - 1h 석 완료
+2024-12-07 20:00:07,706 - telegram - INFO - telegram_bot.py:751 - 1h 분석 결과 파일 저장 완료
+2024-12-07 20:00:07,708 - telegram - INFO - telegram_bot.py:944 - 1h 분석 완료
+2024-12-07 20:15:00,847 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 20:15:00 KST) ===
+2024-12-07 20:15:00,847 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 20:15:00 KST) ===
+2024-12-07 20:15:01,140 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 10:30:00  98091.7  98173.7  96945.2  98031.0  15.200
+2024-12-06 10:45:00  98031.0  98173.7  96945.2  98100.4  18.999
+2024-12-06 11:00:00  98100.4  98173.7  90900.0  92848.8  97.242
+2024-12-06 11:15:00  92848.8  95978.2  92848.8  95367.0  20.599
+2024-12-06 11:30:00  95367.0  98173.7  94324.0  97590.2  19.296
+2024-12-07 20:15:01,150 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 20:15:01,165 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 20:15:03,661 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 20:15:03,663 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 20:15:03,664 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 20:30:00,807 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 20:30:00 KST) ===
+2024-12-07 20:30:00,807 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 20:30:00 KST) ===
+2024-12-07 20:30:01,021 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 10:45:00  98031.0  98173.7  96945.2  98100.4  18.999
+2024-12-06 11:00:00  98100.4  98173.7  90900.0  92848.8  97.242
+2024-12-06 11:15:00  92848.8  95978.2  92848.8  95367.0  20.599
+2024-12-06 11:30:00  95367.0  98173.7  94324.0  97590.2  19.296
+2024-12-06 11:45:00  97590.2  98173.7  96410.6  97590.2  18.323
+2024-12-07 20:30:01,046 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 20:30:01,069 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 20:30:06,678 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 20:45:00,740 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 20:45:00 KST) ===
+2024-12-07 20:45:00,740 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 20:45:00 KST) ===
+2024-12-07 20:45:01,057 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 11:00:00  98100.4  98173.7  90900.0  92848.8  97.242
+2024-12-06 11:15:00  92848.8  95978.2  92848.8  95367.0  20.599
+2024-12-06 11:30:00  95367.0  98173.7  94324.0  97590.2  19.296
+2024-12-06 11:45:00  97590.2  98173.7  96410.6  97590.2  18.323
+2024-12-06 12:00:00  97590.2  98173.7  95424.1  95762.1  27.262
+2024-12-07 20:45:01,087 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 20:45:01,133 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 20:45:03,740 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 20:45:03,744 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 20:45:03,745 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 21:00:00,862 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 21:00:00 KST) ===
+2024-12-07 21:00:00,863 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 21:00:00 KST) ===
+2024-12-07 21:00:01,168 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 11:15:00  92848.8  95978.2  92848.8  95367.0  20.599
+2024-12-06 11:30:00  95367.0  98173.7  94324.0  97590.2  19.296
+2024-12-06 11:45:00  97590.2  98173.7  96410.6  97590.2  18.323
+2024-12-06 12:00:00  97590.2  98173.7  95424.1  95762.1  27.262
+2024-12-06 12:15:00  95762.1  98173.7  94672.8  97590.2  19.277
+2024-12-07 21:00:01,204 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 21:00:01,231 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 21:00:03,936 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 21:00:03,940 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 21:00:03,941 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 21:00:03,942 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 21:00:00 KST) ===
+2024-12-07 21:00:03,944 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 21:00:00 KST) ===
+2024-12-07 21:00:04,094 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close      volume
+timestamp                                                           
+2024-12-03 09:00:00  95074.2  102569.0  92047.2  95839.7     998.373
+2024-12-03 10:00:00  95839.7  101756.2  92959.2  97800.0     253.671
+2024-12-03 11:00:00  97800.0  102402.8  93470.6  95341.5     237.343
+2024-12-03 12:00:00  95341.5  102569.0  82500.0  96562.9  330890.358
+2024-12-03 13:00:00  96562.9   97006.7  93470.6  93505.8     115.631
+2024-12-07 21:00:04,106 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 21:00:04,121 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 21:00:07,252 - telegram - INFO - telegram_bot.py:715 - 1h 석 완료
+2024-12-07 21:00:07,254 - telegram - INFO - telegram_bot.py:751 - 1h 분석 결과 파일 저장 완료
+2024-12-07 21:00:07,255 - telegram - INFO - telegram_bot.py:944 - 1h 분석 완료
+2024-12-07 21:00:07,255 - telegram - INFO - telegram_bot.py:907 - === 4시간봉 분석 시작 (2024-12-07 21:00:00 KST) ===
+2024-12-07 21:00:07,256 - telegram - INFO - telegram_bot.py:938 - === 4h 분석 시작 (2024-12-07 21:00:00 KST) ===
+2024-12-07 21:00:07,426 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close     volume
+timestamp                                                          
+2024-11-21 00:00:00  94089.3   96423.2  91866.9  96000.0    682.392
+2024-11-21 04:00:00  96000.0   98500.0  69547.1  81252.8  10038.296
+2024-11-21 08:00:00  81252.8   99990.0  71111.0  95256.3  14169.392
+2024-11-21 12:00:00  95256.3  109200.0  80488.9  95000.0  25348.330
+2024-11-21 16:00:00  95000.0  166666.0  81000.0  98548.9   5281.277
+2024-12-07 21:00:07,455 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 21:00:07,485 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 21:00:10,455 - telegram - INFO - telegram_bot.py:715 - 4h 석 완료
+2024-12-07 21:00:10,456 - telegram - INFO - telegram_bot.py:751 - 4h 분석 결과 파일 저장 완료
+2024-12-07 21:00:10,457 - telegram - INFO - telegram_bot.py:944 - 4h 분석 완료
+2024-12-07 21:00:10,457 - telegram - ERROR - telegram_bot.py:927 - 자동 분석 중 오류: 'TelegramBot' object has no attribute '_execute_final_analysis'
+2024-12-07 21:00:10,459 - telegram - ERROR - telegram_bot.py:928 - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\telegram_bot.py", line 912, in run_analysis
+    await self._execute_final_analysis(formatted_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_execute_final_analysis'. Did you mean: '_execute_timeframe_analysis'?
+
+2024-12-07 21:15:00,641 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 21:15:00 KST) ===
+2024-12-07 21:15:00,642 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 21:15:00 KST) ===
+2024-12-07 21:15:00,926 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 11:30:00  95367.0  98173.7  94324.0  97590.2  19.296
+2024-12-06 11:45:00  97590.2  98173.7  96410.6  97590.2  18.323
+2024-12-06 12:00:00  97590.2  98173.7  95424.1  95762.1  27.262
+2024-12-06 12:15:00  95762.1  98173.7  94672.8  97590.2  19.277
+2024-12-06 12:30:00  97590.2  98173.7  92291.9  97200.0  31.040
+2024-12-07 21:15:00,938 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 21:15:00,952 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 21:15:07,626 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 21:30:00,771 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 21:30:00 KST) ===
+2024-12-07 21:30:00,773 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 21:30:00 KST) ===
+2024-12-07 21:30:01,081 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 11:45:00  97590.2  98173.7  96410.6  97590.2  18.323
+2024-12-06 12:00:00  97590.2  98173.7  95424.1  95762.1  27.262
+2024-12-06 12:15:00  95762.1  98173.7  94672.8  97590.2  19.277
+2024-12-06 12:30:00  97590.2  98173.7  92291.9  97200.0  31.040
+2024-12-06 12:45:00  97200.0  98173.0  95131.2  97956.3  18.870
+2024-12-07 21:30:01,111 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 21:30:01,141 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 21:30:05,564 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 21:45:00,713 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 21:45:00 KST) ===
+2024-12-07 21:45:00,713 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 21:45:00 KST) ===
+2024-12-07 21:45:01,003 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 12:00:00  97590.2  98173.7  95424.1  95762.1  27.262
+2024-12-06 12:15:00  95762.1  98173.7  94672.8  97590.2  19.277
+2024-12-06 12:30:00  97590.2  98173.7  92291.9  97200.0  31.040
+2024-12-06 12:45:00  97200.0  98173.0  95131.2  97956.3  18.870
+2024-12-06 13:00:00  97956.3  98173.0  95978.2  97590.2  21.550
+2024-12-07 21:45:01,018 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 21:45:01,039 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 21:45:05,752 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 22:00:00,879 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 22:00:00 KST) ===
+2024-12-07 22:00:00,879 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 22:00:00 KST) ===
+2024-12-07 22:00:01,182 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 12:15:00  95762.1  98173.7  94672.8  97590.2  19.277
+2024-12-06 12:30:00  97590.2  98173.7  92291.9  97200.0  31.040
+2024-12-06 12:45:00  97200.0  98173.0  95131.2  97956.3  18.870
+2024-12-06 13:00:00  97956.3  98173.0  95978.2  97590.2  21.550
+2024-12-06 13:15:00  97590.2  97678.1  95938.4  97060.9  16.408
+2024-12-07 22:00:01,208 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 22:00:01,233 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 22:00:05,478 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 22:00:05,478 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 22:00:00 KST) ===
+2024-12-07 22:00:05,480 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 22:00:00 KST) ===
+2024-12-07 22:00:05,639 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close      volume
+timestamp                                                           
+2024-12-03 10:00:00  95839.7  101756.2  92959.2  97800.0     253.671
+2024-12-03 11:00:00  97800.0  102402.8  93470.6  95341.5     237.343
+2024-12-03 12:00:00  95341.5  102569.0  82500.0  96562.9  330890.358
+2024-12-03 13:00:00  96562.9   97006.7  93470.6  93505.8     115.631
+2024-12-03 14:00:00  93505.8  101367.8  93173.6  95200.0     320.532
+2024-12-07 22:00:05,686 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 22:00:05,724 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 22:00:10,495 - telegram - INFO - telegram_bot.py:715 - 1h 석 완료
+2024-12-07 22:00:10,497 - telegram - INFO - telegram_bot.py:751 - 1h 분석 결과 파일 저장 완료
+2024-12-07 22:00:10,497 - telegram - INFO - telegram_bot.py:944 - 1h 분석 완료
+2024-12-07 22:15:00,617 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 22:15:00 KST) ===
+2024-12-07 22:15:00,617 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 22:15:00 KST) ===
+2024-12-07 22:15:00,816 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 12:30:00  97590.2  98173.7  92291.9  97200.0  31.040
+2024-12-06 12:45:00  97200.0  98173.0  95131.2  97956.3  18.870
+2024-12-06 13:00:00  97956.3  98173.0  95978.2  97590.2  21.550
+2024-12-06 13:15:00  97590.2  97678.1  95938.4  97060.9  16.408
+2024-12-06 13:30:00  97060.9  97678.1  95839.7  97135.0  15.412
+2024-12-07 22:15:00,832 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 22:15:00,851 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 22:15:03,609 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 22:15:03,611 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 22:15:03,611 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 22:30:00,062 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 22:30:00 KST) ===
+2024-12-07 22:30:00,062 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 22:30:00 KST) ===
+2024-12-07 22:30:00,343 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 12:30:00  97590.2  98173.7  92291.9  97200.0  31.040
+2024-12-06 12:45:00  97200.0  98173.0  95131.2  97956.3  18.870
+2024-12-06 13:00:00  97956.3  98173.0  95978.2  97590.2  21.550
+2024-12-06 13:15:00  97590.2  97678.1  95938.4  97060.9  16.408
+2024-12-06 13:30:00  97060.9  97678.1  95839.7  97135.0  15.412
+2024-12-07 22:30:00,362 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 22:30:00,383 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 22:30:04,633 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 22:45:00,813 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 22:45:00 KST) ===
+2024-12-07 22:45:00,814 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 22:45:00 KST) ===
+2024-12-07 22:45:01,131 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 13:00:00  97956.3  98173.0  95978.2  97590.2  21.550
+2024-12-06 13:15:00  97590.2  97678.1  95938.4  97060.9  16.408
+2024-12-06 13:30:00  97060.9  97678.1  95839.7  97135.0  15.412
+2024-12-06 13:45:00  97135.0  99611.8  96342.0  98160.8  33.593
+2024-12-06 14:00:00  98160.8  99611.8  97298.4  98854.5  20.500
+2024-12-07 22:45:01,156 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 22:45:01,177 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 22:45:05,191 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 22:45:05,194 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 22:45:05,196 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 23:00:00,360 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 23:00:00 KST) ===
+2024-12-07 23:00:00,361 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 23:00:00 KST) ===
+2024-12-07 23:00:00,647 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open     high      low    close  volume
+timestamp                                                      
+2024-12-06 13:00:00  97956.3  98173.0  95978.2  97590.2  21.550
+2024-12-06 13:15:00  97590.2  97678.1  95938.4  97060.9  16.408
+2024-12-06 13:30:00  97060.9  97678.1  95839.7  97135.0  15.412
+2024-12-06 13:45:00  97135.0  99611.8  96342.0  98160.8  33.593
+2024-12-06 14:00:00  98160.8  99611.8  97298.4  98854.5  20.500
+2024-12-07 23:00:00,659 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 23:00:00,676 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 23:00:03,753 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 23:00:03,756 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 23:00:03,757 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 23:00:03,758 - telegram - INFO - telegram_bot.py:901 - === 1시간봉 분석 시작 (2024-12-07 23:00:00 KST) ===
+2024-12-07 23:00:03,763 - telegram - INFO - telegram_bot.py:938 - === 1h 분석 시작 (2024-12-07 23:00:00 KST) ===
+2024-12-07 23:00:03,928 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close      volume
+timestamp                                                           
+2024-12-03 11:00:00  97800.0  102402.8  93470.6  95341.5     237.343
+2024-12-03 12:00:00  95341.5  102569.0  82500.0  96562.9  330890.358
+2024-12-03 13:00:00  96562.9   97006.7  93470.6  93505.8     115.631
+2024-12-03 14:00:00  93505.8  101367.8  93173.6  95200.0     320.532
+2024-12-03 15:00:00  95200.0   96375.6  93500.0  95341.5     201.491
+2024-12-07 23:00:03,952 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 23:00:03,975 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 23:00:09,769 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 23:15:00,907 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 23:15:00 KST) ===
+2024-12-07 23:15:00,908 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 23:15:00 KST) ===
+2024-12-07 23:15:01,200 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low    close   volume
+timestamp                                                        
+2024-12-06 13:30:00  97060.9   97678.1  95839.7  97135.0   15.412
+2024-12-06 13:45:00  97135.0   99611.8  96342.0  98160.8   33.593
+2024-12-06 14:00:00  98160.8   99611.8  97298.4  98854.5   20.500
+2024-12-06 14:15:00  98854.5  101647.0  92587.6  99570.7  195.728
+2024-12-06 14:30:00  99570.7   99924.1  96423.2  97953.6   22.972
+2024-12-07 23:15:01,215 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 23:15:01,237 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 23:15:06,811 - telegram - ERROR - telegram_bot.py:725 - GPT 분석 결과가 없습니다
+2024-12-07 23:30:00,894 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 23:30:00 KST) ===
+2024-12-07 23:30:00,896 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 23:30:00 KST) ===
+2024-12-07 23:30:01,047 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                        open      high      low     close   volume
+timestamp                                                         
+2024-12-06 13:45:00  97135.0   99611.8  96342.0   98160.8   33.593
+2024-12-06 14:00:00  98160.8   99611.8  97298.4   98854.5   20.500
+2024-12-06 14:15:00  98854.5  101647.0  92587.6   99570.7  195.728
+2024-12-06 14:30:00  99570.7   99924.1  96423.2   97953.6   22.972
+2024-12-06 14:45:00  97953.6  100419.8  97884.7  100377.8   16.901
+2024-12-07 23:30:01,057 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 23:30:01,072 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 23:30:03,764 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 23:30:03,769 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 23:30:03,770 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료
+2024-12-07 23:30:30,534 - telegram - INFO - telegram_bot.py:751 - final 분석 결과 파일 저장 완료
+2024-12-07 23:45:00,890 - telegram - INFO - telegram_bot.py:895 - === 15분봉 분석 시작 (2024-12-07 23:45:00 KST) ===
+2024-12-07 23:45:00,890 - telegram - INFO - telegram_bot.py:938 - === 15m 분석 시작 (2024-12-07 23:45:00 KST) ===
+2024-12-07 23:45:01,088 - telegram - INFO - telegram_bot.py:665 - 데이터 조회 결과: 
+                         open      high      low     close   volume
+timestamp                                                          
+2024-12-06 14:00:00   98160.8   99611.8  97298.4   98854.5   20.500
+2024-12-06 14:15:00   98854.5  101647.0  92587.6   99570.7  195.728
+2024-12-06 14:30:00   99570.7   99924.1  96423.2   97953.6   22.972
+2024-12-06 14:45:00   97953.6  100419.8  97884.7  100377.8   16.901
+2024-12-06 15:00:00  100377.8  100377.8  97800.0   98965.3   17.463
+2024-12-07 23:45:01,098 - telegram - INFO - telegram_bot.py:675 - 기술적 지표 계산 완료
+2024-12-07 23:45:01,113 - telegram - INFO - telegram_bot.py:685 - 다이버전스 체크 완료
+2024-12-07 23:45:03,820 - telegram - INFO - telegram_bot.py:715 - 15m 석 완료
+2024-12-07 23:45:03,821 - telegram - INFO - telegram_bot.py:751 - 15m 분석 결과 파일 저장 완료
+2024-12-07 23:45:03,822 - telegram - INFO - telegram_bot.py:944 - 15m 분석 완료

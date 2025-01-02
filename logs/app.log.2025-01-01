@@ -1,0 +1,1339 @@
+2025-01-01 14:50:39,548 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 14:50:39,549 - main - INFO - API 키 로드: 성공
+2025-01-01 14:50:39,550 - main - INFO - API Secret 로드: 성공
+2025-01-01 14:50:39,550 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 14:50:39,555 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 14:50:41,617 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 14:50:41,618 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 14:50:41,618 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 14:50:41,619 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 14:50:41,619 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 14:50:41,619 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 14:50:41,619 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 14:50:41,619 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 14:50:41,619 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 14:50:41,619 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 14:50:42,714 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 14:50:42,714 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 14:50:44,380 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 14:50:44,381 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 14:50:44,382 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 14:50:44,382 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 14:50:44,383 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 14:50:44,383 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 14:50:44,384 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:50, 실행여부: False
+2025-01-01 14:50:44,634 - telegram.ext.Application - INFO - Application started
+2025-01-01 14:50:44,889 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 14:50:54,824 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-01-01 14:51:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:51, 실행여부: False
+2025-01-01 14:52:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:52, 실행여부: False
+2025-01-01 14:53:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:53, 실행여부: False
+2025-01-01 14:54:00,018 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:54, 실행여부: False
+2025-01-01 14:55:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:55, 실행여부: False
+2025-01-01 14:55:59,993 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:55, 실행여부: False
+2025-01-01 14:56:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:56, 실행여부: False
+2025-01-01 14:57:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:57, 실행여부: False
+2025-01-01 14:57:59,992 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:57, 실행여부: False
+2025-01-01 14:58:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:58, 실행여부: False
+2025-01-01 14:59:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:59, 실행여부: False
+2025-01-01 15:00:00,012 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 15:00:00 KST)
+2025-01-01 15:00:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 15:00:00,013 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 15:00:00,363 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 15:00:00,363 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 15:00:03,264 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 15:00:04,656 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 1h 분석 실행 예정 (현재시간: 2025-01-01 15:00:00 KST)
+2025-01-01 15:00:04,657 - telegram_bot.monitors.auto_analyzer - INFO - 1h 자동 분석 시작
+2025-01-01 15:00:04,657 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 15:00:04,794 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 15:00:04,795 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 15:00:26,487 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1h.json
+2025-01-01 15:00:27,943 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:00, 실행여부: False
+2025-01-01 15:01:27,943 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:01, 실행여부: False
+2025-01-01 15:02:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:02, 실행여부: False
+2025-01-01 15:03:00,027 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:03, 실행여부: False
+2025-01-01 15:04:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:04, 실행여부: False
+2025-01-01 15:05:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:05, 실행여부: False
+2025-01-01 15:06:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:06, 실행여부: False
+2025-01-01 15:07:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:07, 실행여부: False
+2025-01-01 15:08:00,018 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:08, 실행여부: False
+2025-01-01 15:09:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:09, 실행여부: False
+2025-01-01 15:10:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:10, 실행여부: False
+2025-01-01 15:11:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:11, 실행여부: False
+2025-01-01 15:12:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:12, 실행여부: False
+2025-01-01 15:13:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:13, 실행여부: False
+2025-01-01 15:14:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:14, 실행여부: False
+2025-01-01 15:15:00,008 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 15:15:00 KST)
+2025-01-01 15:15:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 15:15:00,010 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 15:15:00,543 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 15:15:00,544 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 15:15:03,848 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 15:15:05,446 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:15, 실행여부: False
+2025-01-01 15:16:05,461 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:16, 실행여부: False
+2025-01-01 15:17:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:17, 실행여부: False
+2025-01-01 15:18:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:18, 실행여부: False
+2025-01-01 15:18:59,999 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:18, 실행여부: False
+2025-01-01 15:19:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:19, 실행여부: False
+2025-01-01 15:19:59,996 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:19, 실행여부: False
+2025-01-01 15:20:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:20, 실행여부: False
+2025-01-01 15:21:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:21, 실행여부: False
+2025-01-01 15:22:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:22, 실행여부: False
+2025-01-01 15:23:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:23, 실행여부: False
+2025-01-01 15:23:59,998 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:23, 실행여부: False
+2025-01-01 15:24:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:24, 실행여부: False
+2025-01-01 15:25:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:25, 실행여부: False
+2025-01-01 15:26:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:26, 실행여부: False
+2025-01-01 15:27:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:27, 실행여부: False
+2025-01-01 15:28:00,000 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:28, 실행여부: False
+2025-01-01 15:29:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:29, 실행여부: False
+2025-01-01 15:29:59,993 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:29, 실행여부: False
+2025-01-01 15:30:00,008 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 15:30:00 KST)
+2025-01-01 15:30:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 15:30:00,010 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 15:30:00,274 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 15:30:00,275 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 15:30:03,155 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 15:30:04,660 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:30, 실행여부: False
+2025-01-01 15:31:04,672 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:31, 실행여부: False
+2025-01-01 15:32:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:32, 실행여부: False
+2025-01-01 15:33:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:33, 실행여부: False
+2025-01-01 15:34:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:34, 실행여부: False
+2025-01-01 15:35:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:35, 실행여부: False
+2025-01-01 15:36:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:36, 실행여부: False
+2025-01-01 15:37:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:37, 실행여부: False
+2025-01-01 15:38:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:38, 실행여부: False
+2025-01-01 15:39:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:39, 실행여부: False
+2025-01-01 15:40:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:40, 실행여부: False
+2025-01-01 15:41:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:41, 실행여부: False
+2025-01-01 15:42:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:42, 실행여부: False
+2025-01-01 15:43:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:43, 실행여부: False
+2025-01-01 15:44:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:44, 실행여부: False
+2025-01-01 15:44:59,998 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:44, 실행여부: False
+2025-01-01 15:45:00,013 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 15:45:00 KST)
+2025-01-01 15:45:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 15:45:00,014 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 15:45:00,266 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 15:45:00,266 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 15:45:06,718 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 15:45:09,637 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:45, 실행여부: False
+2025-01-01 15:46:09,635 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:46, 실행여부: False
+2025-01-01 15:47:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:47, 실행여부: False
+2025-01-01 15:48:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:48, 실행여부: False
+2025-01-01 15:49:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:49, 실행여부: False
+2025-01-01 15:50:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:50, 실행여부: False
+2025-01-01 15:51:00,030 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:51, 실행여부: False
+2025-01-01 15:52:00,000 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:52, 실행여부: False
+2025-01-01 15:52:59,997 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:52, 실행여부: False
+2025-01-01 15:53:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:53, 실행여부: False
+2025-01-01 15:54:00,018 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:54, 실행여부: False
+2025-01-01 15:55:00,000 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:55, 실행여부: False
+2025-01-01 15:56:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:56, 실행여부: False
+2025-01-01 15:57:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:57, 실행여부: False
+2025-01-01 15:58:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:58, 실행여부: False
+2025-01-01 15:59:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:59, 실행여부: False
+2025-01-01 16:00:00,004 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 16:00:00 KST)
+2025-01-01 16:00:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 16:00:00,005 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 16:00:00,393 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 16:00:00,393 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 16:00:03,459 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 16:00:05,023 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 1h 분석 실행 예정 (현재시간: 2025-01-01 16:00:00 KST)
+2025-01-01 16:00:05,024 - telegram_bot.monitors.auto_analyzer - INFO - 1h 자동 분석 시작
+2025-01-01 16:00:05,025 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 16:00:05,169 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 16:00:05,169 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 16:00:26,789 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1h.json
+2025-01-01 16:00:28,350 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:00, 실행여부: False
+2025-01-01 16:01:28,370 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:01, 실행여부: False
+2025-01-01 16:02:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:02, 실행여부: False
+2025-01-01 16:03:00,022 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:03, 실행여부: False
+2025-01-01 16:04:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:04, 실행여부: False
+2025-01-01 16:05:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:05, 실행여부: False
+2025-01-01 16:06:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:06, 실행여부: False
+2025-01-01 16:07:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:07, 실행여부: False
+2025-01-01 16:07:59,998 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:07, 실행여부: False
+2025-01-01 16:08:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:08, 실행여부: False
+2025-01-01 16:09:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:09, 실행여부: False
+2025-01-01 16:10:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:10, 실행여부: False
+2025-01-01 16:10:59,997 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:10, 실행여부: False
+2025-01-01 16:11:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:11, 실행여부: False
+2025-01-01 16:12:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:12, 실행여부: False
+2025-01-01 16:13:00,003 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:13, 실행여부: False
+2025-01-01 16:14:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:14, 실행여부: False
+2025-01-01 16:15:00,003 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 16:15:00 KST)
+2025-01-01 16:15:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 16:15:00,004 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 16:15:00,271 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 16:15:00,272 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 16:15:02,579 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 16:15:04,260 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:15, 실행여부: False
+2025-01-01 16:16:04,264 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:16, 실행여부: False
+2025-01-01 16:17:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:17, 실행여부: False
+2025-01-01 16:18:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:18, 실행여부: False
+2025-01-01 16:19:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:19, 실행여부: False
+2025-01-01 16:20:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:20, 실행여부: False
+2025-01-01 16:20:59,998 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:20, 실행여부: False
+2025-01-01 16:21:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:21, 실행여부: False
+2025-01-01 16:22:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:22, 실행여부: False
+2025-01-01 16:23:00,021 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:23, 실행여부: False
+2025-01-01 16:24:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:24, 실행여부: False
+2025-01-01 16:25:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:25, 실행여부: False
+2025-01-01 16:26:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:26, 실행여부: False
+2025-01-01 16:26:59,990 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:26, 실행여부: False
+2025-01-01 16:27:00,021 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:27, 실행여부: False
+2025-01-01 16:28:00,032 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:28, 실행여부: False
+2025-01-01 16:29:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:29, 실행여부: False
+2025-01-01 16:30:00,013 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 16:30:00 KST)
+2025-01-01 16:30:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 16:30:00,015 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 16:30:00,299 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 16:30:00,300 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 16:30:02,888 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 16:30:04,478 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:30, 실행여부: False
+2025-01-01 16:31:04,487 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:31, 실행여부: False
+2025-01-01 16:31:59,991 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:31, 실행여부: False
+2025-01-01 16:32:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:32, 실행여부: False
+2025-01-01 16:33:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:33, 실행여부: False
+2025-01-01 16:34:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:34, 실행여부: False
+2025-01-01 16:35:00,024 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:35, 실행여부: False
+2025-01-01 16:36:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:36, 실행여부: False
+2025-01-01 16:37:00,021 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:37, 실행여부: False
+2025-01-01 16:38:00,028 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:38, 실행여부: False
+2025-01-01 16:39:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:39, 실행여부: False
+2025-01-01 16:40:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:40, 실행여부: False
+2025-01-01 16:41:00,018 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:41, 실행여부: False
+2025-01-01 16:46:34,018 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 16:46:34,020 - main - INFO - API 키 로드: 성공
+2025-01-01 16:46:34,021 - main - INFO - API Secret 로드: 성공
+2025-01-01 16:46:34,021 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 16:46:34,027 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 16:46:35,963 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 16:46:35,964 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 16:46:35,964 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 16:46:35,964 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 16:46:35,964 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 16:46:35,965 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 16:46:35,965 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 16:46:35,965 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 16:46:35,965 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 16:46:35,965 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 16:46:38,952 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 16:46:38,952 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 16:46:40,819 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 16:46:40,821 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 16:46:40,822 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 16:46:40,823 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 16:46:40,824 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 16:46:40,824 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 16:46:40,827 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:46, 실행여부: False
+2025-01-01 16:46:41,081 - telegram.ext.Application - INFO - Application started
+2025-01-01 16:46:41,330 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 16:47:00,019 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:47, 실행여부: False
+2025-01-01 16:47:59,995 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:47, 실행여부: False
+2025-01-01 16:48:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:48, 실행여부: False
+2025-01-01 16:49:00,003 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:49, 실행여부: False
+2025-01-01 16:49:59,998 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:49, 실행여부: False
+2025-01-01 16:50:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:50, 실행여부: False
+2025-01-01 16:51:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:51, 실행여부: False
+2025-01-01 16:52:00,021 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:52, 실행여부: False
+2025-01-01 16:53:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:53, 실행여부: False
+2025-01-01 16:54:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:54, 실행여부: False
+2025-01-01 16:55:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:55, 실행여부: False
+2025-01-01 16:55:59,997 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:55, 실행여부: False
+2025-01-01 16:56:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:56, 실행여부: False
+2025-01-01 16:57:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:57, 실행여부: False
+2025-01-01 16:58:00,019 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:58, 실행여부: False
+2025-01-01 16:58:59,997 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:58, 실행여부: False
+2025-01-01 16:59:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:59, 실행여부: False
+2025-01-01 17:00:00,003 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 17:00:00 KST)
+2025-01-01 17:00:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 17:00:00,005 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 17:00:00,341 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 17:00:00,341 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 17:00:02,788 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 17:00:04,150 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 1h 분석 실행 예정 (현재시간: 2025-01-01 17:00:00 KST)
+2025-01-01 17:00:04,151 - telegram_bot.monitors.auto_analyzer - INFO - 1h 자동 분석 시작
+2025-01-01 17:00:04,151 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 17:00:04,296 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 17:00:04,296 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 17:00:26,487 - ai.gpt_client - ERROR - GPT 응답 JSON 파싱 실패: No valid JSON objects found: line 1 column 1 (char 0)
+2025-01-01 17:00:26,488 - ai.gpt_client - ERROR - 원본 응답: {
+    "market_summary": {
+        "market_phase": "상승",
+        "overall_sentiment": "긍정적",
+        "short_term_sentiment": "중립",
+        "risk_level": "중간",
+        "volume_trend": "중립",
+        "confidence": 80
+    },
+    "technical_analysis": {
+        "trend": "횡보",
+        "strength": 50,
+        "indicators": {
+            "rsi": 50,
+            "macd": "하락",
+            "bollinger": "중단",
+            "divergence": {
+                "type": "없음",
+                "description": "다이버전스 설명",
+                "timeframe": "1h"
+            }
+        }
+    },
+    "trading_strategy": {
+        "position": "매수",
+        "entry_points": [93643.9],
+        "targets": [95516.8, 97389.7],
+        "stop_loss": 91771.022,
+        "leverage": 1,
+        "position_size": 1,
+    }
+}
+2025-01-01 17:00:26,493 - telegram_bot.monitors.auto_analyzer - ERROR - 1h 분석 실패
+2025-01-01 17:00:26,494 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 17:00, 실행여부: True
+2025-01-01 17:00:26,494 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 4h 분석 실행 예정 (현재시간: 2025-01-01 17:00:00 KST)
+2025-01-01 17:00:26,495 - telegram_bot.monitors.auto_analyzer - INFO - 4h 자동 분석 시작
+2025-01-01 17:00:26,495 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 17:00:26,736 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 17:00:26,737 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 17:00:49,482 - telegram_bot.formatters.storage_formatter - INFO - 4h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_4h.json
+2025-01-01 17:00:51,080 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 중 오류: 'GPTAnalyzer' object has no attribute 'run_complete_analysis'
+2025-01-01 17:00:51,097 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\monitors\auto_analyzer.py", line 185, in _run_final_analysis
+    final_analysis = await self.bot.ai_trader.gpt_analyzer.run_complete_analysis(analyses)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GPTAnalyzer' object has no attribute 'run_complete_analysis'
+
+2025-01-01 21:26:24,715 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 21:26:24,716 - main - INFO - API 키 로드: 성공
+2025-01-01 21:26:24,716 - main - INFO - API Secret 로드: 성공
+2025-01-01 21:26:24,717 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 21:26:24,722 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 21:26:26,858 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 21:26:26,858 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 21:26:26,858 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:26:26,858 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:26:26,859 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:26:26,859 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:26:26,859 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:26:26,859 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:26:26,859 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:26:26,860 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:26:29,950 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 21:26:29,950 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 21:26:31,624 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 21:26:31,626 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 21:26:31,627 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 21:26:31,628 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 21:26:31,629 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 21:26:31,629 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 21:26:31,632 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:26, 실행여부: False
+2025-01-01 21:26:31,880 - telegram.ext.Application - INFO - Application started
+2025-01-01 21:26:32,128 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 21:26:38,038 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:26:38,039 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:26:40,398 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 21:26:40,398 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 21:26:40,398 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 32.13, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '1d'}}}, 'trading_strategy': {'entry_points': [93760.7], 'stop_loss': 91885.486, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [95635.914, 97511.128]}, 'saved_at': '2025-01-01 21:26:40 KST'}
+2025-01-01 21:26:40,401 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 21:26:40,402 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 32.13, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '1d'}}}, 'trading_strategy': {'entry_points': [93760.7], 'stop_loss': 91885.486, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [95635.914, 97511.128], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 32.13, 'reason': '추세 강도 부족(32.13%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 21:26:40 KST'}
+2025-01-01 21:26:40,410 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 21:26:41,321 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 21:26:41,322 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 32.13%
+2025-01-01 21:27:00,025 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:27, 실행여부: False
+2025-01-01 21:27:18,422 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 21:27:18,732 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:27:18,732 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:27:21,948 - telegram_bot.formatters.storage_formatter - INFO - 4h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_4h.json
+2025-01-01 21:27:25,783 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:27:25,784 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:27:44,908 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 21:27:44,910 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 21:27:44,911 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '중간', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 25.62, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '1h'}}}, 'trading_strategy': {'entry_points': [93780], 'stop_loss': 91904.4, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [95655.6, 97531.2]}, 'saved_at': '2025-01-01 21:27:44 KST'}
+2025-01-01 21:27:44,913 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 21:27:44,914 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '중간', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 25.62, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '1h'}}}, 'trading_strategy': {'entry_points': [93780], 'stop_loss': 91904.4, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [95655.6, 97531.2], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 25.62, 'reason': '추세 강도 부족(25.62%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 21:27:44 KST'}
+2025-01-01 21:27:44,923 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 21:27:46,338 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 21:27:46,339 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 25.62%
+2025-01-01 21:28:00,020 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:28, 실행여부: False
+2025-01-01 21:29:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:29, 실행여부: False
+2025-01-01 21:30:00,001 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 21:30:00 KST)
+2025-01-01 21:30:00,003 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 21:30:00,005 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 21:30:00,235 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:30:00,236 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:30:02,602 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 21:30:04,917 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:30, 실행여부: False
+2025-01-01 21:31:04,930 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:31, 실행여부: False
+2025-01-01 21:32:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:32, 실행여부: False
+2025-01-01 21:33:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:33, 실행여부: False
+2025-01-01 21:34:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:34, 실행여부: False
+2025-01-01 21:35:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:35, 실행여부: False
+2025-01-01 21:36:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:36, 실행여부: False
+2025-01-01 21:37:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:37, 실행여부: False
+2025-01-01 21:38:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:38, 실행여부: False
+2025-01-01 21:38:30,963 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 21:38:30,964 - main - INFO - API 키 로드: 성공
+2025-01-01 21:38:30,964 - main - INFO - API Secret 로드: 성공
+2025-01-01 21:38:30,965 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 21:38:30,970 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 21:38:33,194 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 21:38:33,195 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 21:38:33,195 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:38:33,196 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:38:33,196 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:38:33,196 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:38:33,196 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:38:33,196 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:38:33,196 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:38:33,196 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:38:34,200 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 21:38:34,200 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 21:38:36,099 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 21:38:36,102 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 21:38:36,103 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 21:38:36,104 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 21:38:36,105 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 21:38:36,106 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 21:38:36,108 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:38, 실행여부: False
+2025-01-01 21:38:36,360 - telegram.ext.Application - INFO - Application started
+2025-01-01 21:38:36,611 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 21:39:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:39, 실행여부: False
+2025-01-01 21:39:06,561 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:39:06,562 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:39:09,047 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 21:39:09,047 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 21:39:09,048 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '중단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [93764.8], 'stop_loss': 91889.504, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95640.096, 97515.392]}, 'saved_at': '2025-01-01 21:39:09 KST'}
+2025-01-01 21:39:09,048 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 21:39:09,049 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '중단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [93764.8], 'stop_loss': 91889.504, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95640.096, 97515.392], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 13.3, 'reason': '추세 강도 부족(13.3%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 21:39:09 KST'}
+2025-01-01 21:39:09,051 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 21:39:10,104 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 21:39:10,104 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 13.3%
+2025-01-01 21:40:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:40, 실행여부: False
+2025-01-01 21:41:46,446 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 21:41:46,447 - main - INFO - API 키 로드: 성공
+2025-01-01 21:41:46,447 - main - INFO - API Secret 로드: 성공
+2025-01-01 21:41:46,448 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 21:41:46,453 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 21:41:48,429 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 21:41:48,429 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 21:41:48,430 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:41:48,430 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:41:48,430 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:41:48,430 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:41:48,431 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:41:48,431 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:41:48,431 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:41:48,431 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:41:49,455 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 21:41:49,455 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 21:41:51,257 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 21:41:51,260 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 21:41:51,261 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 21:41:51,262 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 21:41:51,262 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 21:41:51,263 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 21:41:51,265 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:41, 실행여부: False
+2025-01-01 21:41:51,521 - telegram.ext.Application - INFO - Application started
+2025-01-01 21:41:51,771 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 21:41:57,483 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 21:41:57,671 - ai.gpt_analyzer - ERROR - Final 분석 중 오류: GPTAnalyzer._create_final_analysis_prompt() missing 1 required positional argument: 'current_price'
+2025-01-01 21:41:57,671 - ai.ai_trader - ERROR - 최종 분석 생성 실패
+2025-01-01 21:42:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:42, 실행여부: False
+2025-01-01 21:43:06,111 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 21:43:06,112 - main - INFO - API 키 로드: 성공
+2025-01-01 21:43:06,112 - main - INFO - API Secret 로드: 성공
+2025-01-01 21:43:06,112 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 21:43:06,117 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 21:43:08,045 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 21:43:08,045 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 21:43:08,045 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:43:08,046 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:43:08,046 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:43:08,046 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:43:08,047 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:43:08,047 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:43:08,047 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:43:08,047 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:43:09,140 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 21:43:09,140 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 21:43:10,855 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 21:43:10,858 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 21:43:10,859 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 21:43:10,859 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 21:43:10,860 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 21:43:10,862 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 21:43:10,864 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:43, 실행여부: False
+2025-01-01 21:43:11,112 - telegram.ext.Application - INFO - Application started
+2025-01-01 21:43:11,361 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 21:43:18,311 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 21:43:18,508 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:43:18,508 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:43:21,551 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '중단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [93810], 'stop_loss': 91933.8, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95686.2, 97562.4]}, 'saved_at': '2025-01-01 21:43:21 KST'}
+2025-01-01 21:43:21,558 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 21:43:22,460 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 21:43:22,461 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 0.0%
+2025-01-01 21:44:00,000 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:44, 실행여부: False
+2025-01-01 21:44:37,917 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 21:44:37,919 - main - INFO - API 키 로드: 성공
+2025-01-01 21:44:37,919 - main - INFO - API Secret 로드: 성공
+2025-01-01 21:44:37,919 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 21:44:37,924 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 21:44:40,059 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 21:44:40,059 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 21:44:40,060 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:44:40,060 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:44:40,060 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:44:40,061 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:44:40,061 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 21:44:40,061 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 21:44:40,061 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 21:44:40,061 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 21:44:41,071 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 21:44:41,071 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 21:44:42,881 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 21:44:42,884 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 21:44:42,885 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 21:44:42,885 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 21:44:42,886 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 21:44:42,887 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 21:44:42,890 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:44, 실행여부: False
+2025-01-01 21:44:43,154 - telegram.ext.Application - INFO - Application started
+2025-01-01 21:44:43,411 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 21:44:53,258 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 21:44:53,406 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:44:53,407 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:44:56,316 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '높음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [93735], 'stop_loss': 91860.3, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95609.7, 97484.4]}, 'saved_at': '2025-01-01 21:44:56 KST'}
+2025-01-01 21:44:56,320 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 21:44:57,247 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 21:44:57,248 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 0.0%
+2025-01-01 21:44:59,998 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:44, 실행여부: False
+2025-01-01 21:45:00,013 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 21:45:00 KST)
+2025-01-01 21:45:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 21:45:00,017 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 21:45:00,164 - ai.gpt_analyzer - ERROR - 15m 분석 중 오류: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-01-01 21:45:00,235 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\ai\gpt_analyzer.py", line 1189, in analyze_market
+    if not klines or len(klines) == 0:
+           ^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\pandas\core\generic.py", line 1466, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-01-01 21:45:00,236 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-01-01 21:45:00,236 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:45, 실행여부: False
+2025-01-01 21:46:00,214 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:46, 실행여부: False
+2025-01-01 21:46:40,929 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 21:46:41,165 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 21:46:41,166 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 21:46:43,735 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1h.json
+2025-01-01 21:47:00,025 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:47, 실행여부: False
+2025-01-01 21:48:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:48, 실행여부: False
+2025-01-01 21:49:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:49, 실행여부: False
+2025-01-01 21:50:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:50, 실행여부: False
+2025-01-01 21:51:00,018 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:51, 실행여부: False
+2025-01-01 21:52:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:52, 실행여부: False
+2025-01-01 21:53:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:53, 실행여부: False
+2025-01-01 21:54:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:54, 실행여부: False
+2025-01-01 21:55:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:55, 실행여부: False
+2025-01-01 21:56:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:56, 실행여부: False
+2025-01-01 21:57:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:57, 실행여부: False
+2025-01-01 21:58:00,024 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:58, 실행여부: False
+2025-01-01 21:59:00,023 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 21:59, 실행여부: False
+2025-01-01 22:00:00,017 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 22:00:00 KST)
+2025-01-01 22:00:00,019 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 22:00:00,020 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 22:00:00,250 - ai.gpt_analyzer - ERROR - 15m 분석 중 오류: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-01-01 22:00:00,252 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\ai\gpt_analyzer.py", line 1189, in analyze_market
+    try:
+         
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\pandas\core\generic.py", line 1466, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-01-01 22:00:00,253 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-01-01 22:00:00,253 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 1h 분석 실행 예정 (현재시간: 2025-01-01 22:00:00 KST)
+2025-01-01 22:00:00,254 - telegram_bot.monitors.auto_analyzer - INFO - 1h 자동 분석 시작
+2025-01-01 22:00:00,254 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 22:00:00,391 - ai.gpt_analyzer - ERROR - 1h 분석 중 오류: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-01-01 22:00:00,392 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\ai\gpt_analyzer.py", line 1189, in analyze_market
+    try:
+         
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\pandas\core\generic.py", line 1466, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-01-01 22:00:00,393 - telegram_bot.monitors.auto_analyzer - ERROR - 1h 분석 실패
+2025-01-01 22:00:00,394 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:00, 실행여부: False
+2025-01-01 22:01:57,874 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 22:01:57,875 - main - INFO - API 키 로드: 성공
+2025-01-01 22:01:57,875 - main - INFO - API Secret 로드: 성공
+2025-01-01 22:01:57,876 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 22:01:57,881 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 22:02:00,062 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 22:02:00,063 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 22:02:00,063 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:02:00,064 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:02:00,064 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:02:00,064 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:02:00,064 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:02:00,065 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:02:00,065 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:02:00,065 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:02:01,076 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 22:02:01,077 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 22:02:08,730 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 22:02:08,733 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 22:02:08,734 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 22:02:08,735 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 22:02:08,736 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 22:02:08,736 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 22:02:08,739 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:02, 실행여부: False
+2025-01-01 22:02:08,994 - telegram.ext.Application - INFO - Application started
+2025-01-01 22:02:09,250 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 22:02:19,741 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 22:02:20,005 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:02:20,006 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:02:22,593 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 22:02:29,318 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 22:02:29,495 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:02:29,496 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:02:45,036 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1h.json
+2025-01-01 22:02:54,034 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 22:02:54,303 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:02:54,305 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:03:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:03, 실행여부: False
+2025-01-01 22:03:07,746 - telegram_bot.formatters.storage_formatter - INFO - 4h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_4h.json
+2025-01-01 22:03:11,523 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 22:03:11,669 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:03:11,670 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:03:30,318 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '부정적', 'risk_level': '높음', 'volume_trend': '중립', 'confidence': 85}, 'technical_analysis': {'trend': '약상승', 'strength': 8.61, 'indicators': {'rsi': 47.99, 'macd': '하락', 'bollinger': '중단', 'divergence': {'type': '없음', 'description': '현재 유의미한 다이버전스가 관찰되지 않음'}}}, 'trading_strategy': {'entry_points': [93812], 'stop_loss': 92500, 'leverage': 5, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95000, 96500], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 8.61, 'reason': '추세 강도 부족(8.61%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}}
+2025-01-01 22:03:30,320 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: Object of type bool_ is not JSON serializable
+2025-01-01 22:03:32,773 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 22:03:32,784 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 8.61%
+2025-01-01 22:03:35,614 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1d
+2025-01-01 22:03:35,852 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:03:35,853 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:03:53,615 - telegram_bot.formatters.storage_formatter - INFO - 1d 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1d.json
+2025-01-01 22:03:59,999 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:03, 실행여부: False
+2025-01-01 22:04:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:04, 실행여부: False
+2025-01-01 22:05:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:05, 실행여부: False
+2025-01-01 22:05:33,362 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 22:05:33,363 - main - INFO - API 키 로드: 성공
+2025-01-01 22:05:33,363 - main - INFO - API Secret 로드: 성공
+2025-01-01 22:05:33,363 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 22:05:33,370 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 22:05:35,668 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 22:05:35,669 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 22:05:35,669 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:05:35,670 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:05:35,670 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:05:35,670 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:05:35,670 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:05:35,670 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:05:35,670 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:05:35,670 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:05:36,710 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 22:05:36,711 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 22:05:41,202 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 22:05:41,205 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 22:05:41,206 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 22:05:41,206 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 22:05:41,207 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 22:05:41,208 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 22:05:41,211 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:05, 실행여부: False
+2025-01-01 22:05:41,471 - telegram.ext.Application - INFO - Application started
+2025-01-01 22:05:41,731 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 22:05:44,944 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 22:05:45,098 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:05:45,099 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:05:47,779 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '부정적', 'risk_level': '높음', 'volume_trend': '중립', 'confidence': 85}, 'technical_analysis': {'trend': '약상승', 'strength': 8.61, 'indicators': {'rsi': 48.12, 'macd': '하락', 'bollinger': '중단', 'divergence': {'type': '없음', 'description': '현재 유의미한 다이버전스가 관찰되지 않음'}}}, 'trading_strategy': {'entry_points': [93837], 'stop_loss': 92500, 'leverage': 5, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95000, 96500], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 8.61, 'reason': '추세 강도 부족(8.61%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}}
+2025-01-01 22:05:47,782 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 로드 중 오류: Expecting value: line 36 column 18 (char 715)
+2025-01-01 22:05:47,784 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 22:05:48,689 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 22:05:48,690 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 8.61%
+2025-01-01 22:06:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:06, 실행여부: False
+2025-01-01 22:07:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:07, 실행여부: False
+2025-01-01 22:07:59,994 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:07, 실행여부: False
+2025-01-01 22:08:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:08, 실행여부: False
+2025-01-01 22:08:02,187 - telegram_bot.bot - ERROR - 메시지 전송 실패: Timed out
+2025-01-01 22:08:02,312 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\bot.py", line 92, in send_message_to_all
+    await self.application.bot.send_message(
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-01-01 22:09:40,081 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 22:09:40,082 - main - INFO - API 키 로드: 성공
+2025-01-01 22:09:40,082 - main - INFO - API Secret 로드: 성공
+2025-01-01 22:09:40,082 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 22:09:40,087 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 22:09:42,360 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 22:09:42,361 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 22:09:42,361 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:09:42,361 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:09:42,362 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:09:42,362 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:09:42,362 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:09:42,362 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:09:42,362 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:09:42,362 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:09:43,385 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 22:09:43,385 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 22:09:46,247 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 22:09:46,250 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 22:09:46,251 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 22:09:46,252 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 22:09:46,253 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 22:09:46,253 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 22:09:46,256 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:09, 실행여부: False
+2025-01-01 22:09:46,513 - telegram.ext.Application - INFO - Application started
+2025-01-01 22:09:46,774 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 22:09:56,634 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 22:09:56,807 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:09:56,807 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:09:59,807 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '부정적', 'risk_level': '높음', 'volume_trend': '중립', 'confidence': 80}, 'technical_analysis': {'trend': '약상승', 'strength': 8.61, 'indicators': {'rsi': 46.98, 'macd': '하락', 'bollinger': '중단', 'divergence': {'type': '없음', 'description': '현재 유의미한 다이버전스가 관찰되지 않음'}}}, 'trading_strategy': {'entry_points': [93636], 'stop_loss': 92500, 'leverage': 5, 'position_size': 15.0, 'position_suggestion': '매수', 'take_profit': [95000, 96500], 'auto_trading': {'enabled': False, 'confidence': 80, 'strength': 8.61, 'reason': '추세 강도 부족(8.61%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}}
+2025-01-01 22:09:59,811 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 22:09:59,999 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:09, 실행여부: False
+2025-01-01 22:10:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:10, 실행여부: False
+2025-01-01 22:10:01,817 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 22:10:01,818 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 8.61%
+2025-01-01 22:11:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:11, 실행여부: False
+2025-01-01 22:11:59,999 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:11, 실행여부: False
+2025-01-01 22:12:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:12, 실행여부: False
+2025-01-01 22:13:24,372 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 22:13:24,373 - main - INFO - API 키 로드: 성공
+2025-01-01 22:13:24,373 - main - INFO - API Secret 로드: 성공
+2025-01-01 22:13:24,373 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 22:13:24,380 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 22:13:26,750 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 22:13:26,751 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 22:13:26,751 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:13:26,752 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:13:26,752 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:13:26,752 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:13:26,753 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:13:26,753 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:13:26,753 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:13:26,753 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:13:27,784 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 22:13:27,784 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 22:13:34,066 - telegram_bot.bot - ERROR - 봇 초기화 중 오류: Timed out
+2025-01-01 22:13:34,067 - telegram_bot.bot - ERROR - 봇 초기화 실패
+2025-01-01 22:13:34,070 - exchange.bybit_client - INFO - Bybit 클라이언트 연결 종료
+2025-01-01 22:14:47,922 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 22:14:47,923 - main - INFO - API 키 로드: 성공
+2025-01-01 22:14:47,923 - main - INFO - API Secret 로드: 성공
+2025-01-01 22:14:47,924 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 22:14:47,929 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 22:14:49,966 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 22:14:49,966 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 22:14:49,967 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:14:49,967 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:14:49,967 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:14:49,967 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:14:49,967 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:14:49,967 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:14:49,967 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:14:49,968 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:14:50,984 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 22:14:50,984 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 22:14:57,921 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 22:14:57,923 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 22:14:57,924 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 22:14:57,925 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 22:14:57,926 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 22:14:57,927 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 22:14:57,929 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:14, 실행여부: False
+2025-01-01 22:14:58,197 - telegram.ext.Application - INFO - Application started
+2025-01-01 22:14:58,456 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 22:15:00,021 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 22:15:00 KST)
+2025-01-01 22:15:00,023 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 22:15:00,024 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 22:15:00,180 - ai.gpt_analyzer - ERROR - 15m 분석 중 오류: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-01-01 22:15:00,199 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\ai\gpt_analyzer.py", line 1162, in analyze_market
+    if not klines or len(klines) == 0:
+           ^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\pandas\core\generic.py", line 1466, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-01-01 22:15:00,202 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-01-01 22:15:00,202 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:15, 실행여부: False
+2025-01-01 22:15:16,592 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 22:15:16,781 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:15:16,782 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:15:19,274 - ai.gpt_analyzer - INFO - 추세 강도 계산 중간값:
+2025-01-01 22:15:19,275 - ai.gpt_analyzer - INFO - - ADX 강도: 16.481012892539965
+2025-01-01 22:15:19,276 - ai.gpt_analyzer - INFO - - MACD 강도: 0.10203419849106043
+2025-01-01 22:15:19,277 - ai.gpt_analyzer - INFO - - MA 차이: 1.6854040843183786
+2025-01-01 22:15:19,278 - ai.gpt_analyzer - INFO - - 최종 강도: 8.608197522680976
+2025-01-01 22:15:19,282 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '부정적', 'risk_level': '높음', 'volume_trend': '중립', 'confidence': 85}, 'technical_analysis': {'trend': '약상승', 'strength': 8.61, 'indicators': {'rsi': 46.87, 'macd': '하락', 'bollinger': '중단', 'divergence': {'type': '없음', 'description': '현재 유의미한 다이버전스가 관찰되지 않음'}}}, 'trading_strategy': {'entry_points': [93600], 'stop_loss': 93000, 'leverage': 5, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [94000, 95000], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 8.61, 'reason': '추세 강도 부족(8.61%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}}
+2025-01-01 22:15:19,286 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 22:15:21,087 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 22:15:21,089 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 8.61%
+2025-01-01 22:16:00,197 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:16, 실행여부: False
+2025-01-01 22:17:00,026 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:17, 실행여부: False
+2025-01-01 22:19:07,004 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 22:19:07,005 - main - INFO - API 키 로드: 성공
+2025-01-01 22:19:07,005 - main - INFO - API Secret 로드: 성공
+2025-01-01 22:19:07,006 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 22:19:07,012 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 22:19:09,157 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 22:19:09,157 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 22:19:09,157 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:19:09,157 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:19:09,158 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:19:09,158 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:19:09,158 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:19:09,158 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:19:09,158 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:19:09,159 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:19:10,186 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 22:19:10,186 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 22:19:12,608 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 22:19:12,610 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 22:19:12,611 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 22:19:12,612 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 22:19:12,613 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 22:19:12,614 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 22:19:12,617 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:19, 실행여부: False
+2025-01-01 22:19:12,882 - telegram.ext.Application - INFO - Application started
+2025-01-01 22:19:15,579 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 22:19:30,072 - telegram_bot.bot - ERROR - 메시지 전송 실패: Timed out
+2025-01-01 22:19:30,100 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\bot.py", line 92, in send_message_to_all
+    await self.application.bot.send_message(
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-01-01 22:19:30,122 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 22:19:30,411 - ai.gpt_analyzer - INFO - 추세 강도 계산 중간값:
+2025-01-01 22:19:30,412 - ai.gpt_analyzer - INFO - - ADX 강도: 25.220082497904972
+2025-01-01 22:19:30,412 - ai.gpt_analyzer - INFO - - MACD 강도: 0.04920884174642586
+2025-01-01 22:19:30,412 - ai.gpt_analyzer - INFO - - MA 차이: 0.1905633714055634
+2025-01-01 22:19:30,413 - ai.gpt_analyzer - INFO - - 최종 강도: 12.662916575757526
+2025-01-01 22:19:30,413 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:19:30,413 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:19:33,036 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 22:20:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:20, 실행여부: False
+2025-01-01 22:21:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:21, 실행여부: False
+2025-01-01 22:58:07,508 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 22:58:07,509 - main - INFO - API 키 로드: 성공
+2025-01-01 22:58:07,509 - main - INFO - API Secret 로드: 성공
+2025-01-01 22:58:07,509 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 22:58:07,514 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 22:58:09,726 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 22:58:09,727 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 22:58:09,727 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:58:09,728 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:58:09,728 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:58:09,728 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:58:09,728 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 22:58:09,728 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 22:58:09,728 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 22:58:09,728 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 22:58:10,745 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 22:58:10,745 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 22:58:12,423 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 22:58:12,424 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 22:58:12,424 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 22:58:12,425 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 22:58:12,425 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 22:58:12,425 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 22:58:12,426 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:58, 실행여부: False
+2025-01-01 22:58:12,675 - telegram.ext.Application - INFO - Application started
+2025-01-01 22:58:12,935 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 22:58:31,293 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 22:58:31,293 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 22:58:33,862 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 22:58:33,863 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 22:58:33,864 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 26.4, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '없음', 'timeframe': '1h'}}}, 'trading_strategy': {'entry_points': [93918.1], 'stop_loss': 92039.7, 'leverage': 5, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95796.5, 97674.8]}, 'saved_at': '2025-01-01 22:58:33 KST'}
+2025-01-01 22:58:33,865 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 22:58:33,866 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 26.4, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '없음', 'timeframe': '1h'}}}, 'trading_strategy': {'entry_points': [93918.1], 'stop_loss': 92039.7, 'leverage': 5, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95796.5, 97674.8], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 26.4, 'reason': '추세 강도 부족(26.4%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 22:58:33 KST'}
+2025-01-01 22:58:33,871 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 22:58:34,759 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 22:58:34,760 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 26.4%
+2025-01-01 22:59:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 22:59, 실행여부: False
+2025-01-01 23:00:00,010 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 23:00:00 KST)
+2025-01-01 23:00:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 23:00:00,013 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 23:00:00,246 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:00:00,246 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:00:02,708 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 23:00:04,267 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 1h 분석 실행 예정 (현재시간: 2025-01-01 23:00:00 KST)
+2025-01-01 23:00:04,269 - telegram_bot.monitors.auto_analyzer - INFO - 1h 자동 분석 시작
+2025-01-01 23:00:04,270 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 23:00:04,433 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:00:04,434 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:20:49,433 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 23:20:49,434 - main - INFO - API 키 로드: 성공
+2025-01-01 23:20:49,434 - main - INFO - API Secret 로드: 성공
+2025-01-01 23:20:49,434 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 23:20:49,439 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 23:20:51,851 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 23:20:51,851 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 23:20:51,851 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:20:51,852 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:20:51,852 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:20:51,852 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:20:51,852 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:20:51,853 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:20:51,853 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:20:51,853 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:20:54,574 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 23:20:54,574 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 23:20:56,250 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 23:20:56,252 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 23:20:56,254 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 23:20:56,255 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 23:20:56,255 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 23:20:56,256 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 23:20:56,259 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:20, 실행여부: False
+2025-01-01 23:20:56,525 - telegram.ext.Application - INFO - Application started
+2025-01-01 23:20:56,766 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 23:21:00,019 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:21, 실행여부: False
+2025-01-01 23:22:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:22, 실행여부: False
+2025-01-01 23:22:40,899 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:22:40,900 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:22:43,549 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 23:22:43,550 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 23:22:43,550 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '높음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 12.7, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '현재 시간대'}}}, 'trading_strategy': {'entry_points': [94145.8], 'stop_loss': 92262.884, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [96028.7, 97911.6]}, 'saved_at': '2025-01-01 23:22:43 KST'}
+2025-01-01 23:22:43,551 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 23:22:43,552 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '높음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 12.7, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '현재 시간대'}}}, 'trading_strategy': {'entry_points': [94145.8], 'stop_loss': 92262.884, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [96028.7, 97911.6], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 12.7, 'reason': '추세 강도 부족(12.7%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 23:22:43 KST'}
+2025-01-01 23:22:43,555 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 23:22:44,533 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 23:22:44,535 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 12.7%
+2025-01-01 23:22:58,513 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 23:22:58,759 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:22:58,760 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:22:59,994 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:22, 실행여부: False
+2025-01-01 23:23:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:23, 실행여부: False
+2025-01-01 23:23:05,818 - telegram_bot.formatters.storage_formatter - INFO - 4h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_4h.json
+2025-01-01 23:23:09,251 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:23:09,252 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:23:28,775 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 23:23:28,776 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 23:23:28,777 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 12.7, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '현재 시간대'}}}, 'trading_strategy': {'entry_points': [94130.0], 'stop_loss': 92247.4, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [96012.6, 97895.2]}, 'saved_at': '2025-01-01 23:23:28 KST'}
+2025-01-01 23:23:28,779 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 23:23:28,781 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 12.7, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '현재 시간대'}}}, 'trading_strategy': {'entry_points': [94130.0], 'stop_loss': 92247.4, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [96012.6, 97895.2], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 12.7, 'reason': '추세 강도 부족(12.7%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 23:23:28 KST'}
+2025-01-01 23:23:28,816 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 23:23:30,225 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 23:23:30,226 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 12.7%
+2025-01-01 23:24:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:24, 실행여부: False
+2025-01-01 23:25:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:25, 실행여부: False
+2025-01-01 23:26:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:26, 실행여부: False
+2025-01-01 23:27:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:27, 실행여부: False
+2025-01-01 23:28:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:28, 실행여부: False
+2025-01-01 23:28:59,999 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:28, 실행여부: False
+2025-01-01 23:29:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:29, 실행여부: False
+2025-01-01 23:30:00,015 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 23:30:00 KST)
+2025-01-01 23:30:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 23:30:00,019 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 23:30:00,260 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:30:00,261 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:30:02,438 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 23:30:03,866 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:30, 실행여부: False
+2025-01-01 23:31:03,839 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:31, 실행여부: False
+2025-01-01 23:32:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:32, 실행여부: False
+2025-01-01 23:32:59,996 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:32, 실행여부: False
+2025-01-01 23:33:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:33, 실행여부: False
+2025-01-01 23:34:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:34, 실행여부: False
+2025-01-01 23:35:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:35, 실행여부: False
+2025-01-01 23:35:59,996 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:35, 실행여부: False
+2025-01-01 23:36:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:36, 실행여부: False
+2025-01-01 23:37:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:37, 실행여부: False
+2025-01-01 23:37:17,809 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 23:37:17,810 - main - INFO - API 키 로드: 성공
+2025-01-01 23:37:17,811 - main - INFO - API Secret 로드: 성공
+2025-01-01 23:37:17,811 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 23:37:17,816 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 23:37:19,823 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 23:37:19,823 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 23:37:19,824 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:37:19,824 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:37:19,824 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:37:19,824 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:37:19,824 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:37:19,824 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:37:19,825 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:37:19,825 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:37:20,848 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 23:37:20,848 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 23:37:22,481 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 23:37:22,483 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 23:37:22,485 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 23:37:22,485 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 23:37:22,486 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 23:37:22,488 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 23:37:22,490 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:37, 실행여부: False
+2025-01-01 23:37:22,738 - telegram.ext.Application - INFO - Application started
+2025-01-01 23:37:22,985 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 23:37:27,818 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 23:37:28,003 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:37:28,003 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:37:30,804 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 23:37:33,584 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 23:37:33,761 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:37:33,761 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:37:53,285 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1h.json
+2025-01-01 23:37:56,836 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 23:37:57,068 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:37:57,069 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:38:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:38, 실행여부: False
+2025-01-01 23:38:16,030 - telegram_bot.formatters.storage_formatter - INFO - 4h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_4h.json
+2025-01-01 23:38:19,804 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:38:19,804 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:38:38,810 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 23:38:38,810 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 23:38:38,811 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.6, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '없음', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [94011.9], 'stop_loss': 92131.662, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95892.1, 97772.4]}, 'saved_at': '2025-01-01 23:38:38 KST'}
+2025-01-01 23:38:38,812 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 23:38:38,812 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.6, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '없음', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [94011.9], 'stop_loss': 92131.662, 'leverage': 3, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [95892.1, 97772.4], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 13.6, 'reason': '추세 강도 부족(13.6%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 23:38:38 KST'}
+2025-01-01 23:38:38,814 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 23:38:40,259 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 23:38:40,260 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 13.6%
+2025-01-01 23:38:43,304 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1d
+2025-01-01 23:38:43,569 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:38:43,570 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:39:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:39, 실행여부: False
+2025-01-01 23:39:01,711 - telegram_bot.formatters.storage_formatter - INFO - 1d 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1d.json
+2025-01-01 23:39:59,995 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:39, 실행여부: False
+2025-01-01 23:40:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:40, 실행여부: False
+2025-01-01 23:41:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:41, 실행여부: False
+2025-01-01 23:42:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:42, 실행여부: False
+2025-01-01 23:43:00,015 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:43, 실행여부: False
+2025-01-01 23:44:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:44, 실행여부: False
+2025-01-01 23:44:20,080 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 23:44:20,082 - main - INFO - API 키 로드: 성공
+2025-01-01 23:44:20,082 - main - INFO - API Secret 로드: 성공
+2025-01-01 23:44:20,082 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 23:44:20,087 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 23:44:22,402 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 23:44:22,403 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 23:44:22,403 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:44:22,404 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:44:22,404 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:44:22,404 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:44:22,404 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:44:22,405 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:44:22,405 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:44:22,405 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:44:23,416 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 23:44:23,416 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 23:44:25,147 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 23:44:25,150 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 23:44:25,151 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 23:44:25,151 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 23:44:25,152 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 23:44:25,153 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 23:44:25,156 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:44, 실행여부: False
+2025-01-01 23:44:25,408 - telegram.ext.Application - INFO - Application started
+2025-01-01 23:44:25,665 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 23:45:00,004 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-01 23:45:00 KST)
+2025-01-01 23:45:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 15m 자동 분석 시작
+2025-01-01 23:45:00,005 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 23:45:00,314 - ai.gpt_analyzer - ERROR - 15m 분석 중 오류: 'GPTAnalyzer' object has no attribute '_create_interpretation_prompt'
+2025-01-01 23:45:00,321 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\ai\gpt_analyzer.py", line 1139, in analyze_market
+    prompt = self._create_interpretation_prompt(df_with_indicators, technical_analysis, timeframe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GPTAnalyzer' object has no attribute '_create_interpretation_prompt'
+
+2025-01-01 23:45:00,322 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-01-01 23:45:00,323 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:45, 실행여부: False
+2025-01-01 23:45:22,800 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-01 23:45:23,059 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:45:23,060 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:45:25,838 - telegram_bot.formatters.storage_formatter - INFO - 15m 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_15m.json
+2025-01-01 23:45:28,832 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-01 23:45:28,983 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:45:28,983 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:45:48,484 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1h.json
+2025-01-01 23:45:53,082 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 4h
+2025-01-01 23:45:53,338 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:45:53,339 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:46:00,331 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:46, 실행여부: False
+2025-01-01 23:46:11,014 - telegram_bot.formatters.storage_formatter - INFO - 4h 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_4h.json
+2025-01-01 23:46:14,711 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:46:14,712 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:46:34,468 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 23:46:34,469 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 23:46:34,471 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '중간', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [93940], 'stop_loss': 92061.2, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [95818.8, 97697.6]}, 'saved_at': '2025-01-01 23:46:34 KST'}
+2025-01-01 23:46:34,473 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 23:46:34,474 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '중간', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '15m'}}}, 'trading_strategy': {'entry_points': [93940], 'stop_loss': 92061.2, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [95818.8, 97697.6], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 13.3, 'reason': '추세 강도 부족(13.3%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 23:46:34 KST'}
+2025-01-01 23:46:34,479 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 23:46:35,869 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 23:46:35,870 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 13.3%
+2025-01-01 23:46:38,920 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1d
+2025-01-01 23:46:39,156 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:46:39,157 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:46:57,206 - telegram_bot.formatters.storage_formatter - INFO - 1d 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_1d.json
+2025-01-01 23:47:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:47, 실행여부: False
+2025-01-01 23:48:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:48, 실행여부: False
+2025-01-01 23:49:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:49, 실행여부: False
+2025-01-01 23:50:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:50, 실행여부: False
+2025-01-01 23:50:42,263 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 23:50:42,264 - main - INFO - API 키 로드: 성공
+2025-01-01 23:50:42,265 - main - INFO - API Secret 로드: 성공
+2025-01-01 23:50:42,265 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 23:50:42,270 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 23:50:44,242 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 23:50:44,242 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 23:50:44,243 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:50:44,243 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:50:44,243 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:50:44,243 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:50:44,244 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:50:44,244 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:50:44,244 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:50:44,244 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:50:45,295 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 23:50:45,295 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 23:50:47,034 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 23:50:47,038 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 23:50:47,039 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 23:50:47,040 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 23:50:47,041 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 23:50:47,042 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 23:50:47,044 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:50, 실행여부: False
+2025-01-01 23:50:47,299 - telegram.ext.Application - INFO - Application started
+2025-01-01 23:50:47,558 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 23:51:00,019 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:51, 실행여부: False
+2025-01-01 23:51:38,934 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:51:38,935 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:51:41,743 - ai.gpt_analyzer - INFO - === GPT API 응답 시작 ===
+2025-01-01 23:51:41,744 - ai.gpt_analyzer - INFO - 응답 타입: <class 'dict'>
+2025-01-01 23:51:41,745 - ai.gpt_analyzer - INFO - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '높음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '현재 시간대'}}}, 'trading_strategy': {'entry_points': [94150], 'stop_loss': 92267, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [96033, 97916]}, 'saved_at': '2025-01-01 23:51:41 KST'}
+2025-01-01 23:51:41,748 - ai.gpt_analyzer - INFO - === GPT API 응답 끝 ===
+2025-01-01 23:51:41,749 - ai.gpt_analyzer - INFO - Final 분석 결과: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '높음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 13.3, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '현재 시간대'}}}, 'trading_strategy': {'entry_points': [94150], 'stop_loss': 92267, 'leverage': 5, 'position_size': 20, 'position_suggestion': '매수', 'take_profit': [96033, 97916], 'auto_trading': {'enabled': False, 'confidence': 85, 'strength': 13.3, 'reason': '추세 강도 부족(13.3%)', 'conditions': {'high_confidence': True, 'strong_trend': False}}}, 'saved_at': '2025-01-01 23:51:41 KST'}
+2025-01-01 23:51:41,754 - telegram_bot.formatters.storage_formatter - INFO - final 분석 결과 저장 완료: C:\Users\oasis\Aibybit\src\data\analysis\analysis_final.json
+2025-01-01 23:51:42,701 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 23:51:42,703 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 13.3%
+2025-01-01 23:52:00,000 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:52, 실행여부: False
+2025-01-01 23:53:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:53, 실행여부: False
+2025-01-01 23:54:00,026 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:54, 실행여부: False
+2025-01-01 23:55:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:55, 실행여부: False
+2025-01-01 23:56:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:56, 실행여부: False
+2025-01-01 23:57:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:57, 실행여부: False
+2025-01-01 23:57:53,991 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-01 23:57:53,992 - main - INFO - API 키 로드: 성공
+2025-01-01 23:57:53,992 - main - INFO - API Secret 로드: 성공
+2025-01-01 23:57:53,992 - main - INFO - Bybit 클라이언트 초기화 중...
+2025-01-01 23:57:53,998 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-01 23:57:56,393 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-01 23:57:56,394 - main - INFO - Telegram Bot 초기화 중...
+2025-01-01 23:57:56,394 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:57:56,395 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:57:56,395 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:57:56,396 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:57:56,396 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-01 23:57:56,396 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-01 23:57:56,396 - config.telegram_config - INFO - - 알림 chat_ids: [583881676, -1002464784986]
+2025-01-01 23:57:56,397 - config.telegram_config - INFO - - 단체방 chat_id: -1002464784986
+2025-01-01 23:57:57,408 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-01 23:57:57,409 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-01 23:57:59,151 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-01 23:57:59,153 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-01 23:57:59,154 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-01 23:57:59,155 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-01 23:57:59,156 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-01 23:57:59,157 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-01 23:57:59,159 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:57, 실행여부: False
+2025-01-01 23:57:59,413 - telegram.ext.Application - INFO - Application started
+2025-01-01 23:57:59,724 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-01 23:58:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:58, 실행여부: False
+2025-01-01 23:58:05,422 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-01 23:58:05,423 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-01 23:58:09,583 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-01 23:58:09,584 - trade_manager - INFO - 추세 강도 부족으로 거래 무시: 13.3%
+2025-01-01 23:59:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 23:59, 실행여부: False

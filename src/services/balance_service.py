@@ -1,16 +1,12 @@
 import logging
 from typing import Dict, Optional
-from utils.decorators import error_handler
-from exchange.bybit_client import BybitClient
-import time
 
 logger = logging.getLogger(__name__)
 
 class BalanceService:
-    def __init__(self, bybit_client: BybitClient):
+    def __init__(self, bybit_client):
         self.bybit_client = bybit_client
 
-    @error_handler
     async def get_balance(self) -> Optional[Dict]:
         """잔고 조회"""
         try:

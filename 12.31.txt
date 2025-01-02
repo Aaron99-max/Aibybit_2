@@ -1,0 +1,107 @@
+새 디렉토리에서 다음 버전을 개발하는 것은 좋은 방법입니다. 다만, 몇 가지 고려할 사항이 있습니다:
+깃 브랜치 관리:
+# 현재 버전을 main 브랜치로 유지
+git checkout main
+
+# 새 버전을 위한 브랜치 생성
+git checkout -b v2-development
+
+# 새 디렉토리 생성
+mkdir Aibybit-v2
+cd Aibybit-v2
+
+# 기존 코드 복사 (git history 유지)
+cp -r ../Aibybit/* .
+환경 분리:
+# 새 가상환경 생성
+python -m venv .venv-v2
+
+# 필요한 패키지 설치
+pip install -r requirements.txt
+설정 파일 분리:
+Aibybit/           # 현재 버전 (v1)
+  .env
+  src/
+  ...
+
+Aibybit-v2/       # 새 버전 (v2)
+  .env.v2
+  src/
+  ...
+장점:
+1. 현재 버전 안정성 유지
+개발 환경 완전 분리
+롤백 용이
+테스트 용이
+주의사항:
+API 키/시크릿 관리
+포트 충돌 방지
+로그 파일 경로 분리
+DB 분리 (필요시)
+
+
+네, 맞습니다. 텔레그램 봇은 토큰과 채팅방 ID만 다르게 설정하면 동시에 실행해도 문제없습니다.
+예시 작업 순서:
+현재 메인넷 버전 커밋:
+git add .
+git commit -m "Complete mainnet migration with core trading features"
+git tag v1.0-mainnet
+테스트넷 버전으로 돌아가기:
+# 테스트넷 커밋으로 이동
+git checkout <testnet_commit_hash>
+
+# 새 개발 브랜치 생성
+git checkout -b v2-monitoring
+새 디렉토리 설정:
+mkdir Aibybit-v2
+cd Aibybit-v2
+cp -r ../Aibybit/* .
+환경 설정 분리:
+# .env.v2 (테스트넷용)
+BYBIT_TESTNET_API_KEY=xxx
+BYBIT_TESTNET_SECRET_KEY=xxx
+TELEGRAM_BOT_TOKEN=test_bot_token
+TELEGRAM_CHAT_ID=test_chat_id
+이렇게 하면:
+메인넷: 실제 거래 실행
+테스트넷: 모니터링 등 새 기능 개발
+텔레그램: 각각 다른 봇으로 알림 수신
+두 버전이 완전히 분리되어 안전하게 개발할 수 있습니다.
+
+네, 새 디렉토리에서 새로운 git 저장소를 시작하는 게 좋을 것 같습니다:
+# 1. 현재 메인넷 버전 커밋
+cd /Aibybit
+git add .
+git commit -m "Complete mainnet version 1.0"
+git tag v1.0-mainnet
+
+# 2. 새 디렉토리 생성 및 코드 복사
+cp -r /Aibybit /Aibybit-v2
+
+# 3. 새 버전 git 초기화
+cd /Aibybit-v2
+rm -rf .git            # 기존 git 정보 제거
+git init              # 새 git 저장소 초기화
+git add .
+git commit -m "Initial commit for v2 development"
+주요 파일들 설정:
+# Aibybit-v2/.env (테스트넷용)
+BYBIT_TESTNET_API_KEY=xxx
+BYBIT_TESTNET_SECRET_KEY=xxx
+TELEGRAM_BOT_TOKEN=test_bot_token
+TELEGRAM_CHAT_ID=test_chat_id
+
+# Aibybit-v2/src/main.py
+testnet=True  # 다시 테스트넷으로 설정
+
+# Aibybit-v2/.gitignore
+.env
+__pycache__/
+.venv/
+logs/
+이렇게 하면:
+1. 메인넷 버전 (/Aibybit/) - 실제 거래용
+개발 버전 (/Aibybit-v2/) - 새 기능 개발용
+각각 독립적인 git 저장소로 관리할 수 있습니다.
+
+git remote add origin [Aaron99-max/Aibybit_2]

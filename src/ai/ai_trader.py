@@ -63,40 +63,20 @@ class AITrader:
             logger.error(f"AI Trader 초기화 실패: {str(e)}")
             return False
 
-    async def create_final_analysis(self, analyses: Dict[str, Dict] = None):
+    async def create_final_analysis(self, analyses: Dict) -> Dict:
         """최종 분석 생성"""
         try:
-            # 저장된 분석 결과 로드
-            analyses = {}
-            timeframes = ['15m', '1h', '4h', '1d']
-            
-            for timeframe in timeframes:
-                analysis = self.storage_formatter.load_analysis(timeframe)
-                if analysis:
-                    analyses[timeframe] = analysis
-                    logger.info(f"{timeframe} 분석 데이터 로드 완료")
-                else:
-                    logger.warning(f"{timeframe} 저장된 분석 데이터 없음")
-
-            if not analyses:
-                logger.error("분석할 데이터가 없습니다")
-                raise ValueError("분석할 데이터가 없습니다")
-
-            # 현재가 조회
-            current_price = await self.market_data_service.get_current_price()
-            
-            # Final 분석 실행 (저장된 분석 결과 기반)
-            final_analysis = await self.gpt_analyzer.analyze_final(analyses, current_price)
-            
-            # Final 분석 저장
-            if final_analysis:
-                self.storage_formatter.save_analysis(final_analysis, 'final')
+            # current_price 제거하고 analyses만 전달
+            final_analysis = await self.gpt_analyzer.analyze_final(analyses)
+            if not final_analysis:
+                logger.error("최종 분석 생성 실패")
+                return None
             
             return final_analysis
             
         except Exception as e:
             logger.error(f"최종 분석 생성 중 오류: {str(e)}")
-            raise
+            return None
 
     def _validate_final_analysis(self, analysis: Dict) -> bool:
         """최종 분석 결과 유효성 검사"""

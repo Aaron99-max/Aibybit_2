@@ -1,5 +1,5 @@
 import ccxt.async_support as ccxt
-from typing import Dict
+from typing import Dict, List
 import logging
 import traceback
 import hmac
@@ -12,7 +12,7 @@ import json
 logger = logging.getLogger(__name__)
 
 class BybitClient:
-    def __init__(self, api_key: str, api_secret: str, testnet: bool = True):
+    def __init__(self, api_key: str, api_secret: str, testnet: bool = False):
         if not api_key or not api_secret:
             logger.error("API 키가 설정되지 않았습니다")
             logger.error(f"api_key: {api_key}, api_secret: {api_secret}")
@@ -28,7 +28,8 @@ class BybitClient:
             'secret': api_secret,
             'enableRateLimit': True,
             'options': {
-                'defaultType': 'unified',
+                'defaultType': 'linear',
+                'defaultMarket': 'linear',
                 'accountType': 'UNIFIED',
                 'recvWindow': 20000,
                 'adjustForTimeDifference': True
@@ -36,7 +37,7 @@ class BybitClient:
         })
         
         # REST API base URL
-        self.base_url = "https://api-testnet.bybit.com" if testnet else "https://api.bybit.com"
+        self.base_url = "https://api.bybit.com"
         
         # CCXT exchange 설정
         if testnet:
@@ -282,3 +283,34 @@ class BybitClient:
         except Exception as e:
             logger.error(f"주문 실행 중 오류: {str(e)}")
             return None
+
+    async def get_closed_trades(self, symbol: str = 'BTCUSDT') -> List[Dict]:
+        """완료된 거래 내역 조회"""
+        try:
+            params = {
+                'category': 'linear',
+                'symbol': symbol,
+                'limit': 50
+            }
+            
+            # V5 API 엔드포인트 사용
+            response = await self.exchange.private_get_v5_position_closed_pnl(params)
+            
+            if response and response.get('result', {}).get('list'):
+                trades = response['result']['list']
+                return [{
+                    'symbol': trade['symbol'],
+                    'side': trade['side'],
+                    'size': float(trade['qty']),
+                    'entry_price': float(trade['avgEntryPrice']),
+                    'exit_price': float(trade['avgExitPrice']),
+                    'realized_pnl': float(trade['closedPnl']),
+                    'timestamp': int(trade['updatedTime'])
+                } for trade in trades]
+            
+            return []
+            
+        except Exception as e:
+            logger.error(f"거래 내역 조회 실패: {str(e)}")
+            logger.error(traceback.format_exc())  # 상세 에러 로그 추가
+            return []

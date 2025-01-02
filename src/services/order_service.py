@@ -83,6 +83,9 @@ class OrderService:
                 "reduceOnly": params['reduceOnly']
             }
 
+            # 주문 실행 전 로깅
+            logger.info(f"주문 실행 시도: {order_params}")
+            
             # 주절/익절 설정이 있는 경우에만 추가
             if params['stop_loss'] is not None:
                 order_params["stopLoss"] = str(params['stop_loss'])

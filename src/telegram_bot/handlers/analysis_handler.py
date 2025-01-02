@@ -447,7 +447,7 @@ class AnalysisHandler(BaseHandler):
         except Exception as e:
             logger.error(f"자동 분석 처리 중 오류: {str(e)}")
 
-    async def handle_analysis_result(self, analysis: Dict, timeframe: str, chat_id: int):
+    async def handle_analysis_result(self, analysis: Dict, timeframe: str, chat_id: Optional[int] = None):
         """분석 결과 처리"""
         try:
             # 분석 결과 메시지 전송
@@ -457,14 +457,16 @@ class AnalysisHandler(BaseHandler):
             )
             await self.send_message(message, chat_id)
             
-            # 자동매매 조건 확인 및 실행
-            if timeframe == 'final' and analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled'):
-                result = await self.bot.ai_trader.execute_trade(analysis)
-                
-                if result:
-                    await self.send_message("✅ 자동매매 주문 실행 완료", chat_id)
-                else:
-                    await self.send_message("❌ 자동매매 주문 실행 실패", chat_id)
+            # 자동매매 조건 확인 및 실행 (final만)
+            if timeframe == 'final':
+                if analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled'):
+                    result = await self.bot.ai_trader.execute_trade(analysis)
+                    await self.send_message("✅ 자동매매 주문 실행 완료" if result else "❌ 자동매매 주문 실행 실패", chat_id)
+            # 다이버전스 알림 (final 제외)
+            else:
+                divergence = analysis.get('technical_analysis', {}).get('indicators', {}).get('divergence', {})
+                if divergence and divergence.get('type') != '없음':
+                    await self._send_divergence_alert(divergence, timeframe, chat_id)
                 
         except Exception as e:
             logger.error(f"분석 결과 처리 중 오류: {str(e)}")
@@ -483,3 +485,21 @@ class AnalysisHandler(BaseHandler):
                 
         except Exception as e:
             logger.error(f"분석 명령어 처리 중 오류: {str(e)}")
+
+    async def _send_divergence_alert(self, divergence: Dict, timeframe: str, chat_id: Optional[int] = None):
+        """다이버전스 알림 전송"""
+        try:
+            if not divergence or divergence.get('type') == '없음':
+                return
+            
+            # 알림 메시지 생성
+            message = (
+                f"🔄 다이버전스 감지! ({timeframe})\n"
+                f"• 유형: {divergence.get('type')}\n"
+                f"• 설명: {divergence.get('description')}"
+            )
+            
+            await self.send_message(message, chat_id)
+            
+        except Exception as e:
+            logger.error(f"다이버전스 알림 전송 중 오류: {str(e)}")

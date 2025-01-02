@@ -2,36 +2,37 @@
   "market_summary": {
     "market_phase": "상승",
     "overall_sentiment": "긍정적",
-    "short_term_sentiment": "부정적",
-    "risk_level": "중간",
-    "volume_trend": "증가",
+    "short_term_sentiment": "긍정적",
+    "risk_level": "높음",
+    "volume_trend": "중립",
     "confidence": 85
   },
   "technical_analysis": {
-    "trend": "상승",
-    "strength": 70,
+    "trend": "하락",
+    "strength": 10.83,
     "indicators": {
-      "rsi": 46.29,
-      "macd": "상승",
+      "rsi": 47.68,
+      "macd": "하락",
       "bollinger": "중단",
       "divergence": {
         "type": "없음",
-        "description": "현재 유의미한 다이버전스가 관찰되지 않음"
+        "description": "현재 다이버전스 없음",
+        "timeframe": "1d"
       }
     }
   },
   "trading_strategy": {
     "entry_points": [
-      93000
+      95717.0
     ],
-    "stop_loss": 91140,
-    "leverage": 5,
-    "position_size": 10,
+    "stop_loss": 93802.66,
+    "leverage": 1,
+    "position_size": 30,
     "position_suggestion": "매수",
     "take_profit": [
-      94860,
-      96720
+      97631.34,
+      99545.68
     ]
   },
-  "saved_at": "2024-12-31 12:40:34 KST"
+  "saved_at": "2025-01-02 14:39:12 KST"
 }

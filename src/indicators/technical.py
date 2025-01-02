@@ -25,23 +25,41 @@ class TechnicalIndicators:
             df['bb_lower'] = bb.bollinger_lband()
             
             # ADX 추가 (추세 강도)
-            adx = ADXIndicator(df['high'], df['low'], df['close'])
+            adx = ADXIndicator(df['high'], df['low'], df['close'], window=10)
             df['adx'] = adx.adx()
             df['di_plus'] = adx.adx_pos()
             df['di_minus'] = adx.adx_neg()
             
             # 이동평균선 추가
-            df['sma_20'] = df['close'].rolling(window=20).mean()
-            df['sma_50'] = df['close'].rolling(window=50).mean()
+            df['sma_10'] = df['close'].rolling(window=10).mean()
+            df['sma_30'] = df['close'].rolling(window=30).mean()
             df['ema_9'] = df['close'].ewm(span=9).mean()
             
             # RSI 계산
             rsi = RSIIndicator(close=df['close'], window=14)
             df['rsi'] = rsi.rsi()
             
+            # RSI가 None이거나 0인 경우 처리
+            if df['rsi'].isna().any() or (df['rsi'] == 0).any():
+                logger.warning("RSI 계산 오류 발생, 재계산 시도")
+                # 직접 RSI 계산
+                delta = df['close'].diff()
+                gain = (delta.where(delta > 0, 0)).fillna(0)
+                loss = (-delta.where(delta < 0, 0)).fillna(0)
+                
+                avg_gain = gain.rolling(window=14).mean()
+                avg_loss = loss.rolling(window=14).mean()
+                
+                rs = avg_gain / avg_loss
+                df['rsi'] = 100 - (100 / (1 + rs))
+            
+            # 여전히 문제가 있는 경우 기본값으로 대체
+            df['rsi'] = df['rsi'].fillna(50)
+            df.loc[df['rsi'] == 0, 'rsi'] = 50
+            
             # MACD 계산
-            exp1 = df['close'].ewm(span=12, adjust=False).mean()
-            exp2 = df['close'].ewm(span=26, adjust=False).mean()
+            exp1 = df['close'].ewm(span=8, adjust=False).mean()
+            exp2 = df['close'].ewm(span=17, adjust=False).mean()
             df['macd'] = exp1 - exp2
             df['macd_signal'] = df['macd'].ewm(span=9, adjust=False).mean()
             df['macd_diff'] = df['macd'] - df['macd_signal']  # MACD 히스토แกรม
@@ -56,6 +74,13 @@ class TechnicalIndicators:
             df['volume_sma'] = df['volume'].rolling(window=20).mean()
             df['volume_ratio'] = df['volume'] / df['volume_sma']
             
+            # 추세 강도 직접 계산 추가
+            df['trend_strength'] = df.apply(lambda x: (
+                (x['adx'] * 0.35) +  # ADX 비중 35%
+                (abs(x['macd_diff'] / x['close']) * 1200 * 0.4) +  # MACD 비중 40%, 민감도 증가
+                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 120 * 0.25)  # MA 비중 25%, 민감도 증가
+            ), axis=1)
+            
             return df
             
         except Exception as e:
@@ -63,42 +88,50 @@ class TechnicalIndicators:
             return None
 
     @staticmethod
-    def check_rsi_divergence(df: pd.DataFrame, window: int = 14) -> pd.DataFrame:
+    def check_rsi_divergence(df: pd.DataFrame, window: int = 14) -> Dict:
         """RSI 다이버전스 확인"""
         try:
             if 'rsi' not in df.columns:
-                logger.error("RSI가 계산되지 않았습니다")
-                return None
+                return {"type": "없음", "description": "RSI 데이터 없음"}
                 
-            df['price_high'] = df['close'].rolling(window=window).apply(
-                lambda x: 1 if x.iloc[-1] == max(x) else 0
-            )
-            df['price_low'] = df['close'].rolling(window=window).apply(
-                lambda x: 1 if x.iloc[-1] == min(x) else 0
-            )
+            # 최근 N개 봉에서 고점/저점 찾기
+            last_n = df.tail(window)
             
-            df['rsi_high'] = df['rsi'].rolling(window=window).apply(
-                lambda x: 1 if x.iloc[-1] == max(x) else 0
-            )
-            df['rsi_low'] = df['rsi'].rolling(window=window).apply(
-                lambda x: 1 if x.iloc[-1] == min(x) else 0
-            )
+            # 가격과 RSI의 고점/저점 찾기
+            price_high = last_n['close'].max()
+            price_low = last_n['close'].min()
+            rsi_high = last_n['rsi'].max()
+            rsi_low = last_n['rsi'].min()
             
-            # 베어리시 다이버전스 (가격은 고점, RSI는 저점)
-            df['bearish_divergence'] = (df['price_high'] == 1) & (df['rsi_low'] == 1)
+            current_price = df['close'].iloc[-1]
+            current_rsi = df['rsi'].iloc[-1]
+            prev_rsi = df['rsi'].iloc[-2]
             
-            # 불리시 다이버전스 (가격은 저점, RSI는 고점)
-            df['bullish_divergence'] = (df['price_low'] == 1) & (df['rsi_high'] == 1)
-            
-            # NaN 값을 False로 채우기
-            df['bearish_divergence'] = df['bearish_divergence'].fillna(False)
-            df['bullish_divergence'] = df['bullish_divergence'].fillna(False)
-            
-            return df
+            # 베어리시 다이버전스
+            # (가격이 신고점이지만 RSI는 이전 고점보다 낮을 때)
+            if (current_price >= price_high * 0.998 and  # 가격이 신고점 근처
+                current_rsi < rsi_high * 0.95 and        # RSI는 이전 고점보다 낮음
+                current_rsi < prev_rsi):                 # RSI 하락 중
+                return {
+                    "type": "베어리시",
+                    "description": f"가격은 신고점({current_price:.0f}) 도달, RSI({current_rsi:.1f})는 이전 고점({rsi_high:.1f})보다 낮음"
+                }
+                
+            # 불리시 다이버전스
+            # (가격이 신저점이지만 RSI는 이전 저점보다 높을 때)
+            if (current_price <= price_low * 1.002 and   # 가격이 신저점 근처
+                current_rsi > rsi_low * 1.05 and         # RSI는 이전 저점보다 높음
+                current_rsi > prev_rsi):                 # RSI 상승 중
+                return {
+                    "type": "불리시",
+                    "description": f"가격은 신저점({current_price:.0f}) 도달, RSI({current_rsi:.1f})는 이전 저점({rsi_low:.1f})보다 높음"
+                }
+                
+            return {"type": "없음", "description": "현재 다이버전스 없음"}
             
         except Exception as e:
-            logger.error(f"다이버전스 확인 중 에러 발생: {str(e)}")
-            return None
+            logger.error(f"다이버전스 확인 중 오류: {str(e)}")
+            return {"type": "오류", "description": str(e)}
 
     @staticmethod
     def get_trend_strength(df: pd.DataFrame) -> dict:
@@ -142,3 +175,86 @@ class TechnicalIndicators:
         except Exception as e:
             logger.error(f"시장 상태 분석 중 에러: {str(e)}")
             return {}
+
+    def calculate_rsi(self, prices: pd.Series, period: int = 14) -> pd.Series:
+        """RSI(Relative Strength Index) 계산"""
+        try:
+            # 가격 변화 계산
+            delta = prices.diff()
+            
+            # 상승/하락 구분
+            gain = (delta.where(delta > 0, 0)).fillna(0)
+            loss = (-delta.where(delta < 0, 0)).fillna(0)
+            
+            # 평균 계산
+            avg_gain = gain.rolling(window=period).mean()
+            avg_loss = loss.rolling(window=period).mean()
+            
+            # RS(Relative Strength) 계산
+            rs = avg_gain / avg_loss
+            
+            # RSI 계산
+            rsi = 100 - (100 / (1 + rs))
+            
+            return rsi
+            
+        except Exception as e:
+            logger.error(f"RSI 계산 중 오류: {str(e)}")
+            return pd.Series([50] * len(prices))  # 오류 시 중립값 반환
+
+    def calculate_macd(self, prices: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9) -> Dict:
+        """MACD(Moving Average Convergence Divergence) 계산"""
+        try:
+            # EMA 계산
+            exp1 = prices.ewm(span=fast, adjust=False).mean()
+            exp2 = prices.ewm(span=slow, adjust=False).mean()
+            
+            # MACD 라인
+            macd = exp1 - exp2
+            
+            # 시그널 라인
+            signal = macd.ewm(span=signal, adjust=False).mean()
+            
+            # 히스토그램
+            hist = macd - signal
+            
+            return {
+                'macd': macd,
+                'signal': signal,
+                'histogram': hist
+            }
+            
+        except Exception as e:
+            logger.error(f"MACD 계산 중 오류: {str(e)}")
+            return {
+                'macd': pd.Series([0] * len(prices)),
+                'signal': pd.Series([0] * len(prices)),
+                'histogram': pd.Series([0] * len(prices))
+            }
+
+    def calculate_bollinger_bands(self, prices: pd.Series, period: int = 20, std: float = 2.0) -> Dict:
+        """볼린저 밴드 계산"""
+        try:
+            # 중심선 (SMA)
+            middle = prices.rolling(window=period).mean()
+            
+            # 표준편차
+            std_dev = prices.rolling(window=period).std()
+            
+            # 상단/하단 밴드
+            upper = middle + (std_dev * std)
+            lower = middle - (std_dev * std)
+            
+            return {
+                'upper': upper,
+                'middle': middle,
+                'lower': lower
+            }
+            
+        except Exception as e:
+            logger.error(f"볼린저 밴드 계산 중 오류: {str(e)}")
+            return {
+                'upper': pd.Series([0] * len(prices)),
+                'middle': pd.Series([0] * len(prices)),
+                'lower': pd.Series([0] * len(prices))
+            }

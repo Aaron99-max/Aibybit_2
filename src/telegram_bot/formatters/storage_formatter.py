@@ -39,7 +39,7 @@ class StorageFormatter:
             with open(filepath, 'w', encoding='utf-8') as f:
                 json.dump(existing_data, f, ensure_ascii=False, indent=2)
                 
-            logger.info(f"{timeframe} 분석 결과 저장 완료: {filepath}")
+            logger.debug(f"{timeframe} 분석 결과 저장 완료: {filepath}")
             return True
             
         except Exception as e:

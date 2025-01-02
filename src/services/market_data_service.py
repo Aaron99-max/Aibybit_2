@@ -3,7 +3,6 @@ from typing import Dict, Optional, List, Tuple
 import pandas as pd
 from datetime import datetime, timedelta
 from decimal import Decimal
-from utils.decorators import error_handler
 import traceback
 import ccxt.async_support as ccxt
 import asyncio
@@ -136,27 +135,28 @@ class MarketDataService:
             logger.error(f"시장 데이터 조회 실패: {str(e)}")
             return None
 
-    async def get_current_price(self) -> float:
+    async def get_current_price(self) -> Optional[Dict]:
         """현재가 조회"""
         try:
-            # 티커로 현재가 조회 시도
-            try:
-                ticker = await self.get_ticker(self.symbol)
-                if ticker and 'last' in ticker:
-                    current_price = float(ticker['last'])
-                    logger.info(f"현재가 조회 성공: ${current_price:,.2f}")
-                    return current_price
-            except:
-                pass
-
-            # 티커 실패 시 1분봉으로 시도
-            klines = await self.get_ohlcv(self.symbol, '1m', limit=1)
-            if klines and len(klines) > 0:
-                current_price = float(klines[0][4])  # close price
-                logger.info(f"현재가 조회 성공: ${current_price:,.2f}")
-                return current_price
+            params = {
+                'category': 'linear',
+                'symbol': 'BTCUSDT'
+            }
             
-            raise ValueError("현재가 조회 실패")
+            ticker = await self.bybit_client.exchange.fetch_ticker('BTCUSDT', params=params)
+            if ticker:
+                return {
+                    'symbol': ticker['symbol'],
+                    'last_price': float(ticker['last']),
+                    'mark_price': float(ticker.get('mark', ticker['last'])),
+                    'index_price': float(ticker.get('index', ticker['last'])),
+                    'timestamp': ticker['timestamp']
+                }
+            
+            logger.error("티커 데이터를 가져올 수 없습니다")
+            return None
+            
         except Exception as e:
-            logger.error(f"현재가 조회 실패: {str(e)}")
-            raise
+            logger.error(f"현재가 조회 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            return None

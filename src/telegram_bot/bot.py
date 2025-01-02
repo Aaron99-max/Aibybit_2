@@ -39,6 +39,8 @@ from config.telegram_config import TelegramConfig
 from .formatters.storage_formatter import StorageFormatter
 from .formatters.order_formatter import OrderFormatter
 from services.balance_service import BalanceService
+from services.trade_history_service import TradeHistoryService
+from .handlers.stats_handler import StatsHandler
 
 class TelegramBot:
     def __init__(self, config, bybit_client):
@@ -56,6 +58,7 @@ class TelegramBot:
         self.order_service = OrderService(bybit_client, self)
         self.market_data_service = MarketDataService(bybit_client)
         self.balance_service = BalanceService(bybit_client)
+        self.trade_history_service = TradeHistoryService(bybit_client)
         
         # 포맷터 초기화
         self.storage_formatter = StorageFormatter()
@@ -85,25 +88,15 @@ class TelegramBot:
         self.application = Application.builder().token(config.bot_token).build()
 
     async def send_message_to_all(self, message: str, parse_mode: str = None):
-        """모든 알림 채팅방에 메시지 전송"""
+        """알림 채팅방에 메시지 전송"""
         try:
-            # 관리자에게 전송
+            # 관리자에게만 전송
             if self.admin_chat_id:
                 await self.application.bot.send_message(
                     chat_id=self.admin_chat_id,
                     text=message,
                     parse_mode=parse_mode
                 )
-            
-            # 단체방에 전송
-            if self.alert_chat_ids:
-                for chat_id in self.alert_chat_ids:
-                    if chat_id != self.admin_chat_id:  # 중복 전송 방지
-                        await self.application.bot.send_message(
-                            chat_id=chat_id,
-                            text=message,
-                            parse_mode=parse_mode
-                        )
                         
         except Exception as e:
             logger.error(f"메시지 전송 실패: {str(e)}")
@@ -114,6 +107,10 @@ class TelegramBot:
         try:
             logger.info("Application 빌드 시작...")
             await self.application.initialize()
+            
+            # 거래 내역 초기화
+            logger.info("거래 내역 초기화 시작...")
+            await self.trade_history_service.initialize()
             
             # 시작 메시지 전송 (모든 채팅방에)
             await self.send_message_to_all("🤖 바이빗 트레이딩 봇이 시작되었습니다!")
@@ -138,33 +135,51 @@ class TelegramBot:
 
     def _setup_handlers(self):
         """핸들러 설정"""
-        # 핸들러 초기화
-        self.analysis_handler = AnalysisHandler(
-            self,
-            self.ai_trader,
-            self.market_data_service,
-            self.storage_formatter,
-            self.analysis_formatter
-        )
-        self.trading_handler = TradingHandler(self, self.ai_trader, self.position_service, self.trade_manager)
-        self.system_handler = SystemHandler(self)
-        
-        # 명령어 핸들러 등록
-        handlers = [
-            CommandHandler("help", self.system_handler.handle_help),
-            CommandHandler("analyze", self.analysis_handler.handle_analyze),
-            CommandHandler("last", self.analysis_handler.handle_last),
-            CommandHandler("status", self.trading_handler.handle_status),
-            CommandHandler("balance", self.trading_handler.handle_balance),
-            CommandHandler("position", self.trading_handler.handle_position),
-            CommandHandler("stop", self.system_handler.handle_stop),
-            CommandHandler("monitor_start", self.system_handler.handle_start_monitoring),
-            CommandHandler("monitor_stop", self.system_handler.handle_stop_monitoring),
-            CommandHandler("trade", self.trading_handler.handle_trade)
-        ]
-        
-        for handler in handlers:
-            self.application.add_handler(handler)
+        try:
+            # 핸들러 초기화
+            self.analysis_handler = AnalysisHandler(
+                self,
+                self.ai_trader,
+                self.market_data_service,
+                self.storage_formatter,
+                self.analysis_formatter
+            )
+            
+            # BaseHandler를 상속받는 핸들러들
+            self.system_handler = SystemHandler(self)
+            self.stats_handler = StatsHandler(self)  # stats_handler 추가
+            self.trading_handler = TradingHandler(
+                self,
+                self.ai_trader,
+                self.position_service,
+                self.trade_manager
+            )
+            
+            # 명령어 핸들러 등록
+            handlers = [
+                CommandHandler("help", self.system_handler.handle_help),
+                CommandHandler("stop", self.system_handler.handle_stop),
+                CommandHandler("monitor_start", self.system_handler.handle_start_monitoring),
+                CommandHandler("monitor_stop", self.system_handler.handle_stop_monitoring),
+                CommandHandler("analyze", self.analysis_handler.handle_analyze),
+                CommandHandler("last", self.analysis_handler.handle_last),
+                CommandHandler("status", self.trading_handler.handle_status),
+                CommandHandler("balance", self.trading_handler.handle_balance),
+                CommandHandler("position", self.trading_handler.handle_position),
+                CommandHandler("stats", self.stats_handler.handle),  # stats 명령어 추가
+                CommandHandler("trade", self.trading_handler.handle_trade)
+            ]
+            
+            for handler in handlers:
+                self.application.add_handler(handler)
+                
+            logger.info("핸들러 초기화 완료")
+            return True
+            
+        except Exception as e:
+            logger.error(f"핸들러 초기화 중 오류: {str(e)}")
+            logger.error(f"오류 상세: {traceback.format_exc()}")
+            return False
 
     async def run(self):
         """봇 실행"""
@@ -325,16 +340,8 @@ class TelegramBot:
             logger.error(f"관리자 메시지 전송 실패: {str(e)}")
 
     async def send_to_group(self, message: str):
-        """단체방에 메시지 전송"""
-        try:
-            if self.group_chat_id:
-                await self.application.bot.send_message(
-                    chat_id=self.group_chat_id,
-                    text=message,
-                    parse_mode=ParseMode.HTML
-                )
-        except Exception as e:
-            logger.error(f"단체방 메시지 전송 실패: {str(e)}")
+        """단체방 메시지 전송 메서드 제거 또는 관리자에게 전송"""
+        await self.send_message_to_all(message)
 
     async def send_message(self, message: str, chat_id: int, parse_mode: str = None):
         """특정 채팅방에 메시지 전송"""

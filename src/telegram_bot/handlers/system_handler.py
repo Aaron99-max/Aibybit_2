@@ -13,41 +13,32 @@ logger = logging.getLogger(__name__)
 class SystemHandler(BaseHandler):
     async def handle_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """도움말 표시"""
-        if not update.effective_chat:
-            return
-            
-        chat_id = update.effective_chat.id
-        logger.info(f"도움말 표시 요청 (chat_id: {chat_id})")
-        await self.send_message(
-            "🤖 바이빗 트레이딩 봇 명령어 안내\n\n"
-            "📊 분석 명령어:\n"
-            "/analyze [timeframe] - 시장 분석 실행\n"
-            "  - 15m, 1h, 4h, 1d, all\n"
-            "/last [timeframe] - 마지막 분석 결과 확인\n"
-            "  - timeframe 생략시 전체 결과 표시\n\n"
-            "💰 거래 정보:\n"
-            "/status - 현재 시장 상태\n"
-            "/balance - 계정 잔고\n"
-            "/position - 현재 포지션\n"
-            "/stats [period] - 거래 통계 확인\n"
-            "  - daily: 일간 통계\n"
-            "  - weekly: 주간 통계\n"
-            "  - monthly: 월간 통계\n"
-            "  - 생략시 이번 달 전체 통계\n\n"
-            "⚙️ 기타 명령어:\n"
-            "/help - 도움말\n"
-            "/stop - 봇 종료\n"
-            "/monitor_start - 모니터링 시작\n"
-            "/monitor_stop - 모니터링 중지\n"
-            "/cancel - 활성 주문 취소\n\n"
-            "📈 거래 통계 예시:\n"
-            "/stats daily - 오늘의 거래 통계\n"
-            "/stats weekly - 이번 주 거래 통계\n"
-            "/stats monthly - 이번 달 거래 통계\n\n"
-            "⚙️ 주문 관리:\n"
-            "/cancel - 모든 활성 주문 취소\n\n",
-            chat_id
-        )
+        help_text = """
+🤖 사용 가능한 명령어:
+
+💰 거래 통계:
+/stats [period] - 거래 통계 확인
+  - daily: 일간 통계
+  - weekly: 주간 통계
+  - monthly: 월간 통계
+  - 생략시 이번 달 전체 통계
+
+💰 거래 명령어:
+/trade - 거래 실행
+/status - 현재 상태 확인
+/balance - 계좌 잔고 확인
+/position - 포지션 조회
+
+📊 분석 명령어:
+/analyze - 현재 시장 분석
+/last - 마지막 분석 결과 확인
+
+⚙️ 시스템 명령어:
+/monitor_start - 자동 모니터링 시작
+/monitor_stop - 자동 모니터링 중지
+/stop - 봇 종료
+"""
+        await self.send_message(help_text, update.effective_chat.id)
 
     async def handle_stop(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """봇 종료 명령어 처리"""

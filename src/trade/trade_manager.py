@@ -19,30 +19,58 @@ class TradeManager:
         self.balance_service = balance_service
         self.symbol = 'BTCUSDT'
         
+        # 핵심 거래 제한만 설정
+        self.MAX_LEVERAGE = 10          # 최대 레버리지
+        self.MAX_POSITION_SIZE = 30     # 최대 포지션 크기 (%)
+        self.MAX_DAILY_LOSS = 5         # 일일 최대 손실 (%)
+        
     async def execute_trade_signal(self, analysis: Dict) -> bool:
         """거래 신호 실행"""
         try:
             logger.info("=== 거래 신호 실행 ===")
             
-            # position_service를 통해 포지션 조회
-            position = await self.position_service.get_current_position()
-            logger.info(f"현재 포지션 상태: {position}")
+            # 거래 신호 검증
+            strategy = analysis.get('trading_strategy', {})
             
-            # 포지션이 있는 경우
-            if position and float(position.get('size', 0)) > 0:
-                logger.info(f"""
-=== 기존 포지션 처리 ===
-심볼: {position.get('symbol')}
-방향: {position.get('side')}
-크기: {position.get('size')} BTC
-레버리지: {position.get('leverage')}x
-진입가: {position.get('entry_price')}
-""")
-                return await self._handle_existing_position(position, analysis)
+            # 자동매매 설정 확인
+            auto_trading = strategy.get('auto_trading', {})
+            if not auto_trading.get('enabled', False):
+                logger.info(f"자동매매 비활성화: {auto_trading.get('reason', '이유 없음')}")
+                return False
             
-            # 포지션이 없는 경우
+            # 기본 조건
+            confidence = float(auto_trading.get('confidence', 0))
+            trend_strength = float(auto_trading.get('strength', 0))
+            
+            # 추세 강도가 너무 낮은 경우 즉시 중단
+            if trend_strength < 10:  # 최소 추세 강도 요구 완화
+                logger.info(f"추세 강도가 너무 낮음: {trend_strength}%")
+                return False
+            
+            # 복합 조건 검사
+            if confidence >= 85:
+                min_strength = 15  # 신뢰도가 매우 높을 때
+            elif confidence >= 80:
+                min_strength = 25  # 신뢰도가 높을 때
+            elif confidence >= 75:
+                min_strength = 35  # 신뢰도가 중상일 때
             else:
-                logger.info("새 포지션 진입")
+                min_strength = 45  # 기본값
+            
+            if trend_strength < min_strength:
+                logger.info(f"추세 강도 부족: {trend_strength}% (필요 강도: {min_strength}%, 신뢰도: {confidence}%)")
+                return False
+            else:
+                logger.info(f"거래 조건 충족 - 추세 강도: {trend_strength}%, 신뢰도: {confidence}%")
+            
+            # 포지션 조회
+            position = await self.position_service.get_current_position()
+            
+            if position and float(position.get('size', 0)) > 0:
+                # 기존 포지션 처리
+                return await self._handle_existing_position(position, analysis)
+            else:
+                # 새 포지션 진입
                 return await self._open_new_position(analysis)
             
         except Exception as e:

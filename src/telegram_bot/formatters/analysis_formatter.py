@@ -187,18 +187,20 @@ class AnalysisFormatter(BaseFormatter):
         message += f"• 추세: {self.translate(trend)}\n"
         message += f"• 강도: {ta.get('strength', '-')}\n"
         
-        # indicators 섹션 리
+        # indicators 섹션
         indicators = ta.get('indicators', {})
         if indicators:
-            message += f"• RSI: {self.translate(indicators.get('rsi_signal', '-'))}\n"
-            message += f"• MACD: {self.translate(indicators.get('macd_signal', '-'))}\n"
+            message += f"• RSI: {indicators.get('rsi', '-')}\n"
+            message += f"• MACD: {indicators.get('macd', '-')}\n"
+            message += f"• 볼린저: {indicators.get('bollinger', '-')}\n"
             
-            # 다이버전스 정보
-            divergence = indicators.get('divergence', {})
-            if divergence:
-                div_type = divergence.get('type', '-')
-                div_desc = divergence.get('description', '')
-                message += f"• 다이버전스: {div_type} ({div_desc})\n"
+            # final이 아닐 때만 다이버전스 정보 포함
+            if timeframe != 'final' and 'divergence' in indicators:
+                divergence = indicators['divergence']
+                if divergence.get('type') != '없음':
+                    message += f"\n🔄 다이버전스:\n"
+                    message += f"• 유형: {divergence.get('type')}\n"
+                    message += f"• 설명: {divergence.get('description')}\n"
         
         return message
 

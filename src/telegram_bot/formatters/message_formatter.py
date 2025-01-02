@@ -2,6 +2,7 @@ import logging
 from typing import Dict, List, Union
 from decimal import Decimal
 from .base_formatter import BaseFormatter
+from datetime import datetime, timezone
 
 logger = logging.getLogger(__name__)
 
@@ -212,7 +213,7 @@ BTC:
         return f"""
 💼 현재 포지션 정보:
 
-• ���볼: {position.get('symbol', 'N/A')}
+• 볼: {position.get('symbol', 'N/A')}
 • 방향: {position.get('side', 'N/A')}
 • 크기: {position.get('size', position.get('contracts', 'N/A'))}
 • 레버리지: {position.get('leverage', 'N/A')}x
@@ -242,7 +243,7 @@ BTC:
             str: 포맷팅된 도움말 메시지
         """
         return (
-            f"{MessageFormatter.EMOJIS['help']} 바이빗 트레이딩 봇 ���령어 안내\n\n"
+            f"{MessageFormatter.EMOJIS['help']} 바이빗 트레이딩 봇 명령어 안내\n\n"
             f"{MessageFormatter.EMOJIS['analysis']} 분석 명령어:\n"
             "/analyze [timeframe] - 시장 분석 실행\n"
             "  - 15m, 1h, 4h, 1d, all\n"
@@ -306,3 +307,65 @@ BTC:
         except Exception as e:
             logger.error(f"거래 실행 메시지 포맷팅 중 오류: {str(e)}")
             return "거래 실행 메시지 포맷팅 실패"
+
+    def format_position_message(self, positions: List[Dict]) -> str:
+        """포지션 정보 포맷팅"""
+        try:
+            if not positions:
+                return "📊 활성화된 포지션이 없습니다."
+            
+            messages = ["📊 현재 포지션 상태"]
+            for pos in positions:
+                side = "롱" if pos['side'].upper() == 'BUY' else "숏"
+                size = float(pos['size'])
+                entry_price = float(pos['entry_price'])
+                leverage = pos['leverage']
+                unrealized_pnl = float(pos.get('unrealized_pnl', 0))
+                
+                message = f"""
+• {pos['symbol']} {side} x{leverage}
+  크기: {size:.3f} BTC
+  진입가: ${entry_price:,.2f}
+  미실현 손익: ${unrealized_pnl:,.2f}
+"""
+                messages.append(message)
+            
+            return "\n".join(messages)
+            
+        except Exception as e:
+            logger.error(f"포지션 메시지 포맷팅 중 오류: {str(e)}")
+            return "포지션 정보 조회 중 오류가 발생했습니다."
+
+    def format_analysis_message(self, analysis: Dict, timeframe: str) -> str:
+        """분석 결과 포맷팅"""
+        try:
+            # 시간 포맷팅
+            timestamp = analysis.get('timestamp', '')
+            if timestamp:
+                dt = datetime.fromtimestamp(timestamp / 1000)
+                kst_time = dt.astimezone(timezone('Asia/Seoul'))
+                time_str = kst_time.strftime('%Y-%m-%d %H:%M:%S %Z')
+            else:
+                time_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S %Z')
+
+            # 자동매매 상태 확인 (4시간봉만 자동매매 대상)
+            auto_trading = {
+                'status': '활성화' if timeframe == '4h' else '비활성화',
+                'reason': '4시간봉만 자동매매 대상' if timeframe != '4h' else ''
+            }
+
+            message = f"""
+📊 {timeframe} 분석 ({time_str})
+
+🌍 시장 요약:
+• 시장 단계: {analysis['market_summary']['market_phase']}
+...
+🤖 자동매매:
+• 상태: {auto_trading['status']}
+• 사유: {auto_trading['reason']}
+"""
+            return message
+
+        except Exception as e:
+            logger.error(f"분석 메시지 포맷팅 중 오류: {str(e)}")
+            return "분석 결과 포맷팅 실패"

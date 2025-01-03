@@ -448,25 +448,34 @@ class AnalysisHandler(BaseHandler):
             logger.error(f"자동 분석 처리 중 오류: {str(e)}")
 
     async def handle_analysis_result(self, analysis: Dict, timeframe: str, chat_id: Optional[int] = None):
-        """분석 결과 처리"""
+        """분석 결과 통합 처리"""
         try:
-            # 분석 결과 메시지 전송
-            message = self.bot.analysis_formatter.format_analysis(
-                analysis=analysis,
-                analysis_type=timeframe
-            )
-            await self.send_message(message, chat_id)
+            # 1. 분석 결과 저장
+            self.storage_formatter.save_analysis(analysis, timeframe)
             
-            # 자동매매 조건 확인 및 실행 (final만)
+            # 2. 메시지 포맷팅 (다이버전스 정보는 기본 분석 결과에 포함됨)
+            message = self.analysis_formatter.format_analysis_result(
+                analysis, 
+                timeframe,
+                datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+            )
+            
+            # 3. 메시지 전송
+            if chat_id:
+                await self.send_message(message, chat_id)
+            else:
+                await self.bot.send_message_to_all(message)
+            
+            # 4. 4시간봉 분석 후 final 분석
+            if timeframe == '4h':
+                await self.handle_analyze_final(chat_id)
+                
+            # 5. final 분석인 경우 자동매매 체크
             if timeframe == 'final':
                 if analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled'):
-                    result = await self.bot.ai_trader.execute_trade(analysis)
-                    await self.send_message("✅ 자동매매 주문 실행 완료" if result else "❌ 자동매매 주문 실행 실패", chat_id)
-            # 다이버전스 알림 (final 제외)
-            else:
-                divergence = analysis.get('technical_analysis', {}).get('indicators', {}).get('divergence', {})
-                if divergence and divergence.get('type') != '없음':
-                    await self._send_divergence_alert(divergence, timeframe, chat_id)
+                    await self.ai_trader.execute_auto_trading(analysis)
+                
+            # 별도의 다이버전스 알림 제거 (이미 기본 분석 결과에 포함되어 있음)
                 
         except Exception as e:
             logger.error(f"분석 결과 처리 중 오류: {str(e)}")

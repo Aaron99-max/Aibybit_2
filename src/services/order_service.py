@@ -26,9 +26,19 @@ class OrderService:
             logger.error(f"주문 실패: {str(e)}")
             return None
 
+    def _validate_side(self, side: str) -> str:
+        """주문 방향 검증 및 변환"""
+        side = str(side).upper()
+        if side not in ['BUY', 'SELL']:
+            raise ValueError(f"잘못된 주문 방향: {side}. 'Buy' 또는 'Sell'이어야 합니다.")
+        return side
+
     async def create_order(self, **params) -> Dict:
         """주문 생성"""
         try:
+            # 방향 검증
+            params['side'] = self._validate_side(params['side'])
+            
             # 필수 파라미터 체크
             required_params = ['symbol', 'side', 'position_size', 'leverage', 'entry_price']
             for param in required_params:
@@ -48,27 +58,26 @@ class OrderService:
             except Exception as e:
                 logger.warning(f"레버리지 설정 중 오류 (무시됨): {str(e)}")
 
-            # 주문 수량 계산 (한 번만)
+            # 수량 계산
             if params['is_btc_unit']:
-                quantity = params['position_size']
-                logger.info(f"BTC 단위 주문: {quantity} BTC")
+                quantity = float(params['position_size'])
             else:
-                # 잔고 조회
                 balance = await self.bybit_client.get_balance()
                 if not balance:
                     logger.error("잔고 조회 실패")
                     return None
                 
                 available_balance = float(balance.get('totalWalletBalance', 0))
-                if available_balance <= 0:
-                    logger.error(f"잔고 부족: {available_balance} USDT")
-                    return None
-
-                # 수량 계산
                 position_value = available_balance * (params['position_size'] / 100) * params['leverage']
                 quantity = position_value / float(params['entry_price'])
-                quantity = round(quantity, 3)  # 소수점 3자리로 반올림
-                logger.info(f"퍼센트 기준 주문: 잔고={available_balance} USDT, 비율={params['position_size']}%, 수량={quantity} BTC")
+            
+            # 소수점 3자리로 반올림 (바이비트 규칙)
+            quantity = round(quantity, 3)
+            
+            # 최소 수량 체크
+            if quantity < 0.001:
+                logger.error(f"주문 수량이 최소 수량(0.001 BTC)보다 작음: {quantity} BTC")
+                return None
 
             # 주문 파라미터 설정
             order_params = {

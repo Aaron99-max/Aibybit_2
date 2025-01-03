@@ -9,6 +9,7 @@ from datetime import datetime
 from openai import AsyncOpenAI
 import re
 import time
+from config.trading_config import trading_config
 
 logger = logging.getLogger(__name__)
 
@@ -176,60 +177,75 @@ class GPTClient:
     def _process_response(self, response) -> Dict:
         """GPT API 응답 처리"""
         try:
-            content = response.choices[0].message.content
-            content = content.strip()
+            content = response.choices[0].message.content.strip()
             
-            # 여러 개의 JSON 객체가 있는 경우 마지막 객체만 사용
-            json_objects = []
-            current_object = ""
-            brace_count = 0
+            # JSON 시작과 끝 위치 찾기
+            start_idx = content.find('{')
+            end_idx = content.rfind('}') + 1
             
-            for char in content:
-                if char == '{':
-                    if brace_count == 0:
-                        current_object = '{'
-                    else:
+            if start_idx == -1 or end_idx == 0:
+                raise json.JSONDecodeError("JSON 형식을 찾을 수 없습니다", content, 0)
+            
+            # JSON 부분만 추출
+            json_str = content[start_idx:end_idx]
+            
+            try:
+                analysis = json.loads(json_str)
+            except json.JSONDecodeError:
+                # JSON이 여러 개 있을 경우 처리
+                json_objects = []
+                current_object = ""
+                brace_count = 0
+                
+                for char in content:
+                    if char == '{':
+                        if brace_count == 0:
+                            current_object = '{'
+                        else:
+                            current_object += char
+                        brace_count += 1
+                    elif char == '}':
+                        brace_count -= 1
+                        current_object += '}'
+                        if brace_count == 0:
+                            try:
+                                json_obj = json.loads(current_object)
+                                json_objects.append(json_obj)
+                            except json.JSONDecodeError:
+                                pass
+                            current_object = ""
+                    elif brace_count > 0:
                         current_object += char
-                    brace_count += 1
-                elif char == '}':
-                    brace_count -= 1
-                    current_object += '}'
-                    if brace_count == 0:
-                        try:
-                            # 현재 JSON 객체 파싱 시도
-                            json_obj = json.loads(current_object)
-                            json_objects.append(json_obj)
-                        except json.JSONDecodeError:
-                            pass
-                        current_object = ""
-                elif brace_count > 0:
-                    current_object += char
-            
-            # 마지막 유효한 JSON 객체 사용
-            if not json_objects:
-                raise json.JSONDecodeError("No valid JSON objects found", content, 0)
-            
-            analysis = json_objects[-1]  # 마지막 JSON 객체 사용
+                
+                if not json_objects:
+                    logger.error("유효한 JSON 객체를 찾을 수 없습니다")
+                    logger.error(f"원본 응답: {content}")
+                    return {}
+                
+                analysis = json_objects[-1]  # 마지막 JSON 객체 사용
             
             # 응답 형식 맞추기
             if 'trading_strategy' in analysis:
-                # position -> position_suggestion 변환
                 if 'position' in analysis['trading_strategy']:
                     analysis['trading_strategy']['position_suggestion'] = analysis['trading_strategy'].pop('position')
                 
-                # targets -> take_profit 변환
                 if 'targets' in analysis['trading_strategy']:
                     analysis['trading_strategy']['take_profit'] = analysis['trading_strategy'].pop('targets')
             
             # 저장 시간 추가
             analysis['saved_at'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
             
+            # GPT 응답 처리시 trading_config의 설정값 참조
+            if 'trading_strategy' in analysis:
+                strategy = analysis['trading_strategy']
+                if 'leverage' not in strategy:
+                    strategy['leverage'] = trading_config.gpt_settings['default_leverage']
+                if 'position_size' not in strategy:
+                    strategy['position_size'] = trading_config.gpt_settings['max_position_size']
+            
             return analysis
             
-        except json.JSONDecodeError as e:
-            logger.error(f"GPT 응답 JSON 파싱 실패: {str(e)}")
-            logger.error(f"원본 응답: {content if 'content' in locals() else response}")
-            return {}
         except Exception as e:
-            logger.error(f"응답 처리 중 오류: {str(e)}")
+            logger.error(f"GPT 응답 처리 중 오류: {str(e)}")
+            logger.error(f"원본 응답: {content if 'content' in locals() else response}")
             return {}

@@ -1,12 +1,254 @@
 [
   {
-    "type": "close",
     "symbol": "BTCUSDT",
-    "side": "sell",
-    "size": 0.006,
-    "price": 96406.14,
-    "realized_pnl": 3.59864,
-    "leverage": 3.0,
-    "timestamp": "2024-12-22T15:12:40.179513"
+    "side": "Buy",
+    "size": 0.086,
+    "entry_price": 92521.3,
+    "exit_price": 94688.3477,
+    "realized_pnl": -195.22111635,
+    "timestamp": 1735630166234
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.143,
+    "entry_price": 92004.656,
+    "exit_price": 92521.3,
+    "realized_pnl": 61.74567248,
+    "timestamp": 1735621355333
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.164,
+    "entry_price": 92004.656,
+    "exit_price": 92575.5,
+    "realized_pnl": 85.01096369,
+    "timestamp": 1735621166288
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.095,
+    "entry_price": 92600.7894,
+    "exit_price": 92600.8,
+    "realized_pnl": -3.53476577,
+    "timestamp": 1735620149230
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.086,
+    "entry_price": 92599.8799,
+    "exit_price": 92600.9,
+    "realized_pnl": -4.41764704,
+    "timestamp": 1735619411079
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.172,
+    "entry_price": 92600.8022,
+    "exit_price": 92601.0,
+    "realized_pnl": -7.8059507,
+    "timestamp": 1735617061756
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.085,
+    "entry_price": 92329.6871,
+    "exit_price": 92669.5988,
+    "realized_pnl": 20.24378337,
+    "timestamp": 1735616785598
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.286,
+    "entry_price": 92400.0,
+    "exit_price": 92602.5681,
+    "realized_pnl": 38.08283601,
+    "timestamp": 1735616561934
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93226.8802,
+    "exit_price": 92994.8235,
+    "realized_pnl": -4.03174903,
+    "timestamp": 1735546659657
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.154,
+    "entry_price": 93226.8516,
+    "exit_price": 93406.9928,
+    "realized_pnl": 50.32018287,
+    "timestamp": 1735546567936
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.285,
+    "entry_price": 92936.0,
+    "exit_price": 92883.1547,
+    "realized_pnl": -34.91768651,
+    "timestamp": 1735542503166
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.108,
+    "entry_price": 93064.2741,
+    "exit_price": 92670.65,
+    "realized_pnl": -51.87982165,
+    "timestamp": 1735541969282
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.119,
+    "entry_price": 93070.4942,
+    "exit_price": 92950.6403,
+    "realized_pnl": -23.47203141,
+    "timestamp": 1735541739362
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93331.9824,
+    "exit_price": 92936.7882,
+    "realized_pnl": -8.45991301,
+    "timestamp": 1735541328982
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93288.4,
+    "exit_price": 93083.7,
+    "realized_pnl": -5.22247914,
+    "timestamp": 1735540924992
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93332.1,
+    "exit_price": 92996.1411,
+    "realized_pnl": -7.45346906,
+    "timestamp": 1735540822466
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.286,
+    "entry_price": 92995.0,
+    "exit_price": 92628.1618,
+    "realized_pnl": -134.11422338,
+    "timestamp": 1735540372347
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "size": 0.172,
+    "entry_price": 92800.0,
+    "exit_price": 92995.0,
+    "realized_pnl": -45.529647,
+    "timestamp": 1735537862921
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.001,
+    "entry_price": 92985.0,
+    "exit_price": 92835.8,
+    "realized_pnl": -0.25140144,
+    "timestamp": 1735536210767
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.029,
+    "entry_price": 92978.8621,
+    "exit_price": 92559.2448,
+    "realized_pnl": -15.12823281,
+    "timestamp": 1735533642343
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 92782.5883,
+    "exit_price": 92809.4,
+    "realized_pnl": -1.05212265,
+    "timestamp": 1735532898953
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "size": 0.172,
+    "entry_price": 92810.1267,
+    "exit_price": 92994.9303,
+    "realized_pnl": -44.78367839,
+    "timestamp": 1735532837158
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.057,
+    "entry_price": 92994.8772,
+    "exit_price": 92955.3754,
+    "realized_pnl": -8.08114042,
+    "timestamp": 1735530390739
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.096,
+    "entry_price": 94527.4844,
+    "exit_price": 94718.1197,
+    "realized_pnl": 8.30883208,
+    "timestamp": 1735370829603
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.563,
+    "entry_price": 96545.5,
+    "exit_price": 94583.0522,
+    "realized_pnl": -1152.61972356,
+    "timestamp": 1735369367880
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.058,
+    "entry_price": 94401.0,
+    "exit_price": 96423.2,
+    "realized_pnl": 113.11664832,
+    "timestamp": 1735366301559
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.001,
+    "entry_price": 94954.5,
+    "exit_price": 94964.5,
+    "realized_pnl": -0.09445546,
+    "timestamp": 1735364284344
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.574,
+    "entry_price": 96745.6,
+    "exit_price": 94729.0724,
+    "realized_pnl": -1199.37954803,
+    "timestamp": 1735284251719
   }
 ]

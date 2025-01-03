@@ -88,6 +88,7 @@ class OrderFormatter:
             quantity = order.get('amount', 0)
             position_size = order.get('position_size', '')
             
+            # BTC 단위와 퍼센트 모두 표시하도록 수정
             if is_btc_unit:
                 quantity_display = f"{self._format_number(quantity, 3)} BTC"
             else:
@@ -104,7 +105,7 @@ class OrderFormatter:
                 "",
                 "💰 거래 정보:",
                 f"• 진입가: ${self._format_number(order.get('price', 0))}",
-                f"• 수량: {quantity_display}"
+                f"• 수량: {quantity_display}"  # 퍼센트와 BTC 단위 모두 표시
             ]
             
             # 신규 주문인 경우에만 손절/익절가 표시

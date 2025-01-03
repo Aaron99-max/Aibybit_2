@@ -163,10 +163,10 @@ class TradingHandler(BaseHandler):
             
             chat_id = update.effective_chat.id
 
-            # 파라미터 파싱
+            # 파라미터 파싱 및 분석 형식으로 변환
             trade_params = self._parse_trade_params(context.args)
             
-            # 거래 실행
+            # 거래 실행 (GPT final 분석과 동일한 경로 사용)
             result = await self.trade_manager.execute_trade_signal(trade_params)
             
             if result:
@@ -235,38 +235,20 @@ class TradingHandler(BaseHandler):
             
             direction, leverage, size, entry, stop, target = args
             
-            # 방향 변환
-            if direction.lower() in ['long', 'buy', '매수']:
-                position = '매수'
-            elif direction.lower() in ['short', 'sell', '매도']:
-                position = '매도'
+            # 방향 변환 (모든 가능한 입력 처리)
+            if direction.lower() in ['long', 'buy', '매수', 'l', 'b']:
+                position = '매수'  # trade_manager에서 'Buy'로 변환
+            elif direction.lower() in ['short', 'sell', '매도', 's']:
+                position = '매도'  # trade_manager에서 'Sell'로 변환
             else:
-                raise ValueError("포지션은 'LONG/매수' 또는 'SHORT/매도'여야 합니다")
+                raise ValueError("포지션은 'LONG/SHORT/매수/매도'여야 합니다")
 
-            # 구조화된 분석 형식으로 변환
             return {
-                'market_summary': {
-                    'market_phase': '상승' if position == '매수' else '하락',
-                    'overall_sentiment': '긍정적' if position == '매수' else '부정적',
-                    'short_term_sentiment': '긍정적' if position == '매수' else '부정적',
-                    'confidence': 85
-                },
-                'technical_analysis': {
-                    'trend': '상승' if position == '매수' else '하락',
-                    'strength': 75,
-                    'indicators': {
-                        'divergence': {
-                            'type': '없음',
-                            'description': '수동 매매',
-                            'timeframe': 'manual'
-                        }
-                    }
-                },
                 'trading_strategy': {
                     'position_suggestion': position,
                     'entry_points': [float(entry)],
                     'stop_loss': float(stop),
-                    'take_profit': [float(target)],
+                    'take_profit': [float(target)],  # 첫 번째 TP만 사용
                     'leverage': int(leverage),
                     'position_size': float(size),
                     'auto_trading': {

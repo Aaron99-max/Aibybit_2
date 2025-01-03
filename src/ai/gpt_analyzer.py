@@ -12,6 +12,7 @@ from collections import Counter
 from services.market_data_service import MarketDataService
 from indicators.technical import TechnicalIndicators
 from telegram_bot.formatters.storage_formatter import StorageFormatter
+from config.trading_config import trading_config
 
 # numpy 경고 무시 설정
 np.seterr(divide='ignore', invalid='ignore')
@@ -158,16 +159,13 @@ class GPTAnalyzer:
             df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
             df.set_index('timestamp', inplace=True)
             
-            # 기술적 지표 계산 (technical.py에서 수행)
+            # 기술적 지표 계산
             df_with_indicators = self.technical_indicators.calculate_indicators(df)
             if df_with_indicators is None:
                 logger.error("기술적 지표 계산 실패")
                 return None
             
-            # 다이버전스 분석 (이미 있는 _analyze_divergence 메서드 사용)
-            divergence = self._analyze_divergence(df_with_indicators)
-            
-            # 기술적 분석 결과 생성
+            # 기술적 분석 결과 생성 (다이버전스는 여기서만 체크)
             technical_analysis = {
                 'trend': self._determine_trend(df_with_indicators),
                 'strength': round(self._calculate_trend_strength(df_with_indicators), 2),
@@ -177,7 +175,7 @@ class GPTAnalyzer:
                     'bollinger': self._get_bollinger_position(df_with_indicators),
                     'divergence': {
                         **self.technical_indicators.check_rsi_divergence(df_with_indicators),
-                        'timeframe': timeframe  # 현재 분석 중인 timeframe 추가
+                        'timeframe': timeframe
                     }
                 }
             }
@@ -189,10 +187,7 @@ class GPTAnalyzer:
             response = await self.gpt_client.call_gpt_api(prompt)
             
             if response:
-                # 기술적 분석 결과 추가
-                if 'technical_analysis' not in response:
-                    response['technical_analysis'] = {}
-                response['technical_analysis'].update(technical_analysis)
+                response['technical_analysis'] = technical_analysis
                 
             return response
             
@@ -1050,9 +1045,9 @@ class GPTAnalyzer:
             confidence = analysis.get("market_summary", {}).get("confidence", 0)
             strength = analysis.get("technical_analysis", {}).get("strength", 0)
             
-            # 조건 체크 (수정된 부분)
-            high_confidence = confidence >= 70  # 신뢰도 70% 이상
-            strong_trend = strength >= 50      # 추세 강도 50% 이상
+            # 기존 하드코딩된 값 대신 trading_config 사용
+            high_confidence = confidence >= trading_config.auto_trading['confidence']['min']
+            strong_trend = strength >= trading_config.auto_trading['trend_strength']['min']
             enabled = high_confidence and strong_trend
             
             # 상세 이유 설정
@@ -1115,7 +1110,7 @@ class GPTAnalyzer:
                 logger.error("기술적 지표 계산 실패")
                 return None
             
-            # 기술적 분석 결과 생성
+            # 기술적 분석 결과 생성 (다이버전스는 여기서만 체크)
             technical_analysis = {
                 'trend': self._determine_trend(df_with_indicators),
                 'strength': round(self._calculate_trend_strength(df_with_indicators), 2),
@@ -1125,7 +1120,7 @@ class GPTAnalyzer:
                     'bollinger': self._get_bollinger_position(df_with_indicators),
                     'divergence': {
                         **self.technical_indicators.check_rsi_divergence(df_with_indicators),
-                        'timeframe': timeframe  # 현재 분석 중인 timeframe 추가
+                        'timeframe': timeframe
                     }
                 }
             }

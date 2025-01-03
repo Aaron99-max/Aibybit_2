@@ -1,0 +1,92 @@
+2025-01-02 00:22:53,254 - ai.gpt_analyzer - ERROR - Final 분석 중 오류: 'GPTAnalyzer' object has no attribute '_get_majority_sentiment'
+2025-01-02 00:22:53,261 - ai.ai_trader - ERROR - 최종 분석 생성 실패
+2025-01-02 00:27:33,579 - ai.gpt_analyzer - ERROR - Final 분석 중 오류: GPTAnalyzer._create_final_analysis_prompt() missing 1 required positional argument: 'current_price'
+2025-01-02 00:27:33,581 - ai.ai_trader - ERROR - 최종 분석 생성 실패
+2025-01-02 01:00:51,859 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 중 오류: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+2025-01-02 01:00:51,867 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\monitors\auto_analyzer.py", line 203, in _run_final_analysis
+    'overall_sentiment': self._get_majority_sentiment([a['market_summary']['overall_sentiment'] for a in analyses.values()]),
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+
+2025-01-02 01:00:51,870 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 실패
+2025-01-02 05:00:49,726 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 중 오류: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+2025-01-02 05:00:49,732 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\monitors\auto_analyzer.py", line 203, in _run_final_analysis
+    'overall_sentiment': self._get_majority_sentiment([a['market_summary']['overall_sentiment'] for a in analyses.values()]),
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+
+2025-01-02 05:00:49,736 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 실패
+2025-01-02 08:00:02,727 - ai.gpt_client - ERROR - GPT 응답 JSON 파싱 실패: No valid JSON objects found: line 1 column 1 (char 0)
+2025-01-02 08:00:02,729 - ai.gpt_client - ERROR - 원본 응답: {
+    "market_summary": {
+        "market_phase": "상승",
+        "overall_sentiment": "긍정적",
+        "short_term_sentiment": "중립",
+        "risk_level": "높음",
+        "volume_trend": "중립",
+        "confidence": 85
+    },
+    "technical_analysis": {
+        "trend": "횡보",
+        "strength": 50,
+        "indicators": {
+            "rsi": 50,
+            "macd": "상승",
+            "bollinger": "중단",
+            "divergence": {
+                "type": "없음",
+                "description": "다이버전스 설명",
+                "timeframe": "15m"
+            }
+        }
+    },
+    "trading_strategy": {
+        "position": "매수",
+        "entry_points": [94768.8],
+        "targets": [96664.176, 98559.552],
+        "stop_loss": 92873.424,
+        "leverage": 1,
+        "position_size": 1,
+    }
+}
+2025-01-02 08:00:02,740 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-01-02 09:00:51,702 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 중 오류: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+2025-01-02 09:00:51,708 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\monitors\auto_analyzer.py", line 203, in _run_final_analysis
+    'overall_sentiment': self._get_majority_sentiment([a['market_summary']['overall_sentiment'] for a in analyses.values()]),
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+
+2025-01-02 09:00:51,710 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 실패
+2025-01-02 13:00:50,124 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 중 오류: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+2025-01-02 13:00:50,125 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\telegram_bot\monitors\auto_analyzer.py", line 203, in _run_final_analysis
+    'overall_sentiment': self._get_majority_sentiment([a['market_summary']['overall_sentiment'] for a in analyses.values()]),
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AutoAnalyzer' object has no attribute '_get_majority_sentiment'
+
+2025-01-02 13:00:50,126 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 실패
+2025-01-02 15:00:00,381 - ai.gpt_analyzer - ERROR - 최종 분석 응답 파싱 중 오류: 'GPTAnalyzer' object has no attribute 'storage_formatter'
+2025-01-02 15:00:00,383 - ai.gpt_analyzer - ERROR - 응답 파싱 실패
+2025-01-02 15:00:00,383 - ai.ai_trader - ERROR - 최종 분석 생성 실패
+2025-01-02 15:01:48,737 - ai.gpt_analyzer - ERROR - 최종 분석 응답 파싱 중 오류: 'GPTAnalyzer' object has no attribute 'storage_formatter'
+2025-01-02 15:01:48,737 - ai.gpt_analyzer - ERROR - 응답 내용: {'market_summary': {'market_phase': '상승', 'overall_sentiment': '긍정적', 'short_term_sentiment': '긍정적', 'risk_level': '낮음', 'volume_trend': '증가', 'confidence': 85}, 'technical_analysis': {'trend': '상승', 'strength': 12.1, 'indicators': {'rsi': 0, 'macd': '상승', 'bollinger': '상단', 'divergence': {'type': '없음', 'description': '다이버전스 설명', 'timeframe': '현재 시간대'}}}, 'trading_strategy': {'entry_points': [95538.6], 'stop_loss': 93627.82800000001, 'leverage': 5, 'position_size': 10, 'position_suggestion': '매수', 'take_profit': [97449.4, 99360.1]}, 'saved_at': '2025-01-02 15:01:48 KST'}
+2025-01-02 15:01:48,741 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit\src\ai\gpt_analyzer.py", line 1166, in _parse_final_analysis
+    if all(key in response for key in ['market_summary', 'technical_analysis', 'trading_strategy']):
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GPTAnalyzer' object has no attribute 'storage_formatter'
+
+2025-01-02 15:01:48,742 - ai.gpt_analyzer - ERROR - 응답 파싱 실패
+2025-01-02 15:01:48,742 - ai.ai_trader - ERROR - 최종 분석 생성 실패
+2025-01-02 16:24:08,071 - main - ERROR - 실행 중 에러 발생: 'MarketDataService' object has no attribute 'initialize'
+2025-01-02 16:24:08,074 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 69, in main
+    await market_data_service.initialize()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MarketDataService' object has no attribute 'initialize'. Did you mean: 'initialized'?
+
+2025-01-02 16:25:56,137 - services.trade_history_service - ERROR - 거래 내역 업데이트 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-01-02 16:28:23,952 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: 'bybit' object has no attribute 'private_get_position_closed_pnl'

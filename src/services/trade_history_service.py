@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 class TradeHistoryService:
     def __init__(self, bybit_client):
         self.bybit_client = bybit_client
-        self.history_file = Path('data/trades/history.json')
+        self.history_file = Path('src/data/trades/history.json')
         self.history_file.parent.mkdir(parents=True, exist_ok=True)
         
     async def update_trades(self):
@@ -92,10 +92,51 @@ class TradeHistoryService:
         }
 
     async def get_current_month_stats(self) -> Dict:
-        """이번 달 통계"""
-        now = datetime.now()
-        days_in_month = (now - now.replace(day=1)).days + 1
-        return await self.calculate_stats(days_in_month)
+        """이번 달 통계 계산"""
+        try:
+            trades = self.load_trades()
+            if not trades:
+                return self._empty_stats()
+
+            # 이번 달의 첫날 타임스탬프 계산
+            now = datetime.now()
+            start_of_month = datetime(now.year, now.month, 1).timestamp() * 1000
+            
+            # 이번 달 거래만 필터링 (timestamp 비교 수정)
+            monthly_trades = [trade for trade in trades 
+                             if int(trade.get('timestamp', 0)) >= int(start_of_month)]
+            
+            if not monthly_trades:
+                return self._empty_stats()
+            
+            # 수익/손실 계산
+            pnls = [float(trade.get('realized_pnl', 0)) for trade in monthly_trades]
+            total_pnl = sum(pnls)
+            max_profit = max(pnls)
+            max_loss = min(pnls)
+            avg_pnl = total_pnl / len(monthly_trades)
+            
+            # 승/패 계산
+            wins = sum(1 for pnl in pnls if pnl > 0)
+            losses = sum(1 for pnl in pnls if pnl <= 0)
+            win_rate = (wins / len(monthly_trades)) * 100 if monthly_trades else 0
+            
+            return {
+                'period': '이번 달',
+                'total_trades': len(monthly_trades),
+                'winning_trades': wins,
+                'losing_trades': losses,
+                'win_rate': round(win_rate, 2),
+                'total_profit': round(total_pnl, 2),
+                'average_profit': round(avg_pnl, 2),
+                'max_profit': round(max_profit, 2),
+                'max_loss': round(max_loss, 2),
+                'last_updated': datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"월간 통계 계산 중 오류: {str(e)}")
+            return self._empty_stats()
 
     async def get_daily_stats(self) -> Dict:
         """일일 통계"""

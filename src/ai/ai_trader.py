@@ -16,6 +16,7 @@ from trade.trade_manager import TradeManager
 from .gpt_analyzer import GPTAnalyzer
 from indicators.technical import TechnicalIndicators
 from telegram_bot.formatters.storage_formatter import StorageFormatter
+from config.trading_config import trading_config
 
 logger = logging.getLogger(__name__)
 
@@ -40,9 +41,9 @@ class AITrader:
         
         self.analyses = {}
         self.last_analysis_time = {}
-        self.symbol = 'BTCUSDT'
+        self.symbol = trading_config.symbol
         self.technical_indicators = TechnicalIndicators()
-        self.MIN_CONFIDENCE = 60.0
+        self.MIN_CONFIDENCE = trading_config.auto_trading['confidence']['min']
         self.last_trade_time = 0
         self.trade_cooldown = 300
         self.last_analysis_times = {}

@@ -10,8 +10,7 @@ from typing import Optional, Dict
 logger = logging.getLogger(__name__)
 
 class TechnicalIndicators:
-    @staticmethod
-    def calculate_indicators(df: pd.DataFrame) -> Optional[pd.DataFrame]:
+    def calculate_indicators(self, df: pd.DataFrame) -> Optional[pd.DataFrame]:
         """기술적 지표 계산"""
         try:
             if df is None or df.empty:
@@ -35,27 +34,19 @@ class TechnicalIndicators:
             df['sma_30'] = df['close'].rolling(window=30).mean()
             df['ema_9'] = df['close'].ewm(span=9).mean()
             
-            # RSI 계산
-            rsi = RSIIndicator(close=df['close'], window=14)
-            df['rsi'] = rsi.rsi()
-            
-            # RSI가 None이거나 0인 경우 처리
-            if df['rsi'].isna().any() or (df['rsi'] == 0).any():
-                logger.warning("RSI 계산 오류 발생, 재계산 시도")
-                # 직접 RSI 계산
-                delta = df['close'].diff()
-                gain = (delta.where(delta > 0, 0)).fillna(0)
-                loss = (-delta.where(delta < 0, 0)).fillna(0)
+            # RSI 계산 - calculate_rsi 메서드 사용
+            try:
+                df['rsi'] = self.calculate_rsi(df['close'])  # 이제 self 사용 가능
                 
-                avg_gain = gain.rolling(window=14).mean()
-                avg_loss = loss.rolling(window=14).mean()
+                # RSI 값 검증
+                df['rsi'] = df['rsi'].fillna(50)
+                df.loc[df['rsi'] == 0, 'rsi'] = 50
+                df.loc[df['rsi'] > 100, 'rsi'] = 100
+                df.loc[df['rsi'] < 0, 'rsi'] = 0
                 
-                rs = avg_gain / avg_loss
-                df['rsi'] = 100 - (100 / (1 + rs))
-            
-            # 여전히 문제가 있는 경우 기본값으로 대체
-            df['rsi'] = df['rsi'].fillna(50)
-            df.loc[df['rsi'] == 0, 'rsi'] = 50
+            except Exception as e:
+                logger.error(f"RSI 계산 실패: {str(e)}")
+                df['rsi'] = 50  # 기본값 설정
             
             # MACD 계산
             exp1 = df['close'].ewm(span=8, adjust=False).mean()
@@ -84,7 +75,7 @@ class TechnicalIndicators:
             return df
             
         except Exception as e:
-            logger.error(f"지표 계산 중 에러: {str(e)}")
+            logger.error(f"지표 계산 중 오류: {str(e)}")
             return None
 
     @staticmethod
@@ -190,16 +181,17 @@ class TechnicalIndicators:
             avg_gain = gain.rolling(window=period).mean()
             avg_loss = loss.rolling(window=period).mean()
             
-            # RS(Relative Strength) 계산
-            rs = avg_gain / avg_loss
+            # 0으로 나누기 방지
+            avg_loss = avg_loss.replace(0, 0.00001)
             
             # RSI 계산
+            rs = avg_gain / avg_loss
             rsi = 100 - (100 / (1 + rs))
             
             return rsi
             
         except Exception as e:
-            logger.error(f"RSI 계산 중 오류: {str(e)}")
+            logger.warning(f"RSI 계산 중 오류: {str(e)}")
             return pd.Series([50] * len(prices))  # 오류 시 중립값 반환
 
     def calculate_macd(self, prices: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9) -> Dict:

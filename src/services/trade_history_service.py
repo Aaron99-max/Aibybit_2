@@ -3,6 +3,8 @@ import json
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 from pathlib import Path
+import time
+import traceback
 
 logger = logging.getLogger(__name__)
 
@@ -15,16 +17,45 @@ class TradeHistoryService:
     async def update_trades(self):
         """거래 내역 업데이트 및 저장"""
         try:
+            # 현재 시간 체크
+            current_hour = datetime.now().hour
+            # 4시간봉 시간이 아니면 업데이트 하지 않음 (1, 5, 9, 13, 17, 21시)
+            if current_hour not in [1, 5, 9, 13, 17, 21]:
+                logger.debug("4시간봉 업데이트 시간이 아닙니다.")
+                return
+                
             # 완료된 거래 내역 조회
-            trades = await self.bybit_client.get_closed_trades('BTCUSDT')
+            new_trades = await self.bybit_client.get_closed_trades('BTCUSDT')
             
-            if trades:
-                # 마지막 조회 결과 저장
+            if new_trades:
+                # 기존 거래 내역 로드
+                existing_trades = self.load_trades()
+                
+                # 새로운 거래만 추가
+                updated_trades = existing_trades.copy()
+                for trade in new_trades:
+                    # 이미 존재하는 거래인지 확인
+                    if not any(
+                        existing['timestamp'] == trade['timestamp'] and
+                        existing['side'] == trade['side'] and
+                        existing['size'] == trade['size'] and
+                        existing['entry_price'] == trade['entry_price']
+                        for existing in existing_trades
+                    ):
+                        updated_trades.append(trade)
+                
+                # 시간순 정렬
+                updated_trades.sort(key=lambda x: x['timestamp'], reverse=True)
+                
+                # 저장
                 with open(self.history_file, 'w', encoding='utf-8') as f:
-                    json.dump(trades, f, indent=2)
-                logger.info(f"거래 내역 업데이트 완료: {len(trades)}건")
+                    json.dump(updated_trades, f, indent=2)
+                    
+                logger.info(f"거래 내역 업데이트 완료: 새로운 거래 {len(new_trades)}건")
+                
         except Exception as e:
             logger.error(f"거래 내역 업데이트 실패: {str(e)}")
+            logger.error(traceback.format_exc())
             
     def load_trades(self) -> List[Dict]:
         """저장된 거래 내역 로드"""
@@ -153,8 +184,44 @@ class TradeHistoryService:
     async def initialize(self):
         """초기 거래 내역 조회 및 저장"""
         logger.info("거래 내역 초기화 시작...")
-        await self.update_trades()
-        logger.info("거래 내역 초기화 완료") 
+        # 초기화 시에는 시간 체크 없이 무조건 업데이트
+        try:
+            # 완료된 거래 내역 조회
+            new_trades = await self.bybit_client.get_closed_trades('BTCUSDT')
+            
+            if new_trades:
+                # 기존 거래 내역 로드
+                existing_trades = self.load_trades()
+                
+                # 새로운 거래만 추가
+                updated_trades = existing_trades.copy()
+                for trade in new_trades:
+                    # 이미 존재하는 거래인지 확인
+                    if not any(
+                        existing['timestamp'] == trade['timestamp'] and
+                        existing['side'] == trade['side'] and
+                        existing['size'] == trade['size'] and
+                        existing['entry_price'] == trade['entry_price']
+                        for existing in existing_trades
+                    ):
+                        updated_trades.append(trade)
+                
+                # 시간순 정렬
+                updated_trades.sort(key=lambda x: x['timestamp'], reverse=True)
+                
+                # 저장
+                with open(self.history_file, 'w', encoding='utf-8') as f:
+                    json.dump(updated_trades, f, indent=2)
+                    
+                logger.info(f"거래 내역 초기화 완료: {len(new_trades)}건 저장됨")
+            else:
+                logger.info("초기화할 거래 내역이 없습니다.")
+                
+        except Exception as e:
+            logger.error(f"거래 내역 초기화 실패: {str(e)}")
+            logger.error(traceback.format_exc())
+            
+        logger.info("거래 내역 초기화 완료")
 
     async def should_update(self) -> bool:
         """업데이트 필요 여부 확인 (1, 5, 9, 13, 17, 21시)"""

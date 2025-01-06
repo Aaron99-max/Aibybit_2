@@ -27,10 +27,9 @@ class OrderService:
             return None
 
     def _validate_side(self, side: str) -> str:
-        """주문 방향 검증 및 변환"""
-        side = str(side).upper()
-        if side not in ['BUY', 'SELL']:
-            raise ValueError(f"잘못된 주문 방향: {side}. 'Buy' 또는 'Sell'이어야 합니다.")
+        """주문 방향 검증"""
+        if side not in ['Buy', 'Sell']:
+            raise ValueError(f"잘못된 주문 방향: {side}")
         return side
 
     async def create_order(self, **params) -> Dict:
@@ -105,28 +104,17 @@ class OrderService:
             result = await self.bybit_client.v5_post("/order/create", order_params)
             
             # 상세 응답 로깅
-            logger.info("=== 주문 요청 �� 응답 상세 ===")
+            logger.info("=== 주문 요청 및 응답 상세 ===")
             logger.info(f"요청 파라미터:\n{json.dumps(order_params, indent=2)}")
             logger.info(f"API 응답:\n{json.dumps(result, indent=2)}")
 
-            if not result:
-                logger.error("주문 생성 실패: 응답 없음")
-                return None
+            if result and result.get('retCode') == 0:  # 성공
+                # 주문 상세 정보 확인
+                order_info = result.get('result', {})
+                if not order_info:
+                    logger.error("주문 정보 없음")
+                    return None
 
-            # retCode 확인
-            ret_code = result.get('retCode')
-            ret_msg = result.get('retMsg')
-            if ret_code != 0:
-                logger.error(f"주문 생성 실패: [{ret_code}] {ret_msg}")
-                return None
-
-            # 주문 상세 정보 확인
-            order_info = result.get('result', {})
-            if not order_info:
-                logger.error("주문 정보 없음")
-                return None
-
-            if result:
                 # 상세 로깅
                 logger.info("=== 주문 생성 성공 ===")
                 logger.info(f"주문 ID: {order_info.get('orderId')}")
@@ -154,12 +142,22 @@ class OrderService:
                     }
                     message = self.order_formatter.format_order(order_data)
                     await self.telegram_bot.send_message_to_all(message)
+            else:  # 실패
+                error_msg = f"주문 생성 실패: [{result.get('retCode')}] {result.get('retMsg')}"
+                logger.error(error_msg)
+                
+                # 실패 알림 추가
+                if self.telegram_bot:
+                    fail_message = self.order_formatter.format_order_failure(params, error_msg)
+                    await self.telegram_bot.send_message_to_all(fail_message)
+                return None
 
             return result
 
         except Exception as e:
             logger.error(f"주문 생성 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
+            if self.telegram_bot:
+                await self.telegram_bot.send_message_to_all(f"❌ 주문 처리 중 오류 발생: {str(e)}")
             return None
 
     async def set_leverage(self, leverage: int) -> bool:
@@ -173,8 +171,9 @@ class OrderService:
                 "sellLeverage": str(leverage)
             })
             
-            if response and response.get('retCode') == 0:
-                logger.info(f"레버리지 설정 완료: {leverage}x")
+            # retCode가 0(성공) 또는 110043(이미 설정됨)인 경우 성공으로 처리
+            if response and (response.get('retCode') == 0 or response.get('retCode') == 110043):
+                logger.info(f"레버리지 설정 확인: {leverage}x")
                 return True
             else:
                 logger.error(f"레버리지 설정 실패: {response}")
@@ -183,4 +182,36 @@ class OrderService:
         except Exception as e:
             logger.error(f"레버리지 설정 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
+            return False
+
+    async def close_position(self, symbol: str, side: str, size: float, entry_price: float) -> bool:
+        """포지션 청산"""
+        try:
+            # 주문 파라미터 설정
+            order_params = {
+                "category": "linear",
+                "symbol": symbol,
+                "side": side,  # 그대로 Buy/Sell 사용
+                "orderType": "Limit",
+                "qty": str(size),
+                "price": str(entry_price),  # 파라미터로 받은 진입가 사용
+                "timeInForce": "GTC",
+                "reduceOnly": True,
+                "positionIdx": 0
+            }
+            
+            logger.info(f"포지션 청산 시도: {order_params}")
+            
+            # 주문 실행
+            result = await self.bybit_client.v5_post("/order/create", order_params)
+            
+            if result and result.get('retCode') == 0:
+                logger.info(f"포지션 청산 성공: {size} {symbol}")
+                return True
+            else:
+                logger.error(f"포지션 청산 실패: {result}")
+                return False
+            
+        except Exception as e:
+            logger.error(f"포지션 청산 중 오류: {str(e)}")
             return False

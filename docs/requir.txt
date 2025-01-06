@@ -33,7 +33,24 @@
 4. 자동분석을 먼저 개발하고 테스트를 위해 /analyze 수동분석을 만들고, 자동매매를 만든후에 테스트를 위해 /trade 수동매매를 
 만들었더니 자동분석과 수동분석, 자동매매와 수동매매의 로직이 겹쳐서 통일함. 현재도 겹치는 코드가 있으면 제거해야함.
 
-모든수정은 기존코드 확인하고 수정하고 에러가 발생하면 원인과 해결책을 제시하고 동의후 수정.
+1. /trade 명령어:
+analysis_handler.py
+  ↓
+ai_trader.execute_trade()
+  ↓
+trade_manager.execute_trade_signal()
+  ↓
+order_service.create_order()
 
+2. 자동매매:
+auto_analyzer.py
+  ↓
+ai_trader.execute_auto_trading()
+  ↓
+trade_manager.execute_auto_trade()  // 여기서 신뢰도/추세강도 체크
+  ↓
+trade_manager.execute_trade_signal()
+  ↓
+order_service.create_order()
 
   

@@ -280,20 +280,31 @@ class AITrader:
             logger.error(f"신뢰도 계산 중 오류: {str(e)}")
             return 50
 
-    async def execute_trade(self, analysis: Dict) -> bool:
-        """분석 결과에 따른 거래 실행"""
+    async def execute_trade(self, analysis: Dict, skip_validation: bool = False) -> bool:
+        """분석 결과에 따른 거래 실행
+        Args:
+            analysis: 거래 분석 결과
+            skip_validation: True면 자동매매 조건 검증 스킵 (/trade 명령어용)
+        """
         try:
-            # 테스트넷에서는 자동매매 강제 활성화
-            if 'trading_strategy' not in analysis:
-                analysis['trading_strategy'] = {}
-            if 'auto_trading' not in analysis['trading_strategy']:
-                analysis['trading_strategy']['auto_trading'] = {}
-            
-            analysis['trading_strategy']['auto_trading'].update({
-                'enabled': True,
-                'confidence': 100,
-                'reason': '테스트넷 자동실행'
-            })
+            if not skip_validation:
+                # 자동매매 조건 검증
+                auto_trading = analysis.get('trading_strategy', {}).get('auto_trading', {})
+                if not auto_trading.get('enabled'):
+                    logger.info(f"자동매매 비활성화됨: {auto_trading.get('reason', '이유 없음')}")
+                    return False
+            else:
+                # /trade 명령어로 실행 시
+                if 'trading_strategy' not in analysis:
+                    analysis['trading_strategy'] = {}
+                if 'auto_trading' not in analysis['trading_strategy']:
+                    analysis['trading_strategy']['auto_trading'] = {}
+                
+                analysis['trading_strategy']['auto_trading'].update({
+                    'enabled': True,
+                    'confidence': 100,
+                    'reason': '수동 실행'
+                })
 
             # 실제 거래 실행
             return await self.trade_manager.execute_trade_signal(analysis)
@@ -351,19 +362,8 @@ class AITrader:
                 logger.error("final 분석 데이터가 없습니다")
                 return False
             
-            logger.info(f"Final 분석 데이터: {final_analysis}")
-
-            # 자동매매 활성화 여부 확인
-            auto_trading = final_analysis.get('trading_strategy', {}).get('auto_trading', {})
-            logger.info(f"자동매매 설정: {auto_trading}")
-            
-            if not auto_trading.get('enabled'):
-                logger.info("자동매매가 비활성화되어 있습니다")
-                return False
-
-            # 거래 신호 실행
-            logger.info("거래 신호 실행 시도")
-            return await self.trade_manager.execute_trade_signal(final_analysis)
+            # /trade와 동일한 방식으로 실행
+            return await self.execute_trade(final_analysis)  # 기존 execute_trade 사용
 
         except Exception as e:
             logger.error(f"자동매매 실행 중 오류: {str(e)}")

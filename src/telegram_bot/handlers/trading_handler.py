@@ -266,74 +266,24 @@ class TradingHandler(BaseHandler):
                 "예: /trade LONG 10 5 50000 49000 51000"
             )
 
-    async def handle_trade_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        """수동 매매 명령어 처리"""
+    async def handle_trade_command(self, update: Update, context: CallbackContext) -> None:
+        """거래 명령어 처리"""
         try:
-            # 파라미터 파싱
-            args = context.args
-            if len(args) != 6:
-                await update.message.reply_text(
-                    "사용법: /trade <방향> <레버리지> <크기> <진입가> <손절가> <익절가>\n"
-                    "예시: /trade long 3 1 93001 91001 94999"
-                )
+            # 봇 방(관리자 방)에서만 실행되도록 체크
+            chat_id = update.effective_chat.id
+            if chat_id != self.bot.admin_chat_id:
+                logger.info(f"관리자 방이 아닌 곳에서의 /trade 명령 무시 (chat_id: {chat_id})")
                 return
-
-            direction, leverage, size, entry, stop, target = args
             
-            # 방향 변환
-            if direction.lower() in ['long', 'buy', '매수']:
-                position = '매수'
-            elif direction.lower() in ['short', 'sell', '매도']:
-                position = '매도'
-            else:
-                await update.message.reply_text("잘못된 거래 방향입니다. long/buy/매수 또는 short/sell/매도를 사용하세요.")
-                return
-
-            # 구조화된 분석 형식으로 변환
-            analysis = {
-                'market_summary': {
-                    'market_phase': '상승' if position == '매수' else '하락',
-                    'overall_sentiment': '긍정적' if position == '매수' else '부정적',
-                    'short_term_sentiment': '긍정적' if position == '매수' else '부정적',
-                    'confidence': 85
-                },
-                'technical_analysis': {
-                    'trend': '상승' if position == '매수' else '하락',
-                    'strength': 75,
-                    'indicators': {
-                        'divergence': {
-                            'type': '없음',
-                            'description': '수동 매매',
-                            'timeframe': 'manual'
-                        }
-                    }
-                },
-                'trading_strategy': {
-                    'position_suggestion': position,
-                    'entry_points': [float(entry)],
-                    'stop_loss': float(stop),
-                    'take_profit': [float(target)],
-                    'leverage': int(leverage),
-                    'position_size': float(size),
-                    'auto_trading': {
-                        'enabled': True,
-                        'confidence': 85,
-                        'reason': '수동 매매 신호'
-                    }
-                }
-            }
-
-            # 거래 실행
-            success = await self.trade_manager.execute_trade_signal(analysis)
+            # 기존 코드는 그대로 유지
+            message = update.message.text.strip()
+            timeframe = self._extract_timeframe(message) or '4h'
             
-            if success:
-                await update.message.reply_text("주문이 성공적으로 실행되었습니다.")
-            else:
-                await update.message.reply_text("주문 실행에 실패했습니다.")
-
-        except ValueError as e:
-            await update.message.reply_text(f"잘못된 입력값: {str(e)}")
+            result = await self.bot.analysis_handler.handle_analyze_final(chat_id)
+            
+            # 포지션 크기가 같을 때는 다른 메시지 표시
+            if result and not result.get('order_created', True):  # order_created가 False면 포지션 크기가 같은 경우
+                await self.bot.send_message(chat_id, "📊 포지션 확인 완료: 현재 포지션이 목표 크기와 동일하여 조정이 필요하지 않습니다.")
         except Exception as e:
-            logger.error(f"수동 매매 처리 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            await update.message.reply_text("주문 처리 중 오류가 발생했습니다.")
+            logger.error(f"거래 명령어 처리 중 오류: {str(e)}")
+            await self.bot.send_message(chat_id, f"❌ 거래 명령어 처리 중 오류가 발생했습니다: {str(e)}")

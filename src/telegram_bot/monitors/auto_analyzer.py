@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 from telegram_bot.utils.time_utils import TimeUtils
 from pytz import timezone
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -79,22 +80,22 @@ class AutoAnalyzer:
     def _should_run_timeframe(self, timeframe: str, current_time: datetime) -> bool:
         """각 시간대별 실행 조건 확인"""
         try:
-            # 마지막 실행 시간 확인
+            # 마지막 실행 시간 체크
             last_run = self.last_run.get(timeframe)
             if last_run:
-                # last_run이 naive datetime인 경우 KST로 변환
                 if last_run.tzinfo is None:
                     last_run = self.time_utils.kst_tz.localize(last_run)
                 
                 time_diff = (current_time - last_run).total_seconds()
                 min_interval = {
-                    '15m': 14 * 60,  # 14분
-                    '1h': 59 * 60,   # 59분
-                    '4h': 239 * 60,  # 3시간 59분
-                    '1d': 23 * 3600  # 23시간
+                    '15m': 14 * 60,
+                    '1h': 59 * 60,
+                    '4h': 239 * 60,
+                    '1d': 23 * 3600
                 }.get(timeframe, 60)
                 
                 if time_diff < min_interval:
+                    # logger.info(f"{timeframe} 분석 스킵: 마지막 실행 후 {time_diff:.6f}초 경과")
                     return False
 
             # 실행 시간 확인
@@ -144,10 +145,10 @@ class AutoAnalyzer:
                     chat_id=None
                 )
                 
-                # 4시간봉 분석이 완료되면 final 분석 실행 (이 부분 추가)
+                # 4시간봉 분석이 완료되면 final 분석 실행
                 if timeframe == '4h':
                     logger.info("=== Final 분석 시작 ===")
-                    await self.bot.analysis_handler.handle_analyze_final(None)  # chat_id는 None으로
+                    await self._run_final_analysis(analysis)  # handle_analyze_final 대신 직접 _run_final_analysis 호출
                 
             else:
                 logger.error(f"{timeframe} 분석 실패")
@@ -177,11 +178,7 @@ class AutoAnalyzer:
                     logger.error("일부 시간대의 분석 데이터가 누락되었습니다")
                     return
 
-                # 4시간봉 기술적 분석 결과 사용
-                h4_technical = analyses['4h']['technical_analysis']
-                
-                # Final 분석 결과 생성
-                h4_analysis = analyses['4h']  # 4시간봉 분석 결과
+                # Final 분석 결과 생성 (상세 로그 제거)
                 final_analysis = {
                     'market_summary': {
                         'market_phase': h4_analysis['market_summary']['market_phase'],
@@ -191,37 +188,23 @@ class AutoAnalyzer:
                         'volume_trend': self._get_majority_volume_trend(analyses),
                         'confidence': self._calculate_confidence(analyses)
                     },
-                    'technical_analysis': {
-                        'trend': h4_analysis['technical_analysis']['trend'],
-                        'strength': h4_analysis['technical_analysis']['strength'],
-                        'indicators': {
-                            'rsi': h4_analysis['technical_analysis']['indicators']['rsi'],
-                            'macd': h4_analysis['technical_analysis']['indicators']['macd'],
-                            'bollinger': h4_analysis['technical_analysis']['indicators']['bollinger']
-                        }
-                    },
+                    'technical_analysis': h4_analysis['technical_analysis'],
                     'trading_strategy': h4_analysis['trading_strategy']
                 }
 
                 # 분석 결과 저장 및 전송
                 self.bot.storage_formatter.save_analysis(final_analysis, 'final')
                 
-                # 자동매매 실행 조건 확인
+                # 자동매매 실행 조건 확인 (간단한 로그만)
                 if final_analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled', False):
+                    logger.info("=== 자동매매 신호 감지 ===")
                     await self.bot.trade_manager.execute_trade_signal(final_analysis)
-                
-                await self.bot.analysis_handler.handle_analysis_result(
-                    analysis=final_analysis,
-                    timeframe='final',
-                    chat_id=None
-                )
                 
             finally:
                 self._final_analysis_running = False
             
         except Exception as e:
             logger.error(f"Final 분석 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
 
     def _should_run_analysis(self, timeframe: str) -> bool:
         """분석 실행 여부 확인"""
@@ -256,21 +239,23 @@ class AutoAnalyzer:
     async def run(self):
         """자동 분석 실행"""
         try:
-            while self.running:
-                logger.info("자동 분석 시작...")
+            while True:
+                now = datetime.now()
                 
-                # 거래 내역 업데이트
-                await self.bot.trade_history_service.update_trades()
-                
-                # 기존 분석 로직...
-                for timeframe in self.timeframes:
-                    if await self.should_analyze(timeframe):
-                        await self.analyze_timeframe(timeframe)
+                # 각 시간대별 분석 실행
+                for timeframe in ['15m', '1h', '4h', '1d']:
+                    if self._should_run_analysis(timeframe):
+                        logger.info(f"{timeframe} 자동 분석 시작")
+                        analysis = await self._run_timeframe_analysis(timeframe)
                         
-                await asyncio.sleep(self.check_interval)
+                        # 4시간봉 분석 후 Final 분석 실행
+                        if timeframe == '4h' and analysis:
+                            await self._run_final_analysis(analysis)
+                
+                await asyncio.sleep(60)  # 1분마다 체크
                 
         except Exception as e:
-            logger.error(f"자동 분석 중 오류: {str(e)}")
+            logger.error(f"자동 분석 실행 중 오류: {str(e)}")
 
     async def _run_timeframe_analysis(self, timeframe: str):
         """시간대별 분석 실행"""
@@ -309,18 +294,39 @@ class AutoAnalyzer:
             
             # 정시에만 실행 (분이 0일 때)
             if current_time.minute != 0:
+                logger.info(f"4시간봉 체크 - 현재시간(KST): {current_hour:02d}:{current_time.minute:02d}, 실행여부: False")
                 return
             
             # 4시간봉 실행 시간 (1, 5, 9, 13, 17, 21시)
-            if current_hour in [1, 5, 9, 13, 17, 21]:
-                logger.info(f"4시간봉 분석 시작 - 현재시간(KST): {current_hour:02d}:00")
-                
-                # 거래 내역 업데이트
-                if await self.bot.trade_history_service.should_update():
-                    await self.bot.trade_history_service.update_trades()
-                
-                # 시장 분석 실행
-                await self.analyzer.analyze_market('4h')
-                
+            if current_hour not in [1, 5, 9, 13, 17, 21]:
+                logger.info(f"4시간봉 체크 - 현재시간(KST): {current_hour:02d}:00, 실행여부: False")
+                return
+            
+            logger.info(f"4시간봉 분석 시작 - 현재시간(KST): {current_hour:02d}:00")
+            await self.analyzer.analyze_market('4h')
         except Exception as e:
             logger.error(f"4시간봉 분석 실행 체크 중 오류: {str(e)}")
+
+    async def handle_final_analysis(self, analysis_result):
+        try:
+            logger.info("\n=== Final 분석 처리 시작 ===")
+            logger.info(f"입력 분석 결과: {json.dumps(analysis_result, indent=2)}")
+            
+            # Final 분석 생성
+            final_analysis = await self.ai_trader.create_final_analysis(analysis_result)
+            logger.info(f"Final 분석 생성 결과: {json.dumps(final_analysis, indent=2)}")
+            
+            if final_analysis:
+                # 자동매매 조건 확인
+                auto_trading = final_analysis.get('trading_strategy', {}).get('auto_trading', {})
+                logger.info(f"자동매매 설정: {json.dumps(auto_trading, indent=2)}")
+                
+                if auto_trading.get('enabled'):
+                    logger.info("자동매매 실행 시도")
+                    trade_result = await self.ai_trader.execute_auto_trading(final_analysis)
+                    logger.info(f"자동매매 실행 결과: {trade_result}")
+                else:
+                    logger.info(f"자동매매 조건 미충족: {auto_trading.get('reason', '이유 없음')}")
+        except Exception as e:
+            logger.error(f"Final 분석 처리 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())

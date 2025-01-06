@@ -205,3 +205,30 @@ class OrderFormatter:
         except Exception as e:
             logger.error(f"거래 결과 포맷팅 중 오류: {str(e)}")
             return "❌ 포맷팅 오류"
+
+    def format_order_failure(self, params: Dict, error_msg: str) -> str:
+        """주문 실패 메시지 포맷팅"""
+        try:
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+            
+            message = [
+                f"❌ 주문 실패 ({current_time})",
+                "",
+                "📋 주문 정보:",
+                f"• 심볼: {params.get('symbol', 'BTCUSDT')}",
+                f"• 방향: {'롱' if params['side'] == 'BUY' else '숏'}",
+                f"• 레버리지: {params.get('leverage', '10')}x",
+                "",
+                "💰 거래 정보:",
+                f"• 진입가: ${self._format_number(params.get('entry_price', 0))}",
+                f"• 수량: {params.get('position_size')}%",
+                "",
+                "⚠️ 오류:",
+                f"• {error_msg}"
+            ]
+            
+            return "\n".join(message)
+            
+        except Exception as e:
+            logger.error(f"실패 메시지 포맷팅 중 오류: {str(e)}")
+            return "❌ 포맷팅 오류"

@@ -8,10 +8,10 @@
     "confidence": 85
   },
   "technical_analysis": {
-    "trend": "약상승",
-    "strength": 4.41,
+    "trend": "하락",
+    "strength": 19.98,
     "indicators": {
-      "rsi": 62.53,
+      "rsi": 50.0,
       "macd": "상승",
       "bollinger": "중단",
       "divergence": {
@@ -23,16 +23,16 @@
   },
   "trading_strategy": {
     "entry_points": [
-      96080.0
+      98821.7
     ],
-    "stop_loss": 94158.4,
+    "stop_loss": 96845.266,
     "leverage": 5,
     "position_size": 10,
     "position_suggestion": "매수",
     "take_profit": [
-      98001.6,
-      99923.2
+      100798.134,
+      102774.568
     ]
   },
-  "saved_at": "2025-01-02 16:00:04 KST"
+  "saved_at": "2025-01-06 16:15:06 KST"
 }

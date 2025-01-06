@@ -22,7 +22,7 @@ class TradingConfig:
                 "high": 80    # 85 -> 80으로 낮춤
             },
             "trend_strength": {
-                "min": 40,    # 기본 최소 추세 강도
+                "min": 10,    # 기본 최소 추세 강도
                 "levels": {
                     "confidence_85": 10,   # 신뢰도 85% 이상
                     "confidence_80": 15,   # 신뢰도 80~84%
@@ -54,6 +54,20 @@ class TradingConfig:
         if not hasattr(cls, '_instance'):
             cls._instance = cls()
         return cls._instance
+
+    # 포지션 관련 설정
+    MIN_POSITION_SIZE = 0.001  # 최소 주문 수량 (BTC)
+    DECIMAL_PLACES = 3         # 수량 소수점 자리수
+    
+    # 손익 설정
+    LONG_SL_PERCENT = 1.0     # 롱 포지션 손절 퍼센트
+    LONG_TP_PERCENT = 2.0     # 롱 포지션 익절 퍼센트
+    SHORT_SL_PERCENT = 1.0    # 숏 포지션 손절 퍼센트
+    SHORT_TP_PERCENT = 2.0    # 숏 포지션 익절 퍼센트
+
+    # 추가 설정
+    DEFAULT_LEVERAGE = 1  # 기본 레버리지
+    TIMESTAMP_MULTIPLIER = 1000  # milliseconds 변환용
 
 # 전역 설정 인스턴스
 trading_config = TradingConfig.get_instance()

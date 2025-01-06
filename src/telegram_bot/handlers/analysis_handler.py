@@ -145,42 +145,32 @@ class AnalysisHandler(BaseHandler):
     async def handle_analyze_final(self, chat_id: int):
         """Final 분석 처리"""
         try:
-            await self.send_message("🔄 최종 분석 시작...", chat_id)
-
+            logger.info("\n=== 수동 Final 분석 시작 ===")
+            
             # 저장된 분석 결과 로드
             analyses = {}
             for timeframe in ['15m', '1h', '4h', '1d']:
                 analysis_data = self.storage_formatter.load_analysis(timeframe)
                 if analysis_data:
                     analyses[timeframe] = analysis_data
+                    logger.info(f"{timeframe} 분석 데이터: {json.dumps(analysis_data, indent=2)}")
 
-            if not analyses:
-                await self.send_message("❌ 저장된 분석 결과가 없습니다.", chat_id)
-                return
-
-            # GPT 최종 분석 요청
+            # Final 분석 실행
             final_analysis = await self.ai_trader.create_final_analysis(analyses)
-            if not final_analysis:
-                await self.send_message("❌ GPT Final 분석 성 실패", chat_id)
-                return
-
-            # 분석 결과 저장
-            self.storage_formatter.save_analysis(final_analysis, 'final')
-
-            # 분석 결과 메시지 전송
-            saved_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
-            formatted_final = self.analysis_formatter.format_analysis_result(
-                final_analysis, 'final', saved_time
-            )
-            await self.send_message(formatted_final, chat_id)
-
-            # 자동매매 실행
-            trade_result = await self.ai_trader.execute_trade(final_analysis)
+            logger.info(f"Final 분석 결과: {json.dumps(final_analysis, indent=2)}")
             
-            if trade_result:
-                await self.send_message("✅ 자동매매 주문 실행 완료", chat_id)
-            else:
-                await self.send_message("❌ 자동매매 주문 실행 실패", chat_id)
+            if final_analysis:
+                # 분석 결과 메시지 전송 추가
+                message = self.analysis_formatter.format_analysis_result(
+                    final_analysis, 
+                    'final',
+                    datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+                )
+                await self.send_message(message, chat_id)
+                
+                # 자동매매 실행
+                trade_result = await self.ai_trader.execute_trade(final_analysis)
+                logger.info(f"매매 실행 결과: {trade_result}")
 
         except Exception as e:
             logger.error(f"Final 분석 중 오류: {str(e)}")

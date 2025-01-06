@@ -29,6 +29,9 @@ class TradeManager:
         # 자동매매 실행 조건
         self.auto_trading_rules = trading_config.auto_trading
 
+        # position_service에 order_service 설정
+        self.position_service.set_order_service(order_service)
+
     def _convert_side(self, side: str) -> str:
         """포지션 방향 통일"""
         side = str(side).upper()
@@ -42,62 +45,34 @@ class TradeManager:
     async def execute_trade_signal(self, analysis: Dict) -> bool:
         """거래 신호 실행"""
         try:
-            logger.info("=== 자동매매 신호 실행 ===")
+            strategy = analysis.get('trading_strategy', analysis)
             
-            if not analysis or not isinstance(analysis, dict):
-                logger.error("유효하지 않은 분석 데이터")
-                return False
+            # 필요한 모든 필드 매핑
+            signal = {
+                'side': 'Buy' if strategy['position_suggestion'] == '매수' else 'Sell',
+                'size': float(strategy['position_size']),
+                'leverage': int(strategy['leverage']),
+                'entry_price': float(strategy['entry_points'][0]),
+                'symbol': self.symbol
+            }
             
-            strategy = analysis.get('trading_strategy', {})
-            if not strategy:
-                logger.error("거래 전략 정보 없음")
-                return False
+            # 현재 포지션 확인
+            current_position = await self.position_service.get_current_position()
             
-            # 필수 필드 검증
-            required_fields = ['position_suggestion', 'entry_points', 'leverage', 'position_size']
-            for field in required_fields:
-                if field not in strategy:
-                    logger.error(f"필수 필드 누락: {field}")
-                    return False
+            # 포지션 처리 전 로깅
+            logger.info(f"현재 포지션: {current_position}")
+            logger.info(f"신규 신호: {signal}")
 
-            # 방향 변환
-            side = self._convert_side(strategy['position_suggestion'])
-            
-            # 자동매매 설정 확인
-            auto_trading = analysis.get('trading_strategy', {}).get('auto_trading', {})
-            if not auto_trading.get('enabled', False):
-                return False
-            
-            # 기본 조건
-            confidence = float(auto_trading.get('confidence', 0))
-            trend_strength = float(auto_trading.get('strength', 0))
-            
-            rules = self.auto_trading_rules
-            
-            # 신뢰도에 따른 최소 추세 강도 결정
-            min_strength = rules['trend_strength']['levels']['default']
-            if confidence >= 85:
-                min_strength = rules['trend_strength']['levels']['confidence_85']
-            elif confidence >= 80:
-                min_strength = rules['trend_strength']['levels']['confidence_80']
-            elif confidence >= 75:
-                min_strength = rules['trend_strength']['levels']['confidence_75']
-            
-            # 신뢰도와 추세 강도 체크
-            if confidence < rules['confidence']['min']:
-                logger.info(f"신뢰도가 너무 낮음: {confidence}%")
-                return False
-            
-            if trend_strength < min_strength:
-                logger.info(f"추세 강도 부족: {trend_strength}% (필요 강도: {min_strength}%, 신뢰도: {confidence}%)")
-                return False
-            
-            logger.info(f"거래 조건 충족 - 추세 강도: {trend_strength}%, 신뢰도: {confidence}%")
-            return True
+            # position_service로 전달
+            result = await self.position_service.handle_position_for_signal(signal)
+
+            # 결과 로깅
+            logger.info(f"포지션 처리 결과: {result}")
+
+            return result
 
         except Exception as e:
             logger.error(f"거래 신호 실행 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
             return False
 
     async def _handle_existing_position(self, position: Dict, analysis: Dict) -> bool:
@@ -109,16 +84,7 @@ class TradeManager:
             current_side = position['side'].title()
             current_leverage = int(position['leverage'])
             target_percent = float(strategy['position_size'])
-            current_size = float(position['size'])  # BTC 단위
-            
-            # 잔고 조회 (현재 퍼센트 계산용)
-            balance = await self.balance_service.get_balance()
-            if balance:
-                current_percent = (current_size * float(position['entry_price'])) / (balance * float(current_leverage)) * 100
-                logger.info(f"\n=== 포지션 조정 시작 ===\n"
-                           f"현재: {current_side} {current_size} BTC ({current_percent:.1f}%) {current_leverage}x\n"
-                           f"목표: {new_side} {target_percent}% {new_leverage}x\n"
-                           f"방향: {'유지' if current_side.upper() == new_side.upper() else '전환'}")
+            current_size = float(position['size'])
             
             # 방향과 레버리지가 같을 때만 크기 조정
             if (current_side.upper() == new_side.upper() and 
@@ -178,23 +144,90 @@ class TradeManager:
     async def _open_new_position(self, analysis: Dict) -> bool:
         """새 포지션 진입"""
         try:
-            strategy = analysis.get('trading_strategy', {})
+            strategy = analysis
+            
             order_params = {
                 'symbol': self.symbol,
                 'side': 'Buy' if strategy['position_suggestion'] == '매수' else 'Sell',
-                'position_size': float(strategy['position_size']),  # GPT가 준 퍼센트 값
+                'position_size': float(strategy['position_size']),
                 'leverage': int(strategy['leverage']),
                 'entry_price': float(strategy['entry_points'][0]),
                 'stop_loss': float(strategy['stop_loss']),
                 'take_profit': float(strategy['take_profit'][0]),
-                'is_btc_unit': False  # 퍼센트 단위 사용
+                'is_btc_unit': False
             }
             
-            logger.info(f"새 포지션 진입 시도: {order_params['side']} {order_params['position_size']}% {order_params['leverage']}x")
+            logger.info("=== 새 포지션 진입 시도 ===")
+            logger.info(f"전략: {json.dumps(strategy, indent=2)}")
+            logger.info(f"주문 파라미터: {json.dumps(order_params, indent=2)}")
+            
             result = await self.order_service.create_order(**order_params)
+            logger.info(f"주문 생성 결과: {result}")
+            
             return result is not None
 
         except Exception as e:
             logger.error(f"새 포지션 진입 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            return False
+
+    async def execute_auto_trade(self, analysis_result):
+        """자동매매 실행"""
+        try:
+            logger.info("\n=== 자동매매 신호 실행 ===")
+            logger.info(f"분석 결과: {json.dumps(analysis_result, indent=2)}")
+            
+            # 1. 자동매매 조건 검증
+            auto_trading = analysis_result.get('trading_strategy', {}).get('auto_trading', {})
+            confidence = auto_trading.get('confidence', 0)
+            strength = auto_trading.get('strength', 0)
+            
+            # 신뢰도와 추세 강도 체크
+            if strength < self.trading_config.auto_trading['trend_strength']['min']:
+                logger.info(f"추세 강도 부족: {strength}% (필요 강도: {self.trading_config.auto_trading['trend_strength']['min']}%, 신뢰도: {confidence}%)")
+                return False
+            
+            # 2. /trade 방식과 동일하게 처리
+            if 'trading_strategy' not in analysis_result:
+                analysis_result['trading_strategy'] = {}
+            if 'auto_trading' not in analysis_result['trading_strategy']:
+                analysis_result['trading_strategy']['auto_trading'] = {}
+            
+            analysis_result['trading_strategy']['auto_trading'].update({
+                'enabled': True,
+                'confidence': confidence,
+                'strength': strength,
+                'reason': '자동매매 실행'
+            })
+
+            # 3. 거래 실행 (/trade와 동일한 경로)
+            return await self.execute_trade_signal(analysis_result['trading_strategy'])
+            
+        except Exception as e:
+            logger.error(f"자동매매 실행 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            return False
+
+    async def execute_trading_strategy(self, trading_strategy: Dict) -> bool:
+        try:
+            logger.info(f"=== 새 포지션 진입 시도 ===")
+            logger.info(f"전략: {json.dumps(trading_strategy, indent=2, ensure_ascii=False)}")
+            
+            # position_suggestion을 side로 변환
+            signal = {
+                'side': 'Buy' if trading_strategy['position_suggestion'] == '매수' else 'Sell',
+                'leverage': trading_strategy['leverage'],
+                'size': trading_strategy['position_size'],
+                'entry_price': trading_strategy['entry_points'][0],
+                'symbol': self.symbol
+            }
+            
+            result = await self.position_service.handle_position_for_signal(signal)
+            
+            logger.info(f"주문 생성 결과: {result}")
+            return result
+
+        except Exception as e:
+            logger.error(f"포지션 진입 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             return False

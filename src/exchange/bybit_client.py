@@ -1,5 +1,5 @@
 import ccxt.async_support as ccxt
-from typing import Dict, List
+from typing import Dict
 import logging
 import traceback
 import hmac
@@ -8,6 +8,7 @@ import time
 import requests
 import aiohttp
 import json
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -36,12 +37,12 @@ class BybitClient:
             }
         })
         
-        # REST API base URL
-        self.base_url = "https://api.bybit.com"
-        
-        # CCXT exchange 설정
+        # REST API base URL - 테스트넷 여부에 따라 설정
         if testnet:
+            self.base_url = "https://api-testnet.bybit.com"
             self.exchange.set_sandbox_mode(True)
+        else:
+            self.base_url = "https://api.bybit.com"
 
     async def initialize(self):
         """초기화 및 연결 테스트"""
@@ -60,58 +61,107 @@ class BybitClient:
             if not self.api_key or not self.api_secret:
                 logger.error("API 키가 설정되지 않았습니다")
                 return None
-                
+            
             timestamp = str(int(time.time() * 1000))
-            recv_window = "5000"
+            recv_window = "20000"
             params = params or {}
             
-            # V5 API 서명 생성
+            # GET 요청의 경우 쿼리 문자열 생성
             if method == "GET":
-                # GET 요청의 경우 쿼리 문자열 생성
-                query_string = '&'.join([f"{k}={v}" for k, v in sorted(params.items())])
-                sign_payload = timestamp + self.api_key + recv_window + query_string
+                # 필수 파라미터 추가
+                params_with_auth = {
+                    **params,
+                    'api_key': self.api_key,
+                    'timestamp': timestamp,
+                    'recv_window': recv_window
+                }
+                # 파라미터를 알파벳 순으로 정렬
+                sorted_params = dict(sorted(params_with_auth.items()))
+                # 쿼리 문자열 생성
+                query_string = '&'.join([f"{k}={v}" for k, v in sorted_params.items()])
+                # 서명 생성
+                signature = hmac.new(
+                    bytes(self.api_secret, 'utf-8'),
+                    bytes(query_string, 'utf-8'),
+                    hashlib.sha256
+                ).hexdigest()
+                # 서명을 쿼리 파라미터에 추가
+                params_with_auth['sign'] = signature
+                params = params_with_auth
             else:
-                # POST 요청의 경우 JSON 문자열 사용
-                sign_payload = timestamp + self.api_key + recv_window + json.dumps(params)
-            
-            # 서명 생성
-            signature = hmac.new(
-                bytes(self.api_secret, 'utf-8'),
-                bytes(sign_payload, 'utf-8'),
-                hashlib.sha256
-            ).hexdigest()
+                # POST 요청의 경우도 동일한 방식으로 처리
+                params_with_auth = {
+                    **params,
+                    'api_key': self.api_key,
+                    'timestamp': timestamp,
+                    'recv_window': recv_window
+                }
+                query_string = '&'.join([f"{k}={v}" for k, v in sorted(params_with_auth.items())])
+                signature = hmac.new(
+                    bytes(self.api_secret, 'utf-8'),
+                    bytes(query_string, 'utf-8'),
+                    hashlib.sha256
+                ).hexdigest()
+                params_with_auth['sign'] = signature
+                params = params_with_auth
 
             url = f"{self.base_url}{path}"
-            headers = {
-                'X-BAPI-API-KEY': self.api_key,
-                'X-BAPI-SIGN': signature,
-                'X-BAPI-TIMESTAMP': timestamp,
-                'X-BAPI-RECV-WINDOW': recv_window
-            }
+            headers = {'Content-Type': 'application/json'} if method == "POST" else {}
             
-            if method == "POST":
-                headers['Content-Type'] = 'application/json'
+            logger.debug(f"요청 URL: {url}")
+            logger.debug(f"요청 파라미터: {params}")
             
             async with aiohttp.ClientSession() as session:
                 if method == "GET":
                     async with session.get(url, params=params, headers=headers) as response:
-                        return await response.json()
-                else:  # POST
+                        response_text = await response.text()
+                        if response.status != 200:
+                            logger.error(f"API 응답 상태 코드: {response.status}")
+                            logger.error(f"응답 내용: {response_text}")
+                            return None
+                        return json.loads(response_text)
+                else:
                     async with session.post(url, json=params, headers=headers) as response:
-                        return await response.json()
+                        response_text = await response.text()
+                        if response.status != 200:
+                            logger.error(f"API 응답 상태 코드: {response.status}")
+                            logger.error(f"응답 내용: {response_text}")
+                            return None
+                        return json.loads(response_text)
 
         except Exception as e:
             logger.error(f"API 요청 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             return None
 
-    async def v5_post(self, path: str, params: Dict = None) -> Dict:
+    async def v5_post(self, path: str, data: Dict = None) -> Dict:
         """V5 API POST 요청"""
-        return await self._request("POST", f"/v5{path}", params)
+        try:
+            # recv_window를 더 크게 설정 (5초 -> 10초)
+            if data is None:
+                data = {}
+            data['recv_window'] = 10000  # 5000 -> 10000으로 증가
+            
+            response = await self._request('POST', f'/v5{path}', data)
+            return response
+            
+        except Exception as e:
+            logger.error(f"Bybit V5 POST 요청 실패: {str(e)}")
+            return None
 
     async def v5_get(self, path: str, params: Dict = None) -> Dict:
         """V5 API GET 요청"""
-        return await self._request("GET", f"/v5{path}", params)
+        try:
+            # path가 이미 /v5로 시작하는지 확인
+            if not path.startswith('/v5'):
+                path = f"/v5{path}"
+            
+            logger.debug(f"V5 GET 요청 경로: {path}")
+            return await self._request("GET", path, params)
+        except Exception as e:
+            logger.error(f"V5 GET 요청 실패: {str(e)}")
+            logger.error(traceback.format_exc())
+            return None
 
     async def close(self):
         """연결 종료"""
@@ -284,33 +334,50 @@ class BybitClient:
             logger.error(f"주문 실행 중 오류: {str(e)}")
             return None
 
-    async def get_closed_trades(self, symbol: str = 'BTCUSDT') -> List[Dict]:
+    async def get_closed_trades(self, symbol: str = "BTCUSDT", limit: int = 50):
         """완료된 거래 내역 조회"""
         try:
+            logger.debug(f"현재 base_url: {self.base_url}")
+            logger.debug(f"테스트넷 모드: {self.testnet}")
+
             params = {
-                'category': 'linear',
-                'symbol': symbol,
-                'limit': 50
+                "category": "linear",
+                "symbol": symbol,
+                "limit": str(limit),
+                "execType": "Trade"  # 실제 체결된 거래만
             }
             
-            # V5 API 엔드포인트 사용
-            response = await self.exchange.private_get_v5_position_closed_pnl(params)
+            logger.debug(f"거래 내역 조회 요청 파라미터: {params}")
             
-            if response and response.get('result', {}).get('list'):
-                trades = response['result']['list']
-                return [{
-                    'symbol': trade['symbol'],
-                    'side': trade['side'],
-                    'size': float(trade['qty']),
-                    'entry_price': float(trade['avgEntryPrice']),
-                    'exit_price': float(trade['avgExitPrice']),
-                    'realized_pnl': float(trade['closedPnl']),
-                    'timestamp': int(trade['updatedTime'])
-                } for trade in trades]
+            # 개인 거래 내역 조회 엔드포인트로 변경
+            response = await self.v5_get("/execution/list", params)
+            logger.debug(f"거래 내역 조회 응답: {response}")
             
-            return []
-            
+            if response and response.get("retCode") == 0:
+                trades = response.get("result", {}).get("list", [])
+                logger.info(f"거래 내역 조회 성공: {len(trades)}건")
+                
+                formatted_trades = []
+                for trade in trades:
+                    logger.debug(f"거래 데이터: {trade}")
+                    
+                    formatted_trade = {
+                        "symbol": trade.get("symbol"),
+                        "side": trade.get("side"),
+                        "size": float(trade.get("execQty", 0)),
+                        "entry_price": float(trade.get("execPrice", 0)),
+                        "exit_price": float(trade.get("execPrice", 0)),
+                        "realized_pnl": float(trade.get("closedPnl", 0)),
+                        "timestamp": int(trade.get("execTime", time.time() * 1000))
+                    }
+                    formatted_trades.append(formatted_trade)
+                
+                return formatted_trades
+            else:
+                logger.error(f"거래 내역 조회 실패: {response}")
+                return []
+                
         except Exception as e:
-            logger.error(f"거래 내역 조회 실패: {str(e)}")
-            logger.error(traceback.format_exc())  # 상세 에러 로그 추가
+            logger.error(f"거래 내역 조회 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
             return []

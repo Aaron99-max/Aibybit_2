@@ -1,0 +1,3272 @@
+2025-01-03 14:16:18,954 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 14:16:18,957 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 14:16:18,957 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 14:16:18,957 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 14:16:18,962 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 14:16:20,975 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 14:16:20,975 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 14:16:20,976 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:16:20,977 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:16:20,977 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:16:20,977 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:16:20,977 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:16:20,977 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:16:23,904 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 14:16:23,904 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 14:16:24,668 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:16:24,668 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:16:24,869 - exchange.bybit_client - INFO - API 응답: {
+  "retCode": "0",
+  "retMsg": "OK",
+  "result": {
+    "nextPageCursor": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835%3A1735630166234%2C7c33adf2-4932-4ef1-aee6-80367f0bad52%3A1735278551292",
+    "category": "linear",
+    "list": [
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735630166234",
+        "side": "Buy",
+        "orderId": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835",
+        "closedPnl": "-195.22111635",
+        "avgEntryPrice": "92521.3",
+        "qty": "0.086",
+        "cumEntryValue": "7956.8318",
+        "createdTime": "1735621357377",
+        "orderPrice": "94882.1",
+        "closedSize": "0.086",
+        "avgExitPrice": "94688.3477",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "8143.1979"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621355333",
+        "side": "Sell",
+        "orderId": "ee527ee2-e276-4a43-9d38-2c5e327b5b05",
+        "closedPnl": "61.74567248",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.143",
+        "cumEntryValue": "13156.66580067",
+        "createdTime": "1735621355329",
+        "orderPrice": "92004.7",
+        "closedSize": "0.143",
+        "avgExitPrice": "92521.3",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "13230.5459"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621166288",
+        "side": "Sell",
+        "orderId": "b9244b10-ccaa-4b7f-a264-9f0394308489",
+        "closedPnl": "85.01096369",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.164",
+        "cumEntryValue": "15088.76357557",
+        "createdTime": "1735621095992",
+        "orderPrice": "92575.5",
+        "closedSize": "0.164",
+        "avgExitPrice": "92575.5",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15182.382"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735620149230",
+        "side": "Sell",
+        "orderId": "c61bf21a-b985-4268-b86d-290802fbfe38",
+        "closedPnl": "-3.53476577",
+        "avgEntryPrice": "92600.7894",
+        "qty": "0.095",
+        "cumEntryValue": "8797.07498367",
+        "createdTime": "1735620018105",
+        "orderPrice": "92600.8",
+        "closedSize": "0.095",
+        "avgExitPrice": "92600.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "8797.076"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735619411079",
+        "side": "Sell",
+        "orderId": "4c1657e9-b082-4906-82f4-4c6c1a8d25bf",
+        "closedPnl": "-4.41764704",
+        "avgEntryPrice": "92599.8799",
+        "qty": "0.086",
+        "cumEntryValue": "7963.58966521",
+        "createdTime": "1735619394620",
+        "orderPrice": "92600.9",
+        "closedSize": "0.086",
+        "avgExitPrice": "92600.9",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7963.6774"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735617061756",
+        "side": "Sell",
+        "orderId": "d55ee791-ff4b-46d4-9c72-c533307316c3",
+        "closedPnl": "-7.8059507",
+        "avgEntryPrice": "92600.8022",
+        "qty": "0.172",
+        "cumEntryValue": "15927.33797488",
+        "createdTime": "1735617004929",
+        "orderPrice": "92601",
+        "closedSize": "0.172",
+        "avgExitPrice": "92601",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15927.372"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735616785598",
+        "side": "Sell",
+        "orderId": "5dc54f2a-2ce2-4196-9e96-ed94e8200e73",
+        "closedPnl": "20.24378337",
+        "avgEntryPrice": "92329.6871",
+        "qty": "0.085",
+        "cumEntryValue": "7848.0234",
+        "createdTime": "1735616785593",
+        "orderPrice": "92329.7",
+        "closedSize": "0.085",
+        "avgExitPrice": "92669.5988",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7876.9159"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735616561934",
+        "side": "Sell",
+        "orderId": "8c0e8928-f28a-4a14-9fd8-29af8a0c0747",
+        "closedPnl": "38.08283601",
+        "avgEntryPrice": "92400",
+        "qty": "0.286",
+        "cumEntryValue": "26426.4",
+        "createdTime": "1735616561929",
+        "orderPrice": "92400",
+        "closedSize": "0.286",
+        "avgExitPrice": "92602.5681",
+        "execType": "Trade",
+        "fillCount": "11",
+        "cumExitValue": "26484.3345"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735546659657",
+        "side": "Sell",
+        "orderId": "71606b4c-39da-47ef-bdb5-6270c19e9967",
+        "closedPnl": "-4.03174903",
+        "avgEntryPrice": "93226.8802",
+        "qty": "0.017",
+        "cumEntryValue": "1584.85696175",
+        "createdTime": "1735546659653",
+        "orderPrice": "92461.9",
+        "closedSize": "0.017",
+        "avgExitPrice": "92994.8235",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.912"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735546567936",
+        "side": "Sell",
+        "orderId": "5604eac8-096d-41b9-9d8a-ddf36f80f274",
+        "closedPnl": "50.32018287",
+        "avgEntryPrice": "93226.8516",
+        "qty": "0.154",
+        "cumEntryValue": "14356.93513825",
+        "createdTime": "1735546565616",
+        "orderPrice": "93226.9",
+        "closedSize": "0.154",
+        "avgExitPrice": "93406.9928",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "14384.6769"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735542503166",
+        "side": "Sell",
+        "orderId": "ba05d374-e38a-4995-9407-0a756e05c504",
+        "closedPnl": "-34.91768651",
+        "avgEntryPrice": "92936",
+        "qty": "0.285",
+        "cumEntryValue": "26486.76",
+        "createdTime": "1735542503162",
+        "orderPrice": "92398.8",
+        "closedSize": "0.285",
+        "avgExitPrice": "92883.1547",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "26471.6991"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735541969282",
+        "side": "Sell",
+        "orderId": "9a12e69d-d04f-4fa4-b876-2b5db84dbe59",
+        "closedPnl": "-51.87982165",
+        "avgEntryPrice": "93064.2741",
+        "qty": "0.108",
+        "cumEntryValue": "10050.9416",
+        "createdTime": "1735541969278",
+        "orderPrice": "92130.6",
+        "closedSize": "0.108",
+        "avgExitPrice": "92670.65",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "10008.4302"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541739362",
+        "side": "Sell",
+        "orderId": "9eb2a995-8f35-482a-8590-6ae654fbf576",
+        "closedPnl": "-23.47203141",
+        "avgEntryPrice": "93070.4942",
+        "qty": "0.119",
+        "cumEntryValue": "11075.3888",
+        "createdTime": "1735541739358",
+        "orderPrice": "92303",
+        "closedSize": "0.119",
+        "avgExitPrice": "92950.6403",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "11061.1262"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541328982",
+        "side": "Sell",
+        "orderId": "07bfb03f-5041-41ad-b738-e8f5bc4bedac",
+        "closedPnl": "-8.45991301",
+        "avgEntryPrice": "93331.9824",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6437",
+        "createdTime": "1735541328978",
+        "orderPrice": "92089.8",
+        "closedSize": "0.017",
+        "avgExitPrice": "92936.7882",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "1579.9254"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540924992",
+        "side": "Sell",
+        "orderId": "45133b57-c5d7-4d69-8fef-136c5aa533f3",
+        "closedPnl": "-5.22247914",
+        "avgEntryPrice": "93288.4",
+        "qty": "0.017",
+        "cumEntryValue": "1585.9028",
+        "createdTime": "1735540924988",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "93083.7",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "1582.4229"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540822466",
+        "side": "Sell",
+        "orderId": "f03ae4e8-828a-48b1-b248-d5e291dd142c",
+        "closedPnl": "-7.45346906",
+        "avgEntryPrice": "93332.1",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6457",
+        "createdTime": "1735540822462",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "92996.1411",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.9344"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735540372347",
+        "side": "Sell",
+        "orderId": "2eeb25a7-019a-4827-9dad-d8b8deb3a2dc",
+        "closedPnl": "-134.11422338",
+        "avgEntryPrice": "92995",
+        "qty": "0.286",
+        "cumEntryValue": "26596.57",
+        "createdTime": "1735540372342",
+        "orderPrice": "92065.1",
+        "closedSize": "0.286",
+        "avgExitPrice": "92628.1618",
+        "execType": "Trade",
+        "fillCount": "8",
+        "cumExitValue": "26491.6543"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735537862921",
+        "side": "Buy",
+        "orderId": "5f35de68-e275-41db-b718-7cffe842c276",
+        "closedPnl": "-45.529647",
+        "avgEntryPrice": "92800",
+        "qty": "0.172",
+        "cumEntryValue": "15961.6",
+        "createdTime": "1735537862917",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92995",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "15995.14"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735536210767",
+        "side": "Sell",
+        "orderId": "2ab6f54d-2660-42ae-b8a3-a0f9d7d07773",
+        "closedPnl": "-0.25140144",
+        "avgEntryPrice": "92985",
+        "qty": "0.001",
+        "cumEntryValue": "92.985",
+        "createdTime": "1735536210763",
+        "orderPrice": "92065.1",
+        "closedSize": "0.001",
+        "avgExitPrice": "92835.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "92.8358"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735533642343",
+        "side": "Sell",
+        "orderId": "596558b8-1d8d-491f-bead-e7588acc1060",
+        "closedPnl": "-15.12823281",
+        "avgEntryPrice": "92978.8621",
+        "qty": "0.029",
+        "cumEntryValue": "2696.387",
+        "createdTime": "1735533642339",
+        "orderPrice": "92021",
+        "closedSize": "0.029",
+        "avgExitPrice": "92559.2448",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "2684.2181"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532898953",
+        "side": "Sell",
+        "orderId": "3305055f-e1a4-4e13-b710-7f9723a2568d",
+        "closedPnl": "-1.05212265",
+        "avgEntryPrice": "92782.5883",
+        "qty": "0.017",
+        "cumEntryValue": "1577.304",
+        "createdTime": "1735532898949",
+        "orderPrice": "92065.1",
+        "closedSize": "0.017",
+        "avgExitPrice": "92809.4",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "1577.7598"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532837158",
+        "side": "Buy",
+        "orderId": "910bd6fd-449f-4a9c-97d6-c46ea7b4cd9e",
+        "closedPnl": "-44.78367839",
+        "avgEntryPrice": "92810.1267",
+        "qty": "0.172",
+        "cumEntryValue": "15963.3418",
+        "createdTime": "1735532837153",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92994.9303",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15995.128"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735530390739",
+        "side": "Sell",
+        "orderId": "53aef30b-ff7a-409b-b080-ae05ef9eb47e",
+        "closedPnl": "-8.08114042",
+        "avgEntryPrice": "92994.8772",
+        "qty": "0.057",
+        "cumEntryValue": "5300.708",
+        "createdTime": "1735530390735",
+        "orderPrice": "92065.1",
+        "closedSize": "0.057",
+        "avgExitPrice": "92955.3754",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "5298.4564"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735370829603",
+        "side": "Sell",
+        "orderId": "3a7fc120-5d08-4d75-b131-7237ddc3b9d8",
+        "closedPnl": "8.30883208",
+        "avgEntryPrice": "94527.4844",
+        "qty": "0.096",
+        "cumEntryValue": "9074.6385",
+        "createdTime": "1735370829599",
+        "orderPrice": "93669.4",
+        "closedSize": "0.096",
+        "avgExitPrice": "94718.1197",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "9092.9395"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735369367880",
+        "side": "Sell",
+        "orderId": "2311a9f4-d383-48f7-bdf0-bbeb81a87db6",
+        "closedPnl": "-1152.61972356",
+        "avgEntryPrice": "96545.5",
+        "qty": "0.563",
+        "cumEntryValue": "54355.1165",
+        "createdTime": "1735369227459",
+        "orderPrice": "93992",
+        "closedSize": "0.563",
+        "avgExitPrice": "94583.0522",
+        "execType": "Trade",
+        "fillCount": "4",
+        "cumExitValue": "53250.2584"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735366301559",
+        "side": "Sell",
+        "orderId": "79c6be2a-d490-4c09-ae02-4c5e4e175966",
+        "closedPnl": "113.11664832",
+        "avgEntryPrice": "94401",
+        "qty": "0.058",
+        "cumEntryValue": "5475.258",
+        "createdTime": "1735365005641",
+        "orderPrice": "94578.6",
+        "closedSize": "0.058",
+        "avgExitPrice": "96423.2",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "5592.5456"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735364284344",
+        "side": "Sell",
+        "orderId": "4053d7a6-a114-490e-a166-e40b3417bc3b",
+        "closedPnl": "-0.09445546",
+        "avgEntryPrice": "94954.5",
+        "qty": "0.001",
+        "cumEntryValue": "94.9545",
+        "createdTime": "1735364284340",
+        "orderPrice": "94303",
+        "closedSize": "0.001",
+        "avgExitPrice": "94964.5",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "94.9645"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735284251719",
+        "side": "Sell",
+        "orderId": "f803ac03-2b1e-4861-9b59-7b2fbdd03e3a",
+        "closedPnl": "-1199.37954803",
+        "avgEntryPrice": "96745.6",
+        "qty": "0.574",
+        "cumEntryValue": "55531.9744",
+        "createdTime": "1735282212814",
+        "orderPrice": "94592.6",
+        "closedSize": "0.574",
+        "avgExitPrice": "94729.0724",
+        "execType": "Trade",
+        "fillCount": "7",
+        "cumExitValue": "54374.4876"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735282165364",
+        "side": "Sell",
+        "orderId": "be7b74f4-0762-46e0-bb3a-cd071bfffd1e",
+        "closedPnl": "4.86302413",
+        "avgEntryPrice": "96131.5",
+        "qty": "0.577",
+        "cumEntryValue": "55467.8755",
+        "createdTime": "1735282165359",
+        "orderPrice": "95493",
+        "closedSize": "0.577",
+        "avgExitPrice": "96212.071",
+        "execType": "Trade",
+        "fillCount": "20",
+        "cumExitValue": "55514.365"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279531908",
+        "side": "Sell",
+        "orderId": "c4358f0f-c333-4e9b-a42f-55e75789efca",
+        "closedPnl": "-161.63923478",
+        "avgEntryPrice": "96162.4828",
+        "qty": "0.579",
+        "cumEntryValue": "55678.0775",
+        "createdTime": "1735279531903",
+        "orderPrice": "95178.2",
+        "closedSize": "0.579",
+        "avgExitPrice": "95955.4373",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "55558.1982"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279383294",
+        "side": "Sell",
+        "orderId": "9be01151-54e4-42fb-81c3-62c9d84b40f0",
+        "closedPnl": "16.84943983",
+        "avgEntryPrice": "95911.1",
+        "qty": "0.58",
+        "cumEntryValue": "55628.438",
+        "createdTime": "1735279383290",
+        "orderPrice": "95319.5",
+        "closedSize": "0.58",
+        "avgExitPrice": "96012.1396",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55687.041"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278869171",
+        "side": "Sell",
+        "orderId": "9110adb9-d0a1-4114-8785-37a82d186d7b",
+        "closedPnl": "-160.83448448",
+        "avgEntryPrice": "96131.4393",
+        "qty": "0.581",
+        "cumEntryValue": "55852.3662",
+        "createdTime": "1735278869166",
+        "orderPrice": "95239.9",
+        "closedSize": "0.581",
+        "avgExitPrice": "95928.108",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "55734.2308"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278551292",
+        "side": "Sell",
+        "orderId": "7c33adf2-4932-4ef1-aee6-80367f0bad52",
+        "closedPnl": "-90.93892585",
+        "avgEntryPrice": "95839.7",
+        "qty": "0.583",
+        "cumEntryValue": "55874.5451",
+        "createdTime": "1735278551287",
+        "orderPrice": "95222.1",
+        "closedSize": "0.583",
+        "avgExitPrice": "95755.549",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55825.4851"
+      }
+    ]
+  },
+  "retExtInfo": {},
+  "time": "1735881385472"
+}
+2025-01-03 14:16:24,935 - services.trade_history_service - INFO - 거래 내역 업데이트 완료: 33건
+2025-01-03 14:16:24,935 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 14:16:25,365 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:16:25,367 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-01-03 14:16:25,367 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 14:16:25,368 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 14:16:25,368 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 14:16:25,369 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 14:16:25,370 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 14:16:25,371 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:16, 실행여부: False
+2025-01-03 14:16:25,618 - telegram.ext.Application - INFO - Application started
+2025-01-03 14:16:25,863 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 14:17:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:17, 실행여부: False
+2025-01-03 14:17:03,749 - services.trade_history_service - INFO - 로드된 거래 내역: [
+  {
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "size": 0.086,
+    "entry_price": 92521.3,
+    "exit_price": 94688.3477,
+    "realized_pnl": -195.22111635,
+    "timestamp": 1735630166234
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.143,
+    "entry_price": 92004.656,
+    "exit_price": 92521.3,
+    "realized_pnl": 61.74567248,
+    "timestamp": 1735621355333
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.164,
+    "entry_price": 92004.656,
+    "exit_price": 92575.5,
+    "realized_pnl": 85.01096369,
+    "timestamp": 1735621166288
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.095,
+    "entry_price": 92600.7894,
+    "exit_price": 92600.8,
+    "realized_pnl": -3.53476577,
+    "timestamp": 1735620149230
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.086,
+    "entry_price": 92599.8799,
+    "exit_price": 92600.9,
+    "realized_pnl": -4.41764704,
+    "timestamp": 1735619411079
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.172,
+    "entry_price": 92600.8022,
+    "exit_price": 92601.0,
+    "realized_pnl": -7.8059507,
+    "timestamp": 1735617061756
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.085,
+    "entry_price": 92329.6871,
+    "exit_price": 92669.5988,
+    "realized_pnl": 20.24378337,
+    "timestamp": 1735616785598
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.286,
+    "entry_price": 92400.0,
+    "exit_price": 92602.5681,
+    "realized_pnl": 38.08283601,
+    "timestamp": 1735616561934
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93226.8802,
+    "exit_price": 92994.8235,
+    "realized_pnl": -4.03174903,
+    "timestamp": 1735546659657
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.154,
+    "entry_price": 93226.8516,
+    "exit_price": 93406.9928,
+    "realized_pnl": 50.32018287,
+    "timestamp": 1735546567936
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.285,
+    "entry_price": 92936.0,
+    "exit_price": 92883.1547,
+    "realized_pnl": -34.91768651,
+    "timestamp": 1735542503166
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.108,
+    "entry_price": 93064.2741,
+    "exit_price": 92670.65,
+    "realized_pnl": -51.87982165,
+    "timestamp": 1735541969282
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.119,
+    "entry_price": 93070.4942,
+    "exit_price": 92950.6403,
+    "realized_pnl": -23.47203141,
+    "timestamp": 1735541739362
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93331.9824,
+    "exit_price": 92936.7882,
+    "realized_pnl": -8.45991301,
+    "timestamp": 1735541328982
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93288.4,
+    "exit_price": 93083.7,
+    "realized_pnl": -5.22247914,
+    "timestamp": 1735540924992
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 93332.1,
+    "exit_price": 92996.1411,
+    "realized_pnl": -7.45346906,
+    "timestamp": 1735540822466
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.286,
+    "entry_price": 92995.0,
+    "exit_price": 92628.1618,
+    "realized_pnl": -134.11422338,
+    "timestamp": 1735540372347
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "size": 0.172,
+    "entry_price": 92800.0,
+    "exit_price": 92995.0,
+    "realized_pnl": -45.529647,
+    "timestamp": 1735537862921
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.001,
+    "entry_price": 92985.0,
+    "exit_price": 92835.8,
+    "realized_pnl": -0.25140144,
+    "timestamp": 1735536210767
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.029,
+    "entry_price": 92978.8621,
+    "exit_price": 92559.2448,
+    "realized_pnl": -15.12823281,
+    "timestamp": 1735533642343
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.017,
+    "entry_price": 92782.5883,
+    "exit_price": 92809.4,
+    "realized_pnl": -1.05212265,
+    "timestamp": 1735532898953
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "size": 0.172,
+    "entry_price": 92810.1267,
+    "exit_price": 92994.9303,
+    "realized_pnl": -44.78367839,
+    "timestamp": 1735532837158
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.057,
+    "entry_price": 92994.8772,
+    "exit_price": 92955.3754,
+    "realized_pnl": -8.08114042,
+    "timestamp": 1735530390739
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.096,
+    "entry_price": 94527.4844,
+    "exit_price": 94718.1197,
+    "realized_pnl": 8.30883208,
+    "timestamp": 1735370829603
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.563,
+    "entry_price": 96545.5,
+    "exit_price": 94583.0522,
+    "realized_pnl": -1152.61972356,
+    "timestamp": 1735369367880
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.058,
+    "entry_price": 94401.0,
+    "exit_price": 96423.2,
+    "realized_pnl": 113.11664832,
+    "timestamp": 1735366301559
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.001,
+    "entry_price": 94954.5,
+    "exit_price": 94964.5,
+    "realized_pnl": -0.09445546,
+    "timestamp": 1735364284344
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.574,
+    "entry_price": 96745.6,
+    "exit_price": 94729.0724,
+    "realized_pnl": -1199.37954803,
+    "timestamp": 1735284251719
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.577,
+    "entry_price": 96131.5,
+    "exit_price": 96212.071,
+    "realized_pnl": 4.86302413,
+    "timestamp": 1735282165364
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.579,
+    "entry_price": 96162.4828,
+    "exit_price": 95955.4373,
+    "realized_pnl": -161.63923478,
+    "timestamp": 1735279531908
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.58,
+    "entry_price": 95911.1,
+    "exit_price": 96012.1396,
+    "realized_pnl": 16.84943983,
+    "timestamp": 1735279383294
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.581,
+    "entry_price": 96131.4393,
+    "exit_price": 95928.108,
+    "realized_pnl": -160.83448448,
+    "timestamp": 1735278869171
+  },
+  {
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "size": 0.583,
+    "entry_price": 95839.7,
+    "exit_price": 95755.549,
+    "realized_pnl": -90.93892585,
+    "timestamp": 1735278551292
+  }
+]
+2025-01-03 14:17:03,767 - services.trade_history_service - INFO - 필터링된 거래 수: 1
+2025-01-03 14:18:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:18, 실행여부: False
+2025-01-03 14:19:00,003 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:19, 실행여부: False
+2025-01-03 14:20:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:20, 실행여부: False
+2025-01-03 14:21:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:21, 실행여부: False
+2025-01-03 14:22:00,027 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:22, 실행여부: False
+2025-01-03 14:23:00,003 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:23, 실행여부: False
+2025-01-03 14:24:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:24, 실행여부: False
+2025-01-03 14:26:02,287 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 14:26:02,288 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 14:26:02,288 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 14:26:02,288 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 14:26:02,295 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 14:26:04,578 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 14:26:04,579 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 14:26:04,580 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:26:04,580 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:26:04,580 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:26:04,581 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:26:04,581 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:26:04,581 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:26:05,739 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 14:26:05,739 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 14:26:06,513 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:26:06,515 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:26:06,667 - exchange.bybit_client - INFO - API 응답: {
+  "retCode": "0",
+  "retMsg": "OK",
+  "result": {
+    "nextPageCursor": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835%3A1735630166234%2C7c33adf2-4932-4ef1-aee6-80367f0bad52%3A1735278551292",
+    "category": "linear",
+    "list": [
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735630166234",
+        "side": "Buy",
+        "orderId": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835",
+        "closedPnl": "-195.22111635",
+        "avgEntryPrice": "92521.3",
+        "qty": "0.086",
+        "cumEntryValue": "7956.8318",
+        "createdTime": "1735621357377",
+        "orderPrice": "94882.1",
+        "closedSize": "0.086",
+        "avgExitPrice": "94688.3477",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "8143.1979"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621355333",
+        "side": "Sell",
+        "orderId": "ee527ee2-e276-4a43-9d38-2c5e327b5b05",
+        "closedPnl": "61.74567248",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.143",
+        "cumEntryValue": "13156.66580067",
+        "createdTime": "1735621355329",
+        "orderPrice": "92004.7",
+        "closedSize": "0.143",
+        "avgExitPrice": "92521.3",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "13230.5459"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621166288",
+        "side": "Sell",
+        "orderId": "b9244b10-ccaa-4b7f-a264-9f0394308489",
+        "closedPnl": "85.01096369",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.164",
+        "cumEntryValue": "15088.76357557",
+        "createdTime": "1735621095992",
+        "orderPrice": "92575.5",
+        "closedSize": "0.164",
+        "avgExitPrice": "92575.5",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15182.382"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735620149230",
+        "side": "Sell",
+        "orderId": "c61bf21a-b985-4268-b86d-290802fbfe38",
+        "closedPnl": "-3.53476577",
+        "avgEntryPrice": "92600.7894",
+        "qty": "0.095",
+        "cumEntryValue": "8797.07498367",
+        "createdTime": "1735620018105",
+        "orderPrice": "92600.8",
+        "closedSize": "0.095",
+        "avgExitPrice": "92600.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "8797.076"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735619411079",
+        "side": "Sell",
+        "orderId": "4c1657e9-b082-4906-82f4-4c6c1a8d25bf",
+        "closedPnl": "-4.41764704",
+        "avgEntryPrice": "92599.8799",
+        "qty": "0.086",
+        "cumEntryValue": "7963.58966521",
+        "createdTime": "1735619394620",
+        "orderPrice": "92600.9",
+        "closedSize": "0.086",
+        "avgExitPrice": "92600.9",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7963.6774"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735617061756",
+        "side": "Sell",
+        "orderId": "d55ee791-ff4b-46d4-9c72-c533307316c3",
+        "closedPnl": "-7.8059507",
+        "avgEntryPrice": "92600.8022",
+        "qty": "0.172",
+        "cumEntryValue": "15927.33797488",
+        "createdTime": "1735617004929",
+        "orderPrice": "92601",
+        "closedSize": "0.172",
+        "avgExitPrice": "92601",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15927.372"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735616785598",
+        "side": "Sell",
+        "orderId": "5dc54f2a-2ce2-4196-9e96-ed94e8200e73",
+        "closedPnl": "20.24378337",
+        "avgEntryPrice": "92329.6871",
+        "qty": "0.085",
+        "cumEntryValue": "7848.0234",
+        "createdTime": "1735616785593",
+        "orderPrice": "92329.7",
+        "closedSize": "0.085",
+        "avgExitPrice": "92669.5988",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7876.9159"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735616561934",
+        "side": "Sell",
+        "orderId": "8c0e8928-f28a-4a14-9fd8-29af8a0c0747",
+        "closedPnl": "38.08283601",
+        "avgEntryPrice": "92400",
+        "qty": "0.286",
+        "cumEntryValue": "26426.4",
+        "createdTime": "1735616561929",
+        "orderPrice": "92400",
+        "closedSize": "0.286",
+        "avgExitPrice": "92602.5681",
+        "execType": "Trade",
+        "fillCount": "11",
+        "cumExitValue": "26484.3345"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735546659657",
+        "side": "Sell",
+        "orderId": "71606b4c-39da-47ef-bdb5-6270c19e9967",
+        "closedPnl": "-4.03174903",
+        "avgEntryPrice": "93226.8802",
+        "qty": "0.017",
+        "cumEntryValue": "1584.85696175",
+        "createdTime": "1735546659653",
+        "orderPrice": "92461.9",
+        "closedSize": "0.017",
+        "avgExitPrice": "92994.8235",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.912"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735546567936",
+        "side": "Sell",
+        "orderId": "5604eac8-096d-41b9-9d8a-ddf36f80f274",
+        "closedPnl": "50.32018287",
+        "avgEntryPrice": "93226.8516",
+        "qty": "0.154",
+        "cumEntryValue": "14356.93513825",
+        "createdTime": "1735546565616",
+        "orderPrice": "93226.9",
+        "closedSize": "0.154",
+        "avgExitPrice": "93406.9928",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "14384.6769"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735542503166",
+        "side": "Sell",
+        "orderId": "ba05d374-e38a-4995-9407-0a756e05c504",
+        "closedPnl": "-34.91768651",
+        "avgEntryPrice": "92936",
+        "qty": "0.285",
+        "cumEntryValue": "26486.76",
+        "createdTime": "1735542503162",
+        "orderPrice": "92398.8",
+        "closedSize": "0.285",
+        "avgExitPrice": "92883.1547",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "26471.6991"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735541969282",
+        "side": "Sell",
+        "orderId": "9a12e69d-d04f-4fa4-b876-2b5db84dbe59",
+        "closedPnl": "-51.87982165",
+        "avgEntryPrice": "93064.2741",
+        "qty": "0.108",
+        "cumEntryValue": "10050.9416",
+        "createdTime": "1735541969278",
+        "orderPrice": "92130.6",
+        "closedSize": "0.108",
+        "avgExitPrice": "92670.65",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "10008.4302"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541739362",
+        "side": "Sell",
+        "orderId": "9eb2a995-8f35-482a-8590-6ae654fbf576",
+        "closedPnl": "-23.47203141",
+        "avgEntryPrice": "93070.4942",
+        "qty": "0.119",
+        "cumEntryValue": "11075.3888",
+        "createdTime": "1735541739358",
+        "orderPrice": "92303",
+        "closedSize": "0.119",
+        "avgExitPrice": "92950.6403",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "11061.1262"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541328982",
+        "side": "Sell",
+        "orderId": "07bfb03f-5041-41ad-b738-e8f5bc4bedac",
+        "closedPnl": "-8.45991301",
+        "avgEntryPrice": "93331.9824",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6437",
+        "createdTime": "1735541328978",
+        "orderPrice": "92089.8",
+        "closedSize": "0.017",
+        "avgExitPrice": "92936.7882",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "1579.9254"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540924992",
+        "side": "Sell",
+        "orderId": "45133b57-c5d7-4d69-8fef-136c5aa533f3",
+        "closedPnl": "-5.22247914",
+        "avgEntryPrice": "93288.4",
+        "qty": "0.017",
+        "cumEntryValue": "1585.9028",
+        "createdTime": "1735540924988",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "93083.7",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "1582.4229"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540822466",
+        "side": "Sell",
+        "orderId": "f03ae4e8-828a-48b1-b248-d5e291dd142c",
+        "closedPnl": "-7.45346906",
+        "avgEntryPrice": "93332.1",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6457",
+        "createdTime": "1735540822462",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "92996.1411",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.9344"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735540372347",
+        "side": "Sell",
+        "orderId": "2eeb25a7-019a-4827-9dad-d8b8deb3a2dc",
+        "closedPnl": "-134.11422338",
+        "avgEntryPrice": "92995",
+        "qty": "0.286",
+        "cumEntryValue": "26596.57",
+        "createdTime": "1735540372342",
+        "orderPrice": "92065.1",
+        "closedSize": "0.286",
+        "avgExitPrice": "92628.1618",
+        "execType": "Trade",
+        "fillCount": "8",
+        "cumExitValue": "26491.6543"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735537862921",
+        "side": "Buy",
+        "orderId": "5f35de68-e275-41db-b718-7cffe842c276",
+        "closedPnl": "-45.529647",
+        "avgEntryPrice": "92800",
+        "qty": "0.172",
+        "cumEntryValue": "15961.6",
+        "createdTime": "1735537862917",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92995",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "15995.14"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735536210767",
+        "side": "Sell",
+        "orderId": "2ab6f54d-2660-42ae-b8a3-a0f9d7d07773",
+        "closedPnl": "-0.25140144",
+        "avgEntryPrice": "92985",
+        "qty": "0.001",
+        "cumEntryValue": "92.985",
+        "createdTime": "1735536210763",
+        "orderPrice": "92065.1",
+        "closedSize": "0.001",
+        "avgExitPrice": "92835.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "92.8358"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735533642343",
+        "side": "Sell",
+        "orderId": "596558b8-1d8d-491f-bead-e7588acc1060",
+        "closedPnl": "-15.12823281",
+        "avgEntryPrice": "92978.8621",
+        "qty": "0.029",
+        "cumEntryValue": "2696.387",
+        "createdTime": "1735533642339",
+        "orderPrice": "92021",
+        "closedSize": "0.029",
+        "avgExitPrice": "92559.2448",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "2684.2181"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532898953",
+        "side": "Sell",
+        "orderId": "3305055f-e1a4-4e13-b710-7f9723a2568d",
+        "closedPnl": "-1.05212265",
+        "avgEntryPrice": "92782.5883",
+        "qty": "0.017",
+        "cumEntryValue": "1577.304",
+        "createdTime": "1735532898949",
+        "orderPrice": "92065.1",
+        "closedSize": "0.017",
+        "avgExitPrice": "92809.4",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "1577.7598"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532837158",
+        "side": "Buy",
+        "orderId": "910bd6fd-449f-4a9c-97d6-c46ea7b4cd9e",
+        "closedPnl": "-44.78367839",
+        "avgEntryPrice": "92810.1267",
+        "qty": "0.172",
+        "cumEntryValue": "15963.3418",
+        "createdTime": "1735532837153",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92994.9303",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15995.128"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735530390739",
+        "side": "Sell",
+        "orderId": "53aef30b-ff7a-409b-b080-ae05ef9eb47e",
+        "closedPnl": "-8.08114042",
+        "avgEntryPrice": "92994.8772",
+        "qty": "0.057",
+        "cumEntryValue": "5300.708",
+        "createdTime": "1735530390735",
+        "orderPrice": "92065.1",
+        "closedSize": "0.057",
+        "avgExitPrice": "92955.3754",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "5298.4564"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735370829603",
+        "side": "Sell",
+        "orderId": "3a7fc120-5d08-4d75-b131-7237ddc3b9d8",
+        "closedPnl": "8.30883208",
+        "avgEntryPrice": "94527.4844",
+        "qty": "0.096",
+        "cumEntryValue": "9074.6385",
+        "createdTime": "1735370829599",
+        "orderPrice": "93669.4",
+        "closedSize": "0.096",
+        "avgExitPrice": "94718.1197",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "9092.9395"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735369367880",
+        "side": "Sell",
+        "orderId": "2311a9f4-d383-48f7-bdf0-bbeb81a87db6",
+        "closedPnl": "-1152.61972356",
+        "avgEntryPrice": "96545.5",
+        "qty": "0.563",
+        "cumEntryValue": "54355.1165",
+        "createdTime": "1735369227459",
+        "orderPrice": "93992",
+        "closedSize": "0.563",
+        "avgExitPrice": "94583.0522",
+        "execType": "Trade",
+        "fillCount": "4",
+        "cumExitValue": "53250.2584"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735366301559",
+        "side": "Sell",
+        "orderId": "79c6be2a-d490-4c09-ae02-4c5e4e175966",
+        "closedPnl": "113.11664832",
+        "avgEntryPrice": "94401",
+        "qty": "0.058",
+        "cumEntryValue": "5475.258",
+        "createdTime": "1735365005641",
+        "orderPrice": "94578.6",
+        "closedSize": "0.058",
+        "avgExitPrice": "96423.2",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "5592.5456"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735364284344",
+        "side": "Sell",
+        "orderId": "4053d7a6-a114-490e-a166-e40b3417bc3b",
+        "closedPnl": "-0.09445546",
+        "avgEntryPrice": "94954.5",
+        "qty": "0.001",
+        "cumEntryValue": "94.9545",
+        "createdTime": "1735364284340",
+        "orderPrice": "94303",
+        "closedSize": "0.001",
+        "avgExitPrice": "94964.5",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "94.9645"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735284251719",
+        "side": "Sell",
+        "orderId": "f803ac03-2b1e-4861-9b59-7b2fbdd03e3a",
+        "closedPnl": "-1199.37954803",
+        "avgEntryPrice": "96745.6",
+        "qty": "0.574",
+        "cumEntryValue": "55531.9744",
+        "createdTime": "1735282212814",
+        "orderPrice": "94592.6",
+        "closedSize": "0.574",
+        "avgExitPrice": "94729.0724",
+        "execType": "Trade",
+        "fillCount": "7",
+        "cumExitValue": "54374.4876"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735282165364",
+        "side": "Sell",
+        "orderId": "be7b74f4-0762-46e0-bb3a-cd071bfffd1e",
+        "closedPnl": "4.86302413",
+        "avgEntryPrice": "96131.5",
+        "qty": "0.577",
+        "cumEntryValue": "55467.8755",
+        "createdTime": "1735282165359",
+        "orderPrice": "95493",
+        "closedSize": "0.577",
+        "avgExitPrice": "96212.071",
+        "execType": "Trade",
+        "fillCount": "20",
+        "cumExitValue": "55514.365"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279531908",
+        "side": "Sell",
+        "orderId": "c4358f0f-c333-4e9b-a42f-55e75789efca",
+        "closedPnl": "-161.63923478",
+        "avgEntryPrice": "96162.4828",
+        "qty": "0.579",
+        "cumEntryValue": "55678.0775",
+        "createdTime": "1735279531903",
+        "orderPrice": "95178.2",
+        "closedSize": "0.579",
+        "avgExitPrice": "95955.4373",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "55558.1982"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279383294",
+        "side": "Sell",
+        "orderId": "9be01151-54e4-42fb-81c3-62c9d84b40f0",
+        "closedPnl": "16.84943983",
+        "avgEntryPrice": "95911.1",
+        "qty": "0.58",
+        "cumEntryValue": "55628.438",
+        "createdTime": "1735279383290",
+        "orderPrice": "95319.5",
+        "closedSize": "0.58",
+        "avgExitPrice": "96012.1396",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55687.041"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278869171",
+        "side": "Sell",
+        "orderId": "9110adb9-d0a1-4114-8785-37a82d186d7b",
+        "closedPnl": "-160.83448448",
+        "avgEntryPrice": "96131.4393",
+        "qty": "0.581",
+        "cumEntryValue": "55852.3662",
+        "createdTime": "1735278869166",
+        "orderPrice": "95239.9",
+        "closedSize": "0.581",
+        "avgExitPrice": "95928.108",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "55734.2308"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278551292",
+        "side": "Sell",
+        "orderId": "7c33adf2-4932-4ef1-aee6-80367f0bad52",
+        "closedPnl": "-90.93892585",
+        "avgEntryPrice": "95839.7",
+        "qty": "0.583",
+        "cumEntryValue": "55874.5451",
+        "createdTime": "1735278551287",
+        "orderPrice": "95222.1",
+        "closedSize": "0.583",
+        "avgExitPrice": "95755.549",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55825.4851"
+      }
+    ]
+  },
+  "retExtInfo": {},
+  "time": "1735881967275"
+}
+2025-01-03 14:26:06,707 - services.trade_history_service - INFO - 거래 내역 업데이트 완료: 33건
+2025-01-03 14:26:06,708 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 14:26:07,147 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:26:07,148 - telegram_bot.bot - ERROR - 핸들러 초기화 중 오류: StatsHandler.__init__() takes 1 positional argument but 2 were given
+2025-01-03 14:26:07,155 - telegram_bot.bot - ERROR - 오류 상세: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 150, in _setup_handlers
+    self.stats_handler = StatsHandler(self)  # stats_handler 추가
+                         ^^^^^^^^^^^^^^^^^^
+TypeError: StatsHandler.__init__() takes 1 positional argument but 2 were given
+
+2025-01-03 14:26:07,156 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 14:26:07,156 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 14:26:07,156 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 14:26:07,157 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 14:26:07,157 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 14:26:07,158 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:26, 실행여부: False
+2025-01-03 14:26:07,408 - telegram.ext.Application - INFO - Application started
+2025-01-03 14:26:07,665 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 14:26:59,997 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:26, 실행여부: False
+2025-01-03 14:27:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:27, 실행여부: False
+2025-01-03 14:28:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:28, 실행여부: False
+2025-01-03 14:29:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:29, 실행여부: False
+2025-01-03 14:29:51,081 - telegram_bot.bot - INFO - 봇 실행이 취소되었습니다
+2025-01-03 14:29:51,082 - telegram_bot.bot - INFO - 봇 시작 완료
+2025-01-03 14:29:51,087 - exchange.bybit_client - INFO - Bybit 클라이언트 연결 종료
+2025-01-03 14:29:51,092 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-01-03 14:29:51,092 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 태스크가 취소되었습니다
+2025-01-03 14:31:29,933 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 14:31:29,935 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 14:31:29,935 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 14:31:29,935 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 14:31:29,940 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 14:31:32,527 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 14:31:32,528 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 14:31:32,528 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:31:32,528 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:31:32,528 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:31:32,528 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:31:32,528 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:31:32,529 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:31:32,529 - services.trade_history_service - INFO - 거래 내역 로드 완료: 33건
+2025-01-03 14:31:33,677 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 14:31:33,677 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 14:31:34,452 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:31:34,452 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:31:34,613 - exchange.bybit_client - INFO - API 응답: {
+  "retCode": "0",
+  "retMsg": "OK",
+  "result": {
+    "nextPageCursor": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835%3A1735630166234%2C7c33adf2-4932-4ef1-aee6-80367f0bad52%3A1735278551292",
+    "category": "linear",
+    "list": [
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735630166234",
+        "side": "Buy",
+        "orderId": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835",
+        "closedPnl": "-195.22111635",
+        "avgEntryPrice": "92521.3",
+        "qty": "0.086",
+        "cumEntryValue": "7956.8318",
+        "createdTime": "1735621357377",
+        "orderPrice": "94882.1",
+        "closedSize": "0.086",
+        "avgExitPrice": "94688.3477",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "8143.1979"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621355333",
+        "side": "Sell",
+        "orderId": "ee527ee2-e276-4a43-9d38-2c5e327b5b05",
+        "closedPnl": "61.74567248",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.143",
+        "cumEntryValue": "13156.66580067",
+        "createdTime": "1735621355329",
+        "orderPrice": "92004.7",
+        "closedSize": "0.143",
+        "avgExitPrice": "92521.3",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "13230.5459"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621166288",
+        "side": "Sell",
+        "orderId": "b9244b10-ccaa-4b7f-a264-9f0394308489",
+        "closedPnl": "85.01096369",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.164",
+        "cumEntryValue": "15088.76357557",
+        "createdTime": "1735621095992",
+        "orderPrice": "92575.5",
+        "closedSize": "0.164",
+        "avgExitPrice": "92575.5",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15182.382"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735620149230",
+        "side": "Sell",
+        "orderId": "c61bf21a-b985-4268-b86d-290802fbfe38",
+        "closedPnl": "-3.53476577",
+        "avgEntryPrice": "92600.7894",
+        "qty": "0.095",
+        "cumEntryValue": "8797.07498367",
+        "createdTime": "1735620018105",
+        "orderPrice": "92600.8",
+        "closedSize": "0.095",
+        "avgExitPrice": "92600.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "8797.076"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735619411079",
+        "side": "Sell",
+        "orderId": "4c1657e9-b082-4906-82f4-4c6c1a8d25bf",
+        "closedPnl": "-4.41764704",
+        "avgEntryPrice": "92599.8799",
+        "qty": "0.086",
+        "cumEntryValue": "7963.58966521",
+        "createdTime": "1735619394620",
+        "orderPrice": "92600.9",
+        "closedSize": "0.086",
+        "avgExitPrice": "92600.9",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7963.6774"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735617061756",
+        "side": "Sell",
+        "orderId": "d55ee791-ff4b-46d4-9c72-c533307316c3",
+        "closedPnl": "-7.8059507",
+        "avgEntryPrice": "92600.8022",
+        "qty": "0.172",
+        "cumEntryValue": "15927.33797488",
+        "createdTime": "1735617004929",
+        "orderPrice": "92601",
+        "closedSize": "0.172",
+        "avgExitPrice": "92601",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15927.372"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735616785598",
+        "side": "Sell",
+        "orderId": "5dc54f2a-2ce2-4196-9e96-ed94e8200e73",
+        "closedPnl": "20.24378337",
+        "avgEntryPrice": "92329.6871",
+        "qty": "0.085",
+        "cumEntryValue": "7848.0234",
+        "createdTime": "1735616785593",
+        "orderPrice": "92329.7",
+        "closedSize": "0.085",
+        "avgExitPrice": "92669.5988",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7876.9159"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735616561934",
+        "side": "Sell",
+        "orderId": "8c0e8928-f28a-4a14-9fd8-29af8a0c0747",
+        "closedPnl": "38.08283601",
+        "avgEntryPrice": "92400",
+        "qty": "0.286",
+        "cumEntryValue": "26426.4",
+        "createdTime": "1735616561929",
+        "orderPrice": "92400",
+        "closedSize": "0.286",
+        "avgExitPrice": "92602.5681",
+        "execType": "Trade",
+        "fillCount": "11",
+        "cumExitValue": "26484.3345"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735546659657",
+        "side": "Sell",
+        "orderId": "71606b4c-39da-47ef-bdb5-6270c19e9967",
+        "closedPnl": "-4.03174903",
+        "avgEntryPrice": "93226.8802",
+        "qty": "0.017",
+        "cumEntryValue": "1584.85696175",
+        "createdTime": "1735546659653",
+        "orderPrice": "92461.9",
+        "closedSize": "0.017",
+        "avgExitPrice": "92994.8235",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.912"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735546567936",
+        "side": "Sell",
+        "orderId": "5604eac8-096d-41b9-9d8a-ddf36f80f274",
+        "closedPnl": "50.32018287",
+        "avgEntryPrice": "93226.8516",
+        "qty": "0.154",
+        "cumEntryValue": "14356.93513825",
+        "createdTime": "1735546565616",
+        "orderPrice": "93226.9",
+        "closedSize": "0.154",
+        "avgExitPrice": "93406.9928",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "14384.6769"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735542503166",
+        "side": "Sell",
+        "orderId": "ba05d374-e38a-4995-9407-0a756e05c504",
+        "closedPnl": "-34.91768651",
+        "avgEntryPrice": "92936",
+        "qty": "0.285",
+        "cumEntryValue": "26486.76",
+        "createdTime": "1735542503162",
+        "orderPrice": "92398.8",
+        "closedSize": "0.285",
+        "avgExitPrice": "92883.1547",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "26471.6991"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735541969282",
+        "side": "Sell",
+        "orderId": "9a12e69d-d04f-4fa4-b876-2b5db84dbe59",
+        "closedPnl": "-51.87982165",
+        "avgEntryPrice": "93064.2741",
+        "qty": "0.108",
+        "cumEntryValue": "10050.9416",
+        "createdTime": "1735541969278",
+        "orderPrice": "92130.6",
+        "closedSize": "0.108",
+        "avgExitPrice": "92670.65",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "10008.4302"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541739362",
+        "side": "Sell",
+        "orderId": "9eb2a995-8f35-482a-8590-6ae654fbf576",
+        "closedPnl": "-23.47203141",
+        "avgEntryPrice": "93070.4942",
+        "qty": "0.119",
+        "cumEntryValue": "11075.3888",
+        "createdTime": "1735541739358",
+        "orderPrice": "92303",
+        "closedSize": "0.119",
+        "avgExitPrice": "92950.6403",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "11061.1262"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541328982",
+        "side": "Sell",
+        "orderId": "07bfb03f-5041-41ad-b738-e8f5bc4bedac",
+        "closedPnl": "-8.45991301",
+        "avgEntryPrice": "93331.9824",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6437",
+        "createdTime": "1735541328978",
+        "orderPrice": "92089.8",
+        "closedSize": "0.017",
+        "avgExitPrice": "92936.7882",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "1579.9254"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540924992",
+        "side": "Sell",
+        "orderId": "45133b57-c5d7-4d69-8fef-136c5aa533f3",
+        "closedPnl": "-5.22247914",
+        "avgEntryPrice": "93288.4",
+        "qty": "0.017",
+        "cumEntryValue": "1585.9028",
+        "createdTime": "1735540924988",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "93083.7",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "1582.4229"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540822466",
+        "side": "Sell",
+        "orderId": "f03ae4e8-828a-48b1-b248-d5e291dd142c",
+        "closedPnl": "-7.45346906",
+        "avgEntryPrice": "93332.1",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6457",
+        "createdTime": "1735540822462",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "92996.1411",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.9344"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735540372347",
+        "side": "Sell",
+        "orderId": "2eeb25a7-019a-4827-9dad-d8b8deb3a2dc",
+        "closedPnl": "-134.11422338",
+        "avgEntryPrice": "92995",
+        "qty": "0.286",
+        "cumEntryValue": "26596.57",
+        "createdTime": "1735540372342",
+        "orderPrice": "92065.1",
+        "closedSize": "0.286",
+        "avgExitPrice": "92628.1618",
+        "execType": "Trade",
+        "fillCount": "8",
+        "cumExitValue": "26491.6543"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735537862921",
+        "side": "Buy",
+        "orderId": "5f35de68-e275-41db-b718-7cffe842c276",
+        "closedPnl": "-45.529647",
+        "avgEntryPrice": "92800",
+        "qty": "0.172",
+        "cumEntryValue": "15961.6",
+        "createdTime": "1735537862917",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92995",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "15995.14"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735536210767",
+        "side": "Sell",
+        "orderId": "2ab6f54d-2660-42ae-b8a3-a0f9d7d07773",
+        "closedPnl": "-0.25140144",
+        "avgEntryPrice": "92985",
+        "qty": "0.001",
+        "cumEntryValue": "92.985",
+        "createdTime": "1735536210763",
+        "orderPrice": "92065.1",
+        "closedSize": "0.001",
+        "avgExitPrice": "92835.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "92.8358"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735533642343",
+        "side": "Sell",
+        "orderId": "596558b8-1d8d-491f-bead-e7588acc1060",
+        "closedPnl": "-15.12823281",
+        "avgEntryPrice": "92978.8621",
+        "qty": "0.029",
+        "cumEntryValue": "2696.387",
+        "createdTime": "1735533642339",
+        "orderPrice": "92021",
+        "closedSize": "0.029",
+        "avgExitPrice": "92559.2448",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "2684.2181"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532898953",
+        "side": "Sell",
+        "orderId": "3305055f-e1a4-4e13-b710-7f9723a2568d",
+        "closedPnl": "-1.05212265",
+        "avgEntryPrice": "92782.5883",
+        "qty": "0.017",
+        "cumEntryValue": "1577.304",
+        "createdTime": "1735532898949",
+        "orderPrice": "92065.1",
+        "closedSize": "0.017",
+        "avgExitPrice": "92809.4",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "1577.7598"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532837158",
+        "side": "Buy",
+        "orderId": "910bd6fd-449f-4a9c-97d6-c46ea7b4cd9e",
+        "closedPnl": "-44.78367839",
+        "avgEntryPrice": "92810.1267",
+        "qty": "0.172",
+        "cumEntryValue": "15963.3418",
+        "createdTime": "1735532837153",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92994.9303",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15995.128"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735530390739",
+        "side": "Sell",
+        "orderId": "53aef30b-ff7a-409b-b080-ae05ef9eb47e",
+        "closedPnl": "-8.08114042",
+        "avgEntryPrice": "92994.8772",
+        "qty": "0.057",
+        "cumEntryValue": "5300.708",
+        "createdTime": "1735530390735",
+        "orderPrice": "92065.1",
+        "closedSize": "0.057",
+        "avgExitPrice": "92955.3754",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "5298.4564"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735370829603",
+        "side": "Sell",
+        "orderId": "3a7fc120-5d08-4d75-b131-7237ddc3b9d8",
+        "closedPnl": "8.30883208",
+        "avgEntryPrice": "94527.4844",
+        "qty": "0.096",
+        "cumEntryValue": "9074.6385",
+        "createdTime": "1735370829599",
+        "orderPrice": "93669.4",
+        "closedSize": "0.096",
+        "avgExitPrice": "94718.1197",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "9092.9395"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735369367880",
+        "side": "Sell",
+        "orderId": "2311a9f4-d383-48f7-bdf0-bbeb81a87db6",
+        "closedPnl": "-1152.61972356",
+        "avgEntryPrice": "96545.5",
+        "qty": "0.563",
+        "cumEntryValue": "54355.1165",
+        "createdTime": "1735369227459",
+        "orderPrice": "93992",
+        "closedSize": "0.563",
+        "avgExitPrice": "94583.0522",
+        "execType": "Trade",
+        "fillCount": "4",
+        "cumExitValue": "53250.2584"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735366301559",
+        "side": "Sell",
+        "orderId": "79c6be2a-d490-4c09-ae02-4c5e4e175966",
+        "closedPnl": "113.11664832",
+        "avgEntryPrice": "94401",
+        "qty": "0.058",
+        "cumEntryValue": "5475.258",
+        "createdTime": "1735365005641",
+        "orderPrice": "94578.6",
+        "closedSize": "0.058",
+        "avgExitPrice": "96423.2",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "5592.5456"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735364284344",
+        "side": "Sell",
+        "orderId": "4053d7a6-a114-490e-a166-e40b3417bc3b",
+        "closedPnl": "-0.09445546",
+        "avgEntryPrice": "94954.5",
+        "qty": "0.001",
+        "cumEntryValue": "94.9545",
+        "createdTime": "1735364284340",
+        "orderPrice": "94303",
+        "closedSize": "0.001",
+        "avgExitPrice": "94964.5",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "94.9645"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735284251719",
+        "side": "Sell",
+        "orderId": "f803ac03-2b1e-4861-9b59-7b2fbdd03e3a",
+        "closedPnl": "-1199.37954803",
+        "avgEntryPrice": "96745.6",
+        "qty": "0.574",
+        "cumEntryValue": "55531.9744",
+        "createdTime": "1735282212814",
+        "orderPrice": "94592.6",
+        "closedSize": "0.574",
+        "avgExitPrice": "94729.0724",
+        "execType": "Trade",
+        "fillCount": "7",
+        "cumExitValue": "54374.4876"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735282165364",
+        "side": "Sell",
+        "orderId": "be7b74f4-0762-46e0-bb3a-cd071bfffd1e",
+        "closedPnl": "4.86302413",
+        "avgEntryPrice": "96131.5",
+        "qty": "0.577",
+        "cumEntryValue": "55467.8755",
+        "createdTime": "1735282165359",
+        "orderPrice": "95493",
+        "closedSize": "0.577",
+        "avgExitPrice": "96212.071",
+        "execType": "Trade",
+        "fillCount": "20",
+        "cumExitValue": "55514.365"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279531908",
+        "side": "Sell",
+        "orderId": "c4358f0f-c333-4e9b-a42f-55e75789efca",
+        "closedPnl": "-161.63923478",
+        "avgEntryPrice": "96162.4828",
+        "qty": "0.579",
+        "cumEntryValue": "55678.0775",
+        "createdTime": "1735279531903",
+        "orderPrice": "95178.2",
+        "closedSize": "0.579",
+        "avgExitPrice": "95955.4373",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "55558.1982"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279383294",
+        "side": "Sell",
+        "orderId": "9be01151-54e4-42fb-81c3-62c9d84b40f0",
+        "closedPnl": "16.84943983",
+        "avgEntryPrice": "95911.1",
+        "qty": "0.58",
+        "cumEntryValue": "55628.438",
+        "createdTime": "1735279383290",
+        "orderPrice": "95319.5",
+        "closedSize": "0.58",
+        "avgExitPrice": "96012.1396",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55687.041"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278869171",
+        "side": "Sell",
+        "orderId": "9110adb9-d0a1-4114-8785-37a82d186d7b",
+        "closedPnl": "-160.83448448",
+        "avgEntryPrice": "96131.4393",
+        "qty": "0.581",
+        "cumEntryValue": "55852.3662",
+        "createdTime": "1735278869166",
+        "orderPrice": "95239.9",
+        "closedSize": "0.581",
+        "avgExitPrice": "95928.108",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "55734.2308"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278551292",
+        "side": "Sell",
+        "orderId": "7c33adf2-4932-4ef1-aee6-80367f0bad52",
+        "closedPnl": "-90.93892585",
+        "avgEntryPrice": "95839.7",
+        "qty": "0.583",
+        "cumEntryValue": "55874.5451",
+        "createdTime": "1735278551287",
+        "orderPrice": "95222.1",
+        "closedSize": "0.583",
+        "avgExitPrice": "95755.549",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55825.4851"
+      }
+    ]
+  },
+  "retExtInfo": {},
+  "time": "1735882295210"
+}
+2025-01-03 14:31:34,677 - services.trade_history_service - INFO - 거래 내역 업데이트 완료: 33건
+2025-01-03 14:31:34,677 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 14:31:35,112 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:31:35,113 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:31:35,115 - telegram_bot.bot - ERROR - 핸들러 초기화 중 오류: TradingHandler.__init__() missing 3 required positional arguments: 'ai_trader', 'position_service', and 'trade_manager'
+2025-01-03 14:31:35,119 - telegram_bot.bot - ERROR - 오류 상세: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 143, in _setup_handlers
+    self.trading_handler = TradingHandler(self)
+                           ^^^^^^^^^^^^^^^^^^^^
+TypeError: TradingHandler.__init__() missing 3 required positional arguments: 'ai_trader', 'position_service', and 'trade_manager'
+
+2025-01-03 14:31:35,125 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 14:31:35,126 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 14:31:35,128 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 14:31:35,129 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 14:31:35,130 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 14:31:35,132 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:31, 실행여부: False
+2025-01-03 14:31:35,392 - telegram.ext.Application - INFO - Application started
+2025-01-03 14:31:35,638 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 14:32:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:32, 실행여부: False
+2025-01-03 14:33:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:33, 실행여부: False
+2025-01-03 14:34:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:34, 실행여부: False
+2025-01-03 14:35:00,013 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:35, 실행여부: False
+2025-01-03 14:35:59,230 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 14:35:59,231 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 14:35:59,231 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 14:35:59,232 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 14:35:59,243 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 14:36:02,250 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 14:36:02,251 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 14:36:02,251 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:36:02,251 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:36:02,251 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:36:02,251 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:36:02,252 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:36:02,252 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:36:02,253 - services.trade_history_service - INFO - 거래 내역 로드 완료: 33건
+2025-01-03 14:36:03,920 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 14:36:03,920 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 14:36:04,694 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:36:04,695 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:36:04,854 - exchange.bybit_client - INFO - API 응답: {
+  "retCode": "0",
+  "retMsg": "OK",
+  "result": {
+    "nextPageCursor": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835%3A1735630166234%2C7c33adf2-4932-4ef1-aee6-80367f0bad52%3A1735278551292",
+    "category": "linear",
+    "list": [
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735630166234",
+        "side": "Buy",
+        "orderId": "9c082d76-5ae7-499e-8f6e-a8c9fe69b835",
+        "closedPnl": "-195.22111635",
+        "avgEntryPrice": "92521.3",
+        "qty": "0.086",
+        "cumEntryValue": "7956.8318",
+        "createdTime": "1735621357377",
+        "orderPrice": "94882.1",
+        "closedSize": "0.086",
+        "avgExitPrice": "94688.3477",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "8143.1979"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621355333",
+        "side": "Sell",
+        "orderId": "ee527ee2-e276-4a43-9d38-2c5e327b5b05",
+        "closedPnl": "61.74567248",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.143",
+        "cumEntryValue": "13156.66580067",
+        "createdTime": "1735621355329",
+        "orderPrice": "92004.7",
+        "closedSize": "0.143",
+        "avgExitPrice": "92521.3",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "13230.5459"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735621166288",
+        "side": "Sell",
+        "orderId": "b9244b10-ccaa-4b7f-a264-9f0394308489",
+        "closedPnl": "85.01096369",
+        "avgEntryPrice": "92004.656",
+        "qty": "0.164",
+        "cumEntryValue": "15088.76357557",
+        "createdTime": "1735621095992",
+        "orderPrice": "92575.5",
+        "closedSize": "0.164",
+        "avgExitPrice": "92575.5",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15182.382"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735620149230",
+        "side": "Sell",
+        "orderId": "c61bf21a-b985-4268-b86d-290802fbfe38",
+        "closedPnl": "-3.53476577",
+        "avgEntryPrice": "92600.7894",
+        "qty": "0.095",
+        "cumEntryValue": "8797.07498367",
+        "createdTime": "1735620018105",
+        "orderPrice": "92600.8",
+        "closedSize": "0.095",
+        "avgExitPrice": "92600.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "8797.076"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735619411079",
+        "side": "Sell",
+        "orderId": "4c1657e9-b082-4906-82f4-4c6c1a8d25bf",
+        "closedPnl": "-4.41764704",
+        "avgEntryPrice": "92599.8799",
+        "qty": "0.086",
+        "cumEntryValue": "7963.58966521",
+        "createdTime": "1735619394620",
+        "orderPrice": "92600.9",
+        "closedSize": "0.086",
+        "avgExitPrice": "92600.9",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7963.6774"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735617061756",
+        "side": "Sell",
+        "orderId": "d55ee791-ff4b-46d4-9c72-c533307316c3",
+        "closedPnl": "-7.8059507",
+        "avgEntryPrice": "92600.8022",
+        "qty": "0.172",
+        "cumEntryValue": "15927.33797488",
+        "createdTime": "1735617004929",
+        "orderPrice": "92601",
+        "closedSize": "0.172",
+        "avgExitPrice": "92601",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15927.372"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735616785598",
+        "side": "Sell",
+        "orderId": "5dc54f2a-2ce2-4196-9e96-ed94e8200e73",
+        "closedPnl": "20.24378337",
+        "avgEntryPrice": "92329.6871",
+        "qty": "0.085",
+        "cumEntryValue": "7848.0234",
+        "createdTime": "1735616785593",
+        "orderPrice": "92329.7",
+        "closedSize": "0.085",
+        "avgExitPrice": "92669.5988",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "7876.9159"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "5",
+        "updatedTime": "1735616561934",
+        "side": "Sell",
+        "orderId": "8c0e8928-f28a-4a14-9fd8-29af8a0c0747",
+        "closedPnl": "38.08283601",
+        "avgEntryPrice": "92400",
+        "qty": "0.286",
+        "cumEntryValue": "26426.4",
+        "createdTime": "1735616561929",
+        "orderPrice": "92400",
+        "closedSize": "0.286",
+        "avgExitPrice": "92602.5681",
+        "execType": "Trade",
+        "fillCount": "11",
+        "cumExitValue": "26484.3345"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735546659657",
+        "side": "Sell",
+        "orderId": "71606b4c-39da-47ef-bdb5-6270c19e9967",
+        "closedPnl": "-4.03174903",
+        "avgEntryPrice": "93226.8802",
+        "qty": "0.017",
+        "cumEntryValue": "1584.85696175",
+        "createdTime": "1735546659653",
+        "orderPrice": "92461.9",
+        "closedSize": "0.017",
+        "avgExitPrice": "92994.8235",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.912"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Limit",
+        "leverage": "3",
+        "updatedTime": "1735546567936",
+        "side": "Sell",
+        "orderId": "5604eac8-096d-41b9-9d8a-ddf36f80f274",
+        "closedPnl": "50.32018287",
+        "avgEntryPrice": "93226.8516",
+        "qty": "0.154",
+        "cumEntryValue": "14356.93513825",
+        "createdTime": "1735546565616",
+        "orderPrice": "93226.9",
+        "closedSize": "0.154",
+        "avgExitPrice": "93406.9928",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "14384.6769"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735542503166",
+        "side": "Sell",
+        "orderId": "ba05d374-e38a-4995-9407-0a756e05c504",
+        "closedPnl": "-34.91768651",
+        "avgEntryPrice": "92936",
+        "qty": "0.285",
+        "cumEntryValue": "26486.76",
+        "createdTime": "1735542503162",
+        "orderPrice": "92398.8",
+        "closedSize": "0.285",
+        "avgExitPrice": "92883.1547",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "26471.6991"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735541969282",
+        "side": "Sell",
+        "orderId": "9a12e69d-d04f-4fa4-b876-2b5db84dbe59",
+        "closedPnl": "-51.87982165",
+        "avgEntryPrice": "93064.2741",
+        "qty": "0.108",
+        "cumEntryValue": "10050.9416",
+        "createdTime": "1735541969278",
+        "orderPrice": "92130.6",
+        "closedSize": "0.108",
+        "avgExitPrice": "92670.65",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "10008.4302"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541739362",
+        "side": "Sell",
+        "orderId": "9eb2a995-8f35-482a-8590-6ae654fbf576",
+        "closedPnl": "-23.47203141",
+        "avgEntryPrice": "93070.4942",
+        "qty": "0.119",
+        "cumEntryValue": "11075.3888",
+        "createdTime": "1735541739358",
+        "orderPrice": "92303",
+        "closedSize": "0.119",
+        "avgExitPrice": "92950.6403",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "11061.1262"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735541328982",
+        "side": "Sell",
+        "orderId": "07bfb03f-5041-41ad-b738-e8f5bc4bedac",
+        "closedPnl": "-8.45991301",
+        "avgEntryPrice": "93331.9824",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6437",
+        "createdTime": "1735541328978",
+        "orderPrice": "92089.8",
+        "closedSize": "0.017",
+        "avgExitPrice": "92936.7882",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "1579.9254"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540924992",
+        "side": "Sell",
+        "orderId": "45133b57-c5d7-4d69-8fef-136c5aa533f3",
+        "closedPnl": "-5.22247914",
+        "avgEntryPrice": "93288.4",
+        "qty": "0.017",
+        "cumEntryValue": "1585.9028",
+        "createdTime": "1735540924988",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "93083.7",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "1582.4229"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735540822466",
+        "side": "Sell",
+        "orderId": "f03ae4e8-828a-48b1-b248-d5e291dd142c",
+        "closedPnl": "-7.45346906",
+        "avgEntryPrice": "93332.1",
+        "qty": "0.017",
+        "cumEntryValue": "1586.6457",
+        "createdTime": "1735540822462",
+        "orderPrice": "92282",
+        "closedSize": "0.017",
+        "avgExitPrice": "92996.1411",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "1580.9344"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735540372347",
+        "side": "Sell",
+        "orderId": "2eeb25a7-019a-4827-9dad-d8b8deb3a2dc",
+        "closedPnl": "-134.11422338",
+        "avgEntryPrice": "92995",
+        "qty": "0.286",
+        "cumEntryValue": "26596.57",
+        "createdTime": "1735540372342",
+        "orderPrice": "92065.1",
+        "closedSize": "0.286",
+        "avgExitPrice": "92628.1618",
+        "execType": "Trade",
+        "fillCount": "8",
+        "cumExitValue": "26491.6543"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "3",
+        "updatedTime": "1735537862921",
+        "side": "Buy",
+        "orderId": "5f35de68-e275-41db-b718-7cffe842c276",
+        "closedPnl": "-45.529647",
+        "avgEntryPrice": "92800",
+        "qty": "0.172",
+        "cumEntryValue": "15961.6",
+        "createdTime": "1735537862917",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92995",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "15995.14"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735536210767",
+        "side": "Sell",
+        "orderId": "2ab6f54d-2660-42ae-b8a3-a0f9d7d07773",
+        "closedPnl": "-0.25140144",
+        "avgEntryPrice": "92985",
+        "qty": "0.001",
+        "cumEntryValue": "92.985",
+        "createdTime": "1735536210763",
+        "orderPrice": "92065.1",
+        "closedSize": "0.001",
+        "avgExitPrice": "92835.8",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "92.8358"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "5",
+        "updatedTime": "1735533642343",
+        "side": "Sell",
+        "orderId": "596558b8-1d8d-491f-bead-e7588acc1060",
+        "closedPnl": "-15.12823281",
+        "avgEntryPrice": "92978.8621",
+        "qty": "0.029",
+        "cumEntryValue": "2696.387",
+        "createdTime": "1735533642339",
+        "orderPrice": "92021",
+        "closedSize": "0.029",
+        "avgExitPrice": "92559.2448",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "2684.2181"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532898953",
+        "side": "Sell",
+        "orderId": "3305055f-e1a4-4e13-b710-7f9723a2568d",
+        "closedPnl": "-1.05212265",
+        "avgEntryPrice": "92782.5883",
+        "qty": "0.017",
+        "cumEntryValue": "1577.304",
+        "createdTime": "1735532898949",
+        "orderPrice": "92065.1",
+        "closedSize": "0.017",
+        "avgExitPrice": "92809.4",
+        "execType": "Trade",
+        "fillCount": "5",
+        "cumExitValue": "1577.7598"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735532837158",
+        "side": "Buy",
+        "orderId": "910bd6fd-449f-4a9c-97d6-c46ea7b4cd9e",
+        "closedPnl": "-44.78367839",
+        "avgEntryPrice": "92810.1267",
+        "qty": "0.172",
+        "cumEntryValue": "15963.3418",
+        "createdTime": "1735532837153",
+        "orderPrice": "93924.9",
+        "closedSize": "0.172",
+        "avgExitPrice": "92994.9303",
+        "execType": "Trade",
+        "fillCount": "2",
+        "cumExitValue": "15995.128"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735530390739",
+        "side": "Sell",
+        "orderId": "53aef30b-ff7a-409b-b080-ae05ef9eb47e",
+        "closedPnl": "-8.08114042",
+        "avgEntryPrice": "92994.8772",
+        "qty": "0.057",
+        "cumEntryValue": "5300.708",
+        "createdTime": "1735530390735",
+        "orderPrice": "92065.1",
+        "closedSize": "0.057",
+        "avgExitPrice": "92955.3754",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "5298.4564"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735370829603",
+        "side": "Sell",
+        "orderId": "3a7fc120-5d08-4d75-b131-7237ddc3b9d8",
+        "closedPnl": "8.30883208",
+        "avgEntryPrice": "94527.4844",
+        "qty": "0.096",
+        "cumEntryValue": "9074.6385",
+        "createdTime": "1735370829599",
+        "orderPrice": "93669.4",
+        "closedSize": "0.096",
+        "avgExitPrice": "94718.1197",
+        "execType": "Trade",
+        "fillCount": "3",
+        "cumExitValue": "9092.9395"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735369367880",
+        "side": "Sell",
+        "orderId": "2311a9f4-d383-48f7-bdf0-bbeb81a87db6",
+        "closedPnl": "-1152.61972356",
+        "avgEntryPrice": "96545.5",
+        "qty": "0.563",
+        "cumEntryValue": "54355.1165",
+        "createdTime": "1735369227459",
+        "orderPrice": "93992",
+        "closedSize": "0.563",
+        "avgExitPrice": "94583.0522",
+        "execType": "Trade",
+        "fillCount": "4",
+        "cumExitValue": "53250.2584"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735366301559",
+        "side": "Sell",
+        "orderId": "79c6be2a-d490-4c09-ae02-4c5e4e175966",
+        "closedPnl": "113.11664832",
+        "avgEntryPrice": "94401",
+        "qty": "0.058",
+        "cumEntryValue": "5475.258",
+        "createdTime": "1735365005641",
+        "orderPrice": "94578.6",
+        "closedSize": "0.058",
+        "avgExitPrice": "96423.2",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "5592.5456"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735364284344",
+        "side": "Sell",
+        "orderId": "4053d7a6-a114-490e-a166-e40b3417bc3b",
+        "closedPnl": "-0.09445546",
+        "avgEntryPrice": "94954.5",
+        "qty": "0.001",
+        "cumEntryValue": "94.9545",
+        "createdTime": "1735364284340",
+        "orderPrice": "94303",
+        "closedSize": "0.001",
+        "avgExitPrice": "94964.5",
+        "execType": "Trade",
+        "fillCount": "1",
+        "cumExitValue": "94.9645"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735284251719",
+        "side": "Sell",
+        "orderId": "f803ac03-2b1e-4861-9b59-7b2fbdd03e3a",
+        "closedPnl": "-1199.37954803",
+        "avgEntryPrice": "96745.6",
+        "qty": "0.574",
+        "cumEntryValue": "55531.9744",
+        "createdTime": "1735282212814",
+        "orderPrice": "94592.6",
+        "closedSize": "0.574",
+        "avgExitPrice": "94729.0724",
+        "execType": "Trade",
+        "fillCount": "7",
+        "cumExitValue": "54374.4876"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735282165364",
+        "side": "Sell",
+        "orderId": "be7b74f4-0762-46e0-bb3a-cd071bfffd1e",
+        "closedPnl": "4.86302413",
+        "avgEntryPrice": "96131.5",
+        "qty": "0.577",
+        "cumEntryValue": "55467.8755",
+        "createdTime": "1735282165359",
+        "orderPrice": "95493",
+        "closedSize": "0.577",
+        "avgExitPrice": "96212.071",
+        "execType": "Trade",
+        "fillCount": "20",
+        "cumExitValue": "55514.365"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279531908",
+        "side": "Sell",
+        "orderId": "c4358f0f-c333-4e9b-a42f-55e75789efca",
+        "closedPnl": "-161.63923478",
+        "avgEntryPrice": "96162.4828",
+        "qty": "0.579",
+        "cumEntryValue": "55678.0775",
+        "createdTime": "1735279531903",
+        "orderPrice": "95178.2",
+        "closedSize": "0.579",
+        "avgExitPrice": "95955.4373",
+        "execType": "Trade",
+        "fillCount": "9",
+        "cumExitValue": "55558.1982"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735279383294",
+        "side": "Sell",
+        "orderId": "9be01151-54e4-42fb-81c3-62c9d84b40f0",
+        "closedPnl": "16.84943983",
+        "avgEntryPrice": "95911.1",
+        "qty": "0.58",
+        "cumEntryValue": "55628.438",
+        "createdTime": "1735279383290",
+        "orderPrice": "95319.5",
+        "closedSize": "0.58",
+        "avgExitPrice": "96012.1396",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55687.041"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278869171",
+        "side": "Sell",
+        "orderId": "9110adb9-d0a1-4114-8785-37a82d186d7b",
+        "closedPnl": "-160.83448448",
+        "avgEntryPrice": "96131.4393",
+        "qty": "0.581",
+        "cumEntryValue": "55852.3662",
+        "createdTime": "1735278869166",
+        "orderPrice": "95239.9",
+        "closedSize": "0.581",
+        "avgExitPrice": "95928.108",
+        "execType": "Trade",
+        "fillCount": "6",
+        "cumExitValue": "55734.2308"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "orderType": "Market",
+        "leverage": "10",
+        "updatedTime": "1735278551292",
+        "side": "Sell",
+        "orderId": "7c33adf2-4932-4ef1-aee6-80367f0bad52",
+        "closedPnl": "-90.93892585",
+        "avgEntryPrice": "95839.7",
+        "qty": "0.583",
+        "cumEntryValue": "55874.5451",
+        "createdTime": "1735278551287",
+        "orderPrice": "95222.1",
+        "closedSize": "0.583",
+        "avgExitPrice": "95755.549",
+        "execType": "Trade",
+        "fillCount": "16",
+        "cumExitValue": "55825.4851"
+      }
+    ]
+  },
+  "retExtInfo": {},
+  "time": "1735882565467"
+}
+2025-01-03 14:36:04,908 - services.trade_history_service - INFO - 거래 내역 업데이트 완료: 33건
+2025-01-03 14:36:04,911 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 14:36:05,377 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:36:05,377 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:36:05,379 - telegram_bot.bot - ERROR - 핸들러 초기화 중 오류: Can't instantiate abstract class StatsFormatter without an implementation for abstract methods 'format_balance', 'format_position', 'format_status'
+2025-01-03 14:36:05,382 - telegram_bot.bot - ERROR - 오류 상세: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 162, in _setup_handlers
+    CommandHandler("monitor_start", self.system_handler.handle_start_monitoring),
+                     ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 13, in __init__
+    self.formatter = StatsFormatter()
+                     ^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class StatsFormatter without an implementation for abstract methods 'format_balance', 'format_position', 'format_status'
+
+2025-01-03 14:36:05,385 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 14:36:05,386 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 14:36:05,386 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 14:36:05,387 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 14:36:05,387 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 14:36:05,389 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:36, 실행여부: False
+2025-01-03 14:36:05,638 - telegram.ext.Application - INFO - Application started
+2025-01-03 14:36:05,887 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 14:50:15,873 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 14:50:15,874 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 14:50:15,874 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 14:50:15,875 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 14:50:15,880 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 14:50:17,955 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 14:50:17,955 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 14:50:17,955 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:50:17,956 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:50:17,956 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:50:17,956 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:50:17,956 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:50:17,956 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:50:19,147 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 14:50:19,147 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 14:50:20,070 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:50:20,070 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:50:20,221 - services.trade_history_service - INFO - 거래 내역 업데이트: 32건
+2025-01-03 14:50:20,221 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 14:50:20,658 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:50:20,663 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-01-03 14:50:20,664 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 14:50:20,665 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 14:50:20,666 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 14:50:20,667 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 14:50:20,668 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 14:50:20,671 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:50, 실행여부: False
+2025-01-03 14:50:20,918 - telegram.ext.Application - INFO - Application started
+2025-01-03 14:50:21,184 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 14:51:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:51, 실행여부: False
+2025-01-03 14:52:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:52, 실행여부: False
+2025-01-03 14:56:39,527 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 14:56:39,529 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 14:56:39,529 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 14:56:39,529 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 14:56:39,534 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 14:56:42,332 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 14:56:42,332 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 14:56:42,333 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:56:42,333 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:56:42,333 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:56:42,333 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 14:56:42,333 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 14:56:42,333 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 14:56:43,466 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 14:56:43,466 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 14:56:44,234 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:56:44,235 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 14:56:44,478 - services.trade_history_service - INFO - 거래 내역 업데이트: 31건
+2025-01-03 14:56:44,478 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 14:56:44,937 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 14:56:44,939 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-01-03 14:56:44,940 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 14:56:44,941 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 14:56:44,943 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 14:56:44,944 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 14:56:44,945 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 14:56:44,948 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:56, 실행여부: False
+2025-01-03 14:56:45,195 - telegram.ext.Application - INFO - Application started
+2025-01-03 14:56:45,442 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 14:56:52,895 - services.trade_history_service - INFO - 이번 달 거래가 없습니다.
+2025-01-03 14:57:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:57, 실행여부: False
+2025-01-03 14:58:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:58, 실행여부: False
+2025-01-03 14:58:17,252 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-03 14:58:17,252 - trade_manager - INFO - 추세 강도 부족: 0.0% (필요 강도: 10%, 신뢰도: 85.0%)
+2025-01-03 14:59:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 14:59, 실행여부: False
+2025-01-03 15:00:00,017 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-03 15:00:00 KST)
+2025-01-03 15:00:00,020 - telegram_bot.monitors.auto_analyzer - INFO - === 15m 분석 시작 ===
+2025-01-03 15:00:00,022 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-03 15:00:00,363 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-03 15:00:00,364 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-03 15:00:04,956 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 1h 분석 실행 예정 (현재시간: 2025-01-03 15:00:00 KST)
+2025-01-03 15:00:04,959 - telegram_bot.monitors.auto_analyzer - INFO - === 1h 분석 시작 ===
+2025-01-03 15:00:04,960 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-01-03 15:00:05,129 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-03 15:00:05,129 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-03 15:00:59,071 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 15:00:59,072 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 15:00:59,072 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 15:00:59,072 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 15:00:59,078 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 15:01:01,205 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 15:01:01,205 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 15:01:01,206 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 15:01:01,206 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 15:01:01,206 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 15:01:01,207 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 15:01:01,207 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 15:01:01,207 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 15:01:02,400 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 15:01:02,401 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 15:01:03,285 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 15:01:03,286 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 15:01:03,685 - services.trade_history_service - INFO - 거래 내역 업데이트: 31건
+2025-01-03 15:01:03,686 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 15:01:04,275 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 15:01:04,280 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-01-03 15:01:04,281 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 15:01:04,282 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 15:01:04,283 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 15:01:04,284 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 15:01:04,286 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 15:01:04,289 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:01, 실행여부: False
+2025-01-03 15:01:04,549 - telegram.ext.Application - INFO - Application started
+2025-01-03 15:01:04,802 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 15:01:27,648 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-03 15:01:27,649 - trade_manager - ERROR - 거래 신호 실행 중 오류: 'TradeManager' object has no attribute '_validate_signal'
+2025-01-03 15:02:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:02, 실행여부: False
+2025-01-03 15:03:00,017 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:03, 실행여부: False
+2025-01-03 15:03:59,996 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:03, 실행여부: False
+2025-01-03 15:04:00,012 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:04, 실행여부: False
+2025-01-03 15:05:00,014 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:05, 실행여부: False
+2025-01-03 15:06:00,001 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:06, 실행여부: False
+2025-01-03 15:08:06,996 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 15:08:06,997 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 15:08:06,997 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 15:08:06,997 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 15:08:07,003 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 15:08:09,167 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 15:08:09,168 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 15:08:09,168 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 15:08:09,169 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 15:08:09,169 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 15:08:09,169 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 15:08:09,169 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 15:08:09,169 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 15:08:10,335 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 15:08:10,335 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 15:08:11,101 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 15:08:11,101 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 15:08:11,254 - services.trade_history_service - INFO - 거래 내역 업데이트: 29건
+2025-01-03 15:08:11,255 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 15:08:11,699 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 15:08:11,700 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-01-03 15:08:11,700 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 15:08:11,701 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 15:08:11,701 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 15:08:11,701 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 15:08:11,701 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 15:08:11,703 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:08, 실행여부: False
+2025-01-03 15:08:11,949 - telegram.ext.Application - INFO - Application started
+2025-01-03 15:08:12,195 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 15:08:47,318 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-03 15:08:47,319 - position_service - ERROR - get_position 실행 중 에러: PositionService.get_position() missing 1 required positional argument: 'symbol'
+2025-01-03 15:08:47,322 - position_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\position_service.py", line 15, in wrapper
+    return await func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+TypeError: PositionService.get_position() missing 1 required positional argument: 'symbol'
+
+2025-01-03 15:08:47,323 - trade_manager - ERROR - 새 포지션 진입 중 오류: 'position_suggestion'
+2025-01-03 15:08:47,328 - trade_manager - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\trade\trade_manager.py", line 157, in _open_new_position
+    'side': 'Buy' if strategy['position_suggestion'] == '매수' else 'Sell',
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'position_suggestion'
+
+2025-01-03 15:09:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:09, 실행여부: False
+2025-01-03 15:10:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:10, 실행여부: False
+2025-01-03 15:11:00,020 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:11, 실행여부: False
+2025-01-03 15:12:00,002 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:12, 실행여부: False
+2025-01-03 15:13:33,948 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 15:13:33,949 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 15:13:33,949 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 15:13:33,949 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 15:13:33,955 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 15:13:36,140 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 15:13:36,140 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 15:13:36,140 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 15:13:36,141 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 15:13:36,141 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 15:13:36,141 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 15:13:36,141 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 15:13:36,142 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 15:13:37,268 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 15:13:37,268 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 15:13:38,025 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 15:13:38,026 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 15:13:38,206 - services.trade_history_service - INFO - 거래 내역 업데이트: 29건
+2025-01-03 15:13:38,206 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 15:13:38,671 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 15:13:38,672 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-01-03 15:13:38,672 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 15:13:38,672 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 15:13:38,673 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 15:13:38,673 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 15:13:38,673 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 15:13:38,674 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:13, 실행여부: False
+2025-01-03 15:13:38,921 - telegram.ext.Application - INFO - Application started
+2025-01-03 15:13:39,176 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 15:13:52,922 - trade_manager - INFO - === 거래 신호 실행 ===
+2025-01-03 15:13:52,923 - position_service - ERROR - get_position 실행 중 에러: PositionService.get_position() missing 1 required positional argument: 'symbol'
+2025-01-03 15:13:52,928 - position_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\position_service.py", line 15, in wrapper
+    return await func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+TypeError: PositionService.get_position() missing 1 required positional argument: 'symbol'
+
+2025-01-03 15:13:52,930 - trade_manager - INFO - 새 포지션 진입 시도: Buy 10.0% 5x
+2025-01-03 15:13:53,151 - order_service - ERROR - 레버리지 설정 실패: {'retCode': 10003, 'retMsg': 'API key is invalid.', 'result': {}, 'retExtInfo': {}, 'time': 1735884833780}
+2025-01-03 15:13:53,314 - exchange.bybit_client - ERROR - V5 API 잔고 조회 실패: None
+2025-01-03 15:13:54,143 - exchange.bybit_client - ERROR - 잔고 조회 중 오류: bybit {"retCode":10001,"retMsg":"accountType only support UNIFIED.","result":{},"retExtInfo":{},"time":1735884834767}
+2025-01-03 15:13:54,144 - order_service - ERROR - 잔고 조회 실패
+2025-01-03 15:14:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:14, 실행여부: False
+2025-01-03 15:15:00,010 - telegram_bot.monitors.auto_analyzer - INFO - [AutoAnalyzer] 15m 분석 실행 예정 (현재시간: 2025-01-03 15:15:00 KST)
+2025-01-03 15:15:00,013 - telegram_bot.monitors.auto_analyzer - INFO - === 15m 분석 시작 ===
+2025-01-03 15:15:00,014 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-01-03 15:15:00,331 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-01-03 15:15:00,332 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-01-03 15:15:05,080 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:15, 실행여부: False
+2025-01-03 15:16:05,078 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:16, 실행여부: False
+2025-01-03 15:17:00,004 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:17, 실행여부: False
+2025-01-03 15:17:59,992 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:17, 실행여부: False
+2025-01-03 15:18:00,007 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:18, 실행여부: False
+2025-01-03 15:19:00,010 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:19, 실행여부: False
+2025-01-03 15:20:00,016 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 15:20, 실행여부: False
+2025-01-03 16:06:45,177 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-03 16:06:45,177 - main - INFO - 테스트넷 API 키 로드: 성공
+2025-01-03 16:06:45,178 - main - INFO - 테스트넷 API Secret 로드: 성공
+2025-01-03 16:06:45,178 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-03 16:06:45,183 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-03 16:06:47,367 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-03 16:06:47,367 - main - INFO - Telegram Bot 초기화 중...
+2025-01-03 16:06:47,367 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 16:06:47,368 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 16:06:47,368 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 16:06:47,368 - config.telegram_config - INFO - 텔레그램 설정 완료:
+2025-01-03 16:06:47,368 - config.telegram_config - INFO - - 관리자 chat_id: 583881676
+2025-01-03 16:06:47,369 - config.telegram_config - INFO - - 알림 chat_ids: [583881676]
+2025-01-03 16:06:48,713 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-03 16:06:48,713 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-03 16:06:49,481 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-03 16:06:49,481 - services.trade_history_service - INFO - 거래 내역 초기화 시작...
+2025-01-03 16:06:49,634 - services.trade_history_service - INFO - 거래 내역 업데이트 완료: 28건
+2025-01-03 16:06:49,635 - services.trade_history_service - INFO - 거래 내역 초기화 완료
+2025-01-03 16:06:50,076 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-01-03 16:06:50,079 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-01-03 16:06:50,081 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-01-03 16:06:50,082 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-01-03 16:06:50,083 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-01-03 16:06:50,083 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-01-03 16:06:50,085 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-01-03 16:06:50,086 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:06, 실행여부: False
+2025-01-03 16:06:50,333 - telegram.ext.Application - INFO - Application started
+2025-01-03 16:06:50,582 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-01-03 16:07:00,011 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:07, 실행여부: False
+2025-01-03 16:08:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:08, 실행여부: False
+2025-01-03 16:09:00,005 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:09, 실행여부: False
+2025-01-03 16:09:59,991 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:09, 실행여부: False
+2025-01-03 16:10:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:10, 실행여부: False
+2025-01-03 16:11:00,009 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:11, 실행여부: False
+2025-01-03 16:12:00,008 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:12, 실행여부: False
+2025-01-03 16:13:00,030 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:13, 실행여부: False
+2025-01-03 16:14:00,006 - telegram_bot.monitors.auto_analyzer - INFO - 4시간봉 체크 - 현재시간(KST): 16:14, 실행여부: False

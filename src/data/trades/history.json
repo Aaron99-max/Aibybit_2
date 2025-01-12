@@ -3964,6 +3964,314 @@
     "realized_pnl": 0.0
   },
   {
+    "id": "a87b656d-3cd7-5fd7-8245-0e92e5e7f002",
+    "timestamp": 1734850998210,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 92668.7,
+    "amount": 0.029,
+    "cost": 2687.3923,
+    "fee": {
+      "cost": 1.47806577,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "b3001fd7-7f2f-51bc-8694-c09a9c290b32",
+    "timestamp": 1734850998210,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 92633.3,
+    "amount": 0.007,
+    "cost": 648.4331,
+    "fee": {
+      "cost": 0.35663821,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "9af86d0b-1926-5dbb-9a89-1d3f4b73c0fa",
+    "timestamp": 1734850742925,
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "price": 84101.0,
+    "amount": 0.036,
+    "cost": 3027.636,
+    "fee": {
+      "cost": 0.6055272,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "e314235a-433e-51cd-b85b-91dcfcffd743",
+    "timestamp": 1734850148145,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 96200.0,
+    "amount": 0.031,
+    "cost": 2982.2,
+    "fee": {
+      "cost": 1.64021,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "471f0c5c-a47b-59f6-a302-33edb90216a3",
+    "timestamp": 1734850103266,
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "price": 95921.0,
+    "amount": 0.031,
+    "cost": 2973.551,
+    "fee": {
+      "cost": 0.5947102,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "34e32c63-5836-5060-856b-6f51061bade4",
+    "timestamp": 1734849826494,
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "price": 95815.2,
+    "amount": 0.032,
+    "cost": 3066.0864,
+    "fee": {
+      "cost": 0.61321728,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "e0f41475-33a9-59db-8413-d63026471bd5",
+    "timestamp": 1734849743244,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 94951.0,
+    "amount": 0.03,
+    "cost": 2848.53,
+    "fee": {
+      "cost": 0.569706,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "18309ace-2fd8-5099-a782-eead33ee6ed2",
+    "timestamp": 1734849706552,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 94951.0,
+    "amount": 0.001,
+    "cost": 94.951,
+    "fee": {
+      "cost": 0.0189902,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "5fad73a5-3c9b-5d4b-a660-5c742b874972",
+    "timestamp": 1734849704944,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 94951.0,
+    "amount": 0.001,
+    "cost": 94.951,
+    "fee": {
+      "cost": 0.0189902,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "2988c945-3059-5920-83d0-888ced9bea83",
+    "timestamp": 1734849695510,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 94961.3,
+    "amount": 0.001,
+    "cost": 94.9613,
+    "fee": {
+      "cost": 0.05222872,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "8b49bfdf-bdec-5c97-9442-e793d54138f5",
+    "timestamp": 1734849695510,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 95000.0,
+    "amount": 0.004,
+    "cost": 380.0,
+    "fee": {
+      "cost": 0.209,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "b42e3a58-af99-5056-94a0-2519b5742867",
+    "timestamp": 1734849695510,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 94827.8,
+    "amount": 0.001,
+    "cost": 94.8278,
+    "fee": {
+      "cost": 0.05215529,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "8ac88a76-3150-535d-a84b-7a9217187638",
+    "timestamp": 1734848899240,
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "price": 95349.0,
+    "amount": 0.006,
+    "cost": 572.094,
+    "fee": {
+      "cost": 0.1144188,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "77284b3e-4c84-5ebf-b6e3-69b57033019c",
+    "timestamp": 1734848831139,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 95808.5,
+    "amount": 0.001,
+    "cost": 95.8085,
+    "fee": {
+      "cost": 0.05269468,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "77b139a1-5b24-547c-a7ea-88c62e361e93",
+    "timestamp": 1734848831139,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 95762.1,
+    "amount": 0.001,
+    "cost": 95.7621,
+    "fee": {
+      "cost": 0.05266916,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "787d183b-6d83-5444-916b-a0f7905a81ff",
+    "timestamp": 1734848831139,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 95829.7,
+    "amount": 0.001,
+    "cost": 95.8297,
+    "fee": {
+      "cost": 0.05270634,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "9f7e2cb8-8464-5856-aef3-9d6482a9ad2a",
+    "timestamp": 1734848831139,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 95712.8,
+    "amount": 0.001,
+    "cost": 95.7128,
+    "fee": {
+      "cost": 0.05264204,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "eda06cdf-a9ef-5f49-b454-3f9f7cf05658",
+    "timestamp": 1734848831139,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 95839.7,
+    "amount": 0.001,
+    "cost": 95.8397,
+    "fee": {
+      "cost": 0.05271184,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "9c6adde5-27a3-5168-85a2-5e2f54772b67",
+    "timestamp": 1734848825635,
+    "symbol": "BTC/USDT:USDT",
+    "side": "buy",
+    "price": 95617.1,
+    "amount": 0.001,
+    "cost": 95.6171,
+    "fee": {
+      "cost": 0.05258941,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "6e33d59d-275b-525a-ba57-c820516af8f5",
+    "timestamp": 1734848693807,
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "price": 94400.0,
+    "amount": 0.004,
+    "cost": 377.6,
+    "fee": {
+      "cost": 0.20768,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "ab82e4d9-bf8a-59ad-b7bd-ee9c62bb876b",
+    "timestamp": 1734848693807,
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "price": 94427.4,
+    "amount": 0.001,
+    "cost": 94.4274,
+    "fee": {
+      "cost": 0.05193507,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
+    "id": "d899697f-b2bd-54e3-97ad-de2f04a27ac8",
+    "timestamp": 1734848693807,
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "price": 94560.9,
+    "amount": 0.001,
+    "cost": 94.5609,
+    "fee": {
+      "cost": 0.0520085,
+      "currency": "USDT"
+    },
+    "realized_pnl": 0.0
+  },
+  {
     "id": "83d33d86-606a-5066-9e9c-5bff8929c94e",
     "timestamp": 1734848140015,
     "symbol": "BTC/USDT:USDT",

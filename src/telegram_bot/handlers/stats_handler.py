@@ -3,12 +3,13 @@ from telegram import Update
 from telegram.ext import ContextTypes
 from .base_handler import BaseHandler
 from datetime import datetime
+from ai.trade_analyzer import TradeAnalyzer
 
 logger = logging.getLogger(__name__)
 
 class StatsHandler(BaseHandler):
     async def handle(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """통계 정보 표시"""
+        """거래 통계 및 패턴 분석 표시"""
         try:
             if not update.effective_chat:
                 return
@@ -18,34 +19,47 @@ class StatsHandler(BaseHandler):
             # 기간 파라미터 처리 (기본값 30일)
             period = context.args[0].lower() if context.args else "30"
             
-            # 숫자로 통계 조회
             try:
                 days = int(period)
-                if 1 <= days <= 90:
-                    stats = await self.bot.trade_history_service.calculate_stats(days=days)
-                    period_text = f"최근 {days}일"
-                else:
+                if not (1 <= days <= 90):
                     await self.send_message("❌ 1~90일 사이의 숫자를 입력해주세요.", chat_id)
                     return
             except ValueError:
                 await self.send_message("❌ 올바른 숫자를 입력해주세요. (예: /stats 30)", chat_id)
                 return
+
+            # 거래 분석 실행
+            analyzer = TradeAnalyzer(self.bot.trade_history_service)
+            patterns = await analyzer.analyze_patterns(days=days)
             
-            # 메시지 포맷팅
+            if not patterns:
+                await self.send_message("📊 분석할 거래 데이터가 없습니다.", chat_id)
+                return
+
+            # 메시지 구성
             message = (
-                f"📊 거래 통계 (기간: {period_text})\n"
-                f"──────────────\n"
-                f"💰 수익률 정보:\n"
-                f"• 총 수익: ${stats['total_profit']}\n"
-                f"• 최대 수익: ${stats['max_profit']}\n"
-                f"• 최대 손실: ${stats['max_loss']}\n"
-                f"• 평균 수익: ${stats['average_profit']}\n\n"
-                f"📈 거래 정보:\n"
-                f"• 총 거래: {stats['total_trades']}회\n"
-                f"• 성공: {stats['winning_trades']}회\n"
-                f"• 실패: {stats['losing_trades']}회\n"
-                f"• 승률: {stats['win_rate']}%\n\n"
-                f"⏰ 마지막 업데이트: {datetime.fromisoformat(stats['last_updated']).strftime('%Y-%m-%d %H:%M')}"
+                f"📊 거래 패턴 분석 (최근 {days}일)\n"
+                f"──────────────\n\n"
+                
+                f"💰 수익성 분석\n"
+                f"• 총 거래: {patterns['profitable_trades']['count']}건\n"
+                f"• 평균 수익: ${patterns['profitable_trades']['avg_profit']:.2f}\n"
+                f"• 최고 수익: ${patterns['profitable_trades']['best_profit']:.2f}\n\n"
+                
+                f"⏰ 시간대별 패턴\n"
+                f"• 최적 거래 시간: {', '.join(patterns['time_patterns']['summary']['best_hours'])}\n"
+                f"• 해당 시간대 승률: {patterns['time_patterns']['summary']['best_win_rate']:.1f}%\n\n"
+                
+                f"📏 포지션 크기 분석\n"
+                f"• 최적 크기: {patterns['size_patterns']['summary']['size_ranges'][patterns['size_patterns']['summary']['best_size']]}\n"
+                f"• ROI: {patterns['size_patterns']['summary']['best_roi']:.2f}%\n\n"
+                
+                f"📈 가격대별 분석\n"
+                f"• 거래 가격대: {patterns['price_patterns']['summary']['price_range']}\n"
+                f"• 최적 구간: {patterns['price_patterns']['summary']['best_range']}\n"
+                f"• 승률: {patterns['price_patterns']['summary']['best_win_rate']:.1f}%\n\n"
+                
+                f"⏰ 분석 시간: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
             )
             
             await self.send_message(message, chat_id)

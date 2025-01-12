@@ -8,11 +8,11 @@
   },
   "technical_analysis": {
     "trend": "하락",
-    "strength": 24.58,
+    "strength": 39.52,
     "indicators": {
-      "rsi": 24.29,
+      "rsi": 10.25,
       "macd": "하락",
-      "bollinger": "중단",
+      "bollinger": "하단",
       "divergence": {
         "type": "없음",
         "description": "현재 다이버전스 없음",
@@ -23,16 +23,16 @@
   "trading_strategy": {
     "position_suggestion": "관망",
     "entry_points": [
-      82393.2
+      65625.7
     ],
-    "stopLoss": 81566.34,
+    "stopLoss": 64372.19,
     "takeProfit": [
-      83809.46,
-      84675.87
+      66657.01,
+      66910.42
     ],
     "leverage": 1,
     "position_size": 5
   },
-  "saved_at": "2025-01-12 15:00:29 KST",
-  "timestamp": 1736661629157
+  "saved_at": "2025-01-12 16:00:28 KST",
+  "timestamp": 1736665228086
 }

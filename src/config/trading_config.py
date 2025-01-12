@@ -29,10 +29,10 @@ class TradingConfig:
             "trend_strength": {
                 "min": 10,    # 기본 최소 추세 강도
                 "levels": {
-                    "confidence_80": 10,   # 신뢰도 85% 이상
-                    "confidence_75": 15,   # 신뢰도 80~84%
-                    "confidence_70": 20,   # 신뢰도 75~79%
-                    "default": 25         # 신뢰도 70~74%
+                    "confidence_80": 10,   # 신뢰도 80% 이상
+                    "confidence_75": 15,   # 신뢰도 75%
+                    "confidence_70": 20,   # 신뢰도 70%
+                    "default": 25         # 그외 %
                 }
             }
         }

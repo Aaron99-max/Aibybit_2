@@ -67,9 +67,9 @@ class TechnicalIndicators:
             
             # 추세 강도 직접 계산 추가
             df['trend_strength'] = df.apply(lambda x: (
-                (x['adx'] * 0.35) +  # ADX 비중 35%
-                (abs(x['macd_diff'] / x['close']) * 1200 * 0.4) +  # MACD 비중 40%, 민감도 증가
-                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 120 * 0.25)  # MA 비중 25%, 민감도 증가
+                (x['adx'] * 0.4) +  # ADX는 그대로 (이미 0-100 사이 값)
+                (abs(x['macd_diff'] / x['close']) * 1000 * 0.35) +  # 1000배로 증가
+                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 500 * 0.25)  # 500배로 증가
             ), axis=1)
             
             return df

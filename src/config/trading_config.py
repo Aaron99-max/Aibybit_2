@@ -11,9 +11,14 @@ class TradingConfig:
     def __init__(self):
         # 기본 설정
         self.symbol = 'BTCUSDT'
-        self.max_daily_loss = 5.0  # 일일 최대 손실률 (%)
-        self.max_leverage = 10     # 최대 레버리지
-        self.max_position_size = 30  # 최대 포지션 크기 (%)
+        self.max_daily_loss = 5.0
+        self.max_leverage = 10
+        self.max_position_size = 30
+        
+        # 레버리지 차이 허용 범위만 설정
+        self.leverage_settings = {
+            "max_difference": 2  # 허용 가능한 최대 레버리지 차이
+        }
         
         # 자동매매 실행 조건
         self.auto_trading = {
@@ -24,9 +29,9 @@ class TradingConfig:
             "trend_strength": {
                 "min": 10,    # 기본 최소 추세 강도
                 "levels": {
-                    "confidence_85": 10,   # 신뢰도 85% 이상
-                    "confidence_80": 15,   # 신뢰도 80~84%
-                    "confidence_75": 20,   # 신뢰도 75~79%
+                    "confidence_80": 10,   # 신뢰도 85% 이상
+                    "confidence_75": 15,   # 신뢰도 80~84%
+                    "confidence_70": 20,   # 신뢰도 75~79%
                     "default": 25         # 신뢰도 70~74%
                 }
             }

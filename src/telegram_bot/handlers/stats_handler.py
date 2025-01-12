@@ -15,25 +15,22 @@ class StatsHandler(BaseHandler):
                 
             chat_id = update.effective_chat.id
             
-            # 기간 파라미터 처리
-            period = None
-            if context.args:
-                period = context.args[0].lower()
-                
-            # 통계 데이터 조회
-            if period == 'daily':
-                stats = await self.bot.trade_history_service.get_daily_stats()
-                period_text = "일간"
-            elif period == 'weekly':
-                stats = await self.bot.trade_history_service.get_weekly_stats()
-                period_text = "주간"
-            elif period == 'monthly':
-                stats = await self.bot.trade_history_service.get_monthly_stats()
-                period_text = "월간"
-            else:
-                stats = await self.bot.trade_history_service.get_current_month_stats()
-                period_text = "이번 달"
-                
+            # 기간 파라미터 처리 (기본값 30일)
+            period = context.args[0].lower() if context.args else "30"
+            
+            # 숫자로 통계 조회
+            try:
+                days = int(period)
+                if 1 <= days <= 90:
+                    stats = await self.bot.trade_history_service.calculate_stats(days=days)
+                    period_text = f"최근 {days}일"
+                else:
+                    await self.send_message("❌ 1~90일 사이의 숫자를 입력해주세요.", chat_id)
+                    return
+            except ValueError:
+                await self.send_message("❌ 올바른 숫자를 입력해주세요. (예: /stats 30)", chat_id)
+                return
+            
             # 메시지 포맷팅
             message = (
                 f"📊 거래 통계 (기간: {period_text})\n"

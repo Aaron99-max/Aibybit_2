@@ -443,30 +443,35 @@ class AnalysisHandler(BaseHandler):
             # 1. 분석 결과 저장
             self.storage_formatter.save_analysis(analysis, timeframe)
             
-            # 2. 메시지 포맷팅 (다이버전스 정보는 기본 분석 결과에 포함됨)
+            # 2. 메시지 포맷팅
             message = self.analysis_formatter.format_analysis_result(
                 analysis, 
                 timeframe,
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
             )
             
-            # 3. 메시지 전송
+            # 3. 메시지 전송 (자동 분석 결과도 전송되도록)
             if chat_id:
                 await self.send_message(message, chat_id)
             else:
-                await self.bot.send_message_to_all(message)
+                await self.bot.send_message_to_all(message)  # 모든 채팅방에 전송
             
-            # 4. 4시간봉 분석 후 final 분석
-            if timeframe == '4h':
-                await self.handle_analyze_final(chat_id)
-                
-            # 5. final 분석인 경우 자동매매 체크
+            # 4. final 분석인 경우 자동매매 체크
             if timeframe == 'final':
-                if analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled'):
+                auto_trading = analysis.get('trading_strategy', {}).get('auto_trading', {})
+                if auto_trading.get('enabled'):
                     await self.ai_trader.execute_auto_trading(analysis)
-                
-            # 별도의 다이버전스 알림 제거 (이미 기본 분석 결과에 포함되어 있음)
-                
+                else:
+                    confidence_data = {
+                        'confidence': auto_trading.get('confidence', 0),
+                        'strength': auto_trading.get('strength', 0)
+                    }
+                    confidence_message = self.bot.order_formatter.format_confidence_message(confidence_data)
+                    if chat_id:
+                        await self.send_message(confidence_message, chat_id)
+                    else:
+                        await self.bot.send_message_to_all(confidence_message)
+                        
         except Exception as e:
             logger.error(f"분석 결과 처리 중 오류: {str(e)}")
 
@@ -502,3 +507,70 @@ class AnalysisHandler(BaseHandler):
             
         except Exception as e:
             logger.error(f"다이버전스 알림 전송 중 오류: {str(e)}")
+
+    def _format_analysis_message(self, analysis: Dict, timeframe: str = None) -> str:
+        """분석 결과 메시지 포맷팅"""
+        try:
+            if not analysis:
+                return "분석 데이터가 없습니다."
+
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+            
+            # 시간대 표시
+            timeframe_text = f"{timeframe}봉" if timeframe else "Final"
+            
+            message_parts = [
+                f"📊 {timeframe_text} 분석 ({current_time})\n",
+                "\n🌍 시장 요약:",
+                f"• 시장 단계: {analysis['market_summary']['market_phase']}",
+                f"• 전반적 심리: {analysis['market_summary']['overall_sentiment']}",
+                f"• 단기 심리: {analysis['market_summary']['short_term_sentiment']}",
+                f"• 거래량: {analysis['market_summary']['volume_trend']}",
+                f"• 리스크: {analysis['market_summary'].get('risk_level', '정보 없음')}",
+                f"• 신뢰도: {analysis['market_summary'].get('confidence', 0)}%",
+                
+                "\n📈 기술적 분석:",
+                f"• 추세: {analysis['technical_analysis']['trend']}",
+                f"• 강도: {analysis['technical_analysis']['strength']:.2f}",
+                f"• RSI: {analysis['technical_analysis']['indicators']['rsi']:.2f}",
+                f"• MACD: {analysis['technical_analysis']['indicators']['macd']}",
+                f"• 볼린저밴드: {analysis['technical_analysis']['indicators']['bollinger']}"
+            ]
+
+            # 다이버전스 정보가 있는 경우
+            if 'divergence' in analysis['technical_analysis']['indicators']:
+                div_info = analysis['technical_analysis']['indicators']['divergence']
+                if div_info['type'] != '없음':
+                    message_parts.extend([
+                        "\n🔄 다이버전스:",
+                        f"• 유형: {div_info['type']}",
+                        f"• 설명: {div_info['description']}"
+                    ])
+
+            # 거래 전략
+            strategy = analysis['trading_strategy']
+            entry_points = strategy.get('entry_points', [])
+            take_profits = strategy.get('takeProfit', [])
+            
+            message_parts.extend([
+                "\n💡 거래 전략:",
+                f"• 포지션: {strategy.get('position_suggestion', '관망')}",
+                f"• 진입가: ${entry_points[0]:,.1f}" if entry_points else "• 진입가: 정보 없음",
+                f"• 손절가: ${strategy.get('stopLoss', 0):,.1f}",
+                f"• 목표가: {', '.join([f'${tp:,.1f}' for tp in take_profits])}" if take_profits else "• 목표가: 정보 없음",
+                f"• 레버리지: {strategy.get('leverage', 0)}x",
+                f"• 포지션 크기: {strategy.get('position_size', 0)}%"
+            ])
+
+            # 자동매매 상태
+            message_parts.extend([
+                "\n🤖 자동매매:",
+                "• 상태: 비활성화",
+                "• 사유: 정보 없음"
+            ])
+
+            return "\n".join(message_parts)
+
+        except Exception as e:
+            logger.error(f"분석 메시지 포맷팅 중 오류: {str(e)}")
+            return "분석 결과 포맷팅 중 오류가 발생했습니다."

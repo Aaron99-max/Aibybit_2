@@ -38,6 +38,10 @@ class OrderService:
             # 방향 검증
             params['side'] = self._validate_side(params['side'])
             
+            # takeProfit이 리스트인 경우 첫 번째 값만 사용
+            if isinstance(params.get('takeProfit'), list) and params['takeProfit']:
+                params['takeProfit'] = params['takeProfit'][0]
+
             # 필수 파라미터 체크
             required_params = ['symbol', 'side', 'position_size', 'leverage', 'entry_price']
             for param in required_params:
@@ -74,8 +78,26 @@ class OrderService:
             quantity = round(quantity, 3)
             
             # 최소 수량 체크
-            if quantity < 0.001:
-                logger.error(f"주문 수량이 최소 수량(0.001 BTC)보다 작음: {quantity} BTC")
+            if 0 < quantity < 0.001:
+                # 최소 수량 달 알림
+                order_data = {
+                    'symbol': params['symbol'],
+                    'side': params['side'],
+                    'leverage': params['leverage'],
+                    'amount': quantity,
+                    'skip_reason': 'min_size',
+                    'confidence': params.get('confidence', 0),
+                    'timeframe': params.get('timeframe', '4h')
+                }
+                
+                if self.telegram_bot:
+                    message = self.order_formatter.format_order(order_data)
+                    await self.telegram_bot.send_message_to_all(message)
+                    
+                return True  # 정상 처리로 간주
+            
+            elif quantity <= 0:
+                logger.error("주문 수량이 0보다 작거나 같음")
                 return None
 
             # 주문 파라미터 설정
@@ -88,18 +110,14 @@ class OrderService:
                 "price": str(params['entry_price']),
                 "timeInForce": "GTC",
                 "positionIdx": 0,
-                "reduceOnly": params['reduceOnly']
+                "reduceOnly": params.get('reduceOnly', False),
+                "tpslMode": "Full",
+                "stopLoss": str(params['stopLoss']) if params.get('stopLoss') else None,
+                "takeProfit": str(params['takeProfit']) if params.get('takeProfit') else None
             }
 
-            # 주문 실행 전 로깅
             logger.info(f"주문 실행 시도: {order_params}")
             
-            # 주절/익절 설정이 있는 경우에만 추가
-            if params['stop_loss'] is not None:
-                order_params["stopLoss"] = str(params['stop_loss'])
-            if params['take_profit'] is not None:
-                order_params["takeProfit"] = str(params['take_profit'])
-
             # 주문 실행
             result = await self.bybit_client.v5_post("/order/create", order_params)
             
@@ -122,8 +140,8 @@ class OrderService:
                 logger.info(f"방향: {params['side']}")
                 logger.info(f"수량: {quantity}")
                 logger.info(f"가격: {params['entry_price']}")
-                logger.info(f"손절가: {params['stop_loss']}")
-                logger.info(f"익절가: {params['take_profit']}")
+                logger.info(f"손절가: {params['stopLoss']}")
+                logger.info(f"익절가: {params['takeProfit']}")
 
                 # OrderFormatter를 사용하여 텔레그램 알림 메시지 생성
                 if self.telegram_bot:
@@ -135,8 +153,8 @@ class OrderService:
                         'amount': quantity,
                         'status': 'NEW',
                         'leverage': params['leverage'],
-                        'stop_loss': params['stop_loss'],
-                        'take_profit': params['take_profit'],
+                        'stopLoss': params['stopLoss'],
+                        'takeProfit': params['takeProfit'],
                         'order_id': order_info.get('orderId'),
                         'position_size': params['position_size']
                     }
@@ -209,9 +227,116 @@ class OrderService:
                 logger.info(f"포지션 청산 성공: {size} {symbol}")
                 return True
             else:
-                logger.error(f"포지션 청산 실패: {result}")
+                logger.error(f"포지션 청산 실패패: {result}")
                 return False
             
         except Exception as e:
-            logger.error(f"포지션 청산 중 오류: {str(e)}")
+            logger.error(f"포지션션 청산 중 오류: {str(e)}")
             return False
+
+    async def create_market_order(self, symbol: str, side: str, position_size: float, 
+                                reduce_only: bool = False, is_btc_unit: bool = True) -> Dict:
+        """시장가 주문 생성"""
+        try:
+            order_params = {
+                "category": "linear",
+                "symbol": symbol,
+                "side": side,
+                "orderType": "Market",
+                "qty": str(position_size),
+                "timeInForce": "IOC",
+                "reduceOnly": reduce_only,
+                "positionIdx": 0
+            }
+            
+            logger.info(f"시장가 주문 시도: {order_params}")
+            
+            result = await self.bybit_client.v5_post("/order/create", order_params)
+            
+            if result and result.get('retCode') == 0:
+                order_info = result.get('result', {})
+                logger.info(f"시장가 주문 성공: {position_size} {symbol}")
+                return {
+                    'orderId': order_info.get('orderId'),
+                    'status': order_info.get('orderStatus', 'unknown'),
+                    'info': order_info
+                }
+            else:
+                logger.error(f"시장가 주문 실패: {result}")
+                return None
+            
+        except Exception as e:
+            logger.error(f"시장가 주문 생성 중 오류: {str(e)}")
+            return None
+
+    async def cancel_all_tpsl(self, symbol: str) -> bool:
+        """모든 TP/SL 주문 취소"""
+        try:
+            # TP/SL 취소 파라미터
+            params = {
+                "category": "linear",
+                "symbol": symbol,
+                "positionIdx": 0
+            }
+            
+            # TP/SL 취소 API 호출
+            result = await self.bybit_client.v5_post("/position/trading-stop", params)
+            
+            if result and result.get('retCode') == 0:
+                logger.info(f"TP/SL 취소 성공: {symbol}")
+                return True
+            else:
+                logger.error(f"TP/SL 취소 실패: {result}")
+                return False
+            
+        except Exception as e:
+            logger.error(f"TP/SL 취소 중 오류: {str(e)}")
+            return False
+
+    async def get_order(self, order_id: str) -> Dict:
+        """주문 상태 회"""
+        try:
+            params = {
+                "category": "linear",
+                "symbol": self.symbol,
+                "orderId": order_id
+            }
+            result = await self.bybit_client.v5_get("/order/history", params)
+            
+            # 디버그 로깅 추가
+            logger.info(f"주문 회 응답: {result}")
+            
+            if result and result.get('retCode') == 0:
+                orders = result.get('result', {}).get('list', [])
+                if orders:
+                    order = orders[0]
+                    # 주문 상태 매핑
+                    status_map = {
+                        'Created': 'new',
+                        'New': 'new',
+                        'Filled': 'filled',
+                        'Cancelled': 'canceled',
+                        'Rejected': 'rejected'
+                    }
+                    return {
+                        'orderId': order.get('orderId'),
+                        'status': status_map.get(order.get('orderStatus'), 'unknown'),
+                        'filled': float(order.get('cumExecQty', 0)),
+                        'remaining': float(order.get('leavesQty', 0))
+                    }
+            return None
+        except Exception as e:
+            logger.error(f"주문 회 중 오류: {str(e)}")
+            return None
+
+    async def handle_order_result(self, result: Dict):
+        """주문 결과 처리"""
+        try:
+            # OrderFormatter를 통해 메시지 포맷팅
+            message = self.order_formatter.format_order(result)
+            
+            # 텔레그램으로 메시지 전송 (send_message_to_all 사용)
+            await self.telegram_bot.send_message_to_all(message)  # send_message 대신 send_message_to_all 사용
+            
+        except Exception as e:
+            logger.error(f"주문 결과 처리 중 오류: {str(e)}")

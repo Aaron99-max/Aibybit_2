@@ -22,24 +22,20 @@ class StorageFormatter:
     def save_analysis(self, analysis: Dict, timeframe: str) -> bool:
         """분석 결과 저장"""
         try:
-            # 저장 시간 추가
-            analysis['saved_at'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+            # 저장 시간과 타임스탬프 추가
+            now = datetime.now()
+            analysis['saved_at'] = now.strftime("%Y-%m-%d %H:%M:%S KST")
+            analysis['timestamp'] = int(now.timestamp() * 1000)
             
             # 파일 경로 설정
             filename = f"analysis_{timeframe}.json"
             filepath = os.path.join(self.analysis_dir, filename)
             
-            # 기존 데이터 로드
-            existing_data = self.load_analysis(timeframe) or {}
-            
-            # 새 데이터 병합
-            existing_data.update(analysis)
-            
-            # 파일 저장
+            # 파일 직접 저장 (기존 데이터와 병합하지 않음)
             with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(existing_data, f, ensure_ascii=False, indent=2)
+                json.dump(analysis, f, ensure_ascii=False, indent=2)
                 
-            logger.debug(f"{timeframe} 분석 결과 저장 완료: {filepath}")
+            logger.info(f"{timeframe} 분석 결과 저장 완료: {filepath}")
             return True
             
         except Exception as e:

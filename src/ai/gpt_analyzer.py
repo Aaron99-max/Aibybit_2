@@ -418,72 +418,98 @@ class GPTAnalyzer:
                 "timestamp": int(time.time())
             }
 
-    async def analyze_final(self, analyses: Dict) -> Dict:
-        """Final 분석 실행"""
+    async def analyze_final(self, analyses: Dict[str, Dict], current_price: float = None) -> Dict:
+        """최종 분석 실행"""
         try:
-            # 현재가 검증 및 조회
-            current_price = await self._get_current_price()
-            if current_price is None:
-                logger.error("현재가 조회 실패")
-                return None
-
-            # GPT 프롬프트 생성
+            # 프롬프트 생성
             prompt = self._create_final_analysis_prompt(analyses, current_price)
+            if not prompt:
+                return None
             
             # GPT API 호출
             response = await self.gpt_client.call_gpt_api(prompt)
             if not response:
-                logger.error("GPT API 응답이 없습니다")
                 return None
             
-            # 상세 응답 로깅
-            logger.debug(f"응답 내용: {response}")
-            logger.debug("=== GPT API 응답 끝 ===")
-            
-            # 응답 파싱 및 검증
+            # 응답 파싱
             final_analysis = self._parse_final_analysis(response)
             if not final_analysis:
-                logger.error("응답 파싱 실패")
                 return None
-
-            # 다이버전스 정보 제거
-            if 'technical_analysis' in final_analysis and 'indicators' in final_analysis['technical_analysis']:
-                if 'divergence' in final_analysis['technical_analysis']['indicators']:
-                    del final_analysis['technical_analysis']['indicators']['divergence']
-
-            # 자동매매 검증
-            final_analysis['trading_strategy']['auto_trading'] = self._validate_auto_trading({
-                "market_summary": {"confidence": final_analysis['market_summary']['confidence']},
-                "technical_analysis": {"strength": final_analysis['technical_analysis']['strength']}
-            })
-
-            logger.debug(f"Final 분석 결과: {final_analysis}")
+            
+            # auto_trading 정보 추가
+            confidence = final_analysis.get('market_summary', {}).get('confidence', 0)
+            strength = final_analysis.get('technical_analysis', {}).get('strength', 0)
+            
+            if 'trading_strategy' not in final_analysis:
+                final_analysis['trading_strategy'] = {}
+            
+            auto_trading = {
+                "enabled": strength >= trading_config.auto_trading['trend_strength']['min'] and 
+                           confidence >= trading_config.auto_trading['confidence']['min'],
+                "confidence": confidence,
+                "strength": strength,
+                "reason": f"추세 강도 {'충분' if strength >= trading_config.auto_trading['trend_strength']['min'] else '부족'}({strength:.2f}%)"
+            }
+            
+            final_analysis['trading_strategy']['auto_trading'] = auto_trading
+            
+            # 저장
+            self.storage_formatter.save_analysis(final_analysis, 'final')
+            
             return final_analysis
             
         except Exception as e:
-            logger.error(f"Final 분석 중 오류: {str(e)}")
+            logger.error(f"최종 분석 실행 중 오류: {str(e)}")
             return None
+
+    def _check_auto_trading_conditions(self, analysis: Dict) -> Dict:
+        """자동매매 조건 확인"""
+        confidence = analysis.get('market_summary', {}).get('confidence', 0)
+        strength = analysis.get('technical_analysis', {}).get('strength', 0)
+        
+        # trading_config의 설정값 사용
+        if confidence >= trading_config.auto_trading['confidence']['high']:
+            min_strength = trading_config.auto_trading['trend_strength']['levels']['confidence_80']
+        elif confidence >= trading_config.auto_trading['confidence']['min']:
+            min_strength = trading_config.auto_trading['trend_strength']['levels']['default']
+        else:
+            min_strength = trading_config.auto_trading['trend_strength']['min']
+        
+        enabled = strength >= min_strength and confidence >= trading_config.auto_trading['confidence']['min']
+        
+        return {
+            'enabled': enabled,
+            'confidence': confidence,
+            'strength': strength,
+            'reason': f"추세 강도 {'충분' if enabled else '부족'}({strength:.2f}%)"
+        }
 
     def _update_trading_strategy(self, trading_strategy: Dict, current_price: float):
         """거래 전략 업데이트"""
-        position = trading_strategy.get('position_suggestion', '').upper()
-        
-        # 진입가격 설정
-        trading_strategy['entry_points'] = [current_price]
-        
-        # 손절가/익절가 설정
-        if position in ['매수', 'BUY', 'LONG']:
-            trading_strategy['stop_loss'] = current_price * 0.98
-            trading_strategy['take_profit'] = [
-                current_price * 1.02,
-                current_price * 1.04
-            ]
-        elif position in ['매도', 'SELL', 'SHORT']:
-            trading_strategy['stop_loss'] = current_price * 1.02
-            trading_strategy['take_profit'] = [
-                current_price * 0.98,
-                current_price * 0.96
-            ]
+        try:
+            position = trading_strategy.get('position_suggestion', '관망')
+            
+            # GPT가 제안한 값 사용
+            if position in ['매수', 'BUY', 'LONG']:
+                # GPT가 제안한 손절가/익절가 그대로 사용
+                trading_strategy['stop_loss'] = trading_strategy.get('stopLoss')
+                trading_strategy['take_profit'] = trading_strategy.get('takeProfit')
+                
+            elif position in ['매도', 'SELL', 'SHORT']:
+                # GPT가 제안한 손절가/익절가 그대로 사용
+                trading_strategy['stop_loss'] = trading_strategy.get('stopLoss')
+                trading_strategy['take_profit'] = trading_strategy.get('takeProfit')
+                
+            # 관망일 때는 기본값 설정
+            else:
+                trading_strategy['stop_loss'] = current_price * 0.98
+                trading_strategy['take_profit'] = [
+                    current_price * 1.02,
+                    current_price * 1.04
+                ]
+                
+        except Exception as e:
+            logger.error(f"거래 전략 업데이트 중 오류: {str(e)}")
 
     def _update_divergence_info(self, response: Dict, analyses: Dict[str, Dict]):
         """다이버전스 정보 업데이트"""
@@ -504,45 +530,71 @@ class GPTAnalyzer:
         except Exception as e:
             logger.error(f"다이버전스 정보 업데이트 중 오류: {str(e)}")
 
-    def _create_final_analysis_prompt(self, analyses: Dict[str, Dict], current_price: float) -> str:
-        """최종 분석을 위한 프롬프트 생성"""
-        prompt_parts = [
-            f"현재가: ${current_price:,.2f}\n",
-            "아래 형식의 JSON으로만 응답해주세요. 다른 텍스트는 포함하지 마세요:\n",
-            "{\n",
-            '  "market_phase": "상승" 또는 "하락" 또는 "횡보",\n',
-            '  "overall_sentiment": "긍정적" 또는 "부정적" 또는 "중립",\n',
-            '  "short_term_sentiment": "긍정적" 또는 "부정적" 또는 "중립",\n',
-            '  "trend": "상승" 또는 "하락" 또는 "횡보",\n',
-            '  "strength": 0-100 사이의 숫자,\n',
-            '  "position": "매수" 또는 "매도" 또는 "관망",\n',
-            f'  "entry_price": {current_price},\n',
-            f'  "stop_loss": {current_price * 0.98},\n',
-            f'  "take_profit": [{current_price * 1.02}, {current_price * 1.04}],\n',
-            '  "leverage": 1-10 사이의 정수,\n',
-            '  "position_size": 1-30 사이의 정수,\n',
-            '  "divergence_type": "상승" 또는 "하락" 또는 "없음",\n',
-            '  "divergence_description": "상세 설명"\n',
-            "}\n\n",
-            "위 JSON 형식으로만 응답하세요. 다른 설명이나 텍스트는 포함하지 마세요.\n\n",
-            "참고할 시간대 분석:\n"
-        ]
+    def _create_final_analysis_prompt(self, analyses: Dict[str, Dict], current_price: float = None):
+        """Final 분석을 위한 프롬프트 생성"""
+        # 응답 형식 가이드 정의
+        format_guide = {
+            "market_summary": {
+                "market_phase": "상승/하락/횡보",
+                "overall_sentiment": "긍정적/부정적/중립",
+                "short_term_sentiment": "긍정적/부정적/중립",
+                "risk_level": "높음/중간/낮음",
+                "volume_trend": "증가/감소/중립",
+                "confidence": "0-100 사이의 숫자"
+            },
+            "technical_analysis": {
+                "trend": "상승/하락/횡보",
+                "strength": "0-100 사이의 숫자",
+                "indicators": {
+                    "rsi": "0-100 사이의 숫자",
+                    "macd": "상승/하락/중립",
+                    "bollinger": "상단/중단/하단"
+                }
+            },
+            "trading_strategy": {
+                "position_suggestion": "매수/매도/관망",
+                "entry_points": ["진입가격"],
+                "stopLoss": "손절가",
+                "takeProfit": ["목표가1", "목표가2"],
+                "leverage": "1-10 사이의 정수",
+                "position_size": "1-30 사이의 정수"
+            }
+        }
+        
+        # 현재가가 None이면 0으로 처리 (임시 해결)
+        if current_price is None:
+            current_price = 0
+        
+        prompt = f"""다음 시간대별 분석을 종합하여 최종 매매 신호를 제시해주세요.
 
-        # 각 시간대 분석 정보 추가
-        for timeframe, analysis in analyses.items():
-            market_summary = analysis.get('market_summary', {})
-            tech_analysis = analysis.get('technical_analysis', {})
-            
-            prompt_parts.append(f"""
-{timeframe} 분석:
-• 시장 단계: {market_summary.get('market_phase', '불명확')}
-• 전반적 심리: {market_summary.get('overall_sentiment', '중립')}
-• 추세: {tech_analysis.get('trend', '횡보')}
-• 강도: {tech_analysis.get('strength', 0)}
-• 다이버전스: {tech_analysis.get('indicators', {}).get('divergence', {}).get('type', '없음')}
-""")
+특별 고려사항:
+1. 현재가 기준 진입가격의 적절성 검토
+2. 각 시간대 분석의 일관성 확인
+3. 기술적 지표(RSI, MACD, BB)의 시간대별 흐름 분석
+4. 거래량 변화와 추세 강도 중점 검토
+5. 월 수익 30% 이상을 목표로 하되, 리스크 관리는 필수
+6. 반드시 리스크 대비 수익률 2:1 이상 설정
+7. 하락 추세나 약세 신호가 보일 때는 매도(Short) 포지션도 적극 검토
+8. 매수/매도 판단 시 각 시간대별 RSI, MACD 다이버전스 중점 확인
+9. 과매수/과매도 구간에서는 반대 포지션 진입 고려
 
-        return "".join(prompt_parts)
+현재가: ${current_price:,.2f}
+
+15분봉 분석:
+{json.dumps(analyses['15m'], indent=2)}
+
+1시간봉 분석:
+{json.dumps(analyses['1h'], indent=2)}
+
+4시간봉 분석:
+{json.dumps(analyses['4h'], indent=2)}
+
+응답 형식:
+{json.dumps(format_guide, indent=2, ensure_ascii=False)}
+
+※ 신뢰도(confidence)는 시간대별 분석의 일관성과 기술적 지표의 정확도를 종합적으로 평가하여 산정하세요."""
+
+        return prompt
 
     def _validate_analysis_data(self, analysis_data: Dict) -> bool:
         """분석 데이터 검증"""
@@ -896,21 +948,35 @@ class GPTAnalyzer:
             
             prompt_parts = [
                 f"현재가: ${current_price:,.2f}\n",
-                "아래 형식의 JSON으로만 응답해주세요. 다른 텍스트는 포함하지 마세요:\n",
+                "당신은 전문 암호화폐 트레이더입니다. 현재 시장 상황을 분석하고 최적의 매매 전략을 제시해주세요.\n",
+                "• 모든 가격은 반드시 숫자로만 입력해주세요.\n",
+                "• 월 수익 30% 이상을 목표로 하되, 리스크 관리는 필수입니다.\n",
+                "• 관망 포지션일 경우에도 진입가는 현재가, 손절가는 현재가의 98%, 목표가는 현재가의 102%, 104%로 설정해주세요.\n\n",
                 "{\n",
-                '  "market_phase": "상승" 또는 "하락" 또는 "횡보",\n',
-                '  "overall_sentiment": "긍정적" 또는 "부정적" 또는 "중립",\n',
-                '  "short_term_sentiment": "긍정적" 또는 "부정적" 또는 "중립",\n',
-                '  "trend": "상승" 또는 "하락" 또는 "횡보",\n',
-                '  "strength": 0-100 사이의 숫자,\n',
-                '  "position": "매수" 또는 "매도" 또는 "관망",\n',
-                f'  "entry_price": {current_price},\n',
-                f'  "stop_loss": {current_price * 0.98},\n',
-                f'  "take_profit": [{current_price * 1.02}, {current_price * 1.04}],\n',
-                '  "leverage": 1-10 사이의 정수,\n',
-                '  "position_size": 1-30 사이의 정수,\n',
-                '  "divergence_type": "상승" 또는 "하락" 또는 "없음",\n',
-                '  "divergence_description": "상세 설명"\n',
+                '  "market_summary": {\n',
+                '    "market_phase": "상승" 또는 "하락" 또는 "횡보",\n',
+                '    "overall_sentiment": "긍정적" 또는 "부정적" 또는 "중립",\n',
+                '    "short_term_sentiment": "긍정적" 또는 "부정적" 또는 "중립",\n',
+                '    "volume_trend": "증가/감소/중립",\n',
+                '    "confidence": 0-100 사이의 숫자 (현재 시장 분석에 대한 신뢰도)\n',
+                '  },\n',
+                '  "technical_analysis": {\n',
+                '    "trend": "상승" 또는 "하락" 또는 "횡보",\n',
+                '    "strength": 0-100 사이의 숫자,\n',
+                '    "indicators": {\n',
+                '      "rsi": 0-100 사이의 숫자,\n',
+                '      "macd": "상승/하락/중립",\n',
+                '      "bollinger": "상단" 또는 "중단" 또는 "하단"\n',
+                '    }\n',
+                '  },\n',
+                '  "trading_strategy": {\n',
+                '    "position_suggestion": "매수/매도/관망",\n',
+                '    "entry_points": [숫자],  # 관망시에도 현재가 입력\n',
+                '    "stopLoss": 숫자,  # 관망시에도 현재가의 98% 입력\n',
+                '    "takeProfit": [숫자, 숫자],  # 관망시에도 현재가의 102%, 104% 입력\n',
+                '    "leverage": 1-10 사이의 정수,\n',
+                '    "position_size": 1-30 사이의 정수\n',
+                '  }\n',
                 "}\n\n",
                 f"시간대: {timeframe}\n",
                 f"기술적 지표:\n",
@@ -1039,51 +1105,28 @@ class GPTAnalyzer:
             return None
 
     def _validate_auto_trading(self, analysis: Dict) -> Dict:
-        """자동매매 활성화 여부 검증"""
+        """자동매매 실행 여부 검증"""
         try:
-            # 신뢰도와 추세 강도 확인
-            confidence = analysis.get("market_summary", {}).get("confidence", 0)
-            strength = analysis.get("technical_analysis", {}).get("strength", 0)
+            trading_strategy = analysis.get('trading_strategy', {})
+            position = trading_strategy.get('position_suggestion', '관망')
             
-            # 기존 하드코딩된 값 대신 trading_config 사용
-            high_confidence = confidence >= trading_config.auto_trading['confidence']['min']
-            strong_trend = strength >= trading_config.auto_trading['trend_strength']['min']
-            enabled = high_confidence and strong_trend
-            
-            # 상세 이유 설정
-            if enabled:
-                reason = f"신뢰도({confidence}%)와 추세 강도({strength}%)가 충분함"
-            else:
-                reasons = []
-                if not high_confidence:
-                    reasons.append(f"신뢰도 부족({confidence}%)")
-                if not strong_trend:
-                    reasons.append(f"추세 강도 부족({strength}%)")
-                reason = " / ".join(reasons)
+            # 관망이 아닐 때만 자동매매 활성화
+            if position not in ['관망', '']:
+                return {
+                    "enabled": True,
+                    "leverage": trading_strategy.get('leverage', 5),
+                    "position_size": trading_strategy.get('position_size', 10),
+                    "reason": f"GPT 매매 신호: {position}"
+                }
             
             return {
-                "enabled": enabled,
-                "confidence": confidence,
-                "strength": strength,
-                "reason": reason,
-                "conditions": {
-                    "high_confidence": high_confidence,
-                    "strong_trend": strong_trend
-                }
+                "enabled": False,
+                "reason": "GPT 신호 없음 (관망)"
             }
             
         except Exception as e:
             logger.error(f"자동매매 검증 중 오류: {str(e)}")
-            return {
-                "enabled": False,
-                "confidence": 0,
-                "strength": 0,
-                "reason": "검증 중 오류 발생",
-                "conditions": {
-                    "high_confidence": False,
-                    "strong_trend": False
-                }
-            }
+            return {"enabled": False, "reason": "검증 중 오류"}
 
     async def get_last_analysis(self, timeframe: str) -> Dict:
         """마지막 분석 결과 조회"""
@@ -1097,20 +1140,14 @@ class GPTAnalyzer:
             return None
 
     async def analyze_market(self, timeframe: str, data: pd.DataFrame) -> Dict:
-        """단일 시간대 시장 분석"""
         try:
-            # 데이터 검증
-            if data is None or len(data) == 0:
-                logger.error(f"{timeframe} 분석을 위한 데이터가 없습니다")
-                return None
-
-            # 기술적 지표 계산 (technical.py 사용)
+            # 1. 기술적 지표 계산 (technical.py 사용)
             df_with_indicators = self.technical_indicators.calculate_indicators(data)
             if df_with_indicators is None:
                 logger.error("기술적 지표 계산 실패")
                 return None
             
-            # 기술적 분석 결과 생성 (다이버전스는 여기서만 체크)
+            # 2. 계산된 지표로 기술적 분석
             technical_analysis = {
                 'trend': self._determine_trend(df_with_indicators),
                 'strength': round(self._calculate_trend_strength(df_with_indicators), 2),
@@ -1125,18 +1162,45 @@ class GPTAnalyzer:
                 }
             }
             
-            # GPT에는 해석만 요청
-            prompt = self._create_analysis_prompt(df_with_indicators, technical_analysis, timeframe)
-            interpretation = await self.gpt_client.call_gpt_api(prompt)
+            # 3. GPT에게는 시장 해석과 전략 제시만 요청
+            prompt = f"""
+            다음 기술적 분석 결과를 바탕으로 시장을 해석하고 매매 전략을 제시해주세요:
             
-            if interpretation:
-                # 최종 분석 결과 조합
-                analysis = {
-                    'market_summary': interpretation['market_summary'],
-                    'technical_analysis': technical_analysis,  # 직접 계산한 기술적 분석 사용
-                    'trading_strategy': interpretation['trading_strategy']
-                }
-                return analysis
+            시간대: {timeframe}
+            기술적 분석: {json.dumps(technical_analysis, indent=2)}
+            
+            응답은 다음 형식으로 해주세요:
+            {{
+                "market_summary": {{
+                    "market_phase": "상승/하락/횡보",
+                    "overall_sentiment": "긍정적/부정적/중립",
+                    "short_term_sentiment": "긍정적/부정적/중립",
+                    "volume_trend": "증가/감소/중립",
+                    "confidence": 0-100
+                }},
+                "trading_strategy": {{
+                    "position_suggestion": "매수/매도/관망",
+                    "entry_points": [진입가격],
+                    "stopLoss": 손절가,
+                    "takeProfit": [목표가1, 목표가2],
+                    "leverage": 1-10,
+                    "position_size": 1-30
+                }}
+            }}
+            """
+            
+            # 4. GPT 응답 받기
+            gpt_response = await self.gpt_client.generate(prompt)
+            if not gpt_response:
+                return None
+            
+            # 5. GPT 응답과 기술적 분석 결과 합치기
+            final_analysis = {
+                **json.loads(gpt_response),
+                'technical_analysis': technical_analysis
+            }
+            
+            return final_analysis
             
         except Exception as e:
             logger.error(f"{timeframe} 분석 중 오류: {str(e)}")
@@ -1146,7 +1210,6 @@ class GPTAnalyzer:
     def _parse_final_analysis(self, response: Dict) -> Dict:
         """최종 분석 응답 파싱"""
         try:
-            # JSON 문자열로 온 경우 처리
             if isinstance(response, str):
                 try:
                     response = json.loads(response)
@@ -1154,60 +1217,22 @@ class GPTAnalyzer:
                     logger.error("JSON 파싱 실패")
                     return None
 
-            # 응답 구조 로깅
-            logger.debug(f"GPT 응답 구조: {response.keys()}")
-            
-            # 이미 구조화된 응답인 경우
+            # GPT가 제공한 응답 그대로 사용
             if all(key in response for key in ['market_summary', 'technical_analysis', 'trading_strategy']):
-                # 4시간봉의 RSI 값만 업데이트
-                h4_analysis = self.storage_formatter.load_analysis('4h')
-                if h4_analysis and 'technical_analysis' in h4_analysis:
-                    response['technical_analysis']['indicators']['rsi'] = h4_analysis['technical_analysis']['indicators'].get('rsi', 50)
+                # indicators가 없는 경우에만 4시간봉 RSI 사용
+                if ('technical_analysis' in response and 
+                    ('indicators' not in response['technical_analysis'] or 
+                     'rsi' not in response['technical_analysis'].get('indicators', {}))):
+                    h4_analysis = self.storage_formatter.load_analysis('4h')
+                    rsi_value = h4_analysis.get('technical_analysis', {}).get('indicators', {}).get('rsi', 50) if h4_analysis else 50
+                    
+                    if 'indicators' not in response['technical_analysis']:
+                        response['technical_analysis']['indicators'] = {}
+                    response['technical_analysis']['indicators']['rsi'] = rsi_value
+
                 return response
 
-            # 여기서부터는 기존 코드 그대로 유지
-            required_fields = [
-                'market_phase', 'overall_sentiment', 'short_term_sentiment',
-                'trend', 'strength', 'position', 'entry_price', 'stop_loss',
-                'take_profit', 'leverage', 'position_size'
-            ]
-
-            missing = [field for field in required_fields if field not in response]
-            if missing:
-                logger.error(f"GPT 응답에서 필수 필드 누락: {missing}")
-                logger.debug(f"전체 응답 내용: {response}")
-                return None
-
-            # 나머지 코드도 그대로 유지...
-            final_analysis = {
-                'market_summary': {
-                    'market_phase': response['market_phase'],
-                    'overall_sentiment': response['overall_sentiment'],
-                    'short_term_sentiment': response['short_term_sentiment'],
-                    'confidence': 85
-                },
-                'technical_analysis': {
-                    'trend': response['trend'],
-                    'strength': round(float(response['strength']), 2),
-                    'indicators': {
-                        'rsi': h4_analysis['technical_analysis']['indicators'].get('rsi', 50),  # 4시간봉 RSI 사용
-                        'macd': response.get('macd', 'neutral'),
-                        'bollinger': response.get('bollinger', '중단')
-                    }
-                },
-                'trading_strategy': {
-                    'position_suggestion': response['position'],
-                    'entry_points': [float(response['entry_price'])],
-                    'stop_loss': float(response['stop_loss']),
-                    'take_profit': ([float(tp) for tp in response['take_profit']] 
-                                    if isinstance(response['take_profit'], list) 
-                                    else [float(response['take_profit'])]),
-                    'leverage': int(response['leverage']),
-                    'position_size': int(response['position_size'])
-                }
-            }
-
-            return final_analysis
+            # ... 나머지 코드는 동일 ...
 
         except Exception as e:
             logger.error(f"최종 분석 응답 파싱 중 오류: {str(e)}")

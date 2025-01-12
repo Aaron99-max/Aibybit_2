@@ -399,14 +399,22 @@ class AnalysisFormatter(BaseFormatter):
             if not market_summary:
                 return ""
             
+            # 시장 상태에 따른 이모지 선택
+            phase = market_summary.get('market_phase', '정보 없음')
+            phase_emoji = self.get_market_emoji(phase)
+            
+            # 신뢰도에 따른 색상 이모지
+            confidence = market_summary.get('confidence', 0)
+            confidence_emoji = "🟢" if confidence >= 80 else "🟡" if confidence >= 60 else "🔴"
+            
             message = [
                 "🌍 시장 요약:",
-                f"• 시장 단계: {market_summary.get('market_phase', '정보 없음')}",
+                f"• 시장 단계: {phase_emoji} {phase}",
                 f"• 전반적 심리: {market_summary.get('overall_sentiment', '정보 없음')}",
                 f"• 단기 심리: {market_summary.get('short_term_sentiment', '정보 없음')}",
                 f"• 거래량: {market_summary.get('volume_trend', '정보 없음')}",
                 f"• 리스크: {market_summary.get('risk_level', '정보 없음')}",
-                f"• 신뢰도: {market_summary.get('confidence', 0)}%"
+                f"• 신뢰도: {confidence_emoji} {confidence}%"
             ]
             
             return "\n".join(message)
@@ -458,17 +466,16 @@ class AnalysisFormatter(BaseFormatter):
                 f"• 포지션: {trading.get('position_suggestion', '관망')}"
             ]
             
-            # 관망이 아닐 때만 진입가/손절가/목표가 표시
-            if trading.get('position_suggestion', '관망').upper() != '관망':
-                entry_points = trading.get('entry_points', [])
-                take_profits = trading.get('take_profit', [])
-                
-                if entry_points:
-                    message.append(f"• 진입가: ${entry_points[0]:,.1f}")
-                if trading.get('stop_loss'):
-                    message.append(f"• 손절가: ${trading.get('stop_loss'):,.1f}")
-                if take_profits:
-                    message.append(f"• 목표가: ${', '.join(f'{tp:,.1f}' for tp in take_profits)}")
+            # 진입가/손절가/목표가는 항상 표시하도록 수정
+            entry_points = trading.get('entry_points', [])
+            take_profits = trading.get('takeProfit', [])
+            
+            if entry_points:
+                message.append(f"• 진입가: ${entry_points[0]:,.1f}")
+            if trading.get('stopLoss'):
+                message.append(f"• 손절가: ${trading.get('stopLoss'):,.1f}")
+            if take_profits:
+                message.append(f"• 목표가: {', '.join([f'${tp:,.1f}' for tp in take_profits])}")
             
             # 레버리지와 포지션 크기는 항상 표시
             message.extend([
@@ -480,7 +487,7 @@ class AnalysisFormatter(BaseFormatter):
             auto_trading = trading.get('auto_trading', {})
             message.extend([
                 "\n🤖 자동매매:",
-                f"• 상태: {'활성화' if auto_trading.get('enabled') else '비활성화'}",
+                f"• 상태: {'활성화' if auto_trading.get('enabled', False) else '비활성화'}",
                 f"• 사유: {auto_trading.get('reason', '정보 없음')}"
             ])
             

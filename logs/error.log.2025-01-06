@@ -1,0 +1,22 @@
+2025-01-06 15:44:01,407 - services.trade_history_service - ERROR - 거래 내역 업데이트 실패: 'BybitClient' object has no attribute 'get_closed_trades'
+2025-01-06 15:44:30,855 - services.balance_service - ERROR - 잔고 조회 실패: name 'time' is not defined
+2025-01-06 15:57:52,324 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 15:59:44,187 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 16:00:56,882 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 16:02:24,337 - exchange.bybit_client - ERROR - API 응답이 None입니다
+2025-01-06 16:02:24,337 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 16:05:28,802 - exchange.bybit_client - ERROR - API 응답 상태 코드: 401
+2025-01-06 16:05:28,803 - exchange.bybit_client - ERROR - 응답 내용: 
+2025-01-06 16:05:28,804 - exchange.bybit_client - ERROR - API 응답이 None입니다
+2025-01-06 16:05:28,804 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 16:07:13,407 - exchange.bybit_client - ERROR - API 응답 상태 코드: 401
+2025-01-06 16:07:13,409 - exchange.bybit_client - ERROR - 응답 내용: 
+2025-01-06 16:07:13,410 - exchange.bybit_client - ERROR - API 응답이 None입니다
+2025-01-06 16:07:13,410 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 16:12:26,266 - exchange.bybit_client - ERROR - API 응답 상태 코드: 404
+2025-01-06 16:12:26,266 - exchange.bybit_client - ERROR - 응답 내용: 
+2025-01-06 16:12:26,267 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 16:16:26,937 - exchange.bybit_client - ERROR - API 응답 상태 코드: 401
+2025-01-06 16:16:26,938 - exchange.bybit_client - ERROR - 응답 내용: 
+2025-01-06 16:16:26,939 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: None
+2025-01-06 16:18:17,198 - exchange.bybit_client - ERROR - 거래 내역 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1736147896951FLbWUu1Gr50KNIllm520000category=linear&symbol=BTCUSDT&limit=50&execType=Trade]', 'result': {}, 'retExtInfo': {}, 'time': 1736147898020}

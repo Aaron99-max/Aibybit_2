@@ -32,6 +32,9 @@ class TradeManager:
         # position_service에 order_service 설정
         self.position_service.set_order_service(order_service)
 
+        # position_service에 balance_service 설정
+        self.position_service.balance_service = balance_service
+
     def _convert_side(self, side: str) -> str:
         """포지션 방향 통일"""
         side = str(side).upper()
@@ -45,34 +48,25 @@ class TradeManager:
     async def execute_trade_signal(self, analysis: Dict) -> bool:
         """거래 신호 실행"""
         try:
-            strategy = analysis.get('trading_strategy', analysis)
+            strategy = analysis.get('trading_strategy', {})
             
-            # 필요한 모든 필드 매핑
             signal = {
                 'side': 'Buy' if strategy['position_suggestion'] == '매수' else 'Sell',
-                'size': float(strategy['position_size']),
-                'leverage': int(strategy['leverage']),
-                'entry_price': float(strategy['entry_points'][0]),
-                'symbol': self.symbol
+                'leverage': strategy['leverage'],
+                'size': strategy['position_size'],
+                'entry_price': strategy['entry_points'][0],
+                'stopLoss': strategy.get('stopLoss'),
+                'takeProfit': strategy.get('takeProfit'),
+                'symbol': 'BTCUSDT'
             }
             
-            # 현재 포지션 확인
-            current_position = await self.position_service.get_current_position()
-            
-            # 포지션 처리 전 로깅
-            logger.info(f"현재 포지션: {current_position}")
             logger.info(f"신규 신호: {signal}")
-
-            # position_service로 전달
             result = await self.position_service.handle_position_for_signal(signal)
-
-            # 결과 로깅
             logger.info(f"포지션 처리 결과: {result}")
-
             return result
-
+            
         except Exception as e:
-            logger.error(f"거래 신호 실행 중 오류: {str(e)}")
+            logger.error(f"매매 실행 중 오류: {str(e)}")
             return False
 
     async def _handle_existing_position(self, position: Dict, analysis: Dict) -> bool:
@@ -152,8 +146,8 @@ class TradeManager:
                 'position_size': float(strategy['position_size']),
                 'leverage': int(strategy['leverage']),
                 'entry_price': float(strategy['entry_points'][0]),
-                'stop_loss': float(strategy['stop_loss']),
-                'take_profit': float(strategy['take_profit'][0]),
+                'stopLoss': float(strategy['stopLoss']),
+                'takeProfit': float(strategy['takeProfit'][0]),
                 'is_btc_unit': False
             }
             
@@ -182,26 +176,17 @@ class TradeManager:
             confidence = auto_trading.get('confidence', 0)
             strength = auto_trading.get('strength', 0)
             
-            # 신뢰도와 추세 강도 체크
-            if strength < self.trading_config.auto_trading['trend_strength']['min']:
-                logger.info(f"추세 강도 부족: {strength}% (필요 강도: {self.trading_config.auto_trading['trend_strength']['min']}%, 신뢰도: {confidence}%)")
+            # trading_config의 설정값 사용
+            if strength < trading_config.auto_trading['trend_strength']['min']:
+                logger.info(f"추세 강도 부족: {strength}% (필요 강도: {trading_config.auto_trading['trend_strength']['min']}%, 신뢰도: {confidence}%)")
+                return False
+            
+            if confidence < trading_config.auto_trading['confidence']['min']:
+                logger.info(f"신뢰도 부족: {confidence}% (필요 신뢰도: {trading_config.auto_trading['confidence']['min']}%)")
                 return False
             
             # 2. /trade 방식과 동일하게 처리
-            if 'trading_strategy' not in analysis_result:
-                analysis_result['trading_strategy'] = {}
-            if 'auto_trading' not in analysis_result['trading_strategy']:
-                analysis_result['trading_strategy']['auto_trading'] = {}
-            
-            analysis_result['trading_strategy']['auto_trading'].update({
-                'enabled': True,
-                'confidence': confidence,
-                'strength': strength,
-                'reason': '자동매매 실행'
-            })
-
-            # 3. 거래 실행 (/trade와 동일한 경로)
-            return await self.execute_trade_signal(analysis_result['trading_strategy'])
+            return await self.execute_trade_signal(analysis_result)
             
         except Exception as e:
             logger.error(f"자동매매 실행 중 오류: {str(e)}")
@@ -213,12 +198,14 @@ class TradeManager:
             logger.info(f"=== 새 포지션 진입 시도 ===")
             logger.info(f"전략: {json.dumps(trading_strategy, indent=2, ensure_ascii=False)}")
             
-            # position_suggestion을 side로 변환
+            # trading_strategy에서 바이비트 API 형식으로 변환
             signal = {
                 'side': 'Buy' if trading_strategy['position_suggestion'] == '매수' else 'Sell',
                 'leverage': trading_strategy['leverage'],
                 'size': trading_strategy['position_size'],
                 'entry_price': trading_strategy['entry_points'][0],
+                'stopLoss': trading_strategy['stopLoss'],    # stopLoss로 수정
+                'takeProfit': trading_strategy['takeProfit'], # takeProfit으로 수정
                 'symbol': self.symbol
             }
             
@@ -230,4 +217,22 @@ class TradeManager:
         except Exception as e:
             logger.error(f"포지션 진입 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
+            return False
+
+    async def execute_trade(self, trading_signal: Dict) -> bool:
+        """매매 신호 실행"""
+        try:
+            logger.info(f"신규 매매 신호: {trading_signal}")
+            
+            # confidence와 timeframe 추가
+            signal = {
+                **trading_signal,
+                'confidence': trading_signal.get('confidence', 0),
+                'timeframe': trading_signal.get('timeframe', '4h')
+            }
+            
+            return await self.position_service.handle_position_for_signal(signal)
+
+        except Exception as e:
+            logger.error(f"매매 실행 중 오류: {str(e)}")
             return False

@@ -1,5 +1,5 @@
 import ccxt.async_support as ccxt
-from typing import Dict
+from typing import Dict, List
 import logging
 import traceback
 import hmac
@@ -8,7 +8,8 @@ import time
 import requests
 import aiohttp
 import json
-import os
+from datetime import datetime
+import asyncio
 
 logger = logging.getLogger(__name__)
 
@@ -37,12 +38,12 @@ class BybitClient:
             }
         })
         
-        # REST API base URL - 테스트넷 여부에 따라 설정
+        # REST API base URL
+        self.base_url = "https://api.bybit.com"
+        
+        # CCXT exchange 설정
         if testnet:
-            self.base_url = "https://api-testnet.bybit.com"
             self.exchange.set_sandbox_mode(True)
-        else:
-            self.base_url = "https://api.bybit.com"
 
     async def initialize(self):
         """초기화 및 연결 테스트"""
@@ -56,82 +57,49 @@ class BybitClient:
             return False
 
     async def _request(self, method: str, path: str, params: Dict = None) -> Dict:
-        """API 요청 실행"""
+        """API 요청 공통 처리"""
         try:
-            if not self.api_key or not self.api_secret:
-                logger.error("API 키가 설정되지 않았습니다")
-                return None
-            
             timestamp = str(int(time.time() * 1000))
-            recv_window = "20000"
-            params = params or {}
+            request_params = params.copy() if params else {}
+            request_params['timestamp'] = timestamp
             
-            # GET 요청의 경우 쿼리 문자열 생성
+            # recv_window 값을 params에서 가져오거나 기본값 사용
+            recv_window = str(request_params.get('recv_window', 5000))
+            
             if method == "GET":
-                # 필수 파라미터 추가
-                params_with_auth = {
-                    **params,
-                    'api_key': self.api_key,
-                    'timestamp': timestamp,
-                    'recv_window': recv_window
-                }
-                # 파라미터를 알파벳 순으로 정렬
-                sorted_params = dict(sorted(params_with_auth.items()))
-                # 쿼리 문자열 생성
-                query_string = '&'.join([f"{k}={v}" for k, v in sorted_params.items()])
-                # 서명 생성
-                signature = hmac.new(
-                    bytes(self.api_secret, 'utf-8'),
-                    bytes(query_string, 'utf-8'),
-                    hashlib.sha256
-                ).hexdigest()
-                # 서명을 쿼리 파라미터에 추가
-                params_with_auth['sign'] = signature
-                params = params_with_auth
+                query_string = '&'.join([f"{k}={v}" for k, v in sorted(request_params.items())])
+                sign_payload = timestamp + self.api_key + recv_window + query_string
             else:
-                # POST 요청의 경우도 동일한 방식으로 처리
-                params_with_auth = {
-                    **params,
-                    'api_key': self.api_key,
-                    'timestamp': timestamp,
-                    'recv_window': recv_window
-                }
-                query_string = '&'.join([f"{k}={v}" for k, v in sorted(params_with_auth.items())])
-                signature = hmac.new(
-                    bytes(self.api_secret, 'utf-8'),
-                    bytes(query_string, 'utf-8'),
-                    hashlib.sha256
-                ).hexdigest()
-                params_with_auth['sign'] = signature
-                params = params_with_auth
+                sign_payload = timestamp + self.api_key + recv_window + json.dumps(request_params)
+            
+            # 서명 생성
+            signature = hmac.new(
+                bytes(self.api_secret, 'utf-8'),
+                bytes(sign_payload, 'utf-8'),
+                hashlib.sha256
+            ).hexdigest()
 
             url = f"{self.base_url}{path}"
-            headers = {'Content-Type': 'application/json'} if method == "POST" else {}
+            headers = {
+                'X-BAPI-API-KEY': self.api_key,
+                'X-BAPI-SIGN': signature,
+                'X-BAPI-TIMESTAMP': str(timestamp),
+                'X-BAPI-RECV-WINDOW': recv_window
+            }
             
-            logger.debug(f"요청 URL: {url}")
-            logger.debug(f"요청 파라미터: {params}")
+            if method == "POST":
+                headers['Content-Type'] = 'application/json'
             
             async with aiohttp.ClientSession() as session:
                 if method == "GET":
-                    async with session.get(url, params=params, headers=headers) as response:
-                        response_text = await response.text()
-                        if response.status != 200:
-                            logger.error(f"API 응답 상태 코드: {response.status}")
-                            logger.error(f"응답 내용: {response_text}")
-                            return None
-                        return json.loads(response_text)
-                else:
-                    async with session.post(url, json=params, headers=headers) as response:
-                        response_text = await response.text()
-                        if response.status != 200:
-                            logger.error(f"API 응답 상태 코드: {response.status}")
-                            logger.error(f"응답 내용: {response_text}")
-                            return None
-                        return json.loads(response_text)
+                    async with session.get(url, params=request_params, headers=headers) as response:
+                        return await response.json()
+                else:  # POST
+                    async with session.post(url, json=request_params, headers=headers) as response:
+                        return await response.json()
 
         except Exception as e:
-            logger.error(f"API 요청 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"API 요청 실패: {str(e)}")
             return None
 
     async def v5_post(self, path: str, data: Dict = None) -> Dict:
@@ -151,17 +119,10 @@ class BybitClient:
 
     async def v5_get(self, path: str, params: Dict = None) -> Dict:
         """V5 API GET 요청"""
-        try:
-            # path가 이미 /v5로 시작하는지 확인
-            if not path.startswith('/v5'):
-                path = f"/v5{path}"
-            
-            logger.debug(f"V5 GET 요청 경로: {path}")
-            return await self._request("GET", path, params)
-        except Exception as e:
-            logger.error(f"V5 GET 요청 실패: {str(e)}")
-            logger.error(traceback.format_exc())
-            return None
+        if params is None:
+            params = {}
+        params['recv_window'] = 10000  # 추가
+        return await self._request("GET", f"/v5{path}", params)
 
     async def close(self):
         """연결 종료"""
@@ -334,50 +295,97 @@ class BybitClient:
             logger.error(f"주문 실행 중 오류: {str(e)}")
             return None
 
-    async def get_closed_trades(self, symbol: str = "BTCUSDT", limit: int = 50):
-        """완료된 거래 내역 조회"""
+    async def get_order(self, order_id: str) -> Dict:
+        """주문 조회"""
         try:
-            logger.debug(f"현재 base_url: {self.base_url}")
-            logger.debug(f"테스트넷 모드: {self.testnet}")
-
             params = {
                 "category": "linear",
-                "symbol": symbol,
-                "limit": str(limit),
-                "execType": "Trade"  # 실제 체결된 거래만
+                "symbol": self.symbol,
+                "orderId": order_id
             }
             
-            logger.debug(f"거래 내역 조회 요청 파라미터: {params}")
+            response = await self.exchange.private_get_v5_order_history(params)
+            return response
             
-            # 개인 거래 내역 조회 엔드포인트로 변경
-            response = await self.v5_get("/execution/list", params)
-            logger.debug(f"거래 내역 조회 응답: {response}")
+        except Exception as e:
+            logger.error(f"주문 조회 실패: {str(e)}")
+            return None
+
+    async def get_closed_trades(self, symbol: str, limit: int = 1000, days: int = 90) -> List[Dict]:
+        """
+        완료된 거래 내역 조회 (7일씩 나눠서 조회)
+        Args:
+            symbol: 거래 심볼
+            limit: 조회할 거래 수 (최대 1000)
+            days: 조회할 기간 (일, 기본 90일)
+        """
+        try:
+            current_time = int(time.time() * 1000)
+            all_trades = []
             
-            if response and response.get("retCode") == 0:
-                trades = response.get("result", {}).get("list", [])
-                logger.info(f"거래 내역 조회 성공: {len(trades)}건")
+            # days일 동안의 데이터를 7일씩 나눠서 조회
+            for i in range(0, days, 7):
+                end_time = current_time - (i * 24 * 60 * 60 * 1000)
+                start_time = end_time - (7 * 24 * 60 * 60 * 1000)
                 
-                formatted_trades = []
-                for trade in trades:
-                    logger.debug(f"거래 데이터: {trade}")
+                params = {
+                    'category': 'linear',
+                    'symbol': symbol,
+                    'limit': limit,
+                    'startTime': start_time,
+                    'endTime': end_time
+                }
+                
+                period_start = datetime.fromtimestamp(start_time/1000)
+                period_end = datetime.fromtimestamp(end_time/1000)
+                logger.info(f"거래 내역 조회 ({i+1}~{min(i+7, days)}일 전)")
+                logger.debug(f"조회 기간: {period_start} ~ {period_end}")
+                logger.debug(f"파라미터: {params}")
+                
+                try:
+                    # 거래 내역 조회
+                    trades = await self.exchange.fetch_my_trades(symbol=symbol, params=params)
+                    if trades:
+                        logger.info(f"조회된 거래 수: {len(trades)}건")
+                        all_trades.extend(trades)
+                    await asyncio.sleep(0.5)  # API 레이트 리밋 방지
                     
+                except Exception as e:
+                    logger.error(f"{period_start} ~ {period_end} 기간 거래 내역 조회 실패: {str(e)}")
+                    continue
+            
+            if not all_trades:
+                logger.info("전체 기간에 대한 거래 내역이 없습니다")
+                return []
+            
+            # 거래 데이터 포맷팅
+            formatted_trades = []
+            for trade in all_trades:
+                try:
                     formatted_trade = {
-                        "symbol": trade.get("symbol"),
-                        "side": trade.get("side"),
-                        "size": float(trade.get("execQty", 0)),
-                        "entry_price": float(trade.get("execPrice", 0)),
-                        "exit_price": float(trade.get("execPrice", 0)),
-                        "realized_pnl": float(trade.get("closedPnl", 0)),
-                        "timestamp": int(trade.get("execTime", time.time() * 1000))
+                        'id': trade['id'],
+                        'timestamp': trade['timestamp'],
+                        'symbol': trade['symbol'],
+                        'side': trade['side'],
+                        'price': float(trade['price']),
+                        'amount': float(trade['amount']),
+                        'cost': float(trade['cost']),
+                        'fee': trade['fee'],
+                        'realized_pnl': float(trade.get('info', {}).get('closed_pnl', 0))
                     }
                     formatted_trades.append(formatted_trade)
-                
-                return formatted_trades
-            else:
-                logger.error(f"거래 내역 조회 실패: {response}")
-                return []
-                
+                except Exception as e:
+                    logger.error(f"거래 데이터 포맷팅 실패: {str(e)}, trade: {trade}")
+                    continue
+            
+            # 시간순 정렬 및 중복 제거
+            formatted_trades.sort(key=lambda x: x['timestamp'], reverse=True)
+            unique_trades = list({trade['id']: trade for trade in formatted_trades}.values())
+            
+            logger.info(f"최종 포맷팅된 거래 내역: {len(unique_trades)}건")
+            return unique_trades
+            
         except Exception as e:
-            logger.error(f"거래 내역 조회 중 오류: {str(e)}")
+            logger.error(f"거래 내역 조회 실패: {str(e)}")
             logger.error(traceback.format_exc())
             return []

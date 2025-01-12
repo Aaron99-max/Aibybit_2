@@ -3,6 +3,7 @@ from typing import Dict, Optional, List, Tuple
 import pandas as pd
 from datetime import datetime, timedelta
 from decimal import Decimal
+from telegram_bot.utils.decorators import error_handler
 import traceback
 import ccxt.async_support as ccxt
 import asyncio
@@ -39,10 +40,10 @@ class MarketDataService:
     
     # 시간대별 필요한 데이터 개수 정의
     TIMEFRAME_LIMITS = {
-        '15m': 64,   # 16시간
-        '1h': 48,    # 2일
-        '4h': 90,    # 15일
-        '1d': 45     # 1.5개월
+        '15m': 192,  # 2일 (8 * 24)
+        '1h': 168,   # 7일 (24 * 7)
+        '4h': 180,   # 30일 (6 * 30)
+        '1d': 90     # 3개월 (30 * 3)
     }
     
     def __init__(self, bybit_client: BybitClient):

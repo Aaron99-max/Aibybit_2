@@ -48,6 +48,9 @@ class AITrader:
         self.trade_cooldown = 300
         self.last_analysis_times = {}
         self.last_analysis_results = {}
+        
+        # order_manager 대신 order_service 사용
+        self.order_manager = order_service
 
     async def initialize(self):
         """초기화 메서드"""
@@ -280,31 +283,44 @@ class AITrader:
             logger.error(f"신뢰도 계산 중 오류: {str(e)}")
             return 50
 
-    async def execute_trade(self, analysis: Dict, skip_validation: bool = False) -> bool:
-        """분석 결과에 따른 거래 실행
-        Args:
-            analysis: 거래 분석 결과
-            skip_validation: True면 자동매매 조건 검증 스킵 (/trade 명령어용)
-        """
+    async def execute_trade(self, analysis: Dict) -> bool:
+        """매매 실행"""
         try:
-            if not skip_validation:
-                # 자동매매 조건 검증
-                auto_trading = analysis.get('trading_strategy', {}).get('auto_trading', {})
-                if not auto_trading.get('enabled'):
-                    logger.info(f"자동매매 비활성화됨: {auto_trading.get('reason', '이유 없음')}")
-                    return False
-            else:
-                # /trade 명령어로 실행 시
-                if 'trading_strategy' not in analysis:
-                    analysis['trading_strategy'] = {}
-                if 'auto_trading' not in analysis['trading_strategy']:
-                    analysis['trading_strategy']['auto_trading'] = {}
-                
-                analysis['trading_strategy']['auto_trading'].update({
-                    'enabled': True,
-                    'confidence': 100,
-                    'reason': '수동 실행'
+            # 자동매매 조건 체크
+            confidence = analysis.get('market_summary', {}).get('confidence', 0)
+            strength = analysis.get('technical_analysis', {}).get('strength', 0)
+            
+            # 자동매매 조건 세분화
+            can_trade = (
+                # 케이스 1: 신뢰도가 매우 높은 경우
+                (confidence >= 85 and strength >= 10) or
+                # 케이스 2: 신뢰도가 높은 경우
+                (confidence >= 75 and strength >= 15) or
+                # 케이스 3: 신뢰도가 보통이지만 추세가 강한 경우
+                (confidence >= 65 and strength >= 25)
+            )
+            
+            if not can_trade:
+                logger.info(f"자동매매 비활성화됨: 신뢰도({confidence}%), 추세강도({strength}%)")
+                await self.order_service.handle_order_result({
+                    'skip_reason': 'confidence',
+                    'confidence': confidence,
+                    'strength': strength
                 })
+                return False
+            
+            # 포지션 체크
+            current_position = await self.position_service.get_position()
+            if current_position:
+                # 포지션이 있을 경우 크기와 레버리지 체크 메시지
+                await self.order_service.handle_order_result({
+                    'skip_reason': 'size_diff',
+                    'current_size': current_position.get('size', 0),
+                    'target_size': analysis['trading_strategy'].get('position_size', 0),
+                    'leverage': current_position.get('leverage', 0),
+                    'target_leverage': analysis['trading_strategy'].get('leverage', 0)
+                })
+                return False
 
             # 실제 거래 실행
             return await self.trade_manager.execute_trade_signal(analysis)
@@ -329,7 +345,7 @@ class AITrader:
                 logger.error("일부 시간대의 분석 데이터가 누락되었습니다")
                 return None
 
-            # 현재가 조회
+            # 현재가 조회 (1분봉에서)
             current_price = await self.market_data_service.get_current_price()
             if not current_price:
                 logger.error("현재가 조회 실패")
@@ -368,4 +384,27 @@ class AITrader:
         except Exception as e:
             logger.error(f"자동매매 실행 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
+            return False
+
+    async def execute_trading_strategy(self, trading_strategy: Dict) -> bool:
+        try:
+            strategy = trading_strategy.get('trading_strategy', {})
+            
+            signal = {
+                'side': 'Buy' if strategy['position_suggestion'] == '매수' else 'Sell',
+                'leverage': strategy['leverage'],
+                'size': strategy['position_size'],
+                'entry_price': strategy['entry_points'][0],
+                'stopLoss': strategy['stopLoss'],
+                'takeProfit': strategy['takeProfit'][0],
+                'symbol': 'BTCUSDT'
+            }
+            
+            logger.info(f"생성된 매매 신호: {signal}")
+            result = await self.trade_manager.execute_trade(signal)
+            return result
+            
+        except Exception as e:
+            logger.error(f"트레이딩 전략 실행 중 오류: {str(e)}")
+            logger.error(f"입력 데이터: {trading_strategy}")
             return False

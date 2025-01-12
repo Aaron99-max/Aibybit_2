@@ -162,15 +162,17 @@ class TradingHandler(BaseHandler):
                 return
             
             chat_id = update.effective_chat.id
+            if chat_id != self.bot.admin_chat_id:
+                logger.info(f"관리자 방이 아닌 곳에서의 /trade 명령 무시 (chat_id: {chat_id})")
+                return
 
-            # 파라미터 파싱 및 분석 형식으로 변환
+            # 파라미터 파싱
             trade_params = self._parse_trade_params(context.args)
             
-            # 거래 실행 (GPT final 분석과 동일한 경로 사용)
-            result = await self.trade_manager.execute_trade_signal(trade_params)
+            # 거래 실행
+            result = await self.trade_manager.execute_trade(trade_params)  # execute_trade_signal -> execute_trade
             
             if result:
-                # 성공 메시지만 전송 (주문 알림은 order_service에서 처리)
                 await self.send_message("✅ 주문이 성공적으로 실행되었습니다", chat_id)
             else:
                 await self.send_message("❌ 거래 신호 실행 실패", chat_id)
@@ -235,55 +237,26 @@ class TradingHandler(BaseHandler):
             
             direction, leverage, size, entry, stop, target = args
             
-            # 방향 변환 (모든 가능한 입력 처리)
             if direction.lower() in ['long', 'buy', '매수', 'l', 'b']:
-                position = '매수'  # trade_manager에서 'Buy'로 변환
+                side = 'Buy'
             elif direction.lower() in ['short', 'sell', '매도', 's']:
-                position = '매도'  # trade_manager에서 'Sell'로 변환
+                side = 'Sell'
             else:
                 raise ValueError("포지션은 'LONG/SHORT/매수/매도'여야 합니다")
 
             return {
-                'trading_strategy': {
-                    'position_suggestion': position,
-                    'entry_points': [float(entry)],
-                    'stop_loss': float(stop),
-                    'take_profit': [float(target)],  # 첫 번째 TP만 사용
-                    'leverage': int(leverage),
-                    'position_size': float(size),
-                    'auto_trading': {
-                        'enabled': True,
-                        'confidence': 85,
-                        'reason': '수동 매매 신호'
-                    }
-                }
+                'side': side,
+                'leverage': int(leverage),
+                'size': float(size),
+                'entry_price': float(entry),
+                'stopLoss': float(stop),
+                'takeProfit': float(target),
+                'symbol': 'BTCUSDT'
             }
             
         except (ValueError, IndexError) as e:
             logger.error(f"거래 파라미터 파싱 오류: {str(e)}")
             raise ValueError(
-                "올바른 형식: /trade <LONG|SHORT|매수|매도> <레버리지> <포지션크기> <진입가> <손절가> <익절가>\n"
+                "올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>\n"
                 "예: /trade LONG 10 5 50000 49000 51000"
             )
-
-    async def handle_trade_command(self, update: Update, context: CallbackContext) -> None:
-        """거래 명령어 처리"""
-        try:
-            # 봇 방(관리자 방)에서만 실행되도록 체크
-            chat_id = update.effective_chat.id
-            if chat_id != self.bot.admin_chat_id:
-                logger.info(f"관리자 방이 아닌 곳에서의 /trade 명령 무시 (chat_id: {chat_id})")
-                return
-            
-            # 기존 코드는 그대로 유지
-            message = update.message.text.strip()
-            timeframe = self._extract_timeframe(message) or '4h'
-            
-            result = await self.bot.analysis_handler.handle_analyze_final(chat_id)
-            
-            # 포지션 크기가 같을 때는 다른 메시지 표시
-            if result and not result.get('order_created', True):  # order_created가 False면 포지션 크기가 같은 경우
-                await self.bot.send_message(chat_id, "📊 포지션 확인 완료: 현재 포지션이 목표 크기와 동일하여 조정이 필요하지 않습니다.")
-        except Exception as e:
-            logger.error(f"거래 명령어 처리 중 오류: {str(e)}")
-            await self.bot.send_message(chat_id, f"❌ 거래 명령어 처리 중 오류가 발생했습니다: {str(e)}")

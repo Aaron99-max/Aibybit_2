@@ -2,7 +2,7 @@ import asyncio
 import logging
 import time
 import traceback
-from typing import Dict
+from typing import Dict, List
 from datetime import datetime, timedelta
 import pandas as pd
 from telegram_bot.utils.time_utils import TimeUtils
@@ -129,82 +129,73 @@ class AutoAnalyzer:
         try:
             logger.info(f"=== {timeframe} 분석 시작 ===")
             
-            # OHLCV 데이터 조회
+            # 1. OHLCV 데이터 조회
             klines = await self.bot.market_data_service.get_ohlcv('BTCUSDT', timeframe)
             if not klines:
                 logger.error(f"{timeframe} 시장 데이터 조회 실패")
                 return
             
-            # 분석 실행
+            # 2. GPT에게 분석 요청
             analysis = await self.bot.ai_trader.analyze_market(timeframe, klines)
             if analysis:
-                # 분석 결과 처리
-                await self.bot.analysis_handler.handle_analysis_result(
-                    analysis=analysis,
-                    timeframe=timeframe,
-                    chat_id=None
-                )
+                # 3. 분석 결과 처리 (저장 + 알림)
+                await self.bot.analysis_handler.handle_analysis_result(analysis, timeframe)
+                logger.info(f"{timeframe} 분석 결과 처리 완료")
                 
-                # 4시간봉 분석이 완료되면 final 분석 실행
+                # 4. 4시간봉 분석이 완료되면 final 분석 실행
                 if timeframe == '4h':
                     logger.info("=== Final 분석 시작 ===")
-                    await self._run_final_analysis(analysis)  # handle_analyze_final 대신 직접 _run_final_analysis 호출
-                
+                    await self._run_final_analysis(analysis)
             else:
                 logger.error(f"{timeframe} 분석 실패")
                 
         except Exception as e:
             logger.error(f"{timeframe} 분석 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
 
     async def _run_final_analysis(self, h4_analysis):
         """Final 분석 실행"""
         try:
-            if hasattr(self, '_final_analysis_running') and self._final_analysis_running:
-                logger.debug("Final 분석이 이미 실행 중입니다")
-                return
-            
-            self._final_analysis_running = True
-            try:
-                # 각 시간대 분석 결과 검증
-                analyses = {}
-                for timeframe in ['15m', '1h', '4h', '1d']:
-                    analysis = self.bot.storage_formatter.load_analysis(timeframe)
-                    if not analysis:
-                        logger.warning(f"{timeframe} 분석 데이터가 없습니다")
-                        continue
-                    analyses[timeframe] = analysis
+            # 각 시간대 분석 결과 검증
+            analyses = {}
+            for timeframe in ['15m', '1h', '4h', '1d']:
+                analysis = self.bot.storage_formatter.load_analysis(timeframe)
+                if not analysis:
+                    logger.warning(f"{timeframe} 분석 데이터가 없습니다")
+                    continue
+                analyses[timeframe] = analysis
 
-                if len(analyses) < 4:
-                    logger.error("일부 시간대의 분석 데이터가 누락되었습니다")
+            # GPT에게 종합 분석 요청 (ai_trader 사용)
+            gpt_response = await self.bot.ai_trader.analyze_final(analyses)
+            if not gpt_response:
+                logger.error("GPT 분석 실패")
+                return
+
+            # JSON 파싱 시도
+            try:
+                gpt_analysis = json.loads(gpt_response)
+            except json.JSONDecodeError:
+                # JSON 형식이 아닌 경우, JSON 부분만 추출 시도
+                import re
+                json_match = re.search(r'{.*}', gpt_response, re.DOTALL)
+                if json_match:
+                    gpt_analysis = json.loads(json_match.group())
+                else:
+                    logger.error("GPT 응답에서 JSON 추출 실패")
                     return
 
-                # Final 분석 결과 생성 (상세 로그 제거)
-                final_analysis = {
-                    'market_summary': {
-                        'market_phase': h4_analysis['market_summary']['market_phase'],
-                        'overall_sentiment': self._get_majority_sentiment([a['market_summary']['overall_sentiment'] for a in analyses.values()]),
-                        'short_term_sentiment': analyses['1h']['market_summary']['short_term_sentiment'],
-                        'risk_level': h4_analysis['market_summary']['risk_level'],
-                        'volume_trend': self._get_majority_volume_trend(analyses),
-                        'confidence': self._calculate_confidence(analyses)
-                    },
-                    'technical_analysis': h4_analysis['technical_analysis'],
-                    'trading_strategy': h4_analysis['trading_strategy']
-                }
-
-                # 분석 결과 저장 및 전송
-                self.bot.storage_formatter.save_analysis(final_analysis, 'final')
-                
-                # 자동매매 실행 조건 확인 (간단한 로그만)
-                if final_analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled', False):
-                    logger.info("=== 자동매매 신호 감지 ===")
-                    await self.bot.trade_manager.execute_trade_signal(final_analysis)
-                
-            finally:
-                self._final_analysis_running = False
+            # GPT 분석 결과 저장 및 알람 전송
+            await self.bot.analysis_handler.handle_analysis_result(gpt_analysis, 'final')
+            logger.info("Final 분석 결과 처리 완료")
             
+            # 자동매매 실행 조건 확인
+            if gpt_analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled', False):
+                logger.info("=== 자동매매 신호 감지 ===")
+                await self.bot.trade_manager.execute_trade_signal(gpt_analysis)
+
         except Exception as e:
             logger.error(f"Final 분석 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
 
     def _should_run_analysis(self, timeframe: str) -> bool:
         """분석 실행 여부 확인"""
@@ -330,3 +321,183 @@ class AutoAnalyzer:
         except Exception as e:
             logger.error(f"Final 분석 처리 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
+
+    def _get_majority_sentiment(self, sentiments: List[str]) -> str:
+        """시장 심리 분석 결과 중 다수결 판단"""
+        try:
+            if not sentiments:
+                return '중립'
+
+            sentiment_count = {
+                '긍정적': sentiments.count('긍정적'),
+                '부정적': sentiments.count('부정적'),
+                '중립': sentiments.count('중립')
+            }
+
+            return max(sentiment_count.items(), key=lambda x: x[1])[0]
+
+        except Exception as e:
+            logger.error(f"시장 심리 분석 중 오류: {str(e)}")
+            return '중립'
+
+    async def process_trading_signal(self, analysis_data: Dict):
+        try:
+            signal = {
+                'side': 'Buy' if analysis_data['position_suggestion'] == '매수' else 'Sell',
+                'leverage': analysis_data['leverage'],
+                'size': analysis_data['position_size'],
+                'entry_price': analysis_data['entry_points'][0],
+                'stopLoss': analysis_data['stopLoss'],
+                'takeProfit': analysis_data['takeProfit'],
+                'symbol': 'BTCUSDT'
+            }
+            
+            result = await self.trade_manager.execute_trade(signal)
+            return result
+            
+        except Exception as e:
+            logger.error(f"트레이딩 신호 처리 중 오류: {str(e)}")
+            return False
+
+    def _get_majority_volume_trend(self, analyses: Dict) -> str:
+        """거래량 트렌드의 다수결 판단"""
+        try:
+            volume_trends = [
+                analysis.get('market_summary', {}).get('volume_trend', '보통')
+                for analysis in analyses.values()
+            ]
+            
+            trend_count = {
+                '증가': volume_trends.count('증가'),
+                '감소': volume_trends.count('감소'),
+                '보통': volume_trends.count('보통')
+            }
+            
+            return max(trend_count.items(), key=lambda x: x[1])[0]
+        except Exception as e:
+            logger.error(f"거래량 트렌드 분석 중 오류: {str(e)}")
+            return '보통'
+
+    async def _create_trading_signal(self, analysis_result: Dict) -> Dict:
+        """매매 신호 생성"""
+        try:
+            primary_signal = analysis_result.get('trading_signals', {}).get('primary_signal', {})
+            
+            return {
+                'symbol': 'BTCUSDT',
+                'side': primary_signal.get('action'),  # 'Buy' or 'Sell'
+                'leverage': int(primary_signal.get('recommended_leverage', 5)),
+                'size': float(primary_signal.get('position_size', 0)),
+                'entry_price': float(primary_signal.get('entry_price', 0)),
+                'stopLoss': float(primary_signal.get('stopLoss', 0)),
+                'takeProfit': float(primary_signal.get('takeProfit')[0]) if isinstance(primary_signal.get('takeProfit'), list) else float(primary_signal.get('takeProfit', 0)),
+                'confidence': float(analysis_result.get('신도', 0)),
+                'timeframe': analysis_result.get('timeframe', '4h')
+            }
+        except Exception as e:
+            logger.error(f"매매 신호 생성 중 오류: {str(e)}")
+            return None
+
+    def _get_analysis_prompt(self, timeframe: str) -> str:
+        """시간대별 분석 프롬프트 생성"""
+        return f"""
+비트코인 {timeframe} 차트를 분석하여 다음 형식으로 응답해주세요:
+
+{{
+  "market_summary": {{
+    "market_phase": "상승" 또는 "하락",
+    "overall_sentiment": "긍정적" 또는"부정적",
+    "short_term_sentiment": "긍정적" 또는 "부정적",
+    "risk_level": "높음" 또는 "중간" 또는 "낮음",
+    "volume_trend": "증가" 또는 "감소" 또는 "중립",
+    "confidence": 0-100 사이의 숫자
+  }},
+  "technical_analysis": {{
+    "trend": "상승" 또는 "하락",
+    "strength": 0-100 사이의 숫자,
+    "indicators": {{
+      "rsi": 0-100 사이의 숫자,
+      "macd": "상승" 또는 "하락",
+      "bollinger": "상단" 또는 "중단" 또는 "하단"
+    }}
+  }},
+  "trading_strategy": {{
+    "entry_points": [진입가격],
+    "leverage": 1-5 사이의 정수,
+    "position_size": 10-30 사이의 숫자,
+    "position_suggestion": "매수" 또는 "매도" 또는 "관망",
+    "takeProfit": [목표가1, 목표가2],
+    "stopLoss": 손절가
+  }}
+}}
+"""
+
+    async def _analyze_market(self, timeframe: str, data: Dict) -> Dict:
+        """시장 분석 수행"""
+        try:
+            prompt = self._get_analysis_prompt(timeframe)
+            response = await self.gpt_client.generate(prompt)
+            
+            if not response:
+                logger.error("GPT 응답 없음")
+                return None
+                
+            analysis = self.gpt_client._parse_json_response(response)
+            if not analysis:
+                logger.error("분석 결과 파싱 실패")
+                return None
+                
+            return analysis
+            
+        except Exception as e:
+            logger.error(f"시장 분석 중 오류: {str(e)}")
+            return None
+
+    def _calculate_confidence(self, analyses: Dict) -> float:
+        """각 시간대 분석의 신뢰도 계산"""
+        try:
+            total_confidence = 0
+            total_weight = 0
+            
+            for timeframe, weight in self.TIMEFRAME_WEIGHTS.items():
+                if timeframe in analyses:
+                    confidence = analyses[timeframe].get('market_summary', {}).get('confidence', 50)
+                    total_confidence += confidence * weight
+                    total_weight += weight
+            
+            return round(total_confidence / total_weight if total_weight > 0 else 50)
+            
+        except Exception as e:
+            logger.error(f"신뢰도 계산 중 오류: {str(e)}")
+            return 50
+
+    def _combine_market_summaries(self, analyses: Dict) -> Dict:
+        """시장 요약 데이터 통합"""
+        try:
+            bullish_count, total_weight = self._calculate_weighted_bullish_score(analyses)
+            
+            # 4시봉과 15분봉 데이터를 활용
+            four_hour = analyses.get('4h', {}).get('market_summary', {})
+            fifteen_min = analyses.get('15m', {}).get('market_summary', {})
+            
+            # 신뢰도 계산을 별도 메소드로 분리
+            confidence = self._calculate_confidence(analyses)
+            
+            return {
+                "market_phase": "상승" if bullish_count > 0.5 else "하락",
+                "overall_sentiment": four_hour.get('overall_sentiment', "중립"),
+                "short_term_sentiment": fifteen_min.get('overall_sentiment', "중립"),
+                "volume_trend": four_hour.get('volume_trend', "중립"),
+                "risk_level": "높음" if abs(bullish_count - 0.5) < 0.2 else "중간",
+                "confidence": confidence
+            }
+        except Exception as e:
+            logger.error(f"시장 요약 통합 중 오류: {str(e)}")
+            return {
+                "market_phase": "횡보",
+                "overall_sentiment": "중립",
+                "short_term_sentiment": "중립",
+                "volume_trend": "중립",
+                "risk_level": "중간",
+                "confidence": 50.0
+            }

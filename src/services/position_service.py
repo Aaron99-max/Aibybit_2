@@ -5,6 +5,7 @@ from decimal import Decimal
 from functools import wraps
 import time
 from config.trading_config import trading_config
+import asyncio
 
 logger = logging.getLogger('position_service')
 
@@ -21,10 +22,10 @@ def error_handler(func):
     return wrapper
 
 class PositionService:
-    def __init__(self, bybit_client, config=None):
+    def __init__(self, bybit_client, balance_service=None):
         self.bybit_client = bybit_client
-        self.config = config
-        self.order_service = None  # 초기에는 None으로 설정
+        self.balance_service = balance_service
+        self.order_service = None
         self.symbol = 'BTCUSDT'
 
     def set_order_service(self, order_service):
@@ -101,47 +102,101 @@ class PositionService:
 
     @error_handler
     async def handle_position_for_signal(self, signal: Dict) -> bool:
-        """트레이딩 신호에 따른 포지션 관리"""
+        """매매 신호에 따른 포지션 처리"""
         try:
+            logger.info(f"받은 신호 데이터: {signal}")
+            
+            # 신호 데이터 검증
+            is_valid, error_msg = self._validate_signal(signal)
+            if not is_valid:
+                logger.error(f"신호 데이터 검증 실패: {error_msg}")
+                return False
+
             symbol = signal.get('symbol', 'BTCUSDT')
             side = signal.get('side')
-            target_leverage = int(signal.get('leverage'))
-            
-            # 퍼센트를 BTC 단위로 변환 (상세 로그 제거)
-            balance = await self.bybit_client.get_balance()
-            if not balance:
-                logger.error("잔고 조회 실패")
-                return False
-            
-            available_balance = float(balance.get('totalWalletBalance', 0))
-            target_btc = (available_balance * float(signal.get('size', 0)) / 100 * target_leverage) / float(signal.get('entry_price'))
-            target_btc = round(target_btc, trading_config.DECIMAL_PLACES)
-            if target_btc < trading_config.MIN_POSITION_SIZE:
-                logger.warning(f"계산된 수량({target_btc})이 최소 주문 수량({trading_config.MIN_POSITION_SIZE})보다 작아 조정")
-                target_btc = trading_config.MIN_POSITION_SIZE
-            
-            # 현재 포지션 확인 (Raw 데이터 로그 제거)
+            target_leverage = int(signal.get('leverage', 1))
+            target_percent = float(signal.get('size', 0))  # size는 퍼센트 단위
+            entry_price = float(signal.get('entry_price', 0))
+            stopLoss = float(signal.get('stopLoss', 0))
+            takeProfit = float(signal.get('takeProfit', 0)) if not isinstance(signal.get('takeProfit'), list) else float(signal['takeProfit'][0])
+
+            # 현재 포지션 확인
             current_positions = await self.get_positions(symbol)
             
             if not current_positions:
-                logger.info(f"신규 포지션 진입: {side} {target_btc} BTC x{target_leverage}")
-                return await self._open_new_position(symbol, side, target_leverage, target_btc, float(signal.get('entry_price')))
+                # 신규 진입 (퍼센트 -> BTC 변환)
+                balance = await self.balance_service.get_balance()
+                if not balance:
+                    logger.error("잔고 조회 실패")
+                    return False
+                    
+                available_balance = float(balance.get('currencies', {}).get('USDT', {}).get('available_balance', 0))
+                target_value = available_balance * (target_percent / 100) * target_leverage
+                target_btc = target_value / entry_price
+                
+                logger.info(f"신규 진입 - {target_percent}% = {target_btc} BTC")
+                
+                return await self._open_new_position(
+                    symbol=symbol,
+                    side=side,
+                    leverage=target_leverage,
+                    size=target_btc,  # BTC 단위로 변환된 값
+                    price=entry_price,
+                    stopLoss=stopLoss,
+                    takeProfit=takeProfit
+                )
 
             current_pos = current_positions[0]
             current_btc = abs(float(current_pos.get('size', 0)))
             current_side = current_pos.get('side', '').title()
             current_leverage = int(current_pos.get('leverage', 1))
 
-            logger.info(f"포지션 조정 - 현재: {current_side} {current_btc} BTC x{current_leverage} -> 목표: {side} {target_btc} BTC x{target_leverage}")
+            logger.info(f"포지션 조정 - 현재: {current_side} {current_btc} BTC x{current_leverage} -> 목표: {side} {target_percent}% x{target_leverage}")
             
             if current_side == side:
-                if current_leverage == target_leverage:
-                    return await self._adjust_position_size(symbol, side, current_btc, target_btc, float(signal.get('entry_price')), target_leverage)
+                leverage_diff = abs(current_leverage - target_leverage)
+                
+                # 레버리지 차이가 허용 범위 내면
+                if leverage_diff <= trading_config.leverage_settings['max_difference']:
+                    logger.info(f"레버리지 ��이({leverage_diff}) 허용 범위 내, 현재 레버리지({current_leverage}x) 유지")
+                    
+                    # 레버리지 체크 알림
+                    order_data = {
+                        'symbol': symbol,
+                        'side': side,
+                        'leverage': current_leverage,
+                        'target_leverage': target_leverage,
+                        'skip_reason': 'size_diff',
+                        'leverage_check': True  # 레�리지 체크 플래그
+                    }
+                    
+                    if self.order_service.telegram_bot:
+                        message = self.order_service.order_formatter.format_order(order_data)
+                        await self.order_service.telegram_bot.send_message_to_all(message)
+                    
+                    return await self._adjust_position_size(
+                        symbol=symbol,
+                        side=side,
+                        current_btc=current_btc,
+                        target_percent=target_percent,
+                        price=entry_price,
+                        leverage=current_leverage  # 현재 레버리지 유지
+                    )
                 else:
-                    return await self._change_leverage_position(symbol, side, current_btc, target_btc, float(signal.get('entry_price')), 
-                                                             current_leverage, target_leverage)
+                    logger.info(f"TP/SL 설정값 - SL: {stopLoss}, TP: {takeProfit}")
+                    return await self._change_leverage_position(
+                        symbol=symbol,
+                        side=side,
+                        current_size=current_btc,
+                        target_size=target_percent,
+                        entry_price=entry_price,
+                        current_leverage=current_leverage,
+                        target_leverage=target_leverage,
+                        stopLoss=stopLoss,
+                        takeProfit=takeProfit
+                    )
             else:
-                return await self._reverse_position(symbol, side, current_btc, target_btc, float(signal.get('entry_price')), target_leverage)
+                return await self._reverse_position(symbol, side, current_btc, target_percent, entry_price, target_leverage)
 
         except Exception as e:
             logger.error(f"포지션 처리 중 오류: {str(e)}")
@@ -169,70 +224,82 @@ class PositionService:
 
         return True, ""
 
-    def _calculate_sl_tp(self, side: str, price: float) -> Tuple[float, float]:
-        """스탑로/테이크프로핏 계산"""
-        try:
-            price = float(price)
-            
-            if side == 'Buy':
-                stop_loss = price * (1 - trading_config.LONG_SL_PERCENT/100)
-                take_profit = price * (1 + trading_config.LONG_TP_PERCENT/100)
-            else:
-                stop_loss = price * (1 + trading_config.SHORT_SL_PERCENT/100)
-                take_profit = price * (1 - trading_config.SHORT_TP_PERCENT/100)
-                
-            return stop_loss, take_profit
-            
-        except Exception as e:
-            logger.error(f"SL/TP 계산 중 에러: {str(e)}")
-            # 에러 시에도 설정값 사용
-            if side == 'Buy':
-                return (price * (1 - trading_config.LONG_SL_PERCENT/100),
-                       price * (1 + trading_config.LONG_TP_PERCENT/100))
-            else:
-                return (price * (1 + trading_config.SHORT_SL_PERCENT/100),
-                       price * (1 - trading_config.SHORT_TP_PERCENT/100))
-
-    async def _open_new_position(self, symbol: str, side: str, leverage: int, size: float, price: float) -> bool:
+    async def _open_new_position(self, symbol: str, side: str, leverage: int, size: float, 
+                               price: float, stopLoss: float = None, takeProfit: float = None) -> bool:
         """신규 포지션 진입"""
         try:
-            logger.info(f"신규 포지션 진입 (방향: {side}, 레버리지: {leverage}x, 크기: {size})")
+            # takeProfit이 리스트인 경우 첫 번째 값만 사용
+            if isinstance(takeProfit, list) and takeProfit:
+                takeProfit = takeProfit[0]
             
-            # 스탑로스/테이크프로핏 계산
-            stop_loss, take_profit = self._calculate_sl_tp(side, price)
-
-            # OrderService를 통한 주문 실행
-            order = await self.order_service.create_order(
+            return await self.order_service.create_order(
                 symbol=symbol,
                 side=side,
                 position_size=size,
-                leverage=leverage,
                 entry_price=price,
-                stop_loss=stop_loss,
-                take_profit=take_profit,
-                order_type='limit'
+                leverage=leverage,
+                stopLoss=stopLoss,
+                takeProfit=takeProfit,
+                is_btc_unit=True
             )
-            return order is not None
         except Exception as e:
             logger.error(f"신규 포지션 진입 중 오류: {str(e)}")
             return False
 
-    async def _adjust_position_size(self, symbol: str, side: str, current_btc: float, target_btc: float, price: float, leverage: int) -> bool:
-        """포지션 크기 조정 (BTC 단위)"""
+    async def _adjust_position_size(self, symbol: str, side: str, current_btc: float, target_percent: float, price: float, leverage: int) -> bool:
+        """포지션 크기 조정"""
         try:
+            # balance_service를 통한 잔고 조회
+            balance = await self.balance_service.get_balance()
+            if not balance:
+                logger.error("잔고 조회 실패")
+                return False
+            
+            # 로그 추가
+            logger.info(f"잔고 정보: {balance}")
+            
+            # currencies['USDT']에서 available_balance 사용
+            available_balance = float(balance.get('currencies', {}).get('USDT', {}).get('available_balance', 0))
+            logger.info(f"사용 가능 잔고: {available_balance} USDT")
+            
+            # 목표 BTC 수량 계산
+            target_value = available_balance * (target_percent / 100) * leverage
+            target_btc = target_value / price
+            
+            logger.info(f"계산 과정:")
+            logger.info(f"- 목표 가치: {target_value} USDT (잔고의 {target_percent}%)")
+            logger.info(f"- 목표 BTC: {target_btc} BTC (가격: {price})")
+            logger.info(f"- 현재 BTC: {current_btc} BTC")
+            
             btc_diff = target_btc - current_btc
+            logger.info(f"- 차이: {btc_diff} BTC")
             
             if abs(btc_diff) == 0:
-                logger.info("포지션 크기가 정확히 일치하여 조정하지 않음")
-                return {'success': True, 'order_created': False}
+                logger.info("포지션 크기가 정확히 일치")
+                return await self.order_service.cancel_all_tpsl(symbol)
             
             if abs(btc_diff) < trading_config.MIN_POSITION_SIZE:
-                logger.info(f"차이가 최소 주문 단위({trading_config.MIN_POSITION_SIZE})보다 작아 조정하지 않음")
-                return {'success': True, 'order_created': False}
+                # 수량 차이가 무 작을 때 알림
+                order_data = {
+                    'symbol': symbol,
+                    'side': side,
+                    'current_size': current_btc,
+                    'target_size': target_btc,
+                    'size_diff': btc_diff,
+                    'skip_reason': 'size_diff',
+                    'leverage_check': False  # 수량 체크 플래그
+                }
+                
+                if self.order_service.telegram_bot:
+                    message = self.order_service.order_formatter.format_order(order_data)
+                    await self.order_service.telegram_bot.send_message_to_all(message)
+                
+                logger.info(f"수량 차이({abs(btc_diff)} BTC)가 최소 주문 단위보다 작음")
+                return True
 
             if btc_diff > 0:  # 증가
                 # TP/SL 계산 - 원래 방향 그대로
-                stop_loss, take_profit = self._calculate_sl_tp(side, price)
+                stopLoss, takeProfit = self._calculate_sl_tp(side, price)
                 order = await self.order_service.create_order(
                     symbol=symbol,
                     side=side,
@@ -240,8 +307,8 @@ class PositionService:
                     entry_price=price,
                     order_type='limit',
                     leverage=leverage,
-                    stop_loss=stop_loss,
-                    take_profit=take_profit,
+                    stopLoss=stopLoss,
+                    takeProfit=takeProfit,
                     is_btc_unit=True
                 )
             else:  # 감소
@@ -263,24 +330,103 @@ class PositionService:
             logger.error(f"포지션 크기 조정 중 오류: {str(e)}")
             return False
 
-    async def _change_leverage_position(self, symbol: str, side: str, current_btc: float,
-                                      target_btc: float, price: float, current_leverage: int,
-                                      target_leverage: int) -> bool:
-        """레버리지 변경을 위한 포지션 재설정"""
-        logger.info(f"레버리지 변경 (현재: {current_leverage}x -> 목표: {target_leverage}x)")
-        
-        # 1. 현재 포지션 종료
-        close_side = 'buy' if side == 'SHORT' else 'sell'
-        if not await self.order_service.close_position(symbol, close_side, current_btc):
+    async def _wait_for_order_fill(self, order_id: str, timeout: int = 60) -> bool:
+        """주문 체결 대기"""
+        try:
+            start_time = time.time()
+            while time.time() - start_time < timeout:
+                order = await self.order_service.get_order(order_id)
+                if not order:
+                    logger.error("주문 정보 조회 실패")
+                    return False
+                    
+                status = order.get('status')
+                if status == 'filled':
+                    logger.info(f"주문 체결 완료: {order_id}")
+                    return True
+                elif status in ['canceled', 'rejected']:
+                    logger.error(f"주문 실패 (상태: {status})")
+                    return False
+                    
+                await asyncio.sleep(1)
+                
+            logger.error(f"주문 체결 타임아웃: {timeout}초 초과")
+            return False
+            
+        except Exception as e:
+            logger.error(f"주문 체결 대기 중 오류: {str(e)}")
             return False
 
-        # 2. 새로운 레버리지로 재진입
-        return await self._open_new_position(symbol, side, target_leverage, target_btc, price)
+    async def _change_leverage_position(self, symbol: str, side: str, current_size: float, 
+                                    target_size: float, entry_price: float, 
+                                    current_leverage: int, target_leverage: int,
+                                    stopLoss: float = None,
+                                    takeProfit: float = None) -> bool:
+        """레버리지 변경을 위한 포지션 조정"""
+        try:
+            logger.info(f"레버리지 변경 시작 (현재: {current_leverage}x -> 목표: {target_leverage}x)")
+            
+            # 1. 기존 포지션 시장가 청산
+            close_side = 'Sell' if side == 'Buy' else 'Buy'
+            close_order = await self.order_service.create_market_order(
+                symbol=symbol,
+                side=close_side,
+                position_size=current_size,
+                reduce_only=True,
+                is_btc_unit=True
+            )
+            
+            if not close_order:
+                logger.error("포지션 청산 실패")
+                return False
+            
+            # 2. 청산 확인 (포지션 조회로 확인)
+            await asyncio.sleep(1)  # 약간의 지연
+            
+            positions = await self.get_positions(symbol)
+            if positions:  # 아직 포지션이 있다면
+                logger.error("포지션 청산 실패 (포지션이 여전히 존재)")
+                return False
+            
+            logger.info("포지션 청산 확인됨")
+            
+            # 3. 레버리지 변경
+            if not await self.order_service.set_leverage(target_leverage):
+                logger.error("레버리지 변경 실패")
+                return False
+            
+            logger.info(f"레버리지 변경 완료: {target_leverage}x")
+            
+            # 4. 신규 포지션 진입
+            balance = await self.balance_service.get_balance()
+            if not balance:
+                logger.error("잔고 조회 실패")
+                return False
+            
+            available_balance = float(balance.get('currencies', {}).get('USDT', {}).get('available_balance', 0))
+            target_value = available_balance * (target_size / 100) * target_leverage
+            target_btc = target_value / entry_price
+            
+            logger.info(f"신규 진입 시도: {target_btc} BTC")
+            
+            return await self._open_new_position(
+                symbol=symbol,
+                side=side,
+                leverage=target_leverage,
+                size=target_btc,
+                price=entry_price,
+                stopLoss=stopLoss,
+                takeProfit=takeProfit
+            )
+            
+        except Exception as e:
+            logger.error(f"레버리지 변경 중 오류: {str(e)}")
+            return False
 
     async def _reverse_position(self, symbol: str, new_side: str, current_btc: float,
                               target_btc: float, price: float, target_leverage: int) -> bool:
         """반대 방향 포지션으로 전환"""
-        logger.info(f"반대 방향 포지션 전환 (현재: {current_btc} -> 방향: {new_side}, 크기: {target_btc})")
+        logger.info(f"반대대 방향 포지션 전환 (현재: {current_btc} -> 방향: {new_side}, 크기: {target_btc})")
         
         # 1. 현재 포지션 전체 청산
         close_side = 'Buy' if new_side == 'Sell' else 'Sell'
@@ -321,7 +467,7 @@ class PositionService:
                 
             return result
             
-        logger.error("잔고 정보를 찾을 수 없습니다")
+        logger.error("잔고고 정보를 찾을 수 없없습니다")
         return None
 
     async def _close_position(self, symbol: str, side: str, size: float, price: float) -> bool:
@@ -391,3 +537,13 @@ class PositionService:
         except Exception as e:
             logger.error(f"SL/TP 설정 중 오류: {str(e)}")
             return False
+
+    def _calculate_sl_tp(self, side: str, entry_price: float) -> Tuple[float, float]:
+        """손손절가/익절가 계산"""
+        if side == 'Buy':
+            stop_loss = entry_price * 0.98  # 2% 손절
+            take_profit = entry_price * 1.02  # 2% 익절
+        else:
+            stop_loss = entry_price * 1.02
+            take_profit = entry_price * 0.98
+        return stop_loss, take_profit

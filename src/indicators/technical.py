@@ -6,76 +6,59 @@ from ta.trend import MACD, ADXIndicator, IchimokuIndicator
 from ta.volatility import BollingerBands
 import logging
 from typing import Optional, Dict
+import traceback
 
 logger = logging.getLogger(__name__)
 
 class TechnicalIndicators:
-    def calculate_indicators(self, df: pd.DataFrame) -> Optional[pd.DataFrame]:
+    def calculate_indicators(self, data: pd.DataFrame) -> pd.DataFrame:
         """기술적 지표 계산"""
         try:
-            if df is None or df.empty:
-                logger.error("입력 데이터가 비어있습니다")
+            # data가 list인 경우 DataFrame으로 변환
+            if isinstance(data, list):
+                data = pd.DataFrame(data, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+                
+            if data.empty:
+                logger.error("데이터가 비어있습니다")
                 return None
                 
-            # 볼린저 밴드 추가
-            bb = BollingerBands(df['close'])
-            df['bb_upper'] = bb.bollinger_hband()
-            df['bb_middle'] = bb.bollinger_mavg()
-            df['bb_lower'] = bb.bollinger_lband()
+            # 지표 계산
+            df = data.copy()
             
-            # ADX 추가 (추세 강도)
-            adx = ADXIndicator(df['high'], df['low'], df['close'], window=10)
-            df['adx'] = adx.adx()
-            df['di_plus'] = adx.adx_pos()
-            df['di_minus'] = adx.adx_neg()
-            
-            # 이동평균선 추가
-            df['sma_10'] = df['close'].rolling(window=10).mean()
-            df['sma_30'] = df['close'].rolling(window=30).mean()
-            df['ema_9'] = df['close'].ewm(span=9).mean()
-            
-            # RSI 계산 - calculate_rsi 메서드 사용
-            try:
-                df['rsi'] = self.calculate_rsi(df['close'])  # 이제 self 사용 가능
-                
-                # RSI 값 검증
-                df['rsi'] = df['rsi'].fillna(50)
-                df.loc[df['rsi'] == 0, 'rsi'] = 50
-                df.loc[df['rsi'] > 100, 'rsi'] = 100
-                df.loc[df['rsi'] < 0, 'rsi'] = 0
-                
-            except Exception as e:
-                logger.error(f"RSI 계산 실패: {str(e)}")
-                df['rsi'] = 50  # 기본값 설정
+            # RSI 계산
+            df['rsi'] = self.calculate_rsi(df['close'])
             
             # MACD 계산
-            exp1 = df['close'].ewm(span=8, adjust=False).mean()
-            exp2 = df['close'].ewm(span=17, adjust=False).mean()
-            df['macd'] = exp1 - exp2
-            df['macd_signal'] = df['macd'].ewm(span=9, adjust=False).mean()
-            df['macd_diff'] = df['macd'] - df['macd_signal']  # MACD 히스토แกรม
+            macd_data = self.calculate_macd(df['close'])
+            df['macd'] = macd_data['macd']
+            df['macd_signal'] = macd_data['signal']
+            df['macd_hist'] = macd_data['histogram']
             
-            # VWAP 계산
-            df['vwap'] = (df['volume'] * (df['high'] + df['low'] + df['close']) / 3).cumsum() / df['volume'].cumsum()
+            # 볼린저 밴드 계산
+            bb_data = self.calculate_bollinger_bands(df['close'])
+            df['bb_upper'] = bb_data['upper']
+            df['bb_middle'] = bb_data['middle'] 
+            df['bb_lower'] = bb_data['lower']
+            
+            # 이동평균선
+            df['sma_10'] = df['close'].rolling(window=10).mean()
+            df['sma_30'] = df['close'].rolling(window=30).mean()
+            
+            # 추세 강도 계산 추가
+            df['trend_strength'] = df.apply(lambda x: min(100, (
+                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 2000 * 0.4) +  # 이평선 차이
+                (abs(x['macd']) / x['close'] * 5000 * 0.3) +                   # MACD 강도
+                (abs(50 - x['rsi']) * 2 * 0.3)                                 # RSI 편차
+            )), axis=1)
             
             # 결측값 처리
-            df = df.fillna(0)
-            
-            # 거래량 지표 추가
-            df['volume_sma'] = df['volume'].rolling(window=20).mean()
-            df['volume_ratio'] = df['volume'] / df['volume_sma']
-            
-            # 추세 강도 직접 계산 추가
-            df['trend_strength'] = df.apply(lambda x: (
-                (x['adx'] * 0.4) +  # ADX는 그대로 (이미 0-100 사이 값)
-                (abs(x['macd_diff'] / x['close']) * 1000 * 0.35) +  # 1000배로 증가
-                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 500 * 0.25)  # 500배로 증가
-            ), axis=1)
+            df = df.fillna(method='ffill').fillna(method='bfill')
             
             return df
             
         except Exception as e:
             logger.error(f"지표 계산 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
             return None
 
     @staticmethod

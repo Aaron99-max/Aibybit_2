@@ -1,0 +1,219 @@
+[
+  {
+    "id": "471f2d1a-41d9-5449-8a48-32fad4606219",
+    "info": {
+      "symbol": "BTCUSDT",
+      "orderType": "Limit",
+      "underlyingPrice": "",
+      "orderLinkId": "",
+      "orderId": "229ceb2d-06c9-4797-9135-beea8fddd987",
+      "stopOrderType": "UNKNOWN",
+      "execTime": "1734146835418",
+      "feeCurrency": "",
+      "createType": "CreateByUser",
+      "feeRate": "0.00055",
+      "tradeIv": "",
+      "blockTradeId": "",
+      "markPrice": "67961.7",
+      "execPrice": "68121.3",
+      "markIv": "",
+      "orderQty": "0.001",
+      "orderPrice": "68140.8",
+      "execValue": "68.1213",
+      "closedSize": "0",
+      "execType": "Trade",
+      "seq": "9402106303",
+      "side": "Buy",
+      "indexPrice": "",
+      "leavesQty": "0",
+      "isMaker": false,
+      "execFee": "0.03746672",
+      "execId": "471f2d1a-41d9-5449-8a48-32fad4606219",
+      "marketUnit": "",
+      "execQty": "0.001"
+    },
+    "timestamp": 1734146835418,
+    "datetime": "2024-12-14T03:27:15.418Z",
+    "symbol": "BTC/USDT:USDT",
+    "order": "229ceb2d-06c9-4797-9135-beea8fddd987",
+    "type": "limit",
+    "side": "buy",
+    "takerOrMaker": "taker",
+    "price": 68121.3,
+    "amount": 0.001,
+    "cost": 68.1213,
+    "fee": {
+      "cost": 0.03746672,
+      "currency": "USDT"
+    },
+    "fees": [
+      {
+        "cost": 0.03746672,
+        "currency": "USDT"
+      }
+    ]
+  },
+  {
+    "id": "c14a966b-f932-5a7f-a98c-5fbf4b3d3f14",
+    "info": {
+      "symbol": "BTCUSDT",
+      "orderType": "Market",
+      "underlyingPrice": "",
+      "orderLinkId": "",
+      "orderId": "d233c098-4dfb-4a76-ab6e-05be86407018",
+      "stopOrderType": "UNKNOWN",
+      "execTime": "1734151524616",
+      "feeCurrency": "",
+      "createType": "CreateByClosing",
+      "feeRate": "0.00055",
+      "tradeIv": "",
+      "blockTradeId": "",
+      "markPrice": "100000",
+      "execPrice": "99766.1",
+      "markIv": "",
+      "orderQty": "0.001",
+      "orderPrice": "99000",
+      "execValue": "99.7661",
+      "closedSize": "0.001",
+      "execType": "Trade",
+      "seq": "9402135991",
+      "side": "Sell",
+      "indexPrice": "",
+      "leavesQty": "0",
+      "isMaker": false,
+      "execFee": "0.05487136",
+      "execId": "c14a966b-f932-5a7f-a98c-5fbf4b3d3f14",
+      "marketUnit": "",
+      "execQty": "0.001"
+    },
+    "timestamp": 1734151524616,
+    "datetime": "2024-12-14T04:45:24.616Z",
+    "symbol": "BTC/USDT:USDT",
+    "order": "d233c098-4dfb-4a76-ab6e-05be86407018",
+    "type": "market",
+    "side": "sell",
+    "takerOrMaker": "taker",
+    "price": 99766.1,
+    "amount": 0.001,
+    "cost": 99.7661,
+    "fee": {
+      "cost": 0.05487136,
+      "currency": "USDT"
+    },
+    "fees": [
+      {
+        "cost": 0.05487136,
+        "currency": "USDT"
+      }
+    ]
+  },
+  {
+    "id": "8ef6f769-ceb0-5035-9cce-7c9e9c2d6956",
+    "info": {
+      "symbol": "BTCUSDT",
+      "orderType": "Limit",
+      "underlyingPrice": "",
+      "orderLinkId": "",
+      "orderId": "e2680909-93c2-4b01-af24-21f3a6c40ec4",
+      "stopOrderType": "UNKNOWN",
+      "execTime": "1734155396439",
+      "feeCurrency": "",
+      "createType": "CreateByUser",
+      "feeRate": "0.00055",
+      "tradeIv": "",
+      "blockTradeId": "",
+      "markPrice": "74966.07",
+      "execPrice": "70256.2",
+      "markIv": "",
+      "orderQty": "0.001",
+      "orderPrice": "70500",
+      "execValue": "70.2562",
+      "closedSize": "0",
+      "execType": "Trade",
+      "seq": "9402165641",
+      "side": "Buy",
+      "indexPrice": "",
+      "leavesQty": "0",
+      "isMaker": false,
+      "execFee": "0.03864091",
+      "execId": "8ef6f769-ceb0-5035-9cce-7c9e9c2d6956",
+      "marketUnit": "",
+      "execQty": "0.001"
+    },
+    "timestamp": 1734155396439,
+    "datetime": "2024-12-14T05:49:56.439Z",
+    "symbol": "BTC/USDT:USDT",
+    "order": "e2680909-93c2-4b01-af24-21f3a6c40ec4",
+    "type": "limit",
+    "side": "buy",
+    "takerOrMaker": "taker",
+    "price": 70256.2,
+    "amount": 0.001,
+    "cost": 70.2562,
+    "fee": {
+      "cost": 0.03864091,
+      "currency": "USDT"
+    },
+    "fees": [
+      {
+        "cost": 0.03864091,
+        "currency": "USDT"
+      }
+    ]
+  },
+  {
+    "id": "99bb0bc0-4bd4-5e62-968f-638a436f27d8",
+    "info": {
+      "symbol": "BTCUSDT",
+      "orderType": "Market",
+      "underlyingPrice": "",
+      "orderLinkId": "",
+      "orderId": "1adee822-5d84-44fa-8926-6b34c9421dc2",
+      "stopOrderType": "UNKNOWN",
+      "execTime": "1734157624856",
+      "feeCurrency": "",
+      "createType": "CreateByClosing",
+      "feeRate": "0.00055",
+      "tradeIv": "",
+      "blockTradeId": "",
+      "markPrice": "63252.61",
+      "execPrice": "63173.1",
+      "markIv": "",
+      "orderQty": "0.001",
+      "orderPrice": "62732",
+      "execValue": "63.1731",
+      "closedSize": "0.001",
+      "execType": "Trade",
+      "seq": "9402186332",
+      "side": "Sell",
+      "indexPrice": "",
+      "leavesQty": "0",
+      "isMaker": false,
+      "execFee": "0.03474521",
+      "execId": "99bb0bc0-4bd4-5e62-968f-638a436f27d8",
+      "marketUnit": "",
+      "execQty": "0.001",
+      "nextPageCursor": "1734157624856%3A209416%2C1733727378000%3A208688"
+    },
+    "timestamp": 1734157624856,
+    "datetime": "2024-12-14T06:27:04.856Z",
+    "symbol": "BTC/USDT:USDT",
+    "order": "1adee822-5d84-44fa-8926-6b34c9421dc2",
+    "type": "market",
+    "side": "sell",
+    "takerOrMaker": "taker",
+    "price": 63173.1,
+    "amount": 0.001,
+    "cost": 63.1731,
+    "fee": {
+      "cost": 0.03474521,
+      "currency": "USDT"
+    },
+    "fees": [
+      {
+        "cost": 0.03474521,
+        "currency": "USDT"
+      }
+    ]
+  }
+]

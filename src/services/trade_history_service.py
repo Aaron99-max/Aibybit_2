@@ -3,252 +3,144 @@ import json
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 from pathlib import Path
-import time
 import traceback
+from services.trade_store import TradeStore
+import time
 
 logger = logging.getLogger(__name__)
 
 class TradeHistoryService:
     def __init__(self, bybit_client):
+        """거래 내역 서비스"""
         self.bybit_client = bybit_client
-        self.history_file = Path('src/data/trades/history.json')
-        self.history_file.parent.mkdir(parents=True, exist_ok=True)
+        self.trade_store = TradeStore()
         
-    async def update_trades(self):
-        """거래 내역 업데이트 및 저장"""
+    async def initialize(self):
+        """초기 거래 내역 조회 및 저장"""
         try:
-            # 현재 시간 체크
-            current_hour = datetime.now().hour
-            # 4시간봉 시간이 아니면 업데이트 하지 않음 (1, 5, 9, 13, 17, 21시)
-            if current_hour not in [1, 5, 9, 13, 17, 21]:
-                logger.debug("4시간봉 업데이트 시간이 아닙니다.")
+            # 1. 저장된 거래 기록 확인
+            existing_trades = self.trade_store.get_all_trades()
+            if existing_trades:
+                logger.info(f"저장된 거래 기록: {len(existing_trades)}건")
                 return
+            
+            # 2. API에서 거래 내역 가져오기
+            trades = []
+            # 7일 단위로 나누어 조회
+            for i in range(0, 90, 7):  # 90일치
+                end_time = int(time.time() * 1000) - (i * 24 * 60 * 60 * 1000)
+                start_time = end_time - (7 * 24 * 60 * 60 * 1000)
                 
-            # 완료된 거래 내역 조회
-            new_trades = await self.bybit_client.get_closed_trades(
+                params = {
+                    "category": "linear",
+                    "symbol": "BTCUSDT",
+                    "limit": 1000,
+                    "until": end_time  # 종료 시간 추가
+                }
+                
+                batch = await self.bybit_client.fetch_my_trades(
+                    symbol="BTCUSDT", 
+                    since=start_time,
+                    params=params
+                )
+                if batch:
+                    trades.extend(batch)
+                    logger.info(f"{i}~{i+7}일 전 거래: {len(batch)}건")
+            
+            # 3. 거래 저장
+            saved_count = 0
+            for trade in trades:
+                if self.trade_store.save_trade(trade):
+                    saved_count += 1
+                
+            logger.info(f"거래 내역 초기화 완료: {saved_count}건 저장")
+            
+        except Exception as e:
+            logger.error(f"거래 내역 초기화 실패: {str(e)}")
+
+    async def update_trades(self):
+        """거래 내역 업데이트"""
+        try:
+            last_update = self.trade_store.get_last_update()
+            current_time = int(time.time() * 1000)
+            
+            # 마지막 업데이트 이후의 거래만 조회
+            new_trades = await self.bybit_client.fetch_my_trades(
                 symbol='BTCUSDT',
-                limit=1000,
-                days=90
+                since=last_update
             )
             
             if new_trades:
-                # 기존 거래 내역 로드
-                existing_trades = self.load_trades()
-                
-                # 새로운 거래만 추가
-                updated_trades = existing_trades.copy()
                 for trade in new_trades:
-                    # 이미 존재하는 거래인지 확인 (필드명 수정)
-                    if not any(
-                        existing['id'] == trade['id'] and
-                        existing['timestamp'] == trade['timestamp'] and
-                        existing['side'] == trade['side'] and
-                        existing['amount'] == trade['amount'] and  # size -> amount
-                        existing['price'] == trade['price']        # entry_price -> price
-                        for existing in existing_trades
-                    ):
-                        updated_trades.append(trade)
+                    self.trade_store.save_trade(trade)
                 
-                # 시간순 정렬
-                updated_trades.sort(key=lambda x: x['timestamp'], reverse=True)
-                
-                # 저장
-                with open(self.history_file, 'w', encoding='utf-8') as f:
-                    json.dump(updated_trades, f, indent=2)
-                    
-                logger.info(f"거래 내역 업데이트 완료: 새로운 거래 {len(new_trades)}건")
+                # 마지막 업데이트 시간 저장
+                self.trade_store.save_last_update(current_time)
+                logger.info(f"새로운 거래 {len(new_trades)}건 저장")
                 
         except Exception as e:
             logger.error(f"거래 내역 업데이트 실패: {str(e)}")
-            logger.error(traceback.format_exc())
-            
-    def load_trades(self) -> List[Dict]:
-        """저장된 거래 내역 로드"""
-        try:
-            if self.history_file.exists():
-                with open(self.history_file, 'r') as f:
-                    return json.load(f)
-            return []
-        except Exception as e:
-            logger.error(f"거래 내역 로드 실패: {str(e)}")
-            return []
 
     async def calculate_stats(self, start_time: Optional[datetime] = None, days: Optional[int] = None) -> Dict:
         """거래 통계 계산"""
         try:
-            trades = self.load_trades()
+            # 시작 시간 설정
+            if start_time:
+                start_timestamp = int(start_time.timestamp() * 1000)
+            elif days:
+                start_timestamp = int((datetime.now() - timedelta(days=days)).timestamp() * 1000)
+            else:
+                start_timestamp = int((datetime.now() - timedelta(days=7)).timestamp() * 1000)
+                
+            end_timestamp = int(datetime.now().timestamp() * 1000)
+            
+            # 거래 내역 조회 (GPT 분석 결과 포함)
+            trades = self.trade_store.get_trades_with_analysis(start_timestamp, end_timestamp)
+            
             if not trades:
                 logger.warning("거래 내역이 없습니다.")
                 return self._empty_stats()
 
-            # 디버그 로깅 추가
-            logger.debug(f"전체 거래 수: {len(trades)}")
-            logger.debug(f"첫 번째 거래: {trades[0]}")
-
-            # 기간 필터링
-            if start_time:
-                trades = [t for t in trades if datetime.fromtimestamp(int(t['timestamp'])/1000) >= start_time]
-            elif days:
-                cutoff = datetime.now() - timedelta(days=days)
-                trades = [t for t in trades if int(t['timestamp']) > int(cutoff.timestamp() * 1000)]
-
-            if not trades:
-                logger.warning("필터링 후 거래 내역이 없습니다.")
-                return self._empty_stats()
-
-            # 디버그 로깅 추가
-            logger.debug(f"필터링 후 거래 수: {len(trades)}")
-
             # 통계 계산
             total_trades = len(trades)
-            pnls = []
+            pnls = [float(t.get('realized_pnl', 0)) for t in trades]
+            total_pnl = sum(pnls)
+            win_trades = len([p for p in pnls if p > 0])
             
-            for trade in trades:
-                try:
-                    pnl = float(trade.get('realized_pnl', 0))
-                    if pnl != 0:  # 실현된 손익이 있는 경우만 포함
-                        pnls.append(pnl)
-                except (ValueError, TypeError) as e:
-                    logger.error(f"PNL 변환 오류: {trade.get('realized_pnl')}, {str(e)}")
-                    continue
-
-            if not pnls:
-                logger.warning("유효한 PNL 데이터가 없습니다.")
-                return self._empty_stats()
-
-            # 디버그 로깅 추가
-            logger.debug(f"유효한 PNL 수: {len(pnls)}")
-            logger.debug(f"PNL 합계: {sum(pnls)}")
-            
-            winning_trades = len([pnl for pnl in pnls if pnl > 0])
-            losing_trades = len([pnl for pnl in pnls if pnl < 0])
-            
-            total_profit = sum(pnls)
-            max_profit = max(pnls) if pnls else 0
-            max_loss = min(pnls) if pnls else 0
-            
-            win_rate = (winning_trades / len(pnls) * 100) if pnls else 0
-            avg_profit = total_profit / len(pnls) if pnls else 0
-
-            period_text = "전체"
-            if start_time:
-                if start_time.date() == datetime.now().date():
-                    period_text = "일간"
-                elif start_time.day == 1:
-                    period_text = "월간"
-                else:
-                    period_text = "주간"
-            elif days:
-                period_text = f"{days}일"
-
             stats = {
-                'period': period_text,
-                'total_trades': len(pnls),  # 유효한 거래만 카운트
-                'winning_trades': winning_trades,
-                'losing_trades': losing_trades,
-                'win_rate': round(win_rate, 2),
-                'total_profit': round(total_profit, 2),
-                'average_profit': round(avg_profit, 2),
-                'max_profit': round(max_profit, 2),
-                'max_loss': round(max_loss, 2),
-                'last_updated': datetime.now().isoformat()
+                'total_trades': total_trades,
+                'total_pnl': round(total_pnl, 2),
+                'win_rate': round(win_trades / total_trades * 100, 2) if total_trades > 0 else 0,
+                'avg_pnl': round(total_pnl / total_trades, 2) if total_trades > 0 else 0,
+                'max_profit': round(max(pnls), 2) if pnls else 0,
+                'max_loss': round(min(pnls), 2) if pnls else 0,
+                'period': {
+                    'start': datetime.fromtimestamp(start_timestamp/1000).strftime('%Y-%m-%d %H:%M:%S'),
+                    'end': datetime.fromtimestamp(end_timestamp/1000).strftime('%Y-%m-%d %H:%M:%S')
+                }
             }
-
-            logger.debug(f"계산된 통계: {stats}")
+            
             return stats
-
+            
         except Exception as e:
-            logger.error(f"통계 계산 실패: {str(e)}")
+            logger.error(f"거래 통계 계산 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             return self._empty_stats()
 
     def _empty_stats(self) -> Dict:
+        """빈 통계 객체 반환"""
         return {
-            'period': "N/A",
             'total_trades': 0,
-            'winning_trades': 0,
-            'losing_trades': 0,
+            'total_pnl': 0,
             'win_rate': 0,
-            'total_profit': 0,
-            'average_profit': 0,
+            'avg_pnl': 0,
             'max_profit': 0,
             'max_loss': 0,
-            'last_updated': datetime.now().isoformat()
-        }
-
-    async def get_current_month_stats(self) -> Dict:
-        """이번 달 통계 계산"""
-        try:
-            trades = self.load_trades()
-            logger.debug(f"로드된 전체 거래 수: {len(trades)}")
-            
-            if not trades:
-                logger.warning("거래 내역이 없습니다")
-                return self._empty_stats()
-
-            # 최근 30일 데이터 사용
-            now = datetime.now()
-            start_time = (now - timedelta(days=30)).timestamp() * 1000
-            
-            # 최근 30일 거래만 필터링
-            recent_trades = [trade for trade in trades 
-                            if int(trade.get('timestamp', 0)) >= int(start_time)]
-            
-            logger.debug(f"최근 30일 거래 수: {len(recent_trades)}")
-            if recent_trades:
-                logger.debug(f"첫 번째 거래: {recent_trades[0]}")
-                logger.debug(f"마지막 거래: {recent_trades[-1]}")
-            
-            if not recent_trades:
-                logger.warning("최근 30일 거래 내역이 없습니다")
-                return self._empty_stats()
-            
-            # 수익/손실 계산
-            pnls = []
-            for trade in recent_trades:
-                try:
-                    pnl = float(trade.get('realized_pnl', 0))
-                    if pnl != 0:  # 실현된 손익이 있는 경우만 포함
-                        pnls.append(pnl)
-                        logger.debug(f"거래 PNL: {pnl}")
-                except (ValueError, TypeError) as e:
-                    logger.error(f"PNL 변환 오류: {trade.get('realized_pnl')}, {str(e)}")
-                    continue
-            
-            if not pnls:
-                logger.warning("유효한 PNL 데이터가 없습니다")
-                return self._empty_stats()
-            
-            total_pnl = sum(pnls)
-            max_profit = max(pnls)
-            max_loss = min(pnls)
-            avg_pnl = total_pnl / len(pnls)
-            
-            # 승/패 계산
-            wins = sum(1 for pnl in pnls if pnl > 0)
-            losses = sum(1 for pnl in pnls if pnl < 0)
-            win_rate = (wins / len(pnls)) * 100 if pnls else 0
-            
-            stats = {
-                'period': '최근 30일',
-                'total_trades': len(pnls),
-                'winning_trades': wins,
-                'losing_trades': losses,
-                'win_rate': round(win_rate, 2),
-                'total_profit': round(total_pnl, 2),
-                'average_profit': round(avg_pnl, 2),
-                'max_profit': round(max_profit, 2),
-                'max_loss': round(max_loss, 2),
-                'last_updated': datetime.now().isoformat()
+            'period': {
+                'start': '',
+                'end': ''
             }
-            
-            logger.debug(f"계산된 통계: {stats}")
-            return stats
-            
-        except Exception as e:
-            logger.error(f"통계 계산 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            return self._empty_stats()
+        }
 
     async def get_daily_stats(self) -> Dict:
         """일간 통계"""
@@ -265,60 +157,88 @@ class TradeHistoryService:
         """월간 통계"""
         month_start = datetime.now().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
         return await self.calculate_stats(start_time=month_start)
+
+    async def load_trades(self, start_time: int = None, end_time: int = None) -> List[Dict]:
+        """특정 기간의 거래 내역 조회
         
-    async def initialize(self):
-        """초기 거래 내역 조회 및 저장"""
-        logger.info("거래 내역 초기화 시작...")
+        Args:
+            start_time: 시작 시간 (밀리초)
+            end_time: 종료 시간 (밀리초)
+            
+        Returns:
+            List[Dict]: 거래 내역 리스트
+        """
         try:
-            # 완료된 거래 내역 조회 (최근 90일, 최대 1000개)
-            new_trades = await self.bybit_client.get_closed_trades(
+            # 전체 거래 내역 로드
+            all_trades = self.trade_store.get_all_trades()
+            
+            # 기간 필터링
+            if start_time and end_time:
+                filtered_trades = [
+                    trade for trade in all_trades 
+                    if start_time <= trade['timestamp'] <= end_time
+                ]
+                return filtered_trades
+            
+            return all_trades
+            
+        except Exception as e:
+            logger.error(f"거래 내역 조회 중 오류: {str(e)}")
+            return [] 
+
+    async def init_trade_history(self):
+        """거래 내역 초기화"""
+        try:
+            logger.info("거래 내역 초기화 시작...")
+            await self._load_trade_history()  # 실제 API 호출 및 저장
+            
+        except Exception as e:
+            logger.error(f"거래 내역 초기화 중 오류: {str(e)}")
+
+    async def _load_trade_history(self):
+        """거래 내역 조회 및 저장"""
+        try:
+            trades = await self.bybit_client.get_closed_trades(
                 symbol='BTCUSDT',
-                limit=1000,
-                days=90
+                start_time=None,  # 최근 90일치
+                end_time=None
             )
             
-            if new_trades:
-                # 기존 거래 내역 로드
-                existing_trades = self.load_trades()
+            saved_count = 0
+            for trade in trades:
+                success = self.trade_store.save_trade(trade)
+                if success:
+                    saved_count += 1
+                else:
+                    logger.error(f"거래 저장 실패: {trade.get('id')}")
                 
-                # 새로운 거래만 추가
-                updated_trades = existing_trades.copy()
-                for trade in new_trades:
-                    # 이미 존재하는 거래인지 확인 (timestamp와 side만으로 비교)
-                    if not any(
-                        existing.get('timestamp') == trade['timestamp'] and
-                        existing.get('side') == trade['side'] and
-                        existing.get('amount') == trade['amount'] and
-                        existing.get('price') == trade['price']
-                        for existing in existing_trades
-                    ):
-                        updated_trades.append(trade)
-                
-                # 시간순 정렬
-                updated_trades.sort(key=lambda x: x['timestamp'], reverse=True)
-                
-                # 저장
-                with open(self.history_file, 'w', encoding='utf-8') as f:
-                    json.dump(updated_trades, f, indent=2)
-                    
-                logger.info(f"거래 내역 초기화 완료: {len(new_trades)}건 저장됨")
-            else:
-                logger.info("초기화할 거래 내역이 없습니다.")
-                
+            logger.info(f"거래 내역 초기화 완료: 전체 {len(trades)}건 중 {saved_count}건 저장됨")
+            
         except Exception as e:
-            logger.error(f"거래 내역 초기화 실패: {str(e)}")
-            logger.error(traceback.format_exc())
-            
-        logger.info("거래 내역 초기화 완료")
+            logger.error(f"거래 내역 로드 중 오류: {str(e)}")
+            logger.error(traceback.format_exc()) 
 
-    async def should_update(self) -> bool:
-        """업데이트 필요 여부 확인 (1, 5, 9, 13, 17, 21시)"""
-        current_time = datetime.now()
-        current_hour = current_time.hour
-        
-        # 정해진 시간(1, 5, 9, 13, 17, 21시)에만 실행
-        if current_hour in [1, 5, 9, 13, 17, 21] and current_time.minute == 0:
-            logger.info(f"거래 내역 업데이트 시간: {current_hour:02d}:00")
-            return True
+    async def get_closed_trades(self, symbol: str, limit: int = 1000, days: int = 90) -> List[Dict]:
+        """거래 내역 조회"""
+        try:
+            trades = []
+            # 7일 단위로 나누어 조회
+            for i in range(0, days, 7):
+                end_time = int(time.time() * 1000) - (i * 24 * 60 * 60 * 1000)
+                start_time = end_time - (7 * 24 * 60 * 60 * 1000)
+                
+                params = {
+                    "category": "linear",
+                    "symbol": symbol,
+                    "limit": limit
+                }
+                
+                batch = await self.bybit_client.fetch_my_trades(symbol, since=start_time, params=params)
+                trades.extend(batch)
+                
+            logger.info(f"최종 포맷팅된 거래 내역: {len(trades)}건")
+            return trades
             
-        return False 
+        except Exception as e:
+            logger.error(f"거래 내역 조회 중 오류: {str(e)}")
+            return [] 

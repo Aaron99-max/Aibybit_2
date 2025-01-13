@@ -5,6 +5,7 @@ import logging
 from telegram import Bot
 from telegram_bot.bot import TelegramBot
 from exchange.bybit_client import BybitClient
+from config.bybit_config import BybitConfig
 from indicators.technical import TechnicalIndicators
 from ai.gpt_analyzer import GPTAnalyzer
 import platform
@@ -45,23 +46,14 @@ async def main():
         # 로깅 설정 초기화
         setup_logging()
         
-        # 환경변수 및 설정 초기화
+        # 환경변수 로드
         logger.info("환경변수 및 설정 초기화 중...")
         load_dotenv()
         
-        # API 키 환경변수 변경 (테스트넷)
-        api_key = os.getenv('BYBIT_TESTNET_API_KEY')
-        api_secret = os.getenv('BYBIT_TESTNET_SECRET_KEY')
-        logger.info(f"테스트넷 API 키 로드: {'성공' if api_key else '실패'}")
-        logger.info(f"테스트넷 API Secret 로드: {'성공' if api_secret else '실패'}")
-        
-        # Bybit 클라이언트 초기화 (테스트넷)
+        # Bybit 클라이언트 초기화
         logger.info("Bybit 테스트넷 클라이언트 초기화 중...")
-        bybit_client = BybitClient(
-            api_key=api_key,
-            api_secret=api_secret,
-            testnet=True  # 테스트넷 모드 활성화
-        )
+        bybit_config = BybitConfig()  # 환경변수에서 자동으로 설정 로드
+        bybit_client = BybitClient(config=bybit_config)
         
         # 마켓 데이터 서비스 초기화
         logger.info("마켓 데이터 서비스 중...")

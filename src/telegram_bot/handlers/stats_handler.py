@@ -30,9 +30,9 @@ class StatsHandler(BaseHandler):
 
             # 거래 분석 실행
             analyzer = TradeAnalyzer(self.bot.trade_history_service)
-            patterns = await analyzer.analyze_patterns(days=days)
+            analysis = await analyzer.analyze_trades(days=days)  # analyze_patterns → analyze_trades
             
-            if not patterns:
+            if not analysis:
                 await self.send_message("📊 분석할 거래 데이터가 없습니다.", chat_id)
                 return
 
@@ -42,22 +42,22 @@ class StatsHandler(BaseHandler):
                 f"──────────────\n\n"
                 
                 f"💰 수익성 분석\n"
-                f"• 총 거래: {patterns['profitable_trades']['count']}건\n"
-                f"• 평균 수익: ${patterns['profitable_trades']['avg_profit']:.2f}\n"
-                f"• 최고 수익: ${patterns['profitable_trades']['best_profit']:.2f}\n\n"
+                f"• 총 거래: {analysis['profitable_trades']['count']}건\n"
+                f"• 평균 수익: ${analysis['profitable_trades']['avg_profit']:.2f}\n"
+                f"• 최고 수익: ${analysis['profitable_trades']['best_profit']:.2f}\n\n"
                 
                 f"⏰ 시간대별 패턴\n"
-                f"• 최적 거래 시간: {', '.join(patterns['time_patterns']['summary']['best_hours'])}\n"
-                f"• 해당 시간대 승률: {patterns['time_patterns']['summary']['best_win_rate']:.1f}%\n\n"
+                f"• 최적 거래 시간: {', '.join(analysis['time_patterns']['summary']['best_hours'])}\n"
+                f"• 해당 시간대 승률: {analysis['time_patterns']['summary']['best_win_rate']:.1f}%\n\n"
                 
                 f"📏 포지션 크기 분석\n"
-                f"• 최적 크기: {patterns['size_patterns']['summary']['size_ranges'][patterns['size_patterns']['summary']['best_size']]}\n"
-                f"• ROI: {patterns['size_patterns']['summary']['best_roi']:.2f}%\n\n"
+                f"• 최적 크기: {analysis['size_patterns']['summary']['size_ranges'][analysis['size_patterns']['summary']['best_size']]}\n"
+                f"• ROI: {analysis['size_patterns']['summary']['best_roi']:.2f}%\n\n"
                 
                 f"📈 가격대별 분석\n"
-                f"• 거래 가격대: {patterns['price_patterns']['summary']['price_range']}\n"
-                f"• 최적 구간: {patterns['price_patterns']['summary']['best_range']}\n"
-                f"• 승률: {patterns['price_patterns']['summary']['best_win_rate']:.1f}%\n\n"
+                f"• 거래 가격대: {analysis['price_patterns']['summary']['price_range']}\n"
+                f"• 최적 구간: {analysis['price_patterns']['summary']['best_range']}\n"
+                f"• 승률: {analysis['price_patterns']['summary']['best_win_rate']:.1f}%\n\n"
                 
                 f"⏰ 분석 시간: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
             )
@@ -67,3 +67,32 @@ class StatsHandler(BaseHandler):
         except Exception as e:
             logger.error(f"통계 처리 중 오류: {str(e)}")
             await self.send_message("❌ 통계 조회 중 오류가 발생했습니다", chat_id) 
+
+    async def handle_stats(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """거래 통계 처리"""
+        try:
+            # 기간 파싱
+            days = 30  # 기본값
+            if context.args:
+                try:
+                    days = int(context.args[0])
+                except ValueError:
+                    await update.message.reply_text("올바른 일수를 입력해주세요.")
+                    return
+
+            # 거래 내역 조회
+            end_time = int(datetime.now().timestamp() * 1000)
+            start_time = end_time - (days * 24 * 60 * 60 * 1000)
+            trades = self.trade_store.get_trades_with_analysis(start_time, end_time)
+
+            # 거래 패턴 분석
+            analysis = self.trade_analyzer.analyze_trades(trades)  # analyze_patterns → analyze_trades
+
+            # 분석 결과 포맷팅
+            formatted_stats = self.stats_formatter.format_stats(analysis, days)
+            
+            await update.message.reply_text(formatted_stats)
+            
+        except Exception as e:
+            logger.error(f"통계 처리 중 오류: {str(e)}")
+            await update.message.reply_text("통계 처리 중 오류가 발생했습니다.") 

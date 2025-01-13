@@ -2,6 +2,17 @@ from typing import Dict, List
 from datetime import datetime
 import logging
 from pathlib import Path
+from collections import Counter
+import traceback
+import sys
+from pathlib import Path
+
+# 프로젝트 루트 경로를 sys.path에 추가
+project_root = str(Path(__file__).parent.parent.parent)
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+from src.services.trade_store import TradeStore
 
 logger = logging.getLogger(__name__)
 
@@ -12,17 +23,49 @@ class TradeAnalyzer:
             trade_history_service: 거래 기록 서비스 인스턴스
         """
         self.trade_history_service = trade_history_service
-        self.analysis_dir = Path('src/data/analysis/trade_patterns')
-        self.analysis_dir.mkdir(parents=True, exist_ok=True)
+        self.trade_store = TradeStore()
+        # 패턴 분석 결과는 trades 디렉토리 아래에 저장
+        self.patterns_dir = Path('src/data/trades/patterns')
+        self.patterns_dir.mkdir(parents=True, exist_ok=True)
 
     def _analyze_profitable_trades(self, trades: List[Dict]) -> Dict:
         """수익 거래 분석"""
-        profitable_trades = [t for t in trades if float(t.get('realized_pnl', 0)) > 0]
-        return {
-            'count': len(profitable_trades),
-            'avg_profit': sum(float(t['realized_pnl']) for t in profitable_trades) / len(profitable_trades) if profitable_trades else 0,
-            'best_profit': max((float(t['realized_pnl']) for t in profitable_trades), default=0)
-        }
+        try:
+            # 거래 데이터 구조 로깅
+            if trades and len(trades) > 0:
+                logger.debug(f"첫 번째 거래 데이터 구조: {trades[0]}")
+            
+            # realized_pnl이 있는 거래만 필터링
+            profitable_trades = [
+                t for t in trades 
+                if 'realized_pnl' in t and float(t['realized_pnl']) > 0
+            ]
+            
+            if not profitable_trades:
+                logger.warning("수익이 발생한 거래가 없습니다")
+                return {
+                    'count': 0,
+                    'avg_profit': 0,
+                    'best_profit': 0
+                }
+            
+            total_profit = sum(float(t['realized_pnl']) for t in profitable_trades)
+            best_profit = max(float(t['realized_pnl']) for t in profitable_trades)
+            
+            return {
+                'count': len(profitable_trades),
+                'avg_profit': round(total_profit / len(profitable_trades), 2) if profitable_trades else 0,
+                'best_profit': round(best_profit, 2)
+            }
+            
+        except Exception as e:
+            logger.error(f"수익성 분석 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            return {
+                'count': 0,
+                'avg_profit': 0,
+                'best_profit': 0
+            }
 
     def _analyze_time_patterns(self, trades: List[Dict]) -> Dict:
         """시간대별 패턴 분석"""
@@ -225,54 +268,55 @@ class TradeAnalyzer:
             logger.error("상세 에러: ", exc_info=True)
             return {} 
 
-    async def analyze_patterns(self, days: int = 30) -> Dict:
-        """
-        최근 N일간의 거래 패턴 분석
+    async def analyze_trades(self, trades=None, days=30) -> Dict:
+        """거래 내역 분석
+        
         Args:
+            trades: 분석할 거래 내역 리스트. None인 경우 days 기간만큼 조회
             days: 분석할 기간 (일)
-        Returns:
-            분석 결과 딕셔너리
         """
         try:
-            trades = self.trade_history_service.load_trades()
-            if not trades:
-                logger.warning("분석할 거래 기록이 없습니다.")
-                return {}
+            # trades가 None이면 저장된 거래 내역 사용
+            if trades is None:
+                # 실제 API 호출 코드 (현재는 주석 처리)
+                # end_time = int(datetime.now().timestamp() * 1000)
+                # start_time = end_time - (days * 24 * 60 * 60 * 1000)
+                # trades = await self.trade_history_service.load_trades(start_time, end_time)
+                
+                # 저장된 데이터 사용
+                end_time = int(datetime.now().timestamp() * 1000)
+                start_time = end_time - (days * 24 * 60 * 60 * 1000)
+                trades = self.trade_store.get_trades_with_analysis(start_time, end_time)
+                
+                if not trades:
+                    logger.warning("저장된 거래 기록이 없습니다")
+                    return {
+                        'profitable_trades': {'count': 0, 'avg_profit': 0.0, 'best_profit': 0.0},
+                        'time_patterns': {'summary': {'best_hours': [], 'best_win_rate': 0.0}},
+                        'size_patterns': {'summary': {'size_ranges': {}, 'best_size': '', 'best_roi': 0.0}},
+                        'price_patterns': {'summary': {'price_range': '0 - 0', 'best_range': None, 'best_win_rate': 0.0}}
+                    }
 
-            # 기간 필터링
-            cutoff_time = datetime.now().timestamp() * 1000 - (days * 24 * 60 * 60 * 1000)
-            recent_trades = [t for t in trades if t['timestamp'] > cutoff_time]
-
-            # 각 분석 결과를 개별적으로 처리
-            patterns = {}
+            # 수익성 분석
+            profitable_trades = self._analyze_profitable_trades(trades)
             
-            try:
-                patterns['profitable_trades'] = self._analyze_profitable_trades(recent_trades)
-            except Exception as e:
-                logger.error(f"수익성 분석 중 오류: {str(e)}")
-                patterns['profitable_trades'] = {}
-                
-            try:
-                patterns['time_patterns'] = self._analyze_time_patterns(recent_trades)
-            except Exception as e:
-                logger.error(f"시간대별 분석 중 오류: {str(e)}")
-                patterns['time_patterns'] = {}
-                
-            try:
-                patterns['size_patterns'] = self._analyze_position_sizes(recent_trades)
-            except Exception as e:
-                logger.error(f"포지션 크기 분석 중 오류: {str(e)}")
-                patterns['size_patterns'] = {}
-                
-            try:
-                patterns['price_patterns'] = self._analyze_price_levels(recent_trades)
-            except Exception as e:
-                logger.error(f"가격대별 분석 중 오류: {str(e)}")
-                patterns['price_patterns'] = {}
-
-            return patterns
-
+            # 시간대별 패턴 분석
+            time_patterns = self._analyze_time_patterns(trades)
+            
+            # 포지션 크기별 분석
+            size_patterns = self._analyze_position_sizes(trades)
+            
+            # 가격대별 분석
+            price_patterns = self._analyze_price_levels(trades)
+            
+            return {
+                'profitable_trades': profitable_trades,
+                'time_patterns': time_patterns,
+                'size_patterns': size_patterns,
+                'price_patterns': price_patterns
+            }
+            
         except Exception as e:
             logger.error(f"거래 패턴 분석 중 오류: {str(e)}")
-            logger.error("상세 에러: ", exc_info=True)
-            return {} 
+            logger.error(traceback.format_exc())
+            return None 

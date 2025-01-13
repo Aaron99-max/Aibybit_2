@@ -236,3 +236,26 @@ class GPTClient:
             logger.error(f"JSON 파싱 중 오류: {str(e)}")
             logger.error(f"원본 응답: {response}")
             return None
+
+    async def get_analysis(self, prompt: str) -> Optional[str]:
+        """GPT API를 통해 분석 요청"""
+        try:
+            # API 호출
+            response = await self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": self._create_system_prompt()},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7,
+                max_tokens=2000
+            )
+            
+            # 응답 추출
+            if response and response.choices:
+                return response.choices[0].message.content
+            return None
+            
+        except Exception as e:
+            logger.error(f"GPT 분석 요청 중 오류: {str(e)}")
+            return None

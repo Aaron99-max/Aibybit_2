@@ -23,16 +23,16 @@ class TradingConfig:
         # 자동매매 실행 조건
         self.auto_trading = {
             "confidence": {
-                "min": 70,    # 75 -> 70으로 낮춤
+                "min": 60,    # 75 -> 60으로 낮춤
                 "high": 80    # 85 -> 80으로 낮춤
             },
             "trend_strength": {
                 "min": 10,    # 기본 최소 추세 강도
                 "levels": {
                     "confidence_80": 10,   # 신뢰도 80% 이상
-                    "confidence_75": 15,   # 신뢰도 75%
-                    "confidence_70": 20,   # 신뢰도 70%
-                    "default": 25         # 그외 %
+                    "confidence_70": 15,   # 신뢰도 70~79%
+                    "confidence_60": 20,   # 신뢰도 60~69%
+                    "default": 25         # 그외
                 }
             }
         }

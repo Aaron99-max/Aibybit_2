@@ -7,6 +7,7 @@ import traceback
 import asyncio
 import os
 from datetime import datetime
+import pandas as pd
 
 from exchange.bybit_client import BybitClient
 from services.position_service import PositionService
@@ -111,14 +112,15 @@ class AITrader:
             logger.error(f"최종 분석 결과 검증 중 오류: {str(e)}")
             return False
 
-    async def analyze_market(self, timeframe: str, klines: List) -> Dict:
-        """시장 분석 실행"""
+    async def analyze_market(self, timeframe: str, data: pd.DataFrame = None) -> Dict:
+        """시장 분석"""
         try:
-            # 전달받은 데이터로 분석 실행
-            analysis = await self.gpt_analyzer.analyze(klines, timeframe)
-            if analysis:
-                self.storage_formatter.save_analysis(analysis, timeframe)
-            return analysis
+            if data is None:
+                data = await self.market_data_service.get_ohlcv(timeframe=timeframe)
+                if data is None:
+                    return None
+            
+            return await self.gpt_analyzer.analyze_market(timeframe, data)
             
         except Exception as e:
             logger.error(f"시장 분석 중 오류: {str(e)}")
@@ -408,3 +410,38 @@ class AITrader:
             logger.error(f"트레이딩 전략 실행 중 오류: {str(e)}")
             logger.error(f"입력 데이터: {trading_strategy}")
             return False
+
+    async def analyze_final(self, analyses: Dict) -> Dict:
+        """최종 분석 실행"""
+        try:
+            # GPTAnalyzer의 analyze_final 메서드 사용
+            final_analysis = await self.gpt_analyzer.analyze_final(analyses)
+            
+            if not final_analysis:
+                return None
+            
+            # auto_trading 정보 추가
+            confidence = final_analysis.get('market_summary', {}).get('confidence', 0)
+            strength = final_analysis.get('technical_analysis', {}).get('strength', 0)
+            
+            if 'trading_strategy' not in final_analysis:
+                final_analysis['trading_strategy'] = {}
+            
+            auto_trading = {
+                "enabled": strength >= trading_config.auto_trading['trend_strength']['min'] and 
+                          confidence >= trading_config.auto_trading['confidence']['min'],
+                "confidence": confidence,
+                "strength": strength,
+                "reason": f"추세 강도 {'충분' if strength >= trading_config.auto_trading['trend_strength']['min'] else '부족'}({strength:.2f}%)"
+            }
+            
+            final_analysis['trading_strategy']['auto_trading'] = auto_trading
+            
+            # 저장
+            self.storage_formatter.save_analysis(final_analysis, 'final')
+            
+            return final_analysis
+            
+        except Exception as e:
+            logger.error(f"최종 분석 실행 중 오류: {str(e)}")
+            return None

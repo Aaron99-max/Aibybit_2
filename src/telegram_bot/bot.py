@@ -19,6 +19,7 @@ import time
 # 로거 설정
 logger = logging.getLogger(__name__)
 
+from ai.gpt_analyzer import GPTAnalyzer
 from .handlers.analysis_handler import AnalysisHandler
 from .handlers.trading_handler import TradingHandler
 from .handlers.system_handler import SystemHandler
@@ -43,21 +44,22 @@ from services.trade_history_service import TradeHistoryService
 from .handlers.stats_handler import StatsHandler
 
 class TelegramBot:
-    def __init__(self, config, bybit_client):
+    def __init__(self, config: TelegramConfig, bybit_client: BybitClient, 
+                 trade_manager: TradeManager = None,
+                 market_data_service: MarketDataService = None):
         self.config = config
         self.bybit_client = bybit_client
         
-        # 텔레그램 설정 로드 (한 번만 실행)
-        telegram_config = TelegramConfig()
-        self.admin_chat_id = telegram_config.admin_chat_id
-        self.group_chat_id = telegram_config.group_chat_id
-        self.alert_chat_ids = telegram_config.alert_chat_ids
-        
         # 서비스 초기화 (순서 중요)
         self.position_service = PositionService(bybit_client)
-        self.order_service = OrderService(bybit_client, self)
-        self.market_data_service = MarketDataService(bybit_client)
         self.balance_service = BalanceService(bybit_client)
+        self.order_service = OrderService(
+            bybit_client=bybit_client,
+            position_service=self.position_service,
+            balance_service=self.balance_service,
+            telegram_bot=self
+        )
+        self.market_data_service = market_data_service or MarketDataService(bybit_client)
         self.trade_history_service = TradeHistoryService(bybit_client)
         
         # 포맷터 초기화
@@ -66,23 +68,24 @@ class TelegramBot:
         self.message_formatter = MessageFormatter()
         self.order_formatter = OrderFormatter()
         
-        # 트레이드 매니저 초기화
-        self.trade_manager = TradeManager(
-            bybit_client,
-            self.order_service,
-            self.position_service,
-            self.balance_service,
-            self
+        # 트레이드 매니저 초기화 (수정)
+        self.trade_manager = trade_manager or TradeManager(
+            order_service=self.order_service
         )
         
         # AI Trader 초기화
         self.ai_trader = AITrader(
             bybit_client=bybit_client,
-            telegram_bot=self,
-            order_service=self.order_service,
-            position_service=self.position_service,
+            market_data_service=self.market_data_service,
+            gpt_analyzer=GPTAnalyzer(),
             trade_manager=self.trade_manager
         )
+        
+        # 텔레그램 설정 로드 (한 번만 실행)
+        telegram_config = TelegramConfig()
+        self.admin_chat_id = telegram_config.admin_chat_id
+        self.group_chat_id = telegram_config.group_chat_id
+        self.alert_chat_ids = telegram_config.alert_chat_ids
         
         # Application 초기화
         self.application = Application.builder().token(config.bot_token).build()

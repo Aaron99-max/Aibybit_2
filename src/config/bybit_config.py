@@ -1,12 +1,9 @@
 import os
 import logging
-from typing import Optional
 
 logger = logging.getLogger(__name__)
 
 class BybitConfig:
-    """Bybit API 설정"""
-    
     def __init__(self):
         self.mode: str = os.getenv('BYBIT_MODE', 'testnet')
         
@@ -22,10 +19,8 @@ class BybitConfig:
             self.base_url: str = 'https://api.bybit.com'
             self.testnet = False
             
-        self.symbol: str = os.getenv('BYBIT_SYMBOL', 'BTCUSDT')
-        
         if not self.api_key or not self.api_secret:
-            raise ValueError("Bybit API 키가 설정되지 않았습니다. 환경 변수를 확인하세요.")
+            raise ValueError("Bybit API 키가 설정되지 않았습니다")
 
     @property
     def is_testnet(self) -> bool:

@@ -450,23 +450,29 @@ class AnalysisHandler(BaseHandler):
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
             )
             
-            # 3. 메시지 전송 (자동 분석 결과도 전송되도록)
+            # 3. 메시지 전송
             if chat_id:
                 await self.send_message(message, chat_id)
             else:
-                await self.bot.send_message_to_all(message)  # 모든 채팅방에 전송
+                await self.bot.send_message_to_all(message)
             
             # 4. final 분석인 경우 자동매매 체크
             if timeframe == 'final':
                 auto_trading = analysis.get('trading_strategy', {}).get('auto_trading', {})
                 if auto_trading.get('enabled'):
                     await self.ai_trader.execute_auto_trading(analysis)
+                    logger.info("자동매매 신호 처리 완료")
                 else:
                     confidence_data = {
                         'confidence': auto_trading.get('confidence', 0),
-                        'strength': auto_trading.get('strength', 0)
+                        'strength': auto_trading.get('strength', 0),
+                        'reason': auto_trading.get('reason', '조건 미충족')
                     }
-                    confidence_message = self.bot.order_formatter.format_confidence_message(confidence_data)
+                    confidence_message = "🤖 자동매매 비활성화\n" + \
+                        f"• 신뢰도: {confidence_data['confidence']}%\n" + \
+                        f"• 강도: {confidence_data['strength']}%\n" + \
+                        f"• 사유: {confidence_data['reason']}"
+                    
                     if chat_id:
                         await self.send_message(confidence_message, chat_id)
                     else:

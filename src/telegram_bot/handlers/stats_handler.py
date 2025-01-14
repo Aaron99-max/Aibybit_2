@@ -2,7 +2,7 @@ import logging
 from telegram import Update
 from telegram.ext import ContextTypes
 from .base_handler import BaseHandler
-from datetime import datetime
+from datetime import datetime, timedelta
 from ai.trade_analyzer import TradeAnalyzer
 
 logger = logging.getLogger(__name__)
@@ -28,9 +28,15 @@ class StatsHandler(BaseHandler):
                 await self.send_message("❌ 올바른 숫자를 입력해주세요. (예: /stats 30)", chat_id)
                 return
 
+            # trade_history_service를 통해 거래 내역 조회
+            trades = await self.bot.trade_history_service.load_trades(
+                start_time=int((datetime.now() - timedelta(days=days)).timestamp() * 1000),
+                end_time=int(datetime.now().timestamp() * 1000)
+            )
+            
             # 거래 분석 실행
             analyzer = TradeAnalyzer(self.bot.trade_history_service)
-            analysis = await analyzer.analyze_trades(days=days)  # analyze_patterns → analyze_trades
+            analysis = await analyzer.analyze_trades(trades=trades, days=days)
             
             if not analysis:
                 await self.send_message("📊 분석할 거래 데이터가 없습니다.", chat_id)
@@ -67,32 +73,3 @@ class StatsHandler(BaseHandler):
         except Exception as e:
             logger.error(f"통계 처리 중 오류: {str(e)}")
             await self.send_message("❌ 통계 조회 중 오류가 발생했습니다", chat_id) 
-
-    async def handle_stats(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        """거래 통계 처리"""
-        try:
-            # 기간 파싱
-            days = 30  # 기본값
-            if context.args:
-                try:
-                    days = int(context.args[0])
-                except ValueError:
-                    await update.message.reply_text("올바른 일수를 입력해주세요.")
-                    return
-
-            # 거래 내역 조회
-            end_time = int(datetime.now().timestamp() * 1000)
-            start_time = end_time - (days * 24 * 60 * 60 * 1000)
-            trades = self.trade_store.get_trades_with_analysis(start_time, end_time)
-
-            # 거래 패턴 분석
-            analysis = self.trade_analyzer.analyze_trades(trades)  # analyze_patterns → analyze_trades
-
-            # 분석 결과 포맷팅
-            formatted_stats = self.stats_formatter.format_stats(analysis, days)
-            
-            await update.message.reply_text(formatted_stats)
-            
-        except Exception as e:
-            logger.error(f"통계 처리 중 오류: {str(e)}")
-            await update.message.reply_text("통계 처리 중 오류가 발생했습니다.") 

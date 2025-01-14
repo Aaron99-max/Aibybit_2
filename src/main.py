@@ -14,7 +14,7 @@ from config import config
 from config.telegram_config import TelegramConfig
 from services.market_data_service import MarketDataService
 from trade.trade_manager import TradeManager
-from services import PositionService, OrderService
+from services import PositionService, OrderService, BalanceService
 from ai.ai_trader import AITrader
 import traceback
 from dotenv import load_dotenv
@@ -52,8 +52,19 @@ async def main():
         
         # Bybit 클라이언트 초기화
         logger.info("Bybit 테스트넷 클라이언트 초기화 중...")
-        bybit_config = BybitConfig()  # 환경변수에서 자동으로 설정 로드
+        bybit_config = BybitConfig()
         bybit_client = BybitClient(config=bybit_config)
+        
+        # 서비스 초기화 (순서 중요)
+        logger.info("서비스 초기화 중...")
+        position_service = PositionService(bybit_client)
+        balance_service = BalanceService(bybit_client)
+        order_service = OrderService(
+            bybit_client=bybit_client,
+            position_service=position_service,
+            balance_service=balance_service
+        )
+        trade_manager = TradeManager(order_service)  # position_service 대신 order_service 사용
         
         # 마켓 데이터 서비스 초기화
         logger.info("마켓 데이터 서비스 중...")
@@ -65,8 +76,13 @@ async def main():
         telegram_config = TelegramConfig()
         telegram_bot = TelegramBot(
             config=telegram_config,
-            bybit_client=bybit_client
+            bybit_client=bybit_client,
+            trade_manager=trade_manager,  # trade_manager 추가
+            market_data_service=market_data_service
         )
+        
+        # OrderService에 telegram_bot 설정
+        order_service.telegram_bot = telegram_bot
         
         # 봇 실행
         await telegram_bot.run()

@@ -22,38 +22,33 @@ def error_handler(func):
     return wrapper
 
 class PositionService:
-    def __init__(self, bybit_client, balance_service=None):
+    def __init__(self, bybit_client):
         self.bybit_client = bybit_client
-        self.balance_service = balance_service
-        self.order_service = None
-        self.symbol = 'BTCUSDT'
+        self.symbol = trading_config.symbol
 
-    def set_order_service(self, order_service):
-        """OrderService 설정"""
-        self.order_service = order_service
+    async def get_position(self, symbol: str = None) -> Dict:
+        """포지션 조회"""
+        try:
+            symbol = symbol or self.symbol
+            positions = await self.bybit_client.get_positions(symbol)
+            
+            if not positions:
+                return {}
+                
+            position = positions[0]  # 첫 번째 포지션 사용
+            return position
+            
+        except Exception as e:
+            logger.error(f"포지션 조회 중 오류: {str(e)}")
+            return {}
 
-    @error_handler
     async def get_positions(self, symbol: str) -> List[Dict]:
         """포지션 목록 조회"""
         try:
-            logger.info(f"포지션 목록 조회 시작: {symbol}")
-            
-            # Raw 데이터 조회 및 로깅
             positions = await self.bybit_client.get_positions(symbol)
-            logger.info(f"Raw 포지션 데이터: {positions}")
-            
-            # 포지션 데이터 파싱
-            if positions:
-                parsed = self._parse_positions(positions, symbol)
-                logger.info(f"파싱된 포지션 데이터: {parsed}")
-                return parsed
-            
-            logger.info("활성 포지션 없음")
-            return []
-            
+            return self._parse_positions(positions, symbol)
         except Exception as e:
-            logger.error(f"포지션 목록 조회 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"포지션 조회 중 오류: {str(e)}")
             return []
 
     def _parse_positions(self, positions: List[Dict], symbol: str) -> List[Dict]:
@@ -95,14 +90,8 @@ class PositionService:
             return default
 
     @error_handler
-    async def get_position(self, symbol: str) -> Optional[Dict]:
-        """단일 포지션 조회"""
-        positions = await self.get_positions(symbol)
-        return positions[0] if positions else None
-
-    @error_handler
     async def handle_position_for_signal(self, signal: Dict) -> bool:
-        """매매 신호에 따른 포지션 처리"""
+        """거래 신호에 따른 포지션 처리"""
         try:
             logger.info(f"받은 신호 데이터: {signal}")
             
@@ -158,7 +147,7 @@ class PositionService:
                 
                 # 레버리지 차이가 허용 범위 내면
                 if leverage_diff <= trading_config.leverage_settings['max_difference']:
-                    logger.info(f"레버리지 ��이({leverage_diff}) 허용 범위 내, 현재 레버리지({current_leverage}x) 유지")
+                    logger.info(f"레버리지 차이({leverage_diff}) 허용 범위 내, 현재 레버리지({current_leverage}x) 유지")
                     
                     # 레버리지 체크 알림
                     order_data = {
@@ -167,7 +156,7 @@ class PositionService:
                         'leverage': current_leverage,
                         'target_leverage': target_leverage,
                         'skip_reason': 'size_diff',
-                        'leverage_check': True  # 레�리지 체크 플래그
+                        'leverage_check': True  # 레버리지 체크 플래그
                     }
                     
                     if self.order_service.telegram_bot:

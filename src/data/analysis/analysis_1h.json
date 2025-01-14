@@ -1,18 +1,18 @@
 {
-  "market_condition": "횡보",
-  "trend_analysis": "현재 시장은 횡보 추세를 보이고 있으며, 추세 강도가 중간 수준에 해당합니다.",
+  "market_condition": "중립",
+  "trend_analysis": "현재 시장은 횡보 추세를 보이고 있으며, 추세 강도가 중간 수준인 것으로 나타납니다.",
   "risk_level": "중",
   "trading_suggestion": "관망 제안",
   "technical_analysis": {
     "trend": "횡보",
-    "strength": 55.45,
+    "strength": 28.7,
     "indicators": {
-      "rsi": 39.43,
-      "macd": "상승",
+      "rsi": 49.44,
+      "macd": "하락",
       "bollinger": "중립"
     }
   },
   "timeframe": "1h",
-  "timestamp": 1736748007600,
-  "saved_at": "2025-01-13 15:00:07 KST"
+  "timestamp": 1736838052144,
+  "saved_at": "2025-01-14 16:00:52 KST"
 }

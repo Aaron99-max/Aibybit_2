@@ -129,23 +129,27 @@ class AutoAnalyzer:
         try:
             logger.info(f"=== {timeframe} 분석 시작 ===")
             
-            # 1. OHLCV 데이터 조회
+            # OHLCV 데이터 조회
             klines = await self.bot.market_data_service.get_ohlcv('BTCUSDT', timeframe)
             if not klines:
                 logger.error(f"{timeframe} 시장 데이터 조회 실패")
                 return
             
-            # 2. GPT에게 분석 요청
+            # 분석 실행
             analysis = await self.bot.ai_trader.analyze_market(timeframe, klines)
             if analysis:
-                # 3. 분석 결과 처리 (저장 + 알림)
+                # 분석 결과 처리 (저장 + 알림)
                 await self.bot.analysis_handler.handle_analysis_result(analysis, timeframe)
                 logger.info(f"{timeframe} 분석 결과 처리 완료")
                 
-                # 4. 4시간봉 분석이 완료되면 final 분석 실행
+                # 4시간봉 분석이 완료되면 final 분석 실행
                 if timeframe == '4h':
                     logger.info("=== Final 분석 시작 ===")
-                    await self._run_final_analysis(analysis)
+                    final_analysis = await self._run_final_analysis(analysis)
+                    if final_analysis:
+                        # Final 분석 결과도 처리 (저장 + 알림)
+                        await self.bot.analysis_handler.handle_analysis_result(final_analysis, 'final')
+                        logger.info("Final 분석 결과 처리 완료")
             else:
                 logger.error(f"{timeframe} 분석 실패")
                 
@@ -154,7 +158,6 @@ class AutoAnalyzer:
             logger.error(traceback.format_exc())
 
     async def _run_final_analysis(self, h4_analysis):
-        """Final 분석 실행"""
         try:
             # 각 시간대 분석 결과 검증
             analyses = {}
@@ -165,37 +168,27 @@ class AutoAnalyzer:
                     continue
                 analyses[timeframe] = analysis
 
-            # GPT에게 종합 분석 요청 (ai_trader 사용)
-            gpt_response = await self.bot.ai_trader.analyze_final(analyses)
-            if not gpt_response:
-                logger.error("GPT 분석 실패")
-                return
+            # Final 분석 실행
+            final_analysis = await self.bot.ai_trader.analyze_final(analyses)
+            if not final_analysis:
+                logger.error("Final 분석 생성 실패")
+                return None
 
-            # JSON 파싱 시도
-            try:
-                gpt_analysis = json.loads(gpt_response)
-            except json.JSONDecodeError:
-                # JSON 형식이 아닌 경우, JSON 부분만 추출 시도
-                import re
-                json_match = re.search(r'{.*}', gpt_response, re.DOTALL)
-                if json_match:
-                    gpt_analysis = json.loads(json_match.group())
-                else:
-                    logger.error("GPT 응답에서 JSON 추출 실패")
-                    return
-
-            # GPT 분석 결과 저장 및 알람 전송
-            await self.bot.analysis_handler.handle_analysis_result(gpt_analysis, 'final')
-            logger.info("Final 분석 결과 처리 완료")
+            # 저장
+            self.bot.storage_formatter.save_analysis(final_analysis, 'final')
             
-            # 자동매매 실행 조건 확인
-            if gpt_analysis.get('trading_strategy', {}).get('auto_trading', {}).get('enabled', False):
-                logger.info("=== 자동매매 신호 감지 ===")
-                await self.bot.trade_manager.execute_trade_signal(gpt_analysis)
+            # 자동매매 체크 추가
+            auto_trading = final_analysis.get('trading_strategy', {}).get('auto_trading', {})
+            if auto_trading.get('enabled'):
+                await self.bot.ai_trader.execute_auto_trading(final_analysis)
+                logger.info("자동매매 신호 처리 완료")
+            
+            return final_analysis
 
         except Exception as e:
             logger.error(f"Final 분석 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
+            return None
 
     def _should_run_analysis(self, timeframe: str) -> bool:
         """분석 실행 여부 확인"""
@@ -501,3 +494,20 @@ class AutoAnalyzer:
                 "risk_level": "중간",
                 "confidence": 50.0
             }
+
+    async def analyze_and_trade(self):
+        """4시간 자동 분석 및 거래"""
+        try:
+            # 1. 시장 분석
+            analyses = await self.ai_trader.analyze_market(...)
+            
+            # 2. 최종 분석
+            final_analysis = await self.ai_trader.create_final_analysis(analyses)
+            
+            # 3. 자동매매 조건 검증
+            if self.ai_trader.validate_auto_trading(final_analysis):
+                # 4. 거래 실행
+                await self.trade_manager.execute_auto_trade(final_analysis)
+                
+        except Exception as e:
+            logger.error(f"자동 분석 실행 중 오류: {str(e)}")

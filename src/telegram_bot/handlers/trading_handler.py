@@ -138,12 +138,10 @@ class TradingHandler(BaseHandler):
     async def handle_balance(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """잔고 조회"""
         try:
-            if not update.effective_chat:
-                return
-                
             chat_id = update.effective_chat.id
             logger.info(f"[Balance] 잔고 조회 시작 (chat_id: {chat_id})")
             
+            # BalanceService를 통해 잔고 조회
             balance = await self.balance_service.get_balance()
             if balance:
                 message = self.message_formatter.format_balance(balance)
@@ -156,31 +154,19 @@ class TradingHandler(BaseHandler):
             await self.send_message("❌ 잔고 조회 중 오류가 발했습니다.", chat_id)
 
     @command_handler
-    async def handle_trade(self, update: Update, context: CallbackContext) -> None:
+    async def handle_trade(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """수동 거래 명령 처리"""
         try:
-            if not update.effective_chat:
-                return
-            
-            chat_id = update.effective_chat.id
-            if chat_id != self.bot.admin_chat_id:
-                logger.info(f"관리자 방이 아닌 곳에서의 /trade 명령 무시 (chat_id: {chat_id})")
-                return
-
-            # 파라미터 파싱
             trade_params = self._parse_trade_params(context.args)
-            
-            # 거래 실행
-            result = await self.trade_manager.execute_trade(trade_params)  # execute_trade_signal -> execute_trade
+            result = await self.trade_manager.execute_trade(trade_params)
             
             if result:
                 await self.send_message("✅ 주문이 성공적으로 실행되었습니다", chat_id)
             else:
                 await self.send_message("❌ 거래 신호 실행 실패", chat_id)
-
+                
         except Exception as e:
             logger.error(f"거래 처리 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            await self.send_message("❌ 오류 발생", chat_id)
 
     def set_market_data_service(self, market_data_service):
         """MarketDataService 설정"""

@@ -18,15 +18,33 @@ logger = logging.getLogger(__name__)
 
 class TradeAnalyzer:
     def __init__(self, trade_history_service):
-        """
-        Args:
-            trade_history_service: 거래 기록 서비스 인스턴스
-        """
         self.trade_history_service = trade_history_service
-        self.trade_store = TradeStore()
-        # 패턴 분석 결과는 trades 디렉토리 아래에 저장
-        self.patterns_dir = Path('src/data/trades/patterns')
-        self.patterns_dir.mkdir(parents=True, exist_ok=True)
+
+    async def analyze_trades(self, trades: List[Dict], days: int = 30) -> Dict:
+        """거래 분석 수행"""
+        try:
+            if not trades:
+                return self._empty_analysis()
+
+            return {
+                'profitable_trades': self._analyze_profitable_trades(trades),
+                'time_patterns': self._analyze_time_patterns(trades),
+                'size_patterns': self._analyze_position_sizes(trades),
+                'price_patterns': self._analyze_price_levels(trades)
+            }
+            
+        except Exception as e:
+            logger.error(f"거래 패턴 분석 중 오류: {str(e)}")
+            return self._empty_analysis()
+
+    def _empty_analysis(self) -> Dict:
+        """빈 분석 결과 반환"""
+        return {
+            'profitable_trades': {'count': 0, 'avg_profit': 0.0, 'best_profit': 0.0},
+            'time_patterns': {'summary': {'best_hours': [], 'best_win_rate': 0.0}},
+            'size_patterns': {'summary': {'size_ranges': {}, 'best_size': '', 'best_roi': 0.0}},
+            'price_patterns': {'summary': {'price_range': '0 - 0', 'best_range': None, 'best_win_rate': 0.0}}
+        }
 
     def _analyze_profitable_trades(self, trades: List[Dict]) -> Dict:
         """수익 거래 분석"""
@@ -267,56 +285,3 @@ class TradeAnalyzer:
             logger.error(f"가격대별 분석 중 오류: {str(e)}")
             logger.error("상세 에러: ", exc_info=True)
             return {} 
-
-    async def analyze_trades(self, trades=None, days=30) -> Dict:
-        """거래 내역 분석
-        
-        Args:
-            trades: 분석할 거래 내역 리스트. None인 경우 days 기간만큼 조회
-            days: 분석할 기간 (일)
-        """
-        try:
-            # trades가 None이면 저장된 거래 내역 사용
-            if trades is None:
-                # 실제 API 호출 코드 (현재는 주석 처리)
-                # end_time = int(datetime.now().timestamp() * 1000)
-                # start_time = end_time - (days * 24 * 60 * 60 * 1000)
-                # trades = await self.trade_history_service.load_trades(start_time, end_time)
-                
-                # 저장된 데이터 사용
-                end_time = int(datetime.now().timestamp() * 1000)
-                start_time = end_time - (days * 24 * 60 * 60 * 1000)
-                trades = self.trade_store.get_trades_with_analysis(start_time, end_time)
-                
-                if not trades:
-                    logger.warning("저장된 거래 기록이 없습니다")
-                    return {
-                        'profitable_trades': {'count': 0, 'avg_profit': 0.0, 'best_profit': 0.0},
-                        'time_patterns': {'summary': {'best_hours': [], 'best_win_rate': 0.0}},
-                        'size_patterns': {'summary': {'size_ranges': {}, 'best_size': '', 'best_roi': 0.0}},
-                        'price_patterns': {'summary': {'price_range': '0 - 0', 'best_range': None, 'best_win_rate': 0.0}}
-                    }
-
-            # 수익성 분석
-            profitable_trades = self._analyze_profitable_trades(trades)
-            
-            # 시간대별 패턴 분석
-            time_patterns = self._analyze_time_patterns(trades)
-            
-            # 포지션 크기별 분석
-            size_patterns = self._analyze_position_sizes(trades)
-            
-            # 가격대별 분석
-            price_patterns = self._analyze_price_levels(trades)
-            
-            return {
-                'profitable_trades': profitable_trades,
-                'time_patterns': time_patterns,
-                'size_patterns': size_patterns,
-                'price_patterns': price_patterns
-            }
-            
-        except Exception as e:
-            logger.error(f"거래 패턴 분석 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            return None 

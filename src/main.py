@@ -19,6 +19,7 @@ from ai.ai_trader import AITrader
 import traceback
 from dotenv import load_dotenv
 from config.logging_config import setup_logging
+from config import Config
 
 # 로깅 설정
 logging.basicConfig(
@@ -42,6 +43,9 @@ if platform.system() == 'Windows':
 async def main():
     try:
         logger.info("=== 메인 프로그램 시작 ===")
+        
+        # Config 초기화
+        Config.reset()
         
         # 로깅 설정 초기화
         setup_logging()
@@ -71,13 +75,13 @@ async def main():
         market_data_service = MarketDataService(bybit_client)
         await market_data_service.initialize()
         
-        # Telegram Bot 초기화
-        logger.info("Telegram Bot 초기화 중...")
-        telegram_config = TelegramConfig()
+        # 설정 로드 (한 번만)
+        telegram_config = config.telegram  # 싱글톤 인스턴스 사용
+        
+        # 봇 초기화
         telegram_bot = TelegramBot(
-            config=telegram_config,
+            config=telegram_config,  # 기존 config 인스턴스 전달
             bybit_client=bybit_client,
-            trade_manager=trade_manager,  # trade_manager 추가
             market_data_service=market_data_service
         )
         

@@ -80,27 +80,42 @@ class MarketDataService:
         try:
             logger.info(f"OHLCV 데이터 조회 시작 - 심볼: {symbol}, 시간대: {timeframe}")
             
+            if timeframe not in self.VALID_TIMEFRAMES:
+                logger.error(f"잘못된 시간대: {timeframe}")
+                return []
+            
             # 설정된 limit 사용
             limit = self.timeframe_limits.get(timeframe, 100)
             
-            # fetch_ohlcv 사용
-            response = await self.exchange.fetch_ohlcv(
-                symbol=symbol,
-                timeframe=timeframe,
-                limit=limit
-            )
-            
-            if response:
+            try:
+                # fetch_ohlcv 사용
+                response = await self.exchange.fetch_ohlcv(
+                    symbol=symbol,
+                    timeframe=timeframe,
+                    limit=limit
+                )
+                
+                if not response:
+                    logger.error("OHLCV 데이터가 비어있습니다")
+                    return []
+                
                 return [{
-                    'timestamp': item[0],
-                    'open': item[1],
-                    'high': item[2],
-                    'low': item[3],
-                    'close': item[4],
-                    'volume': item[5]
+                    'timestamp': int(item[0]),  # 정수형으로 변환
+                    'open': float(item[1]),     # 실수형으로 변환
+                    'high': float(item[2]),
+                    'low': float(item[3]),
+                    'close': float(item[4]),
+                    'volume': float(item[5])
                 } for item in response]
                 
-            return []
+            except ccxt.NetworkError as e:
+                logger.error(f"네트워크 오류: {str(e)}")
+                await asyncio.sleep(1)  # 재시도 전 대기
+                return await self.get_ohlcv(symbol, timeframe)
+                
+            except Exception as e:
+                logger.error(f"OHLCV 데이터 조회 중 오류: {str(e)}")
+                return []
             
         except Exception as e:
             logger.error(f"OHLCV 데이터 조회 중 오류: {str(e)}")
@@ -116,25 +131,79 @@ class MarketDataService:
             return {}
 
     async def get_market_data(self, symbol: str) -> Dict:
-        """시장 데이터 조회"""
+        """확장된 시장 데이터 조회"""
         try:
+            # 기본 티커 데이터
             ticker = await self.get_ticker(symbol)
             if not ticker:
-                logger.error("티커 데이터를 가져올 수 없습니다")
                 return None
+
+            # 24시간 가격 변동 계산
+            price_change_24h = ((ticker.get('last', 0) - ticker.get('open', 0)) / ticker.get('open', 0)) * 100
+
+            # 자금 조달 비율
+            funding_info = await self.bybit_client.get_funding_rate(symbol)
             
+            # 미체결 약정
+            open_interest = await self.bybit_client.get_open_interest(symbol)
+            
+            # 롱/숏 비율
+            long_short_ratio = await self.bybit_client.get_long_short_ratio(symbol)
+
             return {
-                'symbol': symbol,
-                'last_price': float(ticker.get('last', 0)),
-                'bid': float(ticker.get('bid', 0)),
-                'ask': float(ticker.get('ask', 0)),
-                'volume': float(ticker.get('baseVolume', 0)),
-                'timestamp': ticker.get('timestamp', 0)
+                'price_data': {
+                    'symbol': symbol,
+                    'last_price': float(ticker.get('last', 0)),
+                    'price_change_24h': round(price_change_24h, 2),
+                    'volume': float(ticker.get('baseVolume', 0))
+                },
+                'market_metrics': {
+                    'funding_rate': funding_info.get('funding_rate', 0),
+                    'next_funding_time': funding_info.get('next_funding_time'),
+                    'open_interest': open_interest,
+                    'long_short_ratio': long_short_ratio
+                },
+                'order_book': await self.get_order_book(symbol)
             }
             
         except Exception as e:
             logger.error(f"시장 데이터 조회 실패: {str(e)}")
             return None
+
+    async def get_funding_rate(self, symbol: str) -> float:
+        """자금 조달 비율 조회"""
+        try:
+            response = await self.bybit_client.get_funding_rate(symbol)
+            return float(response.get('funding_rate', 0))
+        except Exception as e:
+            logger.error(f"자금 조달 비율 조회 실패: {str(e)}")
+            return 0.0
+
+    async def get_order_book(self, symbol: str, limit: int = 25) -> Dict:
+        """호가창 데이터 조회"""
+        try:
+            order_book = await self.exchange.fetch_order_book(symbol, limit)
+            return {
+                'bids': order_book['bids'][:limit],
+                'asks': order_book['asks'][:limit],
+                'bid_volume': sum(bid[1] for bid in order_book['bids'][:limit]),
+                'ask_volume': sum(ask[1] for ask in order_book['asks'][:limit])
+            }
+        except Exception as e:
+            logger.error(f"호가창 조회 실패: {str(e)}")
+            return {}
+
+    async def get_open_interest(self, symbol: str) -> Dict:
+        """미체결 약정 조회"""
+        try:
+            response = await self.bybit_client.get_open_interest(symbol)
+            return {
+                'value': float(response.get('open_interest', 0)),
+                'change_24h': float(response.get('change_24h', 0))
+            }
+        except Exception as e:
+            logger.error(f"미체결 약정 조회 실패: {str(e)}")
+            return {'value': 0, 'change_24h': 0}
 
     async def get_current_price(self) -> Optional[Dict]:
         """현재가 조회"""

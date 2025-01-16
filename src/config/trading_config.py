@@ -23,8 +23,8 @@ class TradingConfig:
         # 자동매매 실행 조건
         self.auto_trading = {
             "confidence": {
-                "min": 60,    # 75 -> 60으로 낮춤
-                "high": 80    # 85 -> 80으로 낮춤
+                "min": 60,    # 최소 신뢰도
+                "high": 80    # 높은 신뢰도 기준
             },
             "trend_strength": {
                 "min": 10,    # 기본 최소 추세 강도
@@ -44,13 +44,31 @@ class TradingConfig:
             'base_url': 'https://api-testnet.bybit.com'  # 테스트넷 URL
         })
         
-        # GPT 분석 결과 관련 설정
+        # GPT 분석 결과 활용 설정
         self.gpt_settings = {
-            "default_leverage": None,     # GPT 분석 결과 사용
-            "risk_reward_ratio": None,    # GPT 분석 결과의 TP/SL 비율 사용
-            "tp_percentage": None,        # GPT 분석 결과의 TP 사용
-            "sl_percentage": None,        # GPT 분석 결과의 SL 사용
-            "max_position_size": None     # GPT 분석 결과의 position_size 사용
+            "use_gpt_analysis": True,  # GPT 분석 사용 여부
+            "risk_levels": {
+                "conservative": {
+                    "max_leverage": 5,
+                    "position_size_range": (5, 20),
+                    "min_risk_reward": 2.0
+                },
+                "moderate": {
+                    "max_leverage": 10,
+                    "position_size_range": (10, 40),
+                    "min_risk_reward": 1.5
+                },
+                "aggressive": {
+                    "max_leverage": 20,
+                    "position_size_range": (20, 60),
+                    "min_risk_reward": 1.0
+                }
+            },
+            "validation": {
+                "min_tp_distance": 0.1,  # 최소 TP 거리 (%)
+                "min_sl_distance": 0.1,  # 최소 SL 거리 (%)
+                "max_position_size": 100  # 최대 포지션 크기 (%)
+            }
         }
 
     @classmethod
@@ -64,14 +82,10 @@ class TradingConfig:
     MIN_POSITION_SIZE = 0.001  # 최소 주문 수량 (BTC)
     DECIMAL_PLACES = 3         # 수량 소수점 자리수
     
-    # 손익 설정
-    LONG_SL_PERCENT = 1.0     # 롱 포지션 손절 퍼센트
-    LONG_TP_PERCENT = 2.0     # 롱 포지션 익절 퍼센트
-    SHORT_SL_PERCENT = 1.0    # 숏 포지션 손절 퍼센트
-    SHORT_TP_PERCENT = 2.0    # 숏 포지션 익절 퍼센트
-
+    # 기본 레버리지 설정
+    DEFAULT_LEVERAGE = 1
+    
     # 추가 설정
-    DEFAULT_LEVERAGE = 1  # 기본 레버리지
     TIMESTAMP_MULTIPLIER = 1000  # milliseconds 변환용
 
 # 전역 설정 인스턴스

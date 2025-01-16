@@ -10,13 +10,29 @@ class BaseHandler:
     def __init__(self, bot):
         self.bot = bot
 
-    def _is_admin_chat(self, chat_id: int) -> bool:
-        """관리자 채팅방 여부 확인"""
-        return chat_id == self.bot.admin_chat_id
+    async def send_message(self, message: str, chat_id: Optional[int] = None, parse_mode: str = None):
+        """메시지 전송 - chat_id가 없으면 모든 채팅방에 전송"""
+        if chat_id:
+            await self.bot.send_message(message, chat_id, parse_mode)
+        else:
+            # 관리자방과 알림방 모두에 전송
+            await self.bot.send_message(message, self.bot.config.admin_chat_id, parse_mode)
+            await self.bot.send_message(message, self.bot.config.alert_chat_id, parse_mode)
 
-    async def send_message(self, message: str, chat_id: int, parse_mode: str = None):
-        """모든 채팅방에 메시지 전송"""
-        await self.bot.send_message_to_all(message, parse_mode)
+    def is_admin(self, chat_id: int) -> bool:
+        """관리자 권한 확인"""
+        return self.bot.config.is_admin(chat_id)
+
+    async def check_admin(self, update: Update) -> bool:
+        """관리자 권한 체크 및 메시지 전송"""
+        if not update.effective_chat:
+            return False
+            
+        chat_id = update.effective_chat.id
+        if not self.is_admin(chat_id):
+            await self.send_message("⚠️ 관리자만 사용 가능한 명령어입니다", chat_id)
+            return False
+        return True
 
     def can_execute_command(self, chat_id: int) -> bool:
         """명령어 실행 권한 확인"""

@@ -52,6 +52,8 @@ class TradingHandler(BaseHandler):
 
     async def handle_position(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """포지션 조회 명령어 처리"""
+        if not await self.check_admin(update):
+            return
         try:
             if not update.effective_chat:
                 return
@@ -136,22 +138,23 @@ class TradingHandler(BaseHandler):
             await self.send_message("❌ 상태 조회 중 오류가 발생했습니다", chat_id)
 
     async def handle_balance(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """잔고 조회"""
+        """잔고 조회 명령어 처리"""
         try:
             chat_id = update.effective_chat.id
             logger.info(f"[Balance] 잔고 조회 시작 (chat_id: {chat_id})")
             
-            # BalanceService를 통해 잔고 조회
             balance = await self.balance_service.get_balance()
             if balance:
                 message = self.message_formatter.format_balance(balance)
-                await self.send_message(message, chat_id)
+                # 모든 알림방에 전송
+                await self.bot.send_message_to_all(message)
             else:
-                await self.send_message("❌ 잔고 조회 실패", chat_id)
+                await self.bot.send_message("❌ 잔고 조회 실패", chat_id)
                 
         except Exception as e:
             logger.error(f"잔고 조회 중 오류: {str(e)}")
-            await self.send_message("❌ 잔고 조회 중 오류가 발했습니다.", chat_id)
+            if update.effective_chat:
+                await self.bot.send_message("❌ 잔고 조회 중 오류가 발생했습니다", update.effective_chat.id)
 
     @command_handler
     async def handle_trade(self, update: Update, context: ContextTypes.DEFAULT_TYPE):

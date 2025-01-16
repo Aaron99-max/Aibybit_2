@@ -18,45 +18,53 @@ class Config(BaseConfig):
     """통합 설정 클래스"""
     
     _instance = None
+    _initialized = False
+    
+    @classmethod
+    def reset(cls):
+        """설정 초기화 (메모리에서 제거)"""
+        cls._instance = None
+        cls._initialized = False
+        logger.info("Config 초기화됨")
     
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-            cls._instance._initialized = False
         return cls._instance
     
     def __init__(self):
         if self._initialized:
             return
             
-        try:
-            super().__init__()
-            
-            # 설정 인스턴스들을 지연 초기화를 위해 None으로 설정
-            self._bybit = None
-            self._telegram = None
-            self._trading = None
-            
-            # 기본 디렉토리 설정
-            self.root_dir = Path(__file__).parent.parent
-            self.config_dir = self.root_dir / 'config' / 'data'
-            self.data_dir = self.root_dir / 'data'
-            
-            # 디렉토리 생성
-            self.config_dir.mkdir(parents=True, exist_ok=True)
-            (self.data_dir / 'trades').mkdir(parents=True, exist_ok=True)
-            (self.data_dir / 'analysis').mkdir(parents=True, exist_ok=True)
-            (self.data_dir / 'cache').mkdir(parents=True, exist_ok=True)
-            
-            # 기본 설정값 로드
-            self._load_configs()
-            
-            self._initialized = True
-            logger.info("Config 초기화 완료")
-            
-        except Exception as e:
-            logger.error(f"Config 초기화 중 오류 발생: {str(e)}")
-            raise
+        # 환경변수 다시 로드
+        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env')
+        if os.path.exists(env_path):
+            load_dotenv(env_path, override=True)  # override=True로 설정
+            logger.info(f"환경변수 다시 로드됨: {env_path}")
+        
+        super().__init__()
+        
+        # 설정 인스턴스들을 지연 초기화를 위해 None으로 설정
+        self._bybit = None
+        self._telegram = None
+        self._trading = None
+        
+        # 기본 디렉토리 설정
+        self.root_dir = Path(__file__).parent.parent
+        self.config_dir = self.root_dir / 'config' / 'data'
+        self.data_dir = self.root_dir / 'data'
+        
+        # 디렉토리 생성
+        self.config_dir.mkdir(parents=True, exist_ok=True)
+        (self.data_dir / 'trades').mkdir(parents=True, exist_ok=True)
+        (self.data_dir / 'analysis').mkdir(parents=True, exist_ok=True)
+        (self.data_dir / 'cache').mkdir(parents=True, exist_ok=True)
+        
+        # 기본 설정값 로드
+        self._load_configs()
+        
+        self._initialized = True  # 초기화 완료 표시
+        logger.info("Config 초기화 완료")
     
     def _load_configs(self):
         """각 설정 모듈 import 및 초기화"""

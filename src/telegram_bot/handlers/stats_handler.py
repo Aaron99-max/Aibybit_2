@@ -10,6 +10,8 @@ logger = logging.getLogger(__name__)
 class StatsHandler(BaseHandler):
     async def handle(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """거래 통계 및 패턴 분석 표시"""
+        if not await self.check_admin(update):
+            return
         try:
             if not update.effective_chat:
                 return

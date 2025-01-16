@@ -11,6 +11,10 @@ import signal
 logger = logging.getLogger(__name__)
 
 class SystemHandler(BaseHandler):
+    def _is_admin_chat(self, chat_id: int) -> bool:
+        """관리자 채팅방 여부 확인"""
+        return chat_id == self.bot.admin_chat_id
+
     async def handle_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """도움말 표시"""
         help_text = """
@@ -42,6 +46,8 @@ class SystemHandler(BaseHandler):
 
     async def handle_stop(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """봇 종료 명령어 처리"""
+        if not await self.check_admin(update):
+            return
         try:
             if not update.effective_chat:
                 return

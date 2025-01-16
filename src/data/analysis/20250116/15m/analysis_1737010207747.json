@@ -1,9 +1,9 @@
 {
   "market_summary": {
-    "market_phase": "하락",
-    "overall_sentiment": "부정",
-    "short_term_sentiment": "강한매도",
-    "volume_trend": "감소",
+    "market_phase": "\ud558\ub77d",
+    "overall_sentiment": "\ubd80\uc815",
+    "short_term_sentiment": "\uac15\ud55c\ub9e4\ub3c4",
+    "volume_trend": "\uac10\uc18c",
     "key_levels": {
       "support": [
         68000,
@@ -17,7 +17,7 @@
     "confidence": 80
   },
   "trading_strategy": {
-    "position": "매도",
+    "position": "\ub9e4\ub3c4",
     "entry_points": [
       69000,
       69500
@@ -31,31 +31,31 @@
     "recommended_leverage": 5,
     "position_size": "20%",
     "key_risks": [
-      "고 변동성",
-      "급격한 시장 변화"
+      "\uace0 \ubcc0\ub3d9\uc131",
+      "\uae09\uaca9\ud55c \uc2dc\uc7a5 \ubcc0\ud654"
     ]
   },
   "analysis_details": {
     "technical_signals": [
-      "RSI 6.0 매도 신호",
-      "하락 추세 확인"
+      "RSI 6.0 \ub9e4\ub3c4 \uc2e0\ud638",
+      "\ud558\ub77d \ucd94\uc138 \ud655\uc778"
     ],
     "market_drivers": [
-      "미체결약정 증가",
-      "MACD 하락"
+      "\ubbf8\uccb4\uacb0\uc57d\uc815 \uc99d\uac00",
+      "MACD \ud558\ub77d"
     ],
     "key_events": [
-      "비트코인 가격 급락",
-      "자금조달비율 하락"
+      "\ube44\ud2b8\ucf54\uc778 \uac00\uaca9 \uae09\ub77d",
+      "\uc790\uae08\uc870\ub2ec\ube44\uc728 \ud558\ub77d"
     ]
   },
   "technical_analysis": {
-    "trend": "하락",
+    "trend": "\ud558\ub77d",
     "strength": 100.0,
     "indicators": {
       "rsi": 5.99,
-      "macd": "하락",
-      "bollinger": "중립",
+      "macd": "\ud558\ub77d",
+      "bollinger": "\uc911\ub9bd",
       "volatility": 52.42
     }
   },
@@ -286,6 +286,6 @@
     }
   },
   "timeframe": "15m",
-  "timestamp": 1737010207751,
+  "timestamp": 1737010207747,
   "saved_at": "2025-01-16 15:50:07 KST"
 }

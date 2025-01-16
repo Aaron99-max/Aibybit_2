@@ -1,0 +1,83 @@
+2025-01-14 15:21:03,967 - main - ERROR - 실행 중 에러 발생: name 'BalanceService' is not defined
+2025-01-14 15:21:03,973 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 61, in main
+    balance_service = BalanceService(bybit_client)
+                      ^^^^^^^^^^^^^^
+NameError: name 'BalanceService' is not defined
+
+2025-01-14 15:21:03,974 - main - ERROR - 메인 루프 오류: 'BybitClient' object has no attribute 'close'
+2025-01-14 15:22:32,934 - main - ERROR - 실행 중 에러 발생: TelegramBot.__init__() got an unexpected keyword argument 'trade_manager'
+2025-01-14 15:22:32,935 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 77, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+TypeError: TelegramBot.__init__() got an unexpected keyword argument 'trade_manager'
+
+2025-01-14 15:22:32,936 - main - ERROR - 메인 루프 오류: 'BybitClient' object has no attribute 'close'
+2025-01-14 15:23:25,002 - main - ERROR - 실행 중 에러 발생: OrderService.__init__() missing 1 required positional argument: 'balance_service'
+2025-01-14 15:23:25,004 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 77, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 62, in __init__
+    self.order_service = OrderService(bybit_client, self)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: OrderService.__init__() missing 1 required positional argument: 'balance_service'
+
+2025-01-14 15:24:17,436 - main - ERROR - 실행 중 에러 발생: TradeManager.__init__() takes 2 positional arguments but 6 were given
+2025-01-14 15:24:17,437 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 77, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 78, in __init__
+    self.trade_manager = TradeManager(
+                         ^^^^^^^^^^^^^
+TypeError: TradeManager.__init__() takes 2 positional arguments but 6 were given
+
+2025-01-14 15:25:22,935 - main - ERROR - 실행 중 에러 발생: AITrader.__init__() got an unexpected keyword argument 'telegram_bot'
+2025-01-14 15:25:22,937 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 77, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 75, in __init__
+    self.ai_trader = AITrader(
+                     ^^^^^^^^^
+TypeError: AITrader.__init__() got an unexpected keyword argument 'telegram_bot'
+
+2025-01-14 15:27:34,737 - main - ERROR - 실행 중 에러 발생: name 'GPTAnalyzer' is not defined
+2025-01-14 15:27:34,740 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 77, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 78, in __init__
+    gpt_analyzer=GPTAnalyzer(),
+                 ^^^^^^^^^^^
+NameError: name 'GPTAnalyzer' is not defined. Did you mean: 'AutoAnalyzer'?
+
+2025-01-14 15:28:22,865 - telegram_bot.bot - ERROR - 봇 초기화 중 오류: 'TelegramBot' object has no attribute 'trade_history_service'
+2025-01-14 15:28:22,866 - telegram_bot.bot - ERROR - 봇 초기화 실패
+2025-01-14 15:29:51,898 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): 'bybit' object has no attribute 'private_get_v5'
+2025-01-14 15:29:51,899 - services.balance_service - ERROR - 잔고 조회 실패 응답: None
+2025-01-14 15:30:00,241 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 중 오류: 'GPTAnalyzer' object has no attribute 'analyze'
+2025-01-14 15:30:00,246 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 139, in _run_analysis
+    analysis = await self.bot.ai_trader.analyze_market(timeframe, klines)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\ai\ai_trader.py", line 36, in analyze_market
+    analysis = await self.gpt_analyzer.analyze(klines, timeframe)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GPTAnalyzer' object has no attribute 'analyze'
+
+2025-01-14 15:46:36,144 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): Exchange.fetch() got an unexpected keyword argument 'params'
+2025-01-14 15:46:36,145 - services.balance_service - ERROR - 잔고 조회 실패 응답: None
+2025-01-14 15:49:05,373 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): Exchange.fetch() got an unexpected keyword argument 'params'
+2025-01-14 15:49:05,373 - services.balance_service - ERROR - 잔고 조회 실패 응답: None
+2025-01-14 15:49:57,551 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): 'bybit' object has no attribute 'private_get_v5'
+2025-01-14 15:49:57,552 - services.balance_service - ERROR - 잔고 조회 실패 응답: None
+2025-01-14 15:50:37,311 - exchange.bybit_client - ERROR - API 요청 실패 (GET /position/list): 'bybit' object has no attribute 'private_get_v5'
+2025-01-14 15:57:19,075 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): 'bybit' object has no attribute 'private_get_v5'
+2025-01-14 15:58:42,576 - services.balance_service - ERROR - 잔고 조회 중 오류: could not convert string to float: 'None'
+2025-01-14 16:03:16,045 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): 'bybit' object has no attribute 'private_get_v5'
+2025-01-14 16:06:24,216 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): 'bybit' object has no attribute 'private_get_v5'
+2025-01-14 16:12:27,174 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): 'bybit' object has no attribute 'private_get_v5'
+2025-01-14 16:16:28,573 - exchange.bybit_client - ERROR - API 요청 실패 (GET /account/wallet-balance): 'bybit' object has no attribute 'private_get_v5'

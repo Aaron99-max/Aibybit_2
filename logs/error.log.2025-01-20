@@ -1,0 +1,93 @@
+2025-01-20 14:19:30,234 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'TradeAnalyzer' object has no attribute '_calculate_risk_reward_ratio'
+2025-01-20 14:19:30,239 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 125, in analyze_trades
+    risk_stats = self._calculate_risk_metrics()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 375, in _calculate_risk_metrics
+    'risk_reward_ratio': self._calculate_risk_reward_ratio()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeAnalyzer' object has no attribute '_calculate_risk_reward_ratio'
+
+2025-01-20 14:22:15,458 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'TradeAnalyzer' object has no attribute '_calculate_risk_reward_ratio'
+2025-01-20 14:22:15,459 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 126, in analyze_trades
+    risk_stats = self._calculate_risk_metrics()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 383, in _calculate_risk_metrics
+    'risk_reward_ratio': self._calculate_risk_reward_ratio()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeAnalyzer' object has no attribute '_calculate_risk_reward_ratio'
+
+2025-01-20 14:28:27,259 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: float division by zero
+2025-01-20 14:28:27,261 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 132, in analyze_trades
+    'profit_factor': trade_stats['long_pnl'] / abs(trade_stats['short_pnl']) if trade_stats['short_positions'] != 0 else 0,
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+
+2025-01-20 14:47:35,961 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: float division by zero
+2025-01-20 14:47:35,961 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 134, in analyze_trades
+    'profit_factor': trade_stats['long_pnl'] / abs(trade_stats['short_pnl']) if trade_stats['short_positions'] != 0 else 0,
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+
+2025-01-20 14:50:28,467 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: float division by zero
+2025-01-20 14:50:28,468 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 134, in analyze_trades
+    'profit_factor': trade_stats['long_pnl'] / abs(trade_stats['short_pnl']) if trade_stats['short_positions'] != 0 else 0,
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+
+2025-01-20 14:54:50,755 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: float division by zero
+2025-01-20 14:54:50,756 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 134, in analyze_trades
+    'profit_factor': trade_stats['long_pnl'] / abs(trade_stats['short_pnl']) if trade_stats['short_positions'] != 0 else 0,
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+
+2025-01-20 15:15:13,005 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'winning_positions'
+2025-01-20 15:15:13,006 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 128, in analyze_trades
+    'winning_trades': trade_stats['winning_positions'],
+                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'winning_positions'
+
+2025-01-20 15:19:33,046 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'average_profit'
+2025-01-20 15:42:37,390 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'Position' object is not subscriptable
+2025-01-20 15:42:37,391 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 118, in analyze_trades
+    closed_positions = [p for p in positions if len(p['trades']) > 1]
+                                                    ~^^^^^^^^^^
+TypeError: 'Position' object is not subscriptable
+
+2025-01-20 15:50:36,816 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'dict' object has no attribute 'is_closed'
+2025-01-20 15:50:36,818 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 118, in analyze_trades
+    closed_positions = [p for p in positions if p.is_closed]
+                                                ^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'is_closed'
+
+2025-01-20 16:09:51,833 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-20 16:09:51,834 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 124, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+
+2025-01-20 16:14:35,901 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-20 16:14:35,901 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 143, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+
+2025-01-20 16:15:40,086 - ai.gpt_analyzer - ERROR - GPT 응답이 올바른 JSON 형식이 아닙니다
+2025-01-20 16:15:40,086 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-01-20 16:26:10,407 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-20 16:26:10,409 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 143, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+

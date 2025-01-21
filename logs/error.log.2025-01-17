@@ -1,0 +1,23 @@
+2025-01-17 14:18:31,239 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: TradeAnalyzer.analyze_trades() got an unexpected keyword argument 'trades'
+2025-01-17 14:21:34,391 - telegram_bot.bot - ERROR - 핸들러 초기화 중 오류: Can't instantiate abstract class StatsFormatter without an implementation for abstract methods 'format_balance', 'format_position', 'format_status'
+2025-01-17 14:21:34,398 - telegram_bot.bot - ERROR - 오류 상세: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 197, in _setup_handlers
+    self.stats_handler = StatsHandler(self)
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 15, in __init__
+    self.stats_formatter = StatsFormatter()
+                           ^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class StatsFormatter without an implementation for abstract methods 'format_balance', 'format_position', 'format_status'
+
+2025-01-17 14:55:27,105 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 14:57:10,653 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:04:18,792 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:16:48,834 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:20:21,500 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:30:28,729 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:32:42,946 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:35:25,460 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:45:43,816 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 15:50:58,339 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-17 16:01:04,430 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'win_rate'
+2025-01-17 16:11:40,388 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'

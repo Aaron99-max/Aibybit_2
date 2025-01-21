@@ -1,0 +1,261 @@
+2025-01-18 14:40:11,088 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,088 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,088 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,088 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,100 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,104 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,108 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,111 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,114 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,118 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,121 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,123 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:40:11,124 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:41:51,963 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:51,970 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:51,971 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:51,972 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:51,974 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:51,974 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:51,975 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:51,976 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:51,991 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:51,993 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:51,999 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,001 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:52,003 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,005 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:52,007 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,008 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:52,010 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,011 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:52,014 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,016 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:52,020 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,020 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:52,022 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,022 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:41:52,023 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:41:52,024 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 65, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:44:39,543 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,546 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,548 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,550 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,552 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,554 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,556 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,557 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,559 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,562 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,564 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,565 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:44:39,567 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,317 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,318 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,319 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,320 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,320 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,321 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,322 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,322 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,323 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,325 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,328 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,329 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:45:39,331 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,163 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,164 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,165 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,166 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,167 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,169 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,170 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,173 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,175 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,177 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,178 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,180 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:50:42,182 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:55:14,991 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:14,994 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:14,998 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,001 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,004 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,007 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,010 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,012 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,015 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,018 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,021 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,023 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,024 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,025 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,027 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,028 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,029 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,030 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,032 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,033 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,034 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,035 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,038 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,039 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:55:15,040 - services.trade_history_service - ERROR - 거래 조회 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-01-18 14:55:15,041 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 55, in _fetch_historical_trades
+    batch = await self.bybit_client.fetch_my_trades(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-01-18 14:56:14,954 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,956 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,958 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,959 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,962 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,964 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,966 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,967 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,969 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,971 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,972 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,974 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 14:56:14,977 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-01-18 15:16:06,086 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'total_profit'
+2025-01-18 15:18:29,688 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'average_profit'
+2025-01-18 15:21:30,320 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'average_profit'
+2025-01-18 15:30:24,635 - telegram_bot.bot - ERROR - 핸들러 초기화 중 오류: 'TelegramBot' object has no attribute 'trade_store'
+2025-01-18 15:30:24,646 - telegram_bot.bot - ERROR - 오류 상세: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 197, in _setup_handlers
+    self.stats_handler = StatsHandler(self)
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 14, in __init__
+    self.trade_analyzer = TradeAnalyzer(self.bot.trade_store)
+                                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'trade_store'
+
+2025-01-18 15:40:07,912 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'TradeStore' object has no attribute 'load_trades'

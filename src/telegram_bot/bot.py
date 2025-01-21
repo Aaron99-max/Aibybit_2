@@ -96,41 +96,55 @@ class TelegramBot:
         # Application 초기화
         self.application = Application.builder().token(config.bot_token).build()
 
-    async def send_message_to_all(self, message: str, parse_mode: str = None):
-        """모든 알림 채팅방에 메시지 전송"""
+    async def send_message_to_all(self, message: str, parse_mode: str = 'HTML'):
+        """모든 채팅방(관리자방 + 알림방)에 메시지 전송"""
         try:
-            sent_to = set()  # 메시지 전송된 채팅방 추적
-            
-            logger.info(f"메시지 전송 시작 - alert_chat_ids: {self.alert_chat_ids}")
-            
-            # 관리자에게 전송
+            # 관리자방에 전송
             if self.admin_chat_id:
                 await self.application.bot.send_message(
                     chat_id=self.admin_chat_id,
                     text=message,
                     parse_mode=parse_mode
                 )
-                sent_to.add(self.admin_chat_id)
                 logger.info(f"관리자방({self.admin_chat_id})에 메시지 전송됨")
-            
-            # 알림 채팅방들에 전송
+
+            # 알림방에 전송
             for chat_id in self.alert_chat_ids:
-                if chat_id not in sent_to:  # 아직 전송되지 않은 채팅방에만 전송
-                    try:
-                        logger.info(f"알림방({chat_id})에 메시지 전송 시도...")
-                        await self.application.bot.send_message(
-                            chat_id=chat_id,
-                            text=message,
-                            parse_mode=parse_mode
-                        )
-                        sent_to.add(chat_id)
-                        logger.info(f"알림방({chat_id})에 메시지 전송됨")
-                    except Exception as e:
-                        logger.error(f"채팅방({chat_id}) 메시지 전송 실패: {str(e)}")
-                    
+                await self.application.bot.send_message(
+                    chat_id=chat_id,
+                    text=message,
+                    parse_mode=parse_mode
+                )
+                logger.info(f"알림방({chat_id})에 메시지 전송됨")
+
         except Exception as e:
-            logger.error(f"메시지 전송 실패: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"메시지 전송 중 오류: {str(e)}")
+
+    async def send_admin_message(self, message: str, parse_mode: str = 'HTML'):
+        """관리자방에만 메시지 전송"""
+        try:
+            if self.admin_chat_id:
+                await self.application.bot.send_message(
+                    chat_id=self.admin_chat_id,
+                    text=message,
+                    parse_mode=parse_mode
+                )
+                logger.info(f"관리자방({self.admin_chat_id})에 메시지 전송됨")
+        except Exception as e:
+            logger.error(f"관리자 메시지 전송 실패: {str(e)}")
+
+    async def send_alert_message(self, message: str, parse_mode: str = 'HTML'):
+        """알림방에만 메시지 전송"""
+        try:
+            for chat_id in self.alert_chat_ids:
+                await self.application.bot.send_message(
+                    chat_id=chat_id,
+                    text=message,
+                    parse_mode=parse_mode
+                )
+                logger.info(f"알림방({chat_id})에 메시지 전송됨")
+        except Exception as e:
+            logger.error(f"알림방 메시지 전송 실패: {str(e)}")
 
     async def initialize(self) -> bool:
         """봇 초기화"""

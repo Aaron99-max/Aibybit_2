@@ -1,0 +1,78 @@
+1. 롱 0.001 
+
+"execRealizedPnl": 0,
+    "markPrice": 95624.62,
+    "execPrice": 93760.0,
+    "orderPrice": 93797.6,
+    "orderQty": 0.001,
+    "closedSize": 0.0,
+    "execQty": 0.001
+
+숏 0.01(롱 0.001청산, 신규 숏 0.009 진입)
+  "execRealizedPnl": 0,
+    "markPrice": 97149.1,
+    "execPrice": 97193.9,
+    "orderPrice": 97193.9,
+    "orderQty": 0.01,
+    "closedSize": 0.001,
+    "execQty": 0.01
+
+2. 숏 0.009 + 0.006 + 0.004 + 0.01 =숏 0.029
+ "execRealizedPnl": 0,
+    "markPrice": 97149.1,
+    "execPrice": 97236.2,
+    "orderPrice": 97236.2,
+    "orderQty": 0.01,
+    "closedSize": 0.0,
+    "execQty": 0.006
+
+ "execRealizedPnl": 0,
+    "markPrice": 97149.1,
+    "execPrice": 97236.2,
+    "orderPrice": 97236.2,
+    "orderQty": 0.01,
+    "closedSize": 0.0,
+    "execQty": 0.004
+
+ },
+    "execRealizedPnl": 0,
+    "markPrice": 97158.5,
+    "execPrice": 97327.4,
+    "orderPrice": 97327.4,
+    "orderQty": 0.01,
+    "closedSize": 0.0,
+    "execQty": 0.01
+
+숏 0.029- 0.027- 0.001-0.001
+ "execRealizedPnl": 0,
+    "markPrice": 90457.87,
+    "execPrice": 89996.0,
+    "orderPrice": 89996.0,
+    "orderQty": 0.029,
+    "closedSize": 0.027,
+    "execQty": 0.027
+
+ "execRealizedPnl": 0,
+    "markPrice": 90457.87,
+    "execPrice": 89995.0,
+    "orderPrice": 89996.0,
+    "orderQty": 0.029,
+    "closedSize": 0.001,
+    "execQty": 0.001
+
+ "execRealizedPnl": 0,
+    "markPrice": 90457.87,
+    "execPrice": 89961.6,
+    "orderPrice": 89996.0,
+    "orderQty": 0.029,
+    "closedSize": 0.001,
+    "execQty": 0.001
+
+3. 롱 0.001
+ "execRealizedPnl": 0,
+    "markPrice": 91947.18,
+    "execPrice": 90000.0,
+    "orderPrice": 90000.0,
+    "orderQty": 0.001,
+    "closedSize": 0.0,
+    "execQty": 0.001

@@ -1,85 +1,85 @@
 {
   "market_summary": {
-    "market_phase": "하락",
-    "overall_sentiment": "부정",
-    "short_term_sentiment": "매도",
-    "volume_trend": "증가",
+    "market_phase": "\ud6a1\ubcf4",
+    "overall_sentiment": "\ubd80\uc815",
+    "short_term_sentiment": "\ub9e4\ub3c4",
+    "volume_trend": "\uac10\uc18c",
     "key_levels": {
       "support": [
-        98500,
-        95000
+        99500,
+        99000
       ],
       "resistance": [
-        102500,
-        105000
+        101500,
+        102000
       ]
     },
-    "confidence": 75
+    "confidence": 65.5
   },
   "trading_strategy": {
-    "position": "매도",
+    "position": "\ub9e4\ub3c4",
     "entry_points": [
-      100500,
+      100800,
       101000
     ],
-    "stop_loss": 103500,
+    "stop_loss": 102500,
     "take_profits": [
-      98000,
-      96000
+      99500,
+      99000
     ],
     "risk_reward_ratio": 2,
-    "recommended_leverage": 5,
-    "position_size": "20%",
+    "recommended_leverage": 3,
+    "position_size": "15%",
     "key_risks": [
-      "강한 변동성",
-      "고레버리지 사용"
+      "\uace0\ubcc0\ub3d9\uc131",
+      "\uc2dc\uc7a5 \ubd88\ud655\uc2e4\uc131"
     ]
   },
   "analysis_details": {
     "technical_signals": [
-      "MACD 하락",
-      "RSI 중립"
+      "RSI 42.8",
+      "MACD \ud558\ub77d"
     ],
     "market_drivers": [
-      "암호화폐 시장 하락",
-      "미체결약정 증가"
+      "\ubbf8\uccb4\uacb0\uc57d\uc815 \uc0c1\uc2b9",
+      "\ubcfc\ub9b0\uc800\ubc34\ub4dc \uc911\ub9bd"
     ],
     "key_events": [
-      "비트코인 ETF 미결정",
-      "미 중간선거 결과 발표"
+      "\ubbf8 \uc5f0\uc900 \ud68c\uc758",
+      "\ube44\ud2b8\ucf54\uc778 \ub9c8\uc774\ub2dd \uc870\uc0ac"
     ]
   },
   "technical_analysis": {
-    "trend": "하락",
-    "strength": 7.81,
+    "trend": "\ud6a1\ubcf4",
+    "strength": 5.27,
     "indicators": {
-      "rsi": 42.2,
-      "macd": "하락",
-      "bollinger": "중립",
-      "volatility": 20.8
+      "rsi": 42.81,
+      "macd": "\ud558\ub77d",
+      "bollinger": "\uc911\ub9bd",
+      "volatility": 21.7
     }
   },
   "market_data": {
     "price_data": {
       "symbol": "BTCUSDT",
-      "last_price": 100605.2,
-      "price_change_24h": 11.3,
-      "volume": 225667.786
+      "last_price": 100807.2,
+      "price_change_24h": 5.25,
+      "volume": 225689.627
     },
     "market_metrics": {
       "funding_rate": -0.00375,
       "next_funding_time": "1737676800000",
       "open_interest": {
-        "value": 1090783.351,
+        "value": 1090783.645,
         "change_24h": 0.0,
-        "timestamp": "1737701100000"
+        "timestamp": "1737700200000"
       },
       "long_short_ratio": 1.0
     },
     "order_book": {
       "bids": [
         [
-          100413.1,
+          100605.2,
           0.001
         ],
         [
@@ -91,7 +91,7 @@
           0.001
         ],
         [
-          100038.4,
+          100039.5,
           0.002
         ],
         [
@@ -99,19 +99,19 @@
           0.001
         ],
         [
-          99896.3,
+          99884.4,
           0.002
         ],
         [
-          99754.2,
+          99729.3,
           0.002
         ],
         [
-          99612.1,
+          99574.2,
           0.002
         ],
         [
-          99470.0,
+          99419.1,
           0.002
         ],
         [
@@ -119,74 +119,78 @@
           0.02
         ],
         [
-          98223.0,
-          0.047
+          97938.7,
+          0.045
         ],
         [
-          98222.9,
-          0.038
+          97938.6,
+          0.039
         ],
         [
-          98222.8,
-          0.033
+          97938.5,
+          0.045
         ],
         [
-          98222.7,
-          0.036
-        ],
-        [
-          98222.6,
-          0.033
-        ],
-        [
-          98222.5,
+          97938.4,
           0.042
         ],
         [
-          98222.4,
-          0.031
+          97938.3,
+          0.047
         ],
         [
-          98222.3,
-          0.047
+          97938.2,
+          0.046
+        ],
+        [
+          97938.1,
+          0.035
+        ],
+        [
+          97938.0,
+          0.038
         ],
         [
           97318.2,
           0.001
         ],
         [
-          97264.6,
-          0.033
+          96774.9,
+          0.037
         ],
         [
-          97264.5,
-          0.043
+          96774.8,
+          0.045
         ],
         [
-          97264.4,
-          0.048
+          96774.7,
+          0.037
         ],
         [
-          97264.3,
-          0.041
+          96774.6,
+          0.045
         ],
         [
-          97264.2,
-          0.042
+          96774.5,
+          0.037
         ],
         [
-          97264.1,
-          0.03
+          96774.4,
+          0.044
         ]
       ],
       "asks": [
         [
-          100427.2,
-          2.872
+          100625.2,
+          0.001
         ],
         [
-          100807.2,
-          0.001
+          100626.5,
+          3.197
+        ],
+        [
+          100999.4,
+          3.18
         ],
         [
           101009.2,
@@ -195,10 +199,6 @@
         [
           101211.3,
           0.001
-        ],
-        [
-          101292.5,
-          2.623
         ],
         [
           101413.3,
@@ -222,7 +222,7 @@
         ],
         [
           102315.6,
-          36149.274
+          36267.856
         ],
         [
           102315.7,
@@ -261,12 +261,12 @@
           0.009
         ],
         [
-          102556.7,
-          0.001
+          102521.1,
+          0.002
         ],
         [
-          102596.2,
-          0.002
+          102556.7,
+          0.001
         ],
         [
           102619.6,
@@ -281,11 +281,11 @@
           0.001
         ]
       ],
-      "bid_volume": 0.579,
-      "ask_volume": 57555.882
+      "bid_volume": 0.617,
+      "ask_volume": 57675.346
     }
   },
   "timeframe": "15m",
-  "timestamp": 1737701125373,
-  "saved_at": "2025-01-24 15:45:25 KST"
+  "timestamp": 1737700253830,
+  "saved_at": "2025-01-24 15:30:53 KST"
 }

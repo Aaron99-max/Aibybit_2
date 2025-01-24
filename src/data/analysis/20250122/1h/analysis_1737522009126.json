@@ -1,9 +1,9 @@
 {
   "market_summary": {
-    "market_phase": "상승",
-    "overall_sentiment": "긍정",
-    "short_term_sentiment": "강한매수",
-    "volume_trend": "증가",
+    "market_phase": "\uc0c1\uc2b9",
+    "overall_sentiment": "\uae0d\uc815",
+    "short_term_sentiment": "\uac15\ud55c\ub9e4\uc218",
+    "volume_trend": "\uc99d\uac00",
     "key_levels": {
       "support": [
         100000,
@@ -17,7 +17,7 @@
     "confidence": 85
   },
   "trading_strategy": {
-    "position": "매수",
+    "position": "\ub9e4\uc218",
     "entry_points": [
       103000,
       104500
@@ -31,31 +31,31 @@
     "recommended_leverage": 7,
     "position_size": "25%",
     "key_risks": [
-      "급격한 시장 조정",
-      "대규모 매도 주체 등장"
+      "\uae09\uaca9\ud55c \uc2dc\uc7a5 \uc870\uc815",
+      "\ub300\uaddc\ubaa8 \ub9e4\ub3c4 \uc8fc\uccb4 \ub4f1\uc7a5"
     ]
   },
   "analysis_details": {
     "technical_signals": [
-      "MACD가 상승 신호",
-      "RSI가 중립 수준"
+      "MACD\uac00 \uc0c1\uc2b9 \uc2e0\ud638",
+      "RSI\uac00 \uc911\ub9bd \uc218\uc900"
     ],
     "market_drivers": [
-      "강한 매수 거래량",
-      "긍정적인 자금 조달비율"
+      "\uac15\ud55c \ub9e4\uc218 \uac70\ub798\ub7c9",
+      "\uae0d\uc815\uc801\uc778 \uc790\uae08 \uc870\ub2ec\ube44\uc728"
     ],
     "key_events": [
-      "비트코인 차트 고점 돌파",
-      "매수 주체의 확실한 증가"
+      "\ube44\ud2b8\ucf54\uc778 \ucc28\ud2b8 \uace0\uc810 \ub3cc\ud30c",
+      "\ub9e4\uc218 \uc8fc\uccb4\uc758 \ud655\uc2e4\ud55c \uc99d\uac00"
     ]
   },
   "technical_analysis": {
-    "trend": "상승",
+    "trend": "\uc0c1\uc2b9",
     "strength": 70.78,
     "indicators": {
       "rsi": 58.27,
-      "macd": "상승",
-      "bollinger": "중립",
+      "macd": "\uc0c1\uc2b9",
+      "bollinger": "\uc911\ub9bd",
       "volatility": 185.76
     }
   },
@@ -286,6 +286,6 @@
     }
   },
   "timeframe": "1h",
-  "timestamp": 1737522009137,
+  "timestamp": 1737522009126,
   "saved_at": "2025-01-22 14:00:09 KST"
 }

@@ -1,9 +1,9 @@
 {
   "market_summary": {
-    "market_phase": "하락",
-    "overall_sentiment": "부정",
-    "short_term_sentiment": "매도",
-    "volume_trend": "증가",
+    "market_phase": "\ud558\ub77d",
+    "overall_sentiment": "\ubd80\uc815",
+    "short_term_sentiment": "\ub9e4\ub3c4",
+    "volume_trend": "\uc99d\uac00",
     "key_levels": {
       "support": [
         98500,
@@ -17,7 +17,7 @@
     "confidence": 75
   },
   "trading_strategy": {
-    "position": "매도",
+    "position": "\ub9e4\ub3c4",
     "entry_points": [
       100500,
       101000
@@ -31,31 +31,31 @@
     "recommended_leverage": 5,
     "position_size": "20%",
     "key_risks": [
-      "강한 변동성",
-      "고레버리지 사용"
+      "\uac15\ud55c \ubcc0\ub3d9\uc131",
+      "\uace0\ub808\ubc84\ub9ac\uc9c0 \uc0ac\uc6a9"
     ]
   },
   "analysis_details": {
     "technical_signals": [
-      "MACD 하락",
-      "RSI 중립"
+      "MACD \ud558\ub77d",
+      "RSI \uc911\ub9bd"
     ],
     "market_drivers": [
-      "암호화폐 시장 하락",
-      "미체결약정 증가"
+      "\uc554\ud638\ud654\ud3d0 \uc2dc\uc7a5 \ud558\ub77d",
+      "\ubbf8\uccb4\uacb0\uc57d\uc815 \uc99d\uac00"
     ],
     "key_events": [
-      "비트코인 ETF 미결정",
-      "미 중간선거 결과 발표"
+      "\ube44\ud2b8\ucf54\uc778 ETF \ubbf8\uacb0\uc815",
+      "\ubbf8 \uc911\uac04\uc120\uac70 \uacb0\uacfc \ubc1c\ud45c"
     ]
   },
   "technical_analysis": {
-    "trend": "하락",
+    "trend": "\ud558\ub77d",
     "strength": 7.81,
     "indicators": {
       "rsi": 42.2,
-      "macd": "하락",
-      "bollinger": "중립",
+      "macd": "\ud558\ub77d",
+      "bollinger": "\uc911\ub9bd",
       "volatility": 20.8
     }
   },
@@ -286,6 +286,6 @@
     }
   },
   "timeframe": "15m",
-  "timestamp": 1737701125373,
+  "timestamp": 1737701125368,
   "saved_at": "2025-01-24 15:45:25 KST"
 }

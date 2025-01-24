@@ -120,63 +120,13 @@ class TradeAnalyzer:
 
         self.current_position = None
 
-
-
-    def _is_valid_trade(self, trade):
-
-        """유효한 거래인지 확인"""
-
-        if not trade or 'info' not in trade:
-
-            return False
-
         
 
-        info = trade['info']
+        # 로깅 설정 추가
 
-        exec_type = info.get('execType')
+        self.logger = logging.getLogger(__name__)
 
-        create_type = info.get('createType')
-
-        exec_qty = float(info.get('execQty', 0))
-
-        closed_size = float(info.get('closedSize', 0))
-
-        
-
-        # Funding, 청산, 자동 감소는 제외
-
-        invalid_types = ['Funding', 'AdlTrade', 'LiquidityTrade', 'AutoDeleveraging']
-
-        if exec_type in invalid_types:
-
-            return False
-
-        
-
-        # 실제 거래량이 있는 경우만 포함 (취소된 주문 제외)
-
-        if exec_qty <= 0 and closed_size <= 0:
-
-            return False
-
-        
-
-        # 디버그 로그 추가
-
-        logger.debug(f"거래 유효성 검사:")
-
-        logger.debug(f"- execType: {exec_type}")
-
-        logger.debug(f"- createType: {create_type}")
-
-        logger.debug(f"- execQty: {exec_qty}")
-
-        logger.debug(f"- closedSize: {closed_size}")
-
-        
-
-        return True
+        self.logger.setLevel(logging.INFO)
 
 
 
@@ -186,21 +136,67 @@ class TradeAnalyzer:
 
         try:
 
-            self.trades = self.trade_store.get_all_trades()
+            self.trades = await self.trade_store.get_all_trades()
+
+            self.logger.info(f"로드된 거래 수: {len(self.trades)}")
+
+            
 
             if not self.trades:
 
-                logger.warning("분석할 거래 데이터가 없습니다")
+                self.logger.warning("분석할 거래 데이터가 없습니다")
 
                 return None
 
 
 
-            # 유효한 거래만 필터링
+            # 거래 데이터 유효성 검사
+
+            valid_trades = []
+
+            invalid_count = 0
+
+            for trade in self.trades:
+
+                if self._is_valid_trade(trade):
+
+                    valid_trades.append(trade)
+
+                else:
+
+                    invalid_count += 1
+
+            
+
+            self.logger.info(f"유효한 거래 수: {len(valid_trades)}")
+
+            self.logger.info(f"유효하지 않은 거래 수: {invalid_count}")
+
+
+
+            if not valid_trades:
+
+                self.logger.warning("유효한 거래 데이터가 없습니다")
+
+                return None
+
+
+
+            self.trades = valid_trades
+
+            
+
+            # 거래 데이터 정렬
+
+            self.trades.sort(key=lambda x: x['timestamp'])
+
+
+
+            # 거래 데이터 유효성 검사
 
             valid_trades = [t for t in self.trades if self._is_valid_trade(t)]
 
-            logger.info(f"전체 거래: {len(self.trades)}, 유효한 거래: {len(valid_trades)}")
+            self.logger.info(f"전체 거래: {len(self.trades)}, 유효한 거래: {len(valid_trades)}")
 
             
 
@@ -220,21 +216,21 @@ class TradeAnalyzer:
 
             
 
-            logger.info("날짜별 거래 수:")
+            self.logger.info("날짜별 거래 수:")
 
             for date in sorted(date_counts.keys()):
 
-                logger.info(f"- {date}: {date_counts[date]}건")
+                self.logger.info(f"- {date}: {date_counts[date]}건")
 
 
 
             # 디버그 로그 추가
 
-            logger.info(f"전체 거래 수: {len(self.trades)}")
+            self.logger.info(f"전체 거래 수: {len(self.trades)}")
 
             sample_trade = self.trades[0] if self.trades else None
 
-            logger.info(f"첫 번째 거래 샘플: {sample_trade}")
+            self.logger.info(f"첫 번째 거래 샘플: {sample_trade}")
 
             
 
@@ -254,9 +250,9 @@ class TradeAnalyzer:
 
             
 
-            logger.info(f"고유 주문 수: {len(order_counts)}")
+            self.logger.info(f"고유 주문 수: {len(order_counts)}")
 
-            logger.info(f"주문별 거래 수 예시: {dict(list(order_counts.items())[:5])}")
+            self.logger.info(f"주문별 거래 수 예시: {dict(list(order_counts.items())[:5])}")
 
 
 
@@ -392,73 +388,142 @@ class TradeAnalyzer:
 
         except Exception as e:
 
-            logger.error(f"거래 분석 중 오류: {str(e)}")
+            self.logger.error(f"거래 분석 중 오류 발생: {str(e)}")
 
-            logger.error(traceback.format_exc())  # 스택 트레이스 추가
+            self.logger.error(traceback.format_exc())
 
             return None
 
 
 
-    def _group_trades_by_order(self):
+    def _is_valid_trade(self, trade):
 
-        """주문 ID별로 거래 그룹화"""
+        """유효한 거래인지 확인"""
 
-        order_groups = {}
+        try:
 
-        
+            if not trade or not isinstance(trade, dict):
 
-        for trade in self.trades:
+                return False
 
-            order_id = trade.get('order')
 
-            if order_id not in order_groups:
 
-                order_groups[order_id] = {
+            # 필수 필드 확인
 
-                    'trades': [],
+            required_fields = ['info', 'timestamp', 'side', 'price', 'amount']
 
-                    'side': trade['info'].get('side', '').lower(),
+            if not all(field in trade for field in required_fields):
 
-                    'total_size': 0,
+                return False
 
-                    'closed_size': 0,
 
-                    'pnl': 0,
 
-                    'entry_price': float(trade['info'].get('execPrice', 0)),
+            info = trade.get('info', {})
 
-                    'timestamp': trade['timestamp'],
+            if not info:
 
-                    'create_type': trade['info'].get('createType')
+                return False
 
-                }
 
+
+            # info 필드 내 필수 항목 확인
+
+            required_info_fields = ['execQty', 'closedSize', 'execType']
+
+            if not all(field in info for field in required_info_fields):
+
+                return False
+
+
+
+            # 거래량 확인
+
+            exec_qty = float(info.get('execQty', 0))
+
+            closed_size = float(info.get('closedSize', 0))
+
+
+
+            if exec_qty <= 0 and closed_size <= 0:
+
+                return False
+
+
+
+            # 거래 타입 확인
+
+            exec_type = info.get('execType')
+
+            if exec_type not in ['Trade']:
+
+                return False
+
+
+
+            return True
+
+
+
+        except Exception as e:
+
+            self.logger.error(f"거래 유효성 검사 중 오류: {str(e)}")
+
+            return False
+
+
+
+    def _is_same_position(self, trade1: Dict, trade2: Dict) -> bool:
+        """두 거래가 같은 포지션에 속하는지 확인"""
+        try:
+            # 주문 ID로 비교
+            order1 = trade1.get('order')
+            order2 = trade2.get('order')
             
-
-            group = order_groups[order_id]
-
-            group['trades'].append(trade)
-
-            exec_qty = float(trade['info'].get('execQty', 0))
-
-            closed_size = float(trade['info'].get('closedSize', 0))
-
-            group['total_size'] += exec_qty
-
-            group['closed_size'] += closed_size
-
+            # createType 확인
+            create_type1 = trade1['info'].get('createType', '')
+            create_type2 = trade2['info'].get('createType', '')
             
-
-            if closed_size > 0:
-
-                pnl = float(trade['info'].get('execRealizedPnl', 0))
-
-                group['pnl'] += pnl
-
+            # 같은 주문이면서
+            if order1 == order2:
+                return True
+            
+            # 청산 관련 거래인 경우 ('CreateByClosing', 'CreateByLiq' 등)
+            if 'Closing' in create_type1 or 'Closing' in create_type2:
+                return True
+            
+            return False
         
+        except Exception as e:
+            self.logger.error(f"포지션 비교 중 오류: {str(e)}")
+            return False
 
-        return order_groups
+    def _group_trades_by_position(self, trades: List[Dict]) -> List[Position]:
+        """거래들을 포지션별로 그룹화"""
+        positions = []
+        current_position = None
+        
+        for trade in trades:
+            # 첫 거래이거나 이전 포지션과 다른 경우
+            if not current_position or not self._is_same_position(trade, current_position.trades[-1]):
+                if current_position:
+                    positions.append(current_position)
+                # 새로운 포지션 생성
+                current_position = Position(
+                    side=trade['side'],
+                    size=float(trade['amount']),
+                    entry_price=float(trade['price']),
+                    entry_time=trade['timestamp']
+                )
+                current_position.add_trade(trade)
+            else:
+                # 기존 포지션에 거래 추가
+                current_position.add_trade(trade)
+        
+        # 마지막 포지션 추가
+        if current_position:
+            positions.append(current_position)
+        
+        return positions
 
 
 
@@ -479,12 +544,24 @@ class TradeAnalyzer:
             exec_qty = round(float(info.get('execQty', 0)), 3)
             closed_size = round(float(info.get('closedSize', 0)), 3)
             realized_pnl = float(trade.get('execRealizedPnl', 0))
+            create_type = info.get('createType', '')
             trade_time = datetime.fromtimestamp(trade['timestamp']/1000).strftime('%Y-%m-%d %H:%M:%S')
             
-            # 첫 거래 또는 포지션 없을 때
-            if not current_position:
+            new_position_size = round(exec_qty - closed_size, 3)
+            
+            # 실제 거래량이 0인 경우 스킵
+            if new_position_size <= 0 and not current_position:
+                continue
+            
+            # 새로운 포지션 시작 조건:
+            # 1. 첫 거래
+            # 2. 이전 포지션이 완전히 청산됨
+            # 3. CreateByUser로 새로운 주문 시작
+            if (not current_position or 
+                current_position['size'] <= 0 or 
+                (create_type == 'CreateByUser' and not self._is_same_position(trade, current_position['trades'][-1]))):
+                
                 position_count += 1
-                new_position_size = round(exec_qty - closed_size, 3)
                 current_position = {
                     'position_number': position_count,
                     'side': side,
@@ -495,51 +572,32 @@ class TradeAnalyzer:
                     'trades': [trade],
                     'start_time': trade['timestamp']
                 }
-                logger.info(f"[{trade_time}] 신규 포지션 #{position_count} 생성: {side} {new_position_size}@{price}")
-                continue
+                self.logger.info(f"[{trade_time}] 신규 포지션 #{position_count} 생성: {side} {new_position_size}@{price}")
+                
+            else:
+                # 기존 포지션에 추가
+                current_position['trades'].append(trade)
+                current_position['size'] = round(current_position['size'] + new_position_size, 3)
+                current_position['pnl'] += realized_pnl
+                
+                if new_position_size > 0:
+                    self.logger.info(f"[{trade_time}] 포지션 #{current_position['position_number']} 추가: +{new_position_size} (총 {current_position['size']})")
             
-            # 청산이 있는 경우
-            if closed_size > 0:
-                # 현재 포지션 청산
-                logger.info(f"[{trade_time}] 포지션 #{current_position['position_number']} 청산 완료")
+            # 포지션이 완전히 청산된 경우
+            if current_position and current_position['size'] <= 0:
+                self.logger.info(f"[{trade_time}] 포지션 #{current_position['position_number']} 청산 완료")
                 current_position['final_pnl'] = current_position['pnl']
                 positions.append(current_position)
-                
-                # 청산 후 남은 수량으로 새 포지션 생성
-                new_position_size = round(exec_qty - closed_size, 3)
-                if new_position_size > 0:
-                    position_count += 1
-                    current_position = {
-                        'position_number': position_count,
-                        'side': side,
-                        'size': new_position_size,
-                        'entry_price': price,
-                        'pnl': 0,
-                        'final_pnl': 0,
-                        'trades': [trade],
-                        'start_time': trade['timestamp']
-                    }
-                    logger.info(f"[{trade_time}] 신규 포지션 #{position_count} 생성: {side} {new_position_size}@{price}")
-                else:
-                    current_position = None
-            else:
-                # 같은 방향이면 포지션에 추가
-                if current_position['side'] == side:
-                    current_position['size'] = round(current_position['size'] + exec_qty, 3)
-                    current_position['trades'].append(trade)
-                    current_position['pnl'] += realized_pnl
-                    logger.info(f"[{trade_time}] 포지션 #{current_position['position_number']} 추가: +{exec_qty} (총 {current_position['size']})")
-        
+                current_position = None
+            
         # 마지막 포지션 처리
         if current_position:
             current_position['final_pnl'] = current_position['pnl']
             positions.append(current_position)
         
         return {
-            'total_positions': len(positions),
-            'long_positions': len([p for p in positions if p['side'] == 'buy']),
-            'short_positions': len([p for p in positions if p['side'] == 'sell']),
-            'positions': positions
+            'positions': positions,
+            'total_positions': len(positions)
         }
 
 

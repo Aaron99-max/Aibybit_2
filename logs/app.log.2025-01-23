@@ -1,0 +1,75 @@
+2025-01-23 14:32:31,866 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-23 14:32:31,868 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-23 14:32:31,873 - main - INFO - 서비스 초기화 중...
+2025-01-23 14:32:31,873 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-23 14:32:33,918 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-23 14:32:35,547 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-01-23 14:32:35,547 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-01-23 14:32:35,547 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-01-23 14:32:36,176 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-23 14:32:36,177 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-23 14:32:36,953 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-23 14:32:36,953 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-01-23 14:32:36,954 - services.trade_history_service - INFO - 조회 기간: 2024-10-25 ~ 2025-01-23
+2025-01-23 14:32:37,027 - services.trade_store - INFO - 총 907건의 거래 데이터 로드됨
+2025-01-23 14:32:37,027 - services.trade_store - INFO - 첫 거래: 2024-11-23 15:57:56.288000
+2025-01-23 14:32:37,027 - services.trade_store - INFO - 마지막 거래: 2024-12-31 16:29:26.230000
+2025-01-23 14:32:37,028 - services.trade_history_service - INFO - 기존 데이터: 907건
+2025-01-23 14:32:37,028 - services.trade_history_service - INFO - 첫 거래일: 2024-11-23
+2025-01-23 14:32:37,028 - services.trade_history_service - INFO - 마지막 거래일: 2024-12-31
+2025-01-23 14:32:37,029 - services.trade_history_service - INFO - 
+=== 누락 기간 데이터 조회 시작 (6개 구간) ===
+2025-01-23 14:32:37,029 - services.trade_history_service - INFO - 
+조회 구간: 2024-10-25 ~ 2024-11-22
+2025-01-23 14:32:37,029 - services.trade_history_service - INFO - 거래 조회 기간: 2024-10-25 00:00:00 ~ 2024-10-26 00:00:00
+2025-01-23 14:32:37,029 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:39,034 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:41,045 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:43,061 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-25 00:00:00 ~ 2024-10-26 00:00:00
+2025-01-23 14:32:45,077 - services.trade_history_service - INFO - 거래 조회 기간: 2024-10-26 00:00:00.001000 ~ 2024-10-27 00:00:00.001000
+2025-01-23 14:32:45,078 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:47,092 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:49,102 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:51,113 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-26 00:00:00.001000 ~ 2024-10-27 00:00:00.001000
+2025-01-23 14:32:53,125 - services.trade_history_service - INFO - 거래 조회 기간: 2024-10-27 00:00:00.002000 ~ 2024-10-28 00:00:00.002000
+2025-01-23 14:32:53,125 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:55,133 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:57,143 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:59,156 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-27 00:00:00.002000 ~ 2024-10-28 00:00:00.002000
+2025-01-23 14:33:01,169 - services.trade_history_service - INFO - 거래 조회 기간: 2024-10-28 00:00:00.003000 ~ 2024-10-29 00:00:00.003000
+2025-01-23 14:33:01,171 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:03,182 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:05,189 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:07,192 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-28 00:00:00.003000 ~ 2024-10-29 00:00:00.003000
+2025-01-23 14:33:09,195 - services.trade_history_service - INFO - 거래 조회 기간: 2024-10-29 00:00:00.004000 ~ 2024-10-30 00:00:00.004000
+2025-01-23 14:33:09,197 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:11,198 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:13,213 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:15,225 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-29 00:00:00.004000 ~ 2024-10-30 00:00:00.004000
+2025-01-23 15:01:58,277 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-01-23 15:01:58,278 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-01-23 15:01:58,284 - main - INFO - 서비스 초기화 중...
+2025-01-23 15:01:58,284 - main - INFO - 마켓 데이터 서비스 중...
+2025-01-23 15:02:00,173 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-01-23 15:02:00,562 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-01-23 15:02:00,562 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-01-23 15:02:00,563 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-01-23 15:02:01,214 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-01-23 15:02:01,214 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-01-23 15:02:01,979 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-01-23 15:02:01,979 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-01-23 15:02:01,979 - services.trade_history_service - INFO - 조회 기간: 2024-10-25 ~ 2025-01-23
+2025-01-23 15:02:02,011 - services.trade_store - INFO - 총 907건의 거래 데이터 로드됨
+2025-01-23 15:02:02,012 - services.trade_store - INFO - 첫 거래: 2024-11-23 15:57:56.288000
+2025-01-23 15:02:02,012 - services.trade_store - INFO - 마지막 거래: 2024-12-31 16:29:26.230000
+2025-01-23 15:02:02,013 - services.trade_history_service - INFO - 기존 데이터: 907건
+2025-01-23 15:02:02,013 - services.trade_history_service - INFO - 첫 거래일: 2024-11-23
+2025-01-23 15:02:02,013 - services.trade_history_service - INFO - 마지막 거래일: 2024-12-31
+2025-01-23 15:02:02,015 - services.trade_history_service - INFO - 
+=== 누락 기간 데이터 조회 시작 (6개 구간) ===
+2025-01-23 15:02:02,015 - services.trade_history_service - INFO - 
+조회 구간: 2024-10-25 ~ 2024-11-22
+2025-01-23 15:02:02,016 - services.trade_history_service - INFO - 거래 조회 기간: 2024-10-25 00:00:00 ~ 2024-10-26 00:00:00
+2025-01-23 15:02:02,017 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 15:02:04,025 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 15:02:06,029 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'

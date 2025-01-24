@@ -1,9 +1,9 @@
 {
   "market_summary": {
-    "market_phase": "상승",
-    "overall_sentiment": "긍정",
-    "short_term_sentiment": "강한매수",
-    "volume_trend": "증가",
+    "market_phase": "\ud6a1\ubcf4",
+    "overall_sentiment": "\uc911\ub9bd",
+    "short_term_sentiment": "\uc911\ub9bd",
+    "volume_trend": "\uc99d\uac00",
     "key_levels": {
       "support": [
         100000,
@@ -11,93 +11,62 @@
       ],
       "resistance": [
         105000,
-        110000
+        108000
       ]
     },
-    "confidence": 85
+    "confidence": 70
   },
   "trading_strategy": {
-    "position": "매수",
-    "entry_points": [
-      103000,
-      104500
-    ],
-    "stop_loss": 101500,
-    "take_profits": [
-      108000,
-      112000
-    ],
-    "risk_reward_ratio": 2.5,
-    "recommended_leverage": 7,
-    "position_size": "25%",
+    "position": "\uad00\ub9dd",
+    "entry_points": [],
+    "stop_loss": 2,
+    "take_profits": [],
+    "risk_reward_ratio": 0,
+    "recommended_leverage": 5,
+    "position_size": "10%",
     "key_risks": [
-      "급격한 시장 조정",
-      "대규모 매도 주체 등장"
+      "\uace0\uc800 \ubcc0\ub3d9\uc131"
     ]
   },
   "analysis_details": {
     "technical_signals": [
-      "MACD가 상승 신호",
-      "RSI가 중립 수준"
+      "RSI \uc911\ub9bd",
+      "MACD \ud558\ub77d"
     ],
     "market_drivers": [
-      "강한 매수 거래량",
-      "긍정적인 자금 조달비율"
+      "\ud6a1\ubcf4 \ud2b9\uc131 \uc720\uc9c0"
     ],
-    "key_events": [
-      "비트코인 차트 고점 돌파",
-      "매수 주체의 확실한 증가"
-    ]
+    "key_events": []
   },
   "technical_analysis": {
-    "trend": "상승",
-    "strength": 70.78,
+    "trend": "\ud6a1\ubcf4",
+    "strength": 31.39,
     "indicators": {
-      "rsi": 58.27,
-      "macd": "상승",
-      "bollinger": "중립",
-      "volatility": 185.76
+      "rsi": 47.21,
+      "macd": "\ud558\ub77d",
+      "bollinger": "\uc911\ub9bd",
+      "volatility": 23.94
     }
   },
   "market_data": {
     "price_data": {
       "symbol": "BTCUSDT",
-      "last_price": 102818.2,
-      "price_change_24h": 46.62,
-      "volume": 67872.088
+      "last_price": 103000.0,
+      "price_change_24h": 38.47,
+      "volume": 68103.539
     },
     "market_metrics": {
       "funding_rate": -0.00375,
       "next_funding_time": "1737504000000",
       "open_interest": {
-        "value": 1000285.172,
+        "value": 1000286.08,
         "change_24h": 0.0,
-        "timestamp": "1737522000000"
+        "timestamp": "1737521100000"
       },
       "long_short_ratio": 1.0
     },
     "order_book": {
       "bids": [
-        [
-          102719.0,
-          0.001
-        ],
-        [
-          102666.7,
-          0.001
-        ],
-        [
-          102616.0,
-          0.002
-        ],
-        [
-          102556.7,
-          0.001
-        ],
-        [
-          102500.0,
-          0.009
-        ],
         [
           102231.2,
           0.001
@@ -123,10 +92,6 @@
           0.002
         ],
         [
-          101816.4,
-          0.003
-        ],
-        [
           101772.8,
           0.45
         ],
@@ -137,10 +102,6 @@
         [
           101702.0,
           0.001
-        ],
-        [
-          101659.2,
-          0.009
         ],
         [
           101648.2,
@@ -177,20 +138,48 @@
         [
           100960.8,
           0.003
+        ],
+        [
+          100943.1,
+          0.001
+        ],
+        [
+          100847.4,
+          0.001
+        ],
+        [
+          100727.3,
+          0.45
+        ],
+        [
+          100721.5,
+          0.001
+        ],
+        [
+          100666.7,
+          0.001
+        ],
+        [
+          100500.0,
+          0.009
+        ],
+        [
+          100496.4,
+          0.002
         ]
       ],
       "asks": [
         [
-          102723.5,
+          103000.0,
+          0.007
+        ],
+        [
+          103333.4,
           0.001
         ],
         [
-          102733.5,
-          2.541
-        ],
-        [
-          103455.0,
-          3.169
+          103411.3,
+          0.001
         ],
         [
           103500.0,
@@ -226,7 +215,7 @@
         ],
         [
           104500.0,
-          903.785
+          991.006
         ],
         [
           104500.5,
@@ -281,11 +270,11 @@
           1190.0
         ]
       ],
-      "bid_volume": 0.698,
-      "ask_volume": 16379.97
+      "bid_volume": 1.137,
+      "ask_volume": 16461.489
     }
   },
-  "timeframe": "1h",
-  "timestamp": 1737522009137,
-  "saved_at": "2025-01-22 14:00:09 KST"
+  "timeframe": "15m",
+  "timestamp": 1737521151477,
+  "saved_at": "2025-01-22 13:45:51 KST"
 }

@@ -110,65 +110,39 @@ class TradeStore:
             logger.error(traceback.format_exc())
             return []
 
-    def get_all_trades(self):
-        """모든 거래 데이터 조회"""
-        trades = []
-        
-        # 월별 폴더 조회 (YYYYMM 형식으로 정렬)
-        month_folders = [d for d in os.listdir(self.trades_dir) 
-                        if os.path.isdir(os.path.join(self.trades_dir, d)) 
-                        and d.startswith('2024')]
-        month_folders.sort()  # 월별 정렬
-        
-        logger.info(f"조회할 월별 폴더: {month_folders}")
-        
-        # 각 월별 폴더에서 파일 읽기
-        for month in month_folders:
-            month_dir = os.path.join(self.trades_dir, month)
-            json_files = [f for f in os.listdir(month_dir) 
-                         if f.endswith('.json')]
+    async def get_all_trades(self) -> List[Dict]:
+        """모든 거래 내역을 비동기적으로 가져옵니다."""
+        try:
+            trades = []
             
-            # 날짜순 정렬 (YYYYMMDD 기준)
-            json_files.sort(key=lambda x: x.replace('.json', ''))
-            
-            logger.info(f"{month} 폴더의 파일 수: {len(json_files)}")
-            logger.debug(f"{month} 폴더의 파일 목록: {json_files}")
-            
-            # 각 JSON 파일 읽기
-            for file_name in json_files:
-                file_path = os.path.join(month_dir, file_name)
-                try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        file_trades = json.load(f)
-                        if isinstance(file_trades, list):
-                            trades.extend(file_trades)
-                            logger.debug(f"{file_name}: {len(file_trades)}건 로드")
-                        else:
-                            logger.warning(f"잘못된 형식의 거래 데이터: {file_path}")
-                except Exception as e:
-                    logger.error(f"파일 읽기 오류 ({file_path}): {str(e)}")
+            # 월별 폴더 순회
+            for month_dir in sorted(self.trades_dir.iterdir()):
+                if not month_dir.is_dir():
                     continue
-        
-        # 중복 제거 및 정렬
-        unique_trades = self._remove_duplicates(trades)
-        sorted_trades = sorted(unique_trades, key=lambda x: x['timestamp'])
-        
-        # 날짜별 거래 수 확인
-        date_counts = {}
-        for trade in sorted_trades:
-            date = datetime.fromtimestamp(trade['timestamp']/1000).date()
-            if date not in date_counts:
-                date_counts[date] = 0
-            date_counts[date] += 1
-        
-        logger.info("\n=== 거래 데이터 로드 결과 ===")
-        logger.info(f"총 거래: {len(trades)}건")
-        logger.info(f"고유 거래: {len(unique_trades)}건")
-        logger.info("\n날짜별 거래 수:")
-        for date in sorted(date_counts.keys()):
-            logger.info(f"- {date}: {date_counts[date]}건")
-        
-        return sorted_trades
+                
+                # 일별 파일 순회
+                for trade_file in sorted(month_dir.iterdir()):
+                    if not trade_file.suffix == '.json':
+                        continue
+                    
+                    with open(trade_file, 'r') as f:
+                        daily_trades = json.load(f)
+                        trades.extend(daily_trades)
+            
+            # 전체 거래를 시간순으로 정렬
+            trades.sort(key=lambda x: x['timestamp'])
+            
+            logger.info(f"총 {len(trades)}건의 거래 데이터 로드됨")
+            if trades:
+                logger.info(f"첫 거래: {datetime.fromtimestamp(trades[0]['timestamp']/1000)}")
+                logger.info(f"마지막 거래: {datetime.fromtimestamp(trades[-1]['timestamp']/1000)}")
+                
+            return trades
+            
+        except Exception as e:
+            logger.error(f"거래 내역 조회 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            return []
 
     def _remove_duplicates(self, trades):
         """중복 거래 제거"""

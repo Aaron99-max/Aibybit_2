@@ -1,0 +1,23 @@
+2025-01-23 14:32:37,029 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:39,034 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:41,045 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:43,061 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-25 00:00:00 ~ 2024-10-26 00:00:00
+2025-01-23 14:32:45,078 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:47,092 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:49,102 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:51,113 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-26 00:00:00.001000 ~ 2024-10-27 00:00:00.001000
+2025-01-23 14:32:53,125 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:55,133 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:57,143 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:32:59,156 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-27 00:00:00.002000 ~ 2024-10-28 00:00:00.002000
+2025-01-23 14:33:01,171 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:03,182 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:05,189 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:07,192 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-28 00:00:00.003000 ~ 2024-10-29 00:00:00.003000
+2025-01-23 14:33:09,197 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:11,198 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:13,213 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 14:33:15,225 - services.trade_history_service - ERROR - 기간 조회 실패: 2024-10-29 00:00:00.004000 ~ 2024-10-30 00:00:00.004000
+2025-01-23 15:02:02,017 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 15:02:04,025 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'
+2025-01-23 15:02:06,029 - services.trade_history_service - ERROR - 서버 시간 조회 실패: 'BybitClient' object has no attribute 'get_server_time'

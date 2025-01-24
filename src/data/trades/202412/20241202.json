@@ -398,8 +398,7 @@
       "execFee": "0.1528768",
       "execId": "7c50095c-f5d9-5945-9498-642bcb68cff7",
       "marketUnit": "",
-      "execQty": "0.004",
-      "nextPageCursor": "1733123728301%3A205343%2C1733122832566%3A205339"
+      "execQty": "0.004"
     },
     "timestamp": 1733123728301,
     "datetime": "2024-12-02T07:15:28.301Z",
@@ -450,8 +449,7 @@
       "execFee": "0.1528768",
       "execId": "7c50095c-f5d9-5945-9498-642bcb68cff7",
       "marketUnit": "",
-      "execQty": "0.004",
-      "nextPageCursor": "1733123728301%3A205343%2C1733122832566%3A205339"
+      "execQty": "0.004"
     },
     "execRealizedPnl": 0,
     "markPrice": 95949.52,

@@ -1,0 +1,42 @@
+2025-01-21 13:22:53,739 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-21 13:22:53,741 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 143, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+
+2025-01-21 13:32:39,400 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-21 13:32:39,401 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 143, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+
+2025-01-21 13:38:34,264 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-21 13:38:34,267 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 285, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+
+2025-01-21 13:40:03,772 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-21 13:40:03,773 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 285, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+
+2025-01-21 13:45:57,019 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-21 13:45:57,020 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 285, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+
+2025-01-21 14:49:32,291 - ai.trade_analyzer - ERROR - 거래 분석 중 오류: 'final_pnl'
+2025-01-21 14:49:32,294 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 285, in analyze_trades
+    winning_positions = [p for p in positions if p['final_pnl'] > 0]
+                                                 ~^^^^^^^^^^^^^
+KeyError: 'final_pnl'
+

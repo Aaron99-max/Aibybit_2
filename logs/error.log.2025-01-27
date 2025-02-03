@@ -1,0 +1,56 @@
+2025-01-27 14:10:32,180 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'time_performance'
+2025-01-27 14:23:39,413 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'time_performance'
+2025-01-27 14:27:03,088 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'list' object has no attribute 'items'
+2025-01-27 14:30:21,132 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'trades'
+2025-01-27 15:01:34,404 - telegram_bot.bot - ERROR - 핸들러 초기화 중 오류: TradeAnalyzer.__init__() takes 1 positional argument but 2 were given
+2025-01-27 15:01:34,412 - telegram_bot.bot - ERROR - 오류 상세: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 197, in _setup_handlers
+    self.stats_handler = StatsHandler(self)
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 14, in __init__
+    self.trade_analyzer = TradeAnalyzer(self.bot.trade_history_service.trade_store)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeAnalyzer.__init__() takes 1 positional argument but 2 were given
+
+2025-01-27 15:19:06,360 - ai.trade_analyzer - ERROR - 통계 계산 중 오류: 'Position' object has no attribute 'entry_time'
+2025-01-27 15:19:06,375 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 296, in _calculate_stats
+    holding_time = (p.last_update_time - p.entry_time) / (1000 * 60 * 60)  # 시간 단위
+                                         ^^^^^^^^^^^^
+AttributeError: 'Position' object has no attribute 'entry_time'. Did you mean: 'entry_price'?
+
+2025-01-27 15:21:39,784 - ai.trade_analyzer - ERROR - 통계 계산 중 오류: 'Position' object has no attribute 'entry_time'
+2025-01-27 15:21:39,790 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 299, in _calculate_stats
+    holding_time = (p.last_update_time - p.entry_time) / (1000 * 60 * 60)  # 시간 단위
+                                         ^^^^^^^^^^^^
+AttributeError: 'Position' object has no attribute 'entry_time'. Did you mean: 'entry_price'?
+
+2025-01-27 15:25:58,282 - ai.trade_analyzer - ERROR - 통계 계산 중 오류: 'Position' object has no attribute 'entry_time'
+2025-01-27 15:25:58,287 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 301, in _calculate_stats
+    holding_time = (p.last_update_time - p.entry_time) / (1000 * 60 * 60)  # 시간 단위
+                                         ^^^^^^^^^^^^
+AttributeError: 'Position' object has no attribute 'entry_time'. Did you mean: 'entry_price'?
+
+2025-01-27 15:29:41,988 - ai.trade_analyzer - ERROR - 통계 계산 중 오류: 'Position' object has no attribute 'entry_time'
+2025-01-27 15:29:41,990 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 300, in _calculate_stats
+    # 수익/손실 계산
+                     
+AttributeError: 'Position' object has no attribute 'entry_time'. Did you mean: 'entry_price'?
+
+2025-01-27 15:31:02,734 - ai.trade_analyzer - ERROR - 통계 계산 중 오류: 'Position' object has no attribute 'entry_time'
+2025-01-27 15:31:02,735 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 310, in _calculate_stats
+    holding_time = (p.last_update_time - p.entry_time) / (1000 * 60 * 60)  # 시간 단위
+                                         ^^^^^^^^^^^^
+AttributeError: 'Position' object has no attribute 'entry_time'. Did you mean: 'entry_price'?
+
+2025-01-27 15:34:52,937 - ai.trade_analyzer - ERROR - 통계 계산 중 오류: 'Position' object has no attribute 'entry_time'
+2025-01-27 15:34:52,939 - ai.trade_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\trade_analyzer.py", line 310, in _calculate_stats
+    holding_time = (p.last_update_time - p.entry_time) / (1000 * 60 * 60)  # 시간 단위
+                                         ^^^^^^^^^^^^
+AttributeError: 'Position' object has no attribute 'entry_time'. Did you mean: 'entry_price'?
+

@@ -94,42 +94,85 @@ class TradeHistoryService:
 
     async def _fetch_trades_for_period(self, start_time: int, end_time: int) -> List[Dict]:
         """특정 기간의 거래 내역 조회"""
-        trades = []
-        cursor = None
+        all_trades = []
+        current_time = end_time
         
-        while start_time < end_time:
-            current_end = min(start_time + (7 * 24 * 60 * 60 * 1000), end_time)  # 7일 단위로 조회
-            logger.info(f"거래 조회 기간: {datetime.fromtimestamp(start_time/1000)} ~ {datetime.fromtimestamp(current_end/1000)}")
-            
+        while current_time > start_time:
             try:
                 params = {
                     "category": "linear",
                     "symbol": "BTCUSDT",
-                    "limit": 100,
+                    "limit": 1000,
                     "startTime": start_time,
-                    "endTime": current_end,
-                    "execType": "Trade",
-                    "recvWindow": 5000
+                    "endTime": current_time
                 }
                 
-                batch = await self.bybit_client.fetch_my_trades(
+                response = await self.bybit_client.fetch_my_trades(
                     symbol="BTCUSDT",
                     params=params
                 )
                 
-                if batch:
-                    trades.extend(batch)
-                    logger.debug(f"조회된 거래 수: {len(batch)}건")
+                # 응답 구조 로깅
+                logger.debug(f"API 응답: {response[:2]}")  # 처음 2개 항목만 로깅
                 
-                start_time = current_end  # 다음 조회를 위해 업데이트
-                await asyncio.sleep(1)
+                if not response:
+                    break
+                    
+                # 응답 데이터 변환
+                trades = []
+                for trade in response:
+                    trade_data = {
+                        'id': trade.get('id'),
+                        'timestamp': int(trade.get('timestamp')),
+                        'datetime': trade.get('datetime'),
+                        'symbol': trade.get('symbol'),
+                        'side': trade.get('side'),
+                        'price': float(trade.get('price', 0)),
+                        'amount': float(trade.get('amount', 0)),
+                        'cost': float(trade.get('cost', 0)),
+                        'info': {
+                            'symbol': trade.get('info', {}).get('symbol'),
+                            'execFee': trade.get('info', {}).get('execFee'),
+                            'execId': trade.get('info', {}).get('execId'),
+                            'execPrice': trade.get('info', {}).get('execPrice'),
+                            'execQty': trade.get('info', {}).get('execQty'),
+                            'execType': trade.get('info', {}).get('execType'),
+                            'execValue': trade.get('info', {}).get('execValue'),
+                            'feeRate': trade.get('info', {}).get('feeRate'),
+                            'lastLiquidityInd': trade.get('info', {}).get('lastLiquidityInd'),
+                            'orderId': trade.get('info', {}).get('orderId'),
+                            'orderLinkId': trade.get('info', {}).get('orderLinkId'),
+                            'orderPrice': trade.get('info', {}).get('orderPrice'),
+                            'orderQty': trade.get('info', {}).get('orderQty'),
+                            'orderType': trade.get('info', {}).get('orderType'),
+                            'stopOrderType': trade.get('info', {}).get('stopOrderType'),
+                            'side': trade.get('info', {}).get('side'),
+                            'execTime': trade.get('info', {}).get('execTime'),
+                            'closedSize': trade.get('info', {}).get('closedSize', 0),
+                            'markPrice': trade.get('info', {}).get('markPrice', 0)
+                        }
+                    }
+                    trades.append(trade_data)
+                
+                all_trades.extend(trades)
+                logger.debug(f"조회된 거래 수: {len(trades)}건 (총 {len(all_trades)}건)")
+                
+                if trades:
+                    current_time = min(t['timestamp'] for t in trades) - 1
+                    logger.debug(f"다음 조회 시작 시간: {datetime.fromtimestamp(current_time/1000)}")
+                else:
+                    break
+                
+                await asyncio.sleep(0.5)
                 
             except Exception as e:
                 logger.error(f"거래 조회 중 오류 발생: {str(e)}")
                 logger.error(traceback.format_exc())
+                await asyncio.sleep(1)
                 break
-            
-        return trades
+        
+        all_trades.sort(key=lambda x: x['timestamp'])
+        return all_trades
 
     def _validate_trades(self, trades: List[Dict]) -> List[Dict]:
         """거래 데이터 유효성 검사"""
@@ -179,11 +222,16 @@ class TradeHistoryService:
                 
                 new_trades = await self._fetch_trades_for_period(last_update, period_end)
                 if new_trades:
-                    await self._save_trades(new_trades)
-                    self.trade_store.save_last_update(period_end)
-                    logger.info(f"새로운 거래 {len(new_trades)}건 저장")
+                    # 각 거래를 개별적으로 저장
+                    for trade in new_trades:
+                        self.trade_store.save_trade(trade)
+                    logger.info(f"새로운 거래 {len(new_trades)}건 저장 완료")
                 
-                last_update = period_end  # 다음 조회를 위해 업데이트
+                # 마지막 업데이트 시간 저장
+                self.trade_store.save_last_update(period_end)
+                last_update = period_end
+                
+                await asyncio.sleep(0.5)  # API 레이트 리밋 고려
             
         except Exception as e:
             logger.error(f"거래 내역 업데이트 실패: {str(e)}")

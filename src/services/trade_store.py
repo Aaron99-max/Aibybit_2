@@ -19,26 +19,28 @@ class TradeStore:
     def save_trade(self, trade: Dict) -> bool:
         """거래 내역 저장"""
         try:
-            trade_info = trade.get('info', {})
+            # 저장할 데이터 구조화
             trade_data = {
-                **trade,
-                'execRealizedPnl': float(trade_info.get('execRealizedPnl', 0)) if trade_info.get('execRealizedPnl') else 0,
-                'markPrice': float(trade_info.get('markPrice', 0)),
-                'execPrice': float(trade_info.get('execPrice', 0)),
-                'orderPrice': float(trade_info.get('orderPrice', 0)),
-                'orderQty': float(trade_info.get('orderQty', 0)),
-                'closedSize': float(trade_info.get('closedSize', 0)),
-                'execQty': float(trade_info.get('execQty', 0)),
+                'id': trade.get('id'),
+                'timestamp': trade.get('timestamp'),
+                'datetime': trade.get('datetime'),
+                'symbol': trade.get('symbol'),
+                'side': trade.get('side'),
+                'price': trade.get('price'),
+                'amount': trade.get('amount'),
+                'cost': trade.get('cost'),
+                'info': trade.get('info', {})
             }
+            
             # 날짜 정보 추출
-            trade_date = datetime.fromtimestamp(trade['timestamp']/1000)
-            month_str = trade_date.strftime('%Y%m')  # 예: 202412
-            date_str = trade_date.strftime('%Y%m%d')  # 예: 20241231
+            trade_date = datetime.fromtimestamp(trade_data['timestamp']/1000)
+            month_str = trade_date.strftime('%Y%m')
+            date_str = trade_date.strftime('%Y%m%d')
             
             # 월별 폴더 생성
             month_dir = self.trades_dir / month_str
             month_dir.mkdir(parents=True, exist_ok=True)
-
+            
             # 일별 거래 파일
             trades_file = month_dir / f"{date_str}.json"
             
@@ -47,25 +49,26 @@ class TradeStore:
             if trades_file.exists():
                 with open(trades_file, 'r') as f:
                     trades = json.load(f)
-                
+            
             # 중복 체크
-            trade_id = trade.get('id') or trade.get('order_id')
-            if trade_id:
-                if any(t.get('id') == trade_id for t in trades):
-                    logger.debug(f"이미 저장된 거래입니다: {trade_id}")
-                    return True
-
+            trade_id = trade_data.get('id')
+            if trade_id and any(t.get('id') == trade_id for t in trades):
+                logger.debug(f"이미 저장된 거래입니다: {trade_id}")
+                return True
+            
             # 새 거래 추가
             trades.append(trade_data)
             
             # 저장
             with open(trades_file, 'w') as f:
                 json.dump(trades, f, indent=2)
-
+            
+            logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
             return True
-
+            
         except Exception as e:
             logger.error(f"거래 저장 실패: {str(e)}")
+            logger.error(traceback.format_exc())
             return False
 
     def get_trades(self, start_time: int = None, end_time: int = None) -> List[Dict]:
@@ -73,9 +76,27 @@ class TradeStore:
         try:
             trades = []
             
-            # 월별 폴더 순회
+            # 시작/종료 날짜 계산
+            start_date = datetime.fromtimestamp(start_time/1000) if start_time else None
+            end_date = datetime.fromtimestamp(end_time/1000) if end_time else None
+            
+            # 월별 폴더 순회 (숫자로만 된 폴더만 처리)
             for month_dir in sorted(self.trades_dir.iterdir()):
                 if not month_dir.is_dir():
+                    continue
+                
+                # 숫자로만 된 폴더명인지 확인
+                if not month_dir.name.isdigit():
+                    continue
+                
+                try:
+                    month_date = datetime.strptime(month_dir.name, '%Y%m')
+                except ValueError:
+                    continue
+                
+                # 월이 범위 내에 있는지 확인
+                if (start_date and month_date.replace(day=1) < start_date.replace(day=1)) or \
+                   (end_date and month_date.replace(day=1) > end_date.replace(day=1)):
                     continue
                 
                 # 일별 파일 순회
@@ -83,26 +104,26 @@ class TradeStore:
                     if not trade_file.suffix == '.json':
                         continue
                     
+                    try:
+                        file_date = datetime.strptime(trade_file.stem, '%Y%m%d')
+                    except ValueError:
+                        continue
+                    
+                    # 날짜가 범위 내에 있는지 확인
+                    if (start_date and file_date.date() < start_date.date()) or \
+                       (end_date and file_date.date() > end_date.date()):
+                        continue
+                    
                     with open(trade_file, 'r') as f:
                         daily_trades = json.load(f)
-                    
-                    # 시간 필터링
-                    if start_time and end_time:
-                        daily_trades = [
-                            trade for trade in daily_trades
-                            if start_time <= trade['timestamp'] <= end_time
-                        ]
-                    
-                    trades.extend(daily_trades)
+                        if start_time and end_time:
+                            daily_trades = [
+                                trade for trade in daily_trades
+                                if start_time <= trade['timestamp'] <= end_time
+                            ]
+                        trades.extend(daily_trades)
             
-            # 전체 거래를 시간순으로 정렬
             trades.sort(key=lambda x: x['timestamp'])
-            
-            logger.info(f"총 {len(trades)}건의 거래 데이터 로드됨")
-            if trades:
-                logger.info(f"첫 거래: {datetime.fromtimestamp(trades[0]['timestamp']/1000)}")
-                logger.info(f"마지막 거래: {datetime.fromtimestamp(trades[-1]['timestamp']/1000)}")
-                
             return trades
             
         except Exception as e:

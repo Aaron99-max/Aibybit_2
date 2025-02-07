@@ -1,0 +1,14 @@
+2025-02-04 13:15:06,134 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: object list can't be used in 'await' expression
+2025-02-04 13:20:12,711 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: object dict can't be used in 'await' expression
+2025-02-04 13:30:24,113 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: 'coroutine' object is not iterable
+2025-02-04 13:30:24,119 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'NoneType' object is not subscriptable
+2025-02-04 13:32:56,293 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'entry_patterns'
+2025-02-04 13:53:17,331 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: 'Position' object has no attribute 'total_fees'
+2025-02-04 14:48:45,212 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported operand type(s) for /: 'NoneType' and 'int'
+2025-02-04 14:51:57,540 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported operand type(s) for /: 'NoneType' and 'int'
+2025-02-04 14:57:01,786 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: 'Trade' object has no attribute 'info'
+2025-02-04 14:58:09,574 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported operand type(s) for /: 'NoneType' and 'int'
+2025-02-04 15:00:04,683 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported operand type(s) for /: 'NoneType' and 'int'
+2025-02-04 16:21:46,484 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported format string passed to NoneType.__format__
+2025-02-04 16:25:15,604 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported format string passed to NoneType.__format__
+2025-02-04 16:27:18,531 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported format string passed to NoneType.__format__

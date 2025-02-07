@@ -1,0 +1,26 @@
+[
+  {
+    "id": "d233c098-4dfb-4a76-ab6e-05be86407018",
+    "timestamp": 1734151524616,
+    "side": "Sell",
+    "entry_price": 68121.3,
+    "exit_price": 99766.1,
+    "size": 0.001,
+    "leverage": 5,
+    "type": "Market",
+    "value": 68.1213,
+    "pnl": 31.55246192
+  },
+  {
+    "id": "1adee822-5d84-44fa-8926-6b34c9421dc2",
+    "timestamp": 1734157624856,
+    "side": "Sell",
+    "entry_price": 70256.2,
+    "exit_price": 63173.1,
+    "size": 0.001,
+    "leverage": 5,
+    "type": "Market",
+    "value": 70.2562,
+    "pnl": -7.15648612
+  }
+]

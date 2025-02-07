@@ -1,0 +1,50 @@
+[
+  {
+    "id": "6b7555c7-e0b4-455e-ad49-07734471b9c1",
+    "timestamp": 1733210929464,
+    "side": "Sell",
+    "entry_price": 96029.0,
+    "exit_price": 94160.5,
+    "size": 0.001,
+    "leverage": 4,
+    "type": "Market",
+    "value": 96.029,
+    "pnl": -1.93949408
+  },
+  {
+    "id": "a672a020-229d-46b0-88e4-cc3b8122989f",
+    "timestamp": 1733205021960,
+    "side": "Sell",
+    "entry_price": 96029.0,
+    "exit_price": 98202.5,
+    "size": 0.001,
+    "leverage": 4,
+    "type": "Market",
+    "value": 96.029,
+    "pnl": 2.10028282
+  },
+  {
+    "id": "f9d03768-6d40-4d56-8a38-3d4a4e20c73c",
+    "timestamp": 1733204924209,
+    "side": "Sell",
+    "entry_price": 96162.5,
+    "exit_price": 96131.5,
+    "size": 0.001,
+    "leverage": 2,
+    "type": "Market",
+    "value": 96.1625,
+    "pnl": -0.13676171
+  },
+  {
+    "id": "788dc778-15e8-4765-b80e-55a04dd3e660",
+    "timestamp": 1733204773743,
+    "side": "Sell",
+    "entry_price": 96131.5,
+    "exit_price": 96000.0,
+    "size": 0.001,
+    "leverage": 2,
+    "type": "Market",
+    "value": 96.1315,
+    "pnl": -0.23717233
+  }
+]

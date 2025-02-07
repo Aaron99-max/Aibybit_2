@@ -1,0 +1,14 @@
+[
+  {
+    "id": "9073ce91-0647-4d99-93c6-90166550bd8f",
+    "timestamp": 1734592607092,
+    "side": "Sell",
+    "entry_price": 32599.9237,
+    "exit_price": 25768.4,
+    "size": 8.668,
+    "leverage": 5,
+    "type": "Market",
+    "value": 282576.1378,
+    "pnl": -59493.90056772
+  }
+]

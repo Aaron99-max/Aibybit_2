@@ -1,0 +1,86 @@
+[
+  {
+    "id": "f803ac03-2b1e-4861-9b59-7b2fbdd03e3a",
+    "timestamp": 1735282212814,
+    "side": "Sell",
+    "entry_price": 96745.6,
+    "exit_price": 94729.0724,
+    "size": 0.574,
+    "leverage": 10,
+    "type": "Market",
+    "value": 55531.9744,
+    "pnl": -1199.37954803
+  },
+  {
+    "id": "be7b74f4-0762-46e0-bb3a-cd071bfffd1e",
+    "timestamp": 1735282165359,
+    "side": "Sell",
+    "entry_price": 96131.5,
+    "exit_price": 96212.071,
+    "size": 0.577,
+    "leverage": 10,
+    "type": "Market",
+    "value": 55467.8755,
+    "pnl": 4.86302413
+  },
+  {
+    "id": "c4358f0f-c333-4e9b-a42f-55e75789efca",
+    "timestamp": 1735279531903,
+    "side": "Sell",
+    "entry_price": 96162.4828,
+    "exit_price": 95955.4373,
+    "size": 0.579,
+    "leverage": 10,
+    "type": "Market",
+    "value": 55678.0775,
+    "pnl": -161.63923478
+  },
+  {
+    "id": "9be01151-54e4-42fb-81c3-62c9d84b40f0",
+    "timestamp": 1735279383290,
+    "side": "Sell",
+    "entry_price": 95911.1,
+    "exit_price": 96012.1396,
+    "size": 0.58,
+    "leverage": 10,
+    "type": "Market",
+    "value": 55628.438,
+    "pnl": 16.84943983
+  },
+  {
+    "id": "9110adb9-d0a1-4114-8785-37a82d186d7b",
+    "timestamp": 1735278869166,
+    "side": "Sell",
+    "entry_price": 96131.4393,
+    "exit_price": 95928.108,
+    "size": 0.581,
+    "leverage": 10,
+    "type": "Market",
+    "value": 55852.3662,
+    "pnl": -160.83448448
+  },
+  {
+    "id": "7c33adf2-4932-4ef1-aee6-80367f0bad52",
+    "timestamp": 1735278551287,
+    "side": "Sell",
+    "entry_price": 95839.7,
+    "exit_price": 95755.549,
+    "size": 0.583,
+    "leverage": 10,
+    "type": "Market",
+    "value": 55874.5451,
+    "pnl": -90.93892585
+  },
+  {
+    "id": "d597abc9-5773-4880-9086-1258a2dc45c3",
+    "timestamp": 1735276436699,
+    "side": "Sell",
+    "entry_price": 96296.0,
+    "exit_price": 95938.4,
+    "size": 0.001,
+    "leverage": 10,
+    "type": "Market",
+    "value": 96.296,
+    "pnl": -0.46332892
+  }
+]

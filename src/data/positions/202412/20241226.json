@@ -1,0 +1,86 @@
+[
+  {
+    "id": "2d4d28de-4af5-4b48-a63e-c0da4db0fdc0",
+    "timestamp": 1735198534798,
+    "side": "Sell",
+    "entry_price": 99844.4826,
+    "exit_price": 97493.2524,
+    "size": 0.574,
+    "leverage": 10,
+    "type": "Market",
+    "value": 57310.733,
+    "pnl": -1411.90562299
+  },
+  {
+    "id": "cba25c6a-8872-4fe9-b841-d3f7f906eb74",
+    "timestamp": 1735197456280,
+    "side": "Sell",
+    "entry_price": 99570.6083,
+    "exit_price": 98700.0,
+    "size": 0.581,
+    "leverage": 10,
+    "type": "Market",
+    "value": 57850.5234,
+    "pnl": -550.11796236
+  },
+  {
+    "id": "61ac63f2-3183-4da9-8a56-3073d48e3935",
+    "timestamp": 1735196041814,
+    "side": "Sell",
+    "entry_price": 99340.6,
+    "exit_price": 98731.6659,
+    "size": 0.587,
+    "leverage": 10,
+    "type": "Market",
+    "value": 58312.9322,
+    "pnl": -404.56363344
+  },
+  {
+    "id": "42879921-a0f5-45aa-8bf4-2d8dfce12e32",
+    "timestamp": 1735195794767,
+    "side": "Sell",
+    "entry_price": 99167.1,
+    "exit_price": 98700.0,
+    "size": 0.591,
+    "leverage": 10,
+    "type": "Market",
+    "value": 58607.7561,
+    "pnl": -320.90134077
+  },
+  {
+    "id": "dc57f137-dae2-4586-970e-6ac3ad052353",
+    "timestamp": 1735195042722,
+    "side": "Sell",
+    "entry_price": 99570.5194,
+    "exit_price": 98782.0464,
+    "size": 0.295,
+    "leverage": 10,
+    "type": "Market",
+    "value": 29373.3032,
+    "pnl": -255.09397471
+  },
+  {
+    "id": "e5b2acff-657c-4e4d-a61a-bf82cd82e2ce",
+    "timestamp": 1735193986673,
+    "side": "Sell",
+    "entry_price": 99678.7872,
+    "exit_price": 98700.0,
+    "size": 0.296,
+    "leverage": 10,
+    "type": "Market",
+    "value": 29504.921,
+    "pnl": -322.01706657
+  },
+  {
+    "id": "923f5248-982a-4357-a72b-1cb0c5213877",
+    "timestamp": 1735188611842,
+    "side": "Sell",
+    "entry_price": 98965.3,
+    "exit_price": 98763.5,
+    "size": 0.001,
+    "leverage": 5,
+    "type": "Market",
+    "value": 98.9653,
+    "pnl": -0.31055085
+  }
+]

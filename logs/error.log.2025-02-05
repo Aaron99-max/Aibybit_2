@@ -1,0 +1,13 @@
+2025-02-05 12:52:46,593 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: unsupported format string passed to NoneType.__format__
+2025-02-05 13:00:47,103 - telegram_bot.monitors.auto_analyzer - ERROR - Final 분석 중 오류: 'AITrader' object has no attribute 'analyze_final'
+2025-02-05 13:00:47,106 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 128, in run_final_analysis
+    final_analysis = await self.ai_trader.analyze_final(analyses)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AITrader' object has no attribute 'analyze_final'
+
+2025-02-05 13:10:02,690 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: 'Trade' object has no attribute 'info'
+2025-02-05 14:54:41,285 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: 'int' object has no attribute 'total_seconds'
+2025-02-05 14:57:06,510 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: Invalid format specifier '%Y-%m-%d %H:%M:%S' for object of type 'str'
+2025-02-05 15:06:28,253 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: '>' not supported between instances of 'method' and 'int'
+2025-02-05 15:22:07,477 - ai.trade_analyzer - ERROR - 거래 분석 중 오류 발생: closed_size = 0인데 반대 방향 거래가 존재함

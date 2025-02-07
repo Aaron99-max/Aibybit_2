@@ -1,0 +1,170 @@
+2025-02-06 12:34:22,451 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738812862250FLbWUu1Gr50KNIllm55000category=linear&limit=50&startTime=1731036862250&endTime=1738812862250&timestamp=1738812862250]
+2025-02-06 12:34:23,551 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738812862250FLbWUu1Gr50KNIllm55000category=linear&limit=50&startTime=1731036862250&endTime=1738812862250&timestamp=1738812862250]
+2025-02-06 12:34:25,642 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738812862250FLbWUu1Gr50KNIllm55000category=linear&limit=50&startTime=1731036862250&endTime=1738812862250&timestamp=1738812862250]
+2025-02-06 12:34:25,838 - exchange.bybit_client - ERROR - API 오류: Missing some parameters that must be filled in, symbol or settleCoin
+2025-02-06 12:34:26,924 - exchange.bybit_client - ERROR - API 오류: Missing some parameters that must be filled in, symbol or settleCoin
+2025-02-06 12:34:29,026 - exchange.bybit_client - ERROR - API 오류: Missing some parameters that must be filled in, symbol or settleCoin
+2025-02-06 12:47:19,350 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'run'
+2025-02-06 12:47:19,350 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'run'
+
+2025-02-06 12:49:01,810 - telegram_bot.bot - ERROR - 봇 시작 중 오류: Cannot close a running event loop
+2025-02-06 12:49:01,810 - main - ERROR - 실행 중 에러 발생: Cannot close a running event loop
+2025-02-06 12:49:01,911 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1006, in __run
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 995, in __run
+    loop.run_until_complete(self.initialize())
+  File "C:\Python312\Lib\asyncio\base_events.py", line 663, in run_until_complete
+    self._check_running()
+  File "C:\Python312\Lib\asyncio\base_events.py", line 622, in _check_running
+    raise RuntimeError('This event loop is already running')
+RuntimeError: This event loop is already running
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1014, in __run
+    loop.run_until_complete(self.stop())
+  File "C:\Python312\Lib\asyncio\base_events.py", line 663, in run_until_complete
+    self._check_running()
+  File "C:\Python312\Lib\asyncio\base_events.py", line 622, in _check_running
+    raise RuntimeError('This event loop is already running')
+RuntimeError: This event loop is already running
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 129, in start
+    await self.application.run_polling()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 818, in run_polling
+    return self.__run(
+           ^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1022, in __run
+    loop.close()
+  File "C:\Python312\Lib\asyncio\selector_events.py", line 101, in close
+    raise RuntimeError("Cannot close a running event loop")
+RuntimeError: Cannot close a running event loop
+
+2025-02-06 12:51:40,824 - telegram_bot.handlers.system_handler - ERROR - 봇 종료 중 오류: 'TelegramBot' object has no attribute 'admin_chat_id'
+2025-02-06 12:55:30,416 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738814130179FLbWUu1Gr50KNIllm520000category=linear&limit=50&symbol=BTCUSDT&startTime=1731038130179&endTime=1738814130179&timestamp=1738814130179&sign=9d8319dc886d62449091b977e4197870c8d068512a986dfc63b0a41f7707fea1]
+2025-02-06 12:55:30,584 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738814130416FLbWUu1Gr50KNIllm520000category=linear&symbol=BTCUSDT&timestamp=1738814130416&sign=0be5b4468e2d540b7af4f689bcc671f32f25bfe90e383133253e9a3a3a514927]
+2025-02-06 13:11:55,644 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738815115454FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=50&startTime=1736223115454&endTime=1738815115454&timestamp=1738815115454]
+2025-02-06 13:11:56,733 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738815115454FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=50&startTime=1736223115454&endTime=1738815115454&timestamp=1738815115454]
+2025-02-06 13:11:58,818 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738815115454FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=50&startTime=1736223115454&endTime=1738815115454&timestamp=1738815115454]
+2025-02-06 13:11:58,818 - telegram_bot.handlers.stats_handler - ERROR - 통계 분석 중 오류가 발생했습니다: BybitClient.get_positions() got an unexpected keyword argument 'category'
+2025-02-06 13:18:48,574 - exchange.bybit_client - ERROR - 청산된 PnL 데이터 조회 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-06 13:25:24,950 - exchange.bybit_client - ERROR - 청산된 PnL 데이터 조회 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1738815925060}
+2025-02-06 13:46:36,809 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: {'retCode': 10002, 'retMsg': 'invalid request, please check your server timestamp or recv_window param. req_timestamp[1738817191655],server_timestamp[1738817196923],recv_window[5000]', 'result': {}, 'retExtInfo': {}, 'time': 1738817196923}
+2025-02-06 13:48:17,716 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:18,048 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:18,387 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:18,736 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:19,067 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:56,797 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:57,118 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:57,454 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:57,800 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:48:58,153 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:50:25,712 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 13:50:25,715 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:50:26,105 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 13:50:26,106 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:50:26,451 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 13:50:26,455 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:50:26,817 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 13:50:26,821 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 13:50:27,206 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 13:50:27,206 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 14:00:02,500 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 14:00:02,504 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 14:00:02,860 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 14:00:02,860 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 14:00:03,216 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 14:00:03,218 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 14:00:03,577 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 14:00:03,578 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 14:00:03,900 - exchange.bybit_client - ERROR - JSON 파싱 실패: 
+2025-02-06 14:00:03,902 - exchange.bybit_client - ERROR - API 응답 오류 또는 예상치 못한 형식: None
+2025-02-06 14:18:48,325 - position_formatter - ERROR - 포지션 포맷팅 중 오류: 'entryPrice'
+[2025-02-06 14:30:56] services.market_data_service - ERROR:
+시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+
+[2025-02-06 14:30:56] ai.gpt_analyzer - ERROR:
+시장 데이터 조회 실패
+
+[2025-02-06 14:30:56] telegram_bot.monitors.auto_analyzer - ERROR:
+15m 분석 실패
+
+[2025-02-06 14:31:12] telegram_bot.bot - ERROR:
+메시지 전송 중 오류: Timed out
+
+[2025-02-06 15:00:16] services.market_data_service - ERROR:
+시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+
+[2025-02-06 15:00:16] ai.gpt_analyzer - ERROR:
+시장 데이터 조회 실패
+
+[2025-02-06 15:00:16] telegram_bot.monitors.auto_analyzer - ERROR:
+15m 분석 실패
+
+[2025-02-06 15:00:17] services.market_data_service - ERROR:
+시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+
+[2025-02-06 15:00:17] ai.gpt_analyzer - ERROR:
+시장 데이터 조회 실패
+
+[2025-02-06 15:00:17] telegram_bot.monitors.auto_analyzer - ERROR:
+1h 분석 실패
+
+[2025-02-06 15:15:13] services.market_data_service - ERROR:
+시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+
+[2025-02-06 15:15:13] ai.gpt_analyzer - ERROR:
+시장 데이터 조회 실패
+
+[2025-02-06 15:15:13] telegram_bot.monitors.auto_analyzer - ERROR:
+15m 분석 실패
+
+[2025-02-06 15:15:57] services.market_data_service - ERROR:
+시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+
+[2025-02-06 15:15:57] ai.gpt_analyzer - ERROR:
+시장 데이터 조회 실패
+
+[2025-02-06 15:15:57] telegram_bot.monitors.auto_analyzer - ERROR:
+15m 분석 실패
+
+[2025-02-06 15:23:32] telegram_bot.handlers.stats_handler - ERROR:
+거래 통계 조회 실패: 'TelegramBot' object has no attribute 'trade_history_service'
+
+2025-02-06 15:34:21,608 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'fetch_positions'
+2025-02-06 15:34:37,778 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: 'profit'
+2025-02-06 15:36:01,832 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'fetch_positions'
+2025-02-06 15:43:03,376 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'fetch_positions'
+2025-02-06 15:43:03,378 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 331, in update_positions
+    position_data = await self.bybit_client.fetch_positions(params=params)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'fetch_positions'. Did you mean: 'get_positions'?
+
+2025-02-06 15:48:36,417 - main - ERROR - 실행 중 에러 발생: BybitClient.__init__() got an unexpected keyword argument 'config'
+2025-02-06 15:48:36,418 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 60, in main
+    bybit_client = BybitClient(config=bybit_config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.__init__() got an unexpected keyword argument 'config'
+
+2025-02-06 15:49:47,567 - main - ERROR - 실행 중 에러 발생: 'BybitConfig' object has no attribute 'API_KEY'
+2025-02-06 15:49:47,568 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 61, in main
+    api_key=bybit_config.API_KEY,
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitConfig' object has no attribute 'API_KEY'
+

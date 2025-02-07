@@ -1,182 +1,110 @@
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime
 import json
 import logging
-from typing import Dict, List, Optional
-import traceback
-import os
+from typing import Dict, List
+import time
 
 logger = logging.getLogger(__name__)
 
 class TradeStore:
     def __init__(self):
-        """거래 데이터 저장소"""
+        """포지션 데이터 저장소"""
         self.base_dir = Path('src/data')
-        self.trades_dir = self.base_dir / 'trades'
-        self.trades_dir.mkdir(parents=True, exist_ok=True)
+        self.positions_dir = self.base_dir / 'positions'
+        self.positions_dir.mkdir(parents=True, exist_ok=True)
         self.last_update_file = self.base_dir / 'last_update.json'
 
-    def save_trade(self, trade: Dict) -> bool:
-        """거래 내역 저장"""
+    def save_positions(self, positions: List[Dict]) -> bool:
+        """포지션 정보 저장"""
         try:
-            # 저장할 데이터 구조화
-            trade_data = {
-                'id': trade.get('id'),
-                'timestamp': trade.get('timestamp'),
-                'datetime': trade.get('datetime'),
-                'symbol': trade.get('symbol'),
-                'side': trade.get('side'),
-                'price': trade.get('price'),
-                'amount': trade.get('amount'),
-                'cost': trade.get('cost'),
-                'info': trade.get('info', {})
-            }
-            
-            # 날짜 정보 추출
-            trade_date = datetime.fromtimestamp(trade_data['timestamp']/1000)
-            month_str = trade_date.strftime('%Y%m')
-            date_str = trade_date.strftime('%Y%m%d')
-            
-            # 월별 폴더 생성
-            month_dir = self.trades_dir / month_str
-            month_dir.mkdir(parents=True, exist_ok=True)
-            
-            # 일별 거래 파일
-            trades_file = month_dir / f"{date_str}.json"
-            
-            # 기존 거래 로드 또는 새로 생성
-            trades = []
-            if trades_file.exists():
-                with open(trades_file, 'r') as f:
-                    trades = json.load(f)
-            
-            # 중복 체크
-            trade_id = trade_data.get('id')
-            if trade_id and any(t.get('id') == trade_id for t in trades):
-                logger.debug(f"이미 저장된 거래입니다: {trade_id}")
-                return True
-            
-            # 새 거래 추가
-            trades.append(trade_data)
-            
-            # 저장
-            with open(trades_file, 'w') as f:
-                json.dump(trades, f, indent=2)
-            
-            logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+            for position in positions:
+                # API 응답에서 실제 포지션 시간 추출
+                timestamp = int(position.get('createdTime', 0))
+                if not timestamp:
+                    logger.warning(f"타임스탬프 없는 포지션 데이터: {position}")
+                    continue
+                
+                position_date = datetime.fromtimestamp(timestamp/1000)
+                month_str = position_date.strftime('%Y%m')
+                date_str = position_date.strftime('%Y%m%d')
+                
+                # 월별 폴더 생성
+                month_dir = self.positions_dir / month_str
+                month_dir.mkdir(parents=True, exist_ok=True)
+                
+                # 일별 포지션 파일
+                position_file = month_dir / f"{date_str}.json"
+                
+                # 기존 포지션 로드 또는 새로 생성
+                positions_data = []
+                if position_file.exists():
+                    with open(position_file, 'r') as f:
+                        positions_data = json.load(f)
+                
+                # 중복 체크 및 저장
+                position_id = position.get('orderId')
+                if not any(p.get('id') == position_id for p in positions_data):
+                    position_data = {
+                        'id': position_id,
+                        'timestamp': timestamp,
+                        'side': position.get('side'),
+                        'entry_price': float(position.get('avgEntryPrice', 0)),
+                        'exit_price': float(position.get('avgExitPrice', 0)),
+                        'size': float(position.get('qty', 0)),
+                        'leverage': int(position.get('leverage', 1)),
+                        'type': position.get('orderType'),
+                        'value': float(position.get('cumEntryValue', 0)),
+                        'pnl': float(position.get('closedPnl', 0))
+                    }
+                    positions_data.append(position_data)
+                    
+                    with open(position_file, 'w') as f:
+                        json.dump(positions_data, f, indent=2)
+                
+                logger.info(f"포지션 저장됨: {date_str} - {position_data['side']} {position_data['size']} @ {position_data['entry_price']}")
+        
             return True
             
         except Exception as e:
-            logger.error(f"거래 저장 실패: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"포지션 저장 실패: {str(e)}")
             return False
 
-    def get_trades(self, start_time: int = None, end_time: int = None) -> List[Dict]:
-        """거래 내역 조회 (시간 필터링)"""
+    def get_positions(self, start_time: int = None, end_time: int = None) -> List[Dict]:
+        """포지션 정보 조회"""
         try:
-            trades = []
+            positions = []
             
-            # 시작/종료 날짜 계산
             start_date = datetime.fromtimestamp(start_time/1000) if start_time else None
             end_date = datetime.fromtimestamp(end_time/1000) if end_time else None
             
-            # 월별 폴더 순회 (숫자로만 된 폴더만 처리)
-            for month_dir in sorted(self.trades_dir.iterdir()):
-                if not month_dir.is_dir():
+            for month_dir in sorted(self.positions_dir.iterdir()):
+                if not month_dir.is_dir() or not month_dir.name.isdigit():
                     continue
                 
-                # 숫자로만 된 폴더명인지 확인
-                if not month_dir.name.isdigit():
-                    continue
-                
-                try:
-                    month_date = datetime.strptime(month_dir.name, '%Y%m')
-                except ValueError:
-                    continue
-                
-                # 월이 범위 내에 있는지 확인
+                month_date = datetime.strptime(month_dir.name, '%Y%m')
                 if (start_date and month_date.replace(day=1) < start_date.replace(day=1)) or \
                    (end_date and month_date.replace(day=1) > end_date.replace(day=1)):
                     continue
                 
-                # 일별 파일 순회
-                for trade_file in sorted(month_dir.iterdir()):
-                    if not trade_file.suffix == '.json':
+                for position_file in sorted(month_dir.iterdir()):
+                    if not position_file.suffix == '.json':
                         continue
                     
-                    try:
-                        file_date = datetime.strptime(trade_file.stem, '%Y%m%d')
-                    except ValueError:
-                        continue
-                    
-                    # 날짜가 범위 내에 있는지 확인
+                    file_date = datetime.strptime(position_file.stem, '%Y%m%d')
                     if (start_date and file_date.date() < start_date.date()) or \
                        (end_date and file_date.date() > end_date.date()):
                         continue
                     
-                    with open(trade_file, 'r') as f:
-                        daily_trades = json.load(f)
-                        if start_time and end_time:
-                            daily_trades = [
-                                trade for trade in daily_trades
-                                if start_time <= trade['timestamp'] <= end_time
-                            ]
-                        trades.extend(daily_trades)
+                    with open(position_file, 'r') as f:
+                        daily_positions = json.load(f)
+                        positions.extend(daily_positions)
             
-            trades.sort(key=lambda x: x['timestamp'])
-            return trades
+            return sorted(positions, key=lambda x: x.get('timestamp', 0))
             
         except Exception as e:
-            logger.error(f"거래 내역 조회 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"포지션 조회 실패: {str(e)}")
             return []
-
-    async def get_all_trades(self) -> List[Dict]:
-        """모든 거래 내역을 비동기적으로 가져옵니다."""
-        try:
-            trades = []
-            
-            # 월별 폴더 순회
-            for month_dir in sorted(self.trades_dir.iterdir()):
-                if not month_dir.is_dir():
-                    continue
-                
-                # 일별 파일 순회
-                for trade_file in sorted(month_dir.iterdir()):
-                    if not trade_file.suffix == '.json':
-                        continue
-                    
-                    with open(trade_file, 'r') as f:
-                        daily_trades = json.load(f)
-                        trades.extend(daily_trades)
-            
-            # 전체 거래를 시간순으로 정렬
-            trades.sort(key=lambda x: x['timestamp'])
-            
-            logger.info(f"총 {len(trades)}건의 거래 데이터 로드됨")
-            if trades:
-                logger.info(f"첫 거래: {datetime.fromtimestamp(trades[0]['timestamp']/1000)}")
-                logger.info(f"마지막 거래: {datetime.fromtimestamp(trades[-1]['timestamp']/1000)}")
-                
-            return trades
-            
-        except Exception as e:
-            logger.error(f"거래 내역 조회 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            return []
-
-    def _remove_duplicates(self, trades):
-        """중복 거래 제거"""
-        seen = set()
-        unique_trades = []
-        
-        for trade in trades:
-            trade_id = trade.get('id')
-            if trade_id and trade_id not in seen:
-                seen.add(trade_id)
-                unique_trades.append(trade)
-        
-        return unique_trades
 
     def save_last_update(self, timestamp: int):
         """마지막 업데이트 시간 저장"""

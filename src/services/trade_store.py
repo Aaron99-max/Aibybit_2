@@ -29,41 +29,43 @@ class TradeStore:
                 month_str = position_date.strftime('%Y%m')
                 date_str = position_date.strftime('%Y%m%d')
                 
-                # 월별 폴더 생성
+                # 저장 경로 생성
                 month_dir = self.positions_dir / month_str
-                month_dir.mkdir(parents=True, exist_ok=True)
-                
-                # 일별 포지션 파일
+                month_dir.mkdir(exist_ok=True)
                 position_file = month_dir / f"{date_str}.json"
                 
-                # 기존 포지션 로드 또는 새로 생성
+                # 기존 데이터 로드
                 positions_data = []
                 if position_file.exists():
                     with open(position_file, 'r') as f:
                         positions_data = json.load(f)
                 
+                # 포지션 데이터 변환
+                position_data = {
+                    'id': position.get('orderId'),
+                    'timestamp': timestamp,
+                    'side': position.get('side'),
+                    'entry_price': float(position.get('avgEntryPrice', 0)),
+                    'exit_price': float(position.get('avgExitPrice', 0)),
+                    'size': float(position.get('qty', 0)),
+                    'leverage': int(position.get('leverage', 1)),
+                    'type': position.get('orderType'),
+                    'value': float(position.get('cumEntryValue', 0)),
+                    'pnl': float(position.get('closedPnl', 0)),
+                    'exec_type': position.get('execType', ''),  # Trade, Funding 등
+                    'closed_size': float(position.get('closedSize', 0)),  # 청산된 수량
+                    'position_idx': position.get('positionIdx', 0)  # 0: 양방향, 1: Buy-side, 2: Sell-side
+                }
+                
                 # 중복 체크 및 저장
-                position_id = position.get('orderId')
-                if not any(p.get('id') == position_id for p in positions_data):
-                    position_data = {
-                        'id': position_id,
-                        'timestamp': timestamp,
-                        'side': position.get('side'),
-                        'entry_price': float(position.get('avgEntryPrice', 0)),
-                        'exit_price': float(position.get('avgExitPrice', 0)),
-                        'size': float(position.get('qty', 0)),
-                        'leverage': int(position.get('leverage', 1)),
-                        'type': position.get('orderType'),
-                        'value': float(position.get('cumEntryValue', 0)),
-                        'pnl': float(position.get('closedPnl', 0))
-                    }
+                if not any(p.get('id') == position_data['id'] for p in positions_data):
                     positions_data.append(position_data)
                     
                     with open(position_file, 'w') as f:
                         json.dump(positions_data, f, indent=2)
-                
-                logger.info(f"포지션 저장됨: {date_str} - {position_data['side']} {position_data['size']} @ {position_data['entry_price']}")
-        
+                    
+                    logger.info(f"포지션 저장됨: {date_str} - {position_data['side']} {position_data['size']} @ {position_data['entry_price']}")
+            
             return True
             
         except Exception as e:
@@ -117,4 +119,25 @@ class TradeStore:
             with open(self.last_update_file, 'r') as f:
                 data = json.load(f)
                 return data.get('last_update', 0)
-        return 0 
+        return 0
+
+    def get_daily_positions(self, date_str: str) -> List[Dict]:
+        """일별 포지션 조회"""
+        try:
+            # 날짜 형식 확인 (YYYYMMDD)
+            date = datetime.strptime(date_str, '%Y%m%d')
+            month_str = date.strftime('%Y%m')
+            
+            # 파일 경로 생성
+            position_file = self.positions_dir / month_str / f"{date_str}.json"
+            
+            # 파일이 존재하면 데이터 로드
+            if position_file.exists():
+                with open(position_file, 'r') as f:
+                    return json.load(f)
+                
+            return []
+            
+        except Exception as e:
+            logger.error(f"일별 포지션 조회 실패: {str(e)}")
+            return [] 

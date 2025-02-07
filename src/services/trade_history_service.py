@@ -27,15 +27,22 @@ class TradeHistoryService:
             logger.info("=== 포지션 정보 초기화 시작 ===")
             logger.info(f"조회 기간: {datetime.fromtimestamp(start_timestamp/1000).strftime('%Y-%m-%d')} ~ {datetime.fromtimestamp(end_timestamp/1000).strftime('%Y-%m-%d')}")
             
-            # 기존 데이터 확인
+            # 마지막 업데이트 시간 확인
+            last_update = self.trade_store.get_last_update()
+            
+            # 저장된 데이터 확인
             existing_positions = self.trade_store.get_positions(start_timestamp, end_timestamp)
             
             if not existing_positions:
                 logger.info("기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.")
                 await self.update_positions(force_full_update=True)
+            elif not last_update or (end_timestamp - last_update) > (24 * 60 * 60 * 1000):  # 하루 이상 지났으면
+                logger.info(f"마지막 업데이트 이후 {((end_timestamp - last_update)/1000/60/60):.1f}시간 경과")
+                logger.info("최신 데이터만 업데이트합니다.")
+                await self.update_positions(start_time=last_update)
             else:
                 logger.info(f"기존 데이터: {len(existing_positions)}건")
-                await self.update_positions()
+                logger.info("최신 데이터입니다. 업데이트가 필요하지 않습니다.")
             
         except Exception as e:
             logger.error(f"포지션 정보 초기화 실패: {str(e)}")
@@ -217,18 +224,42 @@ class TradeHistoryService:
                     logger.info(f"포지션 {len(positions)}건 조회됨")
                     # API 응답 형태 확인을 위한 로그
                     logger.info(f"첫 번째 포지션 데이터: {positions[0]}")
-                return positions
+                    
+                    # 포지션 데이터 전처리
+                    processed_positions = []
+                    for p in positions:
+                        # 포지션 방향 결정
+                        side = p.get('side')
+                        exec_type = p.get('execType')
+                        closed_size = float(p.get('closedSize', 0))
+                        
+                        # 실제 포지션 방향 계산
+                        is_long = (side == 'Buy' and exec_type == 'Trade') or \
+                                 (side == 'Sell' and exec_type == 'Trade' and closed_size > 0)
+                        
+                        processed_positions.append({
+                            **p,
+                            'position_side': 'Long' if is_long else 'Short'
+                        })
+                    
+                    return processed_positions
+                return []
+            
             return []
             
         except Exception as e:
             logger.error(f"포지션 조회 중 오류: {str(e)}")
             return []
 
-    async def update_positions(self, force_full_update: bool = False):
+    async def update_positions(self, force_full_update: bool = False, start_time: int = None):
         """포지션 정보 업데이트"""
         try:
             end_time = int(time.time() * 1000)
-            start_time = end_time - (90 * 24 * 60 * 60 * 1000)  # 90일 전
+            
+            if force_full_update:
+                start_time = end_time - (90 * 24 * 60 * 60 * 1000)  # 90일 전
+            elif not start_time:
+                start_time = self.trade_store.get_last_update() or (end_time - 90 * 24 * 60 * 60 * 1000)
             
             logger.info(f"포지션 정보 업데이트 시작: {datetime.fromtimestamp(start_time/1000).strftime('%Y-%m-%d')} ~ {datetime.fromtimestamp(end_time/1000).strftime('%Y-%m-%d')}")
             
@@ -237,10 +268,9 @@ class TradeHistoryService:
             while current_start < end_time:
                 current_end = min(current_start + (7 * 24 * 60 * 60 * 1000), end_time)
                 
-                if current_end <= current_start:  # 안전장치
+                if current_end <= current_start:
                     break
                     
-                # 간단한 로그만 남김
                 logger.info(f"조회 기간: {datetime.fromtimestamp(current_start/1000).strftime('%Y-%m-%d')} ~ {datetime.fromtimestamp(current_end/1000).strftime('%Y-%m-%d')}")
                 
                 positions = await self.get_positions(current_start, current_end)
@@ -249,10 +279,10 @@ class TradeHistoryService:
                     logger.info(f"포지션 정보 {len(positions)}건 저장 완료")
                 
                 current_start = current_end
-                if current_start >= end_time:
-                    break
-                    
                 await asyncio.sleep(0.5)
+            
+            # 마지막 업데이트 시간 저장
+            self.trade_store.save_last_update(end_time)
             
         except Exception as e:
             logger.error(f"포지션 정보 업데이트 실패: {str(e)}")
@@ -353,3 +383,24 @@ class TradeHistoryService:
             return []
         
         return trades 
+
+    def get_positions_by_date_range(self, start_date: str, end_date: str) -> List[Dict]:
+        """날짜 범위로 포지션 조회"""
+        try:
+            positions = []
+            current_date = datetime.strptime(start_date, '%Y%m%d')
+            end = datetime.strptime(end_date, '%Y%m%d')
+            
+            while current_date <= end:
+                # 일별 포지션 조회
+                daily_positions = self.trade_store.get_daily_positions(
+                    current_date.strftime('%Y%m%d')
+                )
+                positions.extend(daily_positions)
+                current_date += timedelta(days=1)
+                
+            return positions
+            
+        except Exception as e:
+            logger.error(f"날짜 범위 포지션 조회 중 오류: {str(e)}")
+            return [] 

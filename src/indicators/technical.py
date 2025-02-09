@@ -44,11 +44,11 @@ class TechnicalIndicators:
             df['sma_10'] = df['close'].rolling(window=10).mean()
             df['sma_30'] = df['close'].rolling(window=30).mean()
             
-            # 추세 강도 계산 추가
+            # 추세 강도 계산 최적화 (1시간봉 기준)
             df['trend_strength'] = df.apply(lambda x: min(100, (
-                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 2000 * 0.4) +  # 이평선 차이
+                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 2000 * 0.5) +  # 이평선 차이 (비중 증가)
                 (abs(x['macd']) / x['close'] * 5000 * 0.3) +                   # MACD 강도
-                (abs(50 - x['rsi']) * 2 * 0.3)                                 # RSI 편차
+                (abs(50 - x['rsi']) * 2 * 0.2)                                 # RSI 편차 (비중 감소)
             )), axis=1)
             
             # 결측값 처리
@@ -62,8 +62,8 @@ class TechnicalIndicators:
             return None
 
     @staticmethod
-    def check_rsi_divergence(df: pd.DataFrame, window: int = 14) -> Dict:
-        """RSI 다이버전스 확인"""
+    def check_rsi_divergence(df: pd.DataFrame, window: int = 12) -> Dict:
+        """RSI 다이버전스 확인 (1시간봉 기준)"""
         try:
             if 'rsi' not in df.columns:
                 return {"type": "없음", "description": "RSI 데이터 없음"}
@@ -83,9 +83,9 @@ class TechnicalIndicators:
             
             # 베어리시 다이버전스
             # (가격이 신고점이지만 RSI는 이전 고점보다 낮을 때)
-            if (current_price >= price_high * 0.998 and  # 가격이 신고점 근처
-                current_rsi < rsi_high * 0.95 and        # RSI는 이전 고점보다 낮음
-                current_rsi < prev_rsi):                 # RSI 하락 중
+            if (current_price >= price_high * 0.999 and    # 더 엄격한 가격 기준
+                current_rsi < rsi_high * 0.97 and          # RSI 차이 기준 완화
+                current_rsi < prev_rsi):
                 return {
                     "type": "베어리시",
                     "description": f"가격은 신고점({current_price:.0f}) 도달, RSI({current_rsi:.1f})는 이전 고점({rsi_high:.1f})보다 낮음"
@@ -207,7 +207,7 @@ class TechnicalIndicators:
                 'histogram': pd.Series([0] * len(prices))
             }
 
-    def calculate_bollinger_bands(self, prices: pd.Series, period: int = 20, std: float = 2.0) -> Dict:
+    def calculate_bollinger_bands(self, prices: pd.Series, period: int = 20, std: float = 2.5) -> Dict:
         """볼린저 밴드 계산"""
         try:
             # 중심선 (SMA)

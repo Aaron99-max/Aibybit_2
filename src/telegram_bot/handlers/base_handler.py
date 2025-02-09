@@ -70,23 +70,6 @@ class BaseHandler:
         error_message = self.log_error(error, context)
         await self.send_message(f"❌ {error_message}", chat_id)
 
-    def validate_timeframe(self, timeframe: Optional[str]) -> bool:
-        """시간프레임 유효성 검사"""
-        valid_timeframes = ['15m', '1h', '4h', '1d', 'all']
-        return timeframe in valid_timeframes
-
-    async def show_timeframe_help(self, chat_id: int):
-        """시간프레임 도움말 표시"""
-        help_message = (
-            "시간프레임을 지정해주세요:\n"
-            "/analyze 15m - 15분봉 분석\n"
-            "/analyze 1h - 1시간봉 분석\n"
-            "/analyze 4h - 4시간봉 분석\n"
-            "/analyze 1d - 일봉 분석\n"
-            "/analyze all - 전체 분석"
-        )
-        await self.send_message(help_message, chat_id) 
-
     async def check_permission(self, update: Update) -> bool:
         """명령어 실행 권한 체크"""
         if not update.effective_chat:

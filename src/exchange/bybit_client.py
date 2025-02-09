@@ -119,3 +119,16 @@ class BybitClient:
         """연결 종료"""
         if hasattr(self, 'exchange'):
             await self.exchange.close()
+
+    async def get_funding_rate(self, symbol: str) -> float:
+        """자금 조달 비율 조회"""
+        try:
+            params = {
+                'category': 'linear',
+                'symbol': symbol
+            }
+            response = await self.exchange.fetch_funding_rate(symbol, params=params)
+            return float(response.get('fundingRate', 0))
+        except Exception as e:
+            logger.error(f"자금 조달 비율 조회 실패: {str(e)}")
+            return 0.0

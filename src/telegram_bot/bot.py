@@ -99,6 +99,44 @@ class TelegramBot:
         # Application 초기화
         self.application = Application.builder().token(config.bot_token).build()
 
+        # 모니터링 초기화
+        self.auto_analyzer = AutoAnalyzer(
+            bot=self,
+            ai_trader=self.ai_trader,
+            market_data_service=self.market_data_service,
+            storage_formatter=self.storage_formatter,
+            analysis_formatter=self.analysis_formatter
+        )
+        
+        # 핸들러 초기화 (순서 중요)
+        self.analysis_handler = AnalysisHandler(
+            bot=self,
+            auto_analyzer=self.auto_analyzer
+        )
+        self.system_handler = SystemHandler(self)
+        self.stats_handler = StatsHandler(self)
+        self.trading_handler = TradingHandler(
+            self,
+            self.ai_trader,
+            self.position_service,
+            self.trade_manager
+        )
+
+        # 명령어 핸들러 등록
+        handlers = [
+            CommandHandler("help", self.system_handler.handle_help),
+            CommandHandler("stop", self.system_handler.handle_stop),
+            CommandHandler("analyze", self.analysis_handler.handle_analyze),
+            CommandHandler("status", self.trading_handler.handle_status),
+            CommandHandler("balance", self.trading_handler.handle_balance),
+            CommandHandler("position", self.trading_handler.handle_position),
+            CommandHandler("stats", self.stats_handler.handle),
+            CommandHandler("trade", self.trading_handler.handle_trade)
+        ]
+
+        for handler in handlers:
+            self.application.add_handler(handler)
+
     async def send_message_to_all(self, message: str, parse_mode: str = 'HTML'):
         """모든 채팅방(관리자방 + 알림방)에 메시지 전송"""
         try:
@@ -205,14 +243,11 @@ class TelegramBot:
             handlers = [
                 CommandHandler("help", self.system_handler.handle_help),
                 CommandHandler("stop", self.system_handler.handle_stop),
-                CommandHandler("monitor_start", self.system_handler.handle_start_monitoring),
-                CommandHandler("monitor_stop", self.system_handler.handle_stop_monitoring),
                 CommandHandler("analyze", self.analysis_handler.handle_analyze),
-                CommandHandler("last", self.analysis_handler.handle_last),
                 CommandHandler("status", self.trading_handler.handle_status),
                 CommandHandler("balance", self.trading_handler.handle_balance),
                 CommandHandler("position", self.trading_handler.handle_position),
-                CommandHandler("stats", self.stats_handler.handle),  # stats 명령어 추가
+                CommandHandler("stats", self.stats_handler.handle),
                 CommandHandler("trade", self.trading_handler.handle_trade)
             ]
             
@@ -245,13 +280,10 @@ class TelegramBot:
     async def _handle_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """도움말 명령어 처리"""
         help_text = """
-🤖 사 가능한 명령어:
+🤖 사용 가능한 명령어:
 
-💰 분석 명령어:
-/analyze - 현 시장 분석
-/last - 마지막 분석 결과 확인
-
-💰 거래 명령어:
+💰 트레이딩 명령어:
+/analyze - 1시간봉 시장 분석
 /trade - 거래 실행
 /status - 현재 상태 확인
 /balance - 계좌 잔고 확인
@@ -259,8 +291,6 @@ class TelegramBot:
 /stats - 거래 통계 확인
 
 ⚙️ 시스템 명령어:
-/monitor_start - 자동 모니터링 시작
-/monitor_stop - 자동 모니터링 중지
 /stop - 봇 종료
 """
         try:
@@ -270,14 +300,6 @@ class TelegramBot:
         except Exception as e:
             logger.error(f"도움말 처리 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
-
-    async def _handle_last(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """마지막 분석 결과 조회"""
-        timeframe = context.args[0] if context.args else None
-        if timeframe in self.last_analysis_results:
-            await self.send_analysis(self.last_analysis_results[timeframe], timeframe)
-        else:
-            await self.send_message("❌ 저장된 분석 결과가 없습니다.", update.effective_chat.id)
 
     async def _handle_status(self, update: Update, context: CallbackContext):
         """현재 상태 조회"""
@@ -316,6 +338,9 @@ class TelegramBot:
             
             # 봇 시작
             await self.application.start()
+            
+            # 시작 메시지 전송 추가
+            await self.send_message_to_all("🤖 바이빗 트레이딩 봇이 시작되었습니다.")
             
             # 모니터링 시작
             await self.application.updater.start_polling(

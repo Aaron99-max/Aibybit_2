@@ -38,21 +38,12 @@ class AITrader:
             self.storage_formatter.save_analysis(analysis, timeframe)
         return analysis
 
-    async def create_final_analysis(self, analyses: Dict) -> Dict:
-        """최종 분석 생성"""
-        final_analysis = await self.gpt_analyzer.analyze_final(analyses)
-        if final_analysis:
-            self.storage_formatter.save_analysis(final_analysis, 'final')
-        return final_analysis
-
     def validate_auto_trading(self, analysis: Dict) -> bool:
         """자동매매 조건 검증"""
-        auto_trading = analysis.get('trading_strategy', {}).get('auto_trading', {})
-        confidence = auto_trading.get('confidence', 0)
-        strength = auto_trading.get('strength', 0)
+        # 1시간 분석 기준으로 수정
+        confidence = analysis.get('confidence', 0)
         
-        return (confidence >= trading_config.auto_trading['confidence']['min'] and 
-                strength >= trading_config.auto_trading['trend_strength']['min'])
+        return confidence >= trading_config.auto_trading['confidence']['min']
 
     async def execute_auto_trade(self, analysis: Dict) -> bool:
         """자동매매 실행"""

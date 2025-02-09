@@ -1,0 +1,218 @@
+2025-02-07 14:23:55,986 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1731129835969', 'endTime': '1731734635969'} of type <class 'dict'>
+2025-02-07 14:23:56,515 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1731734635969', 'endTime': '1732339435969'} of type <class 'dict'>
+2025-02-07 14:23:57,027 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1732339435969', 'endTime': '1732944235969'} of type <class 'dict'>
+2025-02-07 14:23:57,555 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1732944235969', 'endTime': '1733549035969'} of type <class 'dict'>
+2025-02-07 14:23:58,069 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1733549035969', 'endTime': '1734153835969'} of type <class 'dict'>
+2025-02-07 14:23:58,589 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734153835969', 'endTime': '1734758635969'} of type <class 'dict'>
+2025-02-07 14:23:59,116 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734758635969', 'endTime': '1735363435969'} of type <class 'dict'>
+2025-02-07 14:23:59,639 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735363435969', 'endTime': '1735968235969'} of type <class 'dict'>
+2025-02-07 14:24:00,167 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735968235969', 'endTime': '1736573035969'} of type <class 'dict'>
+2025-02-07 14:24:00,682 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1736573035969', 'endTime': '1737177835969'} of type <class 'dict'>
+2025-02-07 14:24:01,210 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737177835969', 'endTime': '1737782635969'} of type <class 'dict'>
+2025-02-07 14:24:01,721 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737782635969', 'endTime': '1738387435969'} of type <class 'dict'>
+2025-02-07 14:24:02,249 - exchange.bybit_client - ERROR - API 요청 실패: Invalid variable type: value should be str, int or float, got {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1738387435969', 'endTime': '1738905835969'} of type <class 'dict'>
+2025-02-07 14:24:04,221 - telegram_bot.bot - ERROR - 핸들러 초기화 중 오류: 'StatsHandler' object has no attribute 'handle'
+2025-02-07 14:24:04,228 - telegram_bot.bot - ERROR - 오류 상세: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 216, in _setup_handlers
+    CommandHandler("stats", self.stats_handler.handle),  # stats 명령어 추가
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StatsHandler' object has no attribute 'handle'
+
+2025-02-07 14:30:03,058 - ai.gpt_client - ERROR - GPT 분석 요청 중 오류: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-02-07 14:30:03,062 - ai.gpt_analyzer - ERROR - GPT 응답이 비어있습니다
+2025-02-07 14:30:03,063 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-07 14:34:10,712 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906450527FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1731130450525&endTime=1731735250525&limit=100&timestamp=1738906450527]
+2025-02-07 14:34:11,806 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906450527FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1731130450525&endTime=1731735250525&limit=100&timestamp=1738906450527]
+2025-02-07 14:34:13,906 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906450527FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1731130450525&endTime=1731735250525&limit=100&timestamp=1738906450527]
+2025-02-07 14:34:14,584 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906454409FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1731735250525&endTime=1732340050525&limit=100&timestamp=1738906454409]
+2025-02-07 14:34:15,680 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906454409FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1731735250525&endTime=1732340050525&limit=100&timestamp=1738906454409]
+2025-02-07 14:34:17,771 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906454409FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1731735250525&endTime=1732340050525&limit=100&timestamp=1738906454409]
+2025-02-07 14:34:18,452 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906458270FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1732340050525&endTime=1732944850525&limit=100&timestamp=1738906458270]
+2025-02-07 14:34:19,540 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906458270FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1732340050525&endTime=1732944850525&limit=100&timestamp=1738906458270]
+2025-02-07 14:34:21,628 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906458270FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1732340050525&endTime=1732944850525&limit=100&timestamp=1738906458270]
+2025-02-07 14:34:22,298 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906462131FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1732944850525&endTime=1733549650525&limit=100&timestamp=1738906462131]
+2025-02-07 14:34:23,394 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906462131FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1732944850525&endTime=1733549650525&limit=100&timestamp=1738906462131]
+2025-02-07 14:34:25,486 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906462131FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1732944850525&endTime=1733549650525&limit=100&timestamp=1738906462131]
+2025-02-07 14:34:26,170 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906466003FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1733549650525&endTime=1734154450525&limit=100&timestamp=1738906466003]
+2025-02-07 14:34:27,262 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906466003FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1733549650525&endTime=1734154450525&limit=100&timestamp=1738906466003]
+2025-02-07 14:34:29,355 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906466003FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1733549650525&endTime=1734154450525&limit=100&timestamp=1738906466003]
+2025-02-07 14:34:30,209 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906469870FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1734154450525&endTime=1734759250525&limit=100&timestamp=1738906469870]
+2025-02-07 14:34:31,311 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906469870FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1734154450525&endTime=1734759250525&limit=100&timestamp=1738906469870]
+2025-02-07 14:34:33,414 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906469870FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1734154450525&endTime=1734759250525&limit=100&timestamp=1738906469870]
+2025-02-07 14:34:34,114 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906473934FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1734759250525&endTime=1735364050525&limit=100&timestamp=1738906473934]
+2025-02-07 14:34:35,204 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906473934FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1734759250525&endTime=1735364050525&limit=100&timestamp=1738906473934]
+2025-02-07 14:34:37,308 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906473934FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1734759250525&endTime=1735364050525&limit=100&timestamp=1738906473934]
+2025-02-07 14:34:37,993 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906477831FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1735364050525&endTime=1735968850525&limit=100&timestamp=1738906477831]
+2025-02-07 14:34:39,083 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906477831FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1735364050525&endTime=1735968850525&limit=100&timestamp=1738906477831]
+2025-02-07 14:34:41,179 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906477831FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1735364050525&endTime=1735968850525&limit=100&timestamp=1738906477831]
+2025-02-07 14:34:41,843 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906481681FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1735968850525&endTime=1736573650525&limit=100&timestamp=1738906481681]
+2025-02-07 14:34:42,943 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906481681FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1735968850525&endTime=1736573650525&limit=100&timestamp=1738906481681]
+2025-02-07 14:34:45,038 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906481681FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1735968850525&endTime=1736573650525&limit=100&timestamp=1738906481681]
+2025-02-07 14:34:45,694 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906485538FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1736573650525&endTime=1737178450525&limit=100&timestamp=1738906485538]
+2025-02-07 14:34:46,786 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906485538FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1736573650525&endTime=1737178450525&limit=100&timestamp=1738906485538]
+2025-02-07 14:34:49,031 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906485538FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1736573650525&endTime=1737178450525&limit=100&timestamp=1738906485538]
+2025-02-07 14:34:49,758 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906489555FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1737178450525&endTime=1737783250525&limit=100&timestamp=1738906489555]
+2025-02-07 14:34:50,849 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906489555FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1737178450525&endTime=1737783250525&limit=100&timestamp=1738906489555]
+2025-02-07 14:34:52,949 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906489555FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1737178450525&endTime=1737783250525&limit=100&timestamp=1738906489555]
+2025-02-07 14:34:53,638 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906493464FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1737783250525&endTime=1738388050525&limit=100&timestamp=1738906493464]
+2025-02-07 14:34:54,730 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906493464FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1737783250525&endTime=1738388050525&limit=100&timestamp=1738906493464]
+2025-02-07 14:34:56,830 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906493464FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1737783250525&endTime=1738388050525&limit=100&timestamp=1738906493464]
+2025-02-07 14:34:57,665 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906497349FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1738388050525&endTime=1738906450525&limit=100&timestamp=1738906497349]
+2025-02-07 14:34:58,766 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906497349FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1738388050525&endTime=1738906450525&limit=100&timestamp=1738906497349]
+2025-02-07 14:37:11,001 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906630807FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731130630804&endTime=1731735430804&timestamp=1738906630807]
+2025-02-07 14:37:12,250 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906630807FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731130630804&endTime=1731735430804&timestamp=1738906630807]
+2025-02-07 14:37:14,344 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906630807FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731130630804&endTime=1731735430804&timestamp=1738906630807]
+2025-02-07 14:37:14,347 - services.trade_history_service - ERROR - API 응답 오류: error sign! origin_string[1738906630807FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731130630804&endTime=1731735430804&timestamp=1738906630807]
+2025-02-07 14:37:15,040 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906634860FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731735430805&endTime=1732340230805&timestamp=1738906634860]
+2025-02-07 14:37:16,280 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906634860FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731735430805&endTime=1732340230805&timestamp=1738906634860]
+2025-02-07 14:37:18,375 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906634860FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731735430805&endTime=1732340230805&timestamp=1738906634860]
+2025-02-07 14:37:18,377 - services.trade_history_service - ERROR - API 응답 오류: error sign! origin_string[1738906634860FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731735430805&endTime=1732340230805&timestamp=1738906634860]
+2025-02-07 14:37:19,158 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906638896FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340230806&endTime=1732945030806&timestamp=1738906638896]
+2025-02-07 14:37:20,253 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906638896FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340230806&endTime=1732945030806&timestamp=1738906638896]
+2025-02-07 14:37:22,356 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906638896FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340230806&endTime=1732945030806&timestamp=1738906638896]
+2025-02-07 14:37:22,358 - services.trade_history_service - ERROR - API 응답 오류: error sign! origin_string[1738906638896FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340230806&endTime=1732945030806&timestamp=1738906638896]
+2025-02-07 14:37:23,039 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906642874FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945030807&endTime=1733549830807&timestamp=1738906642874]
+2025-02-07 14:37:24,284 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906642874FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945030807&endTime=1733549830807&timestamp=1738906642874]
+2025-02-07 14:37:26,526 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906642874FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945030807&endTime=1733549830807&timestamp=1738906642874]
+2025-02-07 14:37:26,528 - services.trade_history_service - ERROR - API 응답 오류: error sign! origin_string[1738906642874FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945030807&endTime=1733549830807&timestamp=1738906642874]
+2025-02-07 14:37:27,231 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906647046FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733549830808&endTime=1734154630808&timestamp=1738906647046]
+2025-02-07 14:37:28,333 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906647046FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733549830808&endTime=1734154630808&timestamp=1738906647046]
+2025-02-07 14:37:30,427 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906647046FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733549830808&endTime=1734154630808&timestamp=1738906647046]
+2025-02-07 14:37:30,429 - services.trade_history_service - ERROR - API 응답 오류: error sign! origin_string[1738906647046FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733549830808&endTime=1734154630808&timestamp=1738906647046]
+2025-02-07 14:37:31,089 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906650929FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734154630809&endTime=1734759430809&timestamp=1738906650929]
+2025-02-07 14:37:32,330 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906650929FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734154630809&endTime=1734759430809&timestamp=1738906650929]
+2025-02-07 14:37:34,559 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906650929FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734154630809&endTime=1734759430809&timestamp=1738906650929]
+2025-02-07 14:37:34,561 - services.trade_history_service - ERROR - API 응답 오류: error sign! origin_string[1738906650929FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734154630809&endTime=1734759430809&timestamp=1738906650929]
+2025-02-07 14:37:35,257 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906655075FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734759430810&endTime=1735364230810&timestamp=1738906655075]
+2025-02-07 14:37:36,344 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906655075FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734759430810&endTime=1735364230810&timestamp=1738906655075]
+2025-02-07 14:37:38,442 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906655075FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734759430810&endTime=1735364230810&timestamp=1738906655075]
+2025-02-07 14:37:38,443 - services.trade_history_service - ERROR - API 응답 오류: error sign! origin_string[1738906655075FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734759430810&endTime=1735364230810&timestamp=1738906655075]
+2025-02-07 14:37:39,132 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906658945FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735364230811&endTime=1735969030811&timestamp=1738906658945]
+2025-02-07 14:40:07,786 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906807586FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731130807216&endTime=1731735607216&timestamp=1738906807586]
+2025-02-07 14:40:08,879 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906807586FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731130807216&endTime=1731735607216&timestamp=1738906807586]
+2025-02-07 14:40:10,974 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906807586FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731130807216&endTime=1731735607216&timestamp=1738906807586]
+2025-02-07 14:40:10,980 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:12,024 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906811845FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731735607217&endTime=1732340407217&timestamp=1738906811845]
+2025-02-07 14:40:13,258 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906811845FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731735607217&endTime=1732340407217&timestamp=1738906811845]
+2025-02-07 14:40:15,495 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906811845FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731735607217&endTime=1732340407217&timestamp=1738906811845]
+2025-02-07 14:40:15,498 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:16,381 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906816202FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340407218&endTime=1732945207218&timestamp=1738906816202]
+2025-02-07 14:40:17,624 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906816202FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340407218&endTime=1732945207218&timestamp=1738906816202]
+2025-02-07 14:40:19,717 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906816202FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340407218&endTime=1732945207218&timestamp=1738906816202]
+2025-02-07 14:40:19,720 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:20,897 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906820438FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945207219&endTime=1733550007219&timestamp=1738906820438]
+2025-02-07 14:40:21,994 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906820438FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945207219&endTime=1733550007219&timestamp=1738906820438]
+2025-02-07 14:40:24,085 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906820438FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945207219&endTime=1733550007219&timestamp=1738906820438]
+2025-02-07 14:40:24,087 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:25,099 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906824782FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733550007220&endTime=1734154807220&timestamp=1738906824782]
+2025-02-07 14:40:26,195 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906824782FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733550007220&endTime=1734154807220&timestamp=1738906824782]
+2025-02-07 14:40:28,285 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906824782FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733550007220&endTime=1734154807220&timestamp=1738906824782]
+2025-02-07 14:40:28,286 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:29,311 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906829133FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734154807221&endTime=1734759607221&timestamp=1738906829133]
+2025-02-07 14:40:30,403 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906829133FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734154807221&endTime=1734759607221&timestamp=1738906829133]
+2025-02-07 14:40:32,496 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906829133FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734154807221&endTime=1734759607221&timestamp=1738906829133]
+2025-02-07 14:40:32,499 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:33,380 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906833196FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734759607222&endTime=1735364407222&timestamp=1738906833196]
+2025-02-07 14:40:34,609 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906833196FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734759607222&endTime=1735364407222&timestamp=1738906833196]
+2025-02-07 14:40:36,710 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906833196FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734759607222&endTime=1735364407222&timestamp=1738906833196]
+2025-02-07 14:40:36,715 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:37,595 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906837423FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735364407223&endTime=1735969207223&timestamp=1738906837423]
+2025-02-07 14:40:38,696 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906837423FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735364407223&endTime=1735969207223&timestamp=1738906837423]
+2025-02-07 14:40:40,792 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906837423FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735364407223&endTime=1735969207223&timestamp=1738906837423]
+2025-02-07 14:40:40,795 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:40:41,665 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906841509FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735969207224&endTime=1736574007224&timestamp=1738906841509]
+2025-02-07 14:40:42,767 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906841509FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735969207224&endTime=1736574007224&timestamp=1738906841509]
+2025-02-07 14:40:44,867 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738906841509FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735969207224&endTime=1736574007224&timestamp=1738906841509]
+2025-02-07 14:40:44,869 - exchange.bybit_client - ERROR - CCXT trades 실패: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-07 14:50:21,358 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907421124FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731131421121&endTime=1731736221121&timestamp=1738907421124]
+2025-02-07 14:50:22,458 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907421124FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731131421121&endTime=1731736221121&timestamp=1738907421124]
+2025-02-07 14:50:24,552 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907421124FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731131421121&endTime=1731736221121&timestamp=1738907421124]
+2025-02-07 14:50:25,284 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907425055FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731736221121&endTime=1732341021121&timestamp=1738907425055]
+2025-02-07 14:50:26,521 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907425055FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731736221121&endTime=1732341021121&timestamp=1738907425055]
+2025-02-07 14:50:28,611 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907425055FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1731736221121&endTime=1732341021121&timestamp=1738907425055]
+2025-02-07 14:50:29,294 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907429113FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732341021121&endTime=1732945821121&timestamp=1738907429113]
+2025-02-07 14:50:30,394 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907429113FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732341021121&endTime=1732945821121&timestamp=1738907429113]
+2025-02-07 14:50:32,492 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907429113FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732341021121&endTime=1732945821121&timestamp=1738907429113]
+2025-02-07 14:50:33,183 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907433009FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945821121&endTime=1733550621121&timestamp=1738907433009]
+2025-02-07 14:50:34,269 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907433009FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945821121&endTime=1733550621121&timestamp=1738907433009]
+2025-02-07 14:50:36,508 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907433009FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732945821121&endTime=1733550621121&timestamp=1738907433009]
+2025-02-07 14:50:37,206 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907437015FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733550621121&endTime=1734155421121&timestamp=1738907437015]
+2025-02-07 14:50:38,439 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907437015FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733550621121&endTime=1734155421121&timestamp=1738907437015]
+2025-02-07 14:50:40,666 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907437015FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1733550621121&endTime=1734155421121&timestamp=1738907437015]
+2025-02-07 14:50:41,353 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907441167FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734155421121&endTime=1734760221121&timestamp=1738907441167]
+2025-02-07 14:50:42,597 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907441167FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734155421121&endTime=1734760221121&timestamp=1738907441167]
+2025-02-07 14:50:44,685 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907441167FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734155421121&endTime=1734760221121&timestamp=1738907441167]
+2025-02-07 14:50:45,381 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907445203FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734760221121&endTime=1735365021121&timestamp=1738907445203]
+2025-02-07 14:50:46,482 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907445203FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734760221121&endTime=1735365021121&timestamp=1738907445203]
+2025-02-07 14:50:48,570 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907445203FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1734760221121&endTime=1735365021121&timestamp=1738907445203]
+2025-02-07 14:50:49,259 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907449076FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735365021121&endTime=1735969821121&timestamp=1738907449076]
+2025-02-07 14:50:50,350 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907449076FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735365021121&endTime=1735969821121&timestamp=1738907449076]
+2025-02-07 14:50:52,591 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907449076FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735365021121&endTime=1735969821121&timestamp=1738907449076]
+2025-02-07 14:50:53,279 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907453113FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735969821121&endTime=1736574621121&timestamp=1738907453113]
+2025-02-07 14:50:54,378 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907453113FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735969821121&endTime=1736574621121&timestamp=1738907453113]
+2025-02-07 14:50:56,620 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907453113FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1735969821121&endTime=1736574621121&timestamp=1738907453113]
+2025-02-07 14:50:57,329 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907457143FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1736574621121&endTime=1737179421121&timestamp=1738907457143]
+2025-02-07 14:50:58,578 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907457143FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1736574621121&endTime=1737179421121&timestamp=1738907457143]
+2025-02-07 14:51:00,822 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907457143FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1736574621121&endTime=1737179421121&timestamp=1738907457143]
+2025-02-07 14:51:01,493 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907461329FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1737179421121&endTime=1737784221121&timestamp=1738907461329]
+2025-02-07 14:51:02,591 - exchange.bybit_client - ERROR - API 오류: error sign! origin_string[1738907461329FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1737179421121&endTime=1737784221121&timestamp=1738907461329]
+2025-02-07 15:00:29,109 - ai.gpt_client - ERROR - GPT 분석 요청 중 오류: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-02-07 15:00:29,110 - ai.gpt_analyzer - ERROR - GPT 응답이 비어있습니다
+2025-02-07 15:00:29,111 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-07 15:00:30,918 - ai.gpt_client - ERROR - GPT 분석 요청 중 오류: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-02-07 15:00:30,919 - ai.gpt_analyzer - ERROR - GPT 응답이 비어있습니다
+2025-02-07 15:00:30,919 - telegram_bot.monitors.auto_analyzer - ERROR - 1h 분석 실패
+2025-02-07 15:03:04,994 - services.trade_store - ERROR - 포지션 저장 실패: 'price'
+2025-02-07 15:03:05,684 - services.trade_store - ERROR - 포지션 저장 실패: 'price'
+2025-02-07 15:03:06,393 - services.trade_store - ERROR - 포지션 저장 실패: 'price'
+2025-02-07 15:03:07,199 - services.trade_store - ERROR - 포지션 저장 실패: 'price'
+2025-02-07 15:03:07,930 - services.trade_store - ERROR - 포지션 저장 실패: 'price'
+2025-02-07 15:03:08,755 - services.trade_store - ERROR - 포지션 저장 실패: 'price'
+2025-02-07 15:06:26,561 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:27,073 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:27,588 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:28,101 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:28,613 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:29,123 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:29,633 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:30,146 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:30,659 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:31,171 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:31,685 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:32,194 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:06:32,707 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_closed_pnl'
+2025-02-07 15:18:23,789 - main - ERROR - 실행 중 에러 발생: 'BybitClient' object has no attribute 'exchange'
+2025-02-07 15:18:23,790 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 75, in main
+    market_data_service = MarketDataService(bybit_client)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\market_data_service.py", line 51, in __init__
+    self.exchange = bybit_client.exchange
+                    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'exchange'
+
+2025-02-07 15:18:23,791 - main - ERROR - 메인 루프 오류: 'BybitClient' object has no attribute 'close'
+2025-02-07 15:27:46,865 - services.trade_store - ERROR - 포지션 저장 실패: cannot access local variable 'position_data' where it is not associated with a value
+2025-02-07 15:27:47,578 - services.trade_store - ERROR - 포지션 저장 실패: cannot access local variable 'position_data' where it is not associated with a value
+2025-02-07 15:27:48,268 - services.trade_store - ERROR - 포지션 저장 실패: cannot access local variable 'position_data' where it is not associated with a value
+2025-02-07 15:27:48,984 - services.trade_store - ERROR - 포지션 저장 실패: cannot access local variable 'position_data' where it is not associated with a value
+2025-02-07 15:27:49,695 - services.trade_store - ERROR - 포지션 저장 실패: cannot access local variable 'position_data' where it is not associated with a value
+2025-02-07 15:27:50,391 - services.trade_store - ERROR - 포지션 저장 실패: cannot access local variable 'position_data' where it is not associated with a value
+2025-02-07 15:28:07,854 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'TradeHistoryService' object has no attribute 'get_positions_by_date_range'
+2025-02-07 15:30:54,924 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-07 15:30:54,926 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-07 15:30:54,928 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-07 15:31:05,299 - services.trade_history_service - ERROR - 날짜 범위 포지션 조회 중 오류: 'TradeStore' object has no attribute 'get_daily_positions'
+2025-02-07 15:38:27,218 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: cannot access local variable 'max_profit' where it is not associated with a value
+2025-02-07 15:45:56,836 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-07 15:45:56,838 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-07 15:45:56,839 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-07 16:00:16,746 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-07 16:00:16,747 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-07 16:00:16,747 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-07 16:00:17,166 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-07 16:00:17,167 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-07 16:00:17,167 - telegram_bot.monitors.auto_analyzer - ERROR - 1h 분석 실패
+2025-02-07 16:15:19,640 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-07 16:15:19,641 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-07 16:15:19,642 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패

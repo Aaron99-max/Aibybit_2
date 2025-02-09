@@ -1,0 +1,98 @@
+2025-02-08 13:34:17,411 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-08 13:35:39,777 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:40,286 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:40,802 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:41,316 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:41,832 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:42,350 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:42,852 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:43,356 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:43,870 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:44,375 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:44,892 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:45,410 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:45,924 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-02-08 13:35:46,426 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-08 13:37:17,955 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:18,465 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:18,979 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:19,495 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:20,010 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:20,526 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:21,041 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:21,546 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:22,061 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:22,577 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:23,093 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:23,599 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:24,115 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'BybitClient' object has no attribute 'get'
+2025-02-08 13:37:24,631 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-08 13:39:54,778 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-08 13:40:09,037 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'value'
+2025-02-08 13:46:09,381 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-08 13:46:18,878 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'TradeStore' object has no attribute 'get_positions_by_date_range'
+2025-02-08 13:47:20,927 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: TradeStore.get_positions() takes from 1 to 2 positional arguments but 3 were given
+2025-02-08 13:47:20,936 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 34, in initialize
+    existing_positions = self.trade_store.get_positions(start_timestamp, end_timestamp)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeStore.get_positions() takes from 1 to 2 positional arguments but 3 were given
+
+2025-02-08 13:47:26,063 - services.trade_store - ERROR - 포지션 범위 조회 실패: day is out of range for month
+2025-02-08 13:47:26,076 - services.trade_store - ERROR - 포지션 범위 조회 실패: day is out of range for month
+2025-02-08 13:48:30,244 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: TradeStore.get_positions() takes from 1 to 2 positional arguments but 3 were given
+2025-02-08 13:48:30,248 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 34, in initialize
+    existing_positions = self.trade_store.get_positions(start_timestamp, end_timestamp)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeStore.get_positions() takes from 1 to 2 positional arguments but 3 were given
+
+2025-02-08 13:49:57,769 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-08 13:51:16,680 - services.trade_history_service - ERROR - 포지션 정보 업데이트 실패: BybitClient.v5_get_closed_pnl() got an unexpected keyword argument 'start_time'
+2025-02-08 13:51:16,681 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: BybitClient.v5_get_closed_pnl() got an unexpected keyword argument 'start_time'
+2025-02-08 13:51:16,684 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 42, in initialize
+    await self.fetch_and_update_positions(start_time=last_update)
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 235, in fetch_and_update_positions
+    positions = await self.bybit_client.v5_get_closed_pnl(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.v5_get_closed_pnl() got an unexpected keyword argument 'start_time'
+
+2025-02-08 13:57:25,072 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'value'
+2025-02-08 13:58:48,871 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'value'
+2025-02-08 14:04:43,357 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'value'
+2025-02-08 14:15:57,118 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 14:15:57,118 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 14:15:57,118 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-08 14:22:44,880 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'position_side'
+2025-02-08 14:45:23,872 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 14:45:23,875 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 14:45:23,876 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-08 15:00:22,599 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 15:00:22,600 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 15:00:22,600 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-08 15:00:22,885 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 15:00:22,887 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 15:00:22,888 - telegram_bot.monitors.auto_analyzer - ERROR - 1h 분석 실패
+2025-02-08 15:14:27,916 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_history'
+2025-02-08 15:14:27,925 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 185, in get_positions
+    response = await self.bybit_client.v5_get_position_history(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_history'. Did you mean: 'v5_get_positions'?
+
+2025-02-08 15:15:35,471 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 15:15:35,472 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 15:15:35,473 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-08 15:30:23,975 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 15:30:23,978 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 15:30:23,978 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-08 16:15:39,283 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 16:15:39,285 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 16:15:39,286 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-08 16:30:16,663 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 16:30:16,665 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 16:30:16,667 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-08 16:30:58,412 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-08 16:30:58,413 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-08 16:30:58,413 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패

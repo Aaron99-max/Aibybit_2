@@ -15,35 +15,23 @@ logger = logging.getLogger(__name__)
 class MarketDataService:
     """시장 데이터 관리 서비스"""
     
-    VALID_TIMEFRAMES = ['1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '12h', '1d']
+    # 필요한 시간대만 남기고 나머지 제거
+    VALID_TIMEFRAMES = ['1m', '1h']
     CACHE_DURATION = {
         '1m': timedelta(minutes=1),
-        '3m': timedelta(minutes=3),
-        '5m': timedelta(minutes=5),
-        '15m': timedelta(minutes=15),
-        '30m': timedelta(minutes=30),
-        '1h': timedelta(hours=1),
-        '2h': timedelta(hours=2),
-        '4h': timedelta(hours=4),
-        '6h': timedelta(hours=6),
-        '12h': timedelta(hours=12),
-        '1d': timedelta(days=1)
+        '1h': timedelta(hours=1)
     }
     
-    # 시간대 매핑 추가
-    TIMEFRAME_MAP = {
-        '15m': '15',
-        '1h': '60',
-        '4h': '240',
-        '1d': 'D'
-    }
-    
-    # 시간대별 필요한 데이터 개수 정의
+    # 1시간봉 데이터만 필요
     TIMEFRAME_LIMITS = {
-        '15m': 192,  # 2일 (8 * 24)
-        '1h': 168,   # 7일 (24 * 7)
-        '4h': 180,   # 30일 (6 * 30)
-        '1d': 90     # 3개월 (30 * 3)
+        '1m': 1,     # 현재가용
+        '1h': 48,    # 2일치 데이터
+    }
+    
+    # 시간대 매핑도 1시간만
+    TIMEFRAME_MAP = {
+        '1m': '1',
+        '1h': '60'
     }
     
     def __init__(self, bybit_client: BybitClient):
@@ -206,25 +194,20 @@ class MarketDataService:
             return {'value': 0, 'change_24h': 0}
 
     async def get_current_price(self) -> Optional[Dict]:
-        """현재가 조회"""
+        """현재가 조회 (1분봉 사용)"""
         try:
-            params = {
-                'category': 'linear',
-                'symbol': 'BTCUSDT'
+            # 1분봉 최신 데이터 가져오기
+            ohlcv = await self.get_ohlcv(self.symbol, '1m')
+            if not ohlcv:
+                return None
+                
+            latest = ohlcv[-1]  # 최신 데이터
+            
+            return {
+                'symbol': self.symbol,
+                'last_price': float(latest['close']),
+                'timestamp': latest['timestamp']
             }
-            
-            ticker = await self.bybit_client.exchange.fetch_ticker('BTCUSDT', params=params)
-            if ticker:
-                return {
-                    'symbol': ticker['symbol'],
-                    'last_price': float(ticker['last']),
-                    'mark_price': float(ticker.get('mark', ticker['last'])),
-                    'index_price': float(ticker.get('index', ticker['last'])),
-                    'timestamp': ticker['timestamp']
-                }
-            
-            logger.error("티커 데이터를 가져올 수 없습니다")
-            return None
             
         except Exception as e:
             logger.error(f"현재가 조회 중 오류: {str(e)}")

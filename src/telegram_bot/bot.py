@@ -62,6 +62,9 @@ class TelegramBot:
         self.market_data_service = market_data_service or MarketDataService(bybit_client)
         self.trade_history_service = TradeHistoryService(bybit_client)
         
+        # 종료 이벤트 초기화
+        self._stop_event = asyncio.Event()
+        
         # 포맷터 초기화
         self.storage_formatter = StorageFormatter()
         self.analysis_formatter = AnalysisFormatter()
@@ -146,21 +149,20 @@ class TelegramBot:
         except Exception as e:
             logger.error(f"알림방 메시지 전송 실패: {str(e)}")
 
-    async def initialize(self) -> bool:
+    async def initialize(self):
         """봇 초기화"""
         try:
+            logger.info("봇 초기화 시작...")
             logger.info("Application 빌드 시작...")
-            await self.application.initialize()
             
-            # 거래 내역 초기화
-            logger.info("거래 내역 초기화 시작...")
-            await self.trade_history_service.initialize()
-            
-            # 시작 메시지 전송 (모든 채팅방에)
-            await self.send_message_to_all("🤖 바이빗 트레이딩 봇이 시작되었습니다!")
+            # 봇 빌더 설정
+            self.application = (
+                Application.builder()
+                .token(self.config.bot_token)
+                .build()
+            )
             
             # 모니터링 초기화
-            logger.info("모니터링 초기화 시작...")
             self.auto_analyzer = AutoAnalyzer(
                 bot=self,
                 ai_trader=self.ai_trader,
@@ -168,25 +170,22 @@ class TelegramBot:
                 storage_formatter=self.storage_formatter,
                 analysis_formatter=self.analysis_formatter
             )
+            
             self.profit_monitor = ProfitMonitor(self)
             
-            # 핸들러 초기화 (auto_analyzer가 이미 생성된 후)
-            logger.info("핸들러 초기화 시작...")
-            self._setup_handlers()
+            # 핸들러 초기화
+            await self._initialize_handlers()
             
-            # 자동 분석 시작
-            await self.auto_analyzer.start()
-            
-            return True
+            logger.info("봇 초기화 완료, 시작 준비 중...")
             
         except Exception as e:
-            logger.error(f"봇 초기화 중 오류: {str(e)}")
-            return False
+            logger.error(f"봇 초기화 실패: {str(e)}")
+            raise
 
-    def _setup_handlers(self):
-        """핸들러 설정"""
+    async def _initialize_handlers(self):
+        """핸들러 초기화"""
         try:
-            # AnalysisHandler 초기화 (이미 생성된 auto_analyzer 사용)
+            # AnalysisHandler 초기화
             self.analysis_handler = AnalysisHandler(
                 bot=self,
                 auto_analyzer=self.auto_analyzer
@@ -224,21 +223,14 @@ class TelegramBot:
             return True
             
         except Exception as e:
-            logger.error(f"핸들러 초기화 중 오류: {str(e)}")
-            logger.error(f"오류 상세: {traceback.format_exc()}")
+            logger.error(f"핸들러 초기화 실패: {str(e)}")
             return False
 
     async def run(self):
         """봇 실행"""
         try:
-            logger.info("봇 초기화 시작...")
             # 봇 초기화
-            init_success = await self.initialize()
-            if not init_success:
-                logger.error("봇 초기화 실패")
-                return
-            
-            logger.info("봇 초기화 완료, 시작 준비 중...")
+            await self.initialize()
             
             # 봇 시작
             logger.info("봇 시작 시도...")
@@ -315,8 +307,9 @@ class TelegramBot:
         """봇 시작"""
         try:
             logger.info("=== 봇 시작 시도 ===")
-            # 종료 이벤트 생성
-            self._stop_event = asyncio.Event()
+            
+            # Application 초기화
+            await self.application.initialize()
             
             # 기존 웹훅 제거
             await self.application.bot.delete_webhook()
@@ -333,15 +326,15 @@ class TelegramBot:
             logger.info("=== 봇이 성공적으로 시작되었습니다 ===")
             
             # 봇이 실행 중인 동안 대기
-            try:
-                await self._stop_event.wait()
-            except asyncio.CancelledError:
-                logger.info("봇 실행이 취소되었습니다")
+            await self._stop_event.wait()
             
+        except asyncio.CancelledError:
+            logger.info("봇 실행이 취소되었습니다")
         except Exception as e:
             logger.error(f"봇 시작 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             raise
+
     async def _error_handler(self, update: Update, context: CallbackContext):
         """에러 핸들러"""
         logger.error(f"텔레그램 봇 에러: {context.error}")

@@ -15,3 +15,17 @@ python -m pytest tests/test_trade_manager.py -v
 현재 포지션 방향과 새로운 신호 방향 비교
 포지션 크기 조정 가능 여부 확인
 부분 청산 후 새로운 진입 등의 전략을 구현할 수 있습니다.
+
+필수 필드:
+avg_entry_price: 전체 포지션의 평균 진입가격
+avg_exit_price: 전체 포지션의 평균 청산가격
+total_size: 전체 포지션 크기
+realized_pnl: 실현된 손익 (전체 포지션에 대한)
+created_time: 포지션 생성 시간
+closed_time: 포지션 종료 시간
+유용한 추가 필드:
+cumulative_realised_pnl: 누적 실현 손익
+position_status: "Closed"
+symbol: 거래 심볼 (예: "BTCUSDT")
+total_entry_value: 전체 진입 가치
+total_exit_value: 전체 청산 가치

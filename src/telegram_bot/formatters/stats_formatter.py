@@ -75,81 +75,98 @@ class StatsFormatter(BaseFormatter):
         return "Not implemented"
 
     def format_daily_stats(self, positions: List[Dict]) -> str:
-        """일일 거래 통계 포맷팅"""
+        """일일 포지션 통계 포맷팅"""
         if not positions:
-            return "거래 내역이 없습니다."
-            
+            return "📊 오늘은 청산된 포지션이 없습니다."
+        
         total_pnl = sum(float(p['pnl']) for p in positions)
-        win_trades = len([p for p in positions if float(p['pnl']) > 0])
+        winning_trades = len([p for p in positions if float(p['pnl']) > 0])
+        losing_trades = len([p for p in positions if float(p['pnl']) < 0])
         total_trades = len(positions)
-        win_rate = (win_trades / total_trades * 100) if total_trades > 0 else 0
+        
+        # 롱/숏 구분
+        long_positions = [p for p in positions if p['side'] == 'Buy']
+        short_positions = [p for p in positions if p['side'] == 'Sell']
+        
+        long_pnl = sum(float(p['pnl']) for p in long_positions)
+        short_pnl = sum(float(p['pnl']) for p in short_positions)
+        
+        # 승률 계산
+        win_rate = (winning_trades / total_trades * 100) if total_trades > 0 else 0
         
         # 최대 수익/손실
-        max_profit = max((float(p['pnl']) for p in positions), default=0)
-        max_loss = min((float(p['pnl']) for p in positions), default=0)
+        max_profit = max([float(p['pnl']) for p in positions]) if positions else 0
+        max_loss = min([float(p['pnl']) for p in positions]) if positions else 0
         
-        # 평균 레버리지
-        avg_leverage = sum(float(p['leverage']) for p in positions) / len(positions) if positions else 0
-        
-        message = (
-            "📊 일일 거래 통계\n\n"
-            f"💰 총 손익: {total_pnl:.2f} USDT\n"
-            f"📈 승률: {win_rate:.1f}% ({win_trades}/{total_trades})\n"
-            f"📊 최대 수익: {max_profit:.2f} USDT\n"
-            f"📉 최대 손실: {max_loss:.2f} USDT\n"
-            f"⚡ 평균 레버리지: {avg_leverage:.1f}x\n"
-        )
-        
-        return message
+        message = f"""
+📊 일일 거래 통계
+
+💰 수익 현황:
+• 총 수익: ${self.format_number(total_pnl)}
+• 최대 수익: ${self.format_number(max_profit)}
+• 최대 손실: ${self.format_number(max_loss)}
+
+📈 거래 실적:
+• 총 거래: {total_trades}회
+• 성공: {winning_trades}회
+• 실패: {losing_trades}회
+• 승률: {self.format_number(win_rate)}%
+
+🔄 포지션별 실적:
+• 롱: {len(long_positions)}회 (${self.format_number(long_pnl)})
+• 숏: {len(short_positions)}회 (${self.format_number(short_pnl)})
+"""
+        return message.strip()
 
     def format_monthly_stats(self, positions: List[Dict]) -> str:
-        """월간 거래 통계 포맷팅"""
+        """월간 포지션 통계 포맷팅"""
         if not positions:
-            return "이번 달 거래 내역이 없습니다."
-            
+            return "📊 이번 달은 청산된 포지션이 없습니다."
+        
         total_pnl = sum(float(p['pnl']) for p in positions)
-        win_trades = len([p for p in positions if float(p['pnl']) > 0])
+        winning_trades = len([p for p in positions if float(p['pnl']) > 0])
+        losing_trades = len([p for p in positions if float(p['pnl']) < 0])
         total_trades = len(positions)
-        win_rate = (win_trades / total_trades * 100) if total_trades > 0 else 0
         
-        # 일별 수익 계산
-        daily_pnl = {}
-        for position in positions:
-            date = datetime.fromtimestamp(int(position['timestamp'])/1000).strftime('%Y-%m-%d')
-            daily_pnl[date] = daily_pnl.get(date, 0) + float(position['pnl'])
-            
-        # 연속 손익
-        max_win_streak = 0
-        max_loss_streak = 0
-        current_win_streak = 0
-        current_loss_streak = 0
+        # 롱/숏 구분
+        long_positions = [p for p in positions if p['side'] == 'Buy']
+        short_positions = [p for p in positions if p['side'] == 'Sell']
         
-        sorted_positions = sorted(positions, key=lambda x: x['timestamp'])
-        for position in sorted_positions:
-            pnl = float(position['pnl'])
-            if pnl > 0:
-                current_win_streak += 1
-                current_loss_streak = 0
-                max_win_streak = max(max_win_streak, current_win_streak)
-            else:
-                current_loss_streak += 1
-                current_win_streak = 0
-                max_loss_streak = max(max_loss_streak, current_loss_streak)
+        long_pnl = sum(float(p['pnl']) for p in long_positions)
+        short_pnl = sum(float(p['pnl']) for p in short_positions)
         
-        message = (
-            "📊 월간 거래 통계\n\n"
-            f"💰 총 손익: {total_pnl:.2f} USDT\n"
-            f"📈 승률: {win_rate:.1f}% ({win_trades}/{total_trades})\n"
-            f"📊 일평균 거래량: {total_trades/len(daily_pnl):.1f}회\n"
-            f"🔥 최대 연승: {max_win_streak}회\n"
-            f"💧 최대 연패: {max_loss_streak}회\n\n"
-            "📅 일별 손익:\n"
-        )
+        # 승률 계산
+        win_rate = (winning_trades / total_trades * 100) if total_trades > 0 else 0
         
-        # 최근 7일 손익 추가
-        recent_days = sorted(daily_pnl.items())[-7:]
-        for date, pnl in recent_days:
-            emoji = "📈" if pnl > 0 else "📉"
-            message += f"{emoji} {date}: {pnl:.2f} USDT\n"
+        # 평균 수익/손실
+        winning_pnls = [float(p['pnl']) for p in positions if float(p['pnl']) > 0]
+        losing_pnls = [float(p['pnl']) for p in positions if float(p['pnl']) < 0]
         
-        return message 
+        avg_profit = sum(winning_pnls) / len(winning_pnls) if winning_pnls else 0
+        avg_loss = sum(losing_pnls) / len(losing_pnls) if losing_pnls else 0
+        
+        # 최대 수익/손실
+        max_profit = max([float(p['pnl']) for p in positions]) if positions else 0
+        max_loss = min([float(p['pnl']) for p in positions]) if positions else 0
+        
+        message = f"""
+📊 월간 거래 통계
+
+💰 수익 현황:
+• 총 수익: ${self.format_number(total_pnl)}
+• 평균 수익: ${self.format_number(avg_profit)}
+• 평균 손실: ${self.format_number(avg_loss)}
+• 최대 수익: ${self.format_number(max_profit)}
+• 최대 손실: ${self.format_number(max_loss)}
+
+📈 거래 실적:
+• 총 거래: {total_trades}회
+• 성공: {winning_trades}회
+• 실패: {losing_trades}회
+• 승률: {self.format_number(win_rate)}%
+
+🔄 포지션별 실적:
+• 롱: {len(long_positions)}회 (${self.format_number(long_pnl)})
+• 숏: {len(short_positions)}회 (${self.format_number(short_pnl)})
+"""
+        return message.strip()

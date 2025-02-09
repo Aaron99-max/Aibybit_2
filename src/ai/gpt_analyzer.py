@@ -22,12 +22,9 @@ np.seterr(divide='ignore', invalid='ignore')
 logger = logging.getLogger(__name__)
 
 class GPTAnalyzer:
-    # 시간대별 가중치
+    # 시간대별 가중치 제거 (1시간만 사용)
     TIMEFRAME_WEIGHTS = {
-        '15m': 0.25,  # 25%
-        '1h': 0.35,   # 35%
-        '4h': 0.25,   # 25%
-        '1d': 0.15    # 15%
+        '1h': 1.0    # 100%
     }
     
     def __init__(self, bybit_client=None, market_data_service=None):
@@ -63,6 +60,35 @@ class GPTAnalyzer:
             if not market_data:
                 logger.error("시장 데이터 조회 실패")
                 return None
+            
+            # GPT 프롬프트 수정 (1시간 분석에 집중)
+            prompt = f"""
+            다음 비트코인 1시간 차트 데이터를 바탕으로 매매 전략을 제시해주세요.
+            
+            [1시간 차트 분석]
+            • 현재가: ${market_data.get('price_data', {}).get('last_price', 0):,.2f}
+            • RSI: {df_with_indicators['rsi'].iloc[-1]:.1f}
+            • MACD: {df_with_indicators['macd'].iloc[-1]:.1f}
+            • 볼린저밴드: {df_with_indicators['bb_upper'].iloc[-1]:.2f} - {df_with_indicators['bb_lower'].iloc[-1]:.2f}
+            • 추세: {self._determine_trend(df_with_indicators)}
+            • 추세강도: {self._calculate_trend_strength(df_with_indicators):.2f}/100
+            
+            [시장 상태]
+            • 24시간 변동: {market_data.get('price_data', {}).get('price_change_24h', 0):+.2f}%
+            • 거래량(24h): {market_data.get('price_data', {}).get('volume', 0):,.0f}
+            • 자금조달비율: {market_data.get('market_metrics', {}).get('funding_rate', 0):.4f}%
+            
+            반드시 다음 JSON 형식으로만 응답하세요:
+            {{
+                "position": "매수" 또는 "매도" 또는 "관망",
+                "entry_price": 진입가격(숫자),
+                "stop_loss": 손절가(숫자),
+                "take_profit": 익절가(숫자),
+                "leverage": 1-5 사이의 숫자,
+                "confidence": 0-100 사이의 숫자,
+                "reason": "진입 이유"
+            }}
+            """
             
             # 기술적 분석 수행
             technical_analysis = {
@@ -176,54 +202,30 @@ class GPTAnalyzer:
         try:
             # 프롬프트 템플릿 개선
             prompt = f"""
-            다음 비트코인 시장 데이터를 바탕으로 명확한 매매 전략을 제시해주세요.
-            응답은 반드시 아래 JSON 형식을 정확히 따라야 합니다.
-
-            [시장 현황]
+            다음 비트코인 1시간 차트 데이터를 바탕으로 매매 전략을 제시해주세요.
+            
+            [1시간 차트 분석]
             • 현재가: ${market_data.get('price_data', {}).get('last_price', 0):,.2f}
+            • RSI: {technical_analysis.get('indicators', {}).get('rsi', 0):.1f}
+            • MACD: {technical_analysis.get('indicators', {}).get('macd', '알 수 없음')}
+            • 볼린저밴드: {technical_analysis.get('indicators', {}).get('bollinger', '알 수 없음')}
+            • 추세: {technical_analysis.get('trend', '알 수 없음')}
+            • 추세강도: {technical_analysis.get('strength', 0)}/100
+            
+            [시장 상태]
             • 24시간 변동: {market_data.get('price_data', {}).get('price_change_24h', 0):+.2f}%
             • 거래량(24h): {market_data.get('price_data', {}).get('volume', 0):,.0f}
             • 자금조달비율: {market_data.get('market_metrics', {}).get('funding_rate', 0):.4f}%
             
-            [시장 지표]
-            • 미체결약정: {market_data.get('market_metrics', {}).get('open_interest', {}).get('value', 0):,.0f} 
-            • 24h 변화: {market_data.get('market_metrics', {}).get('open_interest', {}).get('change_24h', 0):+.2f}%
-            • 매수/매도 비율: {market_data.get('order_book', {}).get('bid_volume', 0) / market_data.get('order_book', {}).get('ask_volume', 1):.2f}
-            
-            [기술적 분석]
-            • 주요 추세: {technical_analysis.get('trend', '알 수 없음')} (강도: {technical_analysis.get('strength', 0)}/100)
-            • RSI: {technical_analysis.get('indicators', {}).get('rsi', 0):.1f}
-            • MACD: {technical_analysis.get('indicators', {}).get('macd', '알 수 없음')}
-            • 볼린저밴드: {technical_analysis.get('indicators', {}).get('bollinger', '알 수 없음')}
-
             반드시 다음 JSON 형식으로만 응답하세요:
             {{
-                "market_summary": {{
-                    "market_phase": "상승" 또는 "하락" 또는 "횡보",
-                    "overall_sentiment": "긍정" 또는 "부정" 또는 "중립",
-                    "short_term_sentiment": "강한매수" 또는 "매수" 또는 "중립" 또는 "매도" 또는 "강한매도",
-                    "volume_trend": "증가" 또는 "감소" 또는 "보통",
-                    "key_levels": {{
-                        "support": [숫자1, 숫자2],
-                        "resistance": [숫자1, 숫자2]
-                    }},
-                    "confidence": 0에서 100 사이의 숫자
-                }},
-                "trading_strategy": {{
-                    "position": "매수" 또는 "매도" 또는 "관망",
-                    "entry_points": [숫자1, 숫자2],
-                    "stop_loss": 숫자,
-                    "take_profits": [숫자1, 숫자2],
-                    "risk_reward_ratio": 숫자,
-                    "recommended_leverage": 1에서 10 사이의 숫자,
-                    "position_size": "전체자금의 숫자%",
-                    "key_risks": ["위험요소1", "위험요소2"]
-                }},
-                "analysis_details": {{
-                    "technical_signals": ["신호1", "신호2"],
-                    "market_drivers": ["요인1", "요인2"],
-                    "key_events": ["이벤트1", "이벤트2"]
-                }}
+                "position": "매수" 또는 "매도" 또는 "관망",
+                "entry_price": 진입가격(숫자),
+                "stop_loss": 손절가(숫자),
+                "take_profit": 익절가(숫자),
+                "leverage": 1-5 사이의 숫자,
+                "confidence": 0-100 사이의 숫자,
+                "reason": "진입 이유"
             }}
             """
             
@@ -237,9 +239,13 @@ class GPTAnalyzer:
                 parsed_response = json.loads(response)
                 # 필수 필드 검증
                 required_fields = {
-                    'market_summary': ['market_phase', 'overall_sentiment', 'short_term_sentiment'],
-                    'trading_strategy': ['position', 'entry_points', 'stop_loss', 'take_profits'],
-                    'analysis_details': ['technical_signals', 'market_drivers']
+                    'position': ['position'],
+                    'entry_price': ['entry_price'],
+                    'stop_loss': ['stop_loss'],
+                    'take_profit': ['take_profit'],
+                    'leverage': ['leverage'],
+                    'confidence': ['confidence'],
+                    'reason': ['reason']
                 }
                 
                 for section, fields in required_fields.items():
@@ -458,8 +464,13 @@ class GPTAnalyzer:
         """분석 결과 검증 및 정규화"""
         try:
             required_fields = {
-                'market_summary': ['market_phase', 'overall_sentiment', 'short_term_sentiment'],
-                'trading_strategy': ['position', 'entry_points', 'stop_loss', 'take_profits']
+                'position': ['position'],
+                'entry_price': ['entry_price'],
+                'stop_loss': ['stop_loss'],
+                'take_profit': ['take_profit'],
+                'leverage': ['leverage'],
+                'confidence': ['confidence'],
+                'reason': ['reason']
             }
             
             for section, fields in required_fields.items():

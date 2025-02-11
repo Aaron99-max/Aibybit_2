@@ -11,19 +11,29 @@ import traceback
 logger = logging.getLogger(__name__)
 
 class TechnicalIndicators:
-    def calculate_indicators(self, data: pd.DataFrame) -> pd.DataFrame:
-        """기술적 지표 계산"""
+    def calculate_indicators(self, df: pd.DataFrame) -> pd.DataFrame:
+        """모든 기술적 지표 계산"""
         try:
-            # data가 list인 경우 DataFrame으로 변환
-            if isinstance(data, list):
-                data = pd.DataFrame(data, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
-                
-            if data.empty:
+            # 입력이 리스트인 경우 DataFrame으로 변환
+            if isinstance(df, list):
+                df = pd.DataFrame(df, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+                df.set_index('timestamp', inplace=True)
+            
+            if df.empty:
                 logger.error("데이터가 비어있습니다")
                 return None
-                
-            # 지표 계산
-            df = data.copy()
+            
+            df = df.copy()
+            
+            # 24시간 가격 변화율 계산
+            df['price_change_24h'] = df['close'].pct_change(periods=24) * 100
+            
+            # 거래량 증감률 계산
+            df['volume_change_24h'] = (
+                (df['volume'] - df['volume'].rolling(window=24).mean()) / 
+                df['volume'].rolling(window=24).mean() * 100
+            )
             
             # RSI 계산
             df['rsi'] = self.calculate_rsi(df['close'])
@@ -32,38 +42,47 @@ class TechnicalIndicators:
             macd_data = self.calculate_macd(df['close'])
             df['macd'] = macd_data['macd']
             df['macd_signal'] = macd_data['signal']
-            df['macd_hist'] = macd_data['histogram']
             
             # 볼린저 밴드 계산
             bb_data = self.calculate_bollinger_bands(df['close'])
             df['bb_upper'] = bb_data['upper']
-            df['bb_middle'] = bb_data['middle'] 
+            df['bb_middle'] = bb_data['middle']
             df['bb_lower'] = bb_data['lower']
+            # 볼린저 밴드 포지션 계산
+            df['bb_position'] = np.where(df['close'] > df['bb_upper'], '상단',
+                                       np.where(df['close'] < df['bb_lower'], '하단', '중단'))
             
-            # 이동평균선
+            # 이동평균선 계산
             df['sma_10'] = df['close'].rolling(window=10).mean()
             df['sma_30'] = df['close'].rolling(window=30).mean()
             
-            # 추세 강도 계산 최적화 (1시간봉 기준)
-            df['trend_strength'] = df.apply(lambda x: min(100, (
-                (abs(x['sma_10'] - x['sma_30']) / x['close'] * 2000 * 0.5) +  # 이평선 차이 (비중 증가)
-                (abs(x['macd']) / x['close'] * 5000 * 0.3) +                   # MACD 강도
-                (abs(50 - x['rsi']) * 2 * 0.2)                                 # RSI 편차 (비중 감소)
-            )), axis=1)
+            # ADX 계산
+            adx_indicator = ADXIndicator(df['high'], df['low'], df['close'])
+            df['adx'] = adx_indicator.adx()
+            df['di_plus'] = adx_indicator.adx_pos()
+            df['di_minus'] = adx_indicator.adx_neg()
             
-            # 결측값 처리
-            df = df.fillna(method='ffill').fillna(method='bfill')
+            # 추세 판단
+            df['trend'] = self._determine_trend(df)
+            df['trend_strength'] = self._calculate_trend_strength(df)
+            
+            # RSI 다이버전스 계산
+            divergence = self.check_rsi_divergence(df)
+            df['divergence_type'] = divergence['type']
+            df['divergence_desc'] = divergence['description']
+            
+            # NaN 값 처리
+            df = df.fillna(method='ffill').fillna(0)
             
             return df
             
         except Exception as e:
             logger.error(f"지표 계산 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
             return None
 
     @staticmethod
-    def check_rsi_divergence(df: pd.DataFrame, window: int = 12) -> Dict:
-        """RSI 다이버전스 확인 (1시간봉 기준)"""
+    def check_rsi_divergence(df: pd.DataFrame, window: int = 14) -> Dict:
+        """RSI 다이버전스 확인"""
         try:
             if 'rsi' not in df.columns:
                 return {"type": "없음", "description": "RSI 데이터 없음"}
@@ -82,17 +101,15 @@ class TechnicalIndicators:
             prev_rsi = df['rsi'].iloc[-2]
             
             # 베어리시 다이버전스
-            # (가격이 신고점이지만 RSI는 이전 고점보다 낮을 때)
-            if (current_price >= price_high * 0.999 and    # 더 엄격한 가격 기준
-                current_rsi < rsi_high * 0.97 and          # RSI 차이 기준 완화
-                current_rsi < prev_rsi):
+            if (current_price >= price_high * 0.998 and  # 가격이 신고점 근처
+                current_rsi < rsi_high * 0.95 and        # RSI는 이전 고점보다 낮음
+                current_rsi < prev_rsi):                 # RSI 하락 중
                 return {
                     "type": "베어리시",
                     "description": f"가격은 신고점({current_price:.0f}) 도달, RSI({current_rsi:.1f})는 이전 고점({rsi_high:.1f})보다 낮음"
                 }
                 
             # 불리시 다이버전스
-            # (가격이 신저점이지만 RSI는 이전 저점보다 높을 때)
             if (current_price <= price_low * 1.002 and   # 가격이 신저점 근처
                 current_rsi > rsi_low * 1.05 and         # RSI는 이전 저점보다 높음
                 current_rsi > prev_rsi):                 # RSI 상승 중
@@ -233,3 +250,68 @@ class TechnicalIndicators:
                 'middle': pd.Series([0] * len(prices)),
                 'lower': pd.Series([0] * len(prices))
             }
+
+    def get_bb_position(self, df: pd.DataFrame) -> str:
+        """볼린저 밴드 상의 현재 가격 위치 반환"""
+        try:
+            latest = df.iloc[-1]
+            if latest['close'] > latest['bb_upper']:
+                return '상단'
+            elif latest['close'] < latest['bb_lower']:
+                return '하단'
+            return '중단'
+        except Exception as e:
+            logger.error(f"볼린저 밴드 위치 계산 중 오류: {str(e)}")
+            return '중단'
+
+    def _determine_trend(self, df: pd.DataFrame) -> str:
+        """가격 추세 판단"""
+        try:
+            latest = df.iloc[-1]
+            
+            # 이동평균선 기반 추세 판단
+            ma_trend = "상승" if latest['sma_10'] > latest['sma_30'] else "하락"
+            
+            # MACD 기반 추세 판단
+            macd_trend = "상승" if latest['macd'] > latest['macd_signal'] else "하락"
+            
+            # ADX로 추세 강도 확인
+            strong_trend = latest['adx'] > 25
+            
+            # 종합 판단
+            if ma_trend == macd_trend:
+                return ma_trend if strong_trend else f"약{ma_trend}"
+            else:
+                return "횡보"
+                
+        except Exception as e:
+            logger.error(f"추세 판단 중 오류: {str(e)}")
+            return "불명확"
+
+    def _calculate_trend_strength(self, df: pd.DataFrame) -> float:
+        """추세 강도 계산"""
+        try:
+            latest = df.iloc[-1]
+            
+            # ADX 기반 추세 강도 (0-100)
+            adx_strength = float(latest['adx'])
+            
+            # MACD 기반 추세 강도 (MACD와 Signal의 차이)
+            macd_strength = abs(latest['macd'] - latest['macd_signal']) / latest['close'] * 100
+            
+            # 이동평균선 기반 추세 강도
+            ma_diff = abs(latest['sma_10'] - latest['sma_30']) / latest['close'] * 100
+            
+            # 가중치 적용
+            strength = (
+                (adx_strength * 0.4) +      # ADX: 40%
+                (macd_strength * 0.35) +    # MACD: 35%
+                (ma_diff * 0.25)            # MA: 25%
+            )
+            
+            # 0-100 사이로 정규화
+            return min(100, max(0, strength))
+            
+        except Exception as e:
+            logger.error(f"추세 강도 계산 중 오류: {str(e)}")
+            return 50.0

@@ -16,16 +16,19 @@ python -m pytest tests/test_trade_manager.py -v
 포지션 크기 조정 가능 여부 확인
 부분 청산 후 새로운 진입 등의 전략을 구현할 수 있습니다.
 
-필수 필드:
-avg_entry_price: 전체 포지션의 평균 진입가격
-avg_exit_price: 전체 포지션의 평균 청산가격
-total_size: 전체 포지션 크기
-realized_pnl: 실현된 손익 (전체 포지션에 대한)
-created_time: 포지션 생성 시간
-closed_time: 포지션 종료 시간
-유용한 추가 필드:
-cumulative_realised_pnl: 누적 실현 손익
-position_status: "Closed"
-symbol: 거래 심볼 (예: "BTCUSDT")
-total_entry_value: 전체 진입 가치
-total_exit_value: 전체 청산 가치
+1. 분석 관련 파일들
+src/services/market_data_service.py  # 1시간 데이터 수집
+src/services/analysis_service.py     # 분석 로직
+src/ai/gpt_analyzer.py              # GPT 프롬프트 수정
+자동 매매 관련 파일들
+src/auto_trader/auto_analyzer.py    # 자동 분석/매매 타이밍
+src/services/trade_manager.py       # 매매 실행 로직
+src/services/order_service.py       # 주문 처리
+설정 파일
+src/config/config.py                # 타임프레임 설정 등
+우선 이 파일들을 공유해주시면, 1시간 분석 기반 매매로 변경하는 작업을 진행할 수 있을 것 같습니다.
+ 특히 auto_analyzer.py와 gpt_analyzer.py가 가장 중요할 것 같네요.
+
+잔고조회
+포지션조회
+알람

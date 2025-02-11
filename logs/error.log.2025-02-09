@@ -1,0 +1,194 @@
+2025-02-09 14:00:35,762 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 14:00:35,764 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 14:00:35,765 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-09 14:00:36,061 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 14:00:36,063 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 14:00:36,063 - telegram_bot.monitors.auto_analyzer - ERROR - 1h 분석 실패
+2025-02-09 14:12:04,661 - telegram_bot.bot - ERROR - 봇 초기화 실패: 'TelegramBot' object has no attribute '_initialize_handlers'
+2025-02-09 14:12:04,662 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute '_initialize_handlers'
+2025-02-09 14:12:04,667 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    await self._initialize_handlers()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_handlers'
+
+2025-02-09 14:12:04,668 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute '_initialize_handlers'
+2025-02-09 14:12:04,670 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    await self._initialize_handlers()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_handlers'
+
+2025-02-09 14:12:48,934 - telegram_bot.bot - ERROR - 핸들러 초기화 실패: 'TelegramBot' object has no attribute 'auto_analyzer'
+2025-02-09 14:12:48,935 - telegram_bot.bot - ERROR - 봇 초기화 실패: 'TelegramBot' object has no attribute '_initialize_monitors'
+2025-02-09 14:12:48,936 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute '_initialize_monitors'
+2025-02-09 14:12:48,938 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 223, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 166, in initialize
+    await self._initialize_monitors()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_monitors'. Did you mean: '_initialize_handlers'?
+
+2025-02-09 14:12:48,939 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute '_initialize_monitors'
+2025-02-09 14:12:48,941 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 223, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 166, in initialize
+    await self._initialize_monitors()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_monitors'. Did you mean: '_initialize_handlers'?
+
+2025-02-09 14:14:00,934 - telegram_bot.bot - ERROR - 봇 초기화 실패: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+2025-02-09 14:14:00,934 - telegram_bot.bot - ERROR - 봇 실행 중 오류: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+2025-02-09 14:14:00,935 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    self.auto_analyzer = AutoAnalyzer(self)
+                         ^^^^^^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+
+2025-02-09 14:14:00,936 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+2025-02-09 14:14:00,939 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    self.auto_analyzer = AutoAnalyzer(self)
+                         ^^^^^^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+
+2025-02-09 14:14:47,791 - telegram_bot.bot - ERROR - 봇 초기화 실패
+2025-02-09 14:15:54,679 - telegram_bot.bot - ERROR - 봇 시작 중 오류: This Application was not initialized via `Application.initialize`!
+2025-02-09 14:15:54,683 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 314, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 600, in start
+    self._check_initialized()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 454, in _check_initialized
+    raise RuntimeError(
+RuntimeError: This Application was not initialized via `Application.initialize`!
+
+2025-02-09 14:15:54,685 - telegram_bot.bot - ERROR - 봇 실행 중 오류: This Application was not initialized via `Application.initialize`!
+2025-02-09 14:15:54,687 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 314, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 600, in start
+    self._check_initialized()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 454, in _check_initialized
+    raise RuntimeError(
+RuntimeError: This Application was not initialized via `Application.initialize`!
+
+2025-02-09 14:15:54,691 - main - ERROR - 실행 중 에러 발생: This Application was not initialized via `Application.initialize`!
+2025-02-09 14:15:54,693 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 314, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 600, in start
+    self._check_initialized()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 454, in _check_initialized
+    raise RuntimeError(
+RuntimeError: This Application was not initialized via `Application.initialize`!
+
+2025-02-09 14:16:42,522 - telegram_bot.bot - ERROR - 봇 시작 중 오류: 'TelegramBot' object has no attribute '_stop_event'
+2025-02-09 14:16:42,525 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 327, in start
+    await self._stop_event.wait()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_stop_event'
+
+2025-02-09 14:16:42,526 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute '_stop_event'
+2025-02-09 14:16:42,528 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 327, in start
+    await self._stop_event.wait()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_stop_event'
+
+2025-02-09 14:16:42,529 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute '_stop_event'
+2025-02-09 14:16:42,531 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 327, in start
+    await self._stop_event.wait()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_stop_event'
+
+2025-02-09 15:28:52,489 - main - ERROR - 실행 중 에러 발생: 'limits'
+2025-02-09 15:28:52,491 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 75, in main
+    market_data_service = MarketDataService(bybit_client)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\market_data_service.py", line 44, in __init__
+    self.timeframe_limits = market_config['timeframes']['limits']
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'limits'
+
+2025-02-09 15:29:51,089 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() got an unexpected keyword argument 'timeframe'
+2025-02-09 15:29:51,090 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 103, in __init__
+    self.auto_analyzer = AutoAnalyzer(
+                         ^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() got an unexpected keyword argument 'timeframe'
+
+2025-02-09 15:30:46,844 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'system_handler'
+2025-02-09 15:30:46,848 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 113, in __init__
+    CommandHandler("help", self.system_handler.handle_help),
+                           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'system_handler'
+
+2025-02-09 15:32:41,170 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 15:32:41,171 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 15:32:41,171 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:38:25,846 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 15:38:25,846 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 15:38:25,847 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:40:12,638 - ai.gpt_client - ERROR - GPT 분석 요청 중 오류: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-02-09 15:40:12,641 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:44:00,777 - ai.gpt_client - ERROR - GPT 분석 요청 중 오류: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-02-09 15:44:00,778 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:47:32,505 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류: AnalysisFormatter.format_analysis_result() takes from 2 to 3 positional arguments but 4 were given
+2025-02-09 15:47:32,507 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 74, in run_market_analysis
+    message = self.analysis_formatter.format_analysis_result(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AnalysisFormatter.format_analysis_result() takes from 2 to 3 positional arguments but 4 were given
+
+2025-02-09 15:47:32,509 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류가 발생했습니다
+2025-02-09 15:49:20,267 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'str' object has no attribute 'get'
+2025-02-09 15:49:20,269 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-09 15:49:20,271 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-09 15:49:20,273 - telegram_bot.formatters.analysis_formatter - ERROR - 분석 결과 포맷팅 중 오류: 'str' object does not support item assignment
+2025-02-09 15:51:21,208 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'timestamp'
+2025-02-09 15:57:34,583 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'timestamp'

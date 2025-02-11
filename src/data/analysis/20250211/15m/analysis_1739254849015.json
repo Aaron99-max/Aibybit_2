@@ -1,0 +1,37 @@
+{
+  "market_summary": {
+    "current_price": 49070.4,
+    "market_phase": "\ud558\ub77d",
+    "sentiment": "NEGATIVE",
+    "short_term": "NEGATIVE",
+    "volume": "VOLUME_DECREASE",
+    "risk": "HIGH",
+    "confidence": 90
+  },
+  "technical_analysis": {
+    "trend": "\ud558\ub77d",
+    "strength": 100.0,
+    "indicators": {
+      "rsi": 16.393646222099264,
+      "macd": "BEARISH",
+      "bollinger": "\uc911\ub9bd",
+      "divergence_type": "\uc5c6\uc74c",
+      "divergence_desc": "\ud604\uc7ac \ub2e4\uc774\ubc84\uc804\uc2a4 \uc5c6\uc74c"
+    }
+  },
+  "trading_strategy": {
+    "position": "SELL",
+    "entry_price": 0.0,
+    "stop_loss": 0.0,
+    "take_profit1": 0.0,
+    "take_profit2": 0.0,
+    "leverage": 5,
+    "size": 10,
+    "reason": "\ud604\uc7ac \uc2dc\uc7a5\uc740 \ud558\ub77d \ucd94\uc138\uc774\uba70 RSI\uc640 MACD \uc9c0\ud45c\uac00 \ubaa8\uba58\ud140\uc744 \ubcf4\uc5ec\uc8fc\uace0 \uc788\uc2b5\ub2c8\ub2e4. \ubcfc\ub9b0\uc800\ubc34\ub4dc\ub294 \uc911\ub9bd\uc744 \ub098\ud0c0\ub0b4\uace0 \uc788\uc9c0\ub9cc, \ucd94\uc138\uc758 \uac15\ub3c4\uac00 100\uc73c\ub85c \ub9e4\uc6b0 \ub192\uc2b5\ub2c8\ub2e4. \ub530\ub77c\uc11c, \ud558\ub77d \ucd94\uc138\uc5d0 \ub530\ub77c \ub9e4\ub3c4 \ud3ec\uc9c0\uc158\uc744 \ucde8\ud558\ub294 \uac83\uc774 \uc801\uc808\ud569\ub2c8\ub2e4. \ub808\ubc84\ub9ac\uc9c0\ub294 5\ubc30\ub85c \uc124\uc815\ud558\uace0, \uc190\uc808\uac00\uc640 \uc775\uc808\uac00\ub294 \ud604\uc7ac \uc0c1\ud669\uc5d0\uc11c\ub294 0\uc73c\ub85c \uc124\uc815\ud569\ub2c8\ub2e4."
+  },
+  "auto_trading": {
+    "enabled": true,
+    "status": "active"
+  },
+  "timestamp": 1739254849015
+}

@@ -44,6 +44,12 @@ from services.trade_history_service import TradeHistoryService
 from .handlers.stats_handler import StatsHandler
 
 class TelegramBot:
+    # 메시지 타입 정의
+    MSG_TYPE_COMMAND = 'command'  # 명령어 응답
+    MSG_TYPE_ANALYSIS = 'analysis'  # 분석 결과
+    MSG_TYPE_TRADE = 'trade'  # 거래 알림
+    MSG_TYPE_SYSTEM = 'system'  # 시스템 알림
+
     def __init__(self, config: TelegramConfig, bybit_client: BybitClient, 
                  trade_manager: TradeManager = None,
                  market_data_service: MarketDataService = None):
@@ -137,27 +143,17 @@ class TelegramBot:
         for handler in handlers:
             self.application.add_handler(handler)
 
-    async def send_message_to_all(self, message: str, parse_mode: str = 'HTML'):
-        """모든 채팅방(관리자방 + 알림방)에 메시지 전송"""
+    async def send_message_to_all(self, message: str, msg_type: str = None):
+        """모든 채팅방에 메시지 전송"""
         try:
-            # 관리자방에 전송
-            if self.admin_chat_id:
-                await self.application.bot.send_message(
-                    chat_id=self.admin_chat_id,
-                    text=message,
-                    parse_mode=parse_mode
-                )
-                logger.info(f"관리자방({self.admin_chat_id})에 메시지 전송됨")
-
-            # 알림방에 전송
-            for chat_id in self.alert_chat_ids:
-                await self.application.bot.send_message(
-                    chat_id=chat_id,
-                    text=message,
-                    parse_mode=parse_mode
-                )
-                logger.info(f"알림방({chat_id})에 메시지 전송됨")
-
+            # 관리자 채팅방에는 모든 메시지 전송
+            await self.send_message(message, self.admin_chat_id)
+            
+            # 알림 채팅방에는 알림 메시지만 전송
+            if msg_type in [self.MSG_TYPE_ANALYSIS, self.MSG_TYPE_TRADE, self.MSG_TYPE_SYSTEM]:
+                for chat_id in self.alert_chat_ids:
+                    await self.send_message(message, chat_id)
+                    
         except Exception as e:
             logger.error(f"메시지 전송 중 오류: {str(e)}")
 
@@ -270,7 +266,6 @@ class TelegramBot:
             # 봇 시작
             logger.info("봇 시작 시도...")
             await self.start()
-            logger.info("봇 시작 완료")
             
         except Exception as e:
             logger.error(f"봇 실행 중 오류: {str(e)}")
@@ -330,17 +325,15 @@ class TelegramBot:
         try:
             logger.info("=== 봇 시작 시도 ===")
             
-            # Application 초기화
-            await self.application.initialize()
+            # 종료 이벤트 생성
+            self._stop_event = asyncio.Event()
             
             # 기존 웹훅 제거
             await self.application.bot.delete_webhook()
             
             # 봇 시작
+            await self.application.initialize()
             await self.application.start()
-            
-            # 시작 메시지 전송 추가
-            await self.send_message_to_all("🤖 바이빗 트레이딩 봇이 시작되었습니다.")
             
             # 모니터링 시작
             await self.application.updater.start_polling(
@@ -348,13 +341,18 @@ class TelegramBot:
                 allowed_updates=["message", "callback_query"]
             )
             
-            logger.info("=== 봇이 성공적으로 시작되었습니다 ===")
+            # 시작 메시지 전송
+            start_message = "🤖 바이빗 트레이딩 봇이 시작되었습니다"
+            logger.info(start_message)
+            await self.send_message_to_all(start_message, self.MSG_TYPE_SYSTEM)
             
+               
             # 봇이 실행 중인 동안 대기
-            await self._stop_event.wait()
+            try:
+                await self._stop_event.wait()
+            except asyncio.CancelledError:
+                logger.info("봇 실행이 취소되었습니다")
             
-        except asyncio.CancelledError:
-            logger.info("봇 실행이 취소되었습니다")
         except Exception as e:
             logger.error(f"봇 시작 중 오류: {str(e)}")
             logger.error(traceback.format_exc())

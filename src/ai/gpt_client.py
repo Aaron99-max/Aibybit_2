@@ -55,31 +55,37 @@ class GPTClient:
         
         # 분석 프롬프트 템플릿 수정
         self.ANALYSIS_PROMPT_TEMPLATE = """
-        다음 비트코인 1시간 차트 데이터를 바탕으로 매매 전략을 제시해주세요.
-        
-        [1시간 차트 분석]
-        • 현재가: ${current_price:,.2f}
-        • RSI: {rsi:.1f}
-        • MACD: {macd}
-        • 볼린저밴드: {bollinger}
-        • 추세: {trend}
-        • 추세강도: {trend_strength}/100
-        
-        [시장 상태]
-        • 24시간 변동: {price_change:+.2f}%
-        • 거래량(24h): {volume:,.0f}
-        • 자금조달비율: {funding_rate:.4f}%
-        
-        반드시 다음 JSON 형식으로만 응답하세요:
+        비트코인 시장 분석을 수행하고 매매 전략을 제시해주세요.
+
+        현재 시장 데이터:
+        - 현재가: ${current_price:,.2f}
+        - RSI: {rsi:.1f}
+        - MACD: {macd}
+        - 볼린저밴드: {bollinger}
+        - 추세: {trend}
+        - 추세강도: {trend_strength}/100
+        - 24시간 변동: {price_change:+.2f}%
+        - 거래량: {volume:,.0f}
+        - 자금조달비율: {funding_rate:.4f}%
+
+        위 데이터를 분석하여 다음 필수 필드는 꼭 포함한 JSON 형식으로 응답해주세요:
         {{
-            "position": "매수" 또는 "매도" 또는 "관망",
-            "entry_price": 진입가격(숫자),
-            "stop_loss": 손절가(숫자),
-            "take_profit": 익절가(숫자),
-            "leverage": 1-5 사이의 숫자,
-            "confidence": 0-100 사이의 숫자,
-            "reason": "진입 이유"
+            "position": "BUY" 또는 "SELL" 또는 "HOLD" (필수),
+            "entry_price": 진입가격 (필수, 현재가 기준),
+            "stop_loss": 손절가 (필수),
+            "take_profit1": 1차 목표가 (필수),
+            "take_profit2": 2차 목표가 (선택),
+            "leverage": 레버리지 (필수, 1-10 사이 정수),
+            "size": 포지션 크기 (필수, 5-20% 사이 정수),
+            "confidence": 신뢰도 (필수, 0-100 사이 정수),
+            "reason": 매매 사유 (필수, 상세히 설명)
         }}
+
+        주의사항:
+        1. 모든 필수 필드는 누락되어서는 안 됩니다
+        2. 숫자 필드는 문자열이 아닌 숫자로 응답해야 합니다
+        3. position은 정확히 "BUY", "SELL", "HOLD" 중 하나여야 합니다
+        4. 가격은 현재가 기준으로 계산하여 응답해주세요
         """
 
     def _create_system_prompt(self) -> str:
@@ -183,7 +189,7 @@ class GPTClient:
             content = response.choices[0].message.content.strip()
             
             # 새로 구현한 JSON 파싱 메서드 사용
-            analysis = self._parse_json_response(content)
+            analysis = self._parse_json_from_response(content)
             if not analysis:
                 logger.error("JSON 파싱 실패")
                 return {}
@@ -229,31 +235,30 @@ class GPTClient:
             logger.error(f"JSON 문자열 정리 중 오류: {str(e)}")
             return json_str
 
-    def _parse_json_response(self, response: str) -> Dict:
-        """GPT 응답에서 JSON 추출 및 파싱"""
+    def _parse_json_from_response(self, response: str) -> Optional[Dict]:
+        """GPT 응답에서 JSON 추출"""
         try:
-            logger.debug(f"원본 응답: {response}")
-            # JSON 문자열 정리
-            cleaned_response = self._clean_json_string(response)
-            logger.debug(f"정리된 응답: {cleaned_response}")
+            # 응답 정리
+            cleaned_response = response.strip()
             
-            # JSON 파싱 시도
-            try:
-                return json.loads(cleaned_response)
-            except json.JSONDecodeError as e:
-                logger.error(f"첫 번째 JSON 파싱 시도 실패: {str(e)}")
-                # JSON 형식이 아닌 경우, JSON 부분만 추출 시도
-                json_match = re.search(r'{.*}', cleaned_response, re.DOTALL)
-                if json_match:
-                    json_str = json_match.group()
-                    cleaned_json = self._clean_json_string(json_str)
-                    logger.debug(f"추출된 JSON: {cleaned_json}")
-                    return json.loads(cleaned_json)
-                raise
+            # JSON 부분 추출
+            json_match = re.search(r'{.*}', cleaned_response, re.DOTALL)
+            if json_match:
+                json_str = json_match.group()
+                cleaned_json = self._clean_json_string(json_str)
+                
+                # 숫자 필드 정리
+                result = json.loads(cleaned_json)
+                for field in ['entry_price', 'stop_loss', 'take_profit1', 'take_profit2']:
+                    if isinstance(result.get(field), str):
+                        # $ 기호와 쉼표 제거 후 float로 변환
+                        result[field] = float(result[field].replace('$', '').replace(',', ''))
+                return result
+                
+            raise ValueError("JSON not found in response")
             
         except Exception as e:
             logger.error(f"JSON 파싱 중 오류: {str(e)}")
-            logger.error(f"원본 응답: {response}")
             return None
 
     async def get_analysis(self, prompt: str) -> Optional[str]:

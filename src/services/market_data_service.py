@@ -124,39 +124,20 @@ class MarketDataService:
             return {}
 
     async def get_market_data(self, symbol: str) -> Dict:
-        """확장된 시장 데이터 조회"""
+        """시장 데이터 조회"""
         try:
-            # 기본 티커 데이터
             ticker = await self.get_ticker(symbol)
             if not ticker:
+                logger.error("티커 데이터를 가져올 수 없습니다")
                 return None
-
-            # 24시간 가격 변동 계산
-            price_change_24h = ((ticker.get('last', 0) - ticker.get('open', 0)) / ticker.get('open', 0)) * 100
-
-            # 자금 조달 비율
-            funding_info = await self.bybit_client.get_funding_rate(symbol)
             
-            # 미체결 약정
-            open_interest = await self.bybit_client.get_open_interest(symbol)
-            
-            # 롱/숏 비율
-            long_short_ratio = await self.bybit_client.get_long_short_ratio(symbol)
-
             return {
-                'price_data': {
-                    'symbol': symbol,
-                    'last_price': float(ticker.get('last', 0)),
-                    'price_change_24h': round(price_change_24h, 2),
-                    'volume': float(ticker.get('baseVolume', 0))
-                },
-                'market_metrics': {
-                    'funding_rate': funding_info.get('funding_rate', 0),
-                    'next_funding_time': funding_info.get('next_funding_time'),
-                    'open_interest': open_interest,
-                    'long_short_ratio': long_short_ratio
-                },
-                'order_book': await self.get_order_book(symbol)
+                'symbol': symbol,
+                'last_price': float(ticker.get('last', 0)),
+                'bid': float(ticker.get('bid', 0)), 
+                'ask': float(ticker.get('ask', 0)),
+                'volume': float(ticker.get('baseVolume', 0)),
+                'timestamp': ticker.get('timestamp', 0)
             }
             
         except Exception as e:

@@ -23,12 +23,12 @@ class AnalysisHandler(BaseHandler):
             chat_id = update.effective_chat.id
             
             # 1시간봉 분석 실행
-            await self.auto_analyzer.run_market_analysis(chat_id=chat_id)
+            await self.auto_analyzer.run_market_analysis(is_auto=False, chat_id=chat_id)
                 
         except Exception as e:
             logger.error(f"분석 명령어 처리 중 오류: {str(e)}")
             if update.effective_chat:
-                await self.send_message("❌ 분석 중 오류가 발생했습니다", update.effective_chat.id)
+                await self.send_command_response("❌ 분석 중 오류가 발생했습니다", update.effective_chat.id)
 
     async def show_timeframe_help(self, chat_id: int):
         """분석 명령어 도움말"""

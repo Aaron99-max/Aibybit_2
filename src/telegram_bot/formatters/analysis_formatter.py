@@ -5,6 +5,7 @@ import json
 from .base_formatter import BaseFormatter
 from ..utils.time_utils import TimeUtils
 from datetime import datetime
+import pytz
 import traceback
 
 logger = logging.getLogger(__name__)
@@ -358,28 +359,52 @@ class AnalysisFormatter(BaseFormatter):
             logger.error(f"상태 포맷팅 중 오류: {str(e)}")
             return "상태 포맷팅 오류"
 
-    @classmethod
-    def format_analysis_result(cls, analysis: Dict, saved_time: str = None) -> str:
+    def format_analysis_result(self, analysis: Dict, timeframe: str) -> str:
         """분석 결과 포맷팅"""
         try:
             if not analysis:
                 return "❌ 분석 결과가 없습니다."
 
-            # saved_time이 있으면 analysis에 저장
-            if saved_time:
-                analysis['saved_at'] = saved_time
+            # 저장된 시간 사용
+            time_str = analysis.get('saved_at', 
+                datetime.now(pytz.timezone('Asia/Seoul')).strftime('%Y-%m-%d %H:%M:%S KST')
+            )
 
-            formatter = cls()
-            
-            # 메시지 구성
             message = [
-                f"📊 1시간봉 분석 ({saved_time})\n",
-                formatter._format_market_summary(analysis),
-                formatter._format_technical_analysis(analysis),
-                formatter._format_trading_strategy(analysis)
+                f"📊 {timeframe} 분석 ({time_str})\n",
+                "🌍 시장 요약:",
+                f"• 시장 단계: {self.translate(analysis.get('market_summary', {}).get('market_phase', '알 수 없음'))}",
+                f"• 전반적 심리: {self.translate(analysis.get('market_summary', {}).get('sentiment', '알 수 없음'))}",
+                f"• 단기 심리: {self.translate(analysis.get('market_summary', {}).get('short_term', '알 수 없음'))}",
+                f"• 거래량: {self.translate(analysis.get('market_summary', {}).get('volume', '보통'))}",
+                f"• 리스크: {self.translate(analysis.get('market_summary', {}).get('risk', '보통'))}",
+                f"• 신뢰도: {analysis.get('market_summary', {}).get('confidence', 0)}%\n",
+
+                "📈 기술적 분석:",
+                f"• 추세: {self.translate(analysis.get('technical_analysis', {}).get('trend', '알 수 없음'))}",
+                f"• 강도: {analysis.get('technical_analysis', {}).get('strength', 0):.1f}",
+                f"• RSI: {analysis.get('technical_analysis', {}).get('indicators', {}).get('rsi', 0):.2f}",
+                f"• MACD: {analysis.get('technical_analysis', {}).get('indicators', {}).get('macd', '알 수 없음')}",
+                f"• 볼린저밴드: {analysis.get('technical_analysis', {}).get('indicators', {}).get('bollinger', '알 수 없음')}\n",
+
+                "🔄 다이버전스:",
+                f"• 유형: {self.translate(analysis.get('technical_analysis', {}).get('divergence_type', '없음'))}",
+                f"• 설명: {analysis.get('technical_analysis', {}).get('divergence_desc', '정보 없음')}\n",
+
+                "💡 거래 전략:",
+                f"• 포지션: {self.translate(analysis.get('trading_strategy', {}).get('position', '관망'))}",
+                f"• 진입가: ${float(analysis.get('trading_strategy', {}).get('entry_price', 0)):,.1f}",
+                f"• 손절가: ${float(analysis.get('trading_strategy', {}).get('stop_loss', 0)):,.1f}",
+                f"• 목표가: ${float(analysis.get('trading_strategy', {}).get('take_profit1', 0)):,.1f}, ${float(analysis.get('trading_strategy', {}).get('take_profit2', 0)):,.1f}",
+                f"• 레버리지: {analysis.get('trading_strategy', {}).get('leverage', 1)}x",
+                f"• 포지션 크기: {analysis.get('trading_strategy', {}).get('size', 10)}%\n",
+
+                "🤖 자동매매:",
+                f"• 상태: {'활성화' if analysis.get('auto_trading', {}).get('enabled', False) else '비활성화'}",
+                f"• 사유: {analysis.get('trading_strategy', {}).get('reason', '알 수 없음')}"
             ]
-            
-            return "\n".join(filter(None, message))
+
+            return "\n".join(message)
 
         except Exception as e:
             logger.error(f"분석 결과 포맷팅 중 오류: {str(e)}")
@@ -417,7 +442,7 @@ class AnalysisFormatter(BaseFormatter):
                 "\n📈 기술적 분석:",
                 f"• RSI: {technical.get('rsi', 0)}",
                 f"• MACD: {technical.get('macd', '정보 없음')}",
-                f"• 볼린저밴드: {technical.get('bollinger', '정보 없음')}"
+                f"• 볼린저: {technical.get('bollinger', '정보 없음')}"
             ]
             
             return "\n".join(message)

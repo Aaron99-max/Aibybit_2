@@ -1,0 +1,1884 @@
+2025-02-09 13:55:21,606 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 13:55:21,616 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 13:55:21,694 - main - INFO - 서비스 초기화 중...
+2025-02-09 13:55:21,707 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 13:55:24,508 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 13:55:31,895 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 13:55:31,895 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 13:55:31,895 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 13:55:33,377 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 13:55:33,379 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 13:55:34,171 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-02-09 13:55:34,172 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-09 13:55:34,172 - services.trade_history_service - INFO - 조회 기간: 2024-11-11 ~ 2025-02-09
+2025-02-09 13:55:34,173 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 13:55:34,174 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 13:55:34,175 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 13:55:34,179 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 13:55:34,180 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 13:55:34,182 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 13:55:34,183 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 13:55:34,184 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 13:55:34,186 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 13:55:34,187 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 13:55:34,188 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 13:55:34,189 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 13:55:34,190 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 13:55:34,197 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 13:55:34,199 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 13:55:34,201 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 13:55:34,203 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 13:55:34,204 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 13:55:34,205 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 13:55:34,205 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 13:55:34,206 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 13:55:34,207 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 13:55:34,208 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 13:55:34,214 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 13:55:34,219 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 13:55:34,221 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 13:55:34,223 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 13:55:34,226 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 13:55:34,230 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 13:55:34,238 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 13:55:34,240 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 13:55:34,244 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 13:55:34,247 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 13:55:34,255 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 13:55:34,260 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 13:55:34,264 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 13:55:34,270 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 13:55:34,274 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 13:55:34,281 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 13:55:34,283 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 13:55:34,285 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 13:55:34,287 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 13:55:34,288 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 13:55:34,289 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 13:55:34,292 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 13:55:34,300 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 13:55:34,303 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 13:55:34,305 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 13:55:34,307 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 13:55:34,307 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 13:55:34,312 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 13:55:34,317 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 13:55:34,318 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 13:55:34,320 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 13:55:34,322 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 13:55:34,323 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 13:55:34,323 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 13:55:34,324 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 13:55:34,330 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 13:55:34,331 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 13:55:34,332 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 13:55:34,333 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 13:55:34,334 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 13:55:34,335 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 13:55:34,336 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 13:55:34,337 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 13:55:34,339 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 13:55:34,340 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 13:55:34,344 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 13:55:34,348 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 13:55:34,351 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 13:55:34,352 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 13:55:34,353 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 13:55:34,354 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 13:55:34,356 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 13:55:34,357 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 13:55:34,358 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 13:55:34,360 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 13:55:34,361 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 13:55:34,362 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 13:55:34,363 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 13:55:34,364 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 13:55:34,365 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 13:55:34,367 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 13:55:34,369 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 13:55:34,369 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 13:55:34,370 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 13:55:34,371 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 13:55:34,372 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 13:55:34,373 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 13:55:34,374 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 13:55:34,377 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 13:55:34,379 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 13:55:34,379 - services.trade_history_service - INFO - 기존 데이터: 157건
+2025-02-09 13:55:34,380 - services.trade_history_service - INFO - 기존 데이터: 157건
+2025-02-09 13:55:34,835 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 13:55:35,298 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 13:55:35,299 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-02-09 13:55:35,300 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-02-09 13:55:35,301 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 13:55:35,301 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-02-09 13:55:35,302 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 13:55:35,302 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 13:55:35,303 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 13:55:35,549 - telegram.ext.Application - INFO - Application started
+2025-02-09 13:55:35,798 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 13:56:51,445 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 13:56:51,448 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 13:56:51,449 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 13:56:51,451 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 13:56:51,452 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 13:56:51,453 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 13:56:51,455 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 13:56:51,456 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 13:56:51,458 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 13:56:51,459 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 13:56:51,460 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 13:56:51,461 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 13:56:51,462 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 13:56:51,464 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 13:56:51,466 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 13:56:51,468 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 13:56:51,469 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 13:56:51,470 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 13:56:51,471 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 13:56:51,472 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 13:56:51,473 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 13:56:51,474 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 13:56:51,476 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 13:56:51,478 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 13:56:51,480 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 13:56:51,481 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 13:56:51,482 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 13:56:51,484 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 13:56:51,486 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 13:56:51,488 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 13:56:51,489 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 13:56:51,491 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 13:56:51,492 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 13:56:51,493 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 13:56:51,494 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 13:56:51,495 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 13:56:51,495 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 13:56:51,496 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 13:56:51,497 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 13:56:51,498 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 13:56:51,500 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 13:56:51,502 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 13:56:51,504 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 13:56:51,505 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 13:56:51,506 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 13:56:51,508 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 13:56:51,509 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 13:56:51,511 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 13:56:51,512 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 13:56:51,513 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 13:56:51,515 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 13:56:51,516 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 13:56:51,517 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 13:56:51,518 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 13:56:51,518 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 13:56:51,519 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 13:56:51,519 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 13:56:51,520 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 13:56:51,520 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 13:56:51,520 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 13:56:51,520 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 13:56:51,521 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 13:56:51,521 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 13:56:51,521 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 13:56:51,522 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 13:56:51,522 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 13:56:51,522 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 13:56:51,523 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 13:56:51,523 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 13:56:51,523 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 13:56:51,524 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 13:56:51,524 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 13:56:51,525 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 13:56:51,525 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 13:56:51,525 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 13:56:51,526 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 13:56:51,526 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 13:56:51,526 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 13:56:51,527 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 13:56:51,527 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 13:56:51,527 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 13:56:51,528 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 13:56:51,528 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 13:56:51,529 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 13:56:51,529 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 13:56:51,530 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 13:56:51,530 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 13:56:51,530 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 13:56:51,531 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 13:56:51,531 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 13:56:51,532 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 13:56:51,532 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 13:56:51,532 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 13:56:51,533 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 13:56:51,533 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 155
+2025-02-09 13:56:51,533 - telegram_bot.handlers.stats_handler - INFO - 중복 제거 후: 155
+2025-02-09 13:56:51,534 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 141
+2025-02-09 13:56:51,534 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 13:56:51,534 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 13:56:51,534 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 13:56:51,535 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 13:56:51,535 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 13:56:51,535 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 13:56:51,535 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 13:56:51,535 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 13:56:51,536 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 13:58:06,791 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 13:58:06,793 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 13:58:06,794 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 13:58:06,796 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 13:58:06,798 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 13:58:06,799 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 13:58:06,801 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 13:58:06,803 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 13:58:06,804 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 13:58:06,806 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 13:58:06,808 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 13:58:06,809 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 13:58:06,811 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 13:58:06,814 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 13:58:06,816 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 13:58:06,819 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 13:58:06,820 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 13:58:06,821 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 13:58:06,821 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 13:58:06,823 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 13:58:06,824 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 13:58:06,825 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 13:58:06,826 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 13:58:06,828 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 13:58:06,829 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 13:58:06,830 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 13:58:06,831 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 13:58:06,833 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 13:58:06,834 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 13:58:06,836 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 13:58:06,838 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 13:58:06,839 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 13:58:06,841 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 13:58:06,842 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 13:58:06,844 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 13:58:06,845 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 13:58:06,846 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 13:58:06,847 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 13:58:06,848 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 13:58:06,849 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 13:58:06,850 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 13:58:06,851 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 13:58:06,852 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 13:58:06,853 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 13:58:06,853 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 13:58:06,854 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 13:58:06,855 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 13:58:06,855 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 13:58:06,856 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 13:58:06,857 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 13:58:06,857 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 13:58:06,858 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 13:58:06,858 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 13:58:06,858 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 13:58:06,859 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 13:58:06,859 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 13:58:06,859 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 13:58:06,860 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 13:58:06,860 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 13:58:06,861 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 13:58:06,861 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 13:58:06,861 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 13:58:06,862 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 13:58:06,862 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 13:58:06,862 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 13:58:06,863 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 13:58:06,863 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 13:58:06,863 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 13:58:06,864 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 13:58:06,864 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 13:58:06,865 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 13:58:06,865 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 13:58:06,866 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 13:58:06,867 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 13:58:06,868 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 13:58:06,869 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 13:58:06,869 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 13:58:06,869 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 13:58:06,869 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 13:58:06,870 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 13:58:06,870 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 13:58:06,871 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 13:58:06,871 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 13:58:06,871 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 13:58:06,872 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 13:58:06,872 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 13:58:06,872 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 13:58:06,873 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 13:58:06,873 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 13:58:06,874 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 13:58:06,874 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 13:58:06,874 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 13:58:06,875 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 13:58:06,876 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 13:58:06,876 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 155
+2025-02-09 13:58:06,876 - telegram_bot.handlers.stats_handler - INFO - 중복 제거 후: 155
+2025-02-09 13:58:06,877 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 141
+2025-02-09 13:58:06,877 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 13:58:06,877 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 13:58:06,878 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 13:58:06,878 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 13:58:06,878 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 13:58:06,878 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 13:58:06,879 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 13:58:06,879 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 13:58:06,879 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 14:00:35,336 - telegram_bot.monitors.auto_analyzer - INFO - === 15m 분석 시작 (자동) ===
+2025-02-09 14:00:35,337 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 15m
+2025-02-09 14:00:35,762 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 14:00:35,764 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 14:00:35,765 - telegram_bot.monitors.auto_analyzer - ERROR - 15m 분석 실패
+2025-02-09 14:00:35,765 - telegram_bot.monitors.auto_analyzer - INFO - === 1h 분석 시작 (자동) ===
+2025-02-09 14:00:35,766 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 14:00:36,061 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 14:00:36,063 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 14:00:36,063 - telegram_bot.monitors.auto_analyzer - ERROR - 1h 분석 실패
+2025-02-09 14:03:11,625 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:03:12,086 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:03:22,596 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:03:22,598 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:03:22,603 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:03:22,603 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:03:24,764 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:03:25,154 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:03:25,155 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:03:25,155 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:03:25,803 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:03:25,803 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:03:26,578 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-02-09 14:03:26,580 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-09 14:03:26,581 - services.trade_history_service - INFO - 조회 기간: 2024-11-11 ~ 2025-02-09
+2025-02-09 14:03:26,583 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:03:26,585 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:03:26,586 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:03:26,588 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:03:26,589 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:03:26,590 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:03:26,591 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:03:26,592 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:03:26,594 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:03:26,595 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:03:26,596 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:03:26,597 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:03:26,597 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:03:26,599 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:03:26,600 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:03:26,602 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:03:26,603 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:03:26,604 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:03:26,606 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:03:26,607 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:03:26,608 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:03:26,609 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:03:26,611 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:03:26,613 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:03:26,615 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:03:26,616 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:03:26,617 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:03:26,618 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:03:26,619 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:03:26,620 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:03:26,621 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:03:26,622 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:03:26,623 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:03:26,624 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:03:26,624 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:03:26,625 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:03:26,626 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:03:26,627 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:03:26,628 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:03:26,630 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:03:26,632 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:03:26,633 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:03:26,634 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:03:26,635 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:03:26,637 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:03:26,638 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:03:26,639 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:03:26,641 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:03:26,642 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:03:26,643 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:03:26,644 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:03:26,645 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:03:26,646 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:03:26,647 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:03:26,648 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:03:26,649 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:03:26,650 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:03:26,650 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:03:26,650 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:03:26,651 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:03:26,651 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:03:26,652 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:03:26,652 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:03:26,652 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:03:26,653 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:03:26,653 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:03:26,654 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:03:26,654 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:03:26,654 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:03:26,655 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:03:26,655 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:03:26,655 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:03:26,656 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:03:26,656 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:03:26,656 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:03:26,656 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:03:26,657 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:03:26,657 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:03:26,657 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:03:26,659 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:03:26,659 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:03:26,660 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:03:26,660 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:03:26,660 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:03:26,660 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:03:26,661 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:03:26,661 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:03:26,661 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:03:26,662 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:03:26,663 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:03:26,664 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:03:26,665 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:03:26,666 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:03:26,666 - services.trade_history_service - INFO - 기존 데이터: 157건
+2025-02-09 14:03:26,666 - services.trade_history_service - INFO - 기존 데이터: 157건
+2025-02-09 14:03:27,113 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:03:27,591 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:03:27,592 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-02-09 14:03:27,593 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-02-09 14:03:27,595 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:03:27,596 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-02-09 14:03:27,597 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:03:27,598 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:03:27,599 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:03:27,855 - telegram.ext.Application - INFO - Application started
+2025-02-09 14:03:28,131 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 14:03:41,875 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:03:41,875 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:03:41,876 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:03:41,876 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:03:41,877 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:03:41,877 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:03:41,877 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:03:41,877 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:03:41,878 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:03:41,878 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:03:41,878 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:03:41,878 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:03:41,879 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:03:41,879 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:03:41,880 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:03:41,880 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:03:41,880 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:03:41,881 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:03:41,881 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:03:41,881 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:03:41,882 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:03:41,882 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:03:41,883 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:03:41,883 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:03:41,884 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:03:41,884 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:03:41,885 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:03:41,885 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:03:41,886 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:03:41,887 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:03:41,887 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:03:41,888 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:03:41,889 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:03:41,889 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:03:41,890 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:03:41,890 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:03:41,891 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:03:41,891 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:03:41,892 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:03:41,892 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:03:41,893 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:03:41,894 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:03:41,895 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:03:41,895 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:03:41,896 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:03:41,897 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:03:41,898 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:03:41,898 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:03:41,899 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:03:41,899 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:03:41,900 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:03:41,901 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:03:41,901 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:03:41,902 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:03:41,902 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:03:41,902 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:03:41,902 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:03:41,903 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:03:41,903 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:03:41,903 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:03:41,904 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:03:41,904 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:03:41,904 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:03:41,904 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:03:41,904 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:03:41,905 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:03:41,905 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:03:41,905 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:03:41,905 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:03:41,906 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:03:41,906 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:03:41,906 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:03:41,906 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:03:41,907 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:03:41,907 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:03:41,907 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:03:41,907 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:03:41,908 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:03:41,908 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:03:41,908 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:03:41,908 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:03:41,909 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:03:41,909 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:03:41,909 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:03:41,909 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:03:41,910 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:03:41,910 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:03:41,910 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:03:41,911 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:03:41,911 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:03:41,911 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:03:41,912 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:03:41,912 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:03:41,912 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 14:03:41,912 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 155
+2025-02-09 14:03:41,913 - telegram_bot.handlers.stats_handler - INFO - 중복 제거 후: 155
+2025-02-09 14:03:41,913 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 141
+2025-02-09 14:03:41,913 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 14:03:41,913 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 14:03:41,913 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 14:03:41,914 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 14:03:41,914 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 14:03:41,914 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 14:03:41,914 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 14:03:41,914 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 14:03:41,914 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 14:05:13,760 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:05:14,222 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:06:30,290 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:06:30,291 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:06:30,297 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:06:30,297 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:06:32,449 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:06:32,835 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:06:32,835 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:06:32,836 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:06:33,485 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:06:33,485 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:06:34,247 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-02-09 14:06:34,248 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-09 14:06:34,249 - services.trade_history_service - INFO - 조회 기간: 2024-11-11 ~ 2025-02-09
+2025-02-09 14:06:34,252 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:06:34,253 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:06:34,255 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:06:34,256 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:06:34,258 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:06:34,259 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:06:34,261 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:06:34,262 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:06:34,264 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:06:34,265 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:06:34,267 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:06:34,268 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:06:34,269 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:06:34,271 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:06:34,272 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:06:34,273 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:06:34,274 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:06:34,275 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:06:34,276 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:06:34,277 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:06:34,277 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:06:34,278 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:06:34,280 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:06:34,282 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:06:34,284 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:06:34,285 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:06:34,287 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:06:34,288 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:06:34,290 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:06:34,292 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:06:34,293 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:06:34,294 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:06:34,296 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:06:34,297 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:06:34,299 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:06:34,300 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:06:34,300 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:06:34,301 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:06:34,302 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:06:34,303 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:06:34,304 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:06:34,305 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:06:34,306 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:06:34,307 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:06:34,308 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:06:34,309 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:06:34,310 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:06:34,311 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:06:34,312 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:06:34,313 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:06:34,314 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:06:34,316 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:06:34,317 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:06:34,318 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:06:34,318 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:06:34,319 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:06:34,320 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:06:34,320 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:06:34,321 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:06:34,321 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:06:34,322 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:06:34,322 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:06:34,323 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:06:34,323 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:06:34,324 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:06:34,324 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:06:34,324 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:06:34,325 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:06:34,325 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:06:34,326 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:06:34,326 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:06:34,327 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:06:34,327 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:06:34,328 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:06:34,329 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:06:34,329 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:06:34,330 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:06:34,330 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:06:34,330 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:06:34,331 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:06:34,331 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:06:34,331 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:06:34,331 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:06:34,332 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:06:34,334 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:06:34,334 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:06:34,335 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:06:34,335 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:06:34,336 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:06:34,336 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:06:34,336 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:06:34,337 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:06:34,337 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:06:34,337 - services.trade_history_service - INFO - 기존 데이터: 157건
+2025-02-09 14:06:34,783 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:06:35,235 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:06:35,236 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-02-09 14:06:35,236 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-02-09 14:06:35,236 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:06:35,236 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-02-09 14:06:35,237 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:06:35,237 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:06:35,237 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:06:35,485 - telegram.ext.Application - INFO - Application started
+2025-02-09 14:06:35,733 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 14:06:42,811 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:06:42,812 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:06:42,813 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:06:42,814 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:06:42,815 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:06:42,816 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:06:42,817 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:06:42,818 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:06:42,819 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:06:42,820 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:06:42,821 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:06:42,823 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:06:42,824 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:06:42,825 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:06:42,827 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:06:42,828 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:06:42,830 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:06:42,831 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:06:42,832 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:06:42,833 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:06:42,834 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:06:42,835 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:06:42,837 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:06:42,838 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:06:42,840 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:06:42,841 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:06:42,842 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:06:42,844 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:06:42,846 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:06:42,848 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:06:42,849 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:06:42,849 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:06:42,850 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:06:42,851 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:06:42,851 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:06:42,852 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:06:42,852 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:06:42,853 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:06:42,854 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:06:42,854 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:06:42,855 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:06:42,856 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:06:42,857 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:06:42,858 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:06:42,858 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:06:42,859 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:06:42,860 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:06:42,861 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:06:42,861 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:06:42,862 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:06:42,862 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:06:42,863 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:06:42,864 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:06:42,864 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:06:42,865 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:06:42,865 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:06:42,865 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:06:42,866 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:06:42,866 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:06:42,866 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:06:42,867 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:06:42,867 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:06:42,867 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:06:42,868 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:06:42,868 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:06:42,869 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:06:42,869 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:06:42,869 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:06:42,870 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:06:42,870 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:06:42,870 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:06:42,870 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:06:42,871 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:06:42,871 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:06:42,871 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:06:42,872 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:06:42,872 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:06:42,872 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:06:42,873 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:06:42,873 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:06:42,874 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:06:42,874 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:06:42,875 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:06:42,875 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:06:42,876 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:06:42,877 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:06:42,878 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:06:42,879 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:06:42,880 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:06:42,880 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:06:42,880 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:06:42,881 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:06:42,881 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:06:42,882 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 14:06:42,882 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 155
+2025-02-09 14:06:42,882 - telegram_bot.handlers.stats_handler - INFO - 중복 제거 후: 155
+2025-02-09 14:06:42,882 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 141
+2025-02-09 14:06:42,882 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 14:06:42,883 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 14:06:42,883 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 14:06:42,883 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 14:06:42,883 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 14:06:42,884 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 14:06:42,884 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 14:06:42,884 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 14:06:42,884 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 14:09:34,955 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:09:35,409 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:09:57,298 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:09:57,300 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:09:57,305 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:09:57,305 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:09:59,840 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:10:00,226 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:10:00,227 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:10:00,227 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:10:00,856 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:10:00,857 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:10:01,621 - telegram_bot.bot - INFO - 거래 내역 초기화 시작...
+2025-02-09 14:10:01,622 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-09 14:10:01,623 - services.trade_history_service - INFO - 조회 기간: 2024-11-11 ~ 2025-02-09
+2025-02-09 14:10:01,626 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:10:01,626 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:10:01,628 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:10:01,629 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:10:01,631 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:10:01,633 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:10:01,634 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:10:01,636 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:10:01,638 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:10:01,639 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:10:01,641 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:10:01,642 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:10:01,644 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:10:01,646 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:10:01,649 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:10:01,652 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:10:01,654 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:10:01,656 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:10:01,657 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:10:01,658 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:10:01,659 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:10:01,660 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:10:01,661 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:10:01,663 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:10:01,665 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:10:01,666 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:10:01,667 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:10:01,669 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:10:01,671 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:10:01,673 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:10:01,675 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:10:01,677 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:10:01,679 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:10:01,680 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:10:01,682 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:10:01,683 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:10:01,684 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:10:01,686 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:10:01,687 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:10:01,688 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:10:01,690 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:10:01,691 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:10:01,693 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:10:01,695 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:10:01,696 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:10:01,697 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:10:01,698 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:10:01,699 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:10:01,700 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:10:01,700 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:10:01,701 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:10:01,702 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:10:01,703 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:10:01,703 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:10:01,704 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:10:01,705 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:10:01,706 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:10:01,706 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:10:01,707 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:10:01,708 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:10:01,708 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:10:01,709 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:10:01,710 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:10:01,711 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:10:01,711 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:10:01,712 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:10:01,713 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:10:01,713 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:10:01,714 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:10:01,715 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:10:01,716 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:10:01,716 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:10:01,717 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:10:01,717 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:10:01,718 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:10:01,718 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:10:01,719 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:10:01,719 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:10:01,720 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:10:01,729 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:10:01,730 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:10:01,731 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:10:01,731 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:10:01,732 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:10:01,732 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:10:01,732 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:10:01,733 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:10:01,733 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:10:01,733 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:10:01,734 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:10:01,734 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:10:01,734 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:10:01,735 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:10:01,735 - services.trade_history_service - INFO - 기존 데이터: 157건
+2025-02-09 14:10:02,276 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:10:02,749 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:10:02,749 - telegram_bot.bot - INFO - 모니터링 초기화 시작...
+2025-02-09 14:10:02,749 - telegram_bot.bot - INFO - 핸들러 초기화 시작...
+2025-02-09 14:10:02,750 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:10:02,750 - telegram_bot.monitors.auto_analyzer - INFO - 자동 분석 시작됨
+2025-02-09 14:10:02,750 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:10:02,751 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:10:02,751 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:10:03,000 - telegram.ext.Application - INFO - Application started
+2025-02-09 14:10:03,251 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 14:10:10,584 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:10:10,586 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:10:10,588 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:10:10,589 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:10:10,590 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:10:10,592 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:10:10,594 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:10:10,596 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:10:10,597 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:10:10,598 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:10:10,600 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:10:10,601 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:10:10,602 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:10:10,604 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:10:10,606 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:10:10,607 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:10:10,608 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:10:10,610 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:10:10,611 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:10:10,612 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:10:10,613 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:10:10,614 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:10:10,616 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:10:10,618 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:10:10,620 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:10:10,621 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:10:10,622 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:10:10,624 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:10:10,627 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:10:10,628 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:10:10,628 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:10:10,629 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:10:10,630 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:10:10,631 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:10:10,632 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:10:10,632 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:10:10,633 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:10:10,634 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:10:10,635 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:10:10,635 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:10:10,637 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:10:10,638 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:10:10,639 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:10:10,639 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:10:10,640 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:10:10,641 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:10:10,642 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:10:10,643 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:10:10,644 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:10:10,644 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:10:10,645 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:10:10,645 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:10:10,646 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:10:10,647 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:10:10,647 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:10:10,648 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:10:10,648 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:10:10,649 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:10:10,649 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:10:10,649 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:10:10,650 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:10:10,650 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:10:10,651 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:10:10,651 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:10:10,652 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:10:10,652 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:10:10,652 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:10:10,653 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:10:10,653 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:10:10,654 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:10:10,654 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:10:10,654 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:10:10,655 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:10:10,655 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:10:10,655 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:10:10,656 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:10:10,656 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:10:10,657 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:10:10,657 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:10:10,658 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:10:10,658 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:10:10,658 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:10:10,659 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:10:10,659 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:10:10,659 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:10:10,660 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:10:10,660 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:10:10,660 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:10:10,661 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:10:10,661 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:10:10,661 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:10:10,662 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:10:10,662 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:10:10,663 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 14:10:10,664 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 155
+2025-02-09 14:10:10,664 - telegram_bot.handlers.stats_handler - INFO - 중복 제거 후: 155
+2025-02-09 14:10:10,665 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 141
+2025-02-09 14:10:10,665 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 14:10:10,665 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 14:10:10,665 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 14:10:10,666 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 14:10:10,666 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 14:10:10,667 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 14:10:10,667 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 14:10:10,667 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 14:10:10,668 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 14:11:37,339 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:11:37,804 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:12:00,875 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:12:00,877 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:12:00,885 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:12:00,885 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:12:02,903 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:12:03,354 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:12:03,354 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:12:03,354 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:12:04,011 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:12:04,012 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:12:04,012 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:12:04,661 - telegram_bot.bot - ERROR - 봇 초기화 실패: 'TelegramBot' object has no attribute '_initialize_handlers'
+2025-02-09 14:12:04,662 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute '_initialize_handlers'
+2025-02-09 14:12:04,667 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    await self._initialize_handlers()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_handlers'
+
+2025-02-09 14:12:04,668 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute '_initialize_handlers'
+2025-02-09 14:12:04,670 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    await self._initialize_handlers()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_handlers'
+
+2025-02-09 14:12:45,196 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:12:45,197 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:12:45,203 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:12:45,203 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:12:47,216 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:12:47,599 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:12:47,600 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:12:47,600 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:12:48,238 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:12:48,239 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:12:48,239 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:12:48,934 - telegram_bot.bot - ERROR - 핸들러 초기화 실패: 'TelegramBot' object has no attribute 'auto_analyzer'
+2025-02-09 14:12:48,935 - telegram_bot.bot - ERROR - 봇 초기화 실패: 'TelegramBot' object has no attribute '_initialize_monitors'
+2025-02-09 14:12:48,936 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute '_initialize_monitors'
+2025-02-09 14:12:48,938 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 223, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 166, in initialize
+    await self._initialize_monitors()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_monitors'. Did you mean: '_initialize_handlers'?
+
+2025-02-09 14:12:48,939 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute '_initialize_monitors'
+2025-02-09 14:12:48,941 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 223, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 166, in initialize
+    await self._initialize_monitors()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_initialize_monitors'. Did you mean: '_initialize_handlers'?
+
+2025-02-09 14:13:57,123 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:13:57,124 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:13:57,130 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:13:57,130 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:13:59,188 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:13:59,570 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:13:59,570 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:13:59,570 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:14:00,215 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:14:00,215 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:14:00,216 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:14:00,934 - telegram_bot.bot - ERROR - 봇 초기화 실패: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+2025-02-09 14:14:00,934 - telegram_bot.bot - ERROR - 봇 실행 중 오류: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+2025-02-09 14:14:00,935 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    self.auto_analyzer = AutoAnalyzer(self)
+                         ^^^^^^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+
+2025-02-09 14:14:00,936 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+2025-02-09 14:14:00,939 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 224, in run
+    init_success = await self.initialize()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 163, in initialize
+    self.auto_analyzer = AutoAnalyzer(self)
+                         ^^^^^^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() missing 4 required positional arguments: 'ai_trader', 'market_data_service', 'storage_formatter', and 'analysis_formatter'
+
+2025-02-09 14:14:43,968 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:14:43,969 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:14:43,976 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:14:43,977 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:14:46,140 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:14:46,517 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:14:46,518 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:14:46,518 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:14:47,158 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:14:47,158 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:14:47,158 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:14:47,790 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:14:47,791 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:14:47,791 - telegram_bot.bot - ERROR - 봇 초기화 실패
+2025-02-09 14:15:50,204 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:15:50,206 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:15:50,211 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:15:50,212 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:15:52,213 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:15:52,595 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:15:52,596 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:15:52,597 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:15:53,243 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:15:53,243 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:15:53,912 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:15:53,913 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:15:53,913 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:15:53,913 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:15:54,679 - telegram_bot.bot - ERROR - 봇 시작 중 오류: This Application was not initialized via `Application.initialize`!
+2025-02-09 14:15:54,683 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 314, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 600, in start
+    self._check_initialized()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 454, in _check_initialized
+    raise RuntimeError(
+RuntimeError: This Application was not initialized via `Application.initialize`!
+
+2025-02-09 14:15:54,685 - telegram_bot.bot - ERROR - 봇 실행 중 오류: This Application was not initialized via `Application.initialize`!
+2025-02-09 14:15:54,687 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 314, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 600, in start
+    self._check_initialized()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 454, in _check_initialized
+    raise RuntimeError(
+RuntimeError: This Application was not initialized via `Application.initialize`!
+
+2025-02-09 14:15:54,691 - main - ERROR - 실행 중 에러 발생: This Application was not initialized via `Application.initialize`!
+2025-02-09 14:15:54,693 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 314, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 600, in start
+    self._check_initialized()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 454, in _check_initialized
+    raise RuntimeError(
+RuntimeError: This Application was not initialized via `Application.initialize`!
+
+2025-02-09 14:16:37,245 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:16:37,246 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:16:37,252 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:16:37,252 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:16:39,442 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:16:39,860 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:16:39,861 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:16:39,861 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:16:40,501 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:16:40,501 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:16:41,231 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:16:41,232 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:16:41,232 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:16:41,232 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:16:42,249 - telegram.ext.Application - INFO - Application started
+2025-02-09 14:16:42,522 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 14:16:42,522 - telegram_bot.bot - ERROR - 봇 시작 중 오류: 'TelegramBot' object has no attribute '_stop_event'
+2025-02-09 14:16:42,525 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 327, in start
+    await self._stop_event.wait()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_stop_event'
+
+2025-02-09 14:16:42,526 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute '_stop_event'
+2025-02-09 14:16:42,528 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 327, in start
+    await self._stop_event.wait()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_stop_event'
+
+2025-02-09 14:16:42,529 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute '_stop_event'
+2025-02-09 14:16:42,531 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 327, in start
+    await self._stop_event.wait()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute '_stop_event'
+
+2025-02-09 14:16:42,533 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-02-09 14:17:45,069 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:17:45,071 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:17:45,076 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:17:45,077 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:17:47,384 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:17:47,771 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:17:47,771 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:17:47,771 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:17:48,411 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:17:48,411 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:17:49,063 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:17:49,063 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:17:49,063 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:17:49,063 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:17:50,073 - telegram.ext.Application - INFO - Application started
+2025-02-09 14:17:50,326 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 14:17:58,391 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:17:58,391 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:17:58,392 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:17:58,392 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:17:58,392 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:17:58,393 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:17:58,393 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:17:58,393 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:17:58,394 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:17:58,394 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:17:58,394 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:17:58,394 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:17:58,395 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:17:58,395 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:17:58,396 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:17:58,396 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:17:58,397 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:17:58,397 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:17:58,398 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:17:58,398 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:17:58,398 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:17:58,399 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:17:58,399 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:17:58,399 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:17:58,401 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:17:58,401 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:17:58,401 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:17:58,402 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:17:58,403 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:17:58,404 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:17:58,404 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:17:58,405 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:17:58,405 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:17:58,406 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:17:58,406 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:17:58,407 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:17:58,407 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:17:58,408 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:17:58,408 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:17:58,409 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:17:58,410 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:17:58,410 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:17:58,411 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:17:58,411 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:17:58,412 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:17:58,413 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:17:58,413 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:17:58,414 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:17:58,415 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:17:58,415 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:17:58,416 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:17:58,416 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:17:58,417 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:17:58,417 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:17:58,417 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:17:58,418 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:17:58,418 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:17:58,419 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:17:58,419 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:17:58,419 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:17:58,419 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:17:58,420 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:17:58,420 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:17:58,420 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:17:58,420 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:17:58,420 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:17:58,421 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:17:58,421 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:17:58,421 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:17:58,421 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:17:58,422 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:17:58,422 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:17:58,422 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:17:58,423 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:17:58,423 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:17:58,423 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:17:58,423 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:17:58,424 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:17:58,424 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:17:58,424 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:17:58,425 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:17:58,425 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:17:58,425 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:17:58,425 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:17:58,426 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:17:58,426 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:17:58,426 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:17:58,426 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:17:58,427 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:17:58,427 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:17:58,427 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:17:58,427 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:17:58,428 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:17:58,428 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 14:17:58,429 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 155
+2025-02-09 14:17:58,429 - telegram_bot.handlers.stats_handler - INFO - 중복 제거 후: 155
+2025-02-09 14:17:58,429 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 141
+2025-02-09 14:17:58,429 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 14:17:58,429 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 14:17:58,429 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 14:17:58,430 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 14:17:58,430 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 14:17:58,430 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 14:17:58,431 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 14:17:58,431 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 14:17:58,431 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 14:21:00,305 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:21:00,760 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:21:26,140 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:21:26,141 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:21:26,146 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:21:26,146 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:21:28,265 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:21:28,673 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:21:28,673 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:21:28,673 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:21:29,331 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:21:29,331 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:21:30,065 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:21:30,065 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:21:30,066 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:21:30,066 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:21:31,075 - telegram.ext.Application - INFO - Application started
+2025-02-09 14:21:31,327 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 14:21:37,446 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:21:37,447 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:21:37,448 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:21:37,449 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:21:37,450 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:21:37,451 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:21:37,451 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:21:37,452 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:21:37,454 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:21:37,454 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:21:37,455 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:21:37,456 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:21:37,457 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:21:37,459 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:21:37,460 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:21:37,461 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:21:37,462 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:21:37,463 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:21:37,464 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:21:37,464 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:21:37,465 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:21:37,465 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:21:37,466 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:21:37,468 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:21:37,469 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:21:37,469 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:21:37,470 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:21:37,471 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:21:37,472 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:21:37,473 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:21:37,474 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:21:37,475 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:21:37,476 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:21:37,477 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:21:37,478 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:21:37,479 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:21:37,479 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:21:37,480 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:21:37,481 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:21:37,483 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:21:37,484 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:21:37,485 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:21:37,486 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:21:37,487 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:21:37,488 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:21:37,489 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:21:37,490 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:21:37,491 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:21:37,492 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:21:37,493 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:21:37,494 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:21:37,494 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:21:37,495 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:21:37,495 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:21:37,495 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:21:37,495 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:21:37,496 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:21:37,496 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:21:37,496 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:21:37,497 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:21:37,497 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:21:37,497 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:21:37,498 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:21:37,498 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:21:37,498 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:21:37,499 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:21:37,499 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:21:37,500 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:21:37,500 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:21:37,500 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:21:37,501 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:21:37,501 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:21:37,501 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:21:37,502 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:21:37,502 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:21:37,502 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:21:37,502 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:21:37,503 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:21:37,503 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:21:37,504 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:21:37,504 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:21:37,504 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:21:37,504 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:21:37,505 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:21:37,505 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:21:37,505 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:21:37,505 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:21:37,506 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:21:37,506 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:21:37,506 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:21:37,506 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:21:37,506 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:21:37,507 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:21:37,507 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 14:21:37,507 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 155
+2025-02-09 14:21:37,508 - telegram_bot.handlers.stats_handler - INFO - 중복 제거 후: 155
+2025-02-09 14:21:37,508 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 141
+2025-02-09 14:21:37,508 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 14:21:37,509 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 14:21:37,509 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 14:21:37,510 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 14:21:37,510 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 14:21:37,510 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 14:21:37,511 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 14:21:37,511 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 14:21:37,511 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 14:29:08,866 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:29:09,332 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 14:31:36,792 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 14:31:36,794 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 14:31:36,800 - main - INFO - 서비스 초기화 중...
+2025-02-09 14:31:36,800 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 14:31:38,997 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 14:31:39,383 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 14:31:39,384 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 14:31:39,384 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 14:31:40,035 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 14:31:40,036 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 14:31:40,716 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 14:31:40,717 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 14:31:40,717 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 14:31:40,717 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 14:31:41,734 - telegram.ext.Application - INFO - Application started
+2025-02-09 14:31:41,988 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 14:31:48,910 - services.trade_store - INFO - 날짜 범위 조회: 20241111 ~ 20250209
+2025-02-09 14:31:48,911 - services.trade_store - INFO - 날짜: 20241111, 포지션 수: 0건
+2025-02-09 14:31:48,912 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-09 14:31:48,913 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-09 14:31:48,914 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-09 14:31:48,915 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-09 14:31:48,916 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-09 14:31:48,917 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-09 14:31:48,918 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-09 14:31:48,918 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-09 14:31:48,919 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-09 14:31:48,921 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-09 14:31:48,922 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-09 14:31:48,923 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-09 14:31:48,925 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-09 14:31:48,927 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-09 14:31:48,928 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-09 14:31:48,929 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-09 14:31:48,930 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-09 14:31:48,931 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-09 14:31:48,932 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-09 14:31:48,932 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-09 14:31:48,934 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-09 14:31:48,936 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-09 14:31:48,937 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-09 14:31:48,938 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-09 14:31:48,939 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-09 14:31:48,941 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-09 14:31:48,943 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-09 14:31:48,944 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-09 14:31:48,946 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-09 14:31:48,947 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-09 14:31:48,949 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-09 14:31:48,951 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-09 14:31:48,953 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-09 14:31:48,954 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-09 14:31:48,955 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-09 14:31:48,956 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-09 14:31:48,957 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-09 14:31:48,958 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-09 14:31:48,960 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-09 14:31:48,960 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-09 14:31:48,961 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-09 14:31:48,962 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-09 14:31:48,963 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-09 14:31:48,964 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-09 14:31:48,965 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-09 14:31:48,966 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-09 14:31:48,967 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-09 14:31:48,968 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-09 14:31:48,969 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-09 14:31:48,969 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-09 14:31:48,970 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-09 14:31:48,970 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-09 14:31:48,971 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-09 14:31:48,972 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-09 14:31:48,972 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-09 14:31:48,973 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-09 14:31:48,973 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-09 14:31:48,974 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-09 14:31:48,974 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-09 14:31:48,975 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-09 14:31:48,975 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-09 14:31:48,976 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-09 14:31:48,976 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-09 14:31:48,977 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-09 14:31:48,977 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-09 14:31:48,978 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-09 14:31:48,978 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-09 14:31:48,979 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-09 14:31:48,979 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-09 14:31:48,980 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-09 14:31:48,980 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-09 14:31:48,980 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-09 14:31:48,981 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-09 14:31:48,981 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-09 14:31:48,982 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-09 14:31:48,982 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-09 14:31:48,983 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-09 14:31:48,983 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-09 14:31:48,983 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-09 14:31:48,984 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-09 14:31:48,984 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-09 14:31:48,984 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-09 14:31:48,985 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-09 14:31:48,985 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-09 14:31:48,985 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-09 14:31:48,986 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-09 14:31:48,987 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-09 14:31:48,987 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-09 14:31:48,988 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-09 14:31:48,989 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-09 14:31:48,989 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-09 14:31:48,989 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-09 14:31:48,990 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 157
+2025-02-09 14:31:48,990 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 143
+2025-02-09 14:31:48,990 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-09 14:31:48,991 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-09 14:31:48,991 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-09 14:31:48,991 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-09 14:31:48,992 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-09 14:31:48,992 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-09 14:31:48,992 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-09 14:31:48,992 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-09 14:31:48,993 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-09 14:33:48,952 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 14:33:49,435 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:28:52,475 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:28:52,478 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:28:52,487 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:28:52,488 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:28:52,489 - main - ERROR - 실행 중 에러 발생: 'limits'
+2025-02-09 15:28:52,491 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 75, in main
+    market_data_service = MarketDataService(bybit_client)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\market_data_service.py", line 44, in __init__
+    self.timeframe_limits = market_config['timeframes']['limits']
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'limits'
+
+2025-02-09 15:29:47,853 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:29:47,854 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:29:47,859 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:29:47,860 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:29:50,021 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:29:50,423 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:29:50,423 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:29:50,424 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:29:51,089 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() got an unexpected keyword argument 'timeframe'
+2025-02-09 15:29:51,090 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 103, in __init__
+    self.auto_analyzer = AutoAnalyzer(
+                         ^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() got an unexpected keyword argument 'timeframe'
+
+2025-02-09 15:30:43,775 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:30:43,776 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:30:43,781 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:30:43,783 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:30:45,783 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:30:46,191 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:30:46,192 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:30:46,193 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:30:46,844 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'system_handler'
+2025-02-09 15:30:46,848 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 113, in __init__
+    CommandHandler("help", self.system_handler.handle_help),
+                           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'system_handler'
+
+2025-02-09 15:31:54,535 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:31:54,537 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:31:54,543 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:31:54,544 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:31:56,590 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:31:56,970 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:31:56,970 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:31:56,970 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:31:57,606 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:31:57,606 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:31:58,277 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:31:58,277 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:31:58,278 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:31:58,278 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:31:59,293 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:31:59,547 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:32:40,787 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:32:40,788 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:32:41,170 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 15:32:41,171 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 15:32:41,171 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:33:49,007 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:33:49,476 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:38:06,956 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:38:06,958 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:38:06,964 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:38:06,964 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:38:08,991 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:38:09,378 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:38:09,378 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:38:09,378 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:38:10,073 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:38:10,074 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:38:10,717 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:38:10,718 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:38:10,718 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:38:10,719 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:38:11,738 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:38:12,178 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:38:12,646 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:38:12,898 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:38:25,325 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:38:25,327 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:38:25,846 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_funding_rate'
+2025-02-09 15:38:25,846 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-09 15:38:25,847 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:39:50,277 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:39:50,735 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:39:58,342 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:39:58,343 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:39:58,350 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:39:58,351 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:40:00,546 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:40:00,940 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:40:00,940 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:40:00,940 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:40:01,603 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:40:01,604 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:40:02,287 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:40:02,287 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:40:02,288 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:40:02,288 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:40:03,295 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:40:03,740 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:40:04,187 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:40:04,437 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:40:11,758 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:40:11,758 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:40:12,638 - ai.gpt_client - ERROR - GPT 분석 요청 중 오류: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-02-09 15:40:12,641 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:43:34,784 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:43:35,246 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:43:47,874 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:43:47,875 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:43:47,881 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:43:47,881 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:43:50,033 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:43:50,487 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:43:50,488 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:43:50,488 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:43:51,129 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:43:51,130 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:43:51,771 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:43:51,772 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:43:51,772 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:43:51,772 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:43:52,799 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:43:53,243 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:43:53,705 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:43:53,954 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:43:57,483 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:43:57,484 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:43:59,108 - openai._base_client - INFO - Retrying request to /chat/completions in 0.484843 seconds
+2025-02-09 15:43:59,780 - openai._base_client - INFO - Retrying request to /chat/completions in 0.807684 seconds
+2025-02-09 15:44:00,777 - ai.gpt_client - ERROR - GPT 분석 요청 중 오류: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-02-09 15:44:00,778 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-09 15:47:05,290 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:47:05,756 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:47:21,296 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:47:21,298 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:47:21,305 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:47:21,305 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:47:23,714 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:47:24,119 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:47:24,119 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:47:24,119 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:47:24,771 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:47:24,772 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:47:25,452 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:47:25,453 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:47:25,453 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:47:25,453 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:47:26,459 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:47:26,906 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:47:27,405 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:47:27,660 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:47:32,365 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:47:32,366 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:47:32,503 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 15:47:32,504 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 15:47:32,505 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류: AnalysisFormatter.format_analysis_result() takes from 2 to 3 positional arguments but 4 were given
+2025-02-09 15:47:32,507 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 74, in run_market_analysis
+    message = self.analysis_formatter.format_analysis_result(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AnalysisFormatter.format_analysis_result() takes from 2 to 3 positional arguments but 4 were given
+
+2025-02-09 15:47:32,509 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류가 발생했습니다
+2025-02-09 15:48:52,060 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:48:52,520 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:49:03,150 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:49:03,151 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:49:03,156 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:49:03,157 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:49:05,234 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:49:05,620 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:49:05,621 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:49:05,622 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:49:06,305 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:49:06,305 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:49:06,969 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:49:06,970 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:49:06,970 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:49:06,970 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:49:07,979 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:49:08,437 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:49:08,898 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:49:09,149 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:49:17,607 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:49:17,608 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:49:20,267 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'str' object has no attribute 'get'
+2025-02-09 15:49:20,269 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-09 15:49:20,271 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-09 15:49:20,273 - telegram_bot.formatters.analysis_formatter - ERROR - 분석 결과 포맷팅 중 오류: 'str' object does not support item assignment
+2025-02-09 15:51:05,125 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:51:05,686 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:51:12,045 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:51:12,046 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:51:12,051 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:51:12,052 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:51:14,049 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:51:14,438 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:51:14,439 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:51:14,439 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:51:15,084 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:51:15,085 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:51:15,729 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:51:15,729 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:51:15,730 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:51:15,730 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:51:16,746 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:51:17,215 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:51:17,787 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:51:18,036 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:51:19,150 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:51:19,151 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:51:21,208 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'timestamp'
+2025-02-09 15:51:21,210 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 15:51:21,211 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 15:57:11,389 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:57:11,862 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:57:21,115 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 15:57:21,116 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 15:57:21,121 - main - INFO - 서비스 초기화 중...
+2025-02-09 15:57:21,122 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 15:57:23,062 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 15:57:23,450 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 15:57:23,451 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 15:57:23,451 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 15:57:24,128 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 15:57:24,128 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 15:57:24,911 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 15:57:24,959 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 15:57:24,993 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 15:57:24,995 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 15:57:26,041 - telegram.ext.Application - INFO - Application started
+2025-02-09 15:57:26,551 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 15:57:27,003 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 15:57:27,265 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 15:57:30,047 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 15:57:30,049 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 15:57:34,583 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'timestamp'
+2025-02-09 15:57:34,585 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 15:57:34,587 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 16:03:47,147 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 16:03:47,604 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 16:03:55,347 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-09 16:03:55,349 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-09 16:03:55,355 - main - INFO - 서비스 초기화 중...
+2025-02-09 16:03:55,356 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-09 16:03:57,369 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-09 16:03:57,775 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-09 16:03:57,775 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-09 16:03:57,776 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-09 16:03:58,413 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-09 16:03:58,413 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-09 16:03:59,051 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-09 16:03:59,051 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-09 16:03:59,052 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-09 16:03:59,052 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-09 16:04:00,058 - telegram.ext.Application - INFO - Application started
+2025-02-09 16:04:00,500 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 16:04:00,952 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-09 16:04:01,202 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-09 16:04:40,903 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-09 16:04:40,905 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-09 16:04:44,364 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 16:04:44,365 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-09 16:09:17,606 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-09 16:09:18,063 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨

@@ -1,0 +1,742 @@
+2025-02-10 13:38:32,842 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 13:38:32,845 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 13:38:32,852 - main - INFO - 서비스 초기화 중...
+2025-02-10 13:38:32,853 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 13:38:35,115 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 13:38:35,636 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 13:38:35,636 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 13:38:35,636 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 13:38:36,436 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 13:38:36,442 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 13:38:37,105 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 13:38:37,105 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 13:38:37,105 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 13:38:37,105 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 13:38:38,131 - telegram.ext.Application - INFO - Application started
+2025-02-10 13:38:38,587 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 13:38:39,050 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 13:38:39,304 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 13:38:55,291 - services.trade_store - INFO - 날짜 범위 조회: 20241112 ~ 20250210
+2025-02-10 13:38:55,291 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-10 13:38:55,291 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-10 13:38:55,291 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-10 13:38:55,291 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-10 13:38:55,291 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-10 13:38:55,295 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-10 13:38:55,295 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-10 13:38:55,295 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-10 13:38:55,295 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-10 13:38:55,295 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-10 13:38:55,298 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-10 13:38:55,301 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-10 13:38:55,301 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-10 13:38:55,303 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-10 13:38:55,303 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-10 13:38:55,304 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-10 13:38:55,305 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-10 13:38:55,305 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-10 13:38:55,306 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-10 13:38:55,306 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-10 13:38:55,307 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-10 13:38:55,308 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-10 13:38:55,309 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-10 13:38:55,310 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-10 13:38:55,310 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-10 13:38:55,311 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-10 13:38:55,313 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-10 13:38:55,314 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-10 13:38:55,315 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-10 13:38:55,317 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-10 13:38:55,318 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-10 13:38:55,319 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-10 13:38:55,320 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-10 13:38:55,320 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-10 13:38:55,321 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-10 13:38:55,321 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-10 13:38:55,322 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-10 13:38:55,323 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-10 13:38:55,323 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-10 13:38:55,324 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-10 13:38:55,325 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-10 13:38:55,325 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-10 13:38:55,326 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-10 13:38:55,327 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-10 13:38:55,328 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-10 13:38:55,328 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-10 13:38:55,329 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-10 13:38:55,329 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-10 13:38:55,330 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-10 13:38:55,331 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-10 13:38:55,331 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-10 13:38:55,332 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-10 13:38:55,332 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-10 13:38:55,332 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-10 13:38:55,332 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-10 13:38:55,333 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-10 13:38:55,333 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-10 13:38:55,333 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-10 13:38:55,334 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-10 13:38:55,334 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-10 13:38:55,334 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-10 13:38:55,335 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-10 13:38:55,335 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-10 13:38:55,335 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-10 13:38:55,336 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-10 13:38:55,336 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-10 13:38:55,337 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-10 13:38:55,337 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-10 13:38:55,337 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-10 13:38:55,338 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-10 13:38:55,338 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-10 13:38:55,338 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-10 13:38:55,339 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-10 13:38:55,339 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-10 13:38:55,339 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-10 13:38:55,340 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-10 13:38:55,340 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-10 13:38:55,341 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-10 13:38:55,342 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-10 13:38:55,342 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-10 13:38:55,342 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-10 13:38:55,342 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-10 13:38:55,343 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-10 13:38:55,343 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-10 13:38:55,343 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-10 13:38:55,344 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-10 13:38:55,344 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 157
+2025-02-10 13:38:55,345 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 143
+2025-02-10 13:38:55,346 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-10 13:38:55,346 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-10 13:38:55,346 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-10 13:38:55,346 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-10 13:38:55,348 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-10 13:38:55,348 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-10 13:38:55,349 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-10 13:38:55,349 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-10 13:38:55,350 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-10 13:39:25,505 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 13:39:25,511 - telegram_bot.utils.decorators - ERROR - Error in get_balance: 'BybitClient' object has no attribute 'get_balance'
+2025-02-10 13:39:25,514 - telegram_bot.utils.decorators - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\utils\decorators.py", line 14, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\balance_service.py", line 25, in get_balance
+    balance = await self.bybit_client.get_balance()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_balance'
+
+2025-02-10 13:39:35,174 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-10 13:39:35,175 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-02-10 13:39:35,175 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-10 13:41:17,628 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-10 13:41:17,629 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 13:41:17,868 - indicators.technical - ERROR - 추세 강도 계산 중 오류: 'sma_20'
+2025-02-10 13:41:21,080 - indicators.technical - ERROR - 추세 강도 계산 중 오류: 'sma_20'
+2025-02-10 13:41:21,085 - indicators.technical - ERROR - 추세 강도 계산 중 오류: 'sma_20'
+2025-02-10 13:41:21,087 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-10 13:41:21,089 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-10 13:51:30,888 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 13:51:31,343 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 13:51:40,373 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 13:51:40,375 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 13:51:40,381 - main - INFO - 서비스 초기화 중...
+2025-02-10 13:51:40,382 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 13:51:42,214 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 13:51:42,680 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 13:51:42,680 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 13:51:42,681 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 13:51:43,316 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 13:51:43,316 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 13:51:44,021 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 13:51:44,022 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 13:51:44,022 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 13:51:44,022 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 13:51:45,034 - telegram.ext.Application - INFO - Application started
+2025-02-10 13:51:45,472 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 13:51:45,928 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 13:51:46,179 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 13:51:52,817 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-10 13:51:52,818 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 13:51:57,454 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-10 13:51:57,455 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-10 14:06:14,914 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 14:06:15,381 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 14:09:40,106 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 14:09:40,108 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 14:09:40,113 - main - INFO - 서비스 초기화 중...
+2025-02-10 14:09:40,113 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 14:09:41,875 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 14:09:42,261 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 14:09:42,261 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 14:09:42,261 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 14:09:42,923 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 14:09:42,923 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 14:09:43,584 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 14:09:43,584 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 14:09:43,585 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 14:09:43,585 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 14:09:44,597 - telegram.ext.Application - INFO - Application started
+2025-02-10 14:09:45,773 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 14:09:52,937 - trading_handler - ERROR - 거래 파라미터 파싱 오류: 필수 파라미터 부족
+2025-02-10 14:09:52,939 - trading_handler - ERROR - 거래 처리 중 오류: 올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>
+예: /trade LONG 10 5 50000 49000 51000
+2025-02-10 14:10:14,051 - trading_handler - ERROR - 거래 파라미터 파싱 오류: 필수 파라미터 부족
+2025-02-10 14:10:14,054 - trading_handler - ERROR - 거래 처리 중 오류: 올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>
+예: /trade LONG 10 5 50000 49000 51000
+2025-02-10 14:22:26,629 - trading_handler - ERROR - 거래 파라미터 파싱 오류: 필수 파라미터 부족
+2025-02-10 14:22:26,630 - trading_handler - ERROR - 거래 처리 중 오류: 올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>
+예: /trade LONG 10 5 50000 49000 51000
+2025-02-10 14:22:36,880 - telegram_bot.bot - INFO - 봇 실행이 취소되었습니다
+2025-02-10 14:22:36,880 - telegram_bot.bot - INFO - 봇 시작 완료
+2025-02-10 14:22:36,892 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-02-10 14:23:02,625 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 14:23:02,627 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 14:23:02,631 - main - INFO - 서비스 초기화 중...
+2025-02-10 14:23:02,632 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 14:23:04,743 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 14:23:05,131 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 14:23:05,132 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 14:23:05,132 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 14:23:05,809 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 14:23:05,809 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 14:23:06,446 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 14:23:06,447 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 14:23:06,447 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 14:23:06,447 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 14:23:07,464 - telegram.ext.Application - INFO - Application started
+2025-02-10 14:23:08,633 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 14:23:12,122 - trading_handler - ERROR - 거래 파라미터 파싱 오류: 필수 파라미터 부족
+2025-02-10 14:23:12,124 - trading_handler - ERROR - 거래 처리 중 오류: 올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>
+예: /trade LONG 10 5 50000 49000 51000
+2025-02-10 14:24:39,740 - trading_handler - ERROR - 거래 파라미터 파싱 오류: 필수 파라미터 부족
+2025-02-10 14:24:39,742 - trading_handler - ERROR - 거래 처리 중 오류: 올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>
+예: /trade LONG 10 5 50000 49000 51000
+2025-02-10 14:26:00,268 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 14:26:00,269 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 14:26:00,274 - main - INFO - 서비스 초기화 중...
+2025-02-10 14:26:00,275 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 14:26:02,300 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 14:26:04,933 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 14:26:04,933 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 14:26:04,934 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 14:26:05,621 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 14:26:05,621 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 14:26:06,270 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 14:26:06,270 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 14:26:06,270 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 14:26:06,270 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 14:26:07,280 - telegram.ext.Application - INFO - Application started
+2025-02-10 14:26:08,450 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 14:26:15,083 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 14:26:15,291 - services.balance_service - INFO - Balance API Response: {'list': [{'totalEquity': '53003.26183362', 'accountIMRate': '0', 'totalMarginBalance': '44522.73994024', 'totalInitialMargin': '0', 'accountType': 'UNIFIED', 'totalAvailableBalance': '44522.73994024', 'accountMMRate': '0', 'totalPerpUPL': '0', 'totalWalletBalance': '44522.73994024', 'accountLTV': '0', 'totalMaintenanceMargin': '0', 'coin': [{'availableToBorrow': '', 'bonus': '0', 'accruedInterest': '0', 'availableToWithdraw': '', 'totalOrderIM': '0', 'equity': '52998.17400892', 'totalPositionMM': '0', 'usdValue': '53003.26183362', 'unrealisedPnl': '0', 'collateralSwitch': True, 'spotHedgingQty': '0', 'borrowAmount': '0.000000000000000000', 'totalPositionIM': '0', 'walletBalance': '52998.17400892', 'cumRealisedPnl': '-76110.02599108', 'locked': '0', 'marginCollateral': True, 'coin': 'USDT'}]}]}
+2025-02-10 14:26:30,403 - trading_handler - INFO - [Status] 상태 조회 시작 (chat_id: 583881676)
+2025-02-10 14:26:31,710 - trading_handler - INFO - [Status] 상태 전송 완료
+2025-02-10 14:26:40,947 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-10 14:26:41,184 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-10 14:30:38,055 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 14:30:38,056 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 14:30:38,062 - main - INFO - 서비스 초기화 중...
+2025-02-10 14:30:38,062 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 14:30:40,115 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 14:30:40,499 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 14:30:40,499 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 14:30:40,501 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 14:30:41,153 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 14:30:41,153 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 14:30:41,812 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 14:30:41,812 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 14:30:41,812 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 14:30:41,813 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 14:30:42,819 - telegram.ext.Application - INFO - Application started
+2025-02-10 14:30:44,069 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 14:31:11,919 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 14:31:12,118 - services.balance_service - INFO - Balance API Response: {'list': [{'totalEquity': '53008.87964006', 'accountIMRate': '0', 'totalMarginBalance': '44527.45889765', 'totalInitialMargin': '0', 'accountType': 'UNIFIED', 'totalAvailableBalance': '44527.45889765', 'accountMMRate': '0', 'totalPerpUPL': '0', 'totalWalletBalance': '44527.45889765', 'accountLTV': '0', 'totalMaintenanceMargin': '0', 'coin': [{'availableToBorrow': '', 'bonus': '0', 'accruedInterest': '0', 'availableToWithdraw': '', 'totalOrderIM': '0', 'equity': '52998.17400892', 'totalPositionMM': '0', 'usdValue': '53008.87964006', 'unrealisedPnl': '0', 'collateralSwitch': True, 'spotHedgingQty': '0', 'borrowAmount': '0.000000000000000000', 'totalPositionIM': '0', 'walletBalance': '52998.17400892', 'cumRealisedPnl': '-76110.02599108', 'locked': '0', 'marginCollateral': True, 'coin': 'USDT'}]}]}
+2025-02-10 14:31:27,603 - trading_handler - INFO - [Status] 상태 조회 시작 (chat_id: 583881676)
+2025-02-10 14:31:28,910 - trading_handler - INFO - [Status] 상태 전송 완료
+2025-02-10 14:31:55,334 - telegram_bot.handlers.analysis_handler - INFO - === 수동 분석 시작 (chat_id: 583881676) ===
+2025-02-10 14:31:55,335 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-10 14:31:55,337 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 14:32:00,047 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-10 14:32:00,049 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-10 14:32:00,050 - telegram_bot.handlers.analysis_handler - ERROR - 분석 명령어 처리 중 오류: 'TelegramBot' object has no attribute 'time_utils'
+2025-02-10 14:32:00,854 - telegram_bot.bot - ERROR - 관리자 메시지 전송 실패: Unsupported parse_mode
+2025-02-10 14:46:02,038 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 14:46:02,038 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 14:46:02,044 - main - INFO - 서비스 초기화 중...
+2025-02-10 14:46:02,044 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 14:46:04,145 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 14:46:04,544 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 14:46:04,544 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 14:46:04,546 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 14:46:05,195 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 14:46:05,195 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 14:46:05,910 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 14:46:05,911 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 14:46:05,911 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 14:46:05,911 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 14:46:06,955 - telegram.ext.Application - INFO - Application started
+2025-02-10 14:46:08,156 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 14:46:15,664 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 14:46:15,860 - services.balance_service - INFO - Balance API Response: {'list': [{'totalEquity': '53002.67885371', 'accountIMRate': '0', 'totalMarginBalance': '44522.25023711', 'totalInitialMargin': '0', 'accountType': 'UNIFIED', 'totalAvailableBalance': '44522.25023711', 'accountMMRate': '0', 'totalPerpUPL': '0', 'totalWalletBalance': '44522.25023711', 'accountLTV': '0', 'totalMaintenanceMargin': '0', 'coin': [{'availableToBorrow': '', 'bonus': '0', 'accruedInterest': '0', 'availableToWithdraw': '', 'totalOrderIM': '0', 'equity': '52998.17400892', 'totalPositionMM': '0', 'usdValue': '53002.67885371', 'unrealisedPnl': '0', 'collateralSwitch': True, 'spotHedgingQty': '0', 'borrowAmount': '0.000000000000000000', 'totalPositionIM': '0', 'walletBalance': '52998.17400892', 'cumRealisedPnl': '-76110.02599108', 'locked': '0', 'marginCollateral': True, 'coin': 'USDT'}]}]}
+2025-02-10 14:46:23,389 - trading_handler - INFO - [Status] 상태 조회 시작 (chat_id: 583881676)
+2025-02-10 14:46:24,684 - trading_handler - INFO - [Status] 상태 전송 완료
+2025-02-10 14:46:34,911 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-10 14:46:35,081 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-10 14:46:42,346 - telegram_bot.handlers.analysis_handler - INFO - === 수동 분석 시작 (chat_id: 583881676) ===
+2025-02-10 14:46:42,347 - telegram_bot.monitors.auto_analyzer - INFO - === 수동 분석 시작 ===
+2025-02-10 14:46:42,347 - telegram_bot.monitors.auto_analyzer - ERROR - 시장 분석 중 오류: AITrader.analyze_market() missing 2 required positional arguments: 'timeframe' and 'klines'
+2025-02-10 14:46:53,828 - telegram_bot.handlers.stats_handler - INFO - [Stats] 거래 통계 조회 시작 (chat_id: 583881676)
+2025-02-10 14:46:53,830 - telegram_bot.handlers.stats_handler - ERROR - [Stats] 거래 통계 조회 중 오류: 'TradeHistoryService' object has no attribute 'get_trade_history'
+2025-02-10 14:46:53,831 - telegram_bot.handlers.base_handler - ERROR - 거래 통계 조회 중 오류 발생: 'TradeHistoryService' object has no attribute 'get_trade_history'
+2025-02-10 14:49:51,524 - telegram_bot.handlers.system_handler - INFO - 봇 종료 요청 (chat_id: 583881676)
+2025-02-10 14:49:52,554 - telegram_bot.bot - INFO - 봇 종료 시작...
+2025-02-10 14:49:52,555 - telegram_bot.monitors.profit_monitor - INFO - 수익률 모니터링 중지됨
+2025-02-10 14:49:52,556 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-02-10 14:51:53,617 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 14:51:53,618 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 14:51:53,623 - main - INFO - 서비스 초기화 중...
+2025-02-10 14:51:53,623 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 14:51:55,609 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 14:51:55,992 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 14:51:55,992 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 14:51:55,992 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 14:51:56,662 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 14:51:56,662 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 14:51:57,324 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 14:51:57,324 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 14:51:57,325 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 14:51:57,325 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 14:51:58,344 - telegram.ext.Application - INFO - Application started
+2025-02-10 14:51:59,494 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 14:52:05,699 - trading_handler - INFO - [Status] 상태 조회 시작 (chat_id: 583881676)
+2025-02-10 14:52:06,938 - trading_handler - INFO - [Status] 상태 전송 완료
+2025-02-10 14:53:35,650 - telegram_bot.handlers.analysis_handler - INFO - === 수동 분석 시작 (chat_id: 583881676) ===
+2025-02-10 14:53:35,651 - telegram_bot.monitors.auto_analyzer - INFO - === 수동 분석 시작 ===
+2025-02-10 14:53:35,651 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 14:53:38,935 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-10 14:53:38,935 - telegram_bot.monitors.auto_analyzer - ERROR - 시장 분석 중 오류: 'StorageFormatter' object has no attribute 'save_analysis_result'
+2025-02-10 14:53:48,729 - telegram_bot.handlers.stats_handler - INFO - [Stats] 거래 통계 조회 시작 (chat_id: 583881676)
+2025-02-10 14:53:48,729 - telegram_bot.handlers.stats_handler - ERROR - [Stats] 거래 통계 조회 중 오류: 'TradeHistoryService' object has no attribute 'get_history'
+2025-02-10 14:53:48,730 - telegram_bot.handlers.base_handler - ERROR - 거래 통계 조회 중 오류 발생: 'TradeHistoryService' object has no attribute 'get_history'
+2025-02-10 14:55:21,550 - telegram_bot.handlers.system_handler - INFO - 봇 종료 요청 (chat_id: 583881676)
+2025-02-10 14:55:22,550 - telegram_bot.bot - INFO - 봇 종료 시작...
+2025-02-10 14:55:22,552 - telegram_bot.monitors.profit_monitor - INFO - 수익률 모니터링 중지됨
+2025-02-10 14:55:22,553 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-02-10 14:56:12,827 - telegram_bot.bot - INFO - 봇 실행이 취소되었습니다
+2025-02-10 14:56:12,828 - telegram_bot.bot - INFO - 봇 시작 완료
+2025-02-10 14:56:12,834 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-02-10 14:56:51,645 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 14:56:51,647 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 14:56:51,653 - main - INFO - 서비스 초기화 중...
+2025-02-10 14:56:51,653 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 14:56:53,795 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 14:56:54,209 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 14:56:54,209 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 14:56:54,210 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 14:56:54,838 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 14:56:54,839 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 14:56:55,508 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 14:56:55,508 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 14:56:55,508 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 14:56:55,509 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 14:56:56,528 - telegram.ext.Application - INFO - Application started
+2025-02-10 14:56:57,690 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 14:57:03,892 - trading_handler - INFO - [Status] 상태 조회 시작 (chat_id: 583881676)
+2025-02-10 14:57:04,164 - telegram_bot.formatters.message_formatter - ERROR - 상태 메시지 포맷팅 중 오류: 'price'
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\formatters\message_formatter.py", line 157, in format_status
+    • 현재가: ${float(market_data['price']):,.2f}
+                      ~~~~~~~~~~~^^^^^^^^^
+KeyError: 'price'
+2025-02-10 14:57:05,668 - trading_handler - INFO - [Status] 상태 전송 완료
+2025-02-10 14:57:15,740 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 14:57:15,993 - services.balance_service - INFO - Balance API Response: {'list': [{'totalEquity': '53009.35662363', 'accountIMRate': '0', 'totalMarginBalance': '44527.85956385', 'totalInitialMargin': '0', 'accountType': 'UNIFIED', 'totalAvailableBalance': '44527.85956385', 'accountMMRate': '0', 'totalPerpUPL': '0', 'totalWalletBalance': '44527.85956385', 'accountLTV': '0', 'totalMaintenanceMargin': '0', 'coin': [{'availableToBorrow': '', 'bonus': '0', 'accruedInterest': '0', 'availableToWithdraw': '', 'totalOrderIM': '0', 'equity': '52998.17400892', 'totalPositionMM': '0', 'usdValue': '53009.35662363', 'unrealisedPnl': '0', 'collateralSwitch': True, 'spotHedgingQty': '0', 'borrowAmount': '0.000000000000000000', 'totalPositionIM': '0', 'walletBalance': '52998.17400892', 'cumRealisedPnl': '-76110.02599108', 'locked': '0', 'marginCollateral': True, 'coin': 'USDT'}]}]}
+2025-02-10 14:57:38,775 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-10 14:57:38,951 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-10 14:57:49,290 - telegram_bot.handlers.analysis_handler - INFO - === 수동 분석 시작 (chat_id: 583881676) ===
+2025-02-10 14:57:49,291 - telegram_bot.monitors.auto_analyzer - INFO - === 수동 분석 시작 ===
+2025-02-10 14:57:49,292 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 14:57:52,779 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: src\data\analysis\analysis_1h.json
+2025-02-10 14:57:52,781 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: src\data\analysis\analysis_1h.json
+2025-02-10 14:58:08,442 - telegram_bot.handlers.stats_handler - INFO - [Stats] 거래 통계 조회 시작 (chat_id: 583881676)
+2025-02-10 14:58:08,443 - telegram_bot.handlers.stats_handler - ERROR - [Stats] 거래 통계 조회 중 오류: 'TradeHistoryService' object has no attribute 'get_trade_history'
+2025-02-10 14:58:08,445 - telegram_bot.handlers.base_handler - ERROR - 거래 통계 조회 중 오류 발생: 'TradeHistoryService' object has no attribute 'get_trade_history'
+2025-02-10 14:58:25,213 - telegram_bot.handlers.system_handler - INFO - 봇 종료 요청 (chat_id: 583881676)
+2025-02-10 14:58:26,169 - telegram_bot.bot - INFO - 봇 종료 시작...
+2025-02-10 14:58:26,169 - telegram_bot.monitors.profit_monitor - INFO - 수익률 모니터링 중지됨
+2025-02-10 14:58:26,169 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-02-10 15:25:32,836 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:25:32,837 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:25:32,843 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:25:32,843 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:25:34,965 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:25:35,343 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:25:35,343 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:25:35,344 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:25:36,009 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:25:36,009 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:25:36,668 - telegram_bot.bot - ERROR - 핸들러 초기화 실패: 'StatsHandler' object has no attribute 'handle'
+2025-02-10 15:25:36,668 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 15:25:36,669 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 15:25:36,669 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 15:25:37,682 - telegram.ext.Application - INFO - Application started
+2025-02-10 15:25:38,847 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 15:27:44,661 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:27:44,662 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:27:44,668 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:27:44,669 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:27:46,825 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:27:47,238 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:27:47,239 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:27:47,239 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:27:47,881 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:27:47,881 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:27:48,554 - telegram_bot.bot - ERROR - 핸들러 초기화 실패: TradingHandler.__init__() missing 3 required positional arguments: 'ai_trader', 'position_service', and 'trade_manager'
+2025-02-10 15:27:48,555 - telegram_bot.bot - ERROR - 봇 초기화 실패: object bool can't be used in 'await' expression
+2025-02-10 15:27:48,556 - telegram_bot.bot - ERROR - 봇 실행 중 오류: object bool can't be used in 'await' expression
+2025-02-10 15:27:48,558 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 246, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in initialize
+    await self._init_handlers()
+TypeError: object bool can't be used in 'await' expression
+
+2025-02-10 15:27:48,558 - main - ERROR - 실행 중 에러 발생: object bool can't be used in 'await' expression
+2025-02-10 15:27:48,560 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 246, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 234, in initialize
+    await self._init_handlers()
+TypeError: object bool can't be used in 'await' expression
+
+2025-02-10 15:29:12,056 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:29:12,057 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:29:12,063 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:29:12,063 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:29:14,236 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:29:14,643 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:29:14,644 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:29:14,644 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:29:15,297 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:29:15,298 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:29:15,958 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 15:29:15,959 - telegram_bot.bot - ERROR - 핸들러 초기화 실패: No active exception to reraise
+2025-02-10 15:29:15,959 - telegram_bot.bot - ERROR - 봇 초기화 실패: No active exception to reraise
+2025-02-10 15:29:15,959 - telegram_bot.bot - ERROR - 봇 실행 중 오류: No active exception to reraise
+2025-02-10 15:29:15,960 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 244, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 232, in initialize
+    await self._init_handlers()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 158, in _init_handlers
+    raise
+RuntimeError: No active exception to reraise
+
+2025-02-10 15:29:15,961 - main - ERROR - 실행 중 에러 발생: No active exception to reraise
+2025-02-10 15:29:15,962 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 244, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 232, in initialize
+    await self._init_handlers()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 158, in _init_handlers
+    raise
+RuntimeError: No active exception to reraise
+
+2025-02-10 15:30:16,515 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:30:16,516 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:30:16,522 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:30:16,522 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:30:18,467 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:30:18,856 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:30:18,857 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:30:18,857 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:30:19,493 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:30:19,494 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:30:20,152 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 15:30:20,152 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 15:30:20,153 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 15:30:20,153 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 15:30:21,166 - telegram.ext.Application - INFO - Application started
+2025-02-10 15:30:22,319 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 15:36:41,512 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:36:41,513 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:36:41,522 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:36:41,524 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:36:43,623 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:36:44,009 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:36:44,009 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:36:44,009 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:36:44,639 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:36:44,639 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:36:45,323 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 15:36:45,323 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 15:36:45,323 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 15:36:45,324 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 15:36:46,347 - telegram.ext.Application - INFO - Application started
+2025-02-10 15:36:47,514 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 15:36:50,846 - trading_handler - INFO - [Status] 상태 조회 시작 (chat_id: 583881676)
+2025-02-10 15:36:50,979 - services.market_data_service - ERROR - 시장 데이터 조회 중 오류: 'priceChangePercent'
+2025-02-10 15:36:50,982 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 시장 데이터 조회 실패
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\trading_handler.py", line 119, in handle_status
+    raise Exception("시장 데이터 조회 실패")
+Exception: 시장 데이터 조회 실패
+2025-02-10 15:36:50,994 - telegram_bot.handlers.base_handler - ERROR - 상태 조회 중 오류 발생: 시장 데이터 조회 실패
+2025-02-10 15:38:48,969 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 15:38:49,154 - services.balance_service - INFO - Balance API Response: {'list': [{'totalEquity': '53010.04559989', 'accountIMRate': '0', 'totalMarginBalance': '44528.43830391', 'totalInitialMargin': '0', 'accountType': 'UNIFIED', 'totalAvailableBalance': '44528.43830391', 'accountMMRate': '0', 'totalPerpUPL': '0', 'totalWalletBalance': '44528.43830391', 'accountLTV': '0', 'totalMaintenanceMargin': '0', 'coin': [{'availableToBorrow': '', 'bonus': '0', 'accruedInterest': '0', 'availableToWithdraw': '', 'totalOrderIM': '0', 'equity': '52998.17400892', 'totalPositionMM': '0', 'usdValue': '53010.04559989', 'unrealisedPnl': '0', 'collateralSwitch': True, 'spotHedgingQty': '0', 'borrowAmount': '0.000000000000000000', 'totalPositionIM': '0', 'walletBalance': '52998.17400892', 'cumRealisedPnl': '-76110.02599108', 'locked': '0', 'marginCollateral': True, 'coin': 'USDT'}]}]}
+2025-02-10 15:38:57,407 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-10 15:38:57,614 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-10 15:39:09,217 - telegram_bot.handlers.analysis_handler - INFO - === 수동 분석 시작 (chat_id: 583881676) ===
+2025-02-10 15:39:09,217 - telegram_bot.monitors.auto_analyzer - INFO - === 수동 분석 시작 ===
+2025-02-10 15:39:09,218 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 15:39:09,657 - services.market_data_service - ERROR - 시장 데이터 조회 중 오류: 'priceChangePercent'
+2025-02-10 15:39:09,659 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-10 15:40:34,174 - telegram_bot.handlers.system_handler - INFO - 봇 종료 요청 (chat_id: 583881676)
+2025-02-10 15:40:35,124 - telegram_bot.bot - INFO - 봇 종료 시작...
+2025-02-10 15:40:35,124 - telegram_bot.monitors.profit_monitor - INFO - 수익률 모니터링 중지됨
+2025-02-10 15:40:35,125 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-02-10 15:41:51,257 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:41:51,260 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:41:51,275 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:41:51,276 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:41:53,774 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:41:54,179 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:41:54,180 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:41:54,180 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:41:54,923 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:41:54,923 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:41:54,924 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 15:41:54,924 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 15:41:54,924 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 15:41:54,924 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 15:41:55,958 - telegram.ext.Application - INFO - Application started
+2025-02-10 15:41:56,876 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 15:47:00,903 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:47:00,904 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:47:00,909 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:47:00,910 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:47:02,896 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:47:03,311 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:47:03,312 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:47:03,312 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:47:03,945 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:47:03,945 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:47:04,629 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 15:47:04,629 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 15:47:04,630 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 15:47:04,630 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 15:47:05,661 - telegram.ext.Application - INFO - Application started
+2025-02-10 15:47:06,098 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 15:47:06,563 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 15:47:06,825 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 15:47:12,090 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-10 15:47:12,092 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 15:47:12,557 - services.market_data_service - ERROR - 시장 데이터 조회 실패: 'BybitClient' object has no attribute 'get_open_interest'
+2025-02-10 15:47:12,559 - ai.gpt_analyzer - ERROR - 시장 데이터 조회 실패
+2025-02-10 15:47:12,559 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-10 15:47:18,789 - services.trade_store - INFO - 날짜 범위 조회: 20241112 ~ 20250210
+2025-02-10 15:47:18,790 - services.trade_store - INFO - 날짜: 20241112, 포지션 수: 0건
+2025-02-10 15:47:18,791 - services.trade_store - INFO - 날짜: 20241113, 포지션 수: 0건
+2025-02-10 15:47:18,791 - services.trade_store - INFO - 날짜: 20241114, 포지션 수: 0건
+2025-02-10 15:47:18,792 - services.trade_store - INFO - 날짜: 20241115, 포지션 수: 0건
+2025-02-10 15:47:18,792 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-10 15:47:18,793 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-10 15:47:18,793 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-10 15:47:18,793 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-10 15:47:18,793 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-10 15:47:18,794 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-10 15:47:18,794 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-10 15:47:18,795 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-10 15:47:18,796 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-10 15:47:18,798 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-10 15:47:18,798 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-10 15:47:18,799 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-10 15:47:18,800 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-10 15:47:18,801 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-10 15:47:18,802 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-10 15:47:18,802 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-10 15:47:18,804 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-10 15:47:18,805 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-10 15:47:18,806 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-10 15:47:18,807 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-10 15:47:18,808 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-10 15:47:18,809 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-10 15:47:18,810 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-10 15:47:18,812 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-10 15:47:18,813 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-10 15:47:18,814 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-10 15:47:18,815 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-10 15:47:18,817 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-10 15:47:18,818 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-10 15:47:18,819 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-10 15:47:18,820 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-10 15:47:18,821 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-10 15:47:18,823 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-10 15:47:18,824 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-10 15:47:18,826 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-10 15:47:18,827 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-10 15:47:18,829 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-10 15:47:18,830 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-10 15:47:18,831 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-10 15:47:18,832 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-10 15:47:18,834 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-10 15:47:18,835 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-10 15:47:18,836 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-10 15:47:18,837 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-10 15:47:18,838 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-10 15:47:18,839 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-10 15:47:18,840 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-10 15:47:18,841 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-10 15:47:18,842 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-10 15:47:18,843 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-10 15:47:18,844 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-10 15:47:18,844 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-10 15:47:18,845 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-10 15:47:18,846 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-10 15:47:18,846 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-10 15:47:18,847 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-10 15:47:18,848 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-10 15:47:18,848 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-10 15:47:18,849 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-10 15:47:18,850 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-10 15:47:18,850 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-10 15:47:18,851 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-10 15:47:18,852 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-10 15:47:18,852 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-10 15:47:18,853 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-10 15:47:18,853 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-10 15:47:18,853 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-10 15:47:18,854 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-10 15:47:18,855 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-10 15:47:18,855 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-10 15:47:18,856 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-10 15:47:18,857 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-10 15:47:18,858 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-10 15:47:18,859 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-10 15:47:18,862 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-10 15:47:18,863 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-10 15:47:18,863 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-10 15:47:18,864 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-10 15:47:18,865 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-10 15:47:18,866 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-10 15:47:18,866 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-10 15:47:18,867 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-10 15:47:18,868 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-10 15:47:18,868 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-10 15:47:18,869 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-10 15:47:18,869 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-10 15:47:18,870 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-10 15:47:18,870 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-10 15:47:18,870 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-10 15:47:18,871 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 157
+2025-02-10 15:47:18,871 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 143
+2025-02-10 15:47:18,871 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-10 15:47:18,871 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-10 15:47:18,872 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-10 15:47:18,872 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-10 15:47:18,872 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-10 15:47:18,873 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-10 15:47:18,873 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-10 15:47:18,873 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-10 15:47:18,873 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-10 15:47:33,244 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 15:47:33,245 - telegram_bot.utils.decorators - ERROR - Error in get_balance: 'BybitClient' object has no attribute 'get_balance'
+2025-02-10 15:47:33,251 - telegram_bot.utils.decorators - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\utils\decorators.py", line 14, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\balance_service.py", line 25, in get_balance
+    balance = await self.bybit_client.get_balance()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_balance'
+
+2025-02-10 15:48:02,690 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 15:48:03,171 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 15:54:34,976 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 15:54:34,977 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 15:54:34,982 - main - INFO - 서비스 초기화 중...
+2025-02-10 15:54:34,982 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 15:54:36,976 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 15:54:37,408 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 15:54:37,408 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 15:54:37,409 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 15:54:38,047 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 15:54:38,048 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 15:54:38,686 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 15:54:38,687 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 15:54:38,687 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 15:54:38,687 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 15:54:39,705 - telegram.ext.Application - INFO - Application started
+2025-02-10 15:54:40,235 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 15:54:40,695 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 15:54:40,947 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 15:54:50,407 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-10 15:54:50,408 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 15:54:53,050 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'str' object has no attribute 'get'
+2025-02-10 15:54:53,052 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-10 15:54:53,053 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-10 15:54:53,054 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류: AnalysisFormatter.format_analysis_result() takes from 2 to 3 positional arguments but 4 were given
+2025-02-10 15:54:53,055 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 74, in run_market_analysis
+    message = self.analysis_formatter.format_analysis_result(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AnalysisFormatter.format_analysis_result() takes from 2 to 3 positional arguments but 4 were given
+
+2025-02-10 15:54:53,057 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류가 발생했습니다
+2025-02-10 16:00:51,240 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 16:00:51,706 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 16:01:00,490 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-10 16:01:00,491 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-10 16:01:00,497 - main - INFO - 서비스 초기화 중...
+2025-02-10 16:01:00,497 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-10 16:01:02,424 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-10 16:01:02,807 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-10 16:01:02,808 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-10 16:01:02,808 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-10 16:01:03,452 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-10 16:01:03,453 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-10 16:01:04,100 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-10 16:01:04,101 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-10 16:01:04,101 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-10 16:01:04,102 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-10 16:01:05,119 - telegram.ext.Application - INFO - Application started
+2025-02-10 16:01:05,608 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 16:01:06,076 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨
+2025-02-10 16:01:06,342 - telegram_bot.bot - INFO - === 봇이 성공적으로 시작되었습니다 ===
+2025-02-10 16:01:31,360 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-10 16:01:31,362 - telegram_bot.utils.decorators - ERROR - Error in get_balance: 'BybitClient' object has no attribute 'get_balance'
+2025-02-10 16:01:31,370 - telegram_bot.utils.decorators - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\utils\decorators.py", line 14, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\balance_service.py", line 25, in get_balance
+    balance = await self.bybit_client.get_balance()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_balance'
+
+2025-02-10 16:01:38,907 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-10 16:01:38,909 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-10 16:01:40,981 - ai.gpt_analysis_store - ERROR - GPT 분석 결과 저장 중 오류: 'str' object has no attribute 'get'
+2025-02-10 16:01:40,982 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-10 16:01:40,983 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-10 16:01:40,984 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류: AnalysisFormatter.format_analysis_result() got an unexpected keyword argument 'timeframe'
+2025-02-10 16:01:40,986 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 74, in run_market_analysis
+    message = self.analysis_formatter.format_analysis_result(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AnalysisFormatter.format_analysis_result() got an unexpected keyword argument 'timeframe'
+
+2025-02-10 16:01:40,988 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 중 오류가 발생했습니다
+2025-02-10 16:11:36,350 - telegram_bot.bot - INFO - 관리자방(583881676)에 메시지 전송됨
+2025-02-10 16:11:36,820 - telegram_bot.bot - INFO - 알림방(-1002464784986)에 메시지 전송됨

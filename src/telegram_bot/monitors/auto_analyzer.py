@@ -66,15 +66,15 @@ class AutoAnalyzer:
                 await self._handle_error("분석 실패", chat_id)
                 return None
 
-            # 분석 결과 저장
-            self.storage_formatter.save_analysis(analysis, '1h')
-            
             # 메시지 전송
             if chat_id:
                 message = self.analysis_formatter.format_analysis_result(
-                    analysis, '1h', datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+                    analysis, '1h'
                 )
-                await self.bot.send_message(message, chat_id)
+                if message:
+                    await self.bot.send_message(message, chat_id)
+                else:
+                    logger.error("분석 결과 포맷팅 실패")
             
             return analysis
 

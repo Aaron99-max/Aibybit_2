@@ -24,15 +24,10 @@ class BaseHandler:
         return self.bot.config.is_admin(chat_id)
 
     async def check_admin(self, update: Update) -> bool:
-        """관리자 권한 체크 및 메시지 전송"""
+        """관리자 권한 체크"""
         if not update.effective_chat:
             return False
-            
-        chat_id = update.effective_chat.id
-        if not self.is_admin(chat_id):
-            await self.send_message("⚠️ 관리자만 사용 가능한 명령어입니다", chat_id)
-            return False
-        return True
+        return update.effective_chat.id == self.bot.admin_chat_id
 
     def can_execute_command(self, chat_id: int) -> bool:
         """명령어 실행 권한 확인"""
@@ -77,3 +72,7 @@ class BaseHandler:
         
         # 관리자 채팅방에서만 명령어 허용
         return update.effective_chat.id == self.bot.admin_chat_id 
+
+    async def send_command_response(self, message: str, chat_id: int):
+        """명령어 응답 전송 (관리자 채팅방에만)"""
+        await self.bot.send_message(message, chat_id, self.bot.MSG_TYPE_COMMAND) 

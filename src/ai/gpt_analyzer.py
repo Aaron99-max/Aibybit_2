@@ -39,6 +39,65 @@ class GPTAnalyzer:
         if bybit_client:
             self.market_data_service = MarketDataService(bybit_client)
 
+        # 프롬프트 템플릿 수정
+        self.SYSTEM_PROMPT = """당신은 1시간 봉을 기준으로 비트코인 선물 거래를 하는 트레이더입니다.
+다음 원칙을 따라 매매 전략을 제시하세요:
+
+1. 응답 형식은 반드시 아래 JSON 형식을 따라야 합니다:
+{
+    "market_summary": {
+        "current_price": 현재가,
+        "market_phase": "상승" 또는 "하락" 또는 "횡보",
+        "sentiment": "POSITIVE" 또는 "NEGATIVE" 또는 "NEUTRAL",
+        "short_term": "POSITIVE" 또는 "NEGATIVE" 또는 "NEUTRAL",
+        "volume": "VOLUME_INCREASE" 또는 "VOLUME_DECREASE" 또는 "VOLUME_NEUTRAL",
+        "risk": "HIGH" 또는 "MEDIUM" 또는 "LOW",
+        "confidence": 0-100 사이 정수
+    },
+    "trading_signals": {
+        "position_suggestion": "BUY" 또는 "SELL" 또는 "HOLD",
+        "leverage": 1-10 사이 정수,
+        "position_size": 5-20 사이 정수,
+        "entry_points": [현재가],
+        "stopLoss": 현재가의 -2%,
+        "takeProfit": 현재가의 +2%,
+        "reason": "매매 사유"
+    }
+}
+
+2. 매매 원칙:
+   • 상승 추세: RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상일 때 매수
+   • 하락 추세: RSI < 50, MACD < 0, 볼린저 밴드 중앙 이하일 때 매도
+   • 횡보장: 변동성이 낮거나 명확한 신호가 없을 때는 HOLD
+
+3. 리스크 관리:
+   - 레버리지는 1-10배 사이로 제한
+   - 손절가, 익절가 필수 설정
+
+반드시 위 JSON 형식으로만 응답하세요. 다른 설명이나 텍스트는 포함하지 마세요.
+
+주의사항:
+1. HOLD 포지션일 때도 모든 가격 필드는 숫자로 설정해야 합니다
+2. entry_points는 항상 현재가를 포함해야 합니다
+3. stopLoss와 takeProfit은 문자열이 아닌 숫자여야 합니다."""
+
+        self.ANALYSIS_PROMPT_TEMPLATE = """
+현재 시장 데이터를 분석하여 JSON 형식으로만 응답해주세요:
+
+현재 시장 데이터:
+- 현재가: ${current_price:,.2f}
+- RSI: {rsi:.1f}
+- MACD: {macd}
+- 볼린저밴드: {bollinger}
+- 추세: {trend}
+- 추세강도: {trend_strength}/100
+- 24시간 변동: {price_change:+.2f}%
+- 거래량: {volume:,.0f}
+- 자금조달비율: {funding_rate:.4f}%
+
+위 데이터를 분석하여 system prompt에서 지정한 JSON 형식으로만 응답하세요.
+다른 설명이나 텍스트는 포함하지 마세요."""
+
     async def analyze_market(self, timeframe: str, data: pd.DataFrame) -> Dict:
         """시장 분석 수행"""
         try:
@@ -58,160 +117,83 @@ class GPTAnalyzer:
             logger.info(f"계산된 지표: {df_with_indicators.columns.tolist()}")
             logger.info(f"시장 데이터: {market_data}")
             
-            # 기술적 지표 분석
-            latest = df_with_indicators.iloc[-1]
-            trend = self._determine_trend(df_with_indicators)
-            trend_strength = self._calculate_trend_strength(df_with_indicators)
-            bb_position = self._get_bollinger_position(df_with_indicators)
-            
-            # RSI 다이버전스 체크
-            divergence = self.technical_indicators.check_rsi_divergence(df_with_indicators)
-            
+            # 기술적 분석 결과 가져오기
+            technical_analysis = self.technical_indicators.analyze_signals(df_with_indicators)
+            if technical_analysis is None:
+                logger.error("기술적 분석 결과가 없음")
+                return None
+
             # GPT에 전달할 데이터 구성
+            latest = df_with_indicators.iloc[-1]
             analysis_data = {
                 'market_data': market_data,
                 'indicators': {
                     'rsi': float(latest['rsi']),
                     'macd': float(latest['macd']),
                     'macd_signal': float(latest['macd_signal']),
-                    'bb_position': bb_position,
-                    'trend': trend,
-                    'trend_strength': trend_strength
+                    'bb_position': self.technical_indicators._analyze_bollinger(df_with_indicators),
+                    'trend': technical_analysis['trend'],
+                    'trend_strength': technical_analysis['strength']
                 }
             }
             
-            # GPT 프롬프트 생성 후 분석 요청
-            prompt = self._create_analysis_prompt(df_with_indicators, analysis_data['indicators'], timeframe)
-            trading_signal = await self._request_gpt_analysis(prompt)
+            # 프롬프트 생성
+            system_message = {"role": "system", "content": self.SYSTEM_PROMPT}
+            user_message = {"role": "user", "content": self._create_analysis_prompt(df_with_indicators, analysis_data['indicators'], timeframe)}
             
-            # trading_signal이 문자열인 경우 파싱
-            if isinstance(trading_signal, str):
-                try:
-                    trading_signal = json.loads(trading_signal)
-                except:
-                    logger.error("GPT 응답 파싱 실패")
-                    return None
+            # GPT API 호출
+            response = await self.gpt_client.call_gpt_api([system_message, user_message])
             
-            # 필수 필드 검증 및 안전한 형변환
-            try:
-                analysis_dict = {
-                    'market_summary': {
-                        'current_price': market_data.get('last_price', 0),
-                        'market_phase': trend,
-                        'sentiment': self._get_market_sentiment(df_with_indicators),
-                        'short_term': self._get_short_term_sentiment(df_with_indicators),
-                        'volume': self._get_volume_trend(df_with_indicators),
-                        'risk': self._get_risk_level(df_with_indicators),
-                        'confidence': trading_signal.get('confidence', 70)
-                    },
-                    'technical_analysis': {
-                        'trend': trend,
-                        'strength': trend_strength,
-                        'indicators': {
-                            'rsi': float(latest['rsi']),
-                            'macd': 'BULLISH' if latest['macd'] > latest['macd_signal'] else 'BEARISH',
-                            'bollinger': bb_position,
-                            'divergence_type': latest['divergence_type'],
-                            'divergence_desc': latest['divergence_desc']
-                        }
-                    },
-                    'trading_strategy': {
-                        'position': trading_signal.get('position', 'HOLD'),
-                        'entry_price': float(str(trading_signal.get('entry_price') or 0).replace('$', '').replace(',', '')),
-                        'stop_loss': float(str(trading_signal.get('stop_loss') or 0).replace('$', '').replace(',', '')),
-                        'take_profit1': float(str(trading_signal.get('take_profit1') or 0).replace('$', '').replace(',', '')),
-                        'take_profit2': float(str(trading_signal.get('take_profit2') or 0).replace('$', '').replace(',', '')),
-                        'leverage': int(trading_signal.get('leverage', 1)),
-                        'size': int(trading_signal.get('size', 10)),
-                        'reason': trading_signal.get('reason', '분석 중')
-                    },
-                    'auto_trading': {
-                        'enabled': timeframe == '1h',
-                        'status': 'active' if timeframe == '1h' else 'disabled'
-                    },
-                    'timestamp': int(datetime.now().timestamp() * 1000)
-                }
-            except (ValueError, TypeError) as e:
-                logger.error(f"데이터 변환 중 오류: {str(e)}")
+            # 응답 처리
+            if not response:
+                logger.error("GPT API 응답이 없음")
                 return None
             
-            # 분석 결과 저장
-            self.analysis_store.save_analysis(analysis_dict)
-            return analysis_dict
+            # 응답 텍스트 추출
+            content = response.choices[0].message.content.strip()
+            
+            # JSON 파싱
+            try:
+                gpt_analysis = json.loads(content)
+            except json.JSONDecodeError:
+                logger.error("JSON 파싱 실패")
+                logger.error(f"원본 응답: {content}")
+                return None
+            
+            # 최종 분석 결과 구성
+            analysis = {
+                "market_summary": gpt_analysis['market_summary'],
+                "technical_analysis": {
+                    "trend": technical_analysis['trend'],
+                    "strength": technical_analysis['strength'],
+                    "indicators": {
+                        "rsi": float(latest['rsi']),
+                        "macd": technical_analysis['signals']['macd'],
+                        "bollinger": technical_analysis['signals']['bollinger'],
+                        "divergence_type": df_with_indicators['divergence_type'].iloc[-1],
+                        "divergence_desc": df_with_indicators['divergence_desc'].iloc[-1]
+                    }
+                },
+                "trading_signals": {
+                    "position_suggestion": gpt_analysis['trading_signals']['position_suggestion'],
+                    "leverage": gpt_analysis['trading_signals']['leverage'],
+                    "position_size": gpt_analysis['trading_signals']['position_size'],
+                    "entry_price": float(latest['close']),
+                    "stop_loss": float(latest['close'] * 0.98),
+                    "take_profit1": float(latest['close'] * 1.02),
+                    "take_profit2": float(latest['close'] * 1.04),
+                    "reason": gpt_analysis['trading_signals']['reason']
+                },
+                "auto_trading": {"enabled": False, "status": "inactive"},
+                "saved_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S KST"),
+                "timestamp": int(time.time() * 1000)
+            }
+            
+            return analysis
             
         except Exception as e:
             logger.error(f"시장 분석 중 오류: {str(e)}")
-            return None
-
-    def _determine_trend(self, df: pd.DataFrame) -> str:
-        """가격 추세 판단"""
-        try:
-            # TechnicalIndicators의 결과 사용
-            indicators = self.technical_indicators.calculate_indicators(df)
-            if indicators is None:
-                return "알 수 없음"
-            
-            # 이미 계산된 지표 활용
-            trend = "상승" if (
-                indicators['sma_10'].iloc[-1] > indicators['sma_30'].iloc[-1] and 
-                indicators['rsi'].iloc[-1] > 50 and 
-                indicators['macd'].iloc[-1] > 0
-            ) else "하락" if (
-                indicators['sma_10'].iloc[-1] < indicators['sma_30'].iloc[-1] and 
-                indicators['rsi'].iloc[-1] < 50 and 
-                indicators['macd'].iloc[-1] < 0
-            ) else "횡보"
-            
-            return trend
-            
-        except Exception as e:
-            logger.error(f"추세 판단 중 오류: {str(e)}")
-            return "알 수 없음"
-
-    def _calculate_trend_strength(self, df: pd.DataFrame) -> float:
-        """추세 강도 계산"""
-        try:
-            # TechnicalIndicators의 결과 사용
-            indicators = self.technical_indicators.calculate_indicators(df)
-            if indicators is None:
-                return 50.0
-            
-            return float(indicators['trend_strength'].iloc[-1])
-            
-        except Exception as e:
-            logger.error(f"추세 강도 계산 중 오류: {str(e)}")
-            return 50.0
-
-    def _get_bollinger_position(self, df: pd.DataFrame) -> str:
-        """볼린저 밴드 기준 포지션"""
-        try:
-            # TechnicalIndicators의 결과 사용
-            indicators = self.technical_indicators.calculate_indicators(df)
-            if indicators is None:
-                return "알 수 없음"
-            
-            current_price = indicators['close'].iloc[-1]
-            upper = indicators['bb_upper'].iloc[-1]
-            lower = indicators['bb_lower'].iloc[-1]
-            
-            if current_price > upper:
-                return "과매수"
-            elif current_price < lower:
-                return "과매도"
-            else:
-                return "중립"
-            
-        except Exception as e:
-            logger.error(f"볼린저 밴드 위치 확인 중 오류: {str(e)}")
-            return "알 수 없음"
-
-    async def _request_gpt_analysis(self, prompt: str) -> Optional[Dict]:
-        """GPT API를 통한 시장 분석 요청"""
-        try:
-            return await self.gpt_client.get_analysis(prompt)
-            
-        except Exception as e:
-            logger.error(f"GPT 분석 요청 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
             return None
 
     def _validate_analysis_result(self, result: Dict) -> Dict:
@@ -241,83 +223,11 @@ class GPTAnalyzer:
             logger.error(f"분석 결과 검증 중 오류: {str(e)}")
             return {}
 
-    def _get_macd_signal(self, df: pd.DataFrame) -> str:
-        """MACD 신호 판단"""
-        try:
-            if df is None or 'macd' not in df.columns:
-                return "알 수 없음"
-            
-            macd = df['macd'].iloc[-1]
-            signal = df['macd_signal'].iloc[-1]
-            
-            if macd > signal:
-                return "상승"
-            elif macd < signal:
-                return "하락"
-            else:
-                return "중립"
-            
-        except Exception as e:
-            logger.error(f"MACD 신호 판단 중 오류: {str(e)}")
-            return "알 수 없음"
-
-    def _calculate_volatility(self, df: pd.DataFrame) -> float:
-        """변동성 계산"""
-        try:
-            if df is None or len(df) < 2:
-                return 0.0
-            
-            # 20일 기준 변동성 계산
-            returns = np.log(df['close'] / df['close'].shift(1))
-            volatility = returns.std() * np.sqrt(365) * 100  # 연간 변동성으로 변환
-            
-            return round(float(volatility), 2)
-            
-        except Exception as e:
-            logger.error(f"변동성 계산 중 오류: {str(e)}")
-            return 0.0
-
-    def _get_market_sentiment(self, df: pd.DataFrame) -> str:
-        """전반적 시장 심리 판단"""
-        latest = df.iloc[-1]
-        if latest['rsi'] > 60 and latest['macd'] > 0:
-            return "POSITIVE"
-        elif latest['rsi'] < 40 and latest['macd'] < 0:
-            return "NEGATIVE"
-        return "NEUTRAL"
-
-    def _get_short_term_sentiment(self, df: pd.DataFrame) -> str:
-        """단기 시장 심리 판단"""
-        latest = df.iloc[-1]
-        if latest['macd'] > latest['macd_signal']:
-            return "POSITIVE"
-        elif latest['macd'] < latest['macd_signal']:
-            return "NEGATIVE"
-        return "NEUTRAL"
-
-    def _get_volume_trend(self, df: pd.DataFrame) -> str:
-        """거래량 추세 판단"""
-        vol_ma = df['volume'].rolling(20).mean()
-        if df['volume'].iloc[-1] > vol_ma.iloc[-1] * 1.5:
-            return "VOLUME_INCREASE"
-        elif df['volume'].iloc[-1] < vol_ma.iloc[-1] * 0.5:
-            return "VOLUME_DECREASE"
-        return "VOLUME_NEUTRAL"
-
-    def _get_risk_level(self, df: pd.DataFrame) -> str:
-        """리스크 레벨 판단"""
-        latest = df.iloc[-1]
-        if latest['rsi'] > 70 or latest['rsi'] < 30:
-            return "HIGH"
-        elif 40 <= latest['rsi'] <= 60:
-            return "LOW"
-        return "MEDIUM"
-
     def _create_analysis_prompt(self, df: pd.DataFrame, indicators: Dict, timeframe: str) -> str:
         """분석 프롬프트 생성"""
         try:
             # 템플릿에 데이터 적용
-            prompt = self.gpt_client.ANALYSIS_PROMPT_TEMPLATE.format(
+            prompt = self.ANALYSIS_PROMPT_TEMPLATE.format(
                 current_price=df['close'].iloc[-1],
                 rsi=indicators['rsi'],
                 macd=indicators['macd'],
@@ -334,3 +244,23 @@ class GPTAnalyzer:
         except Exception as e:
             logger.error(f"프롬프트 생성 중 오류: {str(e)}")
             return None
+
+    def _determine_position(self, df: pd.DataFrame) -> str:
+        # Implementation of _determine_position method
+        pass
+
+    def _calculate_stop_loss(self, df: pd.DataFrame) -> float:
+        # Implementation of _calculate_stop_loss method
+        pass
+
+    def _calculate_take_profit(self, df: pd.DataFrame) -> float:
+        # Implementation of _calculate_take_profit method
+        pass
+
+    def _convert_position(self, position: str) -> Optional[str]:
+        """포지션 신호 변환"""
+        if position == 'BUY':
+            return '매수'
+        elif position == 'SELL':
+            return '매도'
+        return None  # HOLD나 다른 값은 None 반환

@@ -1,0 +1,38 @@
+{
+  "market_summary": {
+    "current_price": 69815.5,
+    "market_phase": "\ud6a1\ubcf4",
+    "sentiment": "NEUTRAL",
+    "short_term": "NEGATIVE",
+    "volume": "VOLUME_DECREASE",
+    "risk": "LOW",
+    "confidence": 60
+  },
+  "trading_strategy": {
+    "position_suggestion": null,
+    "leverage": 5,
+    "position_size": 10,
+    "entry_points": [
+      69815.5
+    ],
+    "stopLoss": 66500.0,
+    "takeProfit": 73000.0,
+    "reason": "\ud604\uc7ac \uc2dc\uc7a5\uc740 \ud6a1\ubcf4 \ucd94\uc138\uc774\uba70 \uae30\uc220\uc801 \uc9c0\ud45c\ub4e4\ub3c4 \uc911\ub9bd\uc801\uc778 \uc2e0\ud638\ub97c \ubcf4\uc5ec\uc90d\ub2c8\ub2e4. RSI\uac00 50\uc5d0 \uac00\uae4c\uc6b4 \uc218\uc900\uc774\uace0, MACD \uac12\ub3c4 \uc591\uc218\uc9c0\ub9cc \ud070 \ud798\uc744 \ubcf4\uc774\uc9c0\ub294 \uc54a\uc2b5\ub2c8\ub2e4. \ub530\ub77c\uc11c \ubcc0\ub3d9\uc131\uc774 \ub0ae\uace0 \uba85\ud655\ud55c \ub9e4\ub9e4 \uc2e0\ud638\uac00 \uc5c6\ub294 \uc0c1\ud669\uc5d0\uc11c\ub294 \uad00\ub9dd\ud558\ub294 \uac83\uc774 \ubc14\ub78c\uc9c1\ud569\ub2c8\ub2e4. \uc190\uc808\uac00\uc640 \uc775\uc808\uac00\ub97c \uc124\uc815\ud558\uc5ec \ub9ac\uc2a4\ud06c\ub97c \ud6a8\uacfc\uc801\uc73c\ub85c \uad00\ub9ac\ud558\uba70, \ub808\ubc84\ub9ac\uc9c0\ub294 \uc911\uac04 \uc218\uc900\uc778 5\ubc30\ub85c \uc124\uc815\ud558\uc5ec \uc548\uc815\uc801\uc778 \ud3ec\uc9c0\uc158\uc744 \uc720\uc9c0\ud569\ub2c8\ub2e4."
+  },
+  "technical_analysis": {
+    "trend": "\ud6a1\ubcf4",
+    "strength": 11.32853771752599,
+    "indicators": {
+      "rsi": 49.50388532300154,
+      "macd": "BEARISH",
+      "bollinger": "\uc911\ub9bd",
+      "divergence_type": "\ubd88\ub9ac\uc2dc",
+      "divergence_desc": "\uac00\uaca9\uc740 \uc2e0\uc800\uc810(69816) \ub3c4\ub2ec, RSI(49.5)\ub294 \uc774\uc804 \uc800\uc810(27.8)\ubcf4\ub2e4 \ub192\uc74c"
+    }
+  },
+  "auto_trading": {
+    "enabled": true,
+    "status": "active"
+  },
+  "timestamp": 1739337521356
+}

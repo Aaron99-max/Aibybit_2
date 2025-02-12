@@ -5,7 +5,7 @@ from ta.volume import VolumeWeightedAveragePrice, AccDistIndexIndicator
 from ta.trend import MACD, ADXIndicator, IchimokuIndicator
 from ta.volatility import BollingerBands
 import logging
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 import traceback
 
 logger = logging.getLogger(__name__)
@@ -48,9 +48,6 @@ class TechnicalIndicators:
             df['bb_upper'] = bb_data['upper']
             df['bb_middle'] = bb_data['middle']
             df['bb_lower'] = bb_data['lower']
-            # 볼린저 밴드 포지션 계산
-            df['bb_position'] = np.where(df['close'] > df['bb_upper'], '상단',
-                                       np.where(df['close'] < df['bb_lower'], '하단', '중단'))
             
             # 이동평균선 계산
             df['sma_10'] = df['close'].rolling(window=10).mean()
@@ -63,8 +60,8 @@ class TechnicalIndicators:
             df['di_minus'] = adx_indicator.adx_neg()
             
             # 추세 판단
-            df['trend'] = self._determine_trend(df)
-            df['trend_strength'] = self._calculate_trend_strength(df)
+            df['trend'] = self._get_trend_direction(df)
+            df['trend_strength'] = self._get_trend_strength(df)
             
             # RSI 다이버전스 계산
             divergence = self.check_rsi_divergence(df)
@@ -264,54 +261,152 @@ class TechnicalIndicators:
             logger.error(f"볼린저 밴드 위치 계산 중 오류: {str(e)}")
             return '중단'
 
-    def _determine_trend(self, df: pd.DataFrame) -> str:
-        """가격 추세 판단"""
+    def _get_trend_direction(self, df: pd.DataFrame) -> str:
+        """추세 방향 판단"""
+        latest = df.iloc[-1]
+        if (latest['sma_10'] > latest['sma_30'] and 
+            latest['rsi'] > 50 and 
+            latest['macd'] > 0):
+            return "UPTREND"
+        elif (latest['sma_10'] < latest['sma_30'] and 
+              latest['rsi'] < 50 and 
+              latest['macd'] < 0):
+            return "DOWNTREND"
+        return "SIDEWAYS"
+
+    def _get_trend_strength(self, df: pd.DataFrame) -> int:
+        """추세 강도 계산 (0-100)"""
+        latest = df.iloc[-1]
+        strength = 0
+        
+        # RSI 반영
+        strength += abs(latest['rsi'] - 50) * 2
+        
+        # MACD 반영
+        if abs(latest['macd']) > abs(latest['macd_signal']):
+            strength += 20
+            
+        # ADX 반영 (있는 경우)
+        if 'adx' in df.columns:
+            strength += min(latest['adx'], 30)
+            
+        return min(int(strength), 100)
+
+    def _analyze_rsi(self, rsi: float) -> str:
+        """RSI 분석"""
+        if rsi > 70:
+            return "OVERBOUGHT"
+        elif rsi < 30:
+            return "OVERSOLD"
+        elif rsi > 50:
+            return "BULLISH"
+        else:
+            return "BEARISH"
+
+    def _analyze_macd(self, macd: float, signal: float) -> str:
+        """MACD 분석"""
+        if macd > signal:
+            if macd > 0:
+                return "STRONG_BULLISH"
+            return "BULLISH"
+        elif macd < signal:
+            if macd < 0:
+                return "STRONG_BEARISH"
+            return "BEARISH"
+        return "NEUTRAL"
+
+    def _analyze_bollinger(self, df: pd.DataFrame) -> str:
+        """볼린저 밴드 분석"""
         try:
             latest = df.iloc[-1]
+            current_price = latest['close']
+            upper = latest['bb_upper']
+            lower = latest['bb_lower']
+            middle = latest['bb_middle']
             
-            # 이동평균선 기반 추세 판단
-            ma_trend = "상승" if latest['sma_10'] > latest['sma_30'] else "하락"
-            
-            # MACD 기반 추세 판단
-            macd_trend = "상승" if latest['macd'] > latest['macd_signal'] else "하락"
-            
-            # ADX로 추세 강도 확인
-            strong_trend = latest['adx'] > 25
-            
-            # 종합 판단
-            if ma_trend == macd_trend:
-                return ma_trend if strong_trend else f"약{ma_trend}"
+            if current_price > upper:
+                return "UPPER_BREAK"
+            elif current_price < lower:
+                return "LOWER_BREAK"
+            elif current_price > middle:
+                return "ABOVE_MIDDLE"
             else:
-                return "횡보"
+                return "BELOW_MIDDLE"
                 
         except Exception as e:
-            logger.error(f"추세 판단 중 오류: {str(e)}")
-            return "불명확"
+            logger.error(f"볼린저 밴드 분석 중 오류: {str(e)}")
+            return "NEUTRAL"
 
-    def _calculate_trend_strength(self, df: pd.DataFrame) -> float:
-        """추세 강도 계산"""
+    def analyze_signals(self, df: pd.DataFrame) -> Dict[str, Any]:
+        """모든 기술적 지표를 종합 분석"""
         try:
             latest = df.iloc[-1]
             
-            # ADX 기반 추세 강도 (0-100)
-            adx_strength = float(latest['adx'])
+            # 1. 추세 분석
+            trend = {
+                "direction": self._get_trend_direction(df),
+                "strength": self._get_trend_strength(df)
+            }
             
-            # MACD 기반 추세 강도 (MACD와 Signal의 차이)
-            macd_strength = abs(latest['macd'] - latest['macd_signal']) / latest['close'] * 100
+            # 2. 주요 지표 신호
+            signals = {
+                "rsi": self._analyze_rsi(latest['rsi']),
+                "macd": self._analyze_macd(latest['macd'], latest['macd_signal']),
+                "bollinger": self._analyze_bollinger(df)
+            }
             
-            # 이동평균선 기반 추세 강도
-            ma_diff = abs(latest['sma_10'] - latest['sma_30']) / latest['close'] * 100
+            # 3. 시장 심리 분석
+            sentiment = {
+                "market": self._get_market_sentiment(df),
+                "short_term": self._get_short_term_sentiment(df),
+                "volume": self._get_volume_trend(df),
+                "risk": self._get_risk_level(df)
+            }
             
-            # 가중치 적용
-            strength = (
-                (adx_strength * 0.4) +      # ADX: 40%
-                (macd_strength * 0.35) +    # MACD: 35%
-                (ma_diff * 0.25)            # MA: 25%
-            )
-            
-            # 0-100 사이로 정규화
-            return min(100, max(0, strength))
+            return {
+                "trend": trend["direction"],
+                "strength": trend["strength"],
+                "signals": signals,
+                "sentiment": sentiment,
+                "timestamp": pd.Timestamp.now()
+            }
             
         except Exception as e:
-            logger.error(f"추세 강도 계산 중 오류: {str(e)}")
-            return 50.0
+            logger.error(f"기술적 분석 중 오류: {str(e)}")
+            return None
+
+    def _get_market_sentiment(self, df: pd.DataFrame) -> str:
+        """전반적 시장 심리 판단"""
+        latest = df.iloc[-1]
+        if latest['rsi'] > 60 and latest['macd'] > 0:
+            return "POSITIVE"
+        elif latest['rsi'] < 40 and latest['macd'] < 0:
+            return "NEGATIVE"
+        return "NEUTRAL"
+
+    def _get_short_term_sentiment(self, df: pd.DataFrame) -> str:
+        """단기 시장 심리 판단"""
+        latest = df.iloc[-1]
+        if latest['macd'] > latest['macd_signal']:
+            return "POSITIVE"
+        elif latest['macd'] < latest['macd_signal']:
+            return "NEGATIVE"
+        return "NEUTRAL"
+
+    def _get_volume_trend(self, df: pd.DataFrame) -> str:
+        """거래량 추세 판단"""
+        vol_ma = df['volume'].rolling(20).mean()
+        if df['volume'].iloc[-1] > vol_ma.iloc[-1] * 1.5:
+            return "VOLUME_INCREASE"
+        elif df['volume'].iloc[-1] < vol_ma.iloc[-1] * 0.5:
+            return "VOLUME_DECREASE"
+        return "VOLUME_NEUTRAL"
+
+    def _get_risk_level(self, df: pd.DataFrame) -> str:
+        """리스크 레벨 판단"""
+        latest = df.iloc[-1]
+        if latest['rsi'] > 70 or latest['rsi'] < 30:
+            return "HIGH"
+        elif 40 <= latest['rsi'] <= 60:
+            return "LOW"
+        return "MEDIUM"

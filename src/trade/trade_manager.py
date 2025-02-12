@@ -19,16 +19,23 @@ class TradeManager:
 
     async def execute_auto_trade(self, analysis: Dict) -> bool:
         """자동매매 실행"""
-        strategy = analysis.get('trading_strategy', {})
-        
-        signal = {
-            'side': 'Buy' if strategy['position_suggestion'] == '매수' else 'Sell',
-            'leverage': strategy['leverage'],
-            'size': strategy['position_size'],
-            'entry_price': strategy['entry_points'][0],
-            'stopLoss': strategy.get('stopLoss'),
-            'takeProfit': strategy.get('takeProfit'),
-            'symbol': self.symbol
-        }
-        
-        return await self.order_service.handle_trade_signal(signal)
+        try:
+            strategy = analysis.get('trading_strategy', {})
+            if not strategy or not strategy.get('position_suggestion'):
+                return False
+                
+            signal = {
+                'side': 'Buy' if strategy['position_suggestion'] == '매수' else 'Sell',
+                'leverage': strategy['leverage'],
+                'size': strategy['position_size'],
+                'entry_price': strategy['entry_points'][0],
+                'stopLoss': strategy.get('stopLoss'),
+                'takeProfit': strategy.get('takeProfit'),
+                'symbol': self.symbol
+            }
+            
+            return await self.order_service.handle_trade_signal(signal)
+            
+        except Exception as e:
+            logger.error(f"자동 매매 실행 중 오류: {str(e)}")
+            return False

@@ -130,18 +130,32 @@ class TelegramBot:
 
         # 명령어 핸들러 등록
         handlers = [
-            CommandHandler("help", self.system_handler.handle_help),
-            CommandHandler("stop", self.system_handler.handle_stop),
-            CommandHandler("analyze", self.analysis_handler.handle_analyze),
-            CommandHandler("status", self.trading_handler.handle_status),
-            CommandHandler("balance", self.trading_handler.handle_balance),
-            CommandHandler("position", self.trading_handler.handle_position),
-            CommandHandler("stats", self.stats_handler.handle),
-            CommandHandler("trade", self.trading_handler.handle_trade)
+            # 관리자 권한 체크 추가
+            CommandHandler("help", self._check_admin(self.system_handler.handle_help)),
+            CommandHandler("stop", self._check_admin(self.system_handler.handle_stop)),
+            CommandHandler("analyze", self._check_admin(self.analysis_handler.handle_analyze)),
+            CommandHandler("status", self._check_admin(self.trading_handler.handle_status)),
+            CommandHandler("balance", self._check_admin(self.trading_handler.handle_balance)),
+            CommandHandler("position", self._check_admin(self.trading_handler.handle_position)),
+            CommandHandler("stats", self._check_admin(self.stats_handler.handle)),
+            CommandHandler("trade", self._check_admin(self.trading_handler.handle_trade))
         ]
 
         for handler in handlers:
             self.application.add_handler(handler)
+
+    def _check_admin(self, handler):
+        """관리자 권한 체크 데코레이터"""
+        async def wrapped(update: Update, context: ContextTypes.DEFAULT_TYPE):
+            if not update.effective_chat:
+                return
+            
+            if update.effective_chat.id != self.admin_chat_id:
+                await self.send_message("⛔️ 관리자만 사용할 수 있는 명령어입니다.", update.effective_chat.id)
+                return
+            
+            return await handler(update, context)
+        return wrapped
 
     async def send_message_to_all(self, message: str, msg_type: str = None):
         """모든 채팅방에 메시지 전송"""
@@ -149,8 +163,8 @@ class TelegramBot:
             # 관리자 채팅방에는 모든 메시지 전송
             await self.send_message(message, self.admin_chat_id)
             
-            # 알림 채팅방에는 알림 메시지만 전송
-            if msg_type in [self.MSG_TYPE_ANALYSIS, self.MSG_TYPE_TRADE, self.MSG_TYPE_SYSTEM]:
+            # 알림 채팅방에도 모든 메시지 전송 (명령어 응답 제외)
+            if msg_type != self.MSG_TYPE_COMMAND:
                 for chat_id in self.alert_chat_ids:
                     await self.send_message(message, chat_id)
                     
@@ -277,7 +291,7 @@ class TelegramBot:
         help_text = """
 🤖 사용 가능한 명령어:
 
-💰 트레이딩 명령어:
+�� 트레이딩 명령어:
 /analyze - 1시간봉 시장 분석
 /trade - 거래 실행
 /status - 현재 상태 확인

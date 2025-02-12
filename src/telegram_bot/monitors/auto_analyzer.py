@@ -52,7 +52,13 @@ class AutoAnalyzer:
     async def run_market_analysis(self, is_auto: bool = False, chat_id: Optional[int] = None):
         """1시간봉 시장 분석 실행"""
         try:
-            logger.info(f"=== 1시간봉 분석 시작 ({'자동' if is_auto else '수동'}) ===")
+            # 분석 시작 알림 (모든 알림방에 전송)
+            await self.bot.send_message_to_all(
+                f"🔄 1시간봉 {'자동' if is_auto else '수동'} 분석 시작 ...",
+                self.bot.MSG_TYPE_ANALYSIS
+            )
+            
+            logger.info(f"🔄' 1시간봉 분석 시작 ({'자동' if is_auto else '수동'}) ...")
             
             # OHLCV 데이터 조회 및 검증
             klines = await self._get_validated_market_data('1h')
@@ -66,15 +72,24 @@ class AutoAnalyzer:
                 await self._handle_error("분석 실패", chat_id)
                 return None
 
-            # 메시지 전송
-            if chat_id:
-                message = self.analysis_formatter.format_analysis_result(
-                    analysis, '1h'
-                )
-                if message:
-                    await self.bot.send_message(message, chat_id)
+            # 메시지 전송 (항상 모든 알림방에 전송)
+            message = self.analysis_formatter.format_analysis_result(analysis, '1h')
+            if message:
+                await self.bot.send_message_to_all(message, self.bot.MSG_TYPE_ANALYSIS)
+            else:
+                logger.error("분석 결과 포맷팅 실패")
+            
+            # 매매 신호가 있으면 자동 매매 실행
+            logger.info(f"분석 결과 trading_signals: {analysis.get('trading_signals', {})}")
+            if analysis.get('trading_signals', {}).get('position_suggestion'):
+                logger.info("매매 신호 감지, 자동 매매 실행")
+                trade_result = await self.ai_trader.trade_manager.execute_auto_trade(analysis)
+                if trade_result:
+                    await self.bot.send_message_to_all("🤖 자동 매매 실행 완료", self.bot.MSG_TYPE_TRADE)
                 else:
-                    logger.error("분석 결과 포맷팅 실패")
+                    await self.bot.send_message_to_all("⚠️ 자동 매매 실행 실패", self.bot.MSG_TYPE_TRADE)
+            else:
+                logger.info("매매 신호 없음")
             
             return analysis
 

@@ -271,7 +271,7 @@ class AnalysisFormatter(BaseFormatter):
                 f"{title} ({saved_at})\n",
                 self._format_market_summary(analysis),
                 self._format_technical_analysis(analysis),
-                self._format_trading_strategy(analysis)
+                self._format_trading_signals(analysis)
             ]
             
             return "\n".join(filter(None, message))
@@ -372,6 +372,7 @@ class AnalysisFormatter(BaseFormatter):
 
             message = [
                 f"📊 {timeframe} 분석 ({time_str})\n",
+                
                 "🌍 시장 요약:",
                 f"• 시장 단계: {self.translate(analysis.get('market_summary', {}).get('market_phase', '알 수 없음'))}",
                 f"• 전반적 심리: {self.translate(analysis.get('market_summary', {}).get('sentiment', '알 수 없음'))}",
@@ -391,20 +392,25 @@ class AnalysisFormatter(BaseFormatter):
                 f"• 유형: {self.translate(analysis.get('technical_analysis', {}).get('divergence_type', '없음'))}",
                 f"• 설명: {analysis.get('technical_analysis', {}).get('divergence_desc', '정보 없음')}\n",
 
-                "💡 거래 전략:",
-                f"• 포지션: {self.translate(analysis.get('trading_strategy', {}).get('position', '관망'))}",
-                f"• 진입가: ${float(analysis.get('trading_strategy', {}).get('entry_price', 0)):,.1f}",
-                f"• 손절가: ${float(analysis.get('trading_strategy', {}).get('stop_loss', 0)):,.1f}",
-                f"• 목표가: ${float(analysis.get('trading_strategy', {}).get('take_profit1', 0)):,.1f}, ${float(analysis.get('trading_strategy', {}).get('take_profit2', 0)):,.1f}",
-                f"• 레버리지: {analysis.get('trading_strategy', {}).get('leverage', 1)}x",
-                f"• 포지션 크기: {analysis.get('trading_strategy', {}).get('size', 10)}%\n",
+                # 알람이 있는 경우 표시
+                "⚠️ 주요 알림:" if analysis.get('alerts') else "",
+                "\n".join([f"• {alert}" for alert in analysis.get('alerts', [])]) + "\n" if analysis.get('alerts') else "",
+
+                "💡 매매 신호:",
+                f"• 포지션: {self.translate(analysis.get('trading_signals', {}).get('position_suggestion', '관망'))}",
+                f"• 진입가: ${float(analysis.get('trading_signals', {}).get('entry_price', 0)):,.1f}",
+                f"• 손절가: ${float(analysis.get('trading_signals', {}).get('stop_loss', 0)):,.1f}",
+                f"• 목표가: ${float(analysis.get('trading_signals', {}).get('take_profit1', 0)):,.1f}, ${float(analysis.get('trading_signals', {}).get('take_profit2', 0)):,.1f}",
+                f"• 레버리지: {analysis.get('trading_signals', {}).get('leverage', 1)}x",
+                f"• 포지션 크기: {analysis.get('trading_signals', {}).get('size', 10)}%",
+                f"• 사유: {analysis.get('trading_signals', {}).get('reason', '알 수 없음')}\n",
 
                 "🤖 자동매매:",
                 f"• 상태: {'활성화' if analysis.get('auto_trading', {}).get('enabled', False) else '비활성화'}",
-                f"• 사유: {analysis.get('trading_strategy', {}).get('reason', '알 수 없음')}"
+                f"• 사유: {analysis.get('trading_signals', {}).get('reason', '알 수 없음')}"
             ]
 
-            return "\n".join(message)
+            return "\n".join(filter(None, message))
 
         except Exception as e:
             logger.error(f"분석 결과 포맷팅 중 오류: {str(e)}")
@@ -451,16 +457,16 @@ class AnalysisFormatter(BaseFormatter):
             logger.error(f"기술적 분석 포맷팅 중 오류: {str(e)}")
             return ""
 
-    def _format_trading_strategy(self, analysis: Dict) -> str:
+    def _format_trading_signals(self, analysis: Dict) -> str:
         """거래 전략 포맷팅"""
         try:
-            trading = analysis.get('trading_strategy', {})
+            trading = analysis.get('trading_signals', {})
             if not trading:
                 return ""
             
             message = [
-                "\n💡 거래 전략:",
-                f"• 포지션: {self.translate(trading.get('position', '관망'))}",
+                "\n💡 매매 신호:",
+                f"• 포지션: {self.translate(trading.get('position_suggestion', '관망'))}",
                 f"• 진입가: ${trading.get('entry_price', 0):,.2f}",
                 f"• 손절가: ${trading.get('stop_loss', 0):,.2f}",
                 f"• 익절가: ${trading.get('take_profit', 0):,.2f}",
@@ -471,5 +477,52 @@ class AnalysisFormatter(BaseFormatter):
             return "\n".join(message)
             
         except Exception as e:
-            logger.error(f"거래 전략 포맷팅 중 오류: {str(e)}")
+            logger.error(f"매매 신호 포맷팅 중 오류: {str(e)}")
             return ""
+
+    def translate(self, text: str) -> str:
+        """번역 처리"""
+        translations = {
+            # Trading signals
+            "position_suggestion": "포지션",
+            "BUY": "매수",
+            "SELL": "매도",
+            "HOLD": "관망",
+            
+            # Market phase & trends
+            "SIDEWAYS": "횡보",
+            "UPTREND": "상승",
+            "DOWNTREND": "하락",
+            
+            # Sentiment
+            "NEUTRAL": "중립",
+            "POSITIVE": "긍정",
+            "NEGATIVE": "부정",
+            
+            # Volume
+            "VOLUME_INCREASE": "거래량 증가",
+            "VOLUME_DECREASE": "거래량 감소",
+            "VOLUME_NEUTRAL": "거래량 보통",
+            
+            # Risk
+            "HIGH": "높음",
+            "MEDIUM": "보통",
+            "LOW": "낮음",
+            
+            # Technical indicators
+            "STRONG_BULLISH": "매우 강세",
+            "BULLISH": "강세",
+            "STRONG_BEARISH": "매우 약세",
+            "BEARISH": "약세",
+            "OVERBOUGHT": "과매수",
+            "OVERSOLD": "과매도",
+            
+            # Bollinger Bands
+            "UPPER_BREAK": "상단 돌파",
+            "LOWER_BREAK": "하단 돌파",
+            "ABOVE_MIDDLE": "중앙선 위",
+            "BELOW_MIDDLE": "중앙선 아래",
+            
+            # ... 기존 코드 ...
+        }
+        return translations.get(text, text)

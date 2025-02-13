@@ -1,0 +1,105 @@
+2025-02-12 15:07:37,806 - ai.gpt_client - ERROR - API 호출 중 오류: 'GPTClient' object has no attribute '_process_response'
+2025-02-12 15:07:37,809 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:08:57,607 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:11:53,707 - ai.gpt_analyzer - ERROR - JSON 파싱 실패
+2025-02-12 15:11:53,709 - ai.gpt_analyzer - ERROR - 원본 응답: 비트코인 시장을 분석하기 위해서는 기술적 분석과 기본적 분석을 모두 고려해야 합니다. 기술적 분석에서는 주요 지표들을 살펴보고, 이동평균선, 상대강도지수(RSI), 스토캐스틱 등을 활용하여 시장의 추세와 매매 타이밍을 파악할 수 있습니다. 또한 거래량과 이동평균선의 교차점도 중요한 신호로 활용할 수 있습니다.
+
+기본적 분석에서는 비트코인 시장을 둘러싼 최근 이슈들, 정책 변화, 기술적 발전 등을 고려하여 시장의 흐름을 예측할 수 있습니다.
+
+매매 전략으로는 다음과 같은 접근 방식을 제시할 수 있습니다:
+
+1. 이동평균선을 활용한 추세 추종 전략: 단기 이동평균선과 장기 이동평균선의 교차점을 활용하여 추세의 방향을 파악하고, 해당 방향으로 매매를 진행합니다.
+
+2. RSI나 스토캐스틱을 활용한 매매 신호 전략: RSI나 스토캐스틱이 과매수 또는 과매도 구간에 진입할 때 매매 신호로 활용합니다.
+
+3. 이벤트 기반 전략: 비트코인 시장을 둘러싼 이벤트나 뉴스를 분석하여 해당 이벤트에 대한 시장 반응을 예측하고 매매를 진행합니다.
+
+4. 리스크 관리: 매매 시에는 손실을 최소화하기 위한 리스크 관리가 중요합니다. 이를 위해 손절가와 익절가를 설정하고, 포지션 크기를 적절히 조절하는 것이 필요합니다.
+
+이러한 전략을 종합적으로 활용하여 비트코인 시장을 분석하고 매매를 진행하면 좀 더 안정적이고 수익성 높은 거래를 할 수 있을 것입니다.
+2025-02-12 15:11:53,718 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:38:20,961 - indicators.technical - ERROR - 기술적 분석 중 오류: 'TechnicalIndicators' object has no attribute '_get_market_sentiment'
+2025-02-12 15:38:23,094 - ai.gpt_analyzer - ERROR - 시장 분석 중 오류: 'NoneType' object is not subscriptable
+2025-02-12 15:38:23,095 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\gpt_analyzer.py", line 172, in analyze_market
+    "trend": technical_analysis['trend'],
+             ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-02-12 15:38:23,096 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:41:28,297 - indicators.technical - ERROR - 기술적 분석 중 오류: 'TechnicalIndicators' object has no attribute '_analyze_rsi'
+2025-02-12 15:41:30,679 - ai.gpt_analyzer - ERROR - 기술적 분석 결과가 없음
+2025-02-12 15:41:30,680 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 16:27:39,372 - services.market_data_service - ERROR - 마켓 데이터 로드 실패: bybit GET https://api-testnet.bybit.com/v5/asset/coin/query-info?
+2025-02-12 16:27:39,375 - main - ERROR - 실행 중 에러 발생: bybit GET https://api-testnet.bybit.com/v5/asset/coin/query-info?
+2025-02-12 16:27:39,507 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 696, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1050, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1363, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1109, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 89, in start_connection
+    sock, _, _ = await _staggered.staggered_race(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohappyeyeballs\_staggered.py", line 160, in staggered_race
+    done = await _wait_one(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohappyeyeballs\_staggered.py", line 41, in _wait_one
+    return await wait_next
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 177, in fetch
+    async with session_method(yarl.URL(url, encoded=True),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1418, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 602, in _request
+    with timer:
+         ^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\helpers.py", line 671, in __exit__
+    raise asyncio.TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 76, in main
+    await market_data_service.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\services\market_data_service.py", line 57, in initialize
+    await self.bybit_client.exchange.load_markets()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 254, in load_markets
+    raise e
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 250, in load_markets
+    result = await self.markets_loading
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 239, in load_markets_helper
+    currencies = await self.fetch_currencies()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 1486, in fetch_currencies
+    response = await self.privateGetV5AssetCoinQueryInfo(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 211, in fetch
+    raise RequestTimeout(details) from e
+ccxt.base.errors.RequestTimeout: bybit GET https://api-testnet.bybit.com/v5/asset/coin/query-info?
+

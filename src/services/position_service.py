@@ -30,7 +30,7 @@ class PositionService:
         """포지션 조회"""
         try:
             symbol = symbol or self.symbol
-            positions = await self.bybit_client.get_positions(symbol)
+            positions = await self.bybit_client.v5_get_positions(symbol)
             
             if not positions:
                 return {}
@@ -104,17 +104,18 @@ class PositionService:
             symbol = signal.get('symbol', 'BTCUSDT')
             side = signal.get('side')
             target_leverage = int(signal.get('leverage', 1))
-            target_percent = float(signal.get('size', 0))  # size는 퍼센트 단위
+            target_percent = float(signal.get('size', 0))
             entry_price = float(signal.get('entry_price', 0))
-            stopLoss = float(signal.get('stopLoss', 0))
-            takeProfit = float(signal.get('takeProfit', 0)) if not isinstance(signal.get('takeProfit'), list) else float(signal['takeProfit'][0])
-
+            
             # 현재 포지션 확인
             current_positions = await self.get_positions(symbol)
+            logger.info(f"현재 포지션: {current_positions}")
             
             if not current_positions:
                 # 신규 진입 (퍼센트 -> BTC 변환)
                 balance = await self.balance_service.get_balance()
+                logger.info(f"계좌 잔고: {balance}")
+                
                 if not balance:
                     logger.error("잔고 조회 실패")
                     return False
@@ -123,7 +124,7 @@ class PositionService:
                 target_value = available_balance * (target_percent / 100) * target_leverage
                 target_btc = target_value / entry_price
                 
-                logger.info(f"신규 진입 - {target_percent}% = {target_btc} BTC")
+                logger.info(f"신규 진입 계산 - 가용잔고: ${available_balance}, 목표금액: ${target_value}, BTC수량: {target_btc}")
                 
                 return await self._open_new_position(
                     symbol=symbol,
@@ -131,8 +132,8 @@ class PositionService:
                     leverage=target_leverage,
                     size=target_btc,  # BTC 단위로 변환된 값
                     price=entry_price,
-                    stopLoss=stopLoss,
-                    takeProfit=takeProfit
+                    stopLoss=float(signal.get('stopLoss', 0) or 0),
+                    takeProfit=float(signal.get('takeProfit', 0) or 0)
                 )
 
             current_pos = current_positions[0]
@@ -172,7 +173,7 @@ class PositionService:
                         leverage=current_leverage  # 현재 레버리지 유지
                     )
                 else:
-                    logger.info(f"TP/SL 설정값 - SL: {stopLoss}, TP: {takeProfit}")
+                    logger.info(f"TP/SL 설정값 - SL: {float(signal.get('stopLoss', 0) or 0)}, TP: {float(signal.get('takeProfit', 0) or 0)}")
                     return await self._change_leverage_position(
                         symbol=symbol,
                         side=side,
@@ -181,8 +182,8 @@ class PositionService:
                         entry_price=entry_price,
                         current_leverage=current_leverage,
                         target_leverage=target_leverage,
-                        stopLoss=stopLoss,
-                        takeProfit=takeProfit
+                        stopLoss=float(signal.get('stopLoss', 0) or 0),
+                        takeProfit=float(signal.get('takeProfit', 0) or 0)
                     )
             else:
                 return await self._reverse_position(symbol, side, current_btc, target_percent, entry_price, target_leverage)

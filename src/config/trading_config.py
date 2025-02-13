@@ -20,22 +20,14 @@ class TradingConfig:
             "max_difference": 2  # 허용 가능한 최대 레버리지 차이
         }
         
-        # 자동매매 실행 조건
+        # 자동매매 설정
         self.auto_trading = {
-            "confidence": {
-                "min": 60,    # 최소 신뢰도
-                "high": 80    # 높은 신뢰도 기준
-            },
-            "trend_strength": {
-                "min": 10,    # 기본 최소 추세 강도
-                "levels": {
-                    "confidence_80": 10,   # 신뢰도 80% 이상
-                    "confidence_70": 15,   # 신뢰도 70~79%
-                    "confidence_60": 20,   # 신뢰도 60~69%
-                    "default": 25         # 그외
-                }
-            }
+            "enabled": True,  # 전체 자동매매 on/off
+            "follow_gpt": True  # GPT 신호 그대로 따를지
         }
+        
+        # 자동매매 신뢰도 기준
+        self.min_confidence = 85  # 85% 이상일 때만 자동매매 활성화
         
         # Bybit 관련 설정
         self.bybit = type('BybitConfig', (), {

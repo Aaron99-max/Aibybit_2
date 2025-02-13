@@ -1,0 +1,432 @@
+2025-02-12 14:18:19,280 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 14:18:19,282 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 14:18:19,289 - main - INFO - 서비스 초기화 중...
+2025-02-12 14:18:19,289 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 14:18:21,464 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 14:18:24,366 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 14:18:24,366 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 14:18:24,367 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 14:18:25,156 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 14:18:25,157 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 14:18:25,885 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 14:18:25,886 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 14:18:25,886 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 14:18:25,887 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 14:18:26,941 - telegram.ext.Application - INFO - Application started
+2025-02-12 14:18:27,197 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 14:18:37,683 - telegram_bot.monitors.auto_analyzer - INFO - === 1시간봉 분석 시작 (수동) ===
+2025-02-12 14:18:37,685 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 14:18:38,101 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 14:18:38,102 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 69815.5, 'bid': 69776.3, 'ask': 69815.5, 'volume': 418873.326, 'timestamp': None}
+2025-02-12 14:18:41,363 - ai.gpt_analyzer - INFO - 분석 결과: {
+  "market_summary": {
+    "current_price": 69815.5,
+    "market_phase": "\ud6a1\ubcf4",
+    "sentiment": "NEUTRAL",
+    "short_term": "NEGATIVE",
+    "volume": "VOLUME_DECREASE",
+    "risk": "LOW",
+    "confidence": 60
+  },
+  "trading_strategy": {
+    "position_suggestion": null,
+    "leverage": 5,
+    "position_size": 10,
+    "entry_points": [
+      69815.5
+    ],
+    "stopLoss": 66500.0,
+    "takeProfit": 73000.0,
+    "reason": "\ud604\uc7ac \uc2dc\uc7a5\uc740 \ud6a1\ubcf4 \ucd94\uc138\uc774\uba70 \uae30\uc220\uc801 \uc9c0\ud45c\ub4e4\ub3c4 \uc911\ub9bd\uc801\uc778 \uc2e0\ud638\ub97c \ubcf4\uc5ec\uc90d\ub2c8\ub2e4. RSI\uac00 50\uc5d0 \uac00\uae4c\uc6b4 \uc218\uc900\uc774\uace0, MACD \uac12\ub3c4 \uc591\uc218\uc9c0\ub9cc \ud070 \ud798\uc744 \ubcf4\uc774\uc9c0\ub294 \uc54a\uc2b5\ub2c8\ub2e4. \ub530\ub77c\uc11c \ubcc0\ub3d9\uc131\uc774 \ub0ae\uace0 \uba85\ud655\ud55c \ub9e4\ub9e4 \uc2e0\ud638\uac00 \uc5c6\ub294 \uc0c1\ud669\uc5d0\uc11c\ub294 \uad00\ub9dd\ud558\ub294 \uac83\uc774 \ubc14\ub78c\uc9c1\ud569\ub2c8\ub2e4. \uc190\uc808\uac00\uc640 \uc775\uc808\uac00\ub97c \uc124\uc815\ud558\uc5ec \ub9ac\uc2a4\ud06c\ub97c \ud6a8\uacfc\uc801\uc73c\ub85c \uad00\ub9ac\ud558\uba70, \ub808\ubc84\ub9ac\uc9c0\ub294 \uc911\uac04 \uc218\uc900\uc778 5\ubc30\ub85c \uc124\uc815\ud558\uc5ec \uc548\uc815\uc801\uc778 \ud3ec\uc9c0\uc158\uc744 \uc720\uc9c0\ud569\ub2c8\ub2e4."
+  },
+  "technical_analysis": {
+    "trend": "\ud6a1\ubcf4",
+    "strength": 11.32853771752599,
+    "indicators": {
+      "rsi": 49.50388532300154,
+      "macd": "BEARISH",
+      "bollinger": "\uc911\ub9bd",
+      "divergence_type": "\ubd88\ub9ac\uc2dc",
+      "divergence_desc": "\uac00\uaca9\uc740 \uc2e0\uc800\uc810(69816) \ub3c4\ub2ec, RSI(49.5)\ub294 \uc774\uc804 \uc800\uc810(27.8)\ubcf4\ub2e4 \ub192\uc74c"
+    }
+  },
+  "auto_trading": {
+    "enabled": true,
+    "status": "active"
+  },
+  "timestamp": 1739337521356
+}
+2025-02-12 14:18:41,376 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-12 14:18:42,476 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_strategy: {'position_suggestion': None, 'leverage': 5, 'position_size': 10, 'entry_points': [69815.5], 'stopLoss': 66500.0, 'takeProfit': 73000.0, 'reason': '현재 시장은 횡보 추세이며 기술적 지표들도 중립적인 신호를 보여줍니다. RSI가 50에 가까운 수준이고, MACD 값도 양수지만 큰 힘을 보이지는 않습니다. 따라서 변동성이 낮고 명확한 매매 신호가 없는 상황에서는 관망하는 것이 바람직합니다. 손절가와 익절가를 설정하여 리스크를 효과적으로 관리하며, 레버리지는 중간 수준인 5배로 설정하여 안정적인 포지션을 유지합니다.'}
+2025-02-12 14:18:42,480 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 없음
+2025-02-12 14:29:45,045 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 14:29:45,048 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 14:29:45,077 - main - INFO - 서비스 초기화 중...
+2025-02-12 14:29:45,098 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 14:29:47,359 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 14:29:47,791 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 14:29:47,792 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 14:29:47,793 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 14:29:48,466 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 14:29:48,466 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 14:29:49,131 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 14:29:49,132 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 14:29:49,132 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 14:29:49,132 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 14:29:50,137 - telegram.ext.Application - INFO - Application started
+2025-02-12 14:29:50,387 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 14:30:07,782 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 14:30:07,783 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 14:30:08,159 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 14:30:08,160 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 69776.3, 'bid': 69766.3, 'ask': 69805.5, 'volume': 418803.639, 'timestamp': None}
+2025-02-12 14:30:11,848 - ai.gpt_analyzer - INFO - 분석 결과: {
+  "market_summary": {
+    "current_price": 69776.3,
+    "market_phase": "\ud6a1\ubcf4",
+    "sentiment": "NEUTRAL",
+    "short_term": "NEGATIVE",
+    "volume": "VOLUME_DECREASE",
+    "risk": "LOW",
+    "confidence": 70
+  },
+  "trading_strategy": {
+    "position_suggestion": null,
+    "leverage": 5,
+    "position_size": 10,
+    "entry_points": [
+      69776.3
+    ],
+    "stopLoss": 68500.0,
+    "takeProfit": 72000.0,
+    "reason": "\ud604\uc7ac \uc2dc\uc7a5\uc740 \ud6a1\ubcf4\uc7a5\uc5d0 \uc788\uc73c\uba70 \uae30\uc220\uc801 \uc9c0\ud45c\ub4e4\uc774 \uac15\ud55c \ub9e4\ub9e4 \uc2e0\ud638\ub97c \uc81c\uacf5\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. RSI\uac00 50\uc5d0 \uac00\uae5d\uace0 MACD \uac12\uc774 \uc591\uc218\uc774\uc9c0\ub9cc, \ucd94\uc138\uac15\ub3c4\uac00 \ub0ae\uace0 \ubcc0\ub3d9\uc131\uc774 \ub192\uc2b5\ub2c8\ub2e4. \ub530\ub77c\uc11c \uc548\uc815\uc801\uc778 \ud3ec\uc9c0\uc158\uc744 \uc720\uc9c0\ud558\uace0\uc790 HOLD \uacb0\uc815\uc744 \ud558\uc600\uc2b5\ub2c8\ub2e4. \uc190\uc808\uac00\uc640 \uc775\uc808\uac00\ub294 \ud604\uc7ac \uac00\uaca9\uc744 \uae30\uc900\uc73c\ub85c \uc801\uc808\ud788 \uc124\uc815\ud558\uc600\uc2b5\ub2c8\ub2e4."
+  },
+  "technical_analysis": {
+    "trend": "\ud6a1\ubcf4",
+    "strength": 11.3293918203431,
+    "indicators": {
+      "rsi": 49.36322583918644,
+      "macd": "BEARISH",
+      "bollinger": "\uc911\ub9bd",
+      "divergence_type": "\ubd88\ub9ac\uc2dc",
+      "divergence_desc": "\uac00\uaca9\uc740 \uc2e0\uc800\uc810(69776) \ub3c4\ub2ec, RSI(49.4)\ub294 \uc774\uc804 \uc800\uc810(27.8)\ubcf4\ub2e4 \ub192\uc74c"
+    }
+  },
+  "auto_trading": {
+    "enabled": true,
+    "status": "active"
+  },
+  "timestamp": 1739338211843
+}
+2025-02-12 14:30:11,853 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-12 14:30:12,783 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_strategy: {'position_suggestion': None, 'leverage': 5, 'position_size': 10, 'entry_points': [69776.3], 'stopLoss': 68500.0, 'takeProfit': 72000.0, 'reason': '현재 시장은 횡보장에 있으며 기술적 지표들이 강한 매매 신호를 제공하지 않습니다. RSI가 50에 가깝고 MACD 값이 양수이지만, 추세강도가 낮고 변동성이 높습니다. 따라서 안정적인 포지션을 유지하고자 HOLD 결정을 하였습니다. 손절가와 익절가는 현재 가격을 기준으로 적절히 설정하였습니다.'}
+2025-02-12 14:30:12,786 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 없음
+2025-02-12 15:07:18,501 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:07:18,502 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:07:18,508 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:07:18,509 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:07:20,500 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:07:20,917 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:07:20,918 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:07:20,918 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:07:21,654 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:07:21,655 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:07:22,349 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:07:22,350 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:07:22,350 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:07:22,350 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:07:23,387 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:07:23,637 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:07:32,292 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:07:32,293 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:07:32,643 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:07:32,644 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 66513.0, 'bid': 66510.0, 'ask': 66513.0, 'volume': 420987.816, 'timestamp': None}
+2025-02-12 15:07:32,697 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:07:32,697 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:07:37,806 - ai.gpt_client - ERROR - API 호출 중 오류: 'GPTClient' object has no attribute '_process_response'
+2025-02-12 15:07:37,809 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:08:38,557 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:08:38,558 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:08:38,564 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:08:38,564 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:08:40,396 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:08:40,801 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:08:40,802 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:08:40,802 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:08:41,456 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:08:41,457 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:08:42,130 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:08:42,131 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:08:42,131 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:08:42,131 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:08:43,135 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:08:43,384 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:08:51,844 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:08:51,845 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:08:52,139 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:08:52,140 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 65649.2, 'bid': 65642.4, 'ask': 65651.8, 'volume': 420986.839, 'timestamp': None}
+2025-02-12 15:08:52,177 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:08:52,178 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:08:57,607 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:11:33,774 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:11:33,776 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:11:33,783 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:11:33,783 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:11:35,844 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:11:36,252 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:11:36,252 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:11:36,253 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:11:36,921 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:11:36,922 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:11:37,588 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:11:37,589 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:11:37,589 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:11:37,589 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:11:38,604 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:11:38,853 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:11:46,351 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:11:46,352 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:11:46,646 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:11:46,647 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 65108.1, 'bid': 65070.4, 'ask': 65107.5, 'volume': 421937.669, 'timestamp': None}
+2025-02-12 15:11:46,691 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:11:46,691 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:11:53,707 - ai.gpt_analyzer - ERROR - JSON 파싱 실패
+2025-02-12 15:11:53,709 - ai.gpt_analyzer - ERROR - 원본 응답: 비트코인 시장을 분석하기 위해서는 기술적 분석과 기본적 분석을 모두 고려해야 합니다. 기술적 분석에서는 주요 지표들을 살펴보고, 이동평균선, 상대강도지수(RSI), 스토캐스틱 등을 활용하여 시장의 추세와 매매 타이밍을 파악할 수 있습니다. 또한 거래량과 이동평균선의 교차점도 중요한 신호로 활용할 수 있습니다.
+
+기본적 분석에서는 비트코인 시장을 둘러싼 최근 이슈들, 정책 변화, 기술적 발전 등을 고려하여 시장의 흐름을 예측할 수 있습니다.
+
+매매 전략으로는 다음과 같은 접근 방식을 제시할 수 있습니다:
+
+1. 이동평균선을 활용한 추세 추종 전략: 단기 이동평균선과 장기 이동평균선의 교차점을 활용하여 추세의 방향을 파악하고, 해당 방향으로 매매를 진행합니다.
+
+2. RSI나 스토캐스틱을 활용한 매매 신호 전략: RSI나 스토캐스틱이 과매수 또는 과매도 구간에 진입할 때 매매 신호로 활용합니다.
+
+3. 이벤트 기반 전략: 비트코인 시장을 둘러싼 이벤트나 뉴스를 분석하여 해당 이벤트에 대한 시장 반응을 예측하고 매매를 진행합니다.
+
+4. 리스크 관리: 매매 시에는 손실을 최소화하기 위한 리스크 관리가 중요합니다. 이를 위해 손절가와 익절가를 설정하고, 포지션 크기를 적절히 조절하는 것이 필요합니다.
+
+이러한 전략을 종합적으로 활용하여 비트코인 시장을 분석하고 매매를 진행하면 좀 더 안정적이고 수익성 높은 거래를 할 수 있을 것입니다.
+2025-02-12 15:11:53,718 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:13:56,369 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:13:56,370 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:13:56,376 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:13:56,377 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:13:58,217 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:13:58,638 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:13:58,639 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:13:58,642 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:13:59,302 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:13:59,302 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:13:59,971 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:13:59,971 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:13:59,971 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:13:59,972 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:14:00,977 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:14:01,234 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:14:10,583 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:14:10,584 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:14:10,920 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:14:10,922 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 64724.5, 'bid': 64692.6, 'ask': 64699.2, 'volume': 421927.858, 'timestamp': None}
+2025-02-12 15:14:10,973 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:14:10,974 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:14:13,134 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-12 15:14:14,048 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'HOLD', 'leverage': 1, 'position_size': 10, 'entry_points': [], 'stopLoss': '미설정', 'takeProfit': '미설정', 'reason': '변동성이 낮고 명확한 추세 신호가 없음'}
+2025-02-12 15:14:14,048 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지, 자동 매매 실행
+2025-02-12 15:32:01,155 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:32:01,156 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:32:01,161 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:32:01,162 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:32:02,975 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:32:03,388 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:32:03,388 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:32:03,389 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:32:04,095 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:32:04,096 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:32:04,813 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:32:04,813 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:32:04,814 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:32:04,814 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:32:05,838 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:32:06,087 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:32:11,632 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:32:11,633 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:32:11,924 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:32:11,925 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 61675.0, 'bid': 61641.5, 'ask': 61675.0, 'volume': 419036.932, 'timestamp': None}
+2025-02-12 15:32:11,968 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:32:11,968 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:32:13,953 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-12 15:32:14,861 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'HOLD', 'leverage': 1, 'position_size': 5, 'entry_points': [61675.0], 'stopLoss': 60341.5, 'takeProfit': 63008.5, 'reason': '변동성이 낮고 명확한 추세 신호가 없음'}
+2025-02-12 15:32:14,861 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지, 자동 매매 실행
+2025-02-12 15:38:09,273 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:38:09,274 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:38:09,279 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:38:09,280 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:38:11,265 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:38:11,679 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:38:11,680 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:38:11,680 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:38:12,374 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:38:12,374 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:38:13,297 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:38:13,297 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:38:13,298 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:38:13,298 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:38:14,309 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:38:14,560 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:38:20,611 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:38:20,612 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:38:20,916 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:38:20,917 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 60675.6, 'bid': 60666.6, 'ask': 60675.6, 'volume': 419012.816, 'timestamp': None}
+2025-02-12 15:38:20,961 - indicators.technical - ERROR - 기술적 분석 중 오류: 'TechnicalIndicators' object has no attribute '_get_market_sentiment'
+2025-02-12 15:38:20,962 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:38:20,963 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:38:23,094 - ai.gpt_analyzer - ERROR - 시장 분석 중 오류: 'NoneType' object is not subscriptable
+2025-02-12 15:38:23,095 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\gpt_analyzer.py", line 172, in analyze_market
+    "trend": technical_analysis['trend'],
+             ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-02-12 15:38:23,096 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:41:19,529 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:41:19,532 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:41:19,552 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:41:19,553 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:41:21,347 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:41:21,762 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:41:21,762 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:41:21,762 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:41:22,450 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:41:22,450 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:41:23,135 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:41:23,136 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:41:23,136 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:41:23,137 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:41:24,145 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:41:24,394 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:41:27,906 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:41:27,908 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:41:28,211 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'bb_position', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:41:28,212 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 60138.3, 'bid': 60128.5, 'ask': 60138.3, 'volume': 418993.207, 'timestamp': None}
+2025-02-12 15:41:28,297 - indicators.technical - ERROR - 기술적 분석 중 오류: 'TechnicalIndicators' object has no attribute '_analyze_rsi'
+2025-02-12 15:41:28,297 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:41:28,298 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:41:30,679 - ai.gpt_analyzer - ERROR - 기술적 분석 결과가 없음
+2025-02-12 15:41:30,680 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-12 15:49:11,510 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 15:49:11,512 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 15:49:11,517 - main - INFO - 서비스 초기화 중...
+2025-02-12 15:49:11,518 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 15:49:13,518 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 15:49:14,134 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 15:49:14,135 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 15:49:14,135 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 15:49:14,863 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 15:49:14,863 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 15:49:15,585 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 15:49:15,585 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 15:49:15,585 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 15:49:15,585 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 15:49:16,612 - telegram.ext.Application - INFO - Application started
+2025-02-12 15:49:16,859 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 15:49:23,476 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-12 15:49:23,478 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-12 15:49:24,198 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-12 15:49:24,198 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 58191.5, 'bid': 58115.4, 'ask': 58194.7, 'volume': 418959.055, 'timestamp': None}
+2025-02-12 15:49:24,203 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-12 15:49:24,204 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-12 15:49:26,158 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-12 15:49:27,067 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'HOLD', 'leverage': 1, 'position_size': 10, 'entry_price': 58200.0, 'stop_loss': 57036.0, 'take_profit1': 59364.0, 'take_profit2': 60528.0, 'reason': '변동성이 낮고 명확한 추세 신호가 없음'}
+2025-02-12 15:49:27,068 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지, 자동 매매 실행
+2025-02-12 16:21:04,561 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 16:21:04,565 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 16:21:04,574 - main - INFO - 서비스 초기화 중...
+2025-02-12 16:21:04,575 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 16:21:06,572 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-12 16:21:07,070 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-12 16:21:07,071 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-12 16:21:07,071 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-12 16:21:07,811 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-12 16:21:07,812 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-12 16:21:08,509 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-12 16:21:08,510 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-12 16:21:08,510 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-12 16:21:08,510 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-12 16:21:09,584 - telegram.ext.Application - INFO - Application started
+2025-02-12 16:21:09,835 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-12 16:27:28,520 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-12 16:27:28,521 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-12 16:27:28,530 - main - INFO - 서비스 초기화 중...
+2025-02-12 16:27:28,531 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-12 16:27:39,372 - services.market_data_service - ERROR - 마켓 데이터 로드 실패: bybit GET https://api-testnet.bybit.com/v5/asset/coin/query-info?
+2025-02-12 16:27:39,375 - main - ERROR - 실행 중 에러 발생: bybit GET https://api-testnet.bybit.com/v5/asset/coin/query-info?
+2025-02-12 16:27:39,507 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 696, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1050, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1363, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1109, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 89, in start_connection
+    sock, _, _ = await _staggered.staggered_race(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohappyeyeballs\_staggered.py", line 160, in staggered_race
+    done = await _wait_one(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohappyeyeballs\_staggered.py", line 41, in _wait_one
+    return await wait_next
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 177, in fetch
+    async with session_method(yarl.URL(url, encoded=True),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1418, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 602, in _request
+    with timer:
+         ^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\helpers.py", line 671, in __exit__
+    raise asyncio.TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 76, in main
+    await market_data_service.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\services\market_data_service.py", line 57, in initialize
+    await self.bybit_client.exchange.load_markets()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 254, in load_markets
+    raise e
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 250, in load_markets
+    result = await self.markets_loading
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 239, in load_markets_helper
+    currencies = await self.fetch_currencies()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 1486, in fetch_currencies
+    response = await self.privateGetV5AssetCoinQueryInfo(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 211, in fetch
+    raise RequestTimeout(details) from e
+ccxt.base.errors.RequestTimeout: bybit GET https://api-testnet.bybit.com/v5/asset/coin/query-info?
+

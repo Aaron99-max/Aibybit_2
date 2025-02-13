@@ -99,13 +99,20 @@ class BybitClient:
             logger.error(f"API 호출 실패: {str(e)}")
             return None
 
-    async def v5_get_positions(self, params: Dict) -> Dict:
-        """V5 API positions 조회"""
+    async def v5_get_positions(self, symbol: str = None) -> Dict:
+        """포지션 조회"""
         try:
-            return await self.v5_get("/position/list", params)
+            params = {
+                "category": "linear",
+                "symbol": symbol
+            }
+            response = await self.v5_get("/position/list", params)
+            if response and response.get('retCode') == 0:
+                return response.get('result', {}).get('list', [])
+            return []
         except Exception as e:
-            logger.error(f"API 호출 실패: {str(e)}")
-            return None
+            logger.error(f"포지션 조회 중 오류: {str(e)}")
+            return []
 
     async def v5_get_executions(self, params: Dict) -> Dict:
         """V5 API execution/list 조회"""

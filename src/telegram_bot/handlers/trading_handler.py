@@ -74,7 +74,7 @@ class TradingHandler(BaseHandler):
                 message = PositionFormatter.format_position(position)
                 await self.send_message(message, chat_id)
             else:
-                await self.send_message("�� 활성화된 포지션이 없습니다", chat_id)
+                await self.send_message("활성화된 포지션이 없습니다", chat_id)
 
         except Exception as e:
             logger.error(f"[Position] 포지션 조회 중 오류: {str(e)}")
@@ -249,3 +249,40 @@ class TradingHandler(BaseHandler):
                 "올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>\n"
                 "예: /trade LONG 10 5 50000 49000 51000"
             )
+
+    async def handle_auto_trading(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """자동매매 설정 제어 (/auto_trading on/off/status)"""
+        try:
+            if not context.args:
+                await update.message.reply_text(
+                    "❌ 명령어 형식이 잘못되었습니다.\n"
+                    "사용법: /auto_trading [on|off|status]"
+                )
+                return
+
+            command = context.args[0].lower()
+            
+            if command == "status":
+                status = "활성화" if self.bot.trading_config.auto_trading['enabled'] else "비활성화"
+                await update.message.reply_text(f"🤖 자동매매 상태: {status}")
+                return
+                
+            if command == "on":
+                self.bot.trading_config.auto_trading['enabled'] = True
+                await update.message.reply_text(
+                    "✅ 자동매매가 활성화되었습니다.\n"
+                    "• GPT 분석 결과에 따라 자동으로 매매가 실행됩니다.\n"
+                    "• 매시간 정시에 분석이 실행됩니다."
+                )
+            elif command == "off":
+                self.bot.trading_config.auto_trading['enabled'] = False
+                await update.message.reply_text(
+                    "🚫 자동매매가 비활성화되었습니다.\n"
+                    "• 분석은 계속 실행되지만 자동매매는 실행되지 않습니다."
+                )
+            else:
+                await update.message.reply_text("❌ 잘못된 명령어입니다. (on/off/status)")
+                
+        except Exception as e:
+            logger.error(f"자동매매 설정 중 오류: {str(e)}")
+            await update.message.reply_text("❌ 자동매매 설정 중 오류가 발생했습니다.")

@@ -260,20 +260,24 @@ class OrderFormatter:
         """주문 실패 메시지 포맷팅"""
         try:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+            side = 'BUY' if params.get('position_suggestion') == 'BUY' else 'SELL'
             
             message = [
-                f"❌ 주문 실패 ({current_time})",
+                f"📝 ❌ 주문 실패 ({current_time})",
                 "",
                 "📋 주문 정보:",
-                f"• 심볼볼: {params.get('symbol', 'BTCUSDT')}",
-                f"• 방향: {'롱' if params['side'] == 'BUY' else '숏'}",
+                f"• 심볼: {params.get('symbol', 'BTCUSDT')}",
+                f"• 방향: {'롱' if side == 'BUY' else '숏'}",
                 f"• 레버리지: {params.get('leverage', '10')}x",
                 "",
                 "💰 거래 정보:",
                 f"• 진입가: ${self._format_number(params.get('entry_price', 0))}",
-                f"• 수량: {params.get('position_size')}%",
+                f"• 수량: {params.get('position_size')}% (계산 중)",
+                f"• 손절가: ${self._format_number(params.get('stop_loss', 0))}",
+                f"• 익절가: ${self._format_number(params.get('take_profit1', 0))}",
                 "",
-                "⚠️ 오류:",
+                "📊 상태:",
+                "• 주문상태: REJECTED",
                 f"• {error_msg}"
             ]
             

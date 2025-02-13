@@ -4,6 +4,8 @@ import traceback
 from typing import Dict, Optional
 from datetime import datetime
 from ..utils.time_utils import TimeUtils
+from ..formatters.order_formatter import OrderFormatter
+from config.trading_config import trading_config
 
 logger = logging.getLogger(__name__)
 
@@ -14,6 +16,7 @@ class AutoAnalyzer:
         self.market_data_service = market_data_service
         self.storage_formatter = storage_formatter
         self.analysis_formatter = analysis_formatter
+        self.order_formatter = OrderFormatter()
         self.time_utils = TimeUtils()
         self._running = False
         self._task = None
@@ -80,16 +83,7 @@ class AutoAnalyzer:
                 logger.error("분석 결과 포맷팅 실패")
             
             # 매매 신호가 있으면 자동 매매 실행
-            logger.info(f"분석 결과 trading_signals: {analysis.get('trading_signals', {})}")
-            if analysis.get('trading_signals', {}).get('position_suggestion'):
-                logger.info("매매 신호 감지, 자동 매매 실행")
-                trade_result = await self.ai_trader.trade_manager.execute_auto_trade(analysis)
-                if trade_result:
-                    await self.bot.send_message_to_all("🤖 자동 매매 실행 완료", self.bot.MSG_TYPE_TRADE)
-                else:
-                    await self.bot.send_message_to_all("⚠️ 자동 매매 실행 실패", self.bot.MSG_TYPE_TRADE)
-            else:
-                logger.info("매매 신호 없음")
+            await self._handle_trading_signals(analysis, chat_id)
             
             return analysis
 
@@ -112,6 +106,54 @@ class AutoAnalyzer:
         if chat_id:
             await self.bot.send_message(f"❌ {message}", chat_id)
 
+    async def _handle_trading_signals(self, analysis: Dict, chat_id: int):
+        """매매 신호 처리"""
+        try:
+            if not analysis or 'trading_signals' not in analysis:
+                return
+                
+            signals = analysis['trading_signals']
+            logger.info(f"분석 결과 trading_signals: {signals}")
+            
+            # HOLD가 아닐 때만 자동매매 실행
+            if signals['position_suggestion'] != 'HOLD':
+                logger.info(f"매매 신호 감지: {signals['position_suggestion']}")
+                
+                # 분석 결과의 auto_trading 상태와 trading_config 모두 확인
+                auto_trading_enabled = (
+                    trading_config.auto_trading['enabled'] and 
+                    analysis.get('auto_trading', {}).get('enabled', False)
+                )
+                
+                if auto_trading_enabled:
+                    trade_result = await self.ai_trader.trade_manager.execute_auto_trade(analysis)
+                    if trade_result:
+                        order_info = {
+                            'symbol': 'BTCUSDT',
+                            'side': 'BUY' if signals['position_suggestion'] == 'BUY' else 'SELL',
+                            'leverage': signals['leverage'],
+                            'price': signals['entry_price'],
+                            'amount': signals['position_size'],
+                            'status': 'NEW',
+                            'stopLoss': signals['stop_loss'],
+                            'takeProfit': signals['take_profit1'],
+                            'is_btc_unit': False,
+                            'position_size': signals['position_size']
+                        }
+                        message = self.order_formatter.format_order(order_info)
+                        await self.bot.send_message_to_all(message, self.bot.MSG_TYPE_TRADE)
+                    else:
+                        error_msg = self.order_formatter.format_order_failure(signals, "자동매매 실행 실패")
+                        await self.bot.send_message_to_all(error_msg, self.bot.MSG_TYPE_TRADE)
+                else:
+                    logger.info(f"자동매매 비활성화 - config: {trading_config.auto_trading['enabled']}, analysis: {analysis.get('auto_trading', {}).get('enabled', False)}")
+            else:
+                logger.info("관망 신호, 자동 매매 실행하지 않음")
+            
+        except Exception as e:
+            logger.error(f"매매 신호 처리 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+
     async def _run(self):
         """자동 분석 실행 루프"""
         try:
@@ -120,6 +162,7 @@ class AutoAnalyzer:
                 
                 # 1시간마다 분석 실행
                 if self._should_run_analysis(current_time):
+                    logger.info("정시 자동 분석 실행")
                     await self.run_market_analysis(is_auto=True)
                     self.last_run['1h'] = current_time
                 

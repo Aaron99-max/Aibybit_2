@@ -52,7 +52,7 @@ class GPTAnalyzer:
         "short_term": "POSITIVE" 또는 "NEGATIVE" 또는 "NEUTRAL",
         "volume": "VOLUME_INCREASE" 또는 "VOLUME_DECREASE" 또는 "VOLUME_NEUTRAL",
         "risk": "HIGH" 또는 "MEDIUM" 또는 "LOW",
-        "confidence": 0-100 사이 정수
+        "confidence": 0-100 사이 정수 (지표들의 일관성과 시장 상황의 명확성을 기준으로 판단)
     },
     "trading_signals": {
         "position_suggestion": "BUY" 또는 "SELL" 또는 "HOLD",
@@ -79,7 +79,18 @@ class GPTAnalyzer:
 주의사항:
 1. HOLD 포지션일 때도 모든 가격 필드는 숫자로 설정해야 합니다
 2. entry_points는 항상 현재가를 포함해야 합니다
-3. stopLoss와 takeProfit은 문자열이 아닌 숫자여야 합니다."""
+3. stopLoss와 takeProfit은 문자열이 아닌 숫자여야 합니다.
+
+3. 신뢰도(confidence) 판단 기준:
+   • 지표들의 일관성 (RSI, MACD, BB가 같은 방향을 가리키는지)
+   • 시장 상황의 명확성
+   • 거래량 증감과 추세의 일치도
+   • 다이버전스 존재 여부
+   • 주의: 신뢰도는 기술적 지표의 강도와는 다른 개념이고, 분석이 얼마나 정확한지에 대한 수치입니다.
+   • 예시: 
+     - 모든 지표가 약하지만 일관된 방향을 가리키면 신뢰도는 높을 수 있음
+     - 지표가 강하더라도 서로 상충되면 신뢰도는 낮을 수 있음
+"""
 
         self.ANALYSIS_PROMPT_TEMPLATE = """
 현재 시장 데이터를 분석하여 JSON 형식으로만 응답해주세요:
@@ -184,7 +195,10 @@ class GPTAnalyzer:
                     "take_profit2": float(latest['close'] * 1.04),
                     "reason": gpt_analysis['trading_signals']['reason']
                 },
-                "auto_trading": {"enabled": False, "status": "inactive"},
+                "auto_trading": {
+                    "enabled": True,
+                    "status": "active"
+                },
                 "saved_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S KST"),
                 "timestamp": int(time.time() * 1000)
             }

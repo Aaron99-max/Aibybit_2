@@ -6,13 +6,13 @@
     "short_term": "POSITIVE",
     "volume": "VOLUME_INCREASE",
     "risk": "MEDIUM",
-    "confidence": 89
+    "confidence": 85
   },
   "technical_analysis": {
     "trend": "UPTREND",
-    "strength": 89,
+    "strength": 77,
     "indicators": {
-      "rsi": 72.45555992736638,
+      "rsi": 72.22053516702779,
       "macd": "STRONG_BULLISH",
       "bollinger": "ABOVE_MIDDLE",
       "divergence_type": "없음",
@@ -30,9 +30,9 @@
     "reason": "RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세"
   },
   "auto_trading": {
-    "enabled": false,
-    "status": "inactive"
+    "enabled": true,
+    "status": "active"
   },
-  "saved_at": "2025-02-13 14:48:32 KST",
-  "timestamp": 1739425712399
+  "saved_at": "2025-02-13 15:37:50 KST",
+  "timestamp": 1739428670969
 }

@@ -275,22 +275,33 @@ class TechnicalIndicators:
         return "SIDEWAYS"
 
     def _get_trend_strength(self, df: pd.DataFrame) -> int:
-        """추세 강도 계산 (0-100)"""
-        latest = df.iloc[-1]
-        strength = 0
-        
-        # RSI 반영
-        strength += abs(latest['rsi'] - 50) * 2
-        
-        # MACD 반영
-        if abs(latest['macd']) > abs(latest['macd_signal']):
-            strength += 20
+        """추세 강도 계산"""
+        try:
+            latest = df.iloc[-1]
+            strength = 0
             
-        # ADX 반영 (있는 경우)
-        if 'adx' in df.columns:
-            strength += min(latest['adx'], 30)
+            # RSI 반영 (0-100)
+            strength += abs(latest['rsi'] - 50) * 2
             
-        return min(int(strength), 100)
+            # MACD 반영
+            if abs(latest['macd']) > abs(latest['macd_signal']):
+                strength += 20
+                
+            # ADX 반영
+            if 'adx' in df.columns:
+                strength += min(latest['adx'], 30)
+                
+            # 볼린저 밴드 반영
+            if latest['close'] > latest['bb_upper']:
+                strength += 15
+            elif latest['close'] < latest['bb_lower']:
+                strength += 15
+                
+            return min(int(strength), 100)
+            
+        except Exception as e:
+            logger.error(f"추세 강도 계산 중 오류: {str(e)}")
+            return 50
 
     def _analyze_rsi(self, rsi: float) -> str:
         """RSI 분석"""

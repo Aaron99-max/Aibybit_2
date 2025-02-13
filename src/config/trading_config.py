@@ -27,7 +27,7 @@ class TradingConfig:
         }
         
         # 자동매매 신뢰도 기준
-        self.min_confidence = 85  # 85% 이상일 때만 자동매매 활성화
+        self.min_confidence = 70  # 70% 이상일 때만 자동매매 활성화
         
         # Bybit 관련 설정
         self.bybit = type('BybitConfig', (), {

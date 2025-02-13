@@ -21,8 +21,16 @@ class TradeManager:
                 return False
                 
             signals = analysis['trading_signals']
-            # 자동매매 실행 조건 체크
-            if not self._should_execute_trade(analysis):
+            
+            # 자동매매 활성화 여부 체크
+            if not trading_config.auto_trading['enabled']:
+                logger.info("자동매매 기능이 비활성화 상태입니다")
+                return False
+                
+            # 신뢰도 체크
+            confidence = analysis.get('market_summary', {}).get('confidence', 0)
+            if confidence < trading_config.min_confidence:
+                logger.info(f"신뢰도 부족 (현재: {confidence}%, 최소: {trading_config.min_confidence}%)")
                 return False
             
             # 주문 파라미터 설정
@@ -39,12 +47,7 @@ class TradeManager:
             
             # 주문 실행
             result = await self.order_service.place_order(order_params)
-            if result:
-                logger.info(f"매매 실행 성공: {order_params}")
-                return True
-            else:
-                logger.error("매매 실행 실패")
-                return False
+            return result
                 
         except Exception as e:
             logger.error(f"매매 실행 중 오류: {str(e)}")
@@ -76,3 +79,4 @@ class TradeManager:
         except Exception as e:
             logger.error(f"자동매매 조건 체크 중 오류: {str(e)}")
             return False
+

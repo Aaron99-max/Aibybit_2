@@ -119,34 +119,27 @@ class AutoAnalyzer:
             if signals['position_suggestion'] != 'HOLD':
                 logger.info(f"매매 신호 감지: {signals['position_suggestion']}")
                 
-                # 분석 결과의 auto_trading 상태와 trading_config 모두 확인
-                auto_trading_enabled = (
-                    trading_config.auto_trading['enabled'] and 
-                    analysis.get('auto_trading', {}).get('enabled', False)
-                )
+                # 매매 신호를 trade_manager로 전달
+                trade_result = await self.ai_trader.trade_manager.execute_trade(analysis)
                 
-                if auto_trading_enabled:
-                    trade_result = await self.ai_trader.trade_manager.execute_auto_trade(analysis)
-                    if trade_result:
-                        order_info = {
-                            'symbol': 'BTCUSDT',
-                            'side': 'BUY' if signals['position_suggestion'] == 'BUY' else 'SELL',
-                            'leverage': signals['leverage'],
-                            'price': signals['entry_price'],
-                            'amount': signals['position_size'],
-                            'status': 'NEW',
-                            'stopLoss': signals['stop_loss'],
-                            'takeProfit': signals['take_profit1'],
-                            'is_btc_unit': False,
-                            'position_size': signals['position_size']
-                        }
-                        message = self.order_formatter.format_order(order_info)
-                        await self.bot.send_message_to_all(message, self.bot.MSG_TYPE_TRADE)
-                    else:
-                        error_msg = self.order_formatter.format_order_failure(signals, "자동매매 실행 실패")
-                        await self.bot.send_message_to_all(error_msg, self.bot.MSG_TYPE_TRADE)
+                if trade_result:
+                    order_info = {
+                        'symbol': 'BTCUSDT',
+                        'side': 'BUY' if signals['position_suggestion'] == 'BUY' else 'SELL',
+                        'leverage': signals['leverage'],
+                        'price': signals['entry_price'],
+                        'amount': signals['position_size'],
+                        'status': 'NEW',
+                        'stopLoss': signals['stop_loss'],
+                        'takeProfit': signals['take_profit1'],
+                        'is_btc_unit': False,
+                        'position_size': signals['position_size']
+                    }
+                    message = self.order_formatter.format_order(order_info)
+                    await self.bot.send_message_to_all(message, self.bot.MSG_TYPE_TRADE)
                 else:
-                    logger.info(f"자동매매 비활성화 - config: {trading_config.auto_trading['enabled']}, analysis: {analysis.get('auto_trading', {}).get('enabled', False)}")
+                    error_msg = self.order_formatter.format_order_failure(signals, "자동매매 실행 실패")
+                    await self.bot.send_message_to_all(error_msg, self.bot.MSG_TYPE_TRADE)
             else:
                 logger.info("관망 신호, 자동 매매 실행하지 않음")
             

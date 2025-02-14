@@ -42,13 +42,35 @@ class PositionService:
             logger.error(f"포지션 조회 중 오류: {str(e)}")
             return {}
 
+    @error_handler
     async def get_positions(self, symbol: str) -> List[Dict]:
         """포지션 목록 조회"""
         try:
-            positions = await self.bybit_client.get_positions(symbol)
-            return self._parse_positions(positions, symbol)
+            logger.info(f"포지션 목록 조회 시작: {symbol}")
+            
+            # API 호출
+            response = await self.bybit_client.get_positions(symbol)
+            
+            # 응답 검증
+            if not response or response.get('retCode') != 0:
+                logger.error(f"포지션 조회 실패: {response}")
+                return []
+                
+            # 데이터 추출
+            positions = response.get('result', {}).get('list', [])
+            logger.info(f"Raw 포지션 데이터: {positions}")
+            
+            # 포지션 데이터 파싱
+            if positions:
+                parsed = self._parse_positions(positions, symbol)
+                logger.info(f"파싱된 포지션 데이터: {parsed}")
+                return parsed
+            
+            logger.info("활성 포지션 없음")
+            return []
+            
         except Exception as e:
-            logger.error(f"포지션 조회 중 오류: {str(e)}")
+            logger.error(f"포지션 목록 조회 중 오류: {str(e)}")
             return []
 
     def _parse_positions(self, positions: List[Dict], symbol: str) -> List[Dict]:
@@ -59,21 +81,20 @@ class PositionService:
             if not isinstance(pos, dict):
                 continue
             
-            size = float(pos.get('size', 0) or pos.get('contracts', 0) or 
-                        pos.get('positionAmt', 0) or 0)
+            size = self.safe_float(pos.get('size', 0))
             
             if abs(size) > 0:
                 active_pos = {
                     'symbol': pos.get('symbol', '').replace('USDT', ''),
                     'side': pos.get('side', 'None').upper(),
                     'size': abs(size),
-                    'leverage': int(float(pos.get('leverage', trading_config.DEFAULT_LEVERAGE))),
-                    'entryPrice': float(pos.get('avgPrice', 0) or 0),
-                    'markPrice': float(pos.get('markPrice', 0) or 0),
-                    'unrealizedPnl': float(pos.get('unrealisedPnl', 0) or 0),
-                    'liquidationPrice': float(pos.get('liqPrice', 0) or 0),
-                    'stopLoss': float(pos.get('stopLoss', 0) or 0),
-                    'takeProfit': float(pos.get('takeProfit', 0) or 0)
+                    'leverage': int(self.safe_float(pos.get('leverage', 1))),
+                    'entryPrice': self.safe_float(pos.get('avgPrice', 0)),
+                    'markPrice': self.safe_float(pos.get('markPrice', 0)),
+                    'unrealizedPnl': self.safe_float(pos.get('unrealisedPnl', 0)),
+                    'liquidationPrice': self.safe_float(pos.get('liqPrice', 0)),
+                    'stopLoss': self.safe_float(pos.get('stopLoss', 0)),
+                    'takeProfit': self.safe_float(pos.get('takeProfit', 0))
                 }
                 logger.info(f"활성 포지션: {active_pos['symbol']} {active_pos['side']} x{active_pos['leverage']} "
                            f"크기: {active_pos['size']} 진입가: {active_pos['entryPrice']}")
@@ -81,9 +102,10 @@ class PositionService:
         
         return active_positions
 
-    def safe_float(self, value, default=0):
+    def safe_float(self, value, default=0.0) -> float:
+        """안전한 float 변환"""
         try:
-            if value == '' or value is None:
+            if value is None or value == '' or value == 'None':
                 return default
             return float(value)
         except (ValueError, TypeError):

@@ -5,7 +5,7 @@ import hashlib
 import time
 import aiohttp
 import json
-from typing import Dict
+from typing import Dict, List
 from config.bybit_config import BybitConfig
 import traceback
 
@@ -224,12 +224,27 @@ class BybitClient:
     async def get_balance(self) -> Dict:
         """잔고 조회 API 호출"""
         try:
-            # V5 API로 시도
             response = await self.v5_get("/account/wallet-balance", {
                 "accountType": "UNIFIED"
             })
             return response
-            
         except Exception as e:
             logger.error(f"잔고 조회 API 호출 실패: {str(e)}")
             return {}
+
+    async def get_positions(self, symbol: str = None) -> Dict:
+        """포지션 조회 API 호출"""
+        try:
+            params = {
+                "category": "linear",
+                "settleCoin": "USDT"
+            }
+            if symbol:
+                params["symbol"] = symbol
+
+            response = await self.v5_get("/position/list", params)
+            return response
+                
+        except Exception as e:
+            logger.error(f"포지션 조회 API 호출 실패: {str(e)}")
+            return None

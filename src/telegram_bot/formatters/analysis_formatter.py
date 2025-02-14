@@ -385,14 +385,11 @@ class AnalysisFormatter(BaseFormatter):
                 f"• 추세: {self.translate(analysis.get('technical_analysis', {}).get('trend', '알 수 없음'))}",
                 f"• 강도: {analysis.get('technical_analysis', {}).get('strength', 0):.1f}",
                 f"• RSI: {analysis.get('technical_analysis', {}).get('indicators', {}).get('rsi', 0):.2f}",
-                f"• MACD: {analysis.get('technical_analysis', {}).get('indicators', {}).get('macd', '알 수 없음')}",
-                f"• 볼린저밴드: {analysis.get('technical_analysis', {}).get('indicators', {}).get('bollinger', '알 수 없음')}\n",
+                f"• MACD: {self._translate_macd(analysis.get('technical_analysis', {}).get('indicators', {}).get('macd', 'NEUTRAL'))}",
+                f"• 볼린저밴드: {self._translate_bollinger(analysis.get('technical_analysis', {}).get('indicators', {}).get('bollinger', 'MIDDLE'))}",
+                f"• 다이버전스: {analysis.get('technical_analysis', {}).get('indicators', {}).get('divergence_type', '없음')}",
+                f"• 설명: {analysis.get('technical_analysis', {}).get('indicators', {}).get('divergence_desc', '정보 없음')}\n",
 
-                "🔄 다이버전스:",
-                f"• 유형: {self.translate(analysis.get('technical_analysis', {}).get('divergence_type', '없음'))}",
-                f"• 설명: {analysis.get('technical_analysis', {}).get('divergence_desc', '정보 없음')}\n",
-
-                # 알람이 있는 경우 표시
                 "⚠️ 주요 알림:" if analysis.get('alerts') else "",
                 "\n".join([f"• {alert}" for alert in analysis.get('alerts', [])]) + "\n" if analysis.get('alerts') else "",
 
@@ -447,8 +444,10 @@ class AnalysisFormatter(BaseFormatter):
             message = [
                 "\n📈 기술적 분석:",
                 f"• RSI: {technical.get('rsi', 0)}",
-                f"• MACD: {technical.get('macd', '정보 없음')}",
-                f"• 볼린저: {technical.get('bollinger', '정보 없음')}"
+                f"• MACD: {self._translate_macd(technical.get('macd', 'NEUTRAL'))}",
+                f"• 볼린저: {self._translate_bollinger(technical.get('bollinger', 'MIDDLE'))}",
+                f"• 다이버전스: {technical.get('divergence_type', '없음')}",
+                f"• 설명: {technical.get('divergence_desc', '정보 없음')}"
             ]
             
             return "\n".join(message)
@@ -526,3 +525,25 @@ class AnalysisFormatter(BaseFormatter):
             # ... 기존 코드 ...
         }
         return translations.get(text, text)
+
+    def _translate_macd(self, macd_signal: str) -> str:
+        """MACD 신호 번역"""
+        translations = {
+            'STRONG_BULLISH': '매우 강한 상승',
+            'BULLISH': '상승',
+            'NEUTRAL': '중립',
+            'BEARISH': '하락',
+            'STRONG_BEARISH': '매우 강한 하락'
+        }
+        return translations.get(macd_signal, macd_signal)
+
+    def _translate_bollinger(self, bb_signal: str) -> str:
+        """볼린저밴드 신호 번역"""
+        translations = {
+            'ABOVE_UPPER': '상단 돌파',
+            'ABOVE_MIDDLE': '중앙선 상향',
+            'BELOW_MIDDLE': '중앙선 하향',
+            'BELOW_LOWER': '하단 돌파',
+            'MIDDLE': '중앙'
+        }
+        return translations.get(bb_signal, bb_signal)

@@ -1,6 +1,6 @@
 {
   "market_summary": {
-    "current_price": 95674.0,
+    "current_price": 95700.0,
     "market_phase": "상승",
     "sentiment": "POSITIVE",
     "short_term": "POSITIVE",
@@ -12,7 +12,7 @@
     "trend": "UPTREND",
     "strength": 100,
     "indicators": {
-      "rsi": 84.1747428724083,
+      "rsi": 84.20723650023011,
       "macd": "STRONG_BULLISH",
       "bollinger": "ABOVE_MIDDLE",
       "divergence_type": "없음",
@@ -23,16 +23,16 @@
     "position_suggestion": "BUY",
     "leverage": 5,
     "position_size": 10,
-    "entry_price": 95674.0,
-    "stop_loss": 93760.52,
-    "take_profit1": 97587.48,
-    "take_profit2": 99500.96,
+    "entry_price": 95700.0,
+    "stop_loss": 93786.0,
+    "take_profit1": 97614.0,
+    "take_profit2": 99528.0,
     "reason": "RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세"
   },
   "auto_trading": {
     "enabled": true,
     "status": "active"
   },
-  "saved_at": "2025-02-14 14:04:46 KST",
-  "timestamp": 1739509486829
+  "saved_at": "2025-02-14 14:36:33 KST",
+  "timestamp": 1739511393956
 }

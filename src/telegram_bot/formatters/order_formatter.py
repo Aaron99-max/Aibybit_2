@@ -74,105 +74,30 @@ class OrderFormatter:
         
         return f"{status_emoji} {side_emoji}"
     
-    def format_order(self, order: Dict) -> str:
+    def format_order(self, order_data: Dict) -> str:
         """주문 정보 통합 포맷팅"""
         try:
-            # 기본 정보 추출
-            side = order.get('side', '').upper()
-            status = order.get('status', 'NEW').upper()
-            emojis = self._get_order_emoji(side, status)
+            # BTC 수량 계산 (가용잔고 * 목표비율 * 레버리지 / 진입가)
+            btc_quantity = self._calculate_btc_quantity(order_data)
             
-            # 현재 시간
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S KST")
+            message = f"""📝 {'🟢' if order_data['side'] == 'Buy' else '🔴'} 주문 생성 완료 ({self._get_current_time()})
+
+📋 주문 정보:
+• 심볼: {order_data['symbol']}
+• 방향: {'롱' if order_data['side'] == 'Buy' else '숏'}
+• 레버리지: {order_data['leverage']}x
+
+💰 거래 정보:
+• 진입가: ${float(order_data['entry_price']):,.2f}
+• 수량: {order_data['position_size']}% ({btc_quantity:.3f} BTC)
+• 손절가: ${float(order_data['stop_loss']):,.2f}
+• 익절가: ${float(order_data['take_profit1']):,.2f}
+
+📊 상태:
+• 주문상태: {order_data.get('status', 'NEW')}
+• 주문ID: {order_data.get('order_id', '-')}"""
             
-            # 수량 표시 형식 결정
-            is_btc_unit = order.get('is_btc_unit', True)
-            quantity = order.get('amount', 0)
-            position_size = order.get('position_size', '')
-            
-            # BTC 단위와 퍼센트 모두 표시하도록 수정
-            if is_btc_unit:
-                quantity_display = f"{self._format_number(quantity, 3)} BTC"
-            else:
-                quantity_display = f"{position_size}% ({self._format_number(quantity, 3)} BTC)"
-            
-            # 주문 유형에 따라 다른 메시지 포맷 사용
-            if order.get('skip_reason') == 'confidence':
-                return self.format_confidence_message(order)
-            elif order.get('skip_reason') == 'min_size':
-                message = [
-                    "📢 주문 수량 부족",
-                    "",
-                    "📋 주문 정보:",
-                    f"• 심볼: {order.get('symbol', 'BTCUSDT')}",
-                    f"• 방향: {'롱' if side == 'BUY' else '숏'}",
-                    f"• 레버리지: {order.get('leverage', '10')}x",
-                    "",
-                    "💰 수량 정보:",
-                    f"• 계산된 수량: {self._format_number(order.get('amount', 0), 3)} BTC",
-                    f"• 최소 주문 수량: 0.001 BTC",
-                    "",
-                    "💡 주문이 너뛰어졌습니다."
-                ]
-            elif order.get('skip_reason') == 'size_diff':
-                if order.get('leverage_check'):
-                    message = [
-                        "✅ 레버리지 확인",
-                        "",
-                        "📋 포지션 정보:",
-                        f"• 심볼: {order.get('symbol', 'BTCUSDT')}",
-                        f"• 방향: {'롱' if side == 'BUY' else '숏'}",
-                        f"• 현재 레버리지: {order.get('leverage', '5')}x",
-                        f"• 목표 레버리지: {order.get('target_leverage', '5')}x",
-                        "",
-                        "💡 레버리지 차이가 허용 범위 내여서 현재 설정을 유지합니다."
-                    ]
-                else:
-                    message = [
-                        "✅ 포지션 수량 확인",
-                        "",
-                        "📋 포지션 정보:",
-                        f"• 심볼: {order.get('symbol', 'BTCUSDT')}",
-                        f"• 방향: {'롱' if side == 'BUY' else '숏'}",
-                        f"• 레버리지: {order.get('leverage', '5')}x",
-                        "",
-                        "💰 수량 정보:",
-                        f"• 현재 수량: {self._format_number(order.get('current_size', 0), 3)} BTC",
-                        f"• 목표 수량: {self._format_number(order.get('target_size', 0), 3)} BTC",
-                        f"• 차이: {self._format_number(abs(order.get('size_diff', 0)), 3)} BTC",
-                        "",
-                        "💡 현재 포지션이 목표 범위 내에 있어 조정이 필요하지 않습니다."
-                    ]
-            else:
-                # 기존 정상 주문 메시지 유지
-                message = [
-                    f"{emojis} 주문 생성 완료 ({current_time})",
-                    "",
-                    "📋 주문 정보:",
-                    f"• 심볼: {order.get('symbol', 'BTCUSDT')}",
-                    f"• 방향: {'롱' if side == 'BUY' else '숏'}",
-                    f"• 레버리지: {order.get('leverage', '10')}x",
-                    "",
-                    "💰 거래 정보:",
-                    f"• 진입가: ${self._format_number(order.get('price', 0))}",
-                    f"• 수량: {quantity_display}"  # 퍼센트와 BTC 단위 모두 표시
-                ]
-                
-                # 신규 주문인 경우에만 손절/익절가 표시
-                if not order.get('reduceOnly', False):
-                    message.extend([
-                        f"• 손절가: ${self._format_number(order.get('stopLoss', 0))}",
-                        f"• 익절가: ${self._format_number(order.get('takeProfit', 0))}"
-                    ])
-                
-                message.extend([
-                    "",
-                    "📊 상태:",
-                    f"• 주문상태: {status}",
-                    f"• 주문ID: {order.get('order_id', '-')}"
-                ])
-            
-            return "\n".join(message)
+            return message
 
         except Exception as e:
             logger.error(f"주문 포맷팅 중 오류: {str(e)}")
@@ -303,3 +228,16 @@ class OrderFormatter:
         except Exception as e:
             logger.error(f"신뢰도 메시지 포맷팅 중 오류: {str(e)}")
             return "❌ 포맷팅 오류"
+
+    def _calculate_btc_quantity(self, order_data: Dict) -> float:
+        """BTC 수량 계산"""
+        try:
+            entry_price = float(order_data['entry_price'])
+            position_size = float(order_data['position_size'])
+            leverage = float(order_data['leverage'])
+            
+            # 예시: 10만 USDT * 10% * 5x / 95000 = 약 0.053 BTC
+            return (100000 * (position_size / 100) * leverage) / entry_price
+        except Exception as e:
+            logger.error(f"BTC 수량 계산 중 오류: {str(e)}")
+            return 0.0

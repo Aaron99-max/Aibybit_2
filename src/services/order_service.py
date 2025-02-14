@@ -51,35 +51,53 @@ class OrderService:
             logger.info(f"신규 포지션 생성 시도: {signal}")
             
             # 레버리지 설정
-            leverage_result = await self.set_leverage(signal['leverage'])
-            if not leverage_result:
+            if not await self.set_leverage(signal['leverage']):
                 logger.error("레버리지 설정 실패")
                 return False
+
+            # 잔고 조회로 실제 BTC 수량 계산
+            balance = await self.balance_service.get_balance()
+            if not balance:
+                logger.error("잔고 조회 실패")
+                return False
+                
+            available_balance = float(balance.get('currencies', {}).get('USDT', {}).get('available_balance', 0))
+            if available_balance <= 0:
+                logger.error(f"사용 가능한 잔고 부족: ${available_balance}")
+                return False
             
-            # 주문 생성
+            target_value = available_balance * (signal['position_size'] / 100) * signal['leverage']
+            btc_quantity = target_value / float(signal['entry_price'])
+            
+            # 소수점 3자리로 반올림 (바이비트 규칙)
+            btc_quantity = round(btc_quantity, 3)
+            
+            logger.info(f"계산된 BTC 수량: {btc_quantity} (가용잔고: ${available_balance}, 목표비율: {signal['position_size']}%)")
+            
+            # 주문 파라미터 설정
             order_params = {
                 "category": "linear",
                 "symbol": signal['symbol'],
                 "side": signal['side'],
-                "orderType": "Limit",
-                "qty": str(signal['size']),
+                "qty": str(btc_quantity),
                 "price": str(signal['entry_price']),
+                "orderType": "Limit",
                 "timeInForce": "GTC",
                 "positionIdx": 0,
-                "stopLoss": str(signal['stopLoss']) if signal.get('stopLoss') else None,
-                "takeProfit": str(signal['takeProfit']) if signal.get('takeProfit') else None
+                "stopLoss": str(signal['stop_loss']) if signal.get('stop_loss') else None,
+                "takeProfit": str(signal['take_profit1']) if signal.get('take_profit1') else None
             }
             
-            logger.info(f"주문 파라미터: {order_params}")
-            result = await self.bybit_client.v5_post("/order/create", order_params)
-            logger.info(f"주문 응답: {result}")
+            # 주문 실행
+            response = await self.bybit_client.v5_post("/order/create", order_params)
             
-            if result and result.get('retCode') == 0:
+            if response and response.get('retCode') == 0:
+                logger.info(f"신규 포지션 생성 성공: {order_params}")
                 return True
             else:
-                logger.error(f"주문 생성 실패 - 응답: {result}")
+                logger.error(f"신규 포지션 생성 실패: {response}")
                 return False
-            
+                
         except Exception as e:
             logger.error(f"신규 포지션 생성 중 오류: {str(e)}")
             logger.error(f"상세 에러: {traceback.format_exc()}")
@@ -133,32 +151,25 @@ class OrderService:
         try:
             logger.info(f"레버리지 설정 시도: {leverage}x")
             
-            params = {
+            # 레버리지 설정 (바이비트 API 호출)
+            response = await self.bybit_client.v5_post("/position/set-leverage", {
                 "category": "linear",
                 "symbol": self.symbol,
                 "buyLeverage": str(leverage),
                 "sellLeverage": str(leverage)
-            }
-            logger.info(f"레버리지 설정 파라미터: {params}")
+            })
             
-            response = await self.bybit_client.v5_post("/position/set-leverage", params)
-            logger.info(f"레버리지 설정 응답: {response}")
-            
-            if not response:
-                logger.error("레버리지 설정 응답 없음")
-                return False
-                
-            ret_code = response.get('retCode')
-            if ret_code in [0, 110043]:  # 0: 성공, 110043: 이미 같은 레버리지로 설정됨
-                logger.info(f"레버리지 설정 성공: {leverage}x")
+            # retCode가 0(성공) 또는 110043(이미 설정됨)인 경우 성공으로 처리
+            if response and (response.get('retCode') == 0 or response.get('retCode') == 110043):
+                logger.info(f"레버리지 설정 확인: {leverage}x")
                 return True
             else:
-                logger.error(f"레버리지 설정 실패 - 코드: {ret_code}, 메시지: {response.get('retMsg')}")
+                logger.error(f"레버리지 설정 실패: {response}")
                 return False
             
         except Exception as e:
             logger.error(f"레버리지 설정 중 오류: {str(e)}")
-            logger.error(f"상세 에러: {traceback.format_exc()}")
+            logger.error(traceback.format_exc())
             return False
 
     async def _adjust_position_size(self, current_position: Dict, signal: Dict) -> bool:

@@ -22,22 +22,26 @@ class BalanceService:
     @error_handler
     async def get_balance(self) -> Optional[Dict]:
         """잔고 조회"""
-        balance = await self.bybit_client.get_balance()
-        if not balance:
+        # API 호출
+        response = await self.bybit_client.get_balance()
+        
+        # 응답 검증
+        if not response or response.get('retCode') != 0:
+            logger.error(f"잔고 조회 실패: {response}")
             return None
             
-        result = balance.get('list', [{}])[0]
-        coin_info = result.get('coin', [{}])[0]
+        # 데이터 추출
+        wallet_info = response.get('result', {}).get('list', [{}])[0]
         
-        # API 응답 로깅
-        logger.info(f"Balance API Response: {balance}")
-        logger.info(f"Coin Info: {coin_info}")
+        # 로깅
+        logger.debug(f"지갑 정보: {wallet_info}")
         
-        # 추가 정보 조회
-        wallet_balance = self.safe_float(coin_info.get('walletBalance'))
-        used_margin = self.safe_float(coin_info.get('locked'))
-        available_balance = wallet_balance - used_margin  # 사용 가능한 잔고 계산
+        # 데이터 가공
+        wallet_balance = self.safe_float(wallet_info.get('totalWalletBalance'))
+        used_margin = self.safe_float(wallet_info.get('totalInitialMargin'))
+        available_balance = self.safe_float(wallet_info.get('totalAvailableBalance'))
         
+        # 응답 포맷팅
         return {
             'timestamp': int(time.time() * 1000),
             'currencies': {

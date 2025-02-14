@@ -16,19 +16,19 @@ python -m pytest tests/test_trade_manager.py -v
 포지션 크기 조정 가능 여부 확인
 부분 청산 후 새로운 진입 등의 전략을 구현할 수 있습니다.
 
-1. 분석 관련 파일들
-src/services/market_data_service.py  # 1시간 데이터 수집
-src/services/analysis_service.py     # 분석 로직
-src/ai/gpt_analyzer.py              # GPT 프롬프트 수정
-자동 매매 관련 파일들
-src/auto_trader/auto_analyzer.py    # 자동 분석/매매 타이밍
-src/services/trade_manager.py       # 매매 실행 로직
-src/services/order_service.py       # 주문 처리
-설정 파일
-src/config/config.py                # 타임프레임 설정 등
-우선 이 파일들을 공유해주시면, 1시간 분석 기반 매매로 변경하는 작업을 진행할 수 있을 것 같습니다.
- 특히 auto_analyzer.py와 gpt_analyzer.py가 가장 중요할 것 같네요.
-
-잔고조회
-포지션조회
-알람
+기존 버전에서는 잘 동작하는데 새 버전에서 서명 오류가 발생
+에러 메시지를 보면 서명 문자열 형식이 다름:
+error sign! origin_string[1739430411247FLbWUu1Gr50KNIllm520000{"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "5", "sellLeverage": "5", "timestamp": "1739430411247"}]
+기존 코드와 비교해보면:
+기존 코드는 _request 메서드에서:
+if method == "GET":
+    query_string = '&'.join([f"{k}={v}" for k, v in sorted(request_params.items())])
+    sign_payload = timestamp + self.api_key + recv_window + query_string
+else:
+    sign_payload = timestamp + self.api_key + recv_window + json.dumps(request_params)
+현재 코드는:
+if method == 'POST':
+    param_str = json.dumps(sorted_params)
+else:
+    param_str = '&'.join([f"{k}={v}" for k, v in sorted_params.items()])
+서명 생성 방식이 다르네요. 내일 기존 코드의 서명 생성 방식으로 돌아가는 것이 좋을 것 같습니다.

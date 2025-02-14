@@ -1,0 +1,26 @@
+2025-02-13 14:35:31,594 - telegram_bot.monitors.auto_analyzer - ERROR - 매매 신호 처리 중 오류: name 'trading_config' is not defined
+2025-02-13 14:35:31,625 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 122, in _handle_trading_signals
+    if trading_config.auto_trading['enabled']:
+       ^^^^^^^^^^^^^^
+NameError: name 'trading_config' is not defined
+
+2025-02-13 14:39:06,935 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-02-13 14:39:07,318 - order_formatter - ERROR - 실패 메시지 포맷팅 중 오류: 'side'
+2025-02-13 15:16:20,897 - trade_manager - ERROR - 매매 실행 중 오류: 'OrderService' object has no attribute 'place_order'
+2025-02-13 15:37:52,260 - order_service - ERROR - 레버리지 설정 실패
+2025-02-13 15:43:36,866 - order_service - ERROR - 레버리지 설정 실패 - 코드: 10004, 메시지: error sign! origin_string[1739429016700FLbWUu1Gr50KNIllm55000{"category": "linear", "symbol": "BTCUSDT", "timestamp": "1739429016700", "tradeMode": 1}]
+2025-02-13 15:43:36,867 - order_service - ERROR - 레버리지 설정 실패
+2025-02-13 15:45:24,685 - order_service - ERROR - 레버리지 설정 실패 - 코드: 100028, 메시지: unified account is forbidden
+2025-02-13 15:45:24,686 - order_service - ERROR - 레버리지 설정 실패
+2025-02-13 15:53:14,970 - exchange.bybit_client - ERROR - 마진 모드 설정 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1739429595420FLbWUu1Gr50KNIllm520000{"category": "linear", "symbol": "BTCUSDT", "tradeMode": 1, "timestamp": "1739429595420"}]', 'result': {}, 'retExtInfo': {}, 'time': 1739429595664}
+2025-02-13 15:53:14,975 - order_service - ERROR - 레버리지 설정 실패 - 코드: 10004, 메시지: error sign! origin_string[1739429595420FLbWUu1Gr50KNIllm520000{"category": "linear", "symbol": "BTCUSDT", "tradeMode": 1, "timestamp": "1739429595420"}]
+2025-02-13 15:53:14,976 - order_service - ERROR - 레버리지 설정 실패
+2025-02-13 15:54:59,364 - exchange.bybit_client - ERROR - 마진 모드 설정 실패: {'retCode': 100028, 'retMsg': 'unified account is forbidden', 'result': {}, 'retExtInfo': {}, 'time': 1739429700061}
+2025-02-13 15:54:59,365 - order_service - ERROR - 레버리지 설정 실패 - 코드: 100028, 메시지: unified account is forbidden
+2025-02-13 15:54:59,366 - order_service - ERROR - 레버리지 설정 실패
+2025-02-13 15:59:31,727 - exchange.bybit_client - ERROR - 레버리지 설정 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1739429972256FLbWUu1Gr50KNIllm520000{"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "5", "sellLeverage": "5", "timestamp": "1739429972256"}]', 'result': {}, 'retExtInfo': {}, 'time': 1739429972424}
+2025-02-13 15:59:31,728 - order_service - ERROR - 레버리지 설정 실패 - 코드: 10004, 메시지: error sign! origin_string[1739429972256FLbWUu1Gr50KNIllm520000{"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "5", "sellLeverage": "5", "timestamp": "1739429972256"}]
+2025-02-13 15:59:31,729 - order_service - ERROR - 레버리지 설정 실패
+2025-02-13 16:06:50,770 - order_service - ERROR - 레버리지 설정 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1739430411247FLbWUu1Gr50KNIllm520000{"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "5", "sellLeverage": "5", "timestamp": "1739430411247"}]', 'result': {}, 'retExtInfo': {}, 'time': 1739430411469}
+2025-02-13 16:06:50,773 - order_service - ERROR - 레버리지 설정 실패

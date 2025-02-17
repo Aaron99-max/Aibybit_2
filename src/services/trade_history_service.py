@@ -7,7 +7,7 @@ import traceback
 from services.trade_store import TradeStore
 import time
 import asyncio
-from services.bybit_client import BybitClient
+from exchange.bybit_client import BybitClient
 
 logger = logging.getLogger(__name__)
 
@@ -24,24 +24,43 @@ class TradeHistoryService:
         try:
             logger.info("=== 포지션 정보 초기화 시작 ===")
             
-            # 조회 기간 설정 (90일)
+            # 1. 먼저 저장된 데이터 확인 (90일)
             end_date = datetime.now()
             start_date = end_date - timedelta(days=90)
-            
             start_timestamp = int(start_date.timestamp() * 1000)
             end_timestamp = int(end_date.timestamp() * 1000)
             
-            logger.info(f"조회 기간: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
-            
-            # 저장된 데이터 확인
             existing_positions = self.trade_store.get_positions(start_timestamp, end_timestamp)
-            logger.info(f"기존 데이터: {len(existing_positions)}건")
             
+            # 2. 저장된 데이터가 없으면 90일 데이터 조회
             if not existing_positions:
                 logger.info("기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.")
                 await self.fetch_and_update_positions(
-                    start_timestamp=start_timestamp,
-                    end_timestamp=end_timestamp,
+                    start_time=start_timestamp,
+                    end_time=end_timestamp,
+                    force_full_update=True
+                )
+            
+            # 3. 마지막 업데이트 이후 새로운 데이터 확인
+            last_update = self.trade_store.get_last_update()
+            if last_update:
+                logger.info(f"마지막 업데이트: {datetime.fromtimestamp(last_update/1000)}")
+                
+                # 새로운 포지션 데이터 조회
+                new_positions = await self.fetch_and_update_positions(
+                    start_time=last_update,
+                    end_time=int(time.time() * 1000)
+                )
+                
+                if new_positions:
+                    logger.info(f"새로운 포지션 데이터 발견: {len(new_positions)}건")
+                else:
+                    logger.info("새로운 포지션 데이터 없음")
+            else:
+                logger.info("마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.")
+                await self.fetch_and_update_positions(
+                    start_time=start_timestamp,
+                    end_time=end_timestamp,
                     force_full_update=True
                 )
 
@@ -316,33 +335,46 @@ class TradeHistoryService:
             logger.error(traceback.format_exc())
             return []
 
-    async def fetch_and_update_positions(self, start_time=None, end_time=None, force_full_update=False):
-        """포지션 정보 업데이트"""
+    async def fetch_and_update_positions(self, start_time: int, end_time: int, force_full_update: bool = False):
+        """포지션 정보 조회 및 업데이트"""
         try:
-            if start_time is None:
-                start_time = int(time.time() * 1000)
-            if end_time is None:
-                end_time = start_time + (90 * 24 * 60 * 60 * 1000)
+            all_positions = []
+            current_start = start_time
             
             # 7일씩 나누어 조회
-            current_start = start_time
             while current_start < end_time:
+                # 현재 구간의 종료 시간 (7일 또는 남은 기간)
                 current_end = min(current_start + (7 * 24 * 60 * 60 * 1000), end_time)
                 
                 logger.info(f"기간별 조회: {datetime.fromtimestamp(current_start/1000).strftime('%Y-%m-%d')} ~ {datetime.fromtimestamp(current_end/1000).strftime('%Y-%m-%d')}")
                 
-                positions = await self.get_positions(current_start, current_end)
+                # 바이비트에서 포지션 정보 조회
+                positions = await self.get_positions(
+                    start_time=current_start,
+                    end_time=current_end
+                )
+                
                 if positions:
-                    if self.trade_store.save_positions(positions):
-                        logger.info(f"포지션 정보 {len(positions)}건 저장 완료")
+                    all_positions.extend(positions)
+                    logger.info(f"포지션 {len(positions)}건 조회됨")
                 
-                current_start = current_end
+                # 다음 구간으로 이동
+                current_start = current_end + 1
                 await asyncio.sleep(1)  # API 호출 간격 조절
-                
+            
+            if all_positions:
+                # 전체 포지션 저장
+                self.trade_store.save_positions(all_positions)
+                # 마지막 업데이트 시간 저장
+                self.trade_store.update_last_update()
+                logger.info(f"총 {len(all_positions)}건의 포지션 저장 완료")
+                return all_positions
+            
+            return []
+            
         except Exception as e:
-            logger.error(f"포지션 정보 업데이트 실패: {str(e)}")
-            logger.error(traceback.format_exc())
-            raise
+            logger.error(f"포지션 정보 조회 및 업데이트 중 오류: {str(e)}")
+            return []
 
     async def get_position_stats(self, days: int) -> Dict:
         """포지션 통계 조회"""
@@ -419,26 +451,15 @@ class TradeHistoryService:
             
         return processed 
 
-    async def update_position(self):
-        """포지션 정보 업데이트"""
-        try:
-            # 바이비트에서 포지션 정보 조회
-            position = await self.bybit_client.get_position('BTCUSDT')
-            
-            if position:
-                # 트레이드 스토어에 포지션 정보 저장
-                self.trade_store.update_position('BTCUSDT', position)
-                logger.info(f"포지션 정보 업데이트 완료: {position}")
-            else:
-                logger.warning("포지션 정보 조회 실패")
-                
-        except Exception as e:
-            logger.error(f"포지션 정보 업데이트 중 오류: {str(e)}")
-            
     async def get_position(self, symbol: str) -> dict:
         """포지션 정보 조회"""
-        # 포지션 정보 업데이트
-        await self.update_position()
+        # 마지막 업데이트 이후 새로운 데이터 확인
+        last_update = self.trade_store.get_last_update()
+        if last_update:
+            await self.fetch_and_update_positions(
+                start_time=last_update,
+                end_time=int(time.time() * 1000)
+            )
         
         # 저장된 포지션 정보 반환
         return self.trade_store.get_position(symbol) 

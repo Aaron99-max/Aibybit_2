@@ -42,6 +42,7 @@ from .formatters.order_formatter import OrderFormatter
 from services.balance_service import BalanceService
 from services.trade_history_service import TradeHistoryService
 from .handlers.stats_handler import StatsHandler
+from services.trade_store import TradeStore
 
 class TelegramBot:
     # 메시지 타입 정의
@@ -66,7 +67,8 @@ class TelegramBot:
             telegram_bot=self
         )
         self.market_data_service = market_data_service or MarketDataService(bybit_client)
-        self.trade_history_service = TradeHistoryService(bybit_client)
+        self.trade_store = TradeStore()
+        self.trade_history_service = TradeHistoryService(self.trade_store, bybit_client)
         
         # 종료 이벤트 초기화
         self._stop_event = asyncio.Event()
@@ -124,7 +126,8 @@ class TelegramBot:
             self,
             self.ai_trader,
             self.position_service,
-            self.trade_manager
+            self.trade_manager,
+            self.trade_history_service
         )
 
         # 명령어 핸들러 등록
@@ -142,6 +145,9 @@ class TelegramBot:
 
         for handler in handlers:
             self.application.add_handler(handler)
+
+        # 포지션 데이터 초기화 및 업데이트 확인
+        asyncio.create_task(self.trade_history_service.initialize())
 
     def _check_admin(self, handler):
         """관리자 권한 체크 데코레이터"""
@@ -244,7 +250,8 @@ class TelegramBot:
                 self,
                 self.ai_trader,
                 self.position_service,
-                self.trade_manager
+                self.trade_manager,
+                self.trade_history_service
             )
             
             # 명령어 핸들러 등록

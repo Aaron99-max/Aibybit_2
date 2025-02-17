@@ -41,29 +41,45 @@ class GPTAnalyzer:
 
         # 프롬프트 템플릿 수정
         self.SYSTEM_PROMPT = """당신은 1시간 봉을 기준으로 비트코인 선물 거래를 하는 트레이더입니다.
-다음 원칙을 따라 매매 전략을 제시하세요:
 
-1. 응답 형식은 반드시 아래 JSON 형식을 따라야 합니다:
++ *** 매매 포지션별 가격 설정 규칙 ***
++ 
++ 매도(SELL) 포지션:
++ - 원리: 가격이 내려갈 때 수익 발생
++ - 예시) 현재가 50000일 때:
++   • 진입가: 50000
++   • 손절가: 51000 (진입가보다 높게)
++   • 이익실현1: 49000 (진입가보다 낮게)
++   • 이익실현2: 48000 (이익실현1보다 더 낮게)
++ 
++ 매수(BUY) 포지션:
++ - 원리: 가격이 올라갈 때 수익 발생
++ - 예시) 현재가 50000일 때:
++   • 진입가: 50000
++   • 손절가: 49000 (진입가보다 낮게)
++   • 이익실현1: 51000 (진입가보다 높게)
++   • 이익실현2: 52000 (이익실현1보다 더 높게)
+
+응답 형식:
 {
-    "market_summary": {
-        "current_price": 현재가,
-        "market_phase": "상승" 또는 "하락" 또는 "횡보",
-        "sentiment": "POSITIVE" 또는 "NEGATIVE" 또는 "NEUTRAL",
-        "short_term": "POSITIVE" 또는 "NEGATIVE" 또는 "NEUTRAL",
-        "volume": "VOLUME_INCREASE" 또는 "VOLUME_DECREASE" 또는 "VOLUME_NEUTRAL",
-        "risk": "HIGH" 또는 "MEDIUM" 또는 "LOW",
-        "confidence": 0-100 사이 정수 (지표들의 일관성과 시장 상황의 명확성을 기준으로 판단)
-    },
     "trading_signals": {
         "position_suggestion": "BUY" 또는 "SELL" 또는 "HOLD",
         "leverage": 1-10 사이 정수,
         "position_size": 5-20 사이 정수,
-        "entry_points": [현재가],
-        "stopLoss": 현재가의 -2%,
-        "takeProfit": 현재가의 +2%,
+        "entry_price": 현재가,
+        "stop_loss": 포지션에 맞는 적절한 손절가,
+        "take_profit1": 포지션에 맞는 적절한 1차 익절가,
+        "take_profit2": 포지션에 맞는 적절한 2차 익절가,
         "reason": "매매 사유"
     }
 }
+
++ 주의사항:
++ 1. 매도(SELL) 포지션에서는 반드시:
++    take_profit2 < take_profit1 < entry_price < stop_loss
++ 2. 매수(BUY) 포지션에서는 반드시:
++    stop_loss < entry_price < take_profit1 < take_profit2
++ 3. 이 순서가 맞지 않으면 주문이 실패합니다.
 
 2. 매매 원칙:
    • 상승 추세: RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상일 때 매수
@@ -72,14 +88,20 @@ class GPTAnalyzer:
 
 3. 리스크 관리:
    - 레버리지는 1-10배 사이로 제한
-   - 손절가, 익절가 필수 설정
+   - 손절가/이익실현가 설정 규칙:
+    • 매수(BUY) 포지션:
+      - Stop Loss는 진입가보다 낮게 
+      - Take Profit은 진입가보다 높게 
+    • 매도(SELL) 포지션:
+      - Stop Loss는 진입가보다 높게
+      - Take Profit은 진입가보다 낮게 
 
 반드시 위 JSON 형식으로만 응답하세요. 다른 설명이나 텍스트는 포함하지 마세요.
 
 주의사항:
 1. HOLD 포지션일 때도 모든 가격 필드는 숫자로 설정해야 합니다
 2. entry_points는 항상 현재가를 포함해야 합니다
-3. stopLoss와 takeProfit은 문자열이 아닌 숫자여야 합니다.
+3. stopLoss와 takeProfit은 문자열이 아닌 숫자여야 합니다. 매도포지션의 경우 반듯이 Stop Loss는 진입가보다 높아야하고, Take Profit은 진입가보다 낮아야합니다.
 
 3. 신뢰도(confidence) 판단 기준:
    • 지표들의 일관성 (RSI, MACD, BB가 같은 방향을 가리키는지)
@@ -190,9 +212,9 @@ class GPTAnalyzer:
                     "leverage": gpt_analysis['trading_signals']['leverage'],
                     "position_size": gpt_analysis['trading_signals']['position_size'],
                     "entry_price": float(latest['close']),
-                    "stop_loss": float(latest['close'] * 0.98),
-                    "take_profit1": float(latest['close'] * 1.02),
-                    "take_profit2": float(latest['close'] * 1.04),
+                    "stop_loss": gpt_analysis['trading_signals']['stop_loss'],
+                    "take_profit1": gpt_analysis['trading_signals']['take_profit1'],
+                    "take_profit2": gpt_analysis['trading_signals']['take_profit2'],
                     "reason": gpt_analysis['trading_signals']['reason']
                 },
                 "auto_trading": {
@@ -213,6 +235,7 @@ class GPTAnalyzer:
     def _validate_analysis_result(self, result: Dict) -> Dict:
         """분석 결과 검증 및 정규화"""
         try:
+            # 기본 필드 검증
             required_fields = {
                 'position': ['position'],
                 'entry_price': ['entry_price'],
@@ -222,6 +245,22 @@ class GPTAnalyzer:
                 'confidence': ['confidence'],
                 'reason': ['reason']
             }
+            
+            # 매도 포지션의 가격 설정 검증
+            trading_signals = result.get('trading_signals', {})
+            if trading_signals.get('position_suggestion') == 'SELL':
+                entry_price = float(trading_signals.get('entry_price', 0))
+                stop_loss = float(trading_signals.get('stop_loss', 0))
+                take_profit1 = float(trading_signals.get('take_profit1', 0))
+                take_profit2 = float(trading_signals.get('take_profit2', 0))
+                
+                # 매도 포지션의 가격 순서 검증
+                if not (take_profit2 < take_profit1 < entry_price < stop_loss):
+                    logger.warning("매도 포지션의 가격 순서가 잘못되었습니다. 수정합니다.")
+                    # 가격 재설정
+                    trading_signals['stop_loss'] = entry_price * 1.02
+                    trading_signals['take_profit1'] = entry_price * 0.98
+                    trading_signals['take_profit2'] = entry_price * 0.96
             
             for section, fields in required_fields.items():
                 if section not in result:
@@ -267,9 +306,31 @@ class GPTAnalyzer:
         # Implementation of _calculate_stop_loss method
         pass
 
-    def _calculate_take_profit(self, df: pd.DataFrame) -> float:
-        # Implementation of _calculate_take_profit method
-        pass
+    def _process_analysis_result(self, analysis_result: dict) -> dict:
+        """GPT 분석 결과 처리"""
+        try:
+            # 트레이딩 신호 처리
+            trading_signals = analysis_result.get('trading_signals', {})
+            position = trading_signals.get('position_suggestion')
+            
+            return {
+                'market_summary': analysis_result.get('market_summary', {}),
+                'technical_analysis': analysis_result.get('technical_analysis', {}),
+                'trading_signals': {
+                    'position_suggestion': position,
+                    'leverage': trading_signals.get('leverage', 1),
+                    'position_size': trading_signals.get('position_size', 10),
+                    'entry_price': trading_signals.get('entry_price'),
+                    'stop_loss': trading_signals.get('stop_loss'),
+                    'take_profit1': trading_signals.get('take_profit1'),
+                    'take_profit2': trading_signals.get('take_profit2'),
+                    'reason': trading_signals.get('reason', '')
+                }
+            }
+            
+        except Exception as e:
+            logger.error(f"분석 결과 처리 중 오류: {str(e)}")
+            return {}
 
     def _convert_position(self, position: str) -> Optional[str]:
         """포지션 신호 변환"""

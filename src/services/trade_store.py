@@ -67,63 +67,34 @@ class TradeStore:
                         'positions': []
                     }
                 
-                # 포지션 데이터 변환
-                position_data = {
-                    'id': position.get('id'),
-                    'timestamp': timestamp,
-                    'symbol': position.get('symbol'),
-                    'side': position.get('side'),
-                    'position_side': position.get('position_side'),
-                    'type': position.get('type'),
-                    'entry_price': float(position.get('entry_price', 0)),
-                    'exit_price': float(position.get('exit_price', 0)),
-                    'size': float(position.get('size', 0)),
-                    'leverage': int(position.get('leverage', 1)),
-                    'entry_value': float(position.get('entry_value', 0)),
-                    'exit_value': float(position.get('exit_value', 0)),
-                    'pnl': float(position.get('pnl', 0)),
-                    'created_time': int(position.get('created_time', 0)),
-                    'closed_time': int(position.get('closed_time', 0)),
-                    'closed_size': float(position.get('closed_size', 0)),
-                    'exec_type': position.get('exec_type'),
-                    'fill_count': int(position.get('fill_count', 0))
-                }
-                
-                positions_by_date[date_str]['positions'].append(position_data)
-            
-            # 날짜별로 파일 저장
+                positions_by_date[date_str]['positions'].append(position)
+
+            # 각 날짜별로 파일 저장
             for date_str, data in positions_by_date.items():
                 month_str = data['month_str']
-                positions_data = data['positions']
+                positions = data['positions']
                 
-                # 저장 경로 생성
-                month_dir = self.positions_dir / month_str
-                month_dir.mkdir(exist_ok=True)
-                position_file = month_dir / f"{date_str}.json"
+                # 파일 경로 설정
+                file_path = self.positions_dir / month_str / f"{date_str}.json"
+                file_path.parent.mkdir(parents=True, exist_ok=True)
                 
-                # 기존 데이터 로드 및 병합
+                # 기존 데이터와 병합
                 existing_positions = []
-                if position_file.exists():
-                    with open(position_file, 'r') as f:
+                if file_path.exists():
+                    with open(file_path, 'r') as f:
                         existing_positions = json.load(f)
                 
-                # 기존 데이터와 새 데이터 병합
-                existing_positions.extend(positions_data)
+                # 새로운 포지션 추가
+                existing_positions.extend(positions)
                 
                 # 파일 저장
-                with open(position_file, 'w') as f:
+                with open(file_path, 'w') as f:
                     json.dump(existing_positions, f, indent=2)
                 
-                # 마지막 업데이트 시간 저장
-                if positions_data:
-                    latest_timestamp = max(p['timestamp'] for p in positions_data)
-                    self._save_last_update(latest_timestamp)
-
             return True
-
+            
         except Exception as e:
-            logger.error(f"포지션 저장 중 오류 발생: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"포지션 저장 중 오류: {str(e)}")
             return False
 
     def get_positions(self, start_time=None, end_time=None, date_str=None) -> List[Dict]:
@@ -205,11 +176,27 @@ class TradeStore:
 
     def get_last_update(self) -> int:
         """마지막 업데이트 시간 조회"""
-        if self.last_update_file.exists():
-            with open(self.last_update_file, 'r') as f:
-                data = json.load(f)
-                return data.get('last_update', 0)
-        return 0
+        try:
+            if self.last_update_file.exists():
+                with open(self.last_update_file, 'r') as f:
+                    data = json.load(f)
+                    return data.get('timestamp', 0)
+            return 0
+        except Exception as e:
+            logger.error(f"마지막 업데이트 시간 조회 중 오류: {str(e)}")
+            return 0
+
+    def update_last_update(self):
+        """마지막 업데이트 시간 저장"""
+        try:
+            current_time = int(time.time() * 1000)
+            with open(self.last_update_file, 'w') as f:
+                json.dump({
+                    'timestamp': current_time,
+                    'date': datetime.fromtimestamp(current_time/1000).strftime('%Y-%m-%d %H:%M:%S')
+                }, f, indent=2)
+        except Exception as e:
+            logger.error(f"마지막 업데이트 시간 저장 중 오류: {str(e)}")
 
     def load_positions(self) -> List[Dict]:
         """저장된 모든 포지션 데이터 로드"""

@@ -37,14 +37,19 @@ def command_handler(func):
     return wrapper
 
 class TradingHandler(BaseHandler):
-    def __init__(self, bot, ai_trader, position_service, trade_manager):
-        super().__init__(bot)
+    def __init__(self, telegram_bot, ai_trader, position_service, trade_manager, trade_history_service):
+        super().__init__(telegram_bot)
         self.ai_trader = ai_trader
         self.position_service = position_service
         self.trade_manager = trade_manager
-        self.market_data_service = bot.market_data_service
-        self.balance_service = BalanceService(bot.bybit_client)
+        self.trade_history_service = trade_history_service
+        self.market_data_service = telegram_bot.market_data_service
+        self.balance_service = BalanceService(telegram_bot.bybit_client)
         self.message_formatter = MessageFormatter()
+
+        # 디버그 로거 설정
+        self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(logging.DEBUG)
 
     def _is_admin_chat(self, chat_id: int) -> bool:
         """관리자 채팅방 여부 확인"""

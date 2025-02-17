@@ -35,33 +35,6 @@ class TradingConfig:
             'max_daily_loss': 5.0,
             'base_url': 'https://api-testnet.bybit.com'  # 테스트넷 URL
         })
-        
-        # GPT 분석 결과 활용 설정
-        self.gpt_settings = {
-            "use_gpt_analysis": True,  # GPT 분석 사용 여부
-            "risk_levels": {
-                "conservative": {
-                    "max_leverage": 5,
-                    "position_size_range": (5, 20),
-                    "min_risk_reward": 2.0
-                },
-                "moderate": {
-                    "max_leverage": 10,
-                    "position_size_range": (10, 40),
-                    "min_risk_reward": 1.5
-                },
-                "aggressive": {
-                    "max_leverage": 20,
-                    "position_size_range": (20, 60),
-                    "min_risk_reward": 1.0
-                }
-            },
-            "validation": {
-                "min_tp_distance": 0.1,  # 최소 TP 거리 (%)
-                "min_sl_distance": 0.1,  # 최소 SL 거리 (%)
-                "max_position_size": 100  # 최대 포지션 크기 (%)
-            }
-        }
 
     @classmethod
     def get_instance(cls):

@@ -17,6 +17,21 @@
     "closed_time": 1732346189477,
     "closed_size": 0.001,
     "exec_type": "Trade",
-    "fill_count": 1
+    "fill_count": 1,
+    "position_value": 37.411,
+    "liq_price": 0.0,
+    "bust_price": 0.0,
+    "auto_add_margin": 0,
+    "position_status": "Closed",
+    "position_idx": 0,
+    "risk_id": 1,
+    "auto_take_profit": true,
+    "auto_sl": true,
+    "trailing_stop": 0.0,
+    "take_profit": 37785.11,
+    "stop_loss": 37036.89,
+    "unrealised_pnl": 0.0,
+    "cum_realised_pnl": -0.4244,
+    "updated_time": "2024-11-23T00:00:00Z"
   }
 ]

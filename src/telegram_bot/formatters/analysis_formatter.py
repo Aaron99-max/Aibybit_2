@@ -1,6 +1,6 @@
 from typing import Dict, List, Optional, Union
 import logging
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 import json
 from .base_formatter import BaseFormatter
 from ..utils.time_utils import TimeUtils
@@ -99,7 +99,7 @@ class AnalysisFormatter(BaseFormatter):
                 price = price.replace('$', '').replace(',', '')
             price_decimal = Decimal(str(price))
             return f"${price_decimal:,.2f}"
-        except (ValueError, TypeError, decimal.InvalidOperation):
+        except (ValueError, TypeError, InvalidOperation):
             logger.error(f"가격 포맷팅 실패: {price}")
             return '-'
 
@@ -250,39 +250,62 @@ class AnalysisFormatter(BaseFormatter):
         
         return message
 
-    def format_analysis(self, analysis: Dict, analysis_type: str = 'final') -> str:
+    def format_analysis(self, analysis: Dict) -> str:
         """분석 결과 포맷팅"""
         try:
-            # 시간대별 제목 설정
-            title_map = {
-                '15m': '15분봉',
-                '1h': '1시간봉',
-                '4h': '4시간봉',
-                '1d': '일봉',
-                'final': '최종'
-            }
-            title = f"📊 {title_map.get(analysis_type, '기타')} 분석"
-            
-            # 저장 시간
-            saved_at = analysis.get('saved_at', datetime.now().strftime("%Y-%m-%d %H:%M:%S KST"))
-            
-            # 메시지 구성
+            if not analysis:
+                return "❌ 분석 결과가 없습니다."
+
+            # 시장 요약
+            market = analysis.get('market_summary', {})
+            technical = analysis.get('technical_analysis', {})
+            signals = analysis.get('trading_signals', {})
+            auto_trading = analysis.get('auto_trading', {})
+
             message = [
-                f"{title} ({saved_at})\n",
-                self._format_market_summary(analysis),
-                self._format_technical_analysis(analysis),
-                self._format_trading_signals(analysis)
+                f"📊 1h 분석 ({analysis.get('saved_at', '')})\n",
+                
+                "🌍 시장 요약:",
+                f"• 시장 단계: {self.translate(market.get('market_phase', '-'))}",
+                f"• 전반적 심리: {self.translate(market.get('sentiment', '-'))}",
+                f"• 단기 심리: {self.translate(market.get('short_term', '-'))}",
+                f"• 거래량: {self.translate(market.get('volume', '-'))}",
+                f"• 리스크: {self.translate(market.get('risk', '-'))}",
+                f"• 신뢰도: {market.get('confidence', 0)}%\n",
+
+                "📈 기술적 분석:",
+                f"• 추세: {self.translate(technical.get('trend', '-'))}",
+                f"• 강도: {technical.get('strength', 0)}",
+                f"• RSI: {technical.get('indicators', {}).get('rsi', 0):.2f}",
+                f"• MACD: {technical.get('indicators', {}).get('macd', '-')}",
+                f"• 볼린저밴드: {technical.get('indicators', {}).get('bollinger', '-')}\n",
+
+                "🔄 다이버전스:",
+                f"• 유형: {technical.get('indicators', {}).get('divergence_type', '없음')}",
+                f"• 설명: {technical.get('indicators', {}).get('divergence_desc', '정보 없음')}\n",
+
+                "💡 매매 신호:",
+                f"• 포지션: {self.translate(signals.get('position_suggestion', '관망'))}",
+                f"• 진입가: ${float(signals.get('entry_price', 0)):,.2f}",
+                f"• 손절가: ${float(signals.get('stop_loss', 0)):,.2f}",
+                f"• 목표가: ${float(signals.get('take_profit1', 0)):,.2f}, ${float(signals.get('take_profit2', 0)):,.2f}",
+                f"• 레버리지: {signals.get('leverage', 1)}x",
+                f"• 포지션 크기: {signals.get('position_size', 0)}%\n",
+                
+                "🤖 자동매매:",
+                f"• 상태: {'활성화' if auto_trading.get('enabled', False) else '비활성화'}",
+                f"• 사유: {signals.get('reason', '알 수 없음')}"
             ]
-            
-            return "\n".join(filter(None, message))
-            
+
+            return "\n".join(message)
+
         except Exception as e:
             logger.error(f"분석 결과 포맷팅 중 오류: {str(e)}")
-            return "❌ 포맷팅 오류"
+            return "❌ 분석 결과 포맷팅 실패"
 
     def format_final_analysis(self, analysis: Dict) -> str:
         """Final 분석 결과 포맷팅"""
-        return self.format_analysis(analysis, "Final")
+        return self.format_analysis(analysis)
 
     def format_balance(self, balance_data: Dict) -> str:
         """잔고 정보를 포맷팅"""

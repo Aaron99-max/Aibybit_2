@@ -15,6 +15,36 @@ class TradeStore:
         self.positions_dir = self.base_dir / 'positions'
         self.positions_dir.mkdir(parents=True, exist_ok=True)
         self.last_update_file = self.base_dir / 'last_update.json'
+        self._current_position = None  # 현재 활성 포지션
+        self._position_history = []    # 포지션 히스토리
+        self._load_positions()         # 초기화 시 포지션 데이터 로드
+
+    def _load_positions(self):
+        """저장된 포지션 데이터 로드"""
+        try:
+            positions = []
+            # 최신 포지션 파일 찾기
+            for year_dir in sorted(self.positions_dir.glob("*"), reverse=True):
+                if not year_dir.is_dir():
+                    continue
+                for month_dir in sorted(year_dir.glob("*"), reverse=True):
+                    if not month_dir.is_dir():
+                        continue
+                    for day_file in sorted(month_dir.glob("*.json"), reverse=True):
+                        with open(day_file, 'r') as f:
+                            data = json.load(f)
+                            positions.extend(data)
+                            if not self._current_position and data:
+                                # 가장 최근 포지션을 현재 포지션으로 설정
+                                self._current_position = data[-1]
+                            break
+                    if positions:
+                        break
+                if positions:
+                    break
+            self._position_history = positions
+        except Exception as e:
+            logger.error(f"포지션 데이터 로드 중 오류: {str(e)}")
 
     def save_positions(self, positions: List[Dict]) -> bool:
         """포지션 정보 저장"""
@@ -225,3 +255,44 @@ class TradeStore:
         except Exception as e:
             logger.error(f"포지션 데이터 로드 중 오류: {str(e)}")
             return []
+
+    def update_position(self, symbol: str, position_data: dict):
+        """포지션 정보 업데이트"""
+        self._current_position = position_data
+        # 포지션 히스토리에 추가
+        if position_data:
+            self._position_history.append(position_data)
+            self._save_position(position_data)
+
+    def get_position(self, symbol: str) -> dict:
+        """포지션 정보 조회"""
+        return self._current_position if self._current_position else {}
+
+    def _save_position(self, position_data: dict):
+        """포지션 데이터 파일 저장"""
+        try:
+            timestamp = position_data.get('timestamp', int(time.time() * 1000))
+            date = datetime.fromtimestamp(timestamp/1000)
+            
+            # 연/월/일 디렉토리 구조
+            year_month = date.strftime('%Y%m')
+            day = date.strftime('%Y%m%d')
+            
+            file_path = self.positions_dir / year_month / f"{day}.json"
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # 기존 데이터 로드 또는 새로운 리스트 생성
+            positions = []
+            if file_path.exists():
+                with open(file_path, 'r') as f:
+                    positions = json.load(f)
+            
+            # 새로운 포지션 추가
+            positions.append(position_data)
+            
+            # 파일 저장
+            with open(file_path, 'w') as f:
+                json.dump(positions, f, indent=2)
+            
+        except Exception as e:
+            logger.error(f"포지션 저장 중 오류: {str(e)}")

@@ -1,0 +1,894 @@
+2025-02-14 13:32:55,280 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 13:32:55,280 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 13:32:55,297 - main - INFO - 서비스 초기화 중...
+2025-02-14 13:32:55,297 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 13:32:57,162 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 13:32:59,784 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 13:32:59,784 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 13:32:59,784 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 13:33:00,413 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 13:33:00,413 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 13:33:01,056 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 13:33:01,056 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 13:33:01,056 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 13:33:01,056 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 13:33:02,625 - telegram.ext.Application - INFO - Application started
+2025-02-14 13:33:02,875 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 13:35:13,240 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 13:35:13,240 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 13:35:13,694 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 13:35:13,694 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95850.0, 'bid': 95756.9, 'ask': 95770.1, 'volume': 94389.033, 'timestamp': None}
+2025-02-14 13:35:13,694 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 13:35:13,694 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 13:35:16,457 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 13:35:17,682 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95850.0, 'stop_loss': 93933.0, 'take_profit1': 97767.0, 'take_profit2': 99684.0, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 13:35:17,698 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 13:35:17,698 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95850.0, 'stop_loss': 93933.0, 'take_profit1': 97767.0, 'take_profit2': 99684.0}
+2025-02-14 13:35:17,698 - exchange.bybit_client - ERROR - API 요청 실패: 'BybitClient' object has no attribute '_ensure_time_sync'
+2025-02-14 13:35:17,698 - order_service - INFO - 현재 포지션: {}
+2025-02-14 13:35:17,698 - order_service - INFO - 포지션 없음 - 신규 진입 시도
+2025-02-14 13:35:17,698 - order_service - INFO - 신규 포지션 생성 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95850.0, 'stop_loss': 93933.0, 'take_profit1': 97767.0, 'take_profit2': 99684.0}
+2025-02-14 13:35:17,706 - order_service - INFO - 레버리지 설정 시도: 5x
+2025-02-14 13:35:17,706 - exchange.bybit_client - ERROR - API 요청 실패: 'BybitClient' object has no attribute '_ensure_time_sync'
+2025-02-14 13:35:17,706 - order_service - ERROR - 레버리지 설정 실패: None
+2025-02-14 13:35:17,707 - order_service - ERROR - 레버리지 설정 실패
+2025-02-14 13:48:29,721 - telegram_bot.bot - ERROR - 메시지 전송 실패 (chat_id: 583881676): Timed out
+2025-02-14 13:48:55,399 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 13:48:55,399 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 13:48:55,415 - main - INFO - 서비스 초기화 중...
+2025-02-14 13:48:55,415 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 13:48:57,345 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 13:48:59,796 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 13:48:59,796 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 13:48:59,796 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 13:49:00,442 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 13:49:00,442 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 13:49:01,156 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 13:49:01,156 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 13:49:01,156 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 13:49:01,156 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 13:49:02,158 - telegram.ext.Application - INFO - Application started
+2025-02-14 13:49:02,400 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 13:51:18,073 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 13:51:18,073 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 13:51:18,533 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 13:51:18,535 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95400.0, 'bid': 95250.0, 'ask': 95284.8, 'volume': 94425.57, 'timestamp': None}
+2025-02-14 13:51:18,539 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 13:51:18,539 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 13:51:20,782 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 13:51:21,849 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95400.0, 'stop_loss': 93492.0, 'take_profit1': 97308.0, 'take_profit2': 99216.0, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 13:51:21,850 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 13:51:21,851 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95400.0, 'stop_loss': 93492.0, 'take_profit1': 97308.0, 'take_profit2': 99216.0}
+2025-02-14 13:51:21,976 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 566ms
+2025-02-14 13:51:22,243 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '3', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '96229.03', 'adlRankIndicator': 0, 'cumRealisedPnl': '-75990.91779108', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9409143451, 'updatedTime': '1735630166234', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 13:51:22,243 - order_service - INFO - 포지션 없음 - 신규 진입 시도
+2025-02-14 13:51:22,243 - order_service - INFO - 신규 포지션 생성 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95400.0, 'stop_loss': 93492.0, 'take_profit1': 97308.0, 'take_profit2': 99216.0}
+2025-02-14 13:51:22,243 - order_service - INFO - 레버리지 설정 시도: 5x
+2025-02-14 13:51:22,432 - order_service - INFO - 레버리지 설정 확인: 5x
+2025-02-14 13:51:22,432 - order_service - ERROR - 신규 포지션 생성 중 오류: 'size'
+2025-02-14 13:51:22,432 - order_service - ERROR - 상세 에러: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 65, in create_new_position
+    "qty": str(signal['size']),
+               ~~~~~~^^^^^^^^
+KeyError: 'size'
+
+2025-02-14 13:53:04,487 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 13:53:04,489 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 13:53:04,496 - main - INFO - 서비스 초기화 중...
+2025-02-14 13:53:04,496 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 13:53:06,387 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 13:53:06,839 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 13:53:06,839 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 13:53:06,839 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 13:53:07,544 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 13:53:07,544 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 13:53:08,235 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 13:53:08,236 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 13:53:08,236 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 13:53:08,237 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 13:53:09,258 - telegram.ext.Application - INFO - Application started
+2025-02-14 13:53:09,509 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 13:53:23,465 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 13:53:23,466 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 13:53:23,904 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 13:53:23,905 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95700.0, 'bid': 95550.0, 'ask': 95850.0, 'volume': 94417.62, 'timestamp': None}
+2025-02-14 13:53:23,907 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 13:53:23,908 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 13:53:25,896 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 13:53:27,008 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 13:53:27,015 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 13:53:27,015 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0}
+2025-02-14 13:53:27,150 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 565ms
+2025-02-14 13:53:27,354 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '96032.63', 'adlRankIndicator': 0, 'cumRealisedPnl': '-75990.91779108', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9409143451, 'updatedTime': '1739508683001', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 13:53:27,358 - order_service - INFO - 포지션 없음 - 신규 진입 시도
+2025-02-14 13:53:27,359 - order_service - INFO - 신규 포지션 생성 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0}
+2025-02-14 13:53:27,361 - order_service - INFO - 레버리지 설정 시도: 5x
+2025-02-14 13:53:27,554 - order_service - INFO - 레버리지 설정 확인: 5x
+2025-02-14 13:53:27,776 - order_service - ERROR - 신규 포지션 생성 실패: {'retCode': 110007, 'retMsg': 'ab not enough for new order', 'result': {}, 'retExtInfo': {}, 'time': 1739508808340}
+2025-02-14 13:55:41,271 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-14 13:55:41,272 - telegram_bot.utils.decorators - ERROR - Error in get_balance: 'BybitClient' object has no attribute 'get_balance'
+2025-02-14 13:55:41,276 - telegram_bot.utils.decorators - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\utils\decorators.py", line 14, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\balance_service.py", line 25, in get_balance
+    balance = await self.bybit_client.get_balance()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_balance'
+
+2025-02-14 13:57:51,979 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 13:57:51,981 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 13:57:51,988 - main - INFO - 서비스 초기화 중...
+2025-02-14 13:57:51,988 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 13:57:54,095 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 13:57:54,725 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 13:57:54,727 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 13:57:54,729 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 13:57:55,567 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 13:57:55,567 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 13:57:56,318 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 13:57:56,319 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 13:57:56,319 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 13:57:56,320 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 13:57:57,342 - telegram.ext.Application - INFO - Application started
+2025-02-14 13:57:57,592 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 14:04:44,237 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 14:04:44,239 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 14:04:44,746 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 14:04:44,747 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95674.0, 'bid': 95560.0, 'ask': 95674.0, 'volume': 94445.632, 'timestamp': None}
+2025-02-14 14:04:44,749 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 14:04:44,749 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 14:04:46,832 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 14:04:47,952 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95674.0, 'stop_loss': 93760.52, 'take_profit1': 97587.48, 'take_profit2': 99500.96, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 14:04:47,953 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 14:04:47,953 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95674.0, 'stop_loss': 93760.52, 'take_profit1': 97587.48, 'take_profit2': 99500.96}
+2025-02-14 14:04:48,238 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 568ms
+2025-02-14 14:04:48,413 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '95950.62', 'adlRankIndicator': 0, 'cumRealisedPnl': '-75990.91779108', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9409143451, 'updatedTime': '1739508683001', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 14:04:48,425 - order_service - INFO - 포지션 없음 - 신규 진입 시도
+2025-02-14 14:04:48,425 - order_service - INFO - 신규 포지션 생성 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95674.0, 'stop_loss': 93760.52, 'take_profit1': 97587.48, 'take_profit2': 99500.96}
+2025-02-14 14:04:48,426 - order_service - INFO - 레버리지 설정 시도: 5x
+2025-02-14 14:04:48,687 - order_service - INFO - 레버리지 설정 확인: 5x
+2025-02-14 14:04:48,859 - services.balance_service - INFO - Balance API Response: {'list': [{'coin': [{'walletBalance': '44525.58912207', 'locked': '0', 'free': '44525.58912207'}]}]}
+2025-02-14 14:04:48,862 - services.balance_service - INFO - Coin Info: {'walletBalance': '44525.58912207', 'locked': '0', 'free': '44525.58912207'}
+2025-02-14 14:04:48,863 - order_service - INFO - 계산된 BTC 수량: 0.233 (가용잔고: $44525.58912207, 목표비율: 10%)
+2025-02-14 14:04:49,071 - order_service - INFO - 신규 포지션 생성 성공: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'qty': '0.233', 'price': '95674.0', 'orderType': 'Limit', 'timeInForce': 'GTC', 'positionIdx': 0, 'stopLoss': '93760.52', 'takeProfit': '97587.48'}
+2025-02-14 14:24:01,038 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 14:24:01,040 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 14:24:01,045 - main - INFO - 서비스 초기화 중...
+2025-02-14 14:24:01,046 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 14:24:03,065 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 14:24:03,475 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 14:24:03,476 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 14:24:03,476 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 14:24:04,196 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 14:24:04,196 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 14:24:04,854 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 14:24:04,855 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 14:24:04,855 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 14:24:04,856 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 14:24:05,873 - telegram.ext.Application - INFO - Application started
+2025-02-14 14:24:06,123 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 14:24:14,182 - services.trade_store - INFO - 날짜 범위 조회: 20241116 ~ 20250214
+2025-02-14 14:24:14,184 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-14 14:24:14,184 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-14 14:24:14,184 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-14 14:24:14,185 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-14 14:24:14,186 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-14 14:24:14,186 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-14 14:24:14,186 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-14 14:24:14,187 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-14 14:24:14,188 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-14 14:24:14,189 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-14 14:24:14,190 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-14 14:24:14,190 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-14 14:24:14,191 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-14 14:24:14,191 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-14 14:24:14,192 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-14 14:24:14,192 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-14 14:24:14,193 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-14 14:24:14,195 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-14 14:24:14,196 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-14 14:24:14,197 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-14 14:24:14,198 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-14 14:24:14,199 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-14 14:24:14,200 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-14 14:24:14,202 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-14 14:24:14,203 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-14 14:24:14,204 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-14 14:24:14,204 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-14 14:24:14,205 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-14 14:24:14,206 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-14 14:24:14,207 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-14 14:24:14,207 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-14 14:24:14,208 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-14 14:24:14,209 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-14 14:24:14,210 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-14 14:24:14,211 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-14 14:24:14,212 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-14 14:24:14,213 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-14 14:24:14,214 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-14 14:24:14,215 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-14 14:24:14,216 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-14 14:24:14,216 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-14 14:24:14,217 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-14 14:24:14,218 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-14 14:24:14,219 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-14 14:24:14,220 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-14 14:24:14,220 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-14 14:24:14,222 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-14 14:24:14,222 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-14 14:24:14,223 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-14 14:24:14,224 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-14 14:24:14,224 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-14 14:24:14,226 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-14 14:24:14,227 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-14 14:24:14,228 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-14 14:24:14,230 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-14 14:24:14,231 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-14 14:24:14,231 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-14 14:24:14,231 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-14 14:24:14,232 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-14 14:24:14,232 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-14 14:24:14,232 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-14 14:24:14,233 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-14 14:24:14,233 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-14 14:24:14,233 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-14 14:24:14,233 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-14 14:24:14,234 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-14 14:24:14,234 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-14 14:24:14,234 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-14 14:24:14,234 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-14 14:24:14,235 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-14 14:24:14,235 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-14 14:24:14,236 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-14 14:24:14,237 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-14 14:24:14,238 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-14 14:24:14,238 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-14 14:24:14,238 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-14 14:24:14,239 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-14 14:24:14,239 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-14 14:24:14,239 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-14 14:24:14,240 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-14 14:24:14,240 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-14 14:24:14,240 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-14 14:24:14,240 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-14 14:24:14,241 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-14 14:24:14,241 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-14 14:24:14,241 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-14 14:24:14,242 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-14 14:24:14,242 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-14 14:24:14,242 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-14 14:24:14,242 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-14 14:24:14,242 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-14 14:24:14,243 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-14 14:24:14,243 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-14 14:24:14,243 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 157
+2025-02-14 14:24:14,243 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 143
+2025-02-14 14:24:14,244 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-14 14:24:14,244 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-14 14:24:14,244 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-14 14:24:14,244 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-14 14:24:14,245 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-14 14:24:14,245 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-14 14:24:14,245 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-14 14:24:14,245 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-14 14:24:14,245 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-14 14:24:51,380 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-14 14:24:51,380 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-02-14 14:24:51,381 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-14 14:30:19,304 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 14:30:19,306 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 14:30:19,321 - main - INFO - 서비스 초기화 중...
+2025-02-14 14:30:19,322 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 14:30:21,339 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 14:30:21,749 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 14:30:21,749 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 14:30:21,750 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 14:30:22,424 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 14:30:22,424 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 14:30:23,106 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 14:30:23,106 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 14:30:23,107 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 14:30:23,107 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 14:30:24,128 - telegram.ext.Application - INFO - Application started
+2025-02-14 14:30:24,376 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 14:32:09,993 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 14:32:09,994 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 14:32:10,487 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 14:32:10,488 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95700.0, 'bid': 95550.0, 'ask': 95850.0, 'volume': 94524.708, 'timestamp': None}
+2025-02-14 14:32:10,492 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 14:32:10,493 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 14:32:12,885 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 14:32:13,980 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 14:32:13,981 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 14:32:13,982 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0}
+2025-02-14 14:32:14,122 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 581ms
+2025-02-14 14:32:14,298 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '182.76287', 'markPrice': '96458.39', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 14:32:14,455 - order_service - ERROR - 포지션 크기 조정 중 오류: 'size'
+2025-02-14 14:32:38,870 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-14 14:32:51,264 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-14 14:32:51,267 - position_service - INFO - 포지션 목록 조회 시작: BTCUSDT
+2025-02-14 14:32:51,454 - position_service - INFO - Raw 포지션 데이터: [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '170.49775', 'markPrice': '96405.75', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}]
+2025-02-14 14:32:51,455 - position_service - ERROR - 포지션 목록 조회 중 오류: could not convert string to float: ''
+2025-02-14 14:32:51,455 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-14 14:33:10,895 - services.trade_store - INFO - 날짜 범위 조회: 20241116 ~ 20250214
+2025-02-14 14:33:10,898 - services.trade_store - INFO - 날짜: 20241116, 포지션 수: 0건
+2025-02-14 14:33:10,900 - services.trade_store - INFO - 날짜: 20241117, 포지션 수: 0건
+2025-02-14 14:33:10,901 - services.trade_store - INFO - 날짜: 20241118, 포지션 수: 0건
+2025-02-14 14:33:10,902 - services.trade_store - INFO - 날짜: 20241119, 포지션 수: 0건
+2025-02-14 14:33:10,904 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-14 14:33:10,905 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-14 14:33:10,907 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-14 14:33:10,909 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-14 14:33:10,912 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-14 14:33:10,914 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-14 14:33:10,915 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-14 14:33:10,917 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-14 14:33:10,918 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-14 14:33:10,920 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-14 14:33:10,922 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-14 14:33:10,923 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-14 14:33:10,926 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-14 14:33:10,927 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-14 14:33:10,928 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-14 14:33:10,929 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-14 14:33:10,930 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-14 14:33:10,931 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-14 14:33:10,933 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-14 14:33:10,934 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-14 14:33:10,936 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-14 14:33:10,938 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-14 14:33:10,940 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-14 14:33:10,941 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-14 14:33:10,943 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-14 14:33:10,944 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-14 14:33:10,944 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-14 14:33:10,946 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-14 14:33:10,947 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-14 14:33:10,948 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-14 14:33:10,950 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-14 14:33:10,952 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-14 14:33:10,954 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-14 14:33:10,955 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-14 14:33:10,956 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-14 14:33:10,957 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-14 14:33:10,958 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-14 14:33:10,959 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-14 14:33:10,959 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-14 14:33:10,960 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-14 14:33:10,961 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-14 14:33:10,962 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-14 14:33:10,962 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-14 14:33:10,963 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-14 14:33:10,963 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-14 14:33:10,964 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-14 14:33:10,964 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-14 14:33:10,965 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-14 14:33:10,965 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-14 14:33:10,966 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-14 14:33:10,966 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-14 14:33:10,966 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-14 14:33:10,967 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-14 14:33:10,967 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-14 14:33:10,968 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-14 14:33:10,968 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-14 14:33:10,968 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-14 14:33:10,968 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-14 14:33:10,969 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-14 14:33:10,969 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-14 14:33:10,970 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-14 14:33:10,970 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-14 14:33:10,971 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-14 14:33:10,971 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-14 14:33:10,971 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-14 14:33:10,972 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-14 14:33:10,972 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-14 14:33:10,973 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-14 14:33:10,973 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-14 14:33:10,974 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-14 14:33:10,974 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-14 14:33:10,974 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-14 14:33:10,975 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-14 14:33:10,978 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-14 14:33:10,978 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-14 14:33:10,979 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-14 14:33:10,979 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-14 14:33:10,979 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-14 14:33:10,979 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-14 14:33:10,980 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-14 14:33:10,980 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-14 14:33:10,981 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-14 14:33:10,981 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-14 14:33:10,981 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-14 14:33:10,982 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-14 14:33:10,982 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-14 14:33:10,983 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-14 14:33:10,984 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-14 14:33:10,985 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-14 14:33:10,985 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 157
+2025-02-14 14:33:10,986 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 143
+2025-02-14 14:33:10,987 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 14
+2025-02-14 14:33:10,987 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-14 14:33:10,988 - telegram_bot.handlers.stats_handler - INFO - ID: f84275b4-8ab8-4bdc-87d8-d7b3a6b275f0
+2025-02-14 14:33:10,990 - telegram_bot.handlers.stats_handler - INFO - Side: Sell
+2025-02-14 14:33:10,991 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-14 14:33:10,991 - telegram_bot.handlers.stats_handler - INFO - Exit: 97193.9
+2025-02-14 14:33:10,992 - telegram_bot.handlers.stats_handler - INFO - PNL: 3.3789011
+2025-02-14 14:33:10,992 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 롱
+2025-02-14 14:33:10,992 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-14 14:35:40,901 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 14:35:40,902 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 14:35:40,907 - main - INFO - 서비스 초기화 중...
+2025-02-14 14:35:40,908 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 14:35:43,058 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 14:35:44,358 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 14:35:44,358 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 14:35:44,358 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 14:35:45,058 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 14:35:45,060 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 14:35:45,808 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 14:35:45,810 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 14:35:45,810 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 14:35:45,810 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 14:35:46,826 - telegram.ext.Application - INFO - Application started
+2025-02-14 14:35:47,074 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 14:36:01,431 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-14 14:36:01,433 - position_service - INFO - 포지션 목록 조회 시작: BTCUSDT
+2025-02-14 14:36:01,677 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 581ms
+2025-02-14 14:36:01,936 - position_service - INFO - Raw 포지션 데이터: [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '209.52991', 'markPrice': '96573.27', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}]
+2025-02-14 14:36:01,940 - position_service - INFO - 활성 포지션: BTC BUY x5 크기: 0.233 진입가: 95674.0
+2025-02-14 14:36:01,942 - position_service - INFO - 파싱된 포지션 데이터: [{'symbol': 'BTC', 'side': 'BUY', 'size': 0.233, 'leverage': 5, 'entryPrice': 95674.0, 'markPrice': 96573.27, 'unrealizedPnl': 209.52991, 'liquidationPrice': 0.0, 'stopLoss': 93760.5, 'takeProfit': 97587.4}]
+2025-02-14 14:36:01,944 - trading_handler - INFO - [Position] 포지션 조회 결과: [{'symbol': 'BTC', 'side': 'BUY', 'size': 0.233, 'leverage': 5, 'entryPrice': 95674.0, 'markPrice': 96573.27, 'unrealizedPnl': 209.52991, 'liquidationPrice': 0.0, 'stopLoss': 93760.5, 'takeProfit': 97587.4}]
+2025-02-14 14:36:30,945 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 14:36:30,946 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 14:36:31,321 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 14:36:31,323 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95700.0, 'bid': 95550.0, 'ask': 95628.3, 'volume': 94533.988, 'timestamp': None}
+2025-02-14 14:36:31,331 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 14:36:31,332 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 14:36:33,958 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 14:36:35,027 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 14:36:35,027 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 14:36:35,028 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0}
+2025-02-14 14:36:35,199 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '104.30012', 'markPrice': '96121.64', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 14:36:35,425 - order_service - ERROR - 포지션 크기 조정 중 오류: 'size'
+2025-02-14 14:50:27,955 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 14:50:27,957 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 14:50:27,962 - main - INFO - 서비스 초기화 중...
+2025-02-14 14:50:27,962 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 14:50:29,736 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 14:50:31,259 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 14:50:31,259 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 14:50:31,259 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 14:50:32,076 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 14:50:32,076 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 14:50:32,751 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 14:50:32,751 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 14:50:32,752 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 14:50:32,752 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 14:50:33,807 - telegram.ext.Application - INFO - Application started
+2025-02-14 14:50:34,059 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 14:50:54,395 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 14:50:54,396 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 14:50:54,858 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 14:50:54,860 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 96783.7, 'bid': 96870.4, 'ask': 96900.0, 'volume': 94578.82, 'timestamp': None}
+2025-02-14 14:50:54,869 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 14:50:54,871 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 14:50:58,028 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 14:50:59,124 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 96783.7, 'stop_loss': 94848.026, 'take_profit1': 98719.374, 'take_profit2': 100655.048, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 14:50:59,125 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 14:50:59,125 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 96783.7, 'stop_loss': 94848.026, 'take_profit1': 98719.374, 'take_profit2': 100655.048}
+2025-02-14 14:50:59,264 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 587ms
+2025-02-14 14:50:59,435 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '204.23848', 'markPrice': '96550.56', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 14:50:59,439 - order_service - ERROR - 포지션 관리 중 오류: name 'config' is not defined
+2025-02-14 14:50:59,446 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 127, in manage_existing_position
+    max_leverage_diff = config.trading_config.leverage_settings['max_difference']
+                        ^^^^^^
+NameError: name 'config' is not defined
+
+2025-02-14 14:52:39,497 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 14:52:39,498 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 14:52:39,504 - main - INFO - 서비스 초기화 중...
+2025-02-14 14:52:39,505 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 14:52:41,503 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 14:52:41,916 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 14:52:41,916 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 14:52:41,916 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 14:52:42,574 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 14:52:42,575 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 14:52:43,239 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 14:52:43,240 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 14:52:43,240 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 14:52:43,240 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 14:52:44,264 - telegram.ext.Application - INFO - Application started
+2025-02-14 14:52:44,515 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 14:53:06,934 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 14:53:06,936 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 14:53:07,300 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 14:53:07,302 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95026.5, 'bid': 95000.0, 'ask': 95250.0, 'volume': 94579.365, 'timestamp': None}
+2025-02-14 14:53:07,305 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 14:53:07,306 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 14:53:09,462 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 14:53:10,626 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95026.5, 'stop_loss': 93125.97, 'take_profit1': 96927.03, 'take_profit2': 98827.56, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 14:53:10,627 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 14:53:10,627 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95026.5, 'stop_loss': 93125.97, 'take_profit1': 96927.03, 'take_profit2': 98827.56}
+2025-02-14 14:53:10,765 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 589ms
+2025-02-14 14:53:10,924 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '217.65695', 'markPrice': '96608.15', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 14:53:10,925 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 14:53:11,105 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.02132696843543644', 'price': '95026.5', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': '93125.97', 'takeProfit': '96927.03'}
+2025-02-14 14:53:11,296 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'Qty invalid', 'result': {}, 'retExtInfo': {}, 'time': 1739512391884}
+2025-02-14 14:53:11,297 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 14:59:14,719 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 14:59:14,721 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 14:59:14,729 - main - INFO - 서비스 초기화 중...
+2025-02-14 14:59:14,729 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 14:59:16,526 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 14:59:16,945 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 14:59:16,946 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 14:59:16,946 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 14:59:17,613 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 14:59:17,613 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 14:59:18,287 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 14:59:18,288 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 14:59:18,289 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 14:59:18,289 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 14:59:19,304 - telegram.ext.Application - INFO - Application started
+2025-02-14 14:59:19,554 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 14:59:27,378 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 14:59:27,378 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 14:59:27,834 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 14:59:27,835 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95700.0, 'bid': 95550.0, 'ask': 95649.8, 'volume': 94596.025, 'timestamp': None}
+2025-02-14 14:59:27,837 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 14:59:27,837 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 14:59:29,976 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 14:59:31,059 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 14:59:31,061 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 14:59:31,062 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0}
+2025-02-14 14:59:31,200 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 590ms
+2025-02-14 14:59:31,387 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '149.61862', 'markPrice': '96316.14', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 14:59:31,391 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 14:59:31,591 - order_service - INFO - 계산된 크기 차이(원본): -0.02307809148281087 BTC
+2025-02-14 14:59:31,592 - order_service - INFO - 조정된 크기 차이(반올림): -0.023 BTC
+2025-02-14 14:59:31,593 - order_service - INFO - 주문 시도: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.023', 'price': '95700.0', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': '93786.0', 'takeProfit': '97614.0'}
+2025-02-14 14:59:31,595 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.023', 'price': '95700.0', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': '93786.0', 'takeProfit': '97614.0'}
+2025-02-14 14:59:31,790 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'TakeProfit:976140000 set for Sell position should be lower than base_price:957000000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739512772376}
+2025-02-14 14:59:31,791 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 15:09:10,615 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 15:09:10,617 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 15:09:10,622 - main - INFO - 서비스 초기화 중...
+2025-02-14 15:09:10,623 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 15:09:12,723 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 15:09:13,125 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 15:09:13,125 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 15:09:13,125 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 15:09:13,813 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 15:09:13,814 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 15:09:14,474 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 15:09:14,475 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 15:09:14,475 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 15:09:14,476 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 15:09:15,504 - telegram.ext.Application - INFO - Application started
+2025-02-14 15:09:15,757 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 15:09:18,452 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:09:18,453 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:09:18,813 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:09:18,815 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 97124.3, 'bid': 97134.3, 'ask': 97190.0, 'volume': 94625.219, 'timestamp': None}
+2025-02-14 15:09:18,824 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:09:18,825 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:09:20,924 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:09:22,053 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 97124.3, 'stop_loss': 95181.814, 'take_profit1': 99066.78600000001, 'take_profit2': 101009.27200000001, 'reason': '상승 추세, RSI 및 MACD 강세, 볼린저밴드 중앙 이상'}
+2025-02-14 15:09:22,053 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:09:22,054 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 97124.3, 'stop_loss': 95181.814, 'take_profit1': 99066.78600000001, 'take_profit2': 101009.27200000001}
+2025-02-14 15:09:22,199 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 594ms
+2025-02-14 15:09:22,385 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '245.6752', 'markPrice': '96728.4', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:09:22,386 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 15:09:22,386 - order_service - INFO - 현재 포지션 크기: 0.233 BTC
+2025-02-14 15:09:22,560 - order_service - INFO - 가용 잔고: $40261.8075114, 총 자산: $44524.60337252
+2025-02-14 15:09:22,560 - order_service - INFO - 목표 포지션 크기: 0.229 BTC
+2025-02-14 15:09:22,560 - order_service - INFO - 계산된 크기 차이(원본): -0.0040000000000000036 BTC
+2025-02-14 15:09:22,561 - order_service - INFO - 주문 시도: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.0040000000000000036', 'price': '97124.3', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': '95181.814', 'takeProfit': '99066.78600000001'}
+2025-02-14 15:09:22,561 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.0040000000000000036', 'price': '97124.3', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': '95181.814', 'takeProfit': '99066.78600000001'}
+2025-02-14 15:09:22,727 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'Qty invalid', 'result': {}, 'retExtInfo': {}, 'time': 1739513363321}
+2025-02-14 15:09:22,728 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 15:12:00,195 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 15:12:00,197 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 15:12:00,202 - main - INFO - 서비스 초기화 중...
+2025-02-14 15:12:00,202 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 15:12:02,111 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 15:12:02,498 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 15:12:02,499 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 15:12:02,499 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 15:12:03,178 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 15:12:03,178 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 15:12:03,880 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 15:12:03,881 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 15:12:03,881 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 15:12:03,881 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 15:12:04,927 - telegram.ext.Application - INFO - Application started
+2025-02-14 15:12:05,203 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 15:12:13,192 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:12:13,193 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:12:13,493 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:12:13,495 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95756.9, 'bid': 95719.6, 'ask': 95739.7, 'volume': 94634.742, 'timestamp': None}
+2025-02-14 15:12:13,502 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:12:13,503 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:12:15,658 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:12:16,711 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95756.9, 'stop_loss': 93841.76199999999, 'take_profit1': 97672.038, 'take_profit2': 99587.17599999999, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상 및 강한 상승 추세'}
+2025-02-14 15:12:16,713 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:12:16,713 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95756.9, 'stop_loss': 93841.76199999999, 'take_profit1': 97672.038, 'take_profit2': 99587.17599999999}
+2025-02-14 15:12:16,850 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 598ms
+2025-02-14 15:12:17,023 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '182.89102', 'markPrice': '96458.94', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:12:17,025 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 15:12:17,025 - order_service - INFO - 현재 포지션 크기: 0.233 BTC
+2025-02-14 15:12:17,197 - order_service - INFO - 가용 잔고: $40204.63507761, 총 자산: $44519.7067532
+2025-02-14 15:12:17,198 - order_service - INFO - 목표 포지션 크기: 0.232 BTC
+2025-02-14 15:12:17,199 - order_service - INFO - 계산된 크기 차이(원본): -0.0010000000000000009 BTC
+2025-02-14 15:12:17,200 - order_service - INFO - 조정된 크기 차이(반올림): -0.001 BTC
+2025-02-14 15:12:17,201 - order_service - INFO - 주문 시도: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.001', 'price': '95756.9', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': '93841.76199999999', 'takeProfit': '97672.038'}
+2025-02-14 15:12:17,203 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.001', 'price': '95756.9', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': '93841.76199999999', 'takeProfit': '97672.038'}
+2025-02-14 15:12:17,463 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'TakeProfit:976720000 set for Sell position should be lower than base_price:969000000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739513538059}
+2025-02-14 15:12:17,464 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 15:18:19,346 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 15:18:19,348 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 15:18:19,353 - main - INFO - 서비스 초기화 중...
+2025-02-14 15:18:19,354 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 15:18:21,383 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 15:18:21,781 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 15:18:21,782 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 15:18:21,782 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 15:18:22,443 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 15:18:22,443 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 15:18:23,117 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 15:18:23,118 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 15:18:23,118 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 15:18:23,118 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 15:18:24,180 - telegram.ext.Application - INFO - Application started
+2025-02-14 15:18:24,433 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 15:18:32,812 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:18:32,812 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:18:33,113 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:18:33,116 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95756.9, 'bid': 95719.6, 'ask': 95741.6, 'volume': 94654.495, 'timestamp': None}
+2025-02-14 15:18:33,124 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:18:33,125 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:18:34,876 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:18:35,937 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95756.9, 'stop_loss': 93841.76199999999, 'take_profit1': 97672.038, 'take_profit2': 99587.17599999999, 'reason': 'RSI, MACD, 볼린저밴드 모두 매수 신호'}
+2025-02-14 15:18:35,938 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:18:35,939 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95756.9, 'stop_loss': 93841.76199999999, 'take_profit1': 97672.038, 'take_profit2': 99587.17599999999}
+2025-02-14 15:18:36,065 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 598ms
+2025-02-14 15:18:36,239 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95674', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97587.4', 'positionValue': '22292.042', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '163.16291', 'markPrice': '96374.27', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75995.37619948', 'positionMM': '121.26870848', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4468.21689848', 'seq': 9429164357, 'updatedTime': '1739509495623', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-4.4584084', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93760.5', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:18:36,241 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 15:18:36,242 - order_service - INFO - 현재 포지션 크기: 0.233 BTC
+2025-02-14 15:18:36,566 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:18:36,568 - order_service - INFO - 가용 잔고: $40191.47721188, 총 자산: $44523.49050449, 미실현 손익: $0.0
+2025-02-14 15:18:36,587 - order_service - ERROR - 포지션 크기 계산 중 오류: unsupported operand type(s) for -: 'float' and 'coroutine'
+2025-02-14 15:18:36,600 - order_service - INFO - 목표 포지션 크기: 0.0 BTC
+2025-02-14 15:18:36,602 - order_service - INFO - 계산된 크기 차이(원본): -0.233 BTC
+2025-02-14 15:18:36,603 - order_service - INFO - 조정된 크기 차이(반올림): -0.233 BTC
+2025-02-14 15:18:36,604 - order_service - INFO - 주문 시도: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.233', 'price': '95756.9', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': None, 'takeProfit': None}
+2025-02-14 15:18:36,606 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.233', 'price': '95756.9', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': None, 'takeProfit': None}
+2025-02-14 15:18:36,791 - exchange.bybit_client - INFO - 주문 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'orderId': '544234c0-4d8e-432d-a0f6-ce2bcf0e5aab', 'orderLinkId': ''}, 'retExtInfo': {}, 'time': 1739513917389}
+2025-02-14 15:18:36,791 - order_service - INFO - 포지션 크기 조정 성공: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.233', 'price': '95756.9', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': None, 'takeProfit': None}
+2025-02-14 15:18:36,792 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:18:36,792 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:29:46,933 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 15:29:46,934 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 15:29:46,940 - main - INFO - 서비스 초기화 중...
+2025-02-14 15:29:46,940 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 15:29:48,796 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 15:29:49,241 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 15:29:49,242 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 15:29:49,242 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 15:29:49,923 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 15:29:49,924 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 15:29:50,584 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 15:29:50,584 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 15:29:50,584 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 15:29:50,585 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 15:29:51,595 - telegram.ext.Application - INFO - Application started
+2025-02-14 15:29:51,855 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 15:30:03,864 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:30:03,865 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:30:04,352 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:30:04,354 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95712.8, 'bid': 95700.0, 'ask': 95712.8, 'volume': 94687.481, 'timestamp': None}
+2025-02-14 15:30:04,359 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:30:04,360 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:30:06,604 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:30:07,770 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 97077.0, 'stop_loss': 95135.45999999999, 'take_profit1': 99018.54000000001, 'take_profit2': 100960.08, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 15:30:07,771 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:30:07,771 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 97077.0, 'stop_loss': 95135.45999999999, 'take_profit1': 99018.54000000001, 'take_profit2': 100960.08}
+2025-02-14 15:30:07,911 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 607ms
+2025-02-14 15:30:08,088 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '96160.03', 'adlRankIndicator': 0, 'cumRealisedPnl': '-75980.52277102', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9429179957, 'updatedTime': '1739513942823', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:30:08,092 - order_service - INFO - 포지션 없음 - 신규 진입 시도
+2025-02-14 15:30:08,093 - order_service - INFO - 신규 포지션 생성 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 97077.0, 'stop_loss': 95135.45999999999, 'take_profit1': 99018.54000000001, 'take_profit2': 100960.08}
+2025-02-14 15:30:08,095 - order_service - INFO - 레버리지 설정 시도: 5x
+2025-02-14 15:30:08,286 - order_service - INFO - 레버리지 설정 확인: 5x
+2025-02-14 15:30:08,456 - order_service - INFO - 계산된 BTC 수량: 0.229 (가용잔고: $44535.52457036, 목표비율: 10%)
+2025-02-14 15:30:08,620 - order_service - INFO - 신규 포지션 생성 성공: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'qty': '0.229', 'price': '97077.0', 'orderType': 'Limit', 'timeInForce': 'GTC', 'positionIdx': 0, 'stopLoss': '95135.45999999999', 'takeProfit': '99018.54000000001'}
+2025-02-14 15:30:08,621 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:30:08,622 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:31:05,514 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:31:05,516 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:31:05,913 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:31:05,915 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95700.0, 'bid': 95681.9, 'ask': 95683.7, 'volume': 94687.499, 'timestamp': None}
+2025-02-14 15:31:05,923 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:31:05,924 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:31:07,961 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:31:09,002 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0, 'reason': 'RSI, MACD, 볼린저밴드 모두 매수 신호'}
+2025-02-14 15:31:09,004 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:31:09,005 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95700.0, 'stop_loss': 93786.0, 'take_profit1': 97614.0, 'take_profit2': 99528.0}
+2025-02-14 15:31:09,197 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95707.76768559', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '99018.5', 'positionValue': '21917.0788', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '110.07854', 'markPrice': '96188.46', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75992.57716436', 'positionMM': '119.22890868', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4393.05927468', 'seq': 9429182474, 'updatedTime': '1739514609226', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-12.05439334', 'size': '0.229', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '95135.4', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:31:09,199 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 15:31:09,199 - order_service - INFO - 현재 포지션 크기: 0.229 BTC
+2025-02-14 15:31:09,557 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:31:09,558 - order_service - INFO - 가용 잔고: $40222.87341301, 총 자산: $44524.15050843, 미실현 손익: $0.0
+2025-02-14 15:31:09,755 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:31:09,755 - order_service - INFO - 계산 입력값 - 총자산: $44524.15050843, 미실현손익: $0.0, 비율: 10%, 레버리지: 5배, 진입가: $95700.0
+2025-02-14 15:31:09,756 - order_service - INFO - 순수 자산: $44524.15050843
+2025-02-14 15:31:09,757 - order_service - INFO - 포지션 가치(USDT): $22262.075254215
+2025-02-14 15:31:09,757 - order_service - INFO - 계산된 BTC 수량: 0.2326235658747649
+2025-02-14 15:31:09,758 - order_service - INFO - 최종 BTC 수량(반올림): 0.233
+2025-02-14 15:31:09,758 - order_service - INFO - 목표 포지션 크기: 0.233 BTC
+2025-02-14 15:31:09,758 - order_service - INFO - 계산된 크기 차이(원본): 0.0040000000000000036 BTC
+2025-02-14 15:31:09,759 - order_service - INFO - 조정된 크기 차이(반올림): 0.004 BTC
+2025-02-14 15:31:09,760 - order_service - INFO - 주문 시도: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '0.004', 'price': '95700.0', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': False, 'stopLoss': '93786.0', 'takeProfit': '97614.0'}
+2025-02-14 15:31:09,760 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '0.004', 'price': '95700.0', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': False, 'stopLoss': '93786.0', 'takeProfit': '97614.0'}
+2025-02-14 15:31:09,927 - exchange.bybit_client - INFO - 주문 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'orderId': 'f00828c5-e10e-4b36-8ce8-dd3ce6b5210e', 'orderLinkId': ''}, 'retExtInfo': {}, 'time': 1739514670529}
+2025-02-14 15:31:09,928 - order_service - INFO - 포지션 크기 조정 성공: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '0.004', 'price': '95700.0', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': False, 'stopLoss': '93786.0', 'takeProfit': '97614.0'}
+2025-02-14 15:31:09,929 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:31:09,930 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:40:19,594 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 15:40:19,595 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 15:40:19,601 - main - INFO - 서비스 초기화 중...
+2025-02-14 15:40:19,601 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 15:40:21,411 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 15:40:21,821 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 15:40:21,822 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 15:40:21,822 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 15:40:22,470 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 15:40:22,471 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 15:40:23,145 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 15:40:23,146 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 15:40:23,146 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 15:40:23,146 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 15:40:24,197 - telegram.ext.Application - INFO - Application started
+2025-02-14 15:40:24,450 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 15:40:30,026 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:40:30,027 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:40:30,373 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:40:30,374 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 97032.6, 'bid': 97032.6, 'ask': 97077.0, 'volume': 94709.89, 'timestamp': None}
+2025-02-14 15:40:30,379 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:40:30,380 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:40:32,469 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:40:33,530 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 97032.6, 'stop_loss': 95091.948, 'take_profit1': 98973.25200000001, 'take_profit2': 100913.90400000001, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상 및 강한 상승 추세'}
+2025-02-14 15:40:33,531 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:40:33,532 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 97032.6, 'stop_loss': 95091.948, 'take_profit1': 98973.25200000001, 'take_profit2': 100913.90400000001}
+2025-02-14 15:40:33,670 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 608ms
+2025-02-14 15:40:33,847 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95707.4832618', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97614', 'positionValue': '22299.8436', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '208.46667', 'markPrice': '96602.19', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75992.78768501', 'positionMM': '121.31114919', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4469.78065119', 'seq': 9429182707, 'updatedTime': '1739514670532', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-12.26491399', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93786', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:40:33,849 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 15:40:33,849 - order_service - INFO - 현재 포지션 크기: 0.233 BTC
+2025-02-14 15:40:34,290 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:40:34,290 - order_service - INFO - 가용 잔고: $40229.22547566, 총 자산: $44524.6413964, 미실현 손익: $0.0
+2025-02-14 15:40:34,463 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:40:34,464 - order_service - INFO - 계산 입력값 - 총자산: $44524.6413964, 미실현손익: $0.0, 비율: 10%, 레버리지: 5배, 진입가: $97032.6
+2025-02-14 15:40:34,466 - order_service - INFO - 순수 자산: $44524.6413964
+2025-02-14 15:40:34,466 - order_service - INFO - 포지션 가치(USDT): $22262.3206982
+2025-02-14 15:40:34,467 - order_service - INFO - 계산된 BTC 수량: 0.22943135294942113
+2025-02-14 15:40:34,467 - order_service - INFO - 최종 BTC 수량(반올림): 0.229
+2025-02-14 15:40:34,467 - order_service - INFO - 목표 포지션 크기: 0.229 BTC
+2025-02-14 15:40:34,467 - order_service - INFO - 계산된 크기 차이(원본): -0.0040000000000000036 BTC
+2025-02-14 15:40:34,468 - order_service - INFO - 조정된 크기 차이(반올림): -0.004 BTC
+2025-02-14 15:40:34,468 - order_service - INFO - 주문 시도: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.004', 'price': '97032.6', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': None, 'takeProfit': None}
+2025-02-14 15:40:34,468 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.004', 'price': '97032.6', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': None, 'takeProfit': None}
+2025-02-14 15:40:34,628 - exchange.bybit_client - INFO - 주문 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'orderId': '074ee010-047d-4ed4-a271-7c355a6409ba', 'orderLinkId': ''}, 'retExtInfo': {}, 'time': 1739515235235}
+2025-02-14 15:40:34,629 - order_service - INFO - 포지션 크기 조정 성공: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Sell', 'orderType': 'Limit', 'qty': '0.004', 'price': '97032.6', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': True, 'stopLoss': None, 'takeProfit': None}
+2025-02-14 15:40:34,631 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:40:34,631 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:41:41,323 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:41:41,325 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:41:41,723 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:41:41,725 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95615.2, 'bid': 95586.3, 'ask': 95615.2, 'volume': 94716.355, 'timestamp': None}
+2025-02-14 15:41:41,733 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:41:41,734 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:41:47,658 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:41:49,240 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95615.2, 'stop_loss': 93702.896, 'take_profit1': 97527.504, 'take_profit2': 99439.808, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 상승 추세'}
+2025-02-14 15:41:49,241 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:41:49,241 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95615.2, 'stop_loss': 93702.896, 'take_profit1': 97527.504, 'take_profit2': 99439.808}
+2025-02-14 15:41:49,471 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95707.4832618', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97614', 'positionValue': '21917.01366696', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '124.57754304', 'markPrice': '96251.49', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75987.56484413', 'positionMM': '119.22855435', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4393.04621941', 'seq': 9429184612, 'updatedTime': '1739515241474', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-7.04207311', 'size': '0.229', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93786', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:41:49,472 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 15:41:49,472 - order_service - INFO - 현재 포지션 크기: 0.229 BTC
+2025-02-14 15:41:49,804 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:41:49,806 - order_service - INFO - 가용 잔고: $40237.30717664, 총 자산: $44526.17998402, 미실현 손익: $0.0
+2025-02-14 15:41:50,023 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:41:50,028 - order_service - INFO - 계산 입력값 - 총자산: $44526.17998402, 미실현손익: $0.0, 비율: 10%, 레버리지: 5배, 진입가: $95615.2
+2025-02-14 15:41:50,029 - order_service - INFO - 순수 자산: $44526.17998402
+2025-02-14 15:41:50,029 - order_service - INFO - 포지션 가치(USDT): $22263.08999201
+2025-02-14 15:41:50,030 - order_service - INFO - 계산된 BTC 수량: 0.23284048971303725
+2025-02-14 15:41:50,031 - order_service - INFO - 최종 BTC 수량(반올림): 0.233
+2025-02-14 15:41:50,031 - order_service - INFO - 목표 포지션 크기: 0.233 BTC
+2025-02-14 15:41:50,032 - order_service - INFO - 계산된 크기 차이(원본): 0.0040000000000000036 BTC
+2025-02-14 15:41:50,032 - order_service - INFO - 조정된 크기 차이(반올림): 0.004 BTC
+2025-02-14 15:41:50,032 - order_service - INFO - 주문 시도: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '0.004', 'price': '95615.2', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': False, 'stopLoss': '93702.896', 'takeProfit': '97527.504'}
+2025-02-14 15:41:50,033 - exchange.bybit_client - INFO - 주문 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '0.004', 'price': '95615.2', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': False, 'stopLoss': '93702.896', 'takeProfit': '97527.504'}
+2025-02-14 15:41:50,218 - exchange.bybit_client - INFO - 주문 API 응답: {'retCode': 0, 'retMsg': 'OK', 'result': {'orderId': '8d5092c1-3905-4560-9605-62ab50d2bfd5', 'orderLinkId': ''}, 'retExtInfo': {}, 'time': 1739515310826}
+2025-02-14 15:41:50,219 - order_service - INFO - 포지션 크기 조정 성공: {'category': 'linear', 'symbol': 'BTCUSDT', 'side': 'Buy', 'orderType': 'Limit', 'qty': '0.004', 'price': '95615.2', 'timeInForce': 'GTC', 'positionIdx': 0, 'reduceOnly': False, 'stopLoss': '93702.896', 'takeProfit': '97527.504'}
+2025-02-14 15:41:50,246 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:41:50,248 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:54:50,101 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 15:54:50,102 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 15:54:50,108 - main - INFO - 서비스 초기화 중...
+2025-02-14 15:54:50,108 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 15:54:51,912 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 15:54:52,404 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 15:54:52,404 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 15:54:52,404 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 15:54:53,093 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 15:54:53,093 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 15:54:53,756 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 15:54:53,757 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 15:54:53,757 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 15:54:53,757 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 15:54:54,781 - telegram.ext.Application - INFO - Application started
+2025-02-14 15:54:55,043 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 15:55:10,102 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-14 15:55:10,103 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-14 15:55:10,522 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-14 15:55:10,523 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 95710.0, 'bid': 95700.0, 'ask': 95738.2, 'volume': 94749.928, 'timestamp': None}
+2025-02-14 15:55:10,528 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-14 15:55:10,529 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-14 15:55:12,926 - telegram_bot.formatters.storage_formatter - INFO - 1h 분석 결과 저장 완료: C:\Users\oasis\Aibybit_2\src\data\analysis\analysis_1h.json
+2025-02-14 15:55:14,059 - telegram_bot.monitors.auto_analyzer - INFO - 분석 결과 trading_signals: {'position_suggestion': 'BUY', 'leverage': 5, 'position_size': 10, 'entry_price': 95710.0, 'stop_loss': 93795.8, 'take_profit1': 97624.2, 'take_profit2': 99538.40000000001, 'reason': 'RSI > 50, MACD > 0, 볼린저 밴드 중앙 이상, 추세 강함'}
+2025-02-14 15:55:14,061 - telegram_bot.monitors.auto_analyzer - INFO - 매매 신호 감지: BUY
+2025-02-14 15:55:14,061 - order_service - INFO - 주문 시도: {'symbol': 'BTCUSDT', 'side': 'Buy', 'position_size': 10, 'leverage': 5, 'entry_price': 95710.0, 'stop_loss': 93795.8, 'take_profit1': 97624.2, 'take_profit2': 99538.40000000001}
+2025-02-14 15:55:14,194 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 614ms
+2025-02-14 15:55:14,367 - order_service - INFO - 현재 포지션: {'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '95705.85608137', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '97527.5', 'positionValue': '22299.46446696', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '67.42878304', 'markPrice': '95995.25', 'adlRankIndicator': 2, 'cumRealisedPnl': '-75987.77519207', 'positionMM': '121.30908671', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '4469.70465776', 'seq': 9429184822, 'updatedTime': '1739515310829', 'side': 'Buy', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '-7.25242105', 'size': '0.233', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '93702.8', 'tradeMode': 0, 'sessionAvgPrice': ''}
+2025-02-14 15:55:14,367 - order_service - INFO - 레버리지 차이가 작음(0) - 크기만 조정
+2025-02-14 15:55:14,368 - order_service - INFO - 현재 포지션 크기: 0.233 BTC
+2025-02-14 15:55:14,710 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:55:14,710 - order_service - INFO - 가용 잔고: $40113.45605625, 총 자산: $44527.11629996, 미실현 손익: $0.0
+2025-02-14 15:55:14,880 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:55:14,881 - order_service - INFO - 계산 입력값 - 총자산: $44527.11629996, 미실현손익: $0.0, 비율: 10%, 레버리지: 5배, 진입가: $95710.0
+2025-02-14 15:55:14,882 - order_service - INFO - 순수 자산: $44527.11629996
+2025-02-14 15:55:14,882 - order_service - INFO - 포지션 가치(USDT): $22263.55814998
+2025-02-14 15:55:14,882 - order_service - INFO - 계산된 BTC 수량: 0.23261475446640895
+2025-02-14 15:55:14,882 - order_service - INFO - 최종 BTC 수량(반올림): 0.233
+2025-02-14 15:55:14,883 - order_service - INFO - 목표 포지션 크기: 0.233 BTC
+2025-02-14 15:55:14,883 - order_service - INFO - 계산된 크기 차이(원본): 0.0 BTC
+2025-02-14 15:55:14,884 - order_service - INFO - 조정된 크기 차이(반올림): -0.0 BTC
+2025-02-14 15:55:14,884 - order_service - INFO - 크기 차이가 최소 주문 단위보다 작음: 0.0 BTC
+2025-02-14 15:55:14,884 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:55:14,884 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'entry_price'
+2025-02-14 16:13:49,629 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 16:13:49,630 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 16:13:49,637 - main - INFO - 서비스 초기화 중...
+2025-02-14 16:13:49,637 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 16:13:51,698 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 16:13:52,127 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 16:13:52,127 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 16:13:52,128 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 16:13:52,776 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() got an unexpected keyword argument 'bot'
+2025-02-14 16:13:52,777 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 109, in __init__
+    self.auto_analyzer = AutoAnalyzer(
+                         ^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() got an unexpected keyword argument 'bot'
+
+2025-02-14 16:15:25,738 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-14 16:15:25,740 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-14 16:15:25,745 - main - INFO - 서비스 초기화 중...
+2025-02-14 16:15:25,745 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-14 16:15:27,563 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-14 16:15:27,951 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-14 16:15:27,952 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-14 16:15:27,952 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-14 16:15:28,671 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-14 16:15:28,672 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-14 16:15:29,390 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-14 16:15:29,390 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-14 16:15:29,390 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-14 16:15:29,391 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-14 16:15:30,457 - telegram.ext.Application - INFO - Application started
+2025-02-14 16:15:30,764 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-14 16:15:44,869 - telegram_bot.handlers.analysis_handler - ERROR - 분석 처리 중 오류: 'AutoAnalyzer' object has no attribute 'run_market_analysis'

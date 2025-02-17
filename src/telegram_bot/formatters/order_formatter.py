@@ -14,6 +14,13 @@ class OrderFormatter:
     ORDER_SIDES = {'BUY', 'SELL'}
     ORDER_STATUSES = {'NEW', 'PARTIALLY_FILLED', 'FILLED', 'CANCELED', 'REJECTED'}
     
+    def __init__(self):
+        self.current_time = datetime.now()
+
+    def _get_current_time(self) -> str:
+        """현재 시간 포맷팅"""
+        return self.current_time.strftime("%Y-%m-%d %H:%M:%S KST")
+
     @classmethod
     def _validate_order(cls, order: Dict) -> Tuple[bool, str]:
         """주문 데이터 검증"""
@@ -74,34 +81,42 @@ class OrderFormatter:
         
         return f"{status_emoji} {side_emoji}"
     
-    def format_order(self, order_data: Dict) -> str:
-        """주문 정보 통합 포맷팅"""
+    def format_order(self, order: Dict) -> str:
+        """주문 정보 포맷팅"""
         try:
+            if not order:
+                return "주문 정보 없음"
+
             # BTC 수량 계산 (가용잔고 * 목표비율 * 레버리지 / 진입가)
-            btc_quantity = self._calculate_btc_quantity(order_data)
+            btc_quantity = float(order.get('qty', 0))
             
-            message = f"""📝 {'🟢' if order_data['side'] == 'Buy' else '🔴'} 주문 생성 완료 ({self._get_current_time()})
+            # 이모지 설정
+            side_emoji = "🟢" if order.get('side') == 'Buy' else "🔴"
 
-📋 주문 정보:
-• 심볼: {order_data['symbol']}
-• 방향: {'롱' if order_data['side'] == 'Buy' else '숏'}
-• 레버리지: {order_data['leverage']}x
+            message = [
+                f"📝 {side_emoji} 주문 생성 완료",
+                "",
+                "📋 주문 정보:",
+                f"• 심볼: {order.get('symbol', '-')}",
+                f"• 방향: {'롱' if order.get('side') == 'Buy' else '숏'}",
+                f"• 레버리지: {order.get('leverage', 1)}x",
+                "",
+                "💰 거래 정보:",
+                f"• 진입가: ${float(order.get('entry_price', 0)):,.2f}",
+                f"• 수량: {order.get('position_size', 0)}% ({btc_quantity:.3f} BTC)",
+                f"• 손절가: ${float(order.get('stopLoss', 0)):,.2f}",
+                f"• 익절가: ${float(order.get('takeProfit', 0)):,.2f}",
+                "",
+                "📊 상태:",
+                f"• 주문상태: {order.get('status', 'NEW')}",
+                f"• 주문ID: {order.get('orderId', '-')}"
+            ]
 
-💰 거래 정보:
-• 진입가: ${float(order_data['entry_price']):,.2f}
-• 수량: {order_data['position_size']}% ({btc_quantity:.3f} BTC)
-• 손절가: ${float(order_data['stop_loss']):,.2f}
-• 익절가: ${float(order_data['take_profit1']):,.2f}
-
-📊 상태:
-• 주문상태: {order_data.get('status', 'NEW')}
-• 주문ID: {order_data.get('order_id', '-')}"""
-            
-            return message
+            return "\n".join(message)
 
         except Exception as e:
             logger.error(f"주문 포맷팅 중 오류: {str(e)}")
-            return "❌ 포맷팅 오류"
+            return "주문 포맷팅 실패"
 
     @classmethod
     def format_open_orders(cls, orders: List[Dict]) -> str:
@@ -196,7 +211,7 @@ class OrderFormatter:
                 f"• 레버리지: {params.get('leverage', '10')}x",
                 "",
                 "💰 거래 정보:",
-                f"• 진입가: ${self._format_number(params.get('entry_price', 0))}",
+                f"• 진입가: ${self._format_number(params.get('price', 0))}",
                 f"• 수량: {params.get('position_size')}% (계산 중)",
                 f"• 손절가: ${self._format_number(params.get('stop_loss', 0))}",
                 f"• 익절가: ${self._format_number(params.get('take_profit1', 0))}",
@@ -232,12 +247,85 @@ class OrderFormatter:
     def _calculate_btc_quantity(self, order_data: Dict) -> float:
         """BTC 수량 계산"""
         try:
-            entry_price = float(order_data['entry_price'])
+            price = float(order_data['price'])
             position_size = float(order_data['position_size'])
             leverage = float(order_data['leverage'])
             
             # 예시: 10만 USDT * 10% * 5x / 95000 = 약 0.053 BTC
-            return (100000 * (position_size / 100) * leverage) / entry_price
+            return (100000 * (position_size / 100) * leverage) / price
         except Exception as e:
             logger.error(f"BTC 수량 계산 중 오류: {str(e)}")
             return 0.0
+
+    def format_order_message(self, order_params: Dict) -> str:
+        """주문 메시지 포맷팅"""
+        try:
+            # BTC 수량 계산
+            btc_size = self._calculate_btc_size(order_params)
+            
+            # 주문 타입에 따른 메시지
+            if order_params.get('reduceOnly'):
+                return self._format_reduce_message(order_params, btc_size)
+            else:
+                return self._format_new_position_message(order_params, btc_size)
+                    
+        except Exception as e:
+            logger.error(f"주문 포맷팅 중 오류: {str(e)}")
+            return "주문 메시지 생성 실패"
+
+    def _calculate_btc_size(self, order_params: Dict) -> float:
+        """BTC 수량 계산"""
+        try:
+            price = float(order_params.get('price', 0))
+            qty = float(order_params.get('qty', 0))
+            position_value = price * qty
+            return position_value
+        except Exception as e:
+            logger.error(f"BTC 수량 계산 중 오류: {str(e)}")
+            return 0.0
+
+    def _format_new_position_message(self, order_params: Dict, btc_size: float) -> str:
+        """신규 포지션 생성 메시지"""
+        try:
+            side = order_params.get('side', '')
+            symbol = order_params.get('symbol', '')
+            price = order_params.get('price', '')
+            stop_loss = order_params.get('stopLoss', '')
+            take_profit = order_params.get('takeProfit', '')
+            
+            message = (
+                f"🔄 신규 {side} 주문\n"
+                f"심볼: {symbol}\n"
+                f"수량: {btc_size} BTC\n"
+                f"진입가: ${price}\n"
+                f"손절가: ${stop_loss}\n"
+                f"익절가: ${take_profit}\n"
+                f"\n"
+                f"주문시각: {self._get_current_time()}"
+            )
+            return message
+            
+        except Exception as e:
+            logger.error(f"신규 포지션 메시지 포맷팅 중 오류: {str(e)}")
+            return "메시지 생성 실패"
+
+    def _format_reduce_message(self, order_params: Dict, btc_size: float) -> str:
+        """포지션 감소 메시지"""
+        try:
+            side = order_params.get('side', '')
+            symbol = order_params.get('symbol', '')
+            price = order_params.get('price', '')
+            
+            message = (
+                f"🔄 포지션 {side} 주문\n"
+                f"심볼: {symbol}\n"
+                f"수량: {btc_size} BTC\n"
+                f"가격: ${price}\n"
+                f"\n"
+                f"주문시각: {self._get_current_time()}"
+            )
+            return message
+            
+        except Exception as e:
+            logger.error(f"포지션 감소 메시지 포맷팅 중 오류: {str(e)}")
+            return "메시지 생성 실패"

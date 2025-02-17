@@ -107,11 +107,10 @@ class TelegramBot:
 
         # 모니터링 초기화
         self.auto_analyzer = AutoAnalyzer(
-            bot=self,
-            ai_trader=self.ai_trader,
             market_data_service=self.market_data_service,
-            storage_formatter=self.storage_formatter,
-            analysis_formatter=self.analysis_formatter
+            gpt_analyzer=self.ai_trader.gpt_analyzer,
+            order_service=self.order_service,
+            telegram_bot=self
         )
         
         # 핸들러 초기화 (순서 중요)
@@ -212,11 +211,10 @@ class TelegramBot:
             
             # 모니터링 초기화
             self.auto_analyzer = AutoAnalyzer(
-                bot=self,
-                ai_trader=self.ai_trader,
                 market_data_service=self.market_data_service,
-                storage_formatter=self.storage_formatter,
-                analysis_formatter=self.analysis_formatter
+                gpt_analyzer=self.ai_trader.gpt_analyzer,
+                order_service=self.order_service,
+                telegram_bot=self
             )
             
             self.profit_monitor = ProfitMonitor(self)
@@ -291,7 +289,7 @@ class TelegramBot:
         help_text = """
 🤖 사용 가능한 명령어:
 
-�� 트레이딩 명령어:
+🔵 트레이딩 명령어:
 /analyze - 1시간봉 시장 분석
 /trade - 거래 실행
 /status - 현재 상태 확인

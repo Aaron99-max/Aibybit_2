@@ -1,0 +1,75 @@
+2025-02-14 13:35:17,698 - exchange.bybit_client - ERROR - API 요청 실패: 'BybitClient' object has no attribute '_ensure_time_sync'
+2025-02-14 13:35:17,706 - exchange.bybit_client - ERROR - API 요청 실패: 'BybitClient' object has no attribute '_ensure_time_sync'
+2025-02-14 13:35:17,706 - order_service - ERROR - 레버리지 설정 실패: None
+2025-02-14 13:35:17,707 - order_service - ERROR - 레버리지 설정 실패
+2025-02-14 13:48:29,721 - telegram_bot.bot - ERROR - 메시지 전송 실패 (chat_id: 583881676): Timed out
+2025-02-14 13:51:22,432 - order_service - ERROR - 신규 포지션 생성 중 오류: 'size'
+2025-02-14 13:51:22,432 - order_service - ERROR - 상세 에러: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 65, in create_new_position
+    "qty": str(signal['size']),
+               ~~~~~~^^^^^^^^
+KeyError: 'size'
+
+2025-02-14 13:53:27,776 - order_service - ERROR - 신규 포지션 생성 실패: {'retCode': 110007, 'retMsg': 'ab not enough for new order', 'result': {}, 'retExtInfo': {}, 'time': 1739508808340}
+2025-02-14 13:55:41,272 - telegram_bot.utils.decorators - ERROR - Error in get_balance: 'BybitClient' object has no attribute 'get_balance'
+2025-02-14 13:55:41,276 - telegram_bot.utils.decorators - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\utils\decorators.py", line 14, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\services\balance_service.py", line 25, in get_balance
+    balance = await self.bybit_client.get_balance()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_balance'
+
+2025-02-14 14:24:51,380 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-02-14 14:32:14,455 - order_service - ERROR - 포지션 크기 조정 중 오류: 'size'
+2025-02-14 14:32:51,455 - position_service - ERROR - 포지션 목록 조회 중 오류: could not convert string to float: ''
+2025-02-14 14:36:35,425 - order_service - ERROR - 포지션 크기 조정 중 오류: 'size'
+2025-02-14 14:50:59,439 - order_service - ERROR - 포지션 관리 중 오류: name 'config' is not defined
+2025-02-14 14:50:59,446 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 127, in manage_existing_position
+    max_leverage_diff = config.trading_config.leverage_settings['max_difference']
+                        ^^^^^^
+NameError: name 'config' is not defined
+
+2025-02-14 14:53:11,296 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'Qty invalid', 'result': {}, 'retExtInfo': {}, 'time': 1739512391884}
+2025-02-14 14:53:11,297 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 14:59:31,790 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'TakeProfit:976140000 set for Sell position should be lower than base_price:957000000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739512772376}
+2025-02-14 14:59:31,791 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 15:09:22,727 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'Qty invalid', 'result': {}, 'retExtInfo': {}, 'time': 1739513363321}
+2025-02-14 15:09:22,728 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 15:12:17,463 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'TakeProfit:976720000 set for Sell position should be lower than base_price:969000000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739513538059}
+2025-02-14 15:12:17,464 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-02-14 15:18:36,566 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:18:36,587 - order_service - ERROR - 포지션 크기 계산 중 오류: unsupported operand type(s) for -: 'float' and 'coroutine'
+2025-02-14 15:18:36,792 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:18:36,792 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:30:08,621 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:30:08,622 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:31:09,557 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:31:09,755 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:31:09,929 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:31:09,930 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:40:34,290 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:40:34,463 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:40:34,631 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:40:34,631 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:41:49,804 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:41:50,023 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:41:50,246 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:41:50,248 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'OrderFormatter' object has no attribute '_get_current_time'
+2025-02-14 15:55:14,710 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:55:14,880 - order_service - ERROR - 미실현 손익 조회 중 오류: 0
+2025-02-14 15:55:14,884 - order_formatter - ERROR - BTC 수량 계산 중 오류: 'entry_price'
+2025-02-14 15:55:14,884 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'entry_price'
+2025-02-14 16:13:52,776 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() got an unexpected keyword argument 'bot'
+2025-02-14 16:13:52,777 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 109, in __init__
+    self.auto_analyzer = AutoAnalyzer(
+                         ^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() got an unexpected keyword argument 'bot'
+
+2025-02-14 16:15:44,869 - telegram_bot.handlers.analysis_handler - ERROR - 분석 처리 중 오류: 'AutoAnalyzer' object has no attribute 'run_market_analysis'

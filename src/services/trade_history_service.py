@@ -7,13 +7,14 @@ import traceback
 from services.trade_store import TradeStore
 import time
 import asyncio
+from services.bybit_client import BybitClient
 
 logger = logging.getLogger(__name__)
 
 class TradeHistoryService:
-    def __init__(self, bybit_client):
+    def __init__(self, trade_store: TradeStore, bybit_client: BybitClient):
+        self.trade_store = trade_store
         self.bybit_client = bybit_client
-        self.trade_store = TradeStore()
         # 디버그 로거 설정
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.DEBUG)
@@ -417,3 +418,27 @@ class TradeHistoryService:
                 logger.error(f"원본 데이터: {p}")
             
         return processed 
+
+    async def update_position(self):
+        """포지션 정보 업데이트"""
+        try:
+            # 바이비트에서 포지션 정보 조회
+            position = await self.bybit_client.get_position('BTCUSDT')
+            
+            if position:
+                # 트레이드 스토어에 포지션 정보 저장
+                self.trade_store.update_position('BTCUSDT', position)
+                logger.info(f"포지션 정보 업데이트 완료: {position}")
+            else:
+                logger.warning("포지션 정보 조회 실패")
+                
+        except Exception as e:
+            logger.error(f"포지션 정보 업데이트 중 오류: {str(e)}")
+            
+    async def get_position(self, symbol: str) -> dict:
+        """포지션 정보 조회"""
+        # 포지션 정보 업데이트
+        await self.update_position()
+        
+        # 저장된 포지션 정보 반환
+        return self.trade_store.get_position(symbol) 

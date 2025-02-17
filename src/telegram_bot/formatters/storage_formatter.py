@@ -19,21 +19,46 @@ class StorageFormatter:
         self.analysis_dir = config.data_dir / 'analysis'
         os.makedirs(self.analysis_dir, exist_ok=True)
         
-    def save_analysis(self, analysis: Dict, timeframe: str) -> bool:
+    def save_analysis(self, timeframe: str, analysis: Dict) -> bool:
         """분석 결과 저장"""
         try:
             # 저장 시간과 타임스탬프 추가
             now = datetime.now()
-            analysis['saved_at'] = now.strftime("%Y-%m-%d %H:%M:%S KST")
-            analysis['timestamp'] = int(now.timestamp() * 1000)
+            # 문자열이면 그대로 사용, 딕셔너리면 복사
+            analysis_data = analysis.copy() if isinstance(analysis, dict) else analysis
+            
+            if isinstance(analysis_data, dict):
+                # 숫자 데이터 소수점 정리
+                if 'market_summary' in analysis_data:
+                    market = analysis_data['market_summary']
+                    market['current_price'] = round(float(market.get('current_price', 0)), 2)
+
+                if 'technical_analysis' in analysis_data:
+                    tech = analysis_data['technical_analysis']
+                    if 'indicators' in tech:
+                        indicators = tech['indicators']
+                        indicators['rsi'] = round(float(indicators.get('rsi', 0)), 2)
+
+                if 'trading_signals' in analysis_data:
+                    signals = analysis_data['trading_signals']
+                    signals['entry_price'] = round(float(signals.get('entry_price', 0)), 2)
+                    signals['stop_loss'] = round(float(signals.get('stop_loss', 0)), 1)
+                    signals['take_profit1'] = round(float(signals.get('take_profit1', 0)), 2)
+                    signals['take_profit2'] = round(float(signals.get('take_profit2', 0)), 2)
+
+                analysis_data['saved_at'] = now.strftime("%Y-%m-%d %H:%M:%S KST")
+                analysis_data['timestamp'] = int(now.timestamp() * 1000)
             
             # 파일 경로 설정
             filename = f"analysis_{timeframe}.json"
             filepath = os.path.join(self.analysis_dir, filename)
             
-            # 파일 직접 저장 (기존 데이터와 병합하지 않음)
+            # 디렉토리 생성
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+            
+            # 파일 직접 저장
             with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(analysis, f, ensure_ascii=False, indent=2)
+                json.dump(analysis_data, f, ensure_ascii=False, indent=2)
                 
             logger.info(f"{timeframe} 분석 결과 저장 완료: {filepath}")
             return True

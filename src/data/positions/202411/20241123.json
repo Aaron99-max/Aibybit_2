@@ -33,5 +33,49 @@
     "unrealised_pnl": 0.0,
     "cum_realised_pnl": -0.4244,
     "updated_time": "2024-11-23T00:00:00Z"
+  },
+  {
+    "id": "72fa2015-47bb-4256-a351-c0b413fa2949",
+    "timestamp": 1732345076288,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "13085194-d99a-4ed1-b6b9-f57f362548e4",
+    "timestamp": 1732346884286,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "c4a568f7-4d6b-448e-91c5-518b827865f6",
+    "timestamp": 1732346916348,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "85807a5a-a5b7-4195-aafa-789e0b2e651e",
+    "timestamp": 1732348800000,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
   }
 ]

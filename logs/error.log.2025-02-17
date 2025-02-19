@@ -1,0 +1,119 @@
+2025-02-17 12:25:05,780 - telegram_bot.handlers.analysis_handler - ERROR - 분석 처리 중 오류: 'AutoAnalyzer' object has no attribute 'run_market_analysis'
+2025-02-17 12:26:13,748 - telegram_bot.handlers.analysis_handler - ERROR - 분석 처리 중 오류: 'AutoAnalyzer' object has no attribute 'run_market_analysis'
+2025-02-17 12:31:52,720 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object does not support item assignment
+2025-02-17 12:31:52,735 - telegram_bot.monitors.auto_analyzer - ERROR - 매매 신호 처리 중 오류: 'OrderService' object has no attribute 'execute_trade'
+2025-02-17 12:31:52,735 - telegram_bot.monitors.auto_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\monitors\auto_analyzer.py", line 132, in _handle_trading_signals
+    trade_result = await self.order_service.execute_trade(signals)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'OrderService' object has no attribute 'execute_trade'
+
+2025-02-17 12:34:08,480 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: 'str' object has no attribute 'copy'
+2025-02-17 12:34:08,803 - order_service - ERROR - 매매 실행 중 오류: 'OrderService' object has no attribute 'open_long_position'
+2025-02-17 12:42:59,919 - telegram_bot.formatters.storage_formatter - ERROR - 분석 결과 저장 중 오류: [Errno 2] No such file or directory: "C:\\Users\\oasis\\Aibybit_2\\src\\data\\analysis\\analysis_{'market_summary': {'current_price': 90271.5, 'market_phase': '횡보', 'sentiment': 'NEUTRAL', 'short_term': 'NEUTRAL', 'volume': 'VOLUME_NEUTRAL', 'risk': 'MEDIUM', 'confidence': 75}, 'technical_analysis': {'trend': 'SIDEWAYS', 'strength': 61, 'indicators': {'rsi': 58.44781803440862, 'macd': 'STRONG_BULLISH', 'bollinger': 'ABOVE_MIDDLE', 'divergence_type': '없음', 'divergence_desc': '현재 다이버전스 없음'}}, 'trading_signals': {'position_suggestion': 'HOLD', 'leverage': 1, 'position_size': 10, 'entry_price': 90271.5, 'stop_loss': 88466.06999999999, 'take_profit1': 92076.93000000001, 'take_profit2': 93882.36, 'reason': '변동성이 낮고 명확한 추세 신호가 없음'}, 'auto_trading': {'enabled': True, 'status': 'active'}, 'saved_at': '2025-02-17 12:42:59 KST', 'timestamp': 1739763779919}.json"
+2025-02-17 12:57:04,106 - order_service - ERROR - 매매 신호 실행 실패: None
+2025-02-17 13:00:14,059 - order_service - ERROR - 매매 신호 실행 실패: None
+2025-02-17 13:02:34,496 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 13:02:34,497 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Buy', 'leverage': 5, 'position_size': 10, 'entry_price': 92203.2, 'stop_loss': 90359.1, 'take_profit': 94047.26, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 13:02:34,497 - order_service - ERROR - - 응답: None
+2025-02-17 13:11:59,824 - order_service - ERROR - 주문 생성 중 오류: 'OrderService' object has no attribute '_validate_side'
+2025-02-17 13:11:59,828 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 155, in create_order
+    params['side'] = self._validate_side(params['side'])
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'OrderService' object has no attribute '_validate_side'
+
+2025-02-17 13:11:59,831 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 13:11:59,831 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Buy', 'leverage': 5, 'position_size': 10, 'entry_price': 92203.2, 'stop_loss': 90359.1, 'take_profit': 94047.26, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 13:11:59,832 - order_service - ERROR - - 응답: None
+2025-02-17 13:14:17,504 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 13:14:17,506 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Buy', 'leverage': 5, 'position_size': 10, 'entry_price': 96600.0, 'stop_loss': 94668.0, 'take_profit': 98532.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 13:14:17,508 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'The number of contracts exceeds minimum limit allowed', 'result': {}, 'retExtInfo': {}, 'time': 1739765658262}
+2025-02-17 13:14:17,510 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 13:14:17,511 - order_service - ERROR - - 에러 메시지: The number of contracts exceeds minimum limit allowed
+2025-02-17 13:22:10,195 - order_formatter - ERROR - 주문 포맷팅 중 오류: 'stop_loss'
+2025-02-17 13:40:34,470 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'bool' object is not callable
+2025-02-17 13:54:53,721 - main - ERROR - 실행 중 에러 발생: TradeHistoryService.__init__() missing 1 required positional argument: 'bybit_client'
+2025-02-17 13:54:54,368 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 69, in __init__
+    self.trade_history_service = TradeHistoryService(bybit_client)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeHistoryService.__init__() missing 1 required positional argument: 'bybit_client'
+
+2025-02-17 13:58:11,225 - main - ERROR - 실행 중 에러 발생: TradingHandler.__init__() takes 5 positional arguments but 6 were given
+2025-02-17 13:58:11,226 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 125, in __init__
+    self.trading_handler = TradingHandler(
+                           ^^^^^^^^^^^^^^^
+TypeError: TradingHandler.__init__() takes 5 positional arguments but 6 were given
+
+2025-02-17 14:22:28,345 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 14:22:28,346 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 75922.2, 'stop_loss': 74403.8, 'take_profit': 77440.64, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 14:22:28,347 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'TakeProfit:774406000 set for Sell position should be lower than base_price:759222000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739769749154}
+2025-02-17 14:22:28,347 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 14:22:28,347 - order_service - ERROR - - 에러 메시지: TakeProfit:774406000 set for Sell position should be lower than base_price:759222000??LastPrice
+2025-02-17 14:35:48,035 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: 'BybitClient' object has no attribute 'get_closed_positions'
+2025-02-17 14:35:48,037 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 48, in initialize
+    new_positions = await self.bybit_client.get_closed_positions(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_positions'
+
+2025-02-17 14:39:08,085 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 14:39:08,085 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 10, 'position_size': 10, 'entry_price': 71153.8, 'stop_loss': 69730.7, 'take_profit': 72576.88, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 14:39:08,087 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'TakeProfit:725768000 set for Sell position should be lower than base_price:711538000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739770748899}
+2025-02-17 14:39:08,089 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 14:39:08,089 - order_service - ERROR - - 에러 메시지: TakeProfit:725768000 set for Sell position should be lower than base_price:711538000??LastPrice
+2025-02-17 14:59:50,625 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: 'TradeStore' object has no attribute 'save_position'
+2025-02-17 14:59:50,633 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 54, in initialize
+    self.trade_store.save_position(position)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeStore' object has no attribute 'save_position'. Did you mean: '_save_position'?
+
+2025-02-17 15:00:56,564 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 15:00:56,564 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 10, 'position_size': 10, 'entry_price': 65364.6, 'stop_loss': 64057.3, 'take_profit': 66671.89, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 15:00:56,564 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'TakeProfit:666718000 set for Sell position should be lower than base_price:653646000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739772057390}
+2025-02-17 15:00:56,565 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 15:00:56,565 - order_service - ERROR - - 에러 메시지: TakeProfit:666718000 set for Sell position should be lower than base_price:653646000??LastPrice
+2025-02-17 15:13:35,935 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 15:13:35,936 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 83000.0, 'stop_loss': 81340.0, 'take_profit': 84660.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 15:13:35,936 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'TakeProfit:846600000 set for Sell position should be lower than base_price:830000000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739772816761}
+2025-02-17 15:13:35,936 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 15:13:35,936 - order_service - ERROR - - 에러 메시지: TakeProfit:846600000 set for Sell position should be lower than base_price:830000000??LastPrice
+2025-02-17 15:20:28,427 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: 'TradeStore' object has no attribute 'get_last_position'
+2025-02-17 15:20:28,431 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 46, in initialize
+    last_position = self.trade_store.get_last_position()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeStore' object has no attribute 'get_last_position'. Did you mean: 'get_daily_positions'?
+
+2025-02-17 15:22:48,793 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 15:22:48,793 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 85985.5, 'stop_loss': 84265.8, 'take_profit': 87705.21, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 15:22:48,793 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'TakeProfit:877052000 set for Sell position should be lower than base_price:861912000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739773369627}
+2025-02-17 15:22:48,794 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 15:22:48,794 - order_service - ERROR - - 에러 메시지: TakeProfit:877052000 set for Sell position should be lower than base_price:861912000??LastPrice
+2025-02-17 15:34:22,643 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: TradeHistoryService.fetch_and_update_positions() got an unexpected keyword argument 'start_timestamp'
+2025-02-17 15:34:22,644 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 61, in initialize
+    await self.fetch_and_update_positions(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeHistoryService.fetch_and_update_positions() got an unexpected keyword argument 'start_timestamp'
+
+2025-02-17 15:35:07,925 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 15:35:07,926 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 82250.8, 'stop_loss': 80605.8, 'take_profit': 83895.82, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 15:35:07,926 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'TakeProfit:838958000 set for Sell position should be lower than base_price:822508000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739774108767}
+2025-02-17 15:35:07,927 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 15:35:07,927 - order_service - ERROR - - 에러 메시지: TakeProfit:838958000 set for Sell position should be lower than base_price:822508000??LastPrice
+2025-02-17 15:42:38,561 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: TradeHistoryService.get_positions() got an unexpected keyword argument 'symbol'
+2025-02-17 15:43:27,200 - order_service - ERROR - 매매 신호 실행 실패:
+2025-02-17 15:43:27,200 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 79677.2, 'stop_loss': 78083.7, 'take_profit': 81270.74, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-02-17 15:43:27,201 - order_service - ERROR - - 응답: {'retCode': 10001, 'retMsg': 'TakeProfit:812707000 set for Sell position should be lower than base_price:796772000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1739774608044}
+2025-02-17 15:43:27,202 - order_service - ERROR - - 에러 코드: 10001
+2025-02-17 15:43:27,202 - order_service - ERROR - - 에러 메시지: TakeProfit:812707000 set for Sell position should be lower than base_price:796772000??LastPrice

@@ -248,3 +248,42 @@ class BybitClient:
         except Exception as e:
             logger.error(f"포지션 조회 API 호출 실패: {str(e)}")
             return None
+
+    async def fetch_closed_positions(self, symbol: str, start_time: int = None, end_time: int = None) -> List[Dict]:
+        """포지션 조회 API 호출"""
+        try:
+            params = {
+                "category": "linear",
+                "symbol": symbol,
+                "limit": 100
+            }
+            
+            if start_time:
+                params["startTime"] = start_time
+            if end_time:
+                params["endTime"] = end_time
+                
+            response = await self.v5_get("/position/closed-pnl/list", params)
+            if response and response.get('retCode') == 0:
+                return response.get('result', {}).get('list', [])
+            return []
+                
+        except Exception as e:
+            logger.error(f"포지션 조회 API 호출 실패: {str(e)}")
+            return []
+
+    async def fetch_my_trades(self, symbol: str, since: int = None, params: Dict = None) -> List[Dict]:
+        """거래 내역 조회 API"""
+        try:
+            # CCXT를 통한 거래 내역 조회
+            trades = await self.exchange.fetch_my_trades(symbol, since=since, params=params)
+            
+            # 응답 로깅
+            if trades:
+                logger.debug(f"조회된 거래 수: {len(trades)}건")
+            
+            return trades
+            
+        except Exception as e:
+            logger.error(f"거래 내역 조회 API 호출 실패: {str(e)}")
+            return []

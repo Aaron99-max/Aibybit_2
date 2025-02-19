@@ -18,5 +18,16 @@
     "closed_size": 0.001,
     "exec_type": "Trade",
     "fill_count": 1
+  },
+  {
+    "id": "66e6b10d-7bc0-488b-bf62-77a20c7c283e",
+    "timestamp": 1733813069595,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
   }
 ]

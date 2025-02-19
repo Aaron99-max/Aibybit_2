@@ -1,0 +1,24 @@
+[
+  {
+    "id": "47f2cbba-3ccb-4f19-bd54-3dd9fba2ae4f",
+    "timestamp": 1733380753751,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "ec70470c-ef65-42fe-8b62-c71153112c3b",
+    "timestamp": 1733385600000,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  }
+]

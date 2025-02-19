@@ -1,0 +1,452 @@
+2025-02-18 14:27:51,677 - ai.gpt_analyzer - ERROR - 시장 분석 중 오류: 'market_summary'
+2025-02-18 14:27:51,686 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\gpt_analyzer.py", line 198, in analyze_market
+    "market_summary": gpt_analysis['market_summary'],
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'market_summary'
+
+2025-02-18 14:27:51,688 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-18 14:33:54,220 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: TradeHistoryService.fetch_and_update_positions() got an unexpected keyword argument 'start_timestamp'
+2025-02-18 14:33:54,221 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 61, in initialize
+    await self.fetch_and_update_positions(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeHistoryService.fetch_and_update_positions() got an unexpected keyword argument 'start_timestamp'
+
+2025-02-18 14:37:07,242 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.get_positions() got an unexpected keyword argument 'start_time'
+2025-02-18 15:03:30,451 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-18 15:03:35,728 - telegram_bot.bot - ERROR - 봇 시작 중 오류: Timed out
+2025-02-18 15:03:35,884 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 351, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-02-18 15:03:35,893 - telegram_bot.bot - ERROR - 봇 실행 중 오류: Timed out
+2025-02-18 15:03:35,895 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 287, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 351, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-02-18 15:03:35,913 - main - ERROR - 실행 중 에러 발생: Timed out
+2025-02-18 15:03:35,916 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 287, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 351, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-02-18 15:05:13,158 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'since'
+2025-02-18 15:12:53,536 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'since'
+2025-02-18 15:15:57,676 - services.trade_history_service - ERROR - 거래 내역 초기화 실패: 'TradeStore' object has no attribute 'get_trades'
+2025-02-18 15:15:57,678 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 34, in initialize
+    existing_trades = self.trade_store.get_trades(start_timestamp, end_timestamp)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeStore' object has no attribute 'get_trades'
+
+2025-02-18 15:18:52,327 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,328 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,328 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,328 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,332 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,332 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,335 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,336 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,336 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,336 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,338 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,338 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,338 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,339 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,339 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,339 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,340 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,340 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,342 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,342 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,345 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,345 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,346 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,346 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,348 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,348 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,348 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,349 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,349 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,350 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,350 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,350 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,352 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,352 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,352 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,354 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,354 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,354 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,355 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,355 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,355 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,358 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,358 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,359 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'since'
+2025-02-18 15:24:51,230 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: TradeStore.update_last_update() takes 1 positional argument but 2 were given
+2025-02-18 15:27:49,708 - services.trade_history_service - ERROR - 거래 내역 업데이트 중 오류: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-18 15:27:49,715 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 445, in update_trades
+    self.trade_store.save_last_update(period_end)  # 메서드 이름 변경
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeStore' object has no attribute 'save_last_update'. Did you mean: '_save_last_update'?
+
+2025-02-18 16:02:41,777 - main - ERROR - 실행 중 에러 발생: TradeHistoryService.__init__() takes 2 positional arguments but 3 were given
+2025-02-18 16:02:41,779 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 74, in __init__
+    self.trade_history_service = TradeHistoryService(self.trade_store, bybit_client)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeHistoryService.__init__() takes 2 positional arguments but 3 were given
+
+2025-02-18 16:09:24,967 - main - ERROR - 실행 중 에러 발생: TelegramBot.__init__() got an unexpected keyword argument 'config'
+2025-02-18 16:09:24,969 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+TypeError: TelegramBot.__init__() got an unexpected keyword argument 'config'
+
+2025-02-18 16:11:22,244 - telegram_bot.bot - ERROR - 봇 초기화 실패: 'TelegramBot' object has no attribute 'config'
+2025-02-18 16:11:22,245 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute 'config'
+2025-02-18 16:11:22,247 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 276, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 207, in initialize
+    .token(self.config.bot_token)
+           ^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'config'
+
+2025-02-18 16:11:22,248 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'config'
+2025-02-18 16:11:22,249 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 276, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 207, in initialize
+    .token(self.config.bot_token)
+           ^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'config'
+

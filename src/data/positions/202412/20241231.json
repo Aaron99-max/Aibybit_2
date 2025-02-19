@@ -158,5 +158,104 @@
     "closed_size": 0.286,
     "exec_type": "Trade",
     "fill_count": 1
+  },
+  {
+    "id": "07c6e99d-e6fc-40ec-802b-64873a5cf188",
+    "timestamp": 1735616425128,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "4b05f86d-d197-4f38-9426-a54d4956d122",
+    "timestamp": 1735616565507,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "d2b6ee00-a504-4eec-bb06-755693bb6829",
+    "timestamp": 1735616825220,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "25920185-343b-4e10-9846-fb2be432899e",
+    "timestamp": 1735617006909,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "e39b2de1-4d83-4d52-a1f6-a7cde840d143",
+    "timestamp": 1735619393281,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "2fa6b735-875e-499c-8973-5e42d5c15f84",
+    "timestamp": 1735620436837,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "60cc9578-344d-49d6-a56d-e96a19c76619",
+    "timestamp": 1735620801963,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "b3d9af66-236d-4dce-a464-71eb324dd078",
+    "timestamp": 1735621098328,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
+  },
+  {
+    "id": "6128b6c7-0a1f-405c-af7e-04f6bb4fa40b",
+    "timestamp": 1735621357373,
+    "datetime": null,
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "price": null,
+    "amount": null,
+    "cost": null,
+    "info": {}
   }
 ]

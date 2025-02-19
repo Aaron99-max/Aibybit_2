@@ -1,0 +1,1516 @@
+2025-02-18 14:25:59,476 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 14:25:59,484 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 14:25:59,490 - main - INFO - 서비스 초기화 중...
+2025-02-18 14:25:59,491 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 14:26:01,535 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 14:26:04,249 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 14:26:04,249 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 14:26:04,249 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 14:26:04,922 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:26:04,922 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 14:26:04,922 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 14:26:05,567 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:26:05,567 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 14:26:05,567 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 14:26:05,567 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 14:26:05,567 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 14:26:05,567 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-18 14:26:05,567 - services.trade_store - INFO - 날짜 범위 조회: 20241120 ~ 20250218
+2025-02-18 14:26:05,579 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-18 14:26:05,579 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-18 14:26:05,581 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-18 14:26:05,581 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-18 14:26:05,582 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-18 14:26:05,582 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-18 14:26:05,582 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-18 14:26:05,583 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-18 14:26:05,583 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-18 14:26:05,583 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-18 14:26:05,584 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-18 14:26:05,585 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-18 14:26:05,585 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-18 14:26:05,586 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-18 14:26:05,587 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-18 14:26:05,587 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-18 14:26:05,587 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-18 14:26:05,587 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-18 14:26:05,588 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-18 14:26:05,589 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-18 14:26:05,589 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-18 14:26:05,589 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-18 14:26:05,589 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-18 14:26:05,594 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-18 14:26:05,594 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-18 14:26:05,594 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-18 14:26:05,595 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-18 14:26:05,595 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-18 14:26:05,596 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-18 14:26:05,597 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-18 14:26:05,598 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-18 14:26:05,610 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-18 14:26:05,610 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-18 14:26:05,610 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-18 14:26:05,610 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-18 14:26:05,611 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-18 14:26:05,611 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-18 14:26:05,611 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-18 14:26:05,611 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-18 14:26:05,612 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-18 14:26:05,612 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-18 14:26:05,612 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-18 14:26:05,612 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-18 14:26:05,614 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-18 14:26:05,615 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-18 14:26:05,626 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-18 14:26:05,626 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-18 14:26:05,626 - services.trade_history_service - INFO - 마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 14:26:05,627 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 ~ 2024-11-27
+2025-02-18 14:26:05,764 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1817ms
+2025-02-18 14:26:06,664 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 14:26:06,664 - telegram.ext.Application - INFO - Application started
+2025-02-18 14:26:06,923 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 14:26:07,032 - services.trade_history_service - INFO - 기간별 조회: 2024-11-27 ~ 2024-12-04
+2025-02-18 14:26:08,233 - services.trade_history_service - INFO - 기간별 조회: 2024-12-04 ~ 2024-12-11
+2025-02-18 14:26:09,428 - services.trade_history_service - INFO - 기간별 조회: 2024-12-11 ~ 2024-12-18
+2025-02-18 14:26:10,614 - services.trade_history_service - INFO - 기간별 조회: 2024-12-18 ~ 2024-12-25
+2025-02-18 14:26:11,804 - services.trade_history_service - INFO - 기간별 조회: 2024-12-25 ~ 2025-01-01
+2025-02-18 14:26:12,975 - services.trade_history_service - INFO - 기간별 조회: 2025-01-01 ~ 2025-01-08
+2025-02-18 14:26:14,194 - services.trade_history_service - INFO - 기간별 조회: 2025-01-08 ~ 2025-01-15
+2025-02-18 14:26:15,360 - services.trade_history_service - INFO - 기간별 조회: 2025-01-15 ~ 2025-01-22
+2025-02-18 14:26:16,505 - services.trade_history_service - INFO - 기간별 조회: 2025-01-22 ~ 2025-01-29
+2025-02-18 14:26:17,653 - services.trade_history_service - INFO - 기간별 조회: 2025-01-29 ~ 2025-02-05
+2025-02-18 14:26:18,807 - services.trade_history_service - INFO - 기간별 조회: 2025-02-05 ~ 2025-02-12
+2025-02-18 14:26:19,975 - services.trade_history_service - INFO - 기간별 조회: 2025-02-12 ~ 2025-02-18
+2025-02-18 14:27:48,789 - telegram_bot.monitors.auto_analyzer - INFO - 🔄' 1시간봉 분석 시작 (수동) ...
+2025-02-18 14:27:48,790 - services.market_data_service - INFO - OHLCV 데이터 조회 시작 - 심볼: BTCUSDT, 시간대: 1h
+2025-02-18 14:27:49,244 - ai.gpt_analyzer - INFO - 계산된 지표: ['open', 'high', 'low', 'close', 'volume', 'price_change_24h', 'volume_change_24h', 'rsi', 'macd', 'macd_signal', 'bb_upper', 'bb_middle', 'bb_lower', 'sma_10', 'sma_30', 'adx', 'di_plus', 'di_minus', 'trend', 'trend_strength', 'divergence_type', 'divergence_desc']
+2025-02-18 14:27:49,246 - ai.gpt_analyzer - INFO - 시장 데이터: {'symbol': 'BTCUSDT', 'last_price': 83902.2, 'bid': 83000.0, 'ask': 83892.2, 'volume': 353679.349, 'timestamp': None}
+2025-02-18 14:27:49,255 - ai.gpt_client - INFO - GPT API 호출 시작 (캐시 사용: False)
+2025-02-18 14:27:49,256 - ai.gpt_client - INFO - 캐시 사용하지 않음 - 실제 API 호출
+2025-02-18 14:27:51,677 - ai.gpt_analyzer - ERROR - 시장 분석 중 오류: 'market_summary'
+2025-02-18 14:27:51,686 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\gpt_analyzer.py", line 198, in analyze_market
+    "market_summary": gpt_analysis['market_summary'],
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'market_summary'
+
+2025-02-18 14:27:51,688 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-18 14:33:50,452 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 14:33:50,454 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 14:33:50,459 - main - INFO - 서비스 초기화 중...
+2025-02-18 14:33:50,459 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 14:33:52,305 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 14:33:52,800 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 14:33:52,800 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 14:33:52,800 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 14:33:53,466 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:33:53,466 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 14:33:53,467 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 14:33:54,144 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:33:54,144 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 14:33:54,145 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 14:33:54,145 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 14:33:54,145 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 14:33:54,152 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-18 14:33:54,152 - services.trade_store - INFO - 날짜 범위 조회: 20241120 ~ 20250218
+2025-02-18 14:33:54,153 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-18 14:33:54,153 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-18 14:33:54,154 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-18 14:33:54,155 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-18 14:33:54,155 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-18 14:33:54,156 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-18 14:33:54,157 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-18 14:33:54,157 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-18 14:33:54,157 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-18 14:33:54,158 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-18 14:33:54,158 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-18 14:33:54,158 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-18 14:33:54,159 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-18 14:33:54,160 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-18 14:33:54,160 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-18 14:33:54,160 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-18 14:33:54,167 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-18 14:33:54,179 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-18 14:33:54,181 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-18 14:33:54,183 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-18 14:33:54,184 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-18 14:33:54,184 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-18 14:33:54,185 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-18 14:33:54,186 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-18 14:33:54,187 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-18 14:33:54,187 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-18 14:33:54,187 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-18 14:33:54,188 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-18 14:33:54,189 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-18 14:33:54,190 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-18 14:33:54,191 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-18 14:33:54,191 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-18 14:33:54,192 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-18 14:33:54,195 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-18 14:33:54,197 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-18 14:33:54,198 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-18 14:33:54,199 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-18 14:33:54,199 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-18 14:33:54,200 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-18 14:33:54,202 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-18 14:33:54,203 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-18 14:33:54,204 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-18 14:33:54,204 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-18 14:33:54,204 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-18 14:33:54,205 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-18 14:33:54,205 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-18 14:33:54,205 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-18 14:33:54,205 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-18 14:33:54,206 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-18 14:33:54,206 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-18 14:33:54,206 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-18 14:33:54,206 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-18 14:33:54,206 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-18 14:33:54,207 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-18 14:33:54,207 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-18 14:33:54,207 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-18 14:33:54,207 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-18 14:33:54,208 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-18 14:33:54,208 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-18 14:33:54,208 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-18 14:33:54,208 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-18 14:33:54,209 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-18 14:33:54,209 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-18 14:33:54,209 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-18 14:33:54,209 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-18 14:33:54,209 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-18 14:33:54,210 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-18 14:33:54,210 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-18 14:33:54,211 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-18 14:33:54,211 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-18 14:33:54,211 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-18 14:33:54,212 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-18 14:33:54,212 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-18 14:33:54,212 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-18 14:33:54,213 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-18 14:33:54,213 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-18 14:33:54,214 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-18 14:33:54,214 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-18 14:33:54,214 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-18 14:33:54,215 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-18 14:33:54,215 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-18 14:33:54,215 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-18 14:33:54,216 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-18 14:33:54,216 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-18 14:33:54,217 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-18 14:33:54,217 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-18 14:33:54,217 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-18 14:33:54,218 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-18 14:33:54,218 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-18 14:33:54,219 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-18 14:33:54,219 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-18 14:33:54,219 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-18 14:33:54,220 - services.trade_history_service - INFO - 마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 14:33:54,220 - services.trade_history_service - ERROR - 포지션 정보 초기화 실패: TradeHistoryService.fetch_and_update_positions() got an unexpected keyword argument 'start_timestamp'
+2025-02-18 14:33:54,221 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 61, in initialize
+    await self.fetch_and_update_positions(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeHistoryService.fetch_and_update_positions() got an unexpected keyword argument 'start_timestamp'
+
+2025-02-18 14:33:55,273 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 14:33:55,279 - telegram.ext.Application - INFO - Application started
+2025-02-18 14:33:55,525 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 14:37:03,635 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 14:37:03,637 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 14:37:03,642 - main - INFO - 서비스 초기화 중...
+2025-02-18 14:37:03,642 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 14:37:05,388 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 14:37:05,798 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 14:37:05,799 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 14:37:05,799 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 14:37:06,494 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:37:06,495 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 14:37:06,533 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 14:37:07,190 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:37:07,191 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 14:37:07,196 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 14:37:07,202 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 14:37:07,202 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 14:37:07,208 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-18 14:37:07,208 - services.trade_store - INFO - 날짜 범위 조회: 20241120 ~ 20250218
+2025-02-18 14:37:07,209 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-18 14:37:07,209 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-18 14:37:07,210 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-18 14:37:07,210 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-18 14:37:07,211 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-18 14:37:07,212 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-18 14:37:07,212 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-18 14:37:07,212 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-18 14:37:07,213 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-18 14:37:07,213 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-18 14:37:07,214 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-18 14:37:07,214 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-18 14:37:07,214 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-18 14:37:07,215 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-18 14:37:07,215 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-18 14:37:07,216 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-18 14:37:07,216 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-18 14:37:07,216 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-18 14:37:07,217 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-18 14:37:07,217 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-18 14:37:07,218 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-18 14:37:07,218 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-18 14:37:07,219 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-18 14:37:07,219 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-18 14:37:07,220 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-18 14:37:07,220 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-18 14:37:07,220 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-18 14:37:07,221 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-18 14:37:07,222 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-18 14:37:07,222 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-18 14:37:07,223 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-18 14:37:07,223 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-18 14:37:07,224 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-18 14:37:07,224 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-18 14:37:07,225 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-18 14:37:07,225 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-18 14:37:07,226 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-18 14:37:07,226 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-18 14:37:07,227 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-18 14:37:07,227 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-18 14:37:07,228 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-18 14:37:07,228 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-18 14:37:07,228 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-18 14:37:07,229 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-18 14:37:07,229 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-18 14:37:07,229 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-18 14:37:07,229 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-18 14:37:07,230 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-18 14:37:07,230 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-18 14:37:07,230 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-18 14:37:07,231 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-18 14:37:07,231 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-18 14:37:07,231 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-18 14:37:07,231 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-18 14:37:07,232 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-18 14:37:07,232 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-18 14:37:07,232 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-18 14:37:07,232 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-18 14:37:07,233 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-18 14:37:07,233 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-18 14:37:07,233 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-18 14:37:07,233 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-18 14:37:07,234 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-18 14:37:07,234 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-18 14:37:07,234 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-18 14:37:07,235 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-18 14:37:07,235 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-18 14:37:07,235 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-18 14:37:07,235 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-18 14:37:07,236 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-18 14:37:07,236 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-18 14:37:07,236 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-18 14:37:07,237 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-18 14:37:07,237 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-18 14:37:07,237 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-18 14:37:07,237 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-18 14:37:07,237 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-18 14:37:07,238 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-18 14:37:07,238 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-18 14:37:07,239 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-18 14:37:07,239 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-18 14:37:07,239 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-18 14:37:07,239 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-18 14:37:07,240 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-18 14:37:07,240 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-18 14:37:07,240 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-18 14:37:07,240 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-18 14:37:07,240 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-18 14:37:07,241 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-18 14:37:07,241 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-18 14:37:07,241 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-18 14:37:07,241 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-18 14:37:07,242 - services.trade_history_service - INFO - 마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 14:37:07,242 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 ~ 2024-11-27
+2025-02-18 14:37:07,242 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.get_positions() got an unexpected keyword argument 'start_time'
+2025-02-18 14:37:08,252 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 14:37:08,253 - telegram.ext.Application - INFO - Application started
+2025-02-18 14:37:08,502 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 14:40:44,093 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 14:40:44,094 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 14:40:44,100 - main - INFO - 서비스 초기화 중...
+2025-02-18 14:40:44,100 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 14:40:45,955 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 14:40:46,398 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 14:40:46,399 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 14:40:46,401 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 14:40:47,055 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:40:47,056 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 14:40:47,057 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 14:40:47,729 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 14:40:47,736 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 14:40:47,736 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 14:40:47,736 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 14:40:47,737 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 14:40:47,741 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-18 14:40:47,742 - services.trade_store - INFO - 날짜 범위 조회: 20241120 ~ 20250218
+2025-02-18 14:40:47,743 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-18 14:40:47,744 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-18 14:40:47,744 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-18 14:40:47,745 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-18 14:40:47,746 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-18 14:40:47,746 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-18 14:40:47,747 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-18 14:40:47,747 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-18 14:40:47,748 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-18 14:40:47,748 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-18 14:40:47,748 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-18 14:40:47,749 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-18 14:40:47,750 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-18 14:40:47,750 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-18 14:40:47,751 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-18 14:40:47,751 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-18 14:40:47,751 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-18 14:40:47,752 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-18 14:40:47,752 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-18 14:40:47,753 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-18 14:40:47,753 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-18 14:40:47,754 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-18 14:40:47,755 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-18 14:40:47,756 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-18 14:40:47,758 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-18 14:40:47,758 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-18 14:40:47,758 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-18 14:40:47,759 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-18 14:40:47,759 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-18 14:40:47,760 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-18 14:40:47,760 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-18 14:40:47,761 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-18 14:40:47,761 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-18 14:40:47,762 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-18 14:40:47,762 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-18 14:40:47,763 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-18 14:40:47,763 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-18 14:40:47,764 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-18 14:40:47,764 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-18 14:40:47,764 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-18 14:40:47,765 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-18 14:40:47,765 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-18 14:40:47,766 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-18 14:40:47,766 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-18 14:40:47,766 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-18 14:40:47,766 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-18 14:40:47,767 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-18 14:40:47,767 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-18 14:40:47,767 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-18 14:40:47,768 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-18 14:40:47,768 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-18 14:40:47,769 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-18 14:40:47,769 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-18 14:40:47,769 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-18 14:40:47,769 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-18 14:40:47,770 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-18 14:40:47,770 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-18 14:40:47,770 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-18 14:40:47,770 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-18 14:40:47,770 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-18 14:40:47,771 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-18 14:40:47,771 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-18 14:40:47,771 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-18 14:40:47,771 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-18 14:40:47,772 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-18 14:40:47,772 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-18 14:40:47,772 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-18 14:40:47,772 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-18 14:40:47,772 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-18 14:40:47,773 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-18 14:40:47,773 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-18 14:40:47,773 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-18 14:40:47,774 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-18 14:40:47,774 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-18 14:40:47,775 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-18 14:40:47,775 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-18 14:40:47,775 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-18 14:40:47,775 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-18 14:40:47,776 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-18 14:40:47,776 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-18 14:40:47,776 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-18 14:40:47,776 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-18 14:40:47,777 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-18 14:40:47,777 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-18 14:40:47,777 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-18 14:40:47,777 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-18 14:40:47,777 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-18 14:40:47,778 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-18 14:40:47,778 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-18 14:40:47,778 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-18 14:40:47,778 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-18 14:40:47,779 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-18 14:40:47,779 - services.trade_history_service - INFO - 마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 14:40:47,779 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 ~ 2024-11-27
+2025-02-18 14:40:47,915 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1823ms
+2025-02-18 14:40:48,777 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 14:40:48,778 - telegram.ext.Application - INFO - Application started
+2025-02-18 14:40:49,028 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 14:40:49,099 - services.trade_history_service - INFO - 기간별 조회: 2024-11-27 ~ 2024-12-04
+2025-02-18 14:40:50,387 - services.trade_history_service - INFO - 기간별 조회: 2024-12-04 ~ 2024-12-11
+2025-02-18 14:40:51,603 - services.trade_history_service - INFO - 기간별 조회: 2024-12-11 ~ 2024-12-18
+2025-02-18 14:40:52,788 - services.trade_history_service - INFO - 기간별 조회: 2024-12-18 ~ 2024-12-25
+2025-02-18 14:40:54,000 - services.trade_history_service - INFO - 기간별 조회: 2024-12-25 ~ 2025-01-01
+2025-02-18 14:40:55,197 - services.trade_history_service - INFO - 기간별 조회: 2025-01-01 ~ 2025-01-08
+2025-02-18 14:40:56,377 - services.trade_history_service - INFO - 기간별 조회: 2025-01-08 ~ 2025-01-15
+2025-02-18 14:40:57,541 - services.trade_history_service - INFO - 기간별 조회: 2025-01-15 ~ 2025-01-22
+2025-02-18 14:40:58,734 - services.trade_history_service - INFO - 기간별 조회: 2025-01-22 ~ 2025-01-29
+2025-02-18 14:40:59,901 - services.trade_history_service - INFO - 기간별 조회: 2025-01-29 ~ 2025-02-05
+2025-02-18 14:41:01,102 - services.trade_history_service - INFO - 기간별 조회: 2025-02-05 ~ 2025-02-12
+2025-02-18 14:41:02,301 - services.trade_history_service - INFO - 기간별 조회: 2025-02-12 ~ 2025-02-18
+2025-02-18 15:03:26,287 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:03:26,287 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:03:26,293 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:03:26,293 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:03:28,676 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:03:29,076 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:03:29,076 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:03:29,076 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:03:29,738 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:03:29,738 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:03:29,738 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:03:30,394 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:03:30,395 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:03:30,395 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:03:30,395 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:03:30,396 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:03:30,402 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-18 15:03:30,403 - services.trade_store - INFO - 날짜 범위 조회: 20241120 ~ 20250218
+2025-02-18 15:03:30,403 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-18 15:03:30,404 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-18 15:03:30,404 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-18 15:03:30,405 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-18 15:03:30,405 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-18 15:03:30,406 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-18 15:03:30,407 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-18 15:03:30,407 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-18 15:03:30,407 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-18 15:03:30,408 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-18 15:03:30,408 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-18 15:03:30,408 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-18 15:03:30,409 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-18 15:03:30,410 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-18 15:03:30,410 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-18 15:03:30,410 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-18 15:03:30,410 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-18 15:03:30,411 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-18 15:03:30,412 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-18 15:03:30,413 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-18 15:03:30,414 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-18 15:03:30,416 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-18 15:03:30,416 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-18 15:03:30,418 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-18 15:03:30,418 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-18 15:03:30,419 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-18 15:03:30,419 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-18 15:03:30,420 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-18 15:03:30,421 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-18 15:03:30,422 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-18 15:03:30,423 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-18 15:03:30,424 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-18 15:03:30,425 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-18 15:03:30,426 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-18 15:03:30,426 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-18 15:03:30,427 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-18 15:03:30,429 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-18 15:03:30,430 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-18 15:03:30,431 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-18 15:03:30,432 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-18 15:03:30,433 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-18 15:03:30,434 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-18 15:03:30,434 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-18 15:03:30,434 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-18 15:03:30,434 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-18 15:03:30,435 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-18 15:03:30,435 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-18 15:03:30,435 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-18 15:03:30,435 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-18 15:03:30,436 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-18 15:03:30,436 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-18 15:03:30,436 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-18 15:03:30,436 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-18 15:03:30,437 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-18 15:03:30,437 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-18 15:03:30,437 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-18 15:03:30,438 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-18 15:03:30,438 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-18 15:03:30,439 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-18 15:03:30,439 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-18 15:03:30,439 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-18 15:03:30,440 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-18 15:03:30,440 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-18 15:03:30,440 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-18 15:03:30,440 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-18 15:03:30,441 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-18 15:03:30,441 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-18 15:03:30,441 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-18 15:03:30,441 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-18 15:03:30,442 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-18 15:03:30,442 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-18 15:03:30,442 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-18 15:03:30,443 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-18 15:03:30,443 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-18 15:03:30,443 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-18 15:03:30,443 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-18 15:03:30,443 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-18 15:03:30,444 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-18 15:03:30,445 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-18 15:03:30,445 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-18 15:03:30,446 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-18 15:03:30,447 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-18 15:03:30,447 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-18 15:03:30,447 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-18 15:03:30,448 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-18 15:03:30,448 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-18 15:03:30,448 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-18 15:03:30,448 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-18 15:03:30,449 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-18 15:03:30,449 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-18 15:03:30,449 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-18 15:03:30,449 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-18 15:03:30,450 - services.trade_history_service - INFO - 마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:03:30,450 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 ~ 2024-11-27
+2025-02-18 15:03:30,451 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-18 15:03:35,728 - telegram_bot.bot - ERROR - 봇 시작 중 오류: Timed out
+2025-02-18 15:03:35,884 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 351, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-02-18 15:03:35,893 - telegram_bot.bot - ERROR - 봇 실행 중 오류: Timed out
+2025-02-18 15:03:35,895 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 287, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 351, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-02-18 15:03:35,913 - main - ERROR - 실행 중 에러 발생: Timed out
+2025-02-18 15:03:35,916 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 287, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 351, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-02-18 15:05:09,304 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:05:09,305 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:05:09,311 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:05:09,311 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:05:11,384 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:05:11,788 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:05:11,788 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:05:11,788 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:05:12,459 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:05:12,460 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:05:12,460 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:05:13,111 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:05:13,112 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:05:13,112 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:05:13,112 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:05:13,113 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:05:13,118 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-18 15:05:13,119 - services.trade_store - INFO - 날짜 범위 조회: 20241120 ~ 20250218
+2025-02-18 15:05:13,119 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-18 15:05:13,120 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-18 15:05:13,120 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-18 15:05:13,121 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-18 15:05:13,121 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-18 15:05:13,122 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-18 15:05:13,122 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-18 15:05:13,122 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-18 15:05:13,123 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-18 15:05:13,123 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-18 15:05:13,123 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-18 15:05:13,123 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-18 15:05:13,124 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-18 15:05:13,125 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-18 15:05:13,125 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-18 15:05:13,125 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-18 15:05:13,126 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-18 15:05:13,126 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-18 15:05:13,127 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-18 15:05:13,127 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-18 15:05:13,128 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-18 15:05:13,128 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-18 15:05:13,128 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-18 15:05:13,129 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-18 15:05:13,130 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-18 15:05:13,130 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-18 15:05:13,130 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-18 15:05:13,131 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-18 15:05:13,132 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-18 15:05:13,133 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-18 15:05:13,134 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-18 15:05:13,134 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-18 15:05:13,135 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-18 15:05:13,136 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-18 15:05:13,136 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-18 15:05:13,137 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-18 15:05:13,137 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-18 15:05:13,138 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-18 15:05:13,138 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-18 15:05:13,139 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-18 15:05:13,139 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-18 15:05:13,140 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-18 15:05:13,140 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-18 15:05:13,141 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-18 15:05:13,141 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-18 15:05:13,142 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-18 15:05:13,142 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-18 15:05:13,142 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-18 15:05:13,143 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-18 15:05:13,143 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-18 15:05:13,143 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-18 15:05:13,144 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-18 15:05:13,144 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-18 15:05:13,144 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-18 15:05:13,145 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-18 15:05:13,145 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-18 15:05:13,145 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-18 15:05:13,145 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-18 15:05:13,146 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-18 15:05:13,146 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-18 15:05:13,147 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-18 15:05:13,148 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-18 15:05:13,149 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-18 15:05:13,149 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-18 15:05:13,150 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-18 15:05:13,151 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-18 15:05:13,151 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-18 15:05:13,151 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-18 15:05:13,151 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-18 15:05:13,152 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-18 15:05:13,152 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-18 15:05:13,152 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-18 15:05:13,152 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-18 15:05:13,153 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-18 15:05:13,153 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-18 15:05:13,153 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-18 15:05:13,153 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-18 15:05:13,154 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-18 15:05:13,154 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-18 15:05:13,154 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-18 15:05:13,154 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-18 15:05:13,155 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-18 15:05:13,155 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-18 15:05:13,156 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-18 15:05:13,157 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-18 15:05:13,157 - services.trade_history_service - INFO - 마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:05:13,158 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 ~ 2024-11-27
+2025-02-18 15:05:13,158 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'since'
+2025-02-18 15:05:14,171 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:05:14,172 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:05:14,419 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:12:49,683 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:12:49,684 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:12:49,690 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:12:49,690 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:12:51,766 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:12:52,154 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:12:52,154 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:12:52,154 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:12:52,826 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:12:52,826 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:12:52,827 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:12:53,482 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:12:53,482 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:12:53,483 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:12:53,483 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:12:53,483 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:12:53,489 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-18 15:12:53,490 - services.trade_store - INFO - 날짜 범위 조회: 20241120 ~ 20250218
+2025-02-18 15:12:53,491 - services.trade_store - INFO - 날짜: 20241120, 포지션 수: 0건
+2025-02-18 15:12:53,491 - services.trade_store - INFO - 날짜: 20241121, 포지션 수: 0건
+2025-02-18 15:12:53,492 - services.trade_store - INFO - 날짜: 20241122, 포지션 수: 0건
+2025-02-18 15:12:53,492 - services.trade_store - INFO - 날짜: 20241123, 포지션 수: 1건
+2025-02-18 15:12:53,493 - services.trade_store - INFO - 날짜: 20241124, 포지션 수: 2건
+2025-02-18 15:12:53,494 - services.trade_store - INFO - 날짜: 20241125, 포지션 수: 2건
+2025-02-18 15:12:53,494 - services.trade_store - INFO - 날짜: 20241126, 포지션 수: 0건
+2025-02-18 15:12:53,494 - services.trade_store - INFO - 날짜: 20241127, 포지션 수: 0건
+2025-02-18 15:12:53,494 - services.trade_store - INFO - 날짜: 20241128, 포지션 수: 0건
+2025-02-18 15:12:53,495 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-18 15:12:53,495 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-18 15:12:53,495 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-18 15:12:53,496 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 1건
+2025-02-18 15:12:53,496 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 4건
+2025-02-18 15:12:53,497 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 1건
+2025-02-18 15:12:53,497 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-18 15:12:53,498 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-18 15:12:53,498 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 4건
+2025-02-18 15:12:53,499 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 11건
+2025-02-18 15:12:53,501 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 3건
+2025-02-18 15:12:53,501 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 1건
+2025-02-18 15:12:53,502 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 1건
+2025-02-18 15:12:53,502 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 1건
+2025-02-18 15:12:53,503 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 2건
+2025-02-18 15:12:53,505 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 2건
+2025-02-18 15:12:53,506 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-18 15:12:53,506 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-18 15:12:53,507 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 10건
+2025-02-18 15:12:53,508 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 5건
+2025-02-18 15:12:53,509 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 1건
+2025-02-18 15:12:53,511 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 31건
+2025-02-18 15:12:53,512 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 3건
+2025-02-18 15:12:53,513 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 10건
+2025-02-18 15:12:53,514 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 7건
+2025-02-18 15:12:53,515 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 11건
+2025-02-18 15:12:53,516 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 2건
+2025-02-18 15:12:53,517 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 7건
+2025-02-18 15:12:53,519 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 7건
+2025-02-18 15:12:53,520 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 4건
+2025-02-18 15:12:53,520 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-18 15:12:53,522 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 15건
+2025-02-18 15:12:53,523 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 8건
+2025-02-18 15:12:53,523 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-18 15:12:53,523 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-18 15:12:53,523 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-18 15:12:53,524 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-18 15:12:53,524 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-18 15:12:53,524 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-18 15:12:53,524 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-18 15:12:53,525 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-18 15:12:53,525 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-18 15:12:53,525 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-18 15:12:53,525 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-18 15:12:53,525 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-18 15:12:53,526 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-18 15:12:53,526 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-18 15:12:53,526 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-18 15:12:53,526 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-18 15:12:53,527 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-18 15:12:53,527 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-18 15:12:53,527 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-18 15:12:53,527 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-18 15:12:53,528 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-18 15:12:53,528 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-18 15:12:53,528 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-18 15:12:53,528 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-18 15:12:53,528 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-18 15:12:53,529 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-18 15:12:53,529 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-18 15:12:53,529 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-18 15:12:53,529 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-18 15:12:53,530 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-18 15:12:53,530 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-18 15:12:53,531 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-18 15:12:53,531 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-18 15:12:53,531 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-18 15:12:53,531 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-18 15:12:53,532 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-18 15:12:53,532 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-18 15:12:53,532 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-18 15:12:53,532 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-18 15:12:53,532 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-18 15:12:53,533 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-18 15:12:53,533 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-18 15:12:53,533 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-18 15:12:53,533 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-18 15:12:53,534 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-18 15:12:53,534 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-18 15:12:53,534 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-18 15:12:53,534 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-18 15:12:53,535 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-18 15:12:53,535 - services.trade_store - INFO - 총 157건의 포지션 데이터 로드됨
+2025-02-18 15:12:53,536 - services.trade_history_service - INFO - 마지막 업데이트 정보가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:12:53,536 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 ~ 2024-11-27
+2025-02-18 15:12:53,536 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'since'
+2025-02-18 15:12:54,544 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:12:54,545 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:12:54,792 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:15:53,932 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:15:53,933 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:15:53,939 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:15:53,939 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:15:55,962 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:15:56,362 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:15:56,362 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:15:56,362 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:15:57,024 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:15:57,024 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:15:57,024 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:15:57,670 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:15:57,670 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:15:57,671 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:15:57,671 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:15:57,671 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:15:57,675 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:15:57,675 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:15:57,676 - services.trade_history_service - ERROR - 거래 내역 초기화 실패: 'TradeStore' object has no attribute 'get_trades'
+2025-02-18 15:15:57,678 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 34, in initialize
+    existing_trades = self.trade_store.get_trades(start_timestamp, end_timestamp)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeStore' object has no attribute 'get_trades'
+
+2025-02-18 15:15:58,685 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:15:58,686 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:15:58,942 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:18:48,708 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:18:48,709 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:18:48,715 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:18:48,715 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:18:50,596 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:18:50,988 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:18:50,989 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:18:50,989 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:18:51,673 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:18:51,674 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:18:51,674 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:18:52,320 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:18:52,321 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:18:52,321 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:18:52,322 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:18:52,322 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:18:52,327 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:18:52,327 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:18:52,327 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,328 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,328 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,328 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,329 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,330 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,331 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,332 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,332 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,333 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,334 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,335 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,336 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,336 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,336 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,337 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,338 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,338 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,338 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,339 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,339 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,339 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,340 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,340 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,341 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,342 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,342 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,345 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,345 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,346 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,346 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,347 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,348 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,348 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,348 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,349 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,349 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,350 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,350 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,350 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,351 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,352 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,352 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,352 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,353 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,354 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,354 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,354 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,355 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,355 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,355 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,356 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,357 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,358 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,358 - services.trade_store - ERROR - 일별 거래 내역 조회 중 오류: 'TradeStore' object has no attribute '_get_file_path'
+2025-02-18 15:18:52,358 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:18:52,358 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 ~ 2024-11-27
+2025-02-18 15:18:52,359 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'since'
+2025-02-18 15:18:53,349 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:18:53,350 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:18:53,597 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:24:31,968 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:24:31,969 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:24:31,975 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:24:31,975 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:24:34,000 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:24:34,399 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:24:34,400 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:24:34,400 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:24:35,081 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:24:35,082 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:24:35,082 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:24:35,740 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:24:35,741 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:24:35,741 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:24:35,741 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:24:35,742 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:24:35,749 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:24:35,749 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:24:35,750 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:24:35,750 - services.trade_history_service - INFO - 기간별 조회: 2024-11-20 15:24:35.750000 ~ 2025-02-18 15:24:35.750000
+2025-02-18 15:24:35,883 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1837ms
+2025-02-18 15:24:36,765 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:24:36,766 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:24:37,017 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:24:51,230 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: TradeStore.update_last_update() takes 1 positional argument but 2 were given
+2025-02-18 15:27:45,480 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:27:45,481 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:27:45,487 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:27:45,487 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:27:47,529 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:27:47,923 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:27:47,924 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:27:47,924 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:27:48,641 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:27:48,642 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:27:48,642 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:27:49,390 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:27:49,391 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:27:49,392 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:27:49,392 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:27:49,392 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:27:49,400 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:27:49,400 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:27:49,401 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:27:49,401 - services.trade_history_service - INFO - 거래 내역 업데이트 시작: 2024-11-20 15:27:49.401000 ~ 현재
+2025-02-18 15:27:49,543 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1839ms
+2025-02-18 15:27:49,708 - services.trade_history_service - ERROR - 거래 내역 업데이트 중 오류: 'TradeStore' object has no attribute 'save_last_update'
+2025-02-18 15:27:49,715 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 445, in update_trades
+    self.trade_store.save_last_update(period_end)  # 메서드 이름 변경
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradeStore' object has no attribute 'save_last_update'. Did you mean: '_save_last_update'?
+
+2025-02-18 15:27:50,419 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:27:50,420 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:27:50,673 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:29:49,328 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:29:49,329 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:29:49,335 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:29:49,335 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:29:51,311 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:29:52,683 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:29:52,684 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:29:52,684 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:29:53,428 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:29:53,429 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:29:53,429 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:29:54,081 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:29:54,082 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:29:54,083 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:29:54,083 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:29:54,083 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:29:54,090 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:29:54,091 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:29:54,091 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:29:54,092 - services.trade_history_service - INFO - 거래 내역 업데이트 시작: 2024-11-20 15:29:54.092000 ~ 현재
+2025-02-18 15:29:54,235 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1839ms
+2025-02-18 15:29:55,136 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:29:55,137 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:29:55,391 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:45:12,480 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:45:12,481 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:45:12,490 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:45:12,490 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:45:14,910 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:45:15,485 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:45:15,485 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:45:15,496 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:45:16,249 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:45:16,250 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:45:16,251 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:45:16,916 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:45:16,917 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:45:16,917 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:45:16,918 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:45:16,918 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:45:16,932 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:45:16,932 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:45:17,033 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:45:17,038 - services.trade_history_service - INFO - 거래 내역 업데이트 시작: 2024-11-20 15:45:17.033000 ~ 현재
+2025-02-18 15:45:17,172 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1849ms
+2025-02-18 15:45:18,077 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:45:18,078 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:45:18,326 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:46:18,899 - telegram_bot.handlers.system_handler - INFO - 봇 종료 요청 받음
+2025-02-18 15:46:19,916 - telegram_bot.monitors.auto_analyzer - WARNING - 이미 중지된 상태입니다
+2025-02-18 15:46:19,916 - telegram_bot.monitors.profit_monitor - INFO - 수익률 모니터링 중지됨
+2025-02-18 15:46:19,918 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-02-18 15:48:32,248 - telegram_bot.bot - INFO - 봇 실행이 취소되었습니다
+2025-02-18 15:48:32,249 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-02-18 15:49:45,174 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:49:45,180 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:49:45,188 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:49:45,188 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:49:46,997 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:49:47,407 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:49:47,407 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:49:47,407 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:49:48,103 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:49:48,104 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:49:48,104 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:49:48,832 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:49:48,833 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:49:48,833 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:49:48,834 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:49:48,834 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:49:48,840 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:49:48,841 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:49:48,847 - services.trade_history_service - DEBUG - 기존 데이터 경로: data\positions
+2025-02-18 15:49:48,848 - services.trade_history_service - DEBUG - 기존 데이터 파일 목록: []
+2025-02-18 15:49:48,848 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:49:48,849 - services.trade_history_service - INFO - 거래 내역 업데이트 시작: 2024-11-20 15:49:48.849000 ~ 현재
+2025-02-18 15:49:48,980 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1850ms
+2025-02-18 15:49:49,885 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:49:49,886 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:49:50,138 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:50:58,420 - telegram_bot.handlers.system_handler - INFO - 봇 종료 요청 받음
+2025-02-18 15:50:59,485 - telegram_bot.monitors.auto_analyzer - WARNING - 이미 중지된 상태입니다
+2025-02-18 15:50:59,486 - telegram_bot.monitors.profit_monitor - INFO - 수익률 모니터링 중지됨
+2025-02-18 15:50:59,487 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-02-18 15:52:10,248 - telegram_bot.bot - INFO - 봇 실행이 취소되었습니다
+2025-02-18 15:52:10,252 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-02-18 15:54:11,474 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 15:54:11,477 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 15:54:11,487 - main - INFO - 서비스 초기화 중...
+2025-02-18 15:54:11,488 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 15:54:13,496 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 15:54:13,882 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 15:54:13,882 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 15:54:13,883 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-18 15:54:14,562 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:54:14,563 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 15:54:14,564 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 15:54:15,223 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 15:54:15,224 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-18 15:54:15,224 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-18 15:54:15,225 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-18 15:54:15,225 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-18 15:54:15,230 - services.trade_history_service - INFO - === 거래 내역 초기화 시작 ===
+2025-02-18 15:54:15,231 - services.trade_history_service - INFO - 조회 기간: 2024-11-20 ~ 2025-02-18
+2025-02-18 15:54:15,237 - services.trade_history_service - DEBUG - 기존 데이터 경로: data\positions
+2025-02-18 15:54:15,238 - services.trade_history_service - DEBUG - 기존 데이터 파일 목록: []
+2025-02-18 15:54:15,238 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-18 15:54:15,239 - services.trade_history_service - INFO - 거래 내역 업데이트 시작: 2024-11-20 15:54:15.239000 ~ 현재
+2025-02-18 15:54:15,376 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1848ms
+2025-02-18 15:54:16,305 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-18 15:54:16,306 - telegram.ext.Application - INFO - Application started
+2025-02-18 15:54:16,561 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-18 15:55:27,623 - telegram_bot.handlers.system_handler - INFO - 봇 종료 요청 받음
+2025-02-18 15:55:28,610 - telegram_bot.monitors.auto_analyzer - WARNING - 이미 중지된 상태입니다
+2025-02-18 15:55:28,611 - telegram_bot.monitors.profit_monitor - INFO - 수익률 모니터링 중지됨
+2025-02-18 15:55:28,621 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-02-18 15:56:08,627 - telegram_bot.bot - INFO - 봇 실행이 취소되었습니다
+2025-02-18 15:56:08,634 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-02-18 16:02:39,954 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 16:02:39,955 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 16:02:39,961 - main - INFO - 서비스 초기화 중...
+2025-02-18 16:02:39,961 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 16:02:41,775 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 16:02:41,777 - main - ERROR - 실행 중 에러 발생: TradeHistoryService.__init__() takes 2 positional arguments but 3 were given
+2025-02-18 16:02:41,779 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 74, in __init__
+    self.trade_history_service = TradeHistoryService(self.trade_store, bybit_client)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeHistoryService.__init__() takes 2 positional arguments but 3 were given
+
+2025-02-18 16:09:23,074 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 16:09:23,076 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 16:09:23,082 - main - INFO - 서비스 초기화 중...
+2025-02-18 16:09:23,082 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 16:09:24,966 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 16:09:24,967 - main - ERROR - 실행 중 에러 발생: TelegramBot.__init__() got an unexpected keyword argument 'config'
+2025-02-18 16:09:24,969 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+TypeError: TelegramBot.__init__() got an unexpected keyword argument 'config'
+
+2025-02-18 16:11:19,116 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-18 16:11:19,116 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-18 16:11:19,122 - main - INFO - 서비스 초기화 중...
+2025-02-18 16:11:19,122 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-18 16:11:21,141 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-18 16:11:22,232 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-18 16:11:22,232 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-18 16:11:22,232 - telegram_bot.bot - INFO - - alert_chat_ids: []
+2025-02-18 16:11:22,242 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-18 16:11:22,243 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-18 16:11:22,243 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-18 16:11:22,244 - telegram_bot.bot - ERROR - 봇 초기화 실패: 'TelegramBot' object has no attribute 'config'
+2025-02-18 16:11:22,245 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute 'config'
+2025-02-18 16:11:22,247 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 276, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 207, in initialize
+    .token(self.config.bot_token)
+           ^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'config'
+
+2025-02-18 16:11:22,248 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'config'
+2025-02-18 16:11:22,249 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 276, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 207, in initialize
+    .token(self.config.bot_token)
+           ^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'config'
+

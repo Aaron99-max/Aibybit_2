@@ -1,0 +1,2150 @@
+2025-02-19 12:55:54,567 - telegram_bot.bot - ERROR - 봇 시작 중 오류: This Application is already running!
+2025-02-19 12:55:54,583 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 338, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 599, in start
+    raise RuntimeError("This Application is already running!")
+RuntimeError: This Application is already running!
+
+2025-02-19 12:55:54,586 - telegram_bot.bot - ERROR - 봇 실행 중 오류: This Application is already running!
+2025-02-19 12:55:54,589 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 270, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 338, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 599, in start
+    raise RuntimeError("This Application is already running!")
+RuntimeError: This Application is already running!
+
+2025-02-19 12:55:54,594 - main - ERROR - 실행 중 에러 발생: This Application is already running!
+2025-02-19 12:55:54,600 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 92, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 270, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 338, in start
+    await self.application.start()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 599, in start
+    raise RuntimeError("This Application is already running!")
+RuntimeError: This Application is already running!
+
+2025-02-19 12:58:31,618 - main - ERROR - 실행 중 에러 발생: AnalysisHandler.__init__() missing 1 required positional argument: 'auto_analyzer'
+2025-02-19 12:58:31,620 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 83, in __init__
+    self.analysis_handler = AnalysisHandler(self)
+                            ^^^^^^^^^^^^^^^^^^^^^
+TypeError: AnalysisHandler.__init__() missing 1 required positional argument: 'auto_analyzer'
+
+2025-02-19 13:00:16,412 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() got an unexpected keyword argument 'bot'
+2025-02-19 13:00:16,412 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 81, in __init__
+    self.auto_analyzer = AutoAnalyzer(
+                         ^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() got an unexpected keyword argument 'bot'
+
+2025-02-19 13:02:07,877 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() missing 1 required positional argument: 'order_service'
+2025-02-19 13:02:07,877 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 81, in __init__
+    self.auto_analyzer = AutoAnalyzer(
+                         ^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() missing 1 required positional argument: 'order_service'
+
+2025-02-19 13:07:04,647 - main - ERROR - 실행 중 에러 발생: AutoAnalyzer.__init__() got an unexpected keyword argument 'ai_trader'
+2025-02-19 13:07:04,649 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 104, in __init__
+    self.auto_analyzer = AutoAnalyzer(
+                         ^^^^^^^^^^^^^
+TypeError: AutoAnalyzer.__init__() got an unexpected keyword argument 'ai_trader'
+
+2025-02-19 13:09:08,877 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'system_handler'
+2025-02-19 13:09:08,880 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 112, in __init__
+    self._register_handlers()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 116, in _register_handlers
+    self.application.add_handler(CommandHandler("help", self.system_handler.handle_help))
+                                                        ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'system_handler'
+
+2025-02-19 13:11:42,251 - main - ERROR - 실행 중 에러 발생: AnalysisHandler.__init__() got an unexpected keyword argument 'telegram_bot'
+2025-02-19 13:11:42,255 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 105, in __init__
+    self.analysis_handler = AnalysisHandler(
+                            ^^^^^^^^^^^^^^^^
+TypeError: AnalysisHandler.__init__() got an unexpected keyword argument 'telegram_bot'
+
+2025-02-19 13:13:34,787 - main - ERROR - 실행 중 에러 발생: TradingHandler.__init__() missing 4 required positional arguments: 'ai_trader', 'position_service', 'trade_manager', and 'trade_history_service'
+2025-02-19 13:13:34,790 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 111, in __init__
+    self.trading_handler = TradingHandler(self)
+                           ^^^^^^^^^^^^^^^^^^^^
+TypeError: TradingHandler.__init__() missing 4 required positional arguments: 'ai_trader', 'position_service', 'trade_manager', and 'trade_history_service'
+
+2025-02-19 13:15:12,155 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'trade_manager'
+2025-02-19 13:15:12,158 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 115, in __init__
+    self.trade_manager,
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'trade_manager'
+
+2025-02-19 13:16:29,511 - main - ERROR - 실행 중 에러 발생: 'StatsHandler' object has no attribute 'handle_stats'
+2025-02-19 13:16:29,514 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 125, in __init__
+    self._register_handlers()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 131, in _register_handlers
+    self.application.add_handler(CommandHandler("stats", self.stats_handler.handle_stats))
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StatsHandler' object has no attribute 'handle_stats'. Did you mean: 'analyze_stats'?
+
+2025-02-19 13:30:52,104 - telegram_bot.bot - ERROR - 봇 초기화 중 오류: 'Application' object has no attribute 'loop'
+2025-02-19 13:32:00,601 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TelegramBot.stop() takes from 1 to 2 positional arguments but 3 were given
+2025-02-19 13:32:51,016 - telegram_bot.bot - ERROR - 봇 초기화 중 오류: 
+2025-02-19 13:36:59,965 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TelegramBot.stop() takes from 1 to 2 positional arguments but 3 were given
+2025-02-19 13:38:16,765 - exchange.bybit_client - ERROR - 포지션 조회 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1739939896755}
+2025-02-19 13:38:16,767 - exchange.bybit_client - ERROR - API 응답: No response
+2025-02-19 13:38:16,772 - telegram_bot.bot - ERROR - 봇 초기화 중 오류: 
+2025-02-19 13:38:17,028 - telegram_bot.bot - ERROR - 메시지 전송 중 오류: 'TelegramBot' object has no attribute 'send_message'
+2025-02-19 13:40:44,928 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TelegramBot.stop() takes from 1 to 2 positional arguments but 3 were given
+2025-02-19 13:41:34,199 - exchange.bybit_client - ERROR - 포지션 조회 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1739940094191}
+2025-02-19 13:41:34,199 - exchange.bybit_client - ERROR - API 응답: No response
+2025-02-19 13:41:34,489 - telegram_bot.bot - ERROR - 봇 초기화 중 오류: 
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 201, in initialize
+    loop.add_signal_handler(sig, lambda: asyncio.create_task(self.stop()))
+  File "C:\Python312\Lib\asyncio\events.py", line 582, in add_signal_handler
+    raise NotImplementedError
+NotImplementedError
+
+2025-02-19 13:43:36,321 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TelegramBot.stop() takes from 1 to 2 positional arguments but 3 were given
+2025-02-19 13:45:39,976 - exchange.bybit_client - ERROR - 포지션 조회 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1739940339970}
+2025-02-19 13:45:39,977 - exchange.bybit_client - ERROR - API 응답: No response
+2025-02-19 13:50:56,231 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TelegramBot.stop() takes from 1 to 2 positional arguments but 3 were given
+2025-02-19 13:51:38,836 - main - ERROR - 실행 중 에러 발생: TelegramBot.__init__() got an unexpected keyword argument 'token'
+2025-02-19 13:51:38,837 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+TypeError: TelegramBot.__init__() got an unexpected keyword argument 'token'
+
+2025-02-19 13:53:08,364 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:08,368 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:12,840 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:12,842 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:14,119 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:14,121 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:18,897 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:18,899 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:20,681 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:20,683 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:26,207 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:26,209 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:28,732 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:28,734 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:32,384 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:32,385 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:36,023 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:36,024 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:42,374 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:42,377 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:48,209 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:48,210 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:56,571 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:53:56,572 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:54:04,931 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:54:04,934 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:54:17,136 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 13:54:17,138 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-19 14:04:01,335 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:02,348 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:03,351 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:04,366 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:05,380 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:06,395 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:07,413 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:08,425 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:09,440 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:10,454 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:11,469 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:12,483 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:04:13,496 - services.trade_history_service - ERROR - 포지션 조회 실패: 'BybitClient' object has no attribute 'fetch_my_trades'
+2025-02-19 14:21:20,490 - services.trade_history_service - ERROR - 포지션 정보 조회 및 업데이트 중 오류: BybitClient.fetch_my_trades() got an unexpected keyword argument 'since'
+2025-02-19 14:25:27,722 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,723 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,725 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,726 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,726 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,726 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,727 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,727 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,727 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,728 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,728 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,728 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,729 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,729 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,729 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,730 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,732 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,733 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,733 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,733 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,734 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,734 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,735 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,735 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,735 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,736 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,736 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,736 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,737 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,737 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,737 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,738 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,738 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,738 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,739 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,739 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,740 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,740 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,741 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,742 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,743 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,744 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,744 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,744 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,745 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,745 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,746 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,746 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,747 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,747 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,748 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,749 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,749 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,749 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,750 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,750 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,750 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,751 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,751 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,752 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,752 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,752 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,753 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,753 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,753 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,754 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,754 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,754 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,755 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,755 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,755 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,756 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,756 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,756 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,757 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,757 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,757 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,758 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,758 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,758 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,758 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,759 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,759 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,759 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,760 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,760 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,760 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,761 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,762 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,762 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:27,762 - services.trade_store - ERROR - 포지션 조회 실패: 'TradeStore' object has no attribute 'positions_dir'
+2025-02-19 14:25:28,084 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:28,085 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:28,086 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:28,086 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:28,087 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:28,088 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:28,088 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:28,089 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:28,089 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:28,090 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:29,335 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:29,336 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:29,337 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:29,338 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:29,339 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:29,341 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:29,342 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:29,343 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:29,345 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:29,345 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:30,550 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:30,551 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:30,552 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:30,553 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:30,554 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:30,555 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:30,556 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:30,557 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:30,558 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:30,559 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:31,774 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:31,775 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:31,776 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:31,777 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:31,779 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:31,780 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:31,781 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:31,782 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:31,783 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:31,784 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:33,047 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:33,047 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:33,048 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:33,048 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:33,049 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:33,049 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:33,049 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:33,049 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:33,049 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:33,050 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:34,233 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:34,235 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:34,236 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:34,237 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:34,239 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:34,240 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:34,241 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:34,243 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:34,244 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:34,245 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:35,444 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:35,445 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:35,445 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:35,446 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:35,446 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:35,446 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:35,447 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:35,447 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:35,448 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:35,448 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:36,630 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:36,631 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:36,632 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:36,632 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:36,633 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:36,634 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:36,635 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:36,635 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:36,636 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:36,636 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:37,821 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:37,822 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:37,822 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:37,823 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:37,823 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:37,823 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:37,823 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:37,823 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:37,823 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:37,824 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:39,009 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:39,010 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:39,011 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:39,013 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:39,014 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:39,015 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:39,016 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:39,018 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:39,019 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:39,021 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:40,227 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:40,228 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:40,229 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:40,230 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:40,231 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:40,232 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:40,233 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:40,234 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:40,235 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:40,236 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:41,433 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:41,434 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:41,435 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:41,436 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:41,437 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:41,439 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:41,440 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:41,441 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:41,442 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:41,444 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:42,625 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:42,627 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:42,628 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:42,629 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:42,630 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:42,631 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:42,632 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:42,633 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:42,634 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:42,636 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:43,835 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:43,835 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:43,837 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:43,838 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:43,839 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:43,840 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:43,841 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:43,842 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:43,844 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:43,845 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:45,048 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:45,049 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:45,051 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:45,052 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:45,053 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:45,055 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:45,057 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:45,058 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:45,059 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:45,060 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:46,243 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:46,244 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:46,245 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:46,246 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:46,246 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:46,247 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:46,247 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:46,248 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:46,248 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:46,249 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:47,435 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:47,436 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:47,437 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:47,438 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:47,439 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:47,439 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:47,440 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:47,441 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:47,442 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:47,443 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:48,615 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:48,616 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:48,617 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:48,618 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:48,619 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:48,620 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:48,622 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:48,623 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:48,624 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:48,625 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:49,827 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:49,828 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:49,828 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:49,829 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:49,829 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:49,829 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:49,829 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:49,829 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:49,829 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:49,830 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:51,043 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:51,045 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:51,045 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:51,046 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:51,047 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:51,048 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:51,049 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:51,050 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:51,051 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:51,052 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:52,232 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:52,233 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:52,233 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:52,234 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:52,234 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:52,234 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:52,234 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:52,234 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:52,235 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:52,235 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:53,433 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:53,434 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:53,441 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:53,442 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:53,442 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:53,442 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:53,442 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:53,443 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:53,443 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:53,443 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:54,637 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:54,638 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:54,639 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:54,640 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:54,641 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:54,643 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:54,644 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:54,646 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:54,647 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:54,648 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:55,831 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:55,831 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:55,831 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:55,832 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:55,832 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:55,832 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:55,832 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:55,832 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:55,832 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:55,833 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:57,022 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:57,022 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:57,022 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:57,023 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:57,023 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:57,024 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:57,024 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:57,024 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:57,025 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:57,025 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:25:58,209 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:58,210 - services.trade_history_service - ERROR - 원본 데이터: retCode
+2025-02-19 14:25:58,210 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:58,211 - services.trade_history_service - ERROR - 원본 데이터: retMsg
+2025-02-19 14:25:58,211 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:58,212 - services.trade_history_service - ERROR - 원본 데이터: result
+2025-02-19 14:25:58,212 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:58,213 - services.trade_history_service - ERROR - 원본 데이터: retExtInfo
+2025-02-19 14:25:58,214 - services.trade_history_service - ERROR - 포지션 데이터 처리 중 오류: 'str' object has no attribute 'get'
+2025-02-19 14:25:58,214 - services.trade_history_service - ERROR - 원본 데이터: time
+2025-02-19 14:31:23,346 - main - ERROR - 실행 중 에러 발생: TradeHistoryService.__init__() takes 2 positional arguments but 3 were given
+2025-02-19 14:31:23,350 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 77, in __init__
+    self.trade_history_service = TradeHistoryService(self.trade_store, bybit_client)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TradeHistoryService.__init__() takes 2 positional arguments but 3 were given
+
+2025-02-19 14:53:51,337 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'TradeStore' object has no attribute 'get_positions_by_date_range'
+2025-02-19 15:00:29,201 - services.trade_store - ERROR - 포지션 조회 중 오류: 'str' object has no attribute 'timestamp'
+2025-02-19 15:00:29,203 - services.trade_store - ERROR - 포지션 조회 중 오류: 'str' object has no attribute 'timestamp'
+2025-02-19 15:00:51,063 - ai.gpt_analyzer - ERROR - 시장 분석 중 오류: 'market_summary'
+2025-02-19 15:00:51,066 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\gpt_analyzer.py", line 198, in analyze_market
+    "market_summary": gpt_analysis['market_summary'],
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'market_summary'
+
+2025-02-19 15:00:51,067 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-02-19 15:02:21,175 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'bool' object is not callable
+2025-02-19 15:03:55,049 - services.trade_store - ERROR - 포지션 조회 중 오류: time data '20241121' does not match format '%Y-%m-%d'
+2025-02-19 15:03:56,136 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 199, in get_positions_by_date_range
+    start_date = datetime.strptime(start_date, '%Y-%m-%d')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\_strptime.py", line 554, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '20241121' does not match format '%Y-%m-%d'
+
+2025-02-19 15:03:56,138 - services.trade_store - ERROR - 포지션 조회 중 오류: time data '20241101' does not match format '%Y-%m-%d'
+2025-02-19 15:03:56,139 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 199, in get_positions_by_date_range
+    start_date = datetime.strptime(start_date, '%Y-%m-%d')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\_strptime.py", line 554, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '20241101' does not match format '%Y-%m-%d'
+
+2025-02-19 15:06:38,157 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'position_side'
+2025-02-19 15:15:03,732 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'position_side'
+2025-02-19 15:18:25,123 - telegram_bot.handlers.stats_handler - ERROR - 통계 처리 중 오류: 'pnl'
+2025-02-19 16:07:24,212 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,228 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,282 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,296 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,346 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,353 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,393 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,394 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,413 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,414 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,418 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,435 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,452 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,453 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,468 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,483 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,515 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,516 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,543 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,560 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,592 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,599 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,659 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,660 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,680 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,681 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,698 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,699 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,714 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,715 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,733 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,737 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:24,777 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:24,788 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,548 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,549 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,574 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,575 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,598 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,599 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,616 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,617 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,626 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,628 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,637 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,638 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,651 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,652 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,663 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,664 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,674 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,675 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,688 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,688 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,690 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,690 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,703 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,704 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,715 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,716 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:25,718 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:25,718 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,472 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,473 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,477 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,478 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,498 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,500 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,519 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,519 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,522 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,523 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,537 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,537 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,550 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,550 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,562 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,563 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,574 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,575 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,590 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,590 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,604 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,605 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,619 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,620 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,632 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,634 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,636 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,637 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,649 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,650 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,659 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,660 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,671 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,672 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,683 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,684 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,694 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,695 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,707 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,708 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,720 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,720 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,734 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,735 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,748 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,748 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,757 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,758 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,769 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,770 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,781 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,782 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,791 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,792 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,806 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,807 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,824 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,825 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,840 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,841 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,856 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,856 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,878 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,879 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,889 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,890 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,903 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,904 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,917 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,918 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,920 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,920 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,935 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,935 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,949 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,950 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,960 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,961 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,978 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,979 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,989 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,990 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:26,991 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:26,992 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,004 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,005 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,006 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,006 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,017 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,017 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,025 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,026 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,037 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,038 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,040 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,041 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,054 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,054 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:27,066 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:27,066 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,066 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,067 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,091 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,092 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,111 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,112 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,127 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,127 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,143 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,143 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,168 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,168 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,190 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,190 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,203 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,204 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,206 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,206 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,219 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,219 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,964 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,967 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:28,991 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:28,992 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,009 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,010 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,025 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,026 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,041 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,042 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,058 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,059 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,072 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,073 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,086 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,087 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,091 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,092 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,109 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,110 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,119 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,119 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,137 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,138 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,158 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,159 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,189 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,190 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,209 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,210 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,237 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,238 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,251 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,251 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,271 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,272 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:29,289 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:29,289 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,059 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,061 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,097 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,099 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,126 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,127 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,148 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,149 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,170 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,171 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,183 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,184 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,194 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,194 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,208 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,209 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,223 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,224 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,237 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,237 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,252 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,253 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,267 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,268 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,284 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,285 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,301 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,302 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,317 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,318 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,330 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,332 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,342 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,343 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,354 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,355 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,364 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,366 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,376 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,377 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,392 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,393 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,407 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,408 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,419 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,420 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,436 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,437 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,453 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,453 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,471 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,472 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,485 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,485 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,495 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,496 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:30,510 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:30,511 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,657 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,659 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,679 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,681 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,700 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,700 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,718 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,719 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,733 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,734 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,752 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,752 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,763 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,764 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,766 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,767 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,779 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,780 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,796 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,797 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,813 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,814 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,827 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,827 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,837 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,839 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+
+2025-02-19 16:07:35,849 - services.trade_store - ERROR - 거래 저장 실패: 'amount'
+2025-02-19 16:07:35,850 - services.trade_store - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_store.py", line 56, in save_trade
+    logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+                                                                                                      ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'amount'
+

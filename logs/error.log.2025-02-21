@@ -1,0 +1,398 @@
+2025-02-21 14:37:42,681 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'bool' object is not callable
+2025-02-21 14:43:48,338 - main - ERROR - 실행 중 에러 발생: 'StatsHandler' object has no attribute 'handle'
+2025-02-21 14:43:48,340 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 141, in __init__
+    CommandHandler("stats", self._check_admin(self.stats_handler.handle)),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StatsHandler' object has no attribute 'handle'
+
+2025-02-21 14:56:12,803 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:13,086 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:13,384 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:13,690 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,064 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,340 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,620 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,904 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:15,205 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:15,503 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:15,808 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:16,104 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:16,388 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 15:00:43,155 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,170 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,305 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,308 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,446 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,448 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,581 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,587 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,733 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,739 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,882 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,888 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,032 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,038 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,169 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,172 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,314 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,318 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,450 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,459 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,576 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,585 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,704 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,706 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,847 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,852 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:12:29,959 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1740118351132}
+2025-02-21 15:12:30,714 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1740118351887}
+2025-02-21 15:12:31,489 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: list indices must be integers or slices, not str
+2025-02-21 15:12:32,254 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: list indices must be integers or slices, not str
+2025-02-21 15:16:58,226 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 15:18:10,428 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 15:38:02,952 - telegram_bot.handlers.stats_handler - ERROR - 통계 조회 중 오류: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-21 15:38:02,967 - telegram_bot.handlers.stats_handler - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 74, in stats
+    trades = await self.bot.bybit_client.exchange.fetch_my_trades(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 4608, in fetch_my_trades
+    raise BadRequest(self.id + ' fetchOrders() requires until/endTime when since is provided.')
+ccxt.base.errors.BadRequest: bybit fetchOrders() requires until/endTime when since is provided.
+
+2025-02-21 15:39:30,882 - telegram_bot.handlers.stats_handler - ERROR - 통계 조회 중 오류: bybit.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-02-21 15:39:30,887 - telegram_bot.handlers.stats_handler - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 74, in stats
+    trades = await self.bot.bybit_client.exchange.fetch_my_trades(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bybit.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-02-21 15:45:48,850 - exchange.bybit_client - ERROR - API 오류: status=404, response=

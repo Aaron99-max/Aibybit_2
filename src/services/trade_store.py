@@ -19,18 +19,17 @@ class TradeStore:
     def save_trade(self, trade: Dict) -> bool:
         """거래 내역 저장"""
         try:
-            # 저장할 데이터 구조화
-            trade_data = {
-                'id': trade.get('id'),
-                'timestamp': trade.get('timestamp'),
-                'datetime': trade.get('datetime'),
-                'symbol': trade.get('symbol'),
-                'side': trade.get('side'),
-                'price': trade.get('price'),
-                'amount': trade.get('amount'),
-                'cost': trade.get('cost'),
-                'info': trade.get('info', {})
-            }
+            if not trade or not isinstance(trade, dict):
+                logger.error("유효하지 않은 거래 데이터")
+                return False
+            
+            # 필수 필드 검증
+            required_fields = ['timestamp', 'side', 'size', 'entry_price']
+            if not all(field in trade for field in required_fields):
+                logger.error(f"필수 필드 누락: {trade}")
+                return False
+            
+            trade_data = trade
             
             # 날짜 정보 추출
             trade_date = datetime.fromtimestamp(trade_data['timestamp']/1000)
@@ -47,8 +46,12 @@ class TradeStore:
             # 기존 거래 로드 또는 새로 생성
             trades = []
             if trades_file.exists():
-                with open(trades_file, 'r') as f:
-                    trades = json.load(f)
+                try:
+                    with open(trades_file, 'r', encoding='utf-8') as f:
+                        trades = json.load(f)
+                except json.JSONDecodeError:
+                    logger.error(f"손상된 JSON 파일: {trades_file}")
+                    trades = []
             
             # 중복 체크
             trade_id = trade_data.get('id')
@@ -60,10 +63,10 @@ class TradeStore:
             trades.append(trade_data)
             
             # 저장
-            with open(trades_file, 'w') as f:
-                json.dump(trades, f, indent=2)
+            with open(trades_file, 'w', encoding='utf-8') as f:
+                json.dump(trades, f, indent=2, ensure_ascii=False)
             
-            logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['amount']} @ {trade_data['price']}")
+            logger.debug(f"거래 저장 완료: {trade_date.strftime('%Y-%m-%d %H:%M:%S')} - {trade_data['side']} {trade_data['size']} @ {trade_data['entry_price']}")
             return True
             
         except Exception as e:
@@ -194,6 +197,12 @@ class TradeStore:
     def get_positions_by_date_range(self, start_date: datetime, end_date: datetime) -> List[Dict]:
         """특정 기간의 포지션 데이터 조회"""
         try:
+            # 문자열인 경우 datetime으로 변환
+            if isinstance(start_date, str):
+                start_date = datetime.strptime(start_date, '%Y%m%d')
+            if isinstance(end_date, str):
+                end_date = datetime.strptime(end_date, '%Y%m%d')
+
             positions = []
             start_timestamp = int(start_date.timestamp() * 1000)
             end_timestamp = int(end_date.timestamp() * 1000)
@@ -220,4 +229,5 @@ class TradeStore:
             
         except Exception as e:
             logger.error(f"포지션 조회 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())  # 상세 에러 로깅 추가
             return [] 

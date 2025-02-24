@@ -1,0 +1,1706 @@
+2025-02-21 14:33:37,282 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:33:37,282 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:33:37,292 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:33:37,293 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:33:39,243 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:33:42,413 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:33:42,413 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:33:42,413 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:33:42,436 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:33:43,213 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:33:43,213 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 188
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 83
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 105
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - ID: 72fa2015-47bb-4256-a351-c0b413fa2949
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - Side: Buy
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - Exit: 93760.0
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - PNL: 0
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 숏
+2025-02-21 14:34:04,261 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-21 14:36:12,738 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:36:12,738 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:36:12,754 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:36:12,754 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:36:14,667 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:36:15,688 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:36:15,688 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:36:15,688 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:36:15,688 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:36:16,428 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:36:16,443 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 188
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 83
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 105
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - ID: 72fa2015-47bb-4256-a351-c0b413fa2949
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - Side: Buy
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - Exit: 93760.0
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - PNL: 0
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 숏
+2025-02-21 14:36:36,062 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-21 14:37:24,821 - trading_handler - INFO - [Balance] 잔고 조회 시작 (chat_id: 583881676)
+2025-02-21 14:37:25,038 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1162ms
+2025-02-21 14:37:35,316 - trading_handler - INFO - [Position] 포지션 조회 시작 (chat_id: 583881676)
+2025-02-21 14:37:35,316 - position_service - INFO - 포지션 목록 조회 시작: BTCUSDT
+2025-02-21 14:37:35,505 - position_service - INFO - Raw 포지션 데이터: [{'symbol': 'BTCUSDT', 'leverage': '5', 'autoAddMargin': 0, 'avgPrice': '0', 'liqPrice': '', 'riskLimitValue': '2000000', 'takeProfit': '', 'positionValue': '', 'isReduceOnly': False, 'tpslMode': 'Full', 'riskId': 1, 'trailingStop': '0', 'unrealisedPnl': '', 'markPrice': '91719.32', 'adlRankIndicator': 0, 'cumRealisedPnl': '-75744.58842938', 'positionMM': '0', 'createdTime': '1732345073802', 'positionIdx': 0, 'positionIM': '0', 'seq': 9430075420, 'updatedTime': '1739766706409', 'side': '', 'bustPrice': '', 'positionBalance': '0', 'leverageSysUpdatedTime': '', 'curRealisedPnl': '0', 'size': '0', 'positionStatus': 'Normal', 'mmrSysUpdatedTime': '', 'stopLoss': '', 'tradeMode': 0, 'sessionAvgPrice': ''}]
+2025-02-21 14:37:35,505 - position_service - INFO - 파싱된 포지션 데이터: []
+2025-02-21 14:37:35,505 - trading_handler - INFO - [Position] 포지션 조회 결과: []
+2025-02-21 14:37:42,459 - trading_handler - INFO - [Status] 상태 조회 시작 (chat_id: 583881676)
+2025-02-21 14:37:42,681 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'bool' object is not callable
+2025-02-21 14:38:06,159 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:38:06,159 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:38:06,169 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:38:06,169 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:38:07,952 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:38:08,964 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:38:08,964 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:38:08,964 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:38:08,979 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:38:09,711 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:38:09,711 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 188
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 83
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 105
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - ID: 72fa2015-47bb-4256-a351-c0b413fa2949
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - Side: Buy
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - Exit: 93760.0
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - PNL: 0
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 숏
+2025-02-21 14:39:02,160 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-21 14:41:28,631 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:41:28,631 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:41:28,631 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:41:28,631 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:41:30,735 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:41:31,758 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:41:31,759 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:41:31,759 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:41:31,766 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:41:32,523 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:41:32,538 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:41:42,229 - telegram_bot.handlers.stats_handler - INFO - === 포지션 분석 시작 ===
+2025-02-21 14:41:42,229 - telegram_bot.handlers.stats_handler - INFO - 원본 데이터 수: 188
+2025-02-21 14:41:42,229 - telegram_bot.handlers.stats_handler - INFO - 롱 포지션: 83
+2025-02-21 14:41:42,230 - telegram_bot.handlers.stats_handler - INFO - 숏 포지션: 105
+2025-02-21 14:41:42,231 - telegram_bot.handlers.stats_handler - INFO - === 포지션 샘플 ===
+2025-02-21 14:41:42,231 - telegram_bot.handlers.stats_handler - INFO - ID: 72fa2015-47bb-4256-a351-c0b413fa2949
+2025-02-21 14:41:42,231 - telegram_bot.handlers.stats_handler - INFO - Side: Buy
+2025-02-21 14:41:42,232 - telegram_bot.handlers.stats_handler - INFO - Entry: 93760.0
+2025-02-21 14:41:42,232 - telegram_bot.handlers.stats_handler - INFO - Exit: 93760.0
+2025-02-21 14:41:42,233 - telegram_bot.handlers.stats_handler - INFO - PNL: 0
+2025-02-21 14:41:42,233 - telegram_bot.handlers.stats_handler - INFO - 계산된 방향: 숏
+2025-02-21 14:41:42,233 - telegram_bot.handlers.stats_handler - INFO - ==================
+2025-02-21 14:43:45,222 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:43:45,232 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:43:45,237 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:43:45,237 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:43:47,267 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:43:48,330 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:43:48,330 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:43:48,330 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:43:48,337 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:43:48,338 - main - ERROR - 실행 중 에러 발생: 'StatsHandler' object has no attribute 'handle'
+2025-02-21 14:43:48,340 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 82, in main
+    telegram_bot = TelegramBot(
+                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 141, in __init__
+    CommandHandler("stats", self._check_admin(self.stats_handler.handle)),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StatsHandler' object has no attribute 'handle'
+
+2025-02-21 14:44:57,245 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:44:57,245 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:44:57,245 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:44:57,245 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:44:58,983 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:45:00,035 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:45:00,035 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:45:00,035 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:45:00,035 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:45:00,812 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:45:00,812 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:45:10,268 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': 100, 'startTime': '1732340710268', 'endTime': '1740116710268'}
+2025-02-21 14:45:10,268 - exchange.bybit_client - INFO - closed-pnl API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': 100, 'startTime': '1732340710268', 'endTime': '1740116710268'}
+2025-02-21 14:45:10,462 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740116710268FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340710268&endTime=1740116710268]', 'result': {}, 'retExtInfo': {}, 'time': 1740116711635}
+2025-02-21 14:45:10,462 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740116710268FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&startTime=1732340710268&endTime=1740116710268]', 'result': {}, 'retExtInfo': {}, 'time': 1740116711635}
+2025-02-21 14:47:51,949 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:47:51,949 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:47:51,949 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:47:51,949 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:47:54,019 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:47:55,021 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:47:55,021 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:47:55,021 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:47:55,029 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:47:55,803 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:47:55,803 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:48:04,343 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512084343', 'endTime': '1740116884343'}
+2025-02-21 14:48:04,481 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1166ms
+2025-02-21 14:48:04,665 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:04,665 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:04,785 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738907284343', 'endTime': '1739512084343'}
+2025-02-21 14:48:04,948 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:04,948 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:05,054 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738302484343', 'endTime': '1738907284343'}
+2025-02-21 14:48:05,217 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:05,217 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:05,337 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737697684343', 'endTime': '1738302484343'}
+2025-02-21 14:48:05,500 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:05,500 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:05,602 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737092884343', 'endTime': '1737697684343'}
+2025-02-21 14:48:05,782 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:05,782 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:05,886 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488084343', 'endTime': '1737092884343'}
+2025-02-21 14:48:06,071 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:06,071 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:06,172 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735883284343', 'endTime': '1736488084343'}
+2025-02-21 14:48:06,349 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:06,349 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:06,455 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735278484343', 'endTime': '1735883284343'}
+2025-02-21 14:48:06,618 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:06,619 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:06,738 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734673684343', 'endTime': '1735278484343'}
+2025-02-21 14:48:06,901 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:06,901 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:07,021 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734068884343', 'endTime': '1734673684343'}
+2025-02-21 14:48:07,217 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:07,217 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:07,322 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464084343', 'endTime': '1734068884343'}
+2025-02-21 14:48:07,489 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:07,505 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:07,606 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732859284343', 'endTime': '1733464084343'}
+2025-02-21 14:48:07,799 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:07,799 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:07,905 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732859284343'}
+2025-02-21 14:48:08,100 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:08,100 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:08,205 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:08,369 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:08,369 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:08,474 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:08,637 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:08,637 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:08,740 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:08,919 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:08,919 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:09,023 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:09,201 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:09,217 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:09,324 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:09,491 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:09,507 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:09,607 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:09,806 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:09,806 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:09,908 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:10,072 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:10,072 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:10,175 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:10,342 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:10,342 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:10,447 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:10,591 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:10,591 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:10,708 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:10,858 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:10,858 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:10,960 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:11,278 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:11,278 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:11,391 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:11,558 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:11,558 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:11,659 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:11,838 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:11,838 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:11,943 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:12,122 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:12,122 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:12,229 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:12,419 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:12,420 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:12,542 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:12,691 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:12,691 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:12,795 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:12,970 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:12,972 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:13,077 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:13,257 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:13,257 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:13,361 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:13,544 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:13,544 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:13,662 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:13,841 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:13,841 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:13,945 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:14,123 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:14,123 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:14,228 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:14,392 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:14,392 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:14,513 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:14,677 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:14,677 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:14,780 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:14,958 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:14,958 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:15,063 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:15,230 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:15,230 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:15,330 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:15,514 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:15,514 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:15,614 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:15,776 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:15,776 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:15,880 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:16,122 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:16,122 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:16,231 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:16,409 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:16,409 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:16,512 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:16,680 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:16,681 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:16,783 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:16,960 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:16,960 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:17,065 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:17,248 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:17,248 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:17,365 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:17,552 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:17,552 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:17,648 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:17,827 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:17,827 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:17,932 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:18,111 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:18,111 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:18,215 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:18,412 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:18,412 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:18,518 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:18,831 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:18,831 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:18,936 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:19,112 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:19,112 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:19,218 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:19,397 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:19,397 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:19,500 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:19,668 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:19,668 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:19,785 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:19,962 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:19,962 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:20,066 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:20,247 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:20,247 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:20,356 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:20,550 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:20,550 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:20,651 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:20,831 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:20,831 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:20,937 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:21,129 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:21,129 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:21,234 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:21,383 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:21,383 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:21,487 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:21,653 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:21,653 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:21,769 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:21,951 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:21,952 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:22,067 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:22,233 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:22,233 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:22,337 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:22,504 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:22,504 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:22,621 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:22,786 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:22,786 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:22,904 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:23,070 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:23,070 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:23,172 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:23,351 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:23,351 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:23,455 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:23,640 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:23,640 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:23,755 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:23,934 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:23,934 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:24,037 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:24,217 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:24,217 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:24,321 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:24,484 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:24,484 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:24,590 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:24,738 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:24,738 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:24,842 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:25,018 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:25,018 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:25,125 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:25,303 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:25,303 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:25,406 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:25,587 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:25,589 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:25,691 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:25,853 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:25,853 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:25,956 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:26,136 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:26,136 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:26,240 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:26,404 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:26,419 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:26,526 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:26,706 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:26,706 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:26,809 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:26,975 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:26,975 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:27,076 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:27,257 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:27,258 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:27,360 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:27,536 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:27,536 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:27,641 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:27,809 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:27,809 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:27,910 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:28,087 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:28,087 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:28,192 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:28,359 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:28,359 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:28,460 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:28,632 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:28,633 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:28,744 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:28,909 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:28,909 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:29,011 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:29,188 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:29,188 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:29,295 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:29,474 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:29,474 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:29,576 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:29,744 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:29,744 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:29,846 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:30,009 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:30,024 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:30,127 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:30,307 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:30,307 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:30,411 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:30,576 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:30,576 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:30,678 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:30,828 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:30,828 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:30,930 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:31,109 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:31,109 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:31,213 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:31,391 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:31,391 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:31,497 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:31,665 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:31,665 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:31,763 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:31,941 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:31,942 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:32,047 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:32,195 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:32,195 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:32,306 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:32,477 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:32,478 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:32,596 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:32,765 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:32,765 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:32,880 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:33,047 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:33,047 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:33,164 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:33,332 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:33,332 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:33,448 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:33,623 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:33,623 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:33,732 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:33,893 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:33,894 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:33,998 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:34,165 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:34,165 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:34,280 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:34,445 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:34,445 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:34,550 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:34,733 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:34,733 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:34,851 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340884343', 'endTime': '1732340884343'}
+2025-02-21 14:48:35,027 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:48:35,028 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:48:35,034 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2025-02-21 14:49:31,168 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:49:31,168 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:49:31,168 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:49:31,168 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:49:33,214 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:49:34,217 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:49:34,217 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:49:34,217 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:49:34,225 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:49:34,968 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:49:34,968 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:49:41,618 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 14:49:41,618 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512181618', 'endTime': '1740116981618'}
+2025-02-21 14:49:41,746 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1166ms
+2025-02-21 14:49:41,898 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:41,898 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:42,015 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-07 ~ 2025-02-14
+2025-02-21 14:49:42,015 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738907381618', 'endTime': '1739512181618'}
+2025-02-21 14:49:42,169 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:42,170 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:42,282 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-31 ~ 2025-02-07
+2025-02-21 14:49:42,283 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738302581618', 'endTime': '1738907381618'}
+2025-02-21 14:49:42,449 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:42,449 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:42,551 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-24 ~ 2025-01-31
+2025-02-21 14:49:42,551 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737697781618', 'endTime': '1738302581618'}
+2025-02-21 14:49:42,734 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:42,734 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:42,849 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-17 ~ 2025-01-24
+2025-02-21 14:49:42,849 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737092981618', 'endTime': '1737697781618'}
+2025-02-21 14:49:43,016 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:43,016 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:43,118 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-10 ~ 2025-01-17
+2025-02-21 14:49:43,119 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488181618', 'endTime': '1737092981618'}
+2025-02-21 14:49:43,299 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:43,299 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:43,402 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-03 ~ 2025-01-10
+2025-02-21 14:49:43,403 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735883381618', 'endTime': '1736488181618'}
+2025-02-21 14:49:43,581 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:43,581 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:43,685 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-27 ~ 2025-01-03
+2025-02-21 14:49:43,685 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735278581618', 'endTime': '1735883381618'}
+2025-02-21 14:49:43,834 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:43,834 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:43,940 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-20 ~ 2024-12-27
+2025-02-21 14:49:43,940 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734673781618', 'endTime': '1735278581618'}
+2025-02-21 14:49:44,098 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:44,098 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:44,202 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-13 ~ 2024-12-20
+2025-02-21 14:49:44,203 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734068981618', 'endTime': '1734673781618'}
+2025-02-21 14:49:44,366 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:44,366 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:44,469 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-06 ~ 2024-12-13
+2025-02-21 14:49:44,470 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464181618', 'endTime': '1734068981618'}
+2025-02-21 14:49:44,634 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:44,634 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:44,736 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-29 ~ 2024-12-06
+2025-02-21 14:49:44,737 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732859381618', 'endTime': '1733464181618'}
+2025-02-21 14:49:44,916 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:44,916 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:49:45,020 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2024-11-29
+2025-02-21 14:49:45,020 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732340981618', 'endTime': '1732859381618'}
+2025-02-21 14:49:45,186 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:49:45,186 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:50:59,921 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:50:59,921 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:50:59,926 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:50:59,926 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:51:01,881 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:51:02,888 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:51:02,888 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:51:02,888 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:51:02,896 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:51:03,655 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:51:03,655 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:51:11,113 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 14:51:11,113 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512271', 'endTime': '1740117071'}
+2025-02-21 14:51:11,256 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1168ms
+2025-02-21 14:51:11,506 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117072426FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1739512271&end=1740117071&timestamp=1740117072426]', 'result': {}, 'retExtInfo': {}, 'time': 1740117072673}
+2025-02-21 14:51:11,506 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117072426FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1739512271&end=1740117071&timestamp=1740117072426]', 'result': {}, 'retExtInfo': {}, 'time': 1740117072673}
+2025-02-21 14:51:11,607 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-07 ~ 2025-02-14
+2025-02-21 14:51:11,607 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738907471', 'endTime': '1739512271'}
+2025-02-21 14:51:11,785 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117072775FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1738907471&end=1739512271&timestamp=1740117072775]', 'result': {}, 'retExtInfo': {}, 'time': 1740117072959}
+2025-02-21 14:51:11,785 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117072775FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1738907471&end=1739512271&timestamp=1740117072775]', 'result': {}, 'retExtInfo': {}, 'time': 1740117072959}
+2025-02-21 14:51:11,889 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-31 ~ 2025-02-07
+2025-02-21 14:51:11,890 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738302671', 'endTime': '1738907471'}
+2025-02-21 14:51:12,102 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117073058FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1738302671&end=1738907471&timestamp=1740117073058]', 'result': {}, 'retExtInfo': {}, 'time': 1740117073282}
+2025-02-21 14:51:12,118 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117073058FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1738302671&end=1738907471&timestamp=1740117073058]', 'result': {}, 'retExtInfo': {}, 'time': 1740117073282}
+2025-02-21 14:51:12,222 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-24 ~ 2025-01-31
+2025-02-21 14:51:12,223 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737697871', 'endTime': '1738302671'}
+2025-02-21 14:51:12,373 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117073392FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1737697871&end=1738302671&timestamp=1740117073392]', 'result': {}, 'retExtInfo': {}, 'time': 1740117073554}
+2025-02-21 14:51:12,388 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117073392FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1737697871&end=1738302671&timestamp=1740117073392]', 'result': {}, 'retExtInfo': {}, 'time': 1740117073554}
+2025-02-21 14:51:12,490 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-17 ~ 2025-01-24
+2025-02-21 14:51:12,490 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737093071', 'endTime': '1737697871'}
+2025-02-21 14:51:12,748 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117073658FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1737093071&end=1737697871&timestamp=1740117073658]', 'result': {}, 'retExtInfo': {}, 'time': 1740117073914}
+2025-02-21 14:51:12,748 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117073658FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1737093071&end=1737697871&timestamp=1740117073658]', 'result': {}, 'retExtInfo': {}, 'time': 1740117073914}
+2025-02-21 14:51:12,855 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-10 ~ 2025-01-17
+2025-02-21 14:51:12,857 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488271', 'endTime': '1737093071'}
+2025-02-21 14:51:13,022 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074027FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1736488271&end=1737093071&timestamp=1740117074027]', 'result': {}, 'retExtInfo': {}, 'time': 1740117074203}
+2025-02-21 14:51:13,038 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074027FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1736488271&end=1737093071&timestamp=1740117074027]', 'result': {}, 'retExtInfo': {}, 'time': 1740117074203}
+2025-02-21 14:51:13,140 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-03 ~ 2025-01-10
+2025-02-21 14:51:13,141 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735883471', 'endTime': '1736488271'}
+2025-02-21 14:51:13,291 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074310FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1735883471&end=1736488271&timestamp=1740117074310]', 'result': {}, 'retExtInfo': {}, 'time': 1740117074465}
+2025-02-21 14:51:13,291 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074310FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1735883471&end=1736488271&timestamp=1740117074310]', 'result': {}, 'retExtInfo': {}, 'time': 1740117074465}
+2025-02-21 14:51:13,392 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-27 ~ 2025-01-03
+2025-02-21 14:51:13,394 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735278671', 'endTime': '1735883471'}
+2025-02-21 14:51:13,572 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074563FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1735278671&end=1735883471&timestamp=1740117074563]', 'result': {}, 'retExtInfo': {}, 'time': 1740117074749}
+2025-02-21 14:51:13,572 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074563FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1735278671&end=1735883471&timestamp=1740117074563]', 'result': {}, 'retExtInfo': {}, 'time': 1740117074749}
+2025-02-21 14:51:13,675 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-20 ~ 2024-12-27
+2025-02-21 14:51:13,676 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734673871', 'endTime': '1735278671'}
+2025-02-21 14:51:13,855 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074844FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1734673871&end=1735278671&timestamp=1740117074844]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075022}
+2025-02-21 14:51:13,855 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117074844FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1734673871&end=1735278671&timestamp=1740117074844]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075022}
+2025-02-21 14:51:13,958 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-13 ~ 2024-12-20
+2025-02-21 14:51:13,959 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734069071', 'endTime': '1734673871'}
+2025-02-21 14:51:14,122 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075127FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1734069071&end=1734673871&timestamp=1740117075127]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075302}
+2025-02-21 14:51:14,139 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075127FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1734069071&end=1734673871&timestamp=1740117075127]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075302}
+2025-02-21 14:51:14,252 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-06 ~ 2024-12-13
+2025-02-21 14:51:14,252 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464271', 'endTime': '1734069071'}
+2025-02-21 14:51:14,407 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075420FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1733464271&end=1734069071&timestamp=1740117075420]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075586}
+2025-02-21 14:51:14,423 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075420FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1733464271&end=1734069071&timestamp=1740117075420]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075586}
+2025-02-21 14:51:14,525 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-29 ~ 2024-12-06
+2025-02-21 14:51:14,526 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732859471', 'endTime': '1733464271'}
+2025-02-21 14:51:14,692 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075694FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1732859471&end=1733464271&timestamp=1740117075694]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075864}
+2025-02-21 14:51:14,692 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075694FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1732859471&end=1733464271&timestamp=1740117075694]', 'result': {}, 'retExtInfo': {}, 'time': 1740117075864}
+2025-02-21 14:51:14,808 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2024-11-29
+2025-02-21 14:51:14,808 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732341071', 'endTime': '1732859471'}
+2025-02-21 14:51:14,989 - exchange.bybit_client - INFO - closed-pnl API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075976FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1732341071&end=1732859471&timestamp=1740117075976]', 'result': {}, 'retExtInfo': {}, 'time': 1740117076162}
+2025-02-21 14:51:14,989 - telegram_bot.handlers.stats_handler - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740117075976FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=100&start=1732341071&end=1732859471&timestamp=1740117075976]', 'result': {}, 'retExtInfo': {}, 'time': 1740117076162}
+2025-02-21 14:52:39,615 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:52:39,615 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:52:39,630 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:52:39,630 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:52:42,043 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:52:43,265 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:52:43,265 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:52:43,266 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:52:43,272 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:52:44,048 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:52:44,048 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:53:18,450 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 14:53:18,465 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512398', 'endTime': '1740117198'}
+2025-02-21 14:53:18,686 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 1168ms
+2025-02-21 14:53:18,845 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:18,845 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:18,950 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-07 ~ 2025-02-14
+2025-02-21 14:53:18,951 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738907598', 'endTime': '1739512398'}
+2025-02-21 14:53:19,131 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:19,131 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:19,232 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-31 ~ 2025-02-07
+2025-02-21 14:53:19,233 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738302798', 'endTime': '1738907598'}
+2025-02-21 14:53:19,411 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:19,411 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:19,515 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-24 ~ 2025-01-31
+2025-02-21 14:53:19,516 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737697998', 'endTime': '1738302798'}
+2025-02-21 14:53:19,666 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:19,666 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:19,767 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-17 ~ 2025-01-24
+2025-02-21 14:53:19,768 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737093198', 'endTime': '1737697998'}
+2025-02-21 14:53:19,977 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:19,977 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:20,084 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-10 ~ 2025-01-17
+2025-02-21 14:53:20,085 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488398', 'endTime': '1737093198'}
+2025-02-21 14:53:20,418 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:20,418 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:20,533 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-03 ~ 2025-01-10
+2025-02-21 14:53:20,534 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735883598', 'endTime': '1736488398'}
+2025-02-21 14:53:20,810 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:20,810 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:20,917 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-27 ~ 2025-01-03
+2025-02-21 14:53:20,918 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735278798', 'endTime': '1735883598'}
+2025-02-21 14:53:21,097 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:21,097 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:21,200 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-20 ~ 2024-12-27
+2025-02-21 14:53:21,202 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734673998', 'endTime': '1735278798'}
+2025-02-21 14:53:21,380 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:21,380 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:21,483 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-13 ~ 2024-12-20
+2025-02-21 14:53:21,484 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734069198', 'endTime': '1734673998'}
+2025-02-21 14:53:21,667 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:21,667 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:21,784 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-06 ~ 2024-12-13
+2025-02-21 14:53:21,785 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464398', 'endTime': '1734069198'}
+2025-02-21 14:53:21,979 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:21,979 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:22,085 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-29 ~ 2024-12-06
+2025-02-21 14:53:22,087 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732859598', 'endTime': '1733464398'}
+2025-02-21 14:53:22,281 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:22,281 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:53:22,384 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2024-11-29
+2025-02-21 14:53:22,385 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732341198', 'endTime': '1732859598'}
+2025-02-21 14:53:22,586 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:53:22,587 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:55:58,968 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:55:58,968 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:55:58,968 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:55:58,968 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:56:00,991 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:56:02,031 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:56:02,031 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:56:02,031 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:56:02,047 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:56:02,826 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:56:02,826 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:56:12,606 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 14:56:12,606 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512572', 'endTime': '1740117372'}
+2025-02-21 14:56:12,803 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:12,819 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:12,819 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:12,922 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-07 ~ 2025-02-14
+2025-02-21 14:56:12,922 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738907772', 'endTime': '1739512572'}
+2025-02-21 14:56:13,086 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:13,087 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:13,087 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:13,205 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-31 ~ 2025-02-07
+2025-02-21 14:56:13,205 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738302972', 'endTime': '1738907772'}
+2025-02-21 14:56:13,384 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:13,384 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:13,384 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:13,487 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-24 ~ 2025-01-31
+2025-02-21 14:56:13,489 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737698172', 'endTime': '1738302972'}
+2025-02-21 14:56:13,690 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:13,690 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:13,690 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:13,806 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-17 ~ 2025-01-24
+2025-02-21 14:56:13,806 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737093372', 'endTime': '1737698172'}
+2025-02-21 14:56:14,064 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,064 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:14,064 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:14,172 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-10 ~ 2025-01-17
+2025-02-21 14:56:14,173 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488572', 'endTime': '1737093372'}
+2025-02-21 14:56:14,340 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,340 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:14,340 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:14,455 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-03 ~ 2025-01-10
+2025-02-21 14:56:14,456 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735883772', 'endTime': '1736488572'}
+2025-02-21 14:56:14,620 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,620 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:14,620 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:14,726 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-27 ~ 2025-01-03
+2025-02-21 14:56:14,726 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735278972', 'endTime': '1735883772'}
+2025-02-21 14:56:14,904 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:14,904 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:14,904 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:15,022 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-20 ~ 2024-12-27
+2025-02-21 14:56:15,023 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734674172', 'endTime': '1735278972'}
+2025-02-21 14:56:15,205 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:15,205 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:15,205 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:15,323 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-13 ~ 2024-12-20
+2025-02-21 14:56:15,324 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734069372', 'endTime': '1734674172'}
+2025-02-21 14:56:15,503 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:15,503 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:15,519 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:15,623 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-06 ~ 2024-12-13
+2025-02-21 14:56:15,624 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464572', 'endTime': '1734069372'}
+2025-02-21 14:56:15,808 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:15,808 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:15,808 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:15,924 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-29 ~ 2024-12-06
+2025-02-21 14:56:15,926 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732859772', 'endTime': '1733464572'}
+2025-02-21 14:56:16,104 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:16,104 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:16,104 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:56:16,209 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2024-11-29
+2025-02-21 14:56:16,210 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732341372', 'endTime': '1732859772'}
+2025-02-21 14:56:16,388 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 14:56:16,388 - exchange.bybit_client - INFO - closed-pnl API 응답: None
+2025-02-21 14:56:16,388 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:22,749 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 14:58:22,749 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 14:58:22,759 - main - INFO - 서비스 초기화 중...
+2025-02-21 14:58:22,759 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 14:58:24,636 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 14:58:25,651 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 14:58:25,651 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 14:58:25,651 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 14:58:25,659 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 14:58:26,433 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 14:58:26,433 - telegram.ext.Application - INFO - Application started
+2025-02-21 14:58:32,343 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 14:58:32,343 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512712', 'endTime': '1740117512'}
+2025-02-21 14:58:32,343 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512712', 'endTime': '1740117512', 'timestamp': '1740117512343'}
+2025-02-21 14:58:32,527 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:32,527 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:32,627 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-07 ~ 2025-02-14
+2025-02-21 14:58:32,628 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738907912', 'endTime': '1739512712'}
+2025-02-21 14:58:32,629 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738907912', 'endTime': '1739512712', 'timestamp': '1740117512629'}
+2025-02-21 14:58:32,807 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:32,807 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:32,910 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-31 ~ 2025-02-07
+2025-02-21 14:58:32,911 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738303112', 'endTime': '1738907912'}
+2025-02-21 14:58:32,912 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738303112', 'endTime': '1738907912', 'timestamp': '1740117512912'}
+2025-02-21 14:58:33,091 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:33,091 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:33,195 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-24 ~ 2025-01-31
+2025-02-21 14:58:33,195 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737698312', 'endTime': '1738303112'}
+2025-02-21 14:58:33,195 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737698312', 'endTime': '1738303112', 'timestamp': '1740117513195'}
+2025-02-21 14:58:33,358 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:33,358 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:33,461 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-17 ~ 2025-01-24
+2025-02-21 14:58:33,462 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737093512', 'endTime': '1737698312'}
+2025-02-21 14:58:33,462 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737093512', 'endTime': '1737698312', 'timestamp': '1740117513462'}
+2025-02-21 14:58:33,610 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:33,610 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:33,712 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-10 ~ 2025-01-17
+2025-02-21 14:58:33,713 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488712', 'endTime': '1737093512'}
+2025-02-21 14:58:33,715 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488712', 'endTime': '1737093512', 'timestamp': '1740117513714'}
+2025-02-21 14:58:33,891 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:33,891 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:33,993 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-03 ~ 2025-01-10
+2025-02-21 14:58:33,994 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735883912', 'endTime': '1736488712'}
+2025-02-21 14:58:33,996 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735883912', 'endTime': '1736488712', 'timestamp': '1740117513996'}
+2025-02-21 14:58:34,185 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:34,186 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:34,311 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-27 ~ 2025-01-03
+2025-02-21 14:58:34,311 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735279112', 'endTime': '1735883912'}
+2025-02-21 14:58:34,311 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735279112', 'endTime': '1735883912', 'timestamp': '1740117514311'}
+2025-02-21 14:58:34,496 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:34,496 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:34,596 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-20 ~ 2024-12-27
+2025-02-21 14:58:34,597 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734674312', 'endTime': '1735279112'}
+2025-02-21 14:58:34,599 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734674312', 'endTime': '1735279112', 'timestamp': '1740117514599'}
+2025-02-21 14:58:34,807 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:34,823 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:34,928 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-13 ~ 2024-12-20
+2025-02-21 14:58:34,930 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734069512', 'endTime': '1734674312'}
+2025-02-21 14:58:34,930 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734069512', 'endTime': '1734674312', 'timestamp': '1740117514930'}
+2025-02-21 14:58:35,109 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:35,109 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:35,211 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-06 ~ 2024-12-13
+2025-02-21 14:58:35,212 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464712', 'endTime': '1734069512'}
+2025-02-21 14:58:35,214 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464712', 'endTime': '1734069512', 'timestamp': '1740117515214'}
+2025-02-21 14:58:35,400 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:35,402 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:35,530 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-29 ~ 2024-12-06
+2025-02-21 14:58:35,531 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732859912', 'endTime': '1733464712'}
+2025-02-21 14:58:35,533 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732859912', 'endTime': '1733464712', 'timestamp': '1740117515532'}
+2025-02-21 14:58:35,709 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:35,709 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 14:58:35,814 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2024-11-29
+2025-02-21 14:58:35,816 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732341512', 'endTime': '1732859912'}
+2025-02-21 14:58:35,817 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732341512', 'endTime': '1732859912', 'timestamp': '1740117515817'}
+2025-02-21 14:58:36,009 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 14:58:36,009 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:32,086 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:00:32,086 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:00:32,101 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:00:32,101 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:00:34,246 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:00:35,281 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:00:35,281 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:00:35,282 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:00:35,288 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:00:36,046 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:00:36,046 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:00:43,125 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:00:43,125 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1739512843', 'endTime': '1740117643'}
+2025-02-21 15:00:43,125 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643125'}
+2025-02-21 15:00:43,125 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643125'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '62c080223a0fe9df11f12e947dfe41a8b26b0746fccc90230a173b90d7f871ce', 'X-BAPI-TIMESTAMP': '1740117643125', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:43,155 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,170 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,176 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:43,288 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-07 ~ 2025-02-14
+2025-02-21 15:00:43,289 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738908043', 'endTime': '1739512843'}
+2025-02-21 15:00:43,291 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643291'}
+2025-02-21 15:00:43,291 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643291'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'd56f4e9f94601abb159d7e29c23c532e77a140c50127c8a6aee4cac11fc0127a', 'X-BAPI-TIMESTAMP': '1740117643291', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:43,305 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,308 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,314 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:43,422 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-31 ~ 2025-02-07
+2025-02-21 15:00:43,423 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1738303243', 'endTime': '1738908043'}
+2025-02-21 15:00:43,425 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643424'}
+2025-02-21 15:00:43,425 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643424'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'c94bd748802ae006f67a12656e1b0c5712fc0bf56f1deb185fe7a3e7b84cf236', 'X-BAPI-TIMESTAMP': '1740117643424', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:43,446 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,448 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,454 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:43,556 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-24 ~ 2025-01-31
+2025-02-21 15:00:43,557 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737698443', 'endTime': '1738303243'}
+2025-02-21 15:00:43,559 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643558'}
+2025-02-21 15:00:43,559 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643558'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '0fb318cf25d81b2b264b0256683a306e1489890d0362630f3078f6db9e0fe4c5', 'X-BAPI-TIMESTAMP': '1740117643558', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:43,581 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,587 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,594 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:43,706 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-17 ~ 2025-01-24
+2025-02-21 15:00:43,707 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1737093643', 'endTime': '1737698443'}
+2025-02-21 15:00:43,708 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643708'}
+2025-02-21 15:00:43,709 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643708'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'dd996c3355750b96b6fbe58cb262f817d13cc85d7ecb6d536d7c1c252da614a4', 'X-BAPI-TIMESTAMP': '1740117643708', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:43,733 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,739 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,748 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:43,857 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-10 ~ 2025-01-17
+2025-02-21 15:00:43,858 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1736488843', 'endTime': '1737093643'}
+2025-02-21 15:00:43,858 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643858'}
+2025-02-21 15:00:43,858 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117643858'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '1d5e6c3cbeed91f82d370dd42e833d29b66bd5fca41691e07436dbee218c3e71', 'X-BAPI-TIMESTAMP': '1740117643858', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:43,882 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:43,888 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:43,895 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:44,007 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-03 ~ 2025-01-10
+2025-02-21 15:00:44,007 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735884043', 'endTime': '1736488843'}
+2025-02-21 15:00:44,007 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644007'}
+2025-02-21 15:00:44,007 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644007'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '645ca6c0fec3bd96ce3594358153a251dda5efe4038ebe62924f128b9ed128db', 'X-BAPI-TIMESTAMP': '1740117644007', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:44,032 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,038 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,045 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:44,155 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-27 ~ 2025-01-03
+2025-02-21 15:00:44,156 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1735279243', 'endTime': '1735884043'}
+2025-02-21 15:00:44,158 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644158'}
+2025-02-21 15:00:44,159 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644158'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '9c390767ec7075a02273fb6ee71e394b665cc05a076a03c8379c27892410ccb7', 'X-BAPI-TIMESTAMP': '1740117644158', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:44,169 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,172 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,177 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:44,291 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-20 ~ 2024-12-27
+2025-02-21 15:00:44,291 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734674443', 'endTime': '1735279243'}
+2025-02-21 15:00:44,291 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644291'}
+2025-02-21 15:00:44,291 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644291'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'b00300c35147e32d8e58ee7e869a7ada0299067f2f7dc919c7b1ecc4e692e787', 'X-BAPI-TIMESTAMP': '1740117644291', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:44,314 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,318 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,323 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:44,424 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-13 ~ 2024-12-20
+2025-02-21 15:00:44,425 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1734069643', 'endTime': '1734674443'}
+2025-02-21 15:00:44,425 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644425'}
+2025-02-21 15:00:44,425 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644425'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '7f2e2b059290b0f46e3346479e8504d7edf5f744ec37db69ced2c85c07989362', 'X-BAPI-TIMESTAMP': '1740117644425', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:44,450 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,459 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,466 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:44,573 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-12-06 ~ 2024-12-13
+2025-02-21 15:00:44,573 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1733464843', 'endTime': '1734069643'}
+2025-02-21 15:00:44,574 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644574'}
+2025-02-21 15:00:44,575 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644574'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '2fac7e813e10c7a81ce4076ceadf7838c1baf5950558f53a63984f37a2431695', 'X-BAPI-TIMESTAMP': '1740117644574', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:44,576 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,585 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,589 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:44,692 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-29 ~ 2024-12-06
+2025-02-21 15:00:44,692 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732860043', 'endTime': '1733464843'}
+2025-02-21 15:00:44,693 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644693'}
+2025-02-21 15:00:44,694 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644693'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'd4a80e5aee757c2856c0bf83e67ebf2f84f796d01c2a0585c73a460dfdbb6780', 'X-BAPI-TIMESTAMP': '1740117644693', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:44,704 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,706 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,712 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:00:44,824 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2024-11-29
+2025-02-21 15:00:44,825 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '100', 'startTime': '1732341643', 'endTime': '1732860043'}
+2025-02-21 15:00:44,826 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644826'}
+2025-02-21 15:00:44,828 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': None, 'endTime': None, 'timestamp': '1740117644826'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '939eeafa04a21513de6fd2c82b60a81e1d39f2dcc60c642defd1de9e4dcce11c', 'X-BAPI-TIMESTAMP': '1740117644826', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:00:44,847 - exchange.bybit_client - ERROR - closed-pnl API 호출 실패: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+2025-02-21 15:00:44,852 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 198, in v5_get_closed_pnl
+    async with session.get(url, params=request_params, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 675, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 329, in __init__
+    url = url.extend_query(params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_url.py", line 1200, in extend_query
+    if not (new_query := get_str_query(*args, **kwargs)):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 101, in get_str_query
+    return get_str_query_from_sequence_iterable(query.items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 55, in get_str_query_from_sequence_iterable
+    f"{quoter(k)}={quoter(v if type(v) is str else query_var(v))}"
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\yarl\_query.py", line 37, in query_var
+    raise TypeError(
+TypeError: Invalid variable type: value should be str, int or float, got None of type <class 'NoneType'>
+
+2025-02-21 15:00:44,857 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:03:18,784 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:03:18,784 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:03:18,800 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:03:18,800 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:03:20,643 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:03:21,703 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:03:21,703 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:03:21,703 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:03:21,703 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:03:22,473 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:03:22,473 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:03:31,451 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:03:31,451 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739513011', 'endTime': '1740117811'}
+2025-02-21 15:03:31,451 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739513011', 'endTime': '1740117811', 'timestamp': '1740117811451'}
+2025-02-21 15:03:31,467 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739513011', 'endTime': '1740117811', 'timestamp': '1740117811451'}
+2025-02-21 15:03:31,649 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:03:31,650 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:07:29,867 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:07:29,868 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:07:29,874 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:07:29,875 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:07:31,941 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:07:32,978 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:07:32,978 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:07:32,979 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:07:32,988 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:07:33,746 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:07:33,747 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:07:37,962 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-22 ~ 2025-01-29
+2025-02-21 15:07:37,964 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1737526057', 'endTime': '1738130857'}
+2025-02-21 15:07:37,965 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1737526057', 'endTime': '1738130857', 'timestamp': '1740118057965'}
+2025-02-21 15:07:37,967 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1737526057', 'endTime': '1738130857', 'timestamp': '1740118057965'}
+2025-02-21 15:07:38,398 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:07:38,400 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:09:32,086 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:09:32,087 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:09:32,093 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:09:32,094 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:09:34,125 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:09:35,248 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:09:35,249 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:09:35,249 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:09:35,255 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:09:36,004 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:09:36,005 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:09:40,791 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2025-02-21
+2025-02-21 15:09:40,792 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1732342180791', 'endTime': '1740118180791'}
+2025-02-21 15:09:40,793 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1732342180791', 'endTime': '1740118180791', 'timestamp': '1740118180793'}
+2025-02-21 15:09:40,795 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1732342180791', 'endTime': '1740118180791', 'timestamp': '1740118180793'}
+2025-02-21 15:09:41,534 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:09:41,535 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:09:41,630 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-22 ~ 2025-02-21
+2025-02-21 15:09:41,630 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1737526180791', 'endTime': '1740118180791'}
+2025-02-21 15:09:41,631 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1737526180791', 'endTime': '1740118180791', 'timestamp': '1740118181631'}
+2025-02-21 15:09:41,631 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1737526180791', 'endTime': '1740118180791', 'timestamp': '1740118181631'}
+2025-02-21 15:09:42,038 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:09:42,039 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:09:42,144 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:09:42,144 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739513380791', 'endTime': '1740118180791'}
+2025-02-21 15:09:42,145 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739513380791', 'endTime': '1740118180791', 'timestamp': '1740118182145'}
+2025-02-21 15:09:42,145 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739513380791', 'endTime': '1740118180791', 'timestamp': '1740118182145'}
+2025-02-21 15:09:42,559 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:09:42,560 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:09:42,669 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-20 ~ 2025-02-21
+2025-02-21 15:09:42,669 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1740031780791', 'endTime': '1740118180791'}
+2025-02-21 15:09:42,670 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1740031780791', 'endTime': '1740118180791', 'timestamp': '1740118182669'}
+2025-02-21 15:09:42,670 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1740031780791', 'endTime': '1740118180791', 'timestamp': '1740118182669'}
+2025-02-21 15:09:43,088 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:09:43,089 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:12:22,682 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:12:22,684 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:12:22,689 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:12:22,689 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:12:24,583 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:12:25,619 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:12:25,620 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:12:25,620 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:12:25,628 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:12:26,436 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:12:26,438 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:12:29,536 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2024-11-23 ~ 2025-02-21
+2025-02-21 15:12:29,536 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': 100, 'startTime': '1732342349536', 'endTime': '1740118349536'}
+2025-02-21 15:12:29,959 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1740118351132}
+2025-02-21 15:12:29,962 - telegram_bot.handlers.stats_handler - INFO - 조회된 거래 수: 0건
+2025-02-21 15:12:30,533 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-01-22 ~ 2025-02-21
+2025-02-21 15:12:30,534 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': 100, 'startTime': '1737526349536', 'endTime': '1740118349536'}
+2025-02-21 15:12:30,714 - exchange.bybit_client - ERROR - 거래 내역 조회 API 호출 실패: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1740118351887}
+2025-02-21 15:12:30,715 - telegram_bot.handlers.stats_handler - INFO - 조회된 거래 수: 0건
+2025-02-21 15:12:31,280 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:12:31,280 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': 100, 'startTime': '1739513549536', 'endTime': '1740118349536'}
+2025-02-21 15:12:31,488 - telegram_bot.handlers.stats_handler - INFO - 조회된 거래 수: 42건
+2025-02-21 15:12:31,489 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: list indices must be integers or slices, not str
+2025-02-21 15:12:32,054 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-20 ~ 2025-02-21
+2025-02-21 15:12:32,054 - telegram_bot.handlers.stats_handler - INFO - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': 100, 'startTime': '1740031949536', 'endTime': '1740118349536'}
+2025-02-21 15:12:32,253 - telegram_bot.handlers.stats_handler - INFO - 조회된 거래 수: 1건
+2025-02-21 15:12:32,254 - telegram_bot.formatters.stats_formatter - ERROR - 통계 포맷팅 실패: list indices must be integers or slices, not str
+2025-02-21 15:14:42,443 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:14:42,444 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:14:42,449 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:14:42,449 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:14:44,463 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:14:45,585 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:14:45,585 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:14:45,586 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:14:45,591 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:14:46,352 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:14:46,353 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:16:47,722 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:16:47,723 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:16:47,728 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:16:47,728 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:16:49,830 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:16:50,906 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:16:50,907 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:16:50,907 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:16:50,918 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:16:51,715 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:16:51,716 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:16:58,024 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:16:58,226 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 15:18:01,748 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:18:01,749 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:18:01,755 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:18:01,755 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:18:03,613 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:18:04,665 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:18:04,666 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:18:04,666 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:18:04,672 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:18:05,438 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:18:05,439 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:18:10,245 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:18:10,428 - exchange.bybit_client - ERROR - API 요청 실패: 'NoneType' object has no attribute 'get'
+2025-02-21 15:18:10,430 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:19:32,450 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:19:32,451 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:19:32,456 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:19:32,457 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:19:34,626 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:19:35,651 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:19:35,652 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:19:35,652 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:19:35,658 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:19:36,405 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:19:36,407 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:19:42,905 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:19:42,907 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739513982905', 'endTime': '1740118782905', 'timestamp': '1740118782907'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '2e23d44c26d1da62ba2ee2fd6a19cfed7832fc5ee63de9361b8b3ad67a7da975', 'X-BAPI-TIMESTAMP': '1740118782907', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:19:43,094 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:19:43,095 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:20:57,678 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:20:57,679 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:20:57,684 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:20:57,685 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:20:59,641 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:21:00,714 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:21:00,714 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:21:00,714 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:21:00,720 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:21:01,471 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:21:01,471 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:21:08,069 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:21:08,071 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739514068069', 'endTime': '1740118868069', 'timestamp': '1740118868070'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '869d9b5b9365e2f87710e63dbefe3de488c384c8a1bb187adf5800cd7e0d8f8f', 'X-BAPI-TIMESTAMP': '1740118868070', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:21:08,270 - exchange.bybit_client - INFO - API 응답 텍스트: 
+2025-02-21 15:21:08,272 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:21:08,273 - telegram_bot.handlers.stats_handler - INFO - API 응답: None
+2025-02-21 15:22:58,829 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:22:58,832 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:22:58,841 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:22:58,841 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:23:00,898 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:23:01,943 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:23:01,944 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:23:01,944 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:23:01,950 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:23:02,759 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:23:02,760 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:25:08,750 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:25:08,751 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:25:08,756 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:25:08,757 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:25:11,059 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:25:12,575 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:25:12,575 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:25:12,575 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:25:12,581 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:25:13,352 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:25:13,354 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:25:54,270 - telegram_bot.handlers.stats_handler - INFO - 첫 번째 거래 데이터: {'id': '1270308d-baf4-56d0-86d1-69d7eec759d4', 'info': {'symbol': 'BTCUSDT', 'orderType': 'Limit', 'underlyingPrice': '', 'orderLinkId': '', 'orderId': '1ffd7f0c-8776-45fe-973f-7c750d73ff38', 'stopOrderType': 'UNKNOWN', 'execTime': '1739514609222', 'feeCurrency': '', 'createType': 'CreateByUser', 'feeRate': '0.00055', 'tradeIv': '', 'blockTradeId': '', 'markPrice': '96155.7', 'execPrice': '95400', 'markIv': '', 'orderQty': '0.229', 'orderPrice': '97077', 'execValue': '190.8', 'closedSize': '0', 'execType': 'Trade', 'seq': '9429182474', 'side': 'Buy', 'indexPrice': '', 'leavesQty': '0.227', 'isMaker': False, 'execFee': '0.10494', 'execId': '1270308d-baf4-56d0-86d1-69d7eec759d4', 'marketUnit': '', 'execQty': '0.002'}, 'timestamp': 1739514609222, 'datetime': '2025-02-14T06:30:09.222Z', 'symbol': 'BTC/USDT:USDT', 'order': '1ffd7f0c-8776-45fe-973f-7c750d73ff38', 'type': 'limit', 'side': 'buy', 'takerOrMaker': 'taker', 'price': 95400.0, 'amount': 0.002, 'cost': 190.8, 'fee': {'cost': 0.10494, 'currency': 'USDT'}, 'fees': [{'cost': 0.10494, 'currency': 'USDT'}]}
+2025-02-21 15:27:53,572 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:27:53,573 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:27:53,578 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:27:53,579 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:27:55,476 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:27:56,538 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:27:56,538 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:27:56,538 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:27:56,544 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:27:57,302 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:27:57,302 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:30:03,198 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:30:03,199 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:30:03,204 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:30:03,204 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:30:05,015 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:30:06,113 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:30:06,113 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:30:06,113 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:30:06,119 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:30:06,874 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:30:06,875 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:36:06,531 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:36:06,532 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:36:06,537 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:36:06,538 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:36:08,626 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:36:09,671 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:36:09,671 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:36:09,672 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:36:09,680 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:36:10,451 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:36:10,452 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:36:16,675 - telegram_bot.handlers.stats_handler - INFO - 조회 기간: 2025-02-14 ~ 2025-02-21
+2025-02-21 15:36:16,675 - telegram_bot.handlers.stats_handler - INFO - 7일 이내 거래 수: 39건
+2025-02-21 15:37:55,631 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:37:55,633 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:37:55,638 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:37:55,638 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:37:57,567 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:37:58,617 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:37:58,619 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:37:58,619 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:37:58,624 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:37:59,382 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:37:59,384 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:38:02,952 - telegram_bot.handlers.stats_handler - ERROR - 통계 조회 중 오류: bybit fetchOrders() requires until/endTime when since is provided.
+2025-02-21 15:38:02,967 - telegram_bot.handlers.stats_handler - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 74, in stats
+    trades = await self.bot.bybit_client.exchange.fetch_my_trades(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 4608, in fetch_my_trades
+    raise BadRequest(self.id + ' fetchOrders() requires until/endTime when since is provided.')
+ccxt.base.errors.BadRequest: bybit fetchOrders() requires until/endTime when since is provided.
+
+2025-02-21 15:39:20,835 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:39:20,836 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:39:20,842 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:39:20,842 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:39:22,662 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:39:23,738 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:39:23,738 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:39:23,739 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:39:23,744 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:39:24,514 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:39:24,515 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:39:30,882 - telegram_bot.handlers.stats_handler - ERROR - 통계 조회 중 오류: bybit.fetch_my_trades() got an unexpected keyword argument 'until'
+2025-02-21 15:39:30,887 - telegram_bot.handlers.stats_handler - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\stats_handler.py", line 74, in stats
+    trades = await self.bot.bybit_client.exchange.fetch_my_trades(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bybit.fetch_my_trades() got an unexpected keyword argument 'until'
+
+2025-02-21 15:40:27,159 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:40:27,161 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:40:27,166 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:40:27,167 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:40:29,128 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:40:30,213 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:40:30,214 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:40:30,214 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:40:30,219 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:40:30,990 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:40:30,991 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:40:33,933 - telegram_bot.handlers.stats_handler - INFO - 첫 거래: 2025-02-14 15:40:41.470000, 마지막 거래: 2025-02-21 15:23:45.392000
+2025-02-21 15:40:33,933 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-14 15:40:41.470000, PNL: 0.0, Fee: 0.07762608
+2025-02-21 15:40:33,934 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-14 15:41:50.826000, PNL: 0.0, Fee: 0.05258286
+2025-02-21 15:40:33,934 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-14 15:41:50.826000, PNL: 0.0, Fee: 0.15776508
+2025-02-21 15:40:33,935 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-14 17:00:00, PNL: 0.0, Fee: -84.70431323
+2025-02-21 15:40:33,935 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 01:00:00, PNL: 0.0, Fee: -84.0353178
+2025-02-21 15:40:33,935 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.05284972
+2025-02-21 15:40:33,936 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.0528
+2025-02-21 15:40:33,936 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.05264578
+2025-02-21 15:40:33,936 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.0526663
+2025-02-21 15:40:33,936 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.05271189
+2025-02-21 15:40:33,936 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 9.29068976
+2025-02-21 15:40:33,936 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.4224
+2025-02-21 15:40:33,937 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.1581525
+2025-02-21 15:40:33,937 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.1584
+2025-02-21 15:40:33,937 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.1586475
+2025-02-21 15:40:33,937 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.05274781
+2025-02-21 15:40:33,937 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.228000, PNL: 0.0, Fee: 0.157905
+2025-02-21 15:40:33,937 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.4268
+2025-02-21 15:40:33,938 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.159885
+2025-02-21 15:40:33,938 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.1601325
+2025-02-21 15:40:33,938 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.2123
+2025-02-21 15:40:33,938 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.05311581
+2025-02-21 15:40:33,938 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.053075
+2025-02-21 15:40:33,938 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.16038
+2025-02-21 15:40:33,939 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.15939
+2025-02-21 15:40:33,939 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.05315393
+2025-02-21 15:40:33,939 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.1596375
+2025-02-21 15:40:33,939 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-15 02:08:13.846000, PNL: 0.0, Fee: 0.05335
+2025-02-21 15:40:33,939 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-17 13:22:10.959000, PNL: 0.0, Fee: 0.05081956
+2025-02-21 15:40:33,940 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-17 13:29:20.334000, PNL: 0.0, Fee: 0.0496963
+2025-02-21 15:40:33,940 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-17 13:30:27.416000, PNL: 0.0, Fee: 0.0495143
+2025-02-21 15:40:33,940 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-17 13:31:46.406000, PNL: 0.0, Fee: 0.04933522
+2025-02-21 15:40:33,940 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-21 15:08:46.425000, PNL: 0.0, Fee: 0.1809002
+2025-02-21 15:40:33,940 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-21 15:13:48.426000, PNL: 0.0, Fee: 0.181398
+2025-02-21 15:40:33,941 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-21 15:18:50.425000, PNL: 0.0, Fee: 0.1266454
+2025-02-21 15:40:33,941 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-21 15:19:00.493000, PNL: 0.0, Fee: 0.0180922
+2025-02-21 15:40:33,941 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-21 15:19:01.026000, PNL: 0.0, Fee: 0.0180922
+2025-02-21 15:40:33,941 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-21 15:20:05.595000, PNL: 0.0, Fee: 0.0180922
+2025-02-21 15:40:33,941 - telegram_bot.handlers.stats_handler - INFO - 거래 시간: 2025-02-21 15:23:45.392000, PNL: 0.0, Fee: 0.181458
+2025-02-21 15:43:29,880 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:43:29,882 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:43:29,887 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:43:29,888 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:43:31,750 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:43:32,892 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:43:32,893 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:43:32,893 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:43:32,903 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:43:33,675 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:43:33,677 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:43:39,566 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739515419566', 'endTime': '1740120219566', 'timestamp': '1740120219566'}
+2025-02-21 15:43:39,566 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739515419566', 'endTime': '1740120219566', 'timestamp': '1740120219566'}
+2025-02-21 15:43:39,745 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:44:09,258 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:44:09,259 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:44:09,265 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:44:09,266 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:44:11,073 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:44:12,126 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:44:12,127 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:44:12,127 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:44:12,133 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:44:12,896 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:44:12,897 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:44:21,601 - exchange.bybit_client - INFO - API 요청 전 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739515461600', 'endTime': '1740120261600', 'timestamp': '1740120261600'}
+2025-02-21 15:44:21,602 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'startTime': '1739515461600', 'endTime': '1740120261600', 'timestamp': '1740120261600'}
+2025-02-21 15:44:21,778 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:45:36,809 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:45:36,810 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:45:36,815 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:45:36,816 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:45:38,652 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:45:40,049 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:45:40,049 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:45:40,050 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:45:40,057 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:45:40,834 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:45:40,834 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:45:48,362 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': 50, 'startTime': '1739515548361', 'endTime': '1740120348361', 'timestamp': '1740120348361'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'ea4a18540296490a48ffd8a7df5e4423747a9f16e465c4b14edbb508a3836672', 'X-BAPI-TIMESTAMP': '1740120348361', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:45:48,850 - exchange.bybit_client - ERROR - API 오류: status=404, response=
+2025-02-21 15:51:29,081 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:51:29,083 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:51:29,089 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:51:29,090 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:51:31,032 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:51:32,288 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:51:32,288 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:51:32,289 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:51:32,301 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:51:33,066 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:51:33,067 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:51:39,342 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739515899342', 'endTime': '1740120699342', 'limit': '50', 'timestamp': '1740120699342'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '4e87fd2ec89521e1b62c76d67c76f0c584053011a65e36dbefa8b98dfca0946c', 'X-BAPI-TIMESTAMP': '1740120699342', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:51:39,657 - exchange.bybit_client - INFO - API 응답 텍스트: 
+2025-02-21 15:51:39,658 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:54:40,454 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:54:40,456 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:54:40,462 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:54:40,462 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:54:42,274 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:54:43,360 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:54:43,360 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:54:43,360 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:54:43,368 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:54:44,157 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:54:44,158 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:54:49,701 - telegram_bot.handlers.stats_handler - INFO - 시도하는 API 경로: /position/closed-pnl/list
+2025-02-21 15:54:49,703 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739516089701', 'endTime': '1740120889701', 'limit': '50', 'timestamp': '1740120889703'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '47a4ad0f0a0fe27479426f89696b5105f2197ab7eb22220ee349497de6279f7c', 'X-BAPI-TIMESTAMP': '1740120889703', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:54:49,909 - exchange.bybit_client - INFO - API 응답 텍스트: 
+2025-02-21 15:54:49,910 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:54:50,412 - telegram_bot.handlers.stats_handler - INFO - 시도하는 API 경로: /execution/closed-pnl
+2025-02-21 15:54:50,413 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/execution/closed-pnl, params={'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739516089701', 'endTime': '1740120889701', 'limit': '50', 'timestamp': '1740120890413'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'a49f1f18e319791e5dfb730335659b4dfc6ac9720206cc182be1a82803cfd5ed', 'X-BAPI-TIMESTAMP': '1740120890413', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:54:50,604 - exchange.bybit_client - INFO - API 응답 텍스트: 
+2025-02-21 15:54:50,604 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:54:51,120 - telegram_bot.handlers.stats_handler - INFO - 시도하는 API 경로: /position/closed-pnl
+2025-02-21 15:54:51,121 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/position/closed-pnl, params={'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739516089701', 'endTime': '1740120889701', 'limit': '50', 'timestamp': '1740120891121'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': 'a7736bdf7f81d651fb05a6b40d1fbf1b66972869769be7f73f6793d90dccef1d', 'X-BAPI-TIMESTAMP': '1740120891121', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:54:51,302 - exchange.bybit_client - INFO - API 응답 텍스트: {"retCode":10004,"retMsg":"error sign! origin_string[1740120891121FLbWUu1Gr50KNIllm55000category=linear\u0026symbol=BTCUSDT\u0026startTime=1739516089701\u0026endTime=1740120889701\u0026limit=50\u0026timestamp=1740120891121]","result":{},"retExtInfo":{},"time":1740120891262}
+2025-02-21 15:54:51,304 - exchange.bybit_client - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740120891121FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&startTime=1739516089701&endTime=1740120889701&limit=50&timestamp=1740120891121]', 'result': {}, 'retExtInfo': {}, 'time': 1740120891262}
+2025-02-21 15:54:51,827 - telegram_bot.handlers.stats_handler - INFO - 시도하는 API 경로: /trade/closed-pnl/list
+2025-02-21 15:54:51,828 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/trade/closed-pnl/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739516089701', 'endTime': '1740120889701', 'limit': '50', 'timestamp': '1740120891828'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '70880f82e7220058866ad90a53ca054924cfc63a1c3801058158f17ce2ebeaf6', 'X-BAPI-TIMESTAMP': '1740120891828', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:54:52,013 - exchange.bybit_client - INFO - API 응답 텍스트: 
+2025-02-21 15:54:52,014 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:54:52,523 - telegram_bot.handlers.stats_handler - INFO - 시도하는 API 경로: /trade/execution/list
+2025-02-21 15:54:52,524 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/trade/execution/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739516089701', 'endTime': '1740120889701', 'limit': '50', 'timestamp': '1740120892524'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '13bfdd0b528f6053d2d5633edcbff4f6b4a854a02401d831374e8cf4be722e1a', 'X-BAPI-TIMESTAMP': '1740120892524', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:54:52,701 - exchange.bybit_client - INFO - API 응답 텍스트: 
+2025-02-21 15:54:52,702 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 15:57:19,343 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:57:19,344 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:57:19,350 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:57:19,350 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:57:21,151 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:57:22,205 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:57:22,206 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:57:22,206 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:57:22,211 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:57:22,971 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:57:22,972 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:59:30,127 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 15:59:30,129 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 15:59:30,134 - main - INFO - 서비스 초기화 중...
+2025-02-21 15:59:30,134 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 15:59:31,890 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 15:59:32,915 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 15:59:32,916 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 15:59:32,916 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 15:59:32,922 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 15:59:33,697 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 15:59:33,697 - telegram.ext.Application - INFO - Application started
+2025-02-21 15:59:36,888 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/execution/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'timestamp': '1740121176888'}, headers={'X-BAPI-API-KEY': 'FLbWUu1Gr50KNIllm5', 'X-BAPI-SIGN': '188530a67bc1fd1efc38192f9e06e3a1b21e0a40c50798b7d034b42630f60a05', 'X-BAPI-TIMESTAMP': '1740121176888', 'X-BAPI-RECV-WINDOW': '5000'}
+2025-02-21 15:59:37,146 - exchange.bybit_client - INFO - API 응답 텍스트: {"retCode":10004,"retMsg":"error sign! origin_string[1740121176888FLbWUu1Gr50KNIllm55000category=linear\u0026symbol=BTCUSDT\u0026limit=50\u0026timestamp=1740121176888]","result":{},"retExtInfo":{},"time":1740121177109}
+2025-02-21 15:59:37,148 - exchange.bybit_client - INFO - API 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1740121176888FLbWUu1Gr50KNIllm55000category=linear&symbol=BTCUSDT&limit=50&timestamp=1740121176888]', 'result': {}, 'retExtInfo': {}, 'time': 1740121177109}
+2025-02-21 16:01:02,419 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 16:01:02,420 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 16:01:02,425 - main - INFO - 서비스 초기화 중...
+2025-02-21 16:01:02,425 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 16:01:04,301 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 16:01:05,439 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 16:01:05,440 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 16:01:05,440 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 16:01:05,450 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 16:01:06,206 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 16:01:06,207 - telegram.ext.Application - INFO - Application started
+2025-02-21 16:01:09,612 - exchange.bybit_client - INFO - 서명 문자열: 1740121269611FLbWUu1Gr50KNIllm55000category=linear&limit=50&symbol=BTCUSDT&timestamp=1740121269611
+2025-02-21 16:01:09,616 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/v5/execution/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'timestamp': '1740121269611'}
+2025-02-21 16:01:09,883 - exchange.bybit_client - INFO - API 응답: None
+2025-02-21 16:02:35,355 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 16:02:35,356 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 16:02:35,362 - main - INFO - 서비스 초기화 중...
+2025-02-21 16:02:35,363 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 16:02:37,447 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 16:02:38,536 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 16:02:38,536 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 16:02:38,537 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 16:02:38,542 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 16:02:39,293 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 16:02:39,295 - telegram.ext.Application - INFO - Application started
+2025-02-21 16:02:45,777 - exchange.bybit_client - INFO - 서명 문자열: 1740121365777FLbWUu1Gr50KNIllm55000category=linear&limit=50&symbol=BTCUSDT&timestamp=1740121365777
+2025-02-21 16:02:45,779 - exchange.bybit_client - INFO - API 요청: URL=https://api-testnet.bybit.com/v5/trade/execution/list, params={'category': 'linear', 'symbol': 'BTCUSDT', 'limit': '50', 'timestamp': '1740121365777'}
+2025-02-21 16:02:45,968 - exchange.bybit_client - INFO - API 응답 텍스트: 
+2025-02-21 16:04:23,891 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-21 16:04:23,894 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-21 16:04:23,901 - main - INFO - 서비스 초기화 중...
+2025-02-21 16:04:23,901 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-21 16:04:25,881 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-21 16:04:26,951 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-21 16:04:26,951 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-21 16:04:26,952 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-21 16:04:26,958 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-21 16:04:27,727 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-21 16:04:27,728 - telegram.ext.Application - INFO - Application started
+2025-02-21 16:04:34,039 - telegram_bot.handlers.stats_handler - INFO - CCXT 응답: {'id': '0cf4d6c3-d495-4f99-ac32-440f938ffcd4', 'info': {'symbol': 'BTCUSDT', 'orderType': 'UNKNOWN', 'underlyingPrice': '', 'orderLinkId': '', 'orderId': '4f1c537c-a1dc-478d-bd53-eef4488a0b84', 'stopOrderType': 'UNKNOWN', 'execTime': '1739520000000', 'feeCurrency': '', 'createType': '', 'feeRate': '-0.00375', 'tradeIv': '', 'blockTradeId': '', 'markPrice': '96943.42', 'execPrice': '96943.42', 'markIv': '', 'orderQty': '0', 'orderPrice': '0', 'execValue': '22587.81686', 'closedSize': '0', 'execType': 'Funding', 'seq': '9429200945', 'side': 'Buy', 'indexPrice': '', 'leavesQty': '0', 'isMaker': False, 'execFee': '-84.70431323', 'execId': '0cf4d6c3-d495-4f99-ac32-440f938ffcd4', 'marketUnit': '', 'execQty': '0.233'}, 'timestamp': 1739520000000, 'datetime': '2025-02-14T08:00:00.000Z', 'symbol': 'BTC/USDT:USDT', 'order': '4f1c537c-a1dc-478d-bd53-eef4488a0b84', 'type': None, 'side': 'buy', 'takerOrMaker': 'taker', 'price': 96943.42, 'amount': 0.233, 'cost': 22587.81686, 'fee': {'cost': 84.70431323, 'currency': 'USDT'}, 'fees': [{'cost': 84.70431323, 'currency': 'USDT'}]}

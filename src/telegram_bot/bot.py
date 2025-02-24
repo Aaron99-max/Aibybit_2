@@ -138,15 +138,12 @@ class TelegramBot:
             CommandHandler("status", self._check_admin(self.trading_handler.handle_status)),
             CommandHandler("balance", self._check_admin(self.trading_handler.handle_balance)),
             CommandHandler("position", self._check_admin(self.trading_handler.handle_position)),
-            CommandHandler("stats", self._check_admin(self.stats_handler.handle)),
+            CommandHandler("stats", self._check_admin(self.stats_handler.stats)),
             CommandHandler("trade", self._check_admin(self.trading_handler.handle_trade))
         ]
 
         for handler in handlers:
             self.application.add_handler(handler)
-
-        # 포지션 데이터 초기화 및 업데이트 확인
-        asyncio.create_task(self.trade_history_service.initialize())
 
     def _check_admin(self, handler):
         """관리자 권한 체크 데코레이터"""
@@ -261,7 +258,7 @@ class TelegramBot:
                 CommandHandler("status", self.trading_handler.handle_status),
                 CommandHandler("balance", self.trading_handler.handle_balance),
                 CommandHandler("position", self.trading_handler.handle_position),
-                CommandHandler("stats", self.stats_handler.handle),
+                CommandHandler("stats", self.stats_handler.stats),
                 CommandHandler("trade", self.trading_handler.handle_trade)
             ]
             

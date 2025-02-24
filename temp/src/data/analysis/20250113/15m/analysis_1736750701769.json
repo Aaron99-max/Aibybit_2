@@ -1,0 +1,18 @@
+{
+  "market_condition": "\uc57d\uc138",
+  "trend_analysis": "\ud558\ub77d \ucd94\uc138\uac00 \ud615\uc131\ub418\uc5b4 \uc788\uc73c\uba70, \ucd94\uc138 \uac15\ub3c4\uac00 \uc911\uac04 \uc218\uc900\uc774\ubbc0\ub85c \uc77c\uc815\ud55c \ud558\ub77d \uc6b4\ub3d9\uc774 \uc608\uc0c1\ub429\ub2c8\ub2e4.",
+  "risk_level": "\uc911",
+  "trading_suggestion": "\ub9e4\ub3c4 \uc81c\uc548",
+  "technical_analysis": {
+    "trend": "\ud558\ub77d",
+    "strength": 17.27,
+    "indicators": {
+      "rsi": 34.44,
+      "macd": "\ud558\ub77d",
+      "bollinger": "\uacfc\ub9e4\ub3c4"
+    }
+  },
+  "timeframe": "15m",
+  "timestamp": 1736750701769,
+  "saved_at": "2025-01-13 15:45:01 KST"
+}

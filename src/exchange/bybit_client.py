@@ -8,6 +8,7 @@ import json
 from typing import Dict, List
 from config.bybit_config import BybitConfig
 import traceback
+import asyncio
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +23,7 @@ class BybitClient:
         self.last_time_sync = 0
         self.SYNC_INTERVAL = 3600  # 1시간마다 동기화
         
-        # CCXT exchange 객체 초기화 (market_data_service에서 필요)
+        # CCXT exchange 객체 초기화
         self.exchange = ccxt.bybit({
             'apiKey': self.config.api_key,
             'secret': self.config.api_secret,
@@ -36,9 +37,15 @@ class BybitClient:
             }
         })
         
+        # REST API base URL 설정
+        self.base_url = self.config.base_url  # config에서 가져오는 대신 직접 설정
+        
         # 테스트넷 설정
         if self.config.testnet:
             self.exchange.set_sandbox_mode(True)
+            self.base_url = "https://api-testnet.bybit.com"  # 테스트넷 URL
+        else:
+            self.base_url = "https://api.bybit.com"  # 메인넷 URL
 
     async def _should_sync_time(self):
         """시간 동기화가 필요한지 확인"""
@@ -65,48 +72,48 @@ class BybitClient:
     async def _request(self, method: str, path: str, params: Dict = None) -> Dict:
         """API 요청 공통 처리"""
         try:
-            # 요청 전 시간 동기화 확인
-            await self._ensure_time_sync()
-            
-            timestamp = str(int(time.time() * 1000) + self.time_offset)
+            timestamp = str(int(time.time() * 1000))
             request_params = params.copy() if params else {}
             request_params['timestamp'] = timestamp
             
-            # recv_window 값을 params에서 가져오거나 기본값 사용
-            recv_window = str(request_params.get('recv_window', 5000))
-            
-            # 기존 서명 생성 방식으로 복원
-            if method == "GET":
-                query_string = '&'.join([f"{k}={v}" for k, v in sorted(request_params.items())])
-                sign_payload = timestamp + self.config.api_key + recv_window + query_string
-            else:
-                sign_payload = timestamp + self.config.api_key + recv_window + json.dumps(request_params)
+            # recv_window 값 설정
+            recv_window = '5000'
             
             # 서명 생성
+            param_str = '&'.join([f"{k}={v}" for k, v in sorted(request_params.items())])
+            sign_str = timestamp + self.config.api_key + recv_window + param_str
             signature = hmac.new(
-                bytes(self.config.api_secret, 'utf-8'),
-                bytes(sign_payload, 'utf-8'),
+                self.config.api_secret.encode('utf-8'),
+                sign_str.encode('utf-8'),
                 hashlib.sha256
             ).hexdigest()
 
-            url = f"{self.config.base_url}{path}"
+            # API 요청 헤더
             headers = {
                 'X-BAPI-API-KEY': self.config.api_key,
                 'X-BAPI-SIGN': signature,
-                'X-BAPI-TIMESTAMP': str(timestamp),
+                'X-BAPI-TIMESTAMP': timestamp,
                 'X-BAPI-RECV-WINDOW': recv_window
             }
+
+            # URL 경로 수정 (v5 중복 제거)
+            if path.startswith('/v5'):
+                path = path[3:]
+            elif path.startswith('v5/'):
+                path = path[3:]
+            url = f"{self.base_url}/v5{path}"
             
-            if method == "POST":
-                headers['Content-Type'] = 'application/json'
+            logger.info(f"서명 문자열: {sign_str}")
+            logger.info(f"API 요청: URL={url}, params={request_params}")
             
             async with aiohttp.ClientSession() as session:
-                if method == "GET":
-                    async with session.get(url, params=request_params, headers=headers) as response:
-                        return await response.json()
-                else:  # POST
-                    async with session.post(url, json=request_params, headers=headers) as response:
-                        return await response.json()
+                async with session.get(url, params=request_params, headers=headers) as response:
+                    text = await response.text()
+                    logger.info(f"API 응답 텍스트: {text}")
+                    if text:
+                        result = json.loads(text)
+                        return result
+                    return None
 
         except Exception as e:
             logger.error(f"API 요청 실패: {str(e)}")
@@ -131,9 +138,9 @@ class BybitClient:
     async def v5_get_closed_pnl(self, params: Dict) -> Dict:
         """V5 API closed-pnl 조회"""
         try:
-            return await self.v5_get("/position/closed-pnl", params)
+            return await self._request('GET', '/position/closed-pnl/list', params)
         except Exception as e:
-            logger.error(f"API 호출 실패: {str(e)}")
+            logger.error(f"closed-pnl API 호출 실패: {str(e)}")
             return None
 
     async def v5_get_positions(self, symbol: str = None) -> Dict:
@@ -151,13 +158,16 @@ class BybitClient:
             logger.error(f"포지션 조회 중 오류: {str(e)}")
             return []
 
-    async def v5_get_executions(self, params: Dict) -> Dict:
-        """V5 API execution/list 조회"""
+    async def fetch_my_trades(self, symbol: str, since: int = None, params: Dict = None) -> List[Dict]:
+        """거래 내역 조회 API"""
         try:
-            return await self.v5_get("/execution/list", params)
+            trades = await self.exchange.fetch_my_trades(symbol, since=since, params=params)
+            if trades:
+                logger.debug(f"조회된 거래 수: {len(trades)}건")
+            return trades
         except Exception as e:
-            logger.error(f"API 호출 실패: {str(e)}")
-            return None
+            logger.error(f"거래 내역 조회 API 호출 실패: {str(e)}")
+            return []
 
     async def close(self):
         """연결 종료"""
@@ -249,6 +259,8 @@ class BybitClient:
             logger.error(f"포지션 조회 API 호출 실패: {str(e)}")
             return None
 
+    # 아래 메서드들은 현재 사용하지 않으므로 주석 처리
+    '''
     async def fetch_closed_positions(self, symbol: str, start_time: int = None, end_time: int = None) -> List[Dict]:
         """포지션 조회 API 호출"""
         try:
@@ -271,19 +283,4 @@ class BybitClient:
         except Exception as e:
             logger.error(f"포지션 조회 API 호출 실패: {str(e)}")
             return []
-
-    async def fetch_my_trades(self, symbol: str, since: int = None, params: Dict = None) -> List[Dict]:
-        """거래 내역 조회 API"""
-        try:
-            # CCXT를 통한 거래 내역 조회
-            trades = await self.exchange.fetch_my_trades(symbol, since=since, params=params)
-            
-            # 응답 로깅
-            if trades:
-                logger.debug(f"조회된 거래 수: {len(trades)}건")
-            
-            return trades
-            
-        except Exception as e:
-            logger.error(f"거래 내역 조회 API 호출 실패: {str(e)}")
-            return []
+    '''

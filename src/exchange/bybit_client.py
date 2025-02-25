@@ -5,10 +5,9 @@ import hashlib
 import time
 import aiohttp
 import json
-from typing import Dict, List
+from typing import Dict
 from config.bybit_config import BybitConfig
 import traceback
-import asyncio
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +22,7 @@ class BybitClient:
         self.last_time_sync = 0
         self.SYNC_INTERVAL = 3600  # 1시간마다 동기화
         
-        # CCXT exchange 객체 초기화
+        # CCXT exchange 객체 초기화 (market_data_service에서 필요)
         self.exchange = ccxt.bybit({
             'apiKey': self.config.api_key,
             'secret': self.config.api_secret,
@@ -37,15 +36,9 @@ class BybitClient:
             }
         })
         
-        # REST API base URL 설정
-        self.base_url = self.config.base_url  # config에서 가져오는 대신 직접 설정
-        
         # 테스트넷 설정
         if self.config.testnet:
             self.exchange.set_sandbox_mode(True)
-            self.base_url = "https://api-testnet.bybit.com"  # 테스트넷 URL
-        else:
-            self.base_url = "https://api.bybit.com"  # 메인넷 URL
 
     async def _should_sync_time(self):
         """시간 동기화가 필요한지 확인"""
@@ -72,51 +65,57 @@ class BybitClient:
     async def _request(self, method: str, path: str, params: Dict = None) -> Dict:
         """API 요청 공통 처리"""
         try:
-            timestamp = str(int(time.time() * 1000))
+            await self._ensure_time_sync()
+            
+            timestamp = str(int(time.time() * 1000) + self.time_offset)
             request_params = params.copy() if params else {}
-            request_params['timestamp'] = timestamp
             
-            # recv_window 값 설정
-            recv_window = '5000'
-            
-            # 서명 생성
-            param_str = '&'.join([f"{k}={v}" for k, v in sorted(request_params.items())])
-            sign_str = timestamp + self.config.api_key + recv_window + param_str
-            signature = hmac.new(
-                self.config.api_secret.encode('utf-8'),
-                sign_str.encode('utf-8'),
-                hashlib.sha256
-            ).hexdigest()
+            # GET 요청 처리
+            if method == "GET":
+                # 1. 파라미터에 타임스탬프 추가
+                request_params['timestamp'] = timestamp
+                
+                # 2. 정렬된 파라미터로 쿼리 스트링 생성
+                sorted_params = sorted(request_params.items())
+                query_string = '&'.join([f"{k}={v}" for k, v in sorted_params])
+                
+                # 디버그 로그
+                logger.debug(f"Query string for signature: {query_string}")
+                
+                # 3. 서명 생성
+                signature = hmac.new(
+                    bytes(self.config.api_secret, 'utf-8'),
+                    bytes(query_string, 'utf-8'),
+                    hashlib.sha256
+                ).hexdigest()
 
-            # API 요청 헤더
+            url = f"{self.config.base_url}{path}"
             headers = {
                 'X-BAPI-API-KEY': self.config.api_key,
                 'X-BAPI-SIGN': signature,
                 'X-BAPI-TIMESTAMP': timestamp,
-                'X-BAPI-RECV-WINDOW': recv_window
+                'X-BAPI-RECV-WINDOW': "5000",
+                'Content-Type': 'application/json'
             }
-
-            # URL 경로 수정 (v5 중복 제거)
-            if path.startswith('/v5'):
-                path = path[3:]
-            elif path.startswith('v5/'):
-                path = path[3:]
-            url = f"{self.base_url}/v5{path}"
             
-            logger.info(f"서명 문자열: {sign_str}")
-            logger.info(f"API 요청: URL={url}, params={request_params}")
+            # 디버그 로그
+            logger.debug(f"Request URL: {url}")
+            logger.debug(f"Request params: {request_params}")
+            logger.debug(f"Request headers: {headers}")
             
             async with aiohttp.ClientSession() as session:
-                async with session.get(url, params=request_params, headers=headers) as response:
-                    text = await response.text()
-                    logger.info(f"API 응답 텍스트: {text}")
-                    if text:
-                        result = json.loads(text)
+                if method == "GET":
+                    async with session.get(url, params=request_params, headers=headers) as response:
+                        result = await response.json()
+                        logger.debug(f"Response: {result}")  # 응답 로그 추가
                         return result
-                    return None
+                else:  # POST
+                    async with session.post(url, json=request_params, headers=headers) as response:
+                        return await response.json()
 
         except Exception as e:
             logger.error(f"API 요청 실패: {str(e)}")
+            logger.error(traceback.format_exc())  # 스택 트레이스 추가
             return None
 
     async def v5_post(self, path: str, params: Dict = None) -> Dict:
@@ -138,9 +137,13 @@ class BybitClient:
     async def v5_get_closed_pnl(self, params: Dict) -> Dict:
         """V5 API closed-pnl 조회"""
         try:
-            return await self._request('GET', '/position/closed-pnl/list', params)
+            # 디버그 로그 추가
+            logger.debug(f"closed-pnl API 요청: {params}")
+            response = await self.v5_get("/position/closed-pnl", params)
+            logger.debug(f"closed-pnl API 응답: {response}")
+            return response
         except Exception as e:
-            logger.error(f"closed-pnl API 호출 실패: {str(e)}")
+            logger.error(f"API 호출 실패: {str(e)}")
             return None
 
     async def v5_get_positions(self, symbol: str = None) -> Dict:
@@ -158,16 +161,13 @@ class BybitClient:
             logger.error(f"포지션 조회 중 오류: {str(e)}")
             return []
 
-    async def fetch_my_trades(self, symbol: str, since: int = None, params: Dict = None) -> List[Dict]:
-        """거래 내역 조회 API"""
+    async def v5_get_executions(self, params: Dict) -> Dict:
+        """V5 API execution/list 조회"""
         try:
-            trades = await self.exchange.fetch_my_trades(symbol, since=since, params=params)
-            if trades:
-                logger.debug(f"조회된 거래 수: {len(trades)}건")
-            return trades
+            return await self.v5_get("/execution/list", params)
         except Exception as e:
-            logger.error(f"거래 내역 조회 API 호출 실패: {str(e)}")
-            return []
+            logger.error(f"API 호출 실패: {str(e)}")
+            return None
 
     async def close(self):
         """연결 종료"""
@@ -234,53 +234,12 @@ class BybitClient:
     async def get_balance(self) -> Dict:
         """잔고 조회 API 호출"""
         try:
+            # V5 API로 시도
             response = await self.v5_get("/account/wallet-balance", {
                 "accountType": "UNIFIED"
             })
             return response
+            
         except Exception as e:
             logger.error(f"잔고 조회 API 호출 실패: {str(e)}")
             return {}
-
-    async def get_positions(self, symbol: str = None) -> Dict:
-        """포지션 조회 API 호출"""
-        try:
-            params = {
-                "category": "linear",
-                "settleCoin": "USDT"
-            }
-            if symbol:
-                params["symbol"] = symbol
-
-            response = await self.v5_get("/position/list", params)
-            return response
-                
-        except Exception as e:
-            logger.error(f"포지션 조회 API 호출 실패: {str(e)}")
-            return None
-
-    # 아래 메서드들은 현재 사용하지 않으므로 주석 처리
-    '''
-    async def fetch_closed_positions(self, symbol: str, start_time: int = None, end_time: int = None) -> List[Dict]:
-        """포지션 조회 API 호출"""
-        try:
-            params = {
-                "category": "linear",
-                "symbol": symbol,
-                "limit": 100
-            }
-            
-            if start_time:
-                params["startTime"] = start_time
-            if end_time:
-                params["endTime"] = end_time
-                
-            response = await self.v5_get("/position/closed-pnl/list", params)
-            if response and response.get('retCode') == 0:
-                return response.get('result', {}).get('list', [])
-            return []
-                
-        except Exception as e:
-            logger.error(f"포지션 조회 API 호출 실패: {str(e)}")
-            return []
-    '''

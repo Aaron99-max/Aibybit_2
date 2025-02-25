@@ -42,7 +42,6 @@ from .formatters.order_formatter import OrderFormatter
 from services.balance_service import BalanceService
 from services.trade_history_service import TradeHistoryService
 from .handlers.stats_handler import StatsHandler
-from services.trade_store import TradeStore
 
 class TelegramBot:
     # 메시지 타입 정의
@@ -54,14 +53,8 @@ class TelegramBot:
     def __init__(self, config: TelegramConfig, bybit_client: BybitClient, 
                  trade_manager: TradeManager = None,
                  market_data_service: MarketDataService = None):
-        # 기본 설정
         self.config = config
         self.bybit_client = bybit_client
-        self.admin_chat_id = config.admin_chat_id
-        self.alert_chat_ids = config.alert_chat_ids
-        
-        # Application 초기화
-        self.application = Application.builder().token(config.bot_token).build()
         
         # 서비스 초기화 (순서 중요)
         self.position_service = PositionService(bybit_client)
@@ -73,8 +66,7 @@ class TelegramBot:
             telegram_bot=self
         )
         self.market_data_service = market_data_service or MarketDataService(bybit_client)
-        self.trade_store = TradeStore()
-        self.trade_history_service = TradeHistoryService(self.trade_store, bybit_client)
+        self.trade_history_service = TradeHistoryService(bybit_client)
         
         # 종료 이벤트 초기화
         self._stop_event = asyncio.Event()
@@ -101,11 +93,18 @@ class TelegramBot:
             trade_manager=self.trade_manager
         )
         
+        # 텔레그램 설정 로드 (수정)
+        self.admin_chat_id = config.admin_chat_id
+        self.alert_chat_ids = config.alert_chat_ids  # 알림용 채팅방 ID 리스트
+        
         # 설정값 로깅 추가
         logger.info("텔레그램 설정 로드:")
         logger.info(f"- admin_chat_id: {self.admin_chat_id}")
         logger.info(f"- alert_chat_ids: {self.alert_chat_ids}")
         
+        # Application 초기화
+        self.application = Application.builder().token(config.bot_token).build()
+
         # 모니터링 초기화
         self.auto_analyzer = AutoAnalyzer(
             market_data_service=self.market_data_service,
@@ -138,7 +137,7 @@ class TelegramBot:
             CommandHandler("status", self._check_admin(self.trading_handler.handle_status)),
             CommandHandler("balance", self._check_admin(self.trading_handler.handle_balance)),
             CommandHandler("position", self._check_admin(self.trading_handler.handle_position)),
-            CommandHandler("stats", self._check_admin(self.stats_handler.stats)),
+            CommandHandler("stats", self._check_admin(self.stats_handler.handle)),
             CommandHandler("trade", self._check_admin(self.trading_handler.handle_trade))
         ]
 
@@ -202,6 +201,10 @@ class TelegramBot:
         """봇 초기화"""
         try:
             logger.info("봇 초기화 시작...")
+            
+            # 거래 내역 서비스 초기화 (추가)
+            await self.trade_history_service.initialize()
+            
             logger.info("Application 빌드 시작...")
             
             # 봇 빌더 설정
@@ -258,7 +261,7 @@ class TelegramBot:
                 CommandHandler("status", self.trading_handler.handle_status),
                 CommandHandler("balance", self.trading_handler.handle_balance),
                 CommandHandler("position", self.trading_handler.handle_position),
-                CommandHandler("stats", self.stats_handler.stats),
+                CommandHandler("stats", self.stats_handler.handle),
                 CommandHandler("trade", self.trading_handler.handle_trade)
             ]
             
@@ -276,21 +279,11 @@ class TelegramBot:
         """봇 실행"""
         try:
             # 봇 초기화
-            await self.application.initialize()
-            await self.application.start()
+            await self.initialize()
             
-            # 모니터링 시작
-            await self.application.updater.start_polling(
-                drop_pending_updates=True,
-                allowed_updates=["message", "callback_query"]
-            )
-            
-            # 시작 메시지 전송
-            start_message = "🤖 바이빗 트레이딩 봇이 시작되었습니다"
-            await self.send_message_to_all(start_message, self.MSG_TYPE_SYSTEM)
-            
-            # 봇이 실행 중인 동안 대기
-            await self._stop_event.wait()
+            # 봇 시작
+            logger.info("봇 시작 시도...")
+            await self.start()
             
         except Exception as e:
             logger.error(f"봇 실행 중 오류: {str(e)}")
@@ -302,7 +295,7 @@ class TelegramBot:
         help_text = """
 🤖 사용 가능한 명령어:
 
-🔵 트레이딩 명령어:
+🤖 트레이딩 명령어:
 /analyze - 1시간봉 시장 분석
 /trade - 거래 실행
 /status - 현재 상태 확인
@@ -370,6 +363,13 @@ class TelegramBot:
             start_message = "🤖 바이빗 트레이딩 봇이 시작되었습니다"
             logger.info(start_message)
             await self.send_message_to_all(start_message, self.MSG_TYPE_SYSTEM)
+            
+               
+            # 봇이 실행 중인 동안 대기
+            try:
+                await self._stop_event.wait()
+            except asyncio.CancelledError:
+                logger.info("봇 실행이 취소되었습니다")
             
         except Exception as e:
             logger.error(f"봇 시작 중 오류: {str(e)}")

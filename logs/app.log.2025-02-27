@@ -1,0 +1,2184 @@
+2025-02-27 15:35:51,931 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-27 15:35:51,934 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-27 15:35:51,939 - main - INFO - 서비스 초기화 중...
+2025-02-27 15:35:51,939 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-27 15:35:53,813 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-27 15:35:57,256 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-27 15:35:57,257 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-27 15:35:57,257 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-27 15:35:57,704 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-27 15:35:57,705 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-27 15:35:57,705 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-27 15:35:57,705 - services.trade_history_service - INFO - 조회 기간: 2024-11-29 ~ 2025-02-27
+2025-02-27 15:35:57,706 - services.trade_store - INFO - 날짜 범위 조회: 20241129 ~ 20250227
+2025-02-27 15:35:57,706 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-27 15:35:57,707 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-27 15:35:57,707 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-27 15:35:57,707 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 0건
+2025-02-27 15:35:57,707 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 0건
+2025-02-27 15:35:57,707 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 0건
+2025-02-27 15:35:57,707 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-27 15:35:57,708 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-27 15:35:57,708 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 0건
+2025-02-27 15:35:57,708 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 0건
+2025-02-27 15:35:57,708 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 0건
+2025-02-27 15:35:57,708 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 0건
+2025-02-27 15:35:57,708 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 0건
+2025-02-27 15:35:57,708 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 0건
+2025-02-27 15:35:57,709 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 0건
+2025-02-27 15:35:57,709 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 0건
+2025-02-27 15:35:57,709 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-27 15:35:57,709 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-27 15:35:57,709 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 0건
+2025-02-27 15:35:57,710 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 0건
+2025-02-27 15:35:57,710 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 0건
+2025-02-27 15:35:57,710 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 0건
+2025-02-27 15:35:57,710 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 0건
+2025-02-27 15:35:57,710 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 0건
+2025-02-27 15:35:57,711 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 0건
+2025-02-27 15:35:57,711 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 0건
+2025-02-27 15:35:57,711 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 0건
+2025-02-27 15:35:57,711 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 0건
+2025-02-27 15:35:57,711 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 0건
+2025-02-27 15:35:57,711 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 0건
+2025-02-27 15:35:57,711 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-27 15:35:57,712 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 0건
+2025-02-27 15:35:57,712 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 0건
+2025-02-27 15:35:57,712 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-27 15:35:57,713 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-27 15:35:57,713 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-27 15:35:57,713 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-27 15:35:57,713 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-27 15:35:57,714 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-27 15:35:57,714 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-27 15:35:57,714 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-27 15:35:57,715 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-27 15:35:57,715 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-27 15:35:57,715 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-27 15:35:57,715 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-27 15:35:57,715 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-27 15:35:57,716 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-27 15:35:57,717 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-27 15:35:57,717 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-27 15:35:57,717 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-27 15:35:57,717 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-27 15:35:57,717 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-27 15:35:57,717 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-27 15:35:57,717 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-27 15:35:57,718 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-27 15:35:57,718 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-27 15:35:57,718 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-27 15:35:57,718 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-27 15:35:57,718 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-27 15:35:57,718 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-27 15:35:57,719 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-27 15:35:57,719 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-27 15:35:57,719 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-27 15:35:57,719 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-27 15:35:57,720 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-27 15:35:57,720 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-27 15:35:57,720 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-27 15:35:57,720 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-27 15:35:57,720 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-27 15:35:57,721 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-27 15:35:57,721 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-27 15:35:57,721 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-27 15:35:57,721 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-27 15:35:57,721 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-27 15:35:57,721 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-27 15:35:57,721 - services.trade_store - INFO - 날짜: 20250219, 포지션 수: 0건
+2025-02-27 15:35:57,722 - services.trade_store - INFO - 날짜: 20250220, 포지션 수: 0건
+2025-02-27 15:35:57,722 - services.trade_store - INFO - 날짜: 20250221, 포지션 수: 0건
+2025-02-27 15:35:57,722 - services.trade_store - INFO - 날짜: 20250222, 포지션 수: 0건
+2025-02-27 15:35:57,722 - services.trade_store - INFO - 날짜: 20250223, 포지션 수: 0건
+2025-02-27 15:35:57,722 - services.trade_store - INFO - 날짜: 20250224, 포지션 수: 0건
+2025-02-27 15:35:57,723 - services.trade_store - INFO - 날짜: 20250225, 포지션 수: 0건
+2025-02-27 15:35:57,723 - services.trade_store - INFO - 날짜: 20250226, 포지션 수: 0건
+2025-02-27 15:35:57,723 - services.trade_store - INFO - 날짜: 20250227, 포지션 수: 0건
+2025-02-27 15:35:57,723 - services.trade_store - INFO - 총 0건의 포지션 데이터 로드됨
+2025-02-27 15:35:57,723 - services.trade_history_service - INFO - 기존 데이터: 0건
+2025-02-27 15:35:57,723 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-27 15:35:57,724 - services.trade_history_service - INFO - 기간별 조회: 2024-11-29 ~ 2024-12-06
+2025-02-27 15:35:57,724 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1732862157705', 'endTime': '1733466957705', 'limit': 100}
+2025-02-27 15:35:57,854 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 899ms
+2025-02-27 15:35:57,946 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:35:57,951 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:35:57,959 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:35:58,964 - services.trade_history_service - INFO - 기간별 조회: 2024-12-06 ~ 2024-12-13
+2025-02-27 15:35:58,965 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1733466957705', 'endTime': '1734071757705', 'limit': 100}
+2025-02-27 15:35:59,049 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:35:59,050 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:35:59,052 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:00,065 - services.trade_history_service - INFO - 기간별 조회: 2024-12-13 ~ 2024-12-20
+2025-02-27 15:36:00,066 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734071757705', 'endTime': '1734676557705', 'limit': 100}
+2025-02-27 15:36:00,179 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:00,182 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:00,187 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:01,194 - services.trade_history_service - INFO - 기간별 조회: 2024-12-20 ~ 2024-12-27
+2025-02-27 15:36:01,195 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734676557705', 'endTime': '1735281357705', 'limit': 100}
+2025-02-27 15:36:01,333 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:01,337 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:01,344 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:02,356 - services.trade_history_service - INFO - 기간별 조회: 2024-12-27 ~ 2025-01-03
+2025-02-27 15:36:02,357 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735281357705', 'endTime': '1735886157705', 'limit': 100}
+2025-02-27 15:36:02,445 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:02,448 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:02,451 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:03,465 - services.trade_history_service - INFO - 기간별 조회: 2025-01-03 ~ 2025-01-10
+2025-02-27 15:36:03,466 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735886157705', 'endTime': '1736490957705', 'limit': 100}
+2025-02-27 15:36:03,545 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:03,546 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:03,549 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:04,554 - services.trade_history_service - INFO - 기간별 조회: 2025-01-10 ~ 2025-01-17
+2025-02-27 15:36:04,556 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1736490957705', 'endTime': '1737095757705', 'limit': 100}
+2025-02-27 15:36:04,649 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:04,653 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:04,657 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:05,667 - services.trade_history_service - INFO - 기간별 조회: 2025-01-17 ~ 2025-01-24
+2025-02-27 15:36:05,668 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737095757705', 'endTime': '1737700557705', 'limit': 100}
+2025-02-27 15:36:05,774 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:05,777 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:05,781 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:06,781 - services.trade_history_service - INFO - 기간별 조회: 2025-01-24 ~ 2025-01-31
+2025-02-27 15:36:06,782 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737700557705', 'endTime': '1738305357705', 'limit': 100}
+2025-02-27 15:36:06,896 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:06,900 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:06,904 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:07,926 - services.trade_history_service - INFO - 기간별 조회: 2025-01-31 ~ 2025-02-07
+2025-02-27 15:36:07,927 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1738305357705', 'endTime': '1738910157705', 'limit': 100}
+2025-02-27 15:36:08,033 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:08,038 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:08,042 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:09,058 - services.trade_history_service - INFO - 기간별 조회: 2025-02-07 ~ 2025-02-14
+2025-02-27 15:36:09,059 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1738910157705', 'endTime': '1739514957705', 'limit': 100}
+2025-02-27 15:36:09,162 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:09,165 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:09,169 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:10,176 - services.trade_history_service - INFO - 기간별 조회: 2025-02-14 ~ 2025-02-21
+2025-02-27 15:36:10,177 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739514957705', 'endTime': '1740119757705', 'limit': 100}
+2025-02-27 15:36:10,268 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:10,270 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:10,273 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:11,276 - services.trade_history_service - INFO - 기간별 조회: 2025-02-21 ~ 2025-02-27
+2025-02-27 15:36:11,277 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1740119757705', 'endTime': '1740638157705', 'limit': 100}
+2025-02-27 15:36:11,367 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:36:11,370 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:36:11,373 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:36:12,392 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-27 15:36:12,829 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-27 15:36:12,830 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-27 15:36:12,830 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-27 15:36:12,830 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-27 15:36:12,831 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-27 15:36:13,992 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-27 15:36:13,993 - telegram.ext.Application - INFO - Application started
+2025-02-27 15:36:14,272 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-27 15:53:20,474 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-27 15:53:20,475 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-27 15:53:20,479 - main - INFO - 서비스 초기화 중...
+2025-02-27 15:53:20,479 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-27 15:53:22,252 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-27 15:53:22,478 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-27 15:53:22,479 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-27 15:53:22,479 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-27 15:53:22,894 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-27 15:53:22,894 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-27 15:53:22,895 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-27 15:53:22,895 - services.trade_history_service - INFO - 조회 기간: 2024-11-29 ~ 2025-02-27
+2025-02-27 15:53:22,896 - services.trade_store - INFO - 날짜 범위 조회: 20241129 ~ 20250227
+2025-02-27 15:53:22,896 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-27 15:53:22,896 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-27 15:53:22,896 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-27 15:53:22,896 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 0건
+2025-02-27 15:53:22,896 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 0건
+2025-02-27 15:53:22,896 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 0건
+2025-02-27 15:53:22,897 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 0건
+2025-02-27 15:53:22,898 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 0건
+2025-02-27 15:53:22,899 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 0건
+2025-02-27 15:53:22,899 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 0건
+2025-02-27 15:53:22,899 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 0건
+2025-02-27 15:53:22,899 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 0건
+2025-02-27 15:53:22,899 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 0건
+2025-02-27 15:53:22,900 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 0건
+2025-02-27 15:53:22,900 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 0건
+2025-02-27 15:53:22,900 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 0건
+2025-02-27 15:53:22,900 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-27 15:53:22,900 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 0건
+2025-02-27 15:53:22,901 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 0건
+2025-02-27 15:53:22,901 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-27 15:53:22,901 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-27 15:53:22,901 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-27 15:53:22,901 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-27 15:53:22,902 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-27 15:53:22,902 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-27 15:53:22,902 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-27 15:53:22,902 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-27 15:53:22,902 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-27 15:53:22,903 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-27 15:53:22,903 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-27 15:53:22,903 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-27 15:53:22,903 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-27 15:53:22,903 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-27 15:53:22,904 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-27 15:53:22,904 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-27 15:53:22,904 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-27 15:53:22,904 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-27 15:53:22,904 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-27 15:53:22,904 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-27 15:53:22,904 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-27 15:53:22,905 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-27 15:53:22,905 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-27 15:53:22,905 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-27 15:53:22,905 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-27 15:53:22,905 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-27 15:53:22,906 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-27 15:53:22,906 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-27 15:53:22,906 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-27 15:53:22,906 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-27 15:53:22,906 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-27 15:53:22,906 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-27 15:53:22,906 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-27 15:53:22,907 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-27 15:53:22,908 - services.trade_store - INFO - 날짜: 20250219, 포지션 수: 0건
+2025-02-27 15:53:22,909 - services.trade_store - INFO - 날짜: 20250220, 포지션 수: 0건
+2025-02-27 15:53:22,909 - services.trade_store - INFO - 날짜: 20250221, 포지션 수: 0건
+2025-02-27 15:53:22,909 - services.trade_store - INFO - 날짜: 20250222, 포지션 수: 0건
+2025-02-27 15:53:22,909 - services.trade_store - INFO - 날짜: 20250223, 포지션 수: 0건
+2025-02-27 15:53:22,909 - services.trade_store - INFO - 날짜: 20250224, 포지션 수: 0건
+2025-02-27 15:53:22,909 - services.trade_store - INFO - 날짜: 20250225, 포지션 수: 0건
+2025-02-27 15:53:22,909 - services.trade_store - INFO - 날짜: 20250226, 포지션 수: 0건
+2025-02-27 15:53:22,910 - services.trade_store - INFO - 날짜: 20250227, 포지션 수: 0건
+2025-02-27 15:53:22,910 - services.trade_store - INFO - 총 0건의 포지션 데이터 로드됨
+2025-02-27 15:53:22,910 - services.trade_history_service - INFO - 기존 데이터: 0건
+2025-02-27 15:53:22,910 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-27 15:53:22,910 - services.trade_history_service - INFO - 기간별 조회: 2024-11-29 ~ 2024-12-06
+2025-02-27 15:53:22,910 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1732863202895', 'endTime': '1733468002895', 'limit': 100}
+2025-02-27 15:53:23,050 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 899ms
+2025-02-27 15:53:23,175 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:23,183 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:23,187 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:24,190 - services.trade_history_service - INFO - 기간별 조회: 2024-12-06 ~ 2024-12-13
+2025-02-27 15:53:24,190 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1733468002895', 'endTime': '1734072802895', 'limit': 100}
+2025-02-27 15:53:24,298 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:24,299 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:24,301 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:25,304 - services.trade_history_service - INFO - 기간별 조회: 2024-12-13 ~ 2024-12-20
+2025-02-27 15:53:25,304 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734072802895', 'endTime': '1734677602895', 'limit': 100}
+2025-02-27 15:53:25,450 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:25,454 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:25,460 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:26,468 - services.trade_history_service - INFO - 기간별 조회: 2024-12-20 ~ 2024-12-27
+2025-02-27 15:53:26,468 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734677602895', 'endTime': '1735282402895', 'limit': 100}
+2025-02-27 15:53:26,591 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:26,595 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:26,600 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:27,603 - services.trade_history_service - INFO - 기간별 조회: 2024-12-27 ~ 2025-01-03
+2025-02-27 15:53:27,603 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735282402895', 'endTime': '1735887202895', 'limit': 100}
+2025-02-27 15:53:27,756 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:27,758 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:27,761 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:28,775 - services.trade_history_service - INFO - 기간별 조회: 2025-01-03 ~ 2025-01-10
+2025-02-27 15:53:28,776 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735887202895', 'endTime': '1736492002895', 'limit': 100}
+2025-02-27 15:53:28,866 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:28,870 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:28,873 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:29,896 - services.trade_history_service - INFO - 기간별 조회: 2025-01-10 ~ 2025-01-17
+2025-02-27 15:53:29,897 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1736492002895', 'endTime': '1737096802895', 'limit': 100}
+2025-02-27 15:53:29,987 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:29,989 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:29,992 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:31,016 - services.trade_history_service - INFO - 기간별 조회: 2025-01-17 ~ 2025-01-24
+2025-02-27 15:53:31,016 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737096802895', 'endTime': '1737701602895', 'limit': 100}
+2025-02-27 15:53:31,098 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:31,100 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:31,103 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:32,114 - services.trade_history_service - INFO - 기간별 조회: 2025-01-24 ~ 2025-01-31
+2025-02-27 15:53:32,115 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737701602895', 'endTime': '1738306402895', 'limit': 100}
+2025-02-27 15:53:32,216 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:32,218 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:32,220 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:33,216 - services.trade_history_service - INFO - 기간별 조회: 2025-01-31 ~ 2025-02-07
+2025-02-27 15:53:33,217 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1738306402895', 'endTime': '1738911202895', 'limit': 100}
+2025-02-27 15:53:33,300 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:33,301 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:33,303 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:34,307 - services.trade_history_service - INFO - 기간별 조회: 2025-02-07 ~ 2025-02-14
+2025-02-27 15:53:34,307 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1738911202895', 'endTime': '1739516002895', 'limit': 100}
+2025-02-27 15:53:34,390 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:34,392 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:34,395 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:35,408 - services.trade_history_service - INFO - 기간별 조회: 2025-02-14 ~ 2025-02-21
+2025-02-27 15:53:35,409 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739516002895', 'endTime': '1740120802895', 'limit': 100}
+2025-02-27 15:53:35,492 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:35,493 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:35,495 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:36,521 - services.trade_history_service - INFO - 기간별 조회: 2025-02-21 ~ 2025-02-27
+2025-02-27 15:53:36,522 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1740120802895', 'endTime': '1740639202895', 'limit': 100}
+2025-02-27 15:53:36,651 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 15:53:36,653 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 15:53:36,655 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 15:53:37,674 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-27 15:53:38,084 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-27 15:53:38,084 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-27 15:53:38,085 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-27 15:53:38,085 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-27 15:53:38,086 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-27 15:53:39,164 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-27 15:53:39,165 - telegram.ext.Application - INFO - Application started
+2025-02-27 15:53:39,431 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다
+2025-02-27 16:00:38,241 - main - INFO - 환경변수 및 설정 초기화 중...
+2025-02-27 16:00:38,242 - main - INFO - Bybit 테스트넷 클라이언트 초기화 중...
+2025-02-27 16:00:38,246 - main - INFO - 서비스 초기화 중...
+2025-02-27 16:00:38,247 - main - INFO - 마켓 데이터 서비스 중...
+2025-02-27 16:00:39,775 - services.market_data_service - INFO - 마켓 데이터 로드 완료
+2025-02-27 16:00:40,025 - telegram_bot.bot - INFO - 텔레그램 설정 로드:
+2025-02-27 16:00:40,026 - telegram_bot.bot - INFO - - admin_chat_id: 583881676
+2025-02-27 16:00:40,026 - telegram_bot.bot - INFO - - alert_chat_ids: [-1002464784986]
+2025-02-27 16:00:40,432 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-27 16:00:40,433 - telegram_bot.bot - INFO - 봇 초기화 시작...
+2025-02-27 16:00:40,433 - services.trade_history_service - INFO - === 포지션 정보 초기화 시작 ===
+2025-02-27 16:00:40,433 - services.trade_history_service - INFO - 조회 기간: 2024-11-29 ~ 2025-02-27
+2025-02-27 16:00:40,433 - services.trade_store - INFO - 날짜 범위 조회: 20241129 ~ 20250227
+2025-02-27 16:00:40,434 - services.trade_store - INFO - 날짜: 20241129, 포지션 수: 0건
+2025-02-27 16:00:40,434 - services.trade_store - INFO - 날짜: 20241130, 포지션 수: 0건
+2025-02-27 16:00:40,434 - services.trade_store - INFO - 날짜: 20241201, 포지션 수: 0건
+2025-02-27 16:00:40,434 - services.trade_store - INFO - 날짜: 20241202, 포지션 수: 0건
+2025-02-27 16:00:40,434 - services.trade_store - INFO - 날짜: 20241203, 포지션 수: 0건
+2025-02-27 16:00:40,435 - services.trade_store - INFO - 날짜: 20241204, 포지션 수: 0건
+2025-02-27 16:00:40,435 - services.trade_store - INFO - 날짜: 20241205, 포지션 수: 0건
+2025-02-27 16:00:40,435 - services.trade_store - INFO - 날짜: 20241206, 포지션 수: 0건
+2025-02-27 16:00:40,435 - services.trade_store - INFO - 날짜: 20241207, 포지션 수: 0건
+2025-02-27 16:00:40,435 - services.trade_store - INFO - 날짜: 20241208, 포지션 수: 0건
+2025-02-27 16:00:40,435 - services.trade_store - INFO - 날짜: 20241209, 포지션 수: 0건
+2025-02-27 16:00:40,435 - services.trade_store - INFO - 날짜: 20241210, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241211, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241212, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241213, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241214, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241215, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241216, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241217, 포지션 수: 0건
+2025-02-27 16:00:40,436 - services.trade_store - INFO - 날짜: 20241218, 포지션 수: 0건
+2025-02-27 16:00:40,437 - services.trade_store - INFO - 날짜: 20241219, 포지션 수: 0건
+2025-02-27 16:00:40,437 - services.trade_store - INFO - 날짜: 20241220, 포지션 수: 0건
+2025-02-27 16:00:40,437 - services.trade_store - INFO - 날짜: 20241221, 포지션 수: 0건
+2025-02-27 16:00:40,437 - services.trade_store - INFO - 날짜: 20241222, 포지션 수: 0건
+2025-02-27 16:00:40,437 - services.trade_store - INFO - 날짜: 20241223, 포지션 수: 0건
+2025-02-27 16:00:40,437 - services.trade_store - INFO - 날짜: 20241224, 포지션 수: 0건
+2025-02-27 16:00:40,438 - services.trade_store - INFO - 날짜: 20241225, 포지션 수: 0건
+2025-02-27 16:00:40,438 - services.trade_store - INFO - 날짜: 20241226, 포지션 수: 0건
+2025-02-27 16:00:40,438 - services.trade_store - INFO - 날짜: 20241227, 포지션 수: 0건
+2025-02-27 16:00:40,438 - services.trade_store - INFO - 날짜: 20241228, 포지션 수: 0건
+2025-02-27 16:00:40,438 - services.trade_store - INFO - 날짜: 20241229, 포지션 수: 0건
+2025-02-27 16:00:40,438 - services.trade_store - INFO - 날짜: 20241230, 포지션 수: 0건
+2025-02-27 16:00:40,438 - services.trade_store - INFO - 날짜: 20241231, 포지션 수: 0건
+2025-02-27 16:00:40,439 - services.trade_store - INFO - 날짜: 20250101, 포지션 수: 0건
+2025-02-27 16:00:40,439 - services.trade_store - INFO - 날짜: 20250102, 포지션 수: 0건
+2025-02-27 16:00:40,439 - services.trade_store - INFO - 날짜: 20250103, 포지션 수: 0건
+2025-02-27 16:00:40,439 - services.trade_store - INFO - 날짜: 20250104, 포지션 수: 0건
+2025-02-27 16:00:40,439 - services.trade_store - INFO - 날짜: 20250105, 포지션 수: 0건
+2025-02-27 16:00:40,439 - services.trade_store - INFO - 날짜: 20250106, 포지션 수: 0건
+2025-02-27 16:00:40,440 - services.trade_store - INFO - 날짜: 20250107, 포지션 수: 0건
+2025-02-27 16:00:40,440 - services.trade_store - INFO - 날짜: 20250108, 포지션 수: 0건
+2025-02-27 16:00:40,440 - services.trade_store - INFO - 날짜: 20250109, 포지션 수: 0건
+2025-02-27 16:00:40,440 - services.trade_store - INFO - 날짜: 20250110, 포지션 수: 0건
+2025-02-27 16:00:40,440 - services.trade_store - INFO - 날짜: 20250111, 포지션 수: 0건
+2025-02-27 16:00:40,440 - services.trade_store - INFO - 날짜: 20250112, 포지션 수: 0건
+2025-02-27 16:00:40,440 - services.trade_store - INFO - 날짜: 20250113, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250114, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250115, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250116, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250117, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250118, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250119, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250120, 포지션 수: 0건
+2025-02-27 16:00:40,441 - services.trade_store - INFO - 날짜: 20250121, 포지션 수: 0건
+2025-02-27 16:00:40,442 - services.trade_store - INFO - 날짜: 20250122, 포지션 수: 0건
+2025-02-27 16:00:40,442 - services.trade_store - INFO - 날짜: 20250123, 포지션 수: 0건
+2025-02-27 16:00:40,442 - services.trade_store - INFO - 날짜: 20250124, 포지션 수: 0건
+2025-02-27 16:00:40,442 - services.trade_store - INFO - 날짜: 20250125, 포지션 수: 0건
+2025-02-27 16:00:40,442 - services.trade_store - INFO - 날짜: 20250126, 포지션 수: 0건
+2025-02-27 16:00:40,443 - services.trade_store - INFO - 날짜: 20250127, 포지션 수: 0건
+2025-02-27 16:00:40,443 - services.trade_store - INFO - 날짜: 20250128, 포지션 수: 0건
+2025-02-27 16:00:40,443 - services.trade_store - INFO - 날짜: 20250129, 포지션 수: 0건
+2025-02-27 16:00:40,443 - services.trade_store - INFO - 날짜: 20250130, 포지션 수: 0건
+2025-02-27 16:00:40,444 - services.trade_store - INFO - 날짜: 20250131, 포지션 수: 0건
+2025-02-27 16:00:40,444 - services.trade_store - INFO - 날짜: 20250201, 포지션 수: 0건
+2025-02-27 16:00:40,444 - services.trade_store - INFO - 날짜: 20250202, 포지션 수: 0건
+2025-02-27 16:00:40,444 - services.trade_store - INFO - 날짜: 20250203, 포지션 수: 0건
+2025-02-27 16:00:40,444 - services.trade_store - INFO - 날짜: 20250204, 포지션 수: 0건
+2025-02-27 16:00:40,444 - services.trade_store - INFO - 날짜: 20250205, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250206, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250207, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250208, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250209, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250210, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250211, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250212, 포지션 수: 0건
+2025-02-27 16:00:40,445 - services.trade_store - INFO - 날짜: 20250213, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250214, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250215, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250216, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250217, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250218, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250219, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250220, 포지션 수: 0건
+2025-02-27 16:00:40,446 - services.trade_store - INFO - 날짜: 20250221, 포지션 수: 0건
+2025-02-27 16:00:40,447 - services.trade_store - INFO - 날짜: 20250222, 포지션 수: 0건
+2025-02-27 16:00:40,447 - services.trade_store - INFO - 날짜: 20250223, 포지션 수: 0건
+2025-02-27 16:00:40,447 - services.trade_store - INFO - 날짜: 20250224, 포지션 수: 0건
+2025-02-27 16:00:40,447 - services.trade_store - INFO - 날짜: 20250225, 포지션 수: 0건
+2025-02-27 16:00:40,447 - services.trade_store - INFO - 날짜: 20250226, 포지션 수: 0건
+2025-02-27 16:00:40,447 - services.trade_store - INFO - 날짜: 20250227, 포지션 수: 0건
+2025-02-27 16:00:40,447 - services.trade_store - INFO - 총 0건의 포지션 데이터 로드됨
+2025-02-27 16:00:40,447 - services.trade_history_service - INFO - 기존 데이터: 0건
+2025-02-27 16:00:40,448 - services.trade_history_service - INFO - 기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.
+2025-02-27 16:00:40,448 - services.trade_history_service - INFO - 기간별 조회: 2024-11-29 ~ 2024-12-06
+2025-02-27 16:00:40,448 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1732863640433', 'endTime': '1733468440433', 'limit': 100}
+2025-02-27 16:00:40,585 - exchange.bybit_client - INFO - 서버 시간 동기화 완료: offset = 899ms
+2025-02-27 16:00:40,693 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:40,701 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:40,704 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:41,710 - services.trade_history_service - INFO - 기간별 조회: 2024-12-06 ~ 2024-12-13
+2025-02-27 16:00:41,711 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1733468440433', 'endTime': '1734073240433', 'limit': 100}
+2025-02-27 16:00:41,799 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:41,801 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:41,804 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:42,814 - services.trade_history_service - INFO - 기간별 조회: 2024-12-13 ~ 2024-12-20
+2025-02-27 16:00:42,815 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734073240433', 'endTime': '1734678040433', 'limit': 100}
+2025-02-27 16:00:42,898 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:42,901 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:42,903 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:43,912 - services.trade_history_service - INFO - 기간별 조회: 2024-12-20 ~ 2024-12-27
+2025-02-27 16:00:43,913 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1734678040433', 'endTime': '1735282840433', 'limit': 100}
+2025-02-27 16:00:44,023 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:44,026 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:44,029 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:45,049 - services.trade_history_service - INFO - 기간별 조회: 2024-12-27 ~ 2025-01-03
+2025-02-27 16:00:45,050 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735282840433', 'endTime': '1735887640433', 'limit': 100}
+2025-02-27 16:00:45,170 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:45,174 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:45,179 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:46,193 - services.trade_history_service - INFO - 기간별 조회: 2025-01-03 ~ 2025-01-10
+2025-02-27 16:00:46,194 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1735887640433', 'endTime': '1736492440433', 'limit': 100}
+2025-02-27 16:00:46,269 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:46,272 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:46,274 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:47,299 - services.trade_history_service - INFO - 기간별 조회: 2025-01-10 ~ 2025-01-17
+2025-02-27 16:00:47,299 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1736492440433', 'endTime': '1737097240433', 'limit': 100}
+2025-02-27 16:00:47,369 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:47,370 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:47,372 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:48,372 - services.trade_history_service - INFO - 기간별 조회: 2025-01-17 ~ 2025-01-24
+2025-02-27 16:00:48,372 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737097240433', 'endTime': '1737702040433', 'limit': 100}
+2025-02-27 16:00:48,492 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:48,494 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:48,497 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:49,506 - services.trade_history_service - INFO - 기간별 조회: 2025-01-24 ~ 2025-01-31
+2025-02-27 16:00:49,507 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1737702040433', 'endTime': '1738306840433', 'limit': 100}
+2025-02-27 16:00:49,650 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:49,652 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:49,656 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:50,673 - services.trade_history_service - INFO - 기간별 조회: 2025-01-31 ~ 2025-02-07
+2025-02-27 16:00:50,674 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1738306840433', 'endTime': '1738911640433', 'limit': 100}
+2025-02-27 16:00:50,761 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:50,763 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:50,765 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:51,775 - services.trade_history_service - INFO - 기간별 조회: 2025-02-07 ~ 2025-02-14
+2025-02-27 16:00:51,775 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1738911640433', 'endTime': '1739516440433', 'limit': 100}
+2025-02-27 16:00:51,851 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:51,853 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:51,857 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:52,875 - services.trade_history_service - INFO - 기간별 조회: 2025-02-14 ~ 2025-02-21
+2025-02-27 16:00:52,876 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1739516440433', 'endTime': '1740121240433', 'limit': 100}
+2025-02-27 16:00:53,027 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:53,031 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:53,036 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:54,050 - services.trade_history_service - INFO - 기간별 조회: 2025-02-21 ~ 2025-02-27
+2025-02-27 16:00:54,050 - services.trade_history_service - DEBUG - API 요청 파라미터: {'category': 'linear', 'symbol': 'BTCUSDT', 'startTime': '1740121240433', 'endTime': '1740639640433', 'limit': 100}
+2025-02-27 16:00:54,180 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-02-27 16:00:54,184 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-02-27 16:00:54,189 - services.trade_history_service - DEBUG - API 응답: None
+2025-02-27 16:00:55,198 - telegram_bot.bot - INFO - Application 빌드 시작...
+2025-02-27 16:00:55,604 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-02-27 16:00:55,606 - telegram_bot.bot - INFO - 핸들러 초기화 완료
+2025-02-27 16:00:55,606 - telegram_bot.bot - INFO - 봇 초기화 완료, 시작 준비 중...
+2025-02-27 16:00:55,606 - telegram_bot.bot - INFO - 봇 시작 시도...
+2025-02-27 16:00:55,606 - telegram_bot.bot - INFO - === 봇 시작 시도 ===
+2025-02-27 16:00:56,721 - apscheduler.scheduler - INFO - Scheduler started
+2025-02-27 16:00:56,722 - telegram.ext.Application - INFO - Application started
+2025-02-27 16:00:57,045 - telegram_bot.bot - INFO - 🤖 바이빗 트레이딩 봇이 시작되었습니다

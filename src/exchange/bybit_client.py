@@ -8,6 +8,8 @@ import json
 from typing import Dict
 from config.bybit_config import BybitConfig
 import traceback
+import ssl
+import certifi
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +24,9 @@ class BybitClient:
         self.last_time_sync = 0
         self.SYNC_INTERVAL = 3600  # 1시간마다 동기화
         
+        # SSL 컨텍스트 설정
+        self.ssl_context = ssl.create_default_context(cafile=certifi.where())
+        
         # CCXT exchange 객체 초기화 (market_data_service에서 필요)
         self.exchange = ccxt.bybit({
             'apiKey': self.config.api_key,
@@ -33,6 +38,11 @@ class BybitClient:
                 'accountType': 'UNIFIED',
                 'recvWindow': 20000,
                 'adjustForTimeDifference': True
+            },
+            'verify': True,
+            'certifi': certifi.where(),
+            'ssl': {
+                'ca': certifi.where()
             }
         })
         
@@ -48,11 +58,18 @@ class BybitClient:
     async def _init_time_offset(self):
         """서버 시간과 로컬 시간 동기화"""
         try:
-            server_time = await self.exchange.fetch_time()
-            local_time = int(time.time() * 1000)
-            self.time_offset = server_time - local_time
-            self.last_time_sync = int(time.time())
-            logger.info(f"서버 시간 동기화 완료: offset = {self.time_offset}ms")
+            async with aiohttp.ClientSession() as session:
+                async with session.get(f"{self.config.base_url}/v5/market/time", ssl=self.ssl_context) as response:
+                    result = await response.json()
+                    if result.get("retCode") == 0:
+                        server_time = int(result["result"]["timeSecond"]) * 1000  # 초 단위를 밀리초로 변환
+                        local_time = int(time.time() * 1000)
+                        self.time_offset = server_time - local_time
+                        self.last_time_sync = int(time.time())
+                        logger.info(f"서버 시간 동기화 완료: server_time={server_time}, local_time={local_time}, offset={self.time_offset}ms")
+                    else:
+                        logger.error(f"서버 시간 조회 실패: {result}")
+                        self.time_offset = 0
         except Exception as e:
             logger.error(f"서버 시간 동기화 실패: {str(e)}")
             self.time_offset = 0
@@ -67,55 +84,70 @@ class BybitClient:
         try:
             await self._ensure_time_sync()
             
-            timestamp = str(int(time.time() * 1000) + self.time_offset)
+            # 1. 요청 파라미터 준비 (None이면 빈 딕셔너리로)
             request_params = params.copy() if params else {}
             
-            # GET 요청 처리
-            if method == "GET":
-                # 1. 파라미터에 타임스탬프 추가
-                request_params['timestamp'] = timestamp
-                
-                # 2. 정렬된 파라미터로 쿼리 스트링 생성
-                sorted_params = sorted(request_params.items())
-                query_string = '&'.join([f"{k}={v}" for k, v in sorted_params])
-                
-                # 디버그 로그
-                logger.debug(f"Query string for signature: {query_string}")
-                
-                # 3. 서명 생성
-                signature = hmac.new(
-                    bytes(self.config.api_secret, 'utf-8'),
-                    bytes(query_string, 'utf-8'),
-                    hashlib.sha256
-                ).hexdigest()
-
+            # 2. 타임스탬프 생성 (서버 시간 오프셋 적용)
+            timestamp = str(int(time.time() * 1000) + self.time_offset)
+            
+            # 3. 서명용 파라미터 준비
+            sign_params = request_params.copy()
+            sign_params['timestamp'] = timestamp
+            sign_params['api_key'] = self.config.api_key
+            sign_params['recv_window'] = '5000'
+            
+            # 4. 정렬된 파라미터로 쿼리 스트링 생성 (알파벳 순서로 정렬)
+            sorted_params = sorted(sign_params.items())
+            query_string = '&'.join([f"{key}={value}" for key, value in sorted_params])
+            
+            # 디버그 로그
+            logger.debug(f"Parameters for signature: {sign_params}")
+            logger.debug(f"Query string for signature: {query_string}")
+            
+            # 5. 서명 생성
+            signature = hmac.new(
+                self.config.api_secret.encode('utf-8'),
+                query_string.encode('utf-8'),
+                hashlib.sha256
+            ).hexdigest()
+            
+            # 6. 최종 요청 파라미터 준비
+            request_params.update({
+                'api_key': self.config.api_key,
+                'timestamp': timestamp,
+                'recv_window': '5000',
+                'sign': signature
+            })
+            
+            # 7. API 요청 준비
             url = f"{self.config.base_url}{path}"
             headers = {
-                'X-BAPI-API-KEY': self.config.api_key,
-                'X-BAPI-SIGN': signature,
-                'X-BAPI-TIMESTAMP': timestamp,
-                'X-BAPI-RECV-WINDOW': "5000",
                 'Content-Type': 'application/json'
             }
             
             # 디버그 로그
-            logger.debug(f"Request URL: {url}")
-            logger.debug(f"Request params: {request_params}")
-            logger.debug(f"Request headers: {headers}")
+            logger.debug(f"Final request URL: {url}")
+            logger.debug(f"Final request params: {request_params}")
+            logger.debug(f"Final request headers: {headers}")
             
+            # 8. API 요청 실행
             async with aiohttp.ClientSession() as session:
                 if method == "GET":
-                    async with session.get(url, params=request_params, headers=headers) as response:
+                    # GET 요청은 파라미터를 쿼리 스트링으로 전달
+                    async with session.get(url, params=request_params, headers=headers, ssl=self.ssl_context) as response:
                         result = await response.json()
-                        logger.debug(f"Response: {result}")  # 응답 로그 추가
+                        logger.debug(f"API Response: {result}")
                         return result
                 else:  # POST
-                    async with session.post(url, json=request_params, headers=headers) as response:
-                        return await response.json()
+                    # POST 요청은 파라미터를 본문으로 전달
+                    async with session.post(url, json=request_params, headers=headers, ssl=self.ssl_context) as response:
+                        result = await response.json()
+                        logger.debug(f"API Response: {result}")
+                        return result
 
         except Exception as e:
             logger.error(f"API 요청 실패: {str(e)}")
-            logger.error(traceback.format_exc())  # 스택 트레이스 추가
+            logger.error(traceback.format_exc())
             return None
 
     async def v5_post(self, path: str, params: Dict = None) -> Dict:

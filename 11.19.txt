@@ -90,6 +90,23 @@ market_data 딕셔너리는 다음과 같은 구조를 가집니다:
 이 데이터는 /analyze 명령어를 통해 챗GPT API에 전달되어 분석 요청에 사용됩니다.
 추가적인 질문이나 더 알고 싶은 내용이 있으면 언제든지 말씀해 주세요!
 
+# c254991 커밋으로 강제로 돌아가기
+git reset --hard  c254991
+
+git reset --hard origin/main
+
+# 현재 커밋 해시와 메시지 확인
+git log -1
+
+# 또는 더 자세한 정보를 보려면
+git log -1 -p
+
+# 모든 브랜치의 최신 커밋을 보려면
+git log --all --decorate --oneline --graph
+
+# 커밋히스토리 내보내기
+git log > commit_history.txt
+
 1. 변경 사항 확인
 먼저, 변경된 파일을 확인합니다. 터미널에서 다음 명령어를 입력하세요:
 Bash

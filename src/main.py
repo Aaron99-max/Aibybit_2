@@ -21,6 +21,9 @@ from dotenv import load_dotenv
 from config.logging_config import setup_logging
 from config import Config
 
+# 환경 변수 로드
+load_dotenv()  
+
 # 로깅 설정
 logging.basicConfig(
     level=logging.INFO,
@@ -52,7 +55,6 @@ async def main():
         
         # 환경변수 로드
         logger.info("환경변수 및 설정 초기화 중...")
-        load_dotenv()
         
         # Bybit 클라이언트 초기화
         logger.info("Bybit 테스트넷 클라이언트 초기화 중...")

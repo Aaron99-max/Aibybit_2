@@ -62,6 +62,14 @@ class GPTAnalyzer:
 
 응답 형식:
 {
+    "market_summary": {
+        "market_phase": "상승" 또는 "하락" 또는 "횡보",
+        "overall_sentiment": "긍정" 또는 "부정" 또는 "중립",
+        "short_sentiment": "긍정" 또는 "부정" 또는 "중립",
+        "volume_status": "거래량 증가" 또는 "거래량 감소" 또는 "거래량 보통",
+        "risk_level": "높음" 또는 "중간" 또는 "낮음",
+        "confidence": 0-100 사이 정수
+    },
     "trading_signals": {
         "position_suggestion": "BUY" 또는 "SELL" 또는 "HOLD",
         "leverage": 1-10 사이 정수,

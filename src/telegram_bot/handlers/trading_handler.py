@@ -124,7 +124,7 @@ class TradingHandler(BaseHandler):
             
             # 봇 상태 정보
             bot_status = {
-                'auto_analyzer': self.bot.auto_analyzer.is_running(),
+                'auto_analyzer': self.bot.auto_analyzer.is_running,
                 'profit_monitor': self.bot.profit_monitor.is_running()
             }
             

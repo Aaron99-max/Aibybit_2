@@ -148,20 +148,14 @@ class AnalysisFormatter(BaseFormatter):
         
         market_phase = market.get('market_phase', '-')
         message += f"• 시장 단계: {self.translate(market_phase)}\n"
-        
-        if 'overall_sentiment' in market:
-            message += f"• 전반적 심리: {self.translate(market.get('overall_sentiment', '-'))}\n"
-        message += f"• 단기 심리: {self.translate(market.get('short_term_sentiment', '-'))}\n"
-        
-        volume = market.get('volume_analysis', market.get('volume_trend', '-'))
-        message += f"• 거래량: {self.translate(volume)}\n"
-        
-        if 'risk_level' in market:
-            message += f"• 리스크: {self.translate(market.get('risk_level', '-'))}\n"
+        message += f"• 전반적 심리: {self.translate(market.get('overall_sentiment', '-'))}\n"
+        message += f"• 단기 심리: {self.translate(market.get('short_sentiment', '-'))}\n"
+        message += f"• 거래량: {self.translate(market.get('volume_status', '-'))}\n"
+        message += f"• 리스크: {self.translate(market.get('risk_level', '-'))}\n"
         
         confidence = market.get('confidence')
         if isinstance(confidence, (int, float)):
-            message += f"• 신뢰도: {confidence:.1f}%\n"
+            message += f"• 신뢰도: {int(confidence)}%\n"
         
         return message
 

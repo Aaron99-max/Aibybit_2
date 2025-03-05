@@ -103,8 +103,16 @@ class TelegramBot:
         logger.info(f"- alert_chat_ids: {self.alert_chat_ids}")
         
         # Application 초기화
-        self.application = Application.builder().token(config.bot_token).build()
-
+        self.application = (
+            Application.builder()
+            .token(config.bot_token)
+            .connect_timeout(30.0)  # 연결 타임아웃 30초
+            .read_timeout(30.0)     # 읽기 타임아웃 30초
+            .write_timeout(30.0)    # 쓰기 타임아웃 30초
+            .pool_timeout(30.0)     # 풀 타임아웃 30초
+            .build()
+        )
+        
         # 모니터링 초기화
         self.auto_analyzer = AutoAnalyzer(
             market_data_service=self.market_data_service,
@@ -211,6 +219,10 @@ class TelegramBot:
             self.application = (
                 Application.builder()
                 .token(self.config.bot_token)
+                .connect_timeout(30.0)  # 연결 타임아웃 30초
+                .read_timeout(30.0)     # 읽기 타임아웃 30초
+                .write_timeout(30.0)    # 쓰기 타임아웃 30초
+                .pool_timeout(30.0)     # 풀 타임아웃 30초
                 .build()
             )
             
@@ -289,6 +301,65 @@ class TelegramBot:
             logger.error(f"봇 실행 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             raise
+
+    async def _error_handler(self, update: Update, context: CallbackContext):
+        """에러 핸들러"""
+        logger.error(f"텔레그램 봇 에러: {context.error}")
+        logger.error(traceback.format_exc())
+        if update and update.effective_chat:
+            await self.send_message("❌ 명령어 처리 중 오류가 발생했습니다.", update.effective_chat.id)
+
+    async def stop(self):
+        """봇 종료"""
+        try:
+            logger.info("봇 종료 시작...")
+            
+            # 모든 작업 중지
+            if hasattr(self, 'auto_analyzer'):
+                await self.auto_analyzer.stop()
+            if hasattr(self, 'profit_monitor'):
+                await self.profit_monitor.stop()
+            
+            # Application 종료
+            if hasattr(self, 'application'):
+                await self.application.stop()
+                await self.application.shutdown()
+            
+            # Bybit 클라이언트 종료    
+            if self.bybit_client:
+                await self.bybit_client.close()
+            
+            logger.info("봇이 성공적으로 종료되었습니다")
+            
+        except Exception as e:
+            logger.error(f"봇 종료 중 오류: {str(e)}")
+
+    async def send_to_admin(self, message: str):
+        """관리자에게 메시지 전송"""
+        try:
+            if self.admin_chat_id:
+                await self.application.bot.send_message(
+                    chat_id=self.admin_chat_id,
+                    text=message,
+                    parse_mode=ParseMode.HTML
+                )
+        except Exception as e:
+            logger.error(f"관리자 메시지 전송 실패: {str(e)}")
+
+    async def send_to_group(self, message: str):
+        """모든 채팅방에 메시지 전송"""
+        await self.send_message_to_all(message)
+
+    async def send_message(self, message: str, chat_id: int, parse_mode: str = None):
+        """특정 채팅방에 메시지 전송"""
+        try:
+            await self.application.bot.send_message(
+                chat_id=chat_id,
+                text=message,
+                parse_mode=parse_mode
+            )
+        except Exception as e:
+            logger.error(f"메시지 전송 실패 (chat_id: {chat_id}): {str(e)}")
 
     async def _handle_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """도움말 명령어 처리"""
@@ -375,62 +446,3 @@ class TelegramBot:
             logger.error(f"봇 시작 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             raise
-
-    async def _error_handler(self, update: Update, context: CallbackContext):
-        """에러 핸들러"""
-        logger.error(f"텔레그램 봇 에러: {context.error}")
-        logger.error(traceback.format_exc())
-        if update and update.effective_chat:
-            await self.send_message("❌ 명령어 처리 중 오류가 발생했습니다.", update.effective_chat.id)
-
-    async def stop(self):
-        """봇 종료"""
-        try:
-            logger.info("봇 종료 시작...")
-            
-            # 모든 작업 중지
-            if hasattr(self, 'auto_analyzer'):
-                await self.auto_analyzer.stop()
-            if hasattr(self, 'profit_monitor'):
-                await self.profit_monitor.stop()
-            
-            # Application 종료
-            if hasattr(self, 'application'):
-                await self.application.stop()
-                await self.application.shutdown()
-            
-            # Bybit 클라이언트 종료    
-            if self.bybit_client:
-                await self.bybit_client.close()
-            
-            logger.info("봇이 성공적으로 종료되었습니다")
-            
-        except Exception as e:
-            logger.error(f"봇 종료 중 오류: {str(e)}")
-
-    async def send_to_admin(self, message: str):
-        """관리자에게 메시지 전송"""
-        try:
-            if self.admin_chat_id:
-                await self.application.bot.send_message(
-                    chat_id=self.admin_chat_id,
-                    text=message,
-                    parse_mode=ParseMode.HTML
-                )
-        except Exception as e:
-            logger.error(f"관리자 메시지 전송 실패: {str(e)}")
-
-    async def send_to_group(self, message: str):
-        """모든 채팅방에 메시지 전송"""
-        await self.send_message_to_all(message)
-
-    async def send_message(self, message: str, chat_id: int, parse_mode: str = None):
-        """특정 채팅방에 메시지 전송"""
-        try:
-            await self.application.bot.send_message(
-                chat_id=chat_id,
-                text=message,
-                parse_mode=parse_mode
-            )
-        except Exception as e:
-            logger.error(f"메시지 전송 실패 (chat_id: {chat_id}): {str(e)}")

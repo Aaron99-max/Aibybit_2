@@ -280,23 +280,24 @@ class TechnicalIndicators:
             latest = df.iloc[-1]
             strength = 0
             
-            # RSI 반영 (0-100)
-            strength += abs(latest['rsi'] - 50) * 2
+            # RSI 반영 (0-40점)
+            rsi_score = abs(latest['rsi'] - 50) * 0.8  # RSI가 0이나 100에 가까울수록 최대 40점
+            strength += rsi_score
             
-            # MACD 반영
+            # MACD 반영 (0-30점)
+            macd_strength = min(abs(latest['macd'] / latest['close'] * 10000), 30)  # MACD를 가격 대비 비율로 계산
             if abs(latest['macd']) > abs(latest['macd_signal']):
-                strength += 20
-                
-            # ADX 반영
+                strength += macd_strength
+            
+            # ADX 반영 (0-20점)
             if 'adx' in df.columns:
-                strength += min(latest['adx'], 30)
-                
-            # 볼린저 밴드 반영
-            if latest['close'] > latest['bb_upper']:
-                strength += 15
-            elif latest['close'] < latest['bb_lower']:
-                strength += 15
-                
+                strength += min(latest['adx'] * 0.5, 20)  # ADX * 0.5로 최대 20점
+            
+            # 볼린저 밴드 반영 (0-10점)
+            bb_width = (latest['bb_upper'] - latest['bb_lower']) / latest['bb_middle']
+            if latest['close'] > latest['bb_upper'] or latest['close'] < latest['bb_lower']:
+                strength += min(bb_width * 100, 10)  # 밴드폭이 클수록 강도 증가, 최대 10점
+            
             return min(int(strength), 100)
             
         except Exception as e:

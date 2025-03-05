@@ -6,7 +6,6 @@ import time
 import aiohttp
 import json
 from typing import Dict
-from config.bybit_config import BybitConfig
 import traceback
 import ssl
 import certifi
@@ -14,23 +13,23 @@ import certifi
 logger = logging.getLogger(__name__)
 
 class BybitClient:
-    def __init__(self, config: BybitConfig = None):
-        """
-        Args:
-            config: Bybit 설정
-        """
-        self.config = config or BybitConfig()
-        self.time_offset = 0
-        self.last_time_sync = 0
-        self.SYNC_INTERVAL = 3600  # 1시간마다 동기화
+    def __init__(self, api_key: str, api_secret: str, testnet: bool = False):
+        if not api_key or not api_secret:
+            logger.error("API 키가 설정되지 않았습니다")
+            logger.error(f"api_key: {api_key}, api_secret: {api_secret}")
+            raise ValueError("API key와 secret이 필요합니다")
+            
+        self.config = type('Config', (), {
+            'api_key': api_key,
+            'api_secret': api_secret,
+            'testnet': testnet,
+            'base_url': "https://api-testnet.bybit.com" if testnet else "https://api.bybit.com"
+        })
         
-        # SSL 컨텍스트 설정
-        self.ssl_context = ssl.create_default_context(cafile=certifi.where())
-        
-        # CCXT exchange 객체 초기화 (market_data_service에서 필요)
+        # CCXT exchange 객체 초기화
         self.exchange = ccxt.bybit({
-            'apiKey': self.config.api_key,
-            'secret': self.config.api_secret,
+            'apiKey': api_key,
+            'secret': api_secret,
             'enableRateLimit': True,
             'options': {
                 'defaultType': 'linear',
@@ -46,10 +45,15 @@ class BybitClient:
             }
         })
         
-        # 테스트넷 설정
-        if self.config.testnet:
+        # CCXT exchange 설정
+        if testnet:
             self.exchange.set_sandbox_mode(True)
 
+        self.last_time_sync = 0
+        self.time_offset = 0
+        self.ssl_context = ssl.create_default_context(cafile=certifi.where())
+        self.SYNC_INTERVAL = 3600  # 1시간마다 동기화
+        
     async def _should_sync_time(self):
         """시간 동기화가 필요한지 확인"""
         current_time = int(time.time())
@@ -89,48 +93,64 @@ class BybitClient:
             
             # 2. 타임스탬프 생성 (서버 시간 오프셋 적용)
             timestamp = str(int(time.time() * 1000) + self.time_offset)
+            recv_window = '5000'
             
-            # 3. 서명용 파라미터 준비
-            sign_params = request_params.copy()
-            sign_params['timestamp'] = timestamp
-            sign_params['api_key'] = self.config.api_key
-            sign_params['recv_window'] = '5000'
-            
-            # 4. 정렬된 파라미터로 쿼리 스트링 생성 (알파벳 순서로 정렬)
-            sorted_params = sorted(sign_params.items())
-            query_string = '&'.join([f"{key}={value}" for key, value in sorted_params])
+            # 3. 서명 생성
+            if method == "GET":
+                # GET 요청은 모든 파라미터를 쿼리 스트링으로
+                sign_params = request_params.copy()
+                sign_params['api_key'] = self.config.api_key
+                sign_params['timestamp'] = timestamp
+                sign_params['recv_window'] = recv_window
+                
+                # 정렬된 파라미터로 쿼리 스트링 생성
+                sorted_params = sorted(sign_params.items())
+                query_string = '&'.join([f"{k}={v}" for k, v in sorted_params])
+                
+                # 서명 페이로드 생성
+                sign_payload = timestamp + self.config.api_key + recv_window + query_string
+                
+                # 디버그 로그
+                logger.debug(f"Query string: {query_string}")
+                logger.debug(f"Sign payload: {sign_payload}")
+                
+                # 요청 파라미터 업데이트
+                request_params.update(sign_params)
+            else:
+                # POST 요청은 timestamp, api_key, recv_window를 먼저 서명
+                sign_payload = timestamp + self.config.api_key + recv_window
+                if request_params:
+                    sign_payload += json.dumps(request_params)
             
             # 디버그 로그
-            logger.debug(f"Parameters for signature: {sign_params}")
-            logger.debug(f"Query string for signature: {query_string}")
+            logger.debug(f"Sign payload: {sign_payload}")
             
-            # 5. 서명 생성
+            # 4. 서명 생성
             signature = hmac.new(
                 self.config.api_secret.encode('utf-8'),
-                query_string.encode('utf-8'),
+                sign_payload.encode('utf-8'),
                 hashlib.sha256
             ).hexdigest()
             
-            # 6. 최종 요청 파라미터 준비
-            request_params.update({
-                'api_key': self.config.api_key,
-                'timestamp': timestamp,
-                'recv_window': '5000',
-                'sign': signature
-            })
-            
-            # 7. API 요청 준비
+            # 5. API 요청 준비
             url = f"{self.config.base_url}{path}"
             headers = {
-                'Content-Type': 'application/json'
+                'X-BAPI-SIGN': signature,
+                'X-BAPI-API-KEY': self.config.api_key,
+                'X-BAPI-TIMESTAMP': timestamp,
+                'X-BAPI-RECV-WINDOW': recv_window
             }
+            
+            if method == "POST":
+                headers['Content-Type'] = 'application/json'
             
             # 디버그 로그
             logger.debug(f"Final request URL: {url}")
-            logger.debug(f"Final request params: {request_params}")
             logger.debug(f"Final request headers: {headers}")
+            if method == "POST":
+                logger.debug(f"Final request body: {request_params}")
             
-            # 8. API 요청 실행
+            # 6. API 요청 실행
             async with aiohttp.ClientSession() as session:
                 if method == "GET":
                     # GET 요청은 파라미터를 쿼리 스트링으로 전달
@@ -150,13 +170,9 @@ class BybitClient:
             logger.error(traceback.format_exc())
             return None
 
-    async def v5_post(self, path: str, params: Dict = None) -> Dict:
-        """V5 API POST 요청"""
-        try:
-            return await self._request('POST', f"/v5{path}", params)
-        except Exception as e:
-            logger.error(f"API 요청 실패 (POST {path}): {str(e)}")
-            return None
+    async def v5_get_closed_pnl(self, params: Dict = None) -> Dict:
+        """V5 API Closed PnL 조회"""
+        return await self._request("GET", "/v5/position/closed-pnl", params)
 
     async def v5_get(self, path: str, params: Dict = None) -> Dict:
         """V5 API GET 요청"""
@@ -164,18 +180,6 @@ class BybitClient:
             return await self._request('GET', f"/v5{path}", params)
         except Exception as e:
             logger.error(f"API 요청 실패 (GET {path}): {str(e)}")
-            return None
-
-    async def v5_get_closed_pnl(self, params: Dict) -> Dict:
-        """V5 API closed-pnl 조회"""
-        try:
-            # 디버그 로그 추가
-            logger.debug(f"closed-pnl API 요청: {params}")
-            response = await self.v5_get("/position/closed-pnl", params)
-            logger.debug(f"closed-pnl API 응답: {response}")
-            return response
-        except Exception as e:
-            logger.error(f"API 호출 실패: {str(e)}")
             return None
 
     async def v5_get_positions(self, symbol: str = None) -> Dict:
@@ -249,7 +253,7 @@ class BybitClient:
         """V5 API 주문 생성 요청"""
         try:
             logger.info(f"주문 파라미터: {params}")
-            result = await self.v5_post("/order/create", params)
+            result = await self._request("POST", "/v5/order/create", params)
             
             if result and result.get('retCode') == 0:
                 logger.info(f"주문 API 응답: {result}")
@@ -264,14 +268,23 @@ class BybitClient:
             return None
 
     async def get_balance(self) -> Dict:
-        """잔고 조회 API 호출"""
+        """잔고 조회"""
         try:
-            # V5 API로 시도
-            response = await self.v5_get("/account/wallet-balance", {
-                "accountType": "UNIFIED"
-            })
-            return response
+            # CCXT를 통해 잔고 조회
+            balance = await self.exchange.fetch_balance({'type': 'unified'})
+            logger.debug(f"CCXT Balance Response: {balance}")
             
+            # CCXT 응답을 우리 형식으로 변환
+            return {
+                'retCode': 0,
+                'result': {
+                    'list': [{
+                        'totalWalletBalance': balance.get('total', {}).get('USDT', 0),
+                        'totalAvailableBalance': balance.get('free', {}).get('USDT', 0),
+                        'totalInitialMargin': balance.get('used', {}).get('USDT', 0)
+                    }]
+                }
+            }
         except Exception as e:
-            logger.error(f"잔고 조회 API 호출 실패: {str(e)}")
-            return {}
+            logger.error(f"잔고 조회 실패: {str(e)}")
+            return None

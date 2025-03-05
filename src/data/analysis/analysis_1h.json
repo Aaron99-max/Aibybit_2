@@ -3,16 +3,16 @@
     "market_phase": "하락",
     "overall_sentiment": "부정",
     "short_sentiment": "부정",
-    "volume_status": "거래량 감소",
+    "volume_status": "거래량 증가",
     "risk_level": "높음",
-    "confidence": 70,
+    "confidence": 85,
     "current_price": 0.0
   },
   "technical_analysis": {
     "trend": "DOWNTREND",
-    "strength": 100,
+    "strength": 77,
     "indicators": {
-      "rsi": 9.76,
+      "rsi": 5.63,
       "macd": "STRONG_BEARISH",
       "bollinger": "BELOW_MIDDLE",
       "divergence_type": "없음",
@@ -23,16 +23,16 @@
     "position_suggestion": "SELL",
     "leverage": 5,
     "position_size": 10,
-    "entry_price": 62059.1,
-    "stop_loss": 63059.1,
-    "take_profit1": 61059.1,
-    "take_profit2": 60059.1,
+    "entry_price": 56452.6,
+    "stop_loss": 57000.0,
+    "take_profit1": 55000.0,
+    "take_profit2": 54000.0,
     "reason": "하락 추세 및 부정적인 지표"
   },
   "auto_trading": {
     "enabled": true,
     "status": "active"
   },
-  "saved_at": "2025-03-05 14:00:33 KST",
-  "timestamp": 1741150833391
+  "saved_at": "2025-03-05 15:25:06 KST",
+  "timestamp": 1741155906783
 }

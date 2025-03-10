@@ -107,7 +107,7 @@ class OrderFormatter:
                 "",
                 "💰 거래 정보:",
                 f"• 진입가: ${entry_price:,.2f}",
-                f"• 수량: {position_size}% ({btc_quantity:.3f} BTC)",
+                f"• 수량: {position_size:.1f}% ({btc_quantity:.3f} BTC)",
                 f"• 손절가: ${stop_loss:,.2f}",
                 f"• 익절가: ${take_profit:,.2f}",
                 "",

@@ -5,7 +5,7 @@ import hashlib
 import time
 import aiohttp
 import json
-from typing import Dict
+from typing import Dict, List
 import traceback
 import ssl
 import certifi
@@ -170,6 +170,32 @@ class BybitClient:
             logger.error(traceback.format_exc())
             return None
 
+    async def get_positions(self, symbol: str = None) -> List[Dict]:
+        """포지션 조회 (CCXT 사용)"""
+        try:
+            params = {
+                'category': 'linear',
+                'settleCoin': 'USDT'
+            }
+            if symbol:
+                params['symbol'] = symbol
+                
+            positions = await self.exchange.fetch_positions(params=params)
+            logger.debug(f"CCXT Positions Response: {positions}")
+            
+            # 활성 포지션만 필터링
+            active_positions = [
+                pos for pos in positions
+                if float(pos.get('contracts', 0)) > 0
+            ]
+            
+            return active_positions
+            
+        except Exception as e:
+            logger.error(f"포지션 조회 실패: {str(e)}")
+            logger.error(traceback.format_exc())
+            return []
+
     async def v5_get_closed_pnl(self, params: Dict = None) -> Dict:
         """V5 API Closed PnL 조회"""
         return await self._request("GET", "/v5/position/closed-pnl", params)
@@ -189,21 +215,6 @@ class BybitClient:
         except Exception as e:
             logger.error(f"API 요청 실패 (POST {path}): {str(e)}")
             return None
-
-    async def v5_get_positions(self, symbol: str = None) -> Dict:
-        """포지션 조회"""
-        try:
-            params = {
-                "category": "linear",
-                "symbol": symbol
-            }
-            response = await self.v5_get("/position/list", params)
-            if response and response.get('retCode') == 0:
-                return response.get('result', {}).get('list', [])
-            return []
-        except Exception as e:
-            logger.error(f"포지션 조회 중 오류: {str(e)}")
-            return []
 
     async def v5_get_executions(self, params: Dict) -> Dict:
         """V5 API execution/list 조회"""
@@ -260,6 +271,12 @@ class BybitClient:
     async def v5_create_order(self, params: Dict) -> Dict:
         """V5 API 주문 생성 요청"""
         try:
+            # TP/SL이 있는 경우 함께 설정
+            if params.get('stopLoss'):
+                params['stopLoss'] = str(params['stopLoss'])
+            if params.get('takeProfit'):
+                params['takeProfit'] = str(params['takeProfit'])
+                
             logger.info(f"주문 파라미터: {params}")
             result = await self._request("POST", "/v5/order/create", params)
             
@@ -282,17 +299,42 @@ class BybitClient:
             balance = await self.exchange.fetch_balance({'type': 'unified'})
             logger.debug(f"CCXT Balance Response: {balance}")
             
+            # USDT 잔고 정보 (safe_float 사용)
+            usdt_total = self.safe_float(balance.get('total', {}).get('USDT'))
+            usdt_free = self.safe_float(balance.get('free', {}).get('USDT'))
+            usdt_used = self.safe_float(balance.get('used', {}).get('USDT'))
+            
+            logger.info(f"USDT 잔고 - 총자산: ${usdt_total:,.2f}, 가용잔고: ${usdt_free:,.2f}, 사용중: ${usdt_used:,.2f}")
+            
             # CCXT 응답을 우리 형식으로 변환
             return {
                 'retCode': 0,
                 'result': {
                     'list': [{
-                        'totalWalletBalance': balance.get('total', {}).get('USDT', 0),
-                        'totalAvailableBalance': balance.get('free', {}).get('USDT', 0),
-                        'totalInitialMargin': balance.get('used', {}).get('USDT', 0)
+                        'totalEquity': usdt_total,  # 총 자산
+                        'totalWalletBalance': usdt_total,  # 총 잔고
+                        'totalAvailableBalance': usdt_free,  # 가용 잔고
+                        'totalInitialMargin': usdt_used,  # 사용 중인 증거금
+                        'accountType': 'UNIFIED',
+                        'coin': [{
+                            'coin': 'USDT',
+                            'equity': usdt_total,
+                            'walletBalance': usdt_total,
+                            'availableToWithdraw': usdt_free
+                        }]
                     }]
                 }
             }
         except Exception as e:
             logger.error(f"잔고 조회 실패: {str(e)}")
+            logger.error(traceback.format_exc())
             return None
+
+    def safe_float(self, value, default=0.0):
+        """안전한 float 변환"""
+        try:
+            if value is None or value == 'None' or value == '':
+                return default
+            return float(value)
+        except (ValueError, TypeError):
+            return default

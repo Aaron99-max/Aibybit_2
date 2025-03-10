@@ -37,7 +37,7 @@ class BalanceService:
         logger.debug(f"지갑 정보: {wallet_info}")
         
         # 데이터 가공
-        wallet_balance = self.safe_float(wallet_info.get('totalWalletBalance'))
+        total_equity = self.safe_float(wallet_info.get('totalEquity'))
         used_margin = self.safe_float(wallet_info.get('totalInitialMargin'))
         available_balance = self.safe_float(wallet_info.get('totalAvailableBalance'))
         
@@ -46,7 +46,7 @@ class BalanceService:
             'timestamp': int(time.time() * 1000),
             'currencies': {
                 'USDT': {
-                    'total_equity': wallet_balance,
+                    'total_equity': total_equity,
                     'used_margin': used_margin,
                     'available_balance': available_balance
                 }

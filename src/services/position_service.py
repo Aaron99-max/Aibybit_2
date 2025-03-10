@@ -30,13 +30,24 @@ class PositionService:
         """포지션 조회"""
         try:
             symbol = symbol or self.symbol
-            positions = await self.bybit_client.v5_get_positions(symbol)
+            positions = await self.bybit_client.get_positions(symbol)
             
             if not positions:
                 return {}
                 
+            # CCXT 응답을 우리 형식으로 변환
             position = positions[0]  # 첫 번째 포지션 사용
-            return position
+            return {
+                'symbol': position.get('symbol', ''),
+                'side': position.get('side', '').title(),
+                'size': abs(float(position.get('contracts', 0))),
+                'leverage': int(float(position.get('leverage', 1))),
+                'entryPrice': float(position.get('entryPrice', 0)),
+                'markPrice': float(position.get('markPrice', 0)),
+                'unrealisedPnl': float(position.get('unrealizedPnl', 0)),
+                'stopLoss': float(position.get('stopLoss', 0)),
+                'takeProfit': float(position.get('takeProfit', 0))
+            }
             
         except Exception as e:
             logger.error(f"포지션 조회 중 오류: {str(e)}")

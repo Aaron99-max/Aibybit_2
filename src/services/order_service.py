@@ -94,17 +94,21 @@ class OrderService:
                 "timeInForce": "GTC",
                 "positionIdx": 0,
                 "stopLoss": str(signal['stop_loss']) if signal.get('stop_loss') else None,
-                "takeProfit": str(signal['take_profit1']) if signal.get('take_profit1') else None
+                "takeProfit": str(signal['take_profit']) if signal.get('take_profit') else None
             }
             
             # 주문 실행
-            response = await self.bybit_client.v5_post("/order/create", order_params)
+            response = await self.bybit_client.v5_create_order(order_params)
             
             if response and response.get('retCode') == 0:
                 logger.info(f"신규 포지션 생성 성공: {order_params}")
+                logger.info("주문 결과:")
+                logger.info(json.dumps(response, indent=2))
                 return True
             else:
                 logger.error(f"신규 포지션 생성 실패: {response}")
+                logger.error("주문 결과:")
+                logger.error(json.dumps(response, indent=2))
                 return False
                 
         except Exception as e:
@@ -381,7 +385,7 @@ class OrderService:
                 "positionIdx": 0,
                 "reduceOnly": is_reduce_only,
                 "stopLoss": None if is_reduce_only else str(signal['stop_loss']),
-                "takeProfit": None if is_reduce_only else str(signal['take_profit1'])
+                "takeProfit": None if is_reduce_only else str(signal['take_profit'])
             }
             
             # 주문 전 로깅
@@ -438,56 +442,22 @@ class OrderService:
         """매매 신호 실행"""
         try:
             logger.info(f"매매 신호 실행: {signals}")
-            
-            # 관망 신호면 포지션 정리
-            if signals['position_suggestion'] == 'HOLD':
-                current_position = await self.position_service.get_position(self.symbol)
-                if current_position and float(current_position.get('size', 0)) > 0:
-                    logger.info("관망 신호, 기존 포지션 정리")
-                    return await self.close_position(self.symbol)
-                return True
 
-            # 필수 파라미터 체크
-            required_params = ['position_suggestion', 'leverage', 'position_size', 'entry_price']
-            for param in required_params:
-                if param not in signals:
-                    logger.error(f"필수 파라미터 누락: {param}")
-                    return False
-
-            # 매매 신호 처리
+            # 주문 파라미터 설정
             order_params = {
-                'symbol': self.symbol,
+                'symbol': self.symbol,  # 기본 심볼 사용
                 'side': 'Buy' if signals['position_suggestion'] == 'BUY' else 'Sell',
-                'leverage': signals.get('leverage', 5),
-                'position_size': signals.get('position_size', 10),
-                'entry_price': signals.get('entry_price'),
-                'stop_loss': signals.get('stop_loss'),
-                'take_profit': signals.get('take_profit1'),
-                'is_btc_unit': False,
-                'orderType': 'Limit',
-                'timeInForce': 'GTC',
-                'reduceOnly': False
+                'leverage': signals['leverage'],
+                'position_size': signals['position_size'],
+                'entry_price': signals['entry_price'],
+                'stop_loss': signals['stop_loss'],
+                'take_profit': signals['take_profit1'],  # take_profit1을 take_profit으로 사용
+                'is_btc_unit': False
             }
-
-            # 주문 실행
-            result = await self.create_order(**order_params)
             
-            # 상세 로깅 추가
-            logger.info("=== 주문 요청 및 응답 상세 ===")
-            logger.info(f"주문 파라미터:\n{json.dumps(order_params, indent=2)}")
-            logger.info(f"API 응답:\n{json.dumps(result, indent=2) if result else 'None'}")
-            
-            if result and result.get('retCode') == 0:
-                logger.info(f"매매 신호 실행 성공: {order_params}")
-                return True
-            else:
-                logger.error(f"매매 신호 실행 실패:")
-                logger.error(f"- 파라미터: {order_params}")
-                logger.error(f"- 응답: {result}")
-                if result:
-                    logger.error(f"- 에러 코드: {result.get('retCode')}")
-                    logger.error(f"- 에러 메시지: {result.get('retMsg')}")
-                return False
+            logger.info(f"주문 시도: {order_params}")
+            logger.info(f"주문 상세 정보: {json.dumps(order_params, indent=2)}")
+            return await self.place_order(order_params)
             
         except Exception as e:
             logger.error(f"매매 신호 실행 중 오류: {str(e)}")

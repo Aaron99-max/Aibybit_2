@@ -68,18 +68,20 @@ class OrderService:
                 logger.error("잔고 조회 실패")
                 return False
                 
-            available_balance = float(balance.get('currencies', {}).get('USDT', {}).get('available_balance', 0))
-            if available_balance <= 0:
-                logger.error(f"사용 가능한 잔고 부족: ${available_balance}")
+            total_equity = float(balance.get('currencies', {}).get('USDT', {}).get('total_equity', 0))
+            if total_equity <= 0:
+                logger.error(f"총 자산이 부족합니다: ${total_equity}")
                 return False
             
-            target_value = available_balance * (signal['position_size'] / 100) * signal['leverage']
-            btc_quantity = target_value / float(signal['entry_price'])
+            # 포지션 크기 계산 (BTC)
+            btc_quantity = await self._calculate_position_size(
+                total_equity=total_equity,
+                percentage=signal['position_size'],
+                leverage=signal['leverage'],
+                entry_price=float(signal['entry_price'])
+            )
             
-            # 소수점 3자리로 반올림 (바이비트 규칙)
-            btc_quantity = round(btc_quantity, 3)
-            
-            logger.info(f"계산된 BTC 수량: {btc_quantity} (가용잔고: ${available_balance}, 목표비율: {signal['position_size']}%)")
+            logger.info(f"계산된 BTC 수량: {btc_quantity} (총자산: ${total_equity}, 목표비율: {signal['position_size']}%, 레버리지: {signal['leverage']}x)")
             
             # 주문 파라미터 설정
             order_params = {

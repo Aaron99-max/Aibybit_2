@@ -87,8 +87,12 @@ class OrderFormatter:
             if not order:
                 return "주문 정보 없음"
 
-            # BTC 수량 계산 (가용잔고 * 목표비율 * 레버리지 / 진입가)
+            # 주문 정보 추출
+            entry_price = float(order.get('price', order.get('entry_price', 0)))
             btc_quantity = float(order.get('qty', 0))
+            position_size = float(order.get('position_size', 0))
+            stop_loss = float(order.get('stopLoss', order.get('stop_loss', 0)))
+            take_profit = float(order.get('takeProfit', order.get('take_profit', 0)))
             
             # 이모지 설정
             side_emoji = "🟢" if order.get('side') == 'Buy' else "🔴"
@@ -102,10 +106,10 @@ class OrderFormatter:
                 f"• 레버리지: {order.get('leverage', 1)}x",
                 "",
                 "💰 거래 정보:",
-                f"• 진입가: ${float(order.get('entry_price', 0)):,.2f}",
-                f"• 수량: {order.get('position_size', 0)}% ({btc_quantity:.3f} BTC)",
-                f"• 손절가: ${float(order.get('stopLoss', 0)):,.2f}",
-                f"• 익절가: ${float(order.get('takeProfit', 0)):,.2f}",
+                f"• 진입가: ${entry_price:,.2f}",
+                f"• 수량: {position_size}% ({btc_quantity:.3f} BTC)",
+                f"• 손절가: ${stop_loss:,.2f}",
+                f"• 익절가: ${take_profit:,.2f}",
                 "",
                 "📊 상태:",
                 f"• 주문상태: {order.get('status', 'NEW')}",
@@ -116,6 +120,7 @@ class OrderFormatter:
 
         except Exception as e:
             logger.error(f"주문 포맷팅 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
             return "주문 포맷팅 실패"
 
     @classmethod

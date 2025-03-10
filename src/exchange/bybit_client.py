@@ -182,6 +182,14 @@ class BybitClient:
             logger.error(f"API 요청 실패 (GET {path}): {str(e)}")
             return None
 
+    async def v5_post(self, path: str, params: Dict = None) -> Dict:
+        """V5 API POST 요청"""
+        try:
+            return await self._request('POST', f"/v5{path}", params)
+        except Exception as e:
+            logger.error(f"API 요청 실패 (POST {path}): {str(e)}")
+            return None
+
     async def v5_get_positions(self, symbol: str = None) -> Dict:
         """포지션 조회"""
         try:

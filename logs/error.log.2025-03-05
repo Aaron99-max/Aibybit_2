@@ -1,0 +1,1057 @@
+2025-03-05 12:41:01,231 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:01,257 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:02,401 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:02,403 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:03,532 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:03,534 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:04,620 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:04,623 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:05,733 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:05,735 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:06,854 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:06,858 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:08,091 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:08,091 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:09,159 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:09,160 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:10,270 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:10,271 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:11,343 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:11,343 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:12,444 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:12,446 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:13,527 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:13,527 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 12:41:14,793 - exchange.bybit_client - ERROR - API 요청 실패: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+2025-03-05 12:41:14,793 - exchange.bybit_client - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1112, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1145, in _create_connection_transport
+    await waiter
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 575, in _on_handshake_complete
+    raise handshake_exc
+  File "C:\Program Files\Python311\Lib\asyncio\sslproto.py", line 557, in _do_handshake
+    self._sslobj.do_handshake()
+  File "C:\Program Files\Python311\Lib\ssl.py", line 979, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\exchange\bybit_client.py", line 108, in _request
+    async with session.get(url, params=request_params, headers=headers) as response:
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1411, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1380, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\aiohttp\connector.py", line 1129, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host api-testnet.bybit.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')]
+
+2025-03-05 13:04:52,659 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741147491348yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741147491348&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741147492392}
+2025-03-05 13:04:57,672 - telegram_bot.bot - ERROR - 메시지 전송 실패 (chat_id: 583881676): Timed out
+2025-03-05 13:05:01,458 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'bool' object is not callable
+2025-03-05 13:05:49,516 - position_service - ERROR - 포지션 목록 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-05 13:06:02,436 - ai.gpt_analyzer - ERROR - 시장 분석 중 오류: 'market_summary'
+2025-03-05 13:06:02,436 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\gpt_analyzer.py", line 198, in analyze_market
+    "market_summary": gpt_analysis['market_summary'],
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'market_summary'
+
+2025-03-05 13:06:02,436 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-03-05 13:37:09,046 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'bool' object is not callable
+2025-03-05 13:44:07,137 - ai.gpt_analyzer - ERROR - 시장 분석 중 오류: 'market_summary'
+2025-03-05 13:44:07,137 - ai.gpt_analyzer - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\ai\gpt_analyzer.py", line 198, in analyze_market
+    "market_summary": gpt_analysis['market_summary'],
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'market_summary'
+
+2025-03-05 13:44:07,137 - telegram_bot.monitors.auto_analyzer - ERROR - 분석 실패
+2025-03-05 13:56:48,516 - telegram_bot.bot - ERROR - 메시지 전송 실패 (chat_id: 583881676): Timed out
+2025-03-05 13:58:06,965 - telegram_bot.bot - ERROR - 봇 시작 중 오류: Timed out
+2025-03-05 13:58:07,082 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 350, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-03-05 13:58:07,082 - telegram_bot.bot - ERROR - 봇 실행 중 오류: Timed out
+2025-03-05 13:58:07,097 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 286, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 350, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-03-05 13:58:07,097 - main - ERROR - 실행 중 에러 발생: Timed out
+2025-03-05 13:58:07,097 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 94, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 286, in run
+    await self.start()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 350, in start
+    await self.application.bot.delete_webhook()
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 1244, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3755, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 285, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+
+2025-03-05 14:00:35,553 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 14:00:35,557 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 62059.1, 'stop_loss': 63059.1, 'take_profit': 61059.1, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 14:00:35,557 - order_service - ERROR - - 응답: {'retCode': 10005, 'retMsg': 'Permission denied, please check your API key permissions.', 'result': {}, 'retExtInfo': {}, 'time': 1741150835453}
+2025-03-05 14:00:35,558 - order_service - ERROR - - 에러 코드: 10005
+2025-03-05 14:00:35,558 - order_service - ERROR - - 에러 메시지: Permission denied, please check your API key permissions.
+2025-03-05 14:12:54,498 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10002, 'retMsg': 'invalid request, please check your server timestamp or recv_window param. req_timestamp[1741151569000],server_timestamp[1741151574422],recv_window[5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741151574422}
+2025-03-05 14:12:54,499 - order_service - ERROR - 잔고 조회 실패
+2025-03-05 14:12:54,500 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 14:12:54,501 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 60785.7, 'stop_loss': 61000.0, 'take_profit': 59000.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 14:12:54,501 - order_service - ERROR - - 응답: None
+2025-03-05 14:17:36,457 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 14:17:36,457 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 59831.9, 'stop_loss': 60000.0, 'take_profit': 59000.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 14:17:36,457 - order_service - ERROR - - 응답: {'retCode': 10005, 'retMsg': 'Permission denied, please check your API key permissions.', 'result': {}, 'retExtInfo': {}, 'time': 1741151856387}
+2025-03-05 14:17:36,457 - order_service - ERROR - - 에러 코드: 10005
+2025-03-05 14:17:36,465 - order_service - ERROR - - 에러 메시지: Permission denied, please check your API key permissions.
+2025-03-05 14:27:48,027 - telegram.ext.Updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-03-05 14:27:48,037 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 292, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-03-05 14:29:39,427 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 14:29:39,440 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 57959.1, 'stop_loss': 58000.0, 'take_profit': 57000.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 14:29:39,440 - order_service - ERROR - - 응답: {'retCode': 10005, 'retMsg': 'Permission denied, please check your API key permissions.', 'result': {}, 'retExtInfo': {}, 'time': 1741152579372}
+2025-03-05 14:29:39,440 - order_service - ERROR - - 에러 코드: 10005
+2025-03-05 14:29:39,440 - order_service - ERROR - - 에러 메시지: Permission denied, please check your API key permissions.
+2025-03-05 14:33:48,535 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 14:33:48,535 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 63855.0, 'stop_loss': 64000.0, 'take_profit': 63000.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 14:33:48,535 - order_service - ERROR - - 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=yjHTlVOB6X6Man1Ah5&category=linear&orderType=Limit&positionIdx=0&price=63855.0&qty=0.001&recv_window=5000&reduceOnly=false&side=Sell&stopLoss=64000.0&symbol=BTCUSDT&takeProfit=63000.0&timeInForce=GTC&timestamp=1741152827361]', 'result': {}, 'retExtInfo': {}, 'time': 1741152828470}
+2025-03-05 14:33:48,535 - order_service - ERROR - - 에러 코드: 10004
+2025-03-05 14:33:48,535 - order_service - ERROR - - 에러 메시지: error sign! origin_string[api_key=yjHTlVOB6X6Man1Ah5&category=linear&orderType=Limit&positionIdx=0&price=63855.0&qty=0.001&recv_window=5000&reduceOnly=false&side=Sell&stopLoss=64000.0&symbol=BTCUSDT&takeProfit=63000.0&timeInForce=GTC&timestamp=1741152827361]
+2025-03-05 14:39:52,577 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 14:39:52,577 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 58511.2, 'stop_loss': 59000.0, 'take_profit': 58000.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 14:39:52,577 - order_service - ERROR - - 응답: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=yjHTlVOB6X6Man1Ah5&category=linear&orderType=Limit&positionIdx=0&price=58511.2&qty=0.001&recv_window=5000&reduceOnly=false&side=Sell&stopLoss=59000.0&symbol=BTCUSDT&takeProfit=58000.0&timeInForce=GTC&timestamp=1741153192256]', 'result': {}, 'retExtInfo': {}, 'time': 1741153192520}
+2025-03-05 14:39:52,577 - order_service - ERROR - - 에러 코드: 10004
+2025-03-05 14:39:52,577 - order_service - ERROR - - 에러 메시지: error sign! origin_string[api_key=yjHTlVOB6X6Man1Ah5&category=linear&orderType=Limit&positionIdx=0&price=58511.2&qty=0.001&recv_window=5000&reduceOnly=false&side=Sell&stopLoss=59000.0&symbol=BTCUSDT&takeProfit=58000.0&timeInForce=GTC&timestamp=1741153192256]
+2025-03-05 14:41:00,454 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741153260000yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741153260000&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741153260407}
+2025-03-05 14:41:00,454 - order_service - ERROR - 잔고 조회 실패
+2025-03-05 14:41:00,465 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 14:41:00,465 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 58300.0, 'stop_loss': 58800.0, 'take_profit': 57800.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 14:41:00,465 - order_service - ERROR - - 응답: None
+2025-03-05 14:41:24,027 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741153283592yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741153283592&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741153283983}
+2025-03-05 14:44:14,308 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741153454000yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741153454000&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741153454251}
+2025-03-05 14:48:29,407 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741153709000yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741153709000&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741153709364}
+2025-03-05 14:50:25,710 - main - ERROR - 실행 중 에러 발생: BybitClient.__init__() got an unexpected keyword argument 'config'
+2025-03-05 14:50:25,710 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 62, in main
+    bybit_client = BybitClient(config=bybit_config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BybitClient.__init__() got an unexpected keyword argument 'config'
+
+2025-03-05 14:51:42,813 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741153902000yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741153902000&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741153902758}
+2025-03-05 14:55:25,913 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741154125000yjHTlVOB6X6Man1Ah55000api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741154125000&recv_window=5000&accountType=UNIFIED]', 'result': {}, 'retExtInfo': {}, 'time': 1741154125865}
+2025-03-05 15:07:34,453 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741154854001yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741154854001&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741154854403}
+2025-03-05 15:10:19,869 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741155019011yjHTlVOB6X6Man1Ah55000api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741155019011&recv_window=5000&accountType=UNIFIED]', 'result': {}, 'retExtInfo': {}, 'time': 1741155019815}
+2025-03-05 15:12:19,881 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741155139000yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&timestamp=1741155139000&api_key=yjHTlVOB6X6Man1Ah5&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741155139843}
+2025-03-05 15:13:53,800 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741155233001yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741155233001&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741155233753}
+2025-03-05 15:16:18,387 - services.balance_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1741155378000yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1741155378000&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1741155378336}
+2025-03-05 15:20:28,177 - order_service - ERROR - 주문 생성 중 오류: 'BybitClient' object has no attribute 'v5_post'
+2025-03-05 15:20:28,177 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 214, in create_order
+    result = await self.bybit_client.v5_post("/order/create", order_params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_post'
+
+2025-03-05 15:20:28,177 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 15:20:28,177 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 56059.6, 'stop_loss': 57059.6, 'take_profit': 55059.6, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 15:20:28,177 - order_service - ERROR - - 응답: None
+2025-03-05 15:25:09,098 - order_service - ERROR - 주문 생성 중 오류: 'BybitClient' object has no attribute 'v5_post'
+2025-03-05 15:25:09,098 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 214, in create_order
+    result = await self.bybit_client.v5_post("/order/create", order_params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_post'
+
+2025-03-05 15:25:09,098 - order_service - ERROR - 매매 신호 실행 실패:
+2025-03-05 15:25:09,098 - order_service - ERROR - - 파라미터: {'symbol': 'BTCUSDT', 'side': 'Sell', 'leverage': 5, 'position_size': 10, 'entry_price': 56452.6, 'stop_loss': 57000.0, 'take_profit': 55000.0, 'is_btc_unit': False, 'orderType': 'Limit', 'timeInForce': 'GTC', 'reduceOnly': False}
+2025-03-05 15:25:09,103 - order_service - ERROR - - 응답: None

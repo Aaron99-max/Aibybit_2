@@ -5,6 +5,7 @@ import asyncio
 from typing import Dict, Optional
 from datetime import datetime
 from telegram import Bot, Update
+from telegram.constants import ParseMode
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -202,7 +203,7 @@ class TelegramBot:
         try:
             logger.info("봇 초기화 시작...")
             
-            # 거래 내역 서비스 초기화 (추가)
+            # 거래 내역 서비스 초기화
             await self.trade_history_service.initialize()
             
             logger.info("Application 빌드 시작...")
@@ -214,81 +215,99 @@ class TelegramBot:
                 .build()
             )
             
-            # 모니터링 초기화
-            self.auto_analyzer = AutoAnalyzer(
-                market_data_service=self.market_data_service,
-                gpt_analyzer=self.ai_trader.gpt_analyzer,
-                order_service=self.order_service,
-                telegram_bot=self
-            )
-            
-            self.profit_monitor = ProfitMonitor(self)
-            
-            # 핸들러 초기화
-            await self._initialize_handlers()
-            
             logger.info("봇 초기화 완료, 시작 준비 중...")
             
         except Exception as e:
             logger.error(f"봇 초기화 실패: {str(e)}")
             raise
 
-    async def _initialize_handlers(self):
-        """핸들러 초기화"""
+    async def start(self):
+        """봇 시작"""
         try:
-            # AnalysisHandler 초기화
-            self.analysis_handler = AnalysisHandler(
-                bot=self,
-                auto_analyzer=self.auto_analyzer
+            logger.info("=== 봇 시작 시도 ===")
+            
+            # 기존 웹훅 제거
+            await self.application.bot.delete_webhook()
+            
+            # 봇 시작
+            await self.application.initialize()
+            await self.application.start()
+            
+            # 시작 메시지 전송
+            start_message = "🤖 바이빗 트레이딩 봇이 시작되었습니다"
+            logger.info(start_message)
+            await self.send_message_to_all(start_message, self.MSG_TYPE_SYSTEM)
+            
+            # 모니터링 시작
+            await self.auto_analyzer.start()
+            
+            # 업데이터 시작
+            await self.application.updater.start_polling(
+                drop_pending_updates=True,
+                allowed_updates=["message", "callback_query"]
             )
             
-            # 나머지 핸들러 초기화
-            self.system_handler = SystemHandler(self)
-            self.stats_handler = StatsHandler(self)
-            self.trading_handler = TradingHandler(
-                self,
-                self.ai_trader,
-                self.position_service,
-                self.trade_manager,
-                self.trade_history_service
-            )
+            # 봇이 실행 중인 동안 대기
+            try:
+                await self._stop_event.wait()
+                logger.info("봇 종료 이벤트 감지됨")
+            except asyncio.CancelledError:
+                logger.info("봇 실행이 취소되었습니다")
             
-            # 명령어 핸들러 등록
-            handlers = [
-                CommandHandler("help", self.system_handler.handle_help),
-                CommandHandler("stop", self.system_handler.handle_stop),
-                CommandHandler("analyze", self.analysis_handler.handle_analyze),
-                CommandHandler("status", self.trading_handler.handle_status),
-                CommandHandler("balance", self.trading_handler.handle_balance),
-                CommandHandler("position", self.trading_handler.handle_position),
-                CommandHandler("stats", self.stats_handler.handle),
-                CommandHandler("trade", self.trading_handler.handle_trade)
-            ]
+        except Exception as e:
+            logger.error(f"봇 시작 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            raise
+
+    async def stop(self):
+        """봇 중지"""
+        try:
+            # AutoAnalyzer 중지
+            if self.auto_analyzer:
+                await self.auto_analyzer.stop()
             
-            for handler in handlers:
-                self.application.add_handler(handler)
-                
-            logger.info("핸들러 초기화 완료")
+            # Application 중지
+            if self.application:
+                await self.application.stop()
+                await self.application.shutdown()
+            
+            # 종료 이벤트 설정
+            self._stop_event.set()
+            
+            logger.info("봇이 정상적으로 중지되었습니다")
             return True
             
         except Exception as e:
-            logger.error(f"핸들러 초기화 실패: {str(e)}")
+            logger.error(f"봇 중지 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
             return False
 
-    async def run(self):
-        """봇 실행"""
+    async def send_to_admin(self, message: str):
+        """관리자에게 메시지 전송"""
         try:
-            # 봇 초기화
-            await self.initialize()
-            
-            # 봇 시작
-            logger.info("봇 시작 시도...")
-            await self.start()
-            
+            if self.admin_chat_id:
+                await self.application.bot.send_message(
+                    chat_id=self.admin_chat_id,
+                    text=message,
+                    parse_mode=ParseMode.HTML
+                )
         except Exception as e:
-            logger.error(f"봇 실행 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            raise
+            logger.error(f"관리자 메시지 전송 실패: {str(e)}")
+
+    async def send_to_group(self, message: str):
+        """모든 채팅방에 메시지 전송"""
+        await self.send_message_to_all(message)
+
+    async def send_message(self, message: str, chat_id: int, parse_mode: str = None):
+        """특정 채팅방에 메시지 전송"""
+        try:
+            await self.application.bot.send_message(
+                chat_id=chat_id,
+                text=message,
+                parse_mode=parse_mode
+            )
+        except Exception as e:
+            logger.error(f"메시지 전송 실패 (chat_id: {chat_id}): {str(e)}")
 
     async def _handle_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """도움말 명령어 처리"""
@@ -338,44 +357,6 @@ class TelegramBot:
             return
         await self.trading_handler.handle_stats(update.effective_chat.id)
 
-    async def start(self):
-        """봇 시작"""
-        try:
-            logger.info("=== 봇 시작 시도 ===")
-            
-            # 종료 이벤트 생성
-            self._stop_event = asyncio.Event()
-            
-            # 기존 웹훅 제거
-            await self.application.bot.delete_webhook()
-            
-            # 봇 시작
-            await self.application.initialize()
-            await self.application.start()
-            
-            # 모니터링 시작
-            await self.application.updater.start_polling(
-                drop_pending_updates=True,
-                allowed_updates=["message", "callback_query"]
-            )
-            
-            # 시작 메시지 전송
-            start_message = "🤖 바이빗 트레이딩 봇이 시작되었습니다"
-            logger.info(start_message)
-            await self.send_message_to_all(start_message, self.MSG_TYPE_SYSTEM)
-            
-               
-            # 봇이 실행 중인 동안 대기
-            try:
-                await self._stop_event.wait()
-            except asyncio.CancelledError:
-                logger.info("봇 실행이 취소되었습니다")
-            
-        except Exception as e:
-            logger.error(f"봇 시작 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            raise
-
     async def _error_handler(self, update: Update, context: CallbackContext):
         """에러 핸들러"""
         logger.error(f"텔레그램 봇 에러: {context.error}")
@@ -383,54 +364,17 @@ class TelegramBot:
         if update and update.effective_chat:
             await self.send_message("❌ 명령어 처리 중 오류가 발생했습니다.", update.effective_chat.id)
 
-    async def stop(self):
-        """봇 종료"""
+    async def run(self):
+        """봇 실행"""
         try:
-            logger.info("봇 종료 시작...")
+            # 봇 초기화
+            await self.initialize()
             
-            # 모든 작업 중지
-            if hasattr(self, 'auto_analyzer'):
-                await self.auto_analyzer.stop()
-            if hasattr(self, 'profit_monitor'):
-                await self.profit_monitor.stop()
-            
-            # Application 종료
-            if hasattr(self, 'application'):
-                await self.application.stop()
-                await self.application.shutdown()
-            
-            # Bybit 클라이언트 종료    
-            if self.bybit_client:
-                await self.bybit_client.close()
-            
-            logger.info("봇이 성공적으로 종료되었습니다")
+            # 봇 시작
+            logger.info("봇 시작 시도...")
+            await self.start()
             
         except Exception as e:
-            logger.error(f"봇 종료 중 오류: {str(e)}")
-
-    async def send_to_admin(self, message: str):
-        """관리자에게 메시지 전송"""
-        try:
-            if self.admin_chat_id:
-                await self.application.bot.send_message(
-                    chat_id=self.admin_chat_id,
-                    text=message,
-                    parse_mode=ParseMode.HTML
-                )
-        except Exception as e:
-            logger.error(f"관리자 메시지 전송 실패: {str(e)}")
-
-    async def send_to_group(self, message: str):
-        """모든 채팅방에 메시지 전송"""
-        await self.send_message_to_all(message)
-
-    async def send_message(self, message: str, chat_id: int, parse_mode: str = None):
-        """특정 채팅방에 메시지 전송"""
-        try:
-            await self.application.bot.send_message(
-                chat_id=chat_id,
-                text=message,
-                parse_mode=parse_mode
-            )
-        except Exception as e:
-            logger.error(f"메시지 전송 실패 (chat_id: {chat_id}): {str(e)}")
+            logger.error(f"봇 실행 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            raise

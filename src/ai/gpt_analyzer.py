@@ -213,7 +213,10 @@ class GPTAnalyzer:
             
             # 최종 분석 결과 구성
             analysis = {
-                "market_summary": gpt_analysis['market_summary'],
+                "market_summary": {
+                    **gpt_analysis['market_summary'],
+                    "current_price": float(latest['close'])  # 현재가 추가
+                },
                 "technical_analysis": {
                     "trend": technical_analysis['trend'],
                     "strength": technical_analysis['strength'],

@@ -15,6 +15,10 @@ class SystemHandler(BaseHandler):
         """관리자 채팅방 여부 확인"""
         return chat_id == self.bot.admin_chat_id
 
+    def is_admin(self, chat_id: int) -> bool:
+        """관리자 권한 확인"""
+        return chat_id == self.telegram_bot.config.admin_chat_id
+
     async def handle_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """도움말 표시"""
         help_text = """
@@ -45,27 +49,31 @@ class SystemHandler(BaseHandler):
         await self.send_message(help_text, update.effective_chat.id)
 
     async def handle_stop(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """봇 종료 명령어 처리"""
-        if not await self.check_admin(update):
+        """봇 중지"""
+        if not update.effective_chat:
             return
-        try:
-            if not update.effective_chat:
-                return
             
-            chat_id = update.effective_chat.id
-            if not self._is_admin_chat(chat_id):
-                await self.send_message("⚠️ 관리자만 사용 가능한 명령어입니다", chat_id)
-                return
-
+        try:
+            # 중지 메시지 전송
+            await update.message.reply_text("🛑 봇을 중지합니다...")
+            
             # 모든 채팅방에 중지 메시지 전송
             await self.bot.send_message_to_all("🔴 바이빗 트레이딩 봇이 중지되었습니다")
             
-            # 강제 종료
-            os._exit(0)
+            # 봇 중지
+            if not await self.bot.stop():
+                await update.message.reply_text("❌ 봇 중지 중 오류가 발생했습니다")
+                return
+                
+            # 프로그램 종료
+            logger.info("프로그램을 종료합니다")
+            import os
+            os._exit(0)  # 강제 종료
             
         except Exception as e:
-            logger.error(f"봇 종료 중 오류: {str(e)}")
-            os._exit(1)
+            logger.error(f"봇 중지 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            await update.message.reply_text("❌ 봇 중지 중 오류가 발생했습니다.")
 
     async def handle_start_monitoring(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """모니터링 시작"""

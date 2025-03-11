@@ -14,45 +14,96 @@ logger = logging.getLogger(__name__)
 
 class AutoAnalyzer:
     def __init__(self, market_data_service, gpt_analyzer, order_service, telegram_bot=None):
+        logger.info("AutoAnalyzer 초기화 시작")
         self.market_data_service = market_data_service
         self.gpt_analyzer = gpt_analyzer
         self.order_service = order_service
         self.telegram_bot = telegram_bot
         self.storage_formatter = StorageFormatter()
         self.order_formatter = OrderFormatter()
+        self.analysis_formatter = AnalysisFormatter()  # 누락된 부분 추가
         self.is_running = False
         self.last_run_time = None
-        # 정시 실행을 위한 스케줄러 설정
-        self.scheduler = AsyncIOScheduler()
-        self.scheduler.add_job(
-            self.analyze_market,
-            'cron',
-            hour='*',  # 매시 정각
-            minute='0',  # 0분
-            second='0',  # 0초
-            id='hourly_analysis'
-        )
-        self.analysis_formatter = AnalysisFormatter()
+        self._current_analysis_task = None
+        self._stop_event = asyncio.Event()
+
+        # 스케줄러 설정 개선
+        try:
+            logger.info("스케줄러 설정 시작")
+            self.scheduler = AsyncIOScheduler(timezone='Asia/Seoul')
+            self.scheduler.add_job(
+                self._scheduled_analysis,  # 래퍼 함수 사용
+                'interval',  # cron 대신 interval 사용
+                minutes=60,  # 60분마다
+                next_run_time=self._get_next_hour(),  # 다음 정시에 시작
+                id='hourly_analysis',
+                replace_existing=True
+            )
+            logger.info("스케줄러 설정 완료")
+        except Exception as e:
+            logger.error(f"스케줄러 설정 중 오류 발생: {str(e)}")
+            logger.error(traceback.format_exc())
+
+    def _get_next_hour(self):
+        """다음 정시 시간 계산"""
+        now = datetime.now()
+        next_hour = now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+        logger.info(f"다음 실행 예정 시간: {next_hour}")
+        return next_hour
+
+    async def _scheduled_analysis(self):
+        """스케줄된 분석 실행 래퍼"""
+        try:
+            logger.info(f"스케줄된 분석 시작 - {datetime.now()}")
+            await self.analyze_market(manual=False)
+        except Exception as e:
+            logger.error(f"스케줄된 분석 중 오류 발생: {str(e)}")
+            logger.error(traceback.format_exc())
 
     async def start(self):
         """모니터링 시작"""
+        logger.info("AutoAnalyzer 시작 요청됨")
         if self.is_running:
             logger.warning("이미 실행 중입니다")
             return
 
-        self.is_running = True
-        self.scheduler.start()
-        logger.info("자동 분석 시작됨")
+        try:
+            self.is_running = True
+            self.scheduler.start()
+            next_run = self.scheduler.get_job('hourly_analysis').next_run_time
+            logger.info(f"스케줄러 시작됨. 다음 실행 시간: {next_run}")
+            
+            # 시작 즉시 한 번 실행
+            logger.info("초기 분석 실행 시작")
+            await self._scheduled_analysis()
+            logger.info("초기 분석 실행 완료")
+        except Exception as e:
+            logger.error(f"시작 중 오류 발생: {str(e)}")
+            logger.error(traceback.format_exc())
 
     async def stop(self):
-        """모니터링 중지"""
-        if not self.is_running:
-            logger.warning("이미 중지된 상태입니다")
-            return
-
-        self.is_running = False
-        self.scheduler.shutdown()
-        logger.info("자동 분석 중지됨")
+        """AutoAnalyzer 중지"""
+        try:
+            # 스케줄러 중지
+            if self.scheduler and self.scheduler.running:
+                self.scheduler.shutdown(wait=False)
+                logger.info("스케줄러가 중지되었습니다")
+            
+            # 실행 중인 분석 작업 취소
+            if self._current_analysis_task:
+                self._current_analysis_task.cancel()
+                logger.info("실행 중인 분석 작업이 취소되었습니다")
+            
+            # 중지 이벤트 설정
+            self._stop_event.set()
+            logger.info("AutoAnalyzer가 중지되었습니다")
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"AutoAnalyzer 중지 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            return False
 
     async def analyze_market(self, manual: bool = False):
         """시장 분석 실행"""

@@ -207,6 +207,27 @@ class OrderService:
                           stop_loss: float, take_profit: float, leverage: int = None, is_btc_unit: bool = False) -> bool:
         """주문 생성"""
         try:
+            # 현재 포지션 조회
+            current_position = await self.position_service.get_position()
+            is_reduce_only = False
+            needs_sl_tp = True
+            
+            # 반대 방향 주문인지 확인 (청산 주문)
+            if current_position and current_position.get('size', 0) > 0:
+                current_side = current_position['side']  # Long or Short
+                current_size = float(current_position['size'])
+                
+                if (current_side == 'Long' and side == 'Sell') or \
+                   (current_side == 'Short' and side == 'Buy'):
+                    # 주문 크기가 현재 포지션보다 작거나 같으면 순수 청산
+                    if position_size <= current_size:
+                        is_reduce_only = True
+                        needs_sl_tp = False  # 순수 청산은 TP/SL 불필요
+                    else:
+                        # 주문 크기가 더 크면 청산 후 반대 포지션
+                        # 이 경우 TP/SL 설정 필요
+                        needs_sl_tp = True
+            
             # 주문 상세 정보 로깅
             order_info = {
                 "symbol": symbol,
@@ -216,7 +237,9 @@ class OrderService:
                 "entry_price": entry_price,
                 "stop_loss": stop_loss,
                 "take_profit": take_profit,
-                "is_btc_unit": is_btc_unit
+                "is_btc_unit": is_btc_unit,
+                "is_reduce_only": is_reduce_only,
+                "needs_sl_tp": needs_sl_tp
             }
             logger.info(f"주문 상세 정보: {json.dumps(order_info, indent=2)}")
             
@@ -245,14 +268,15 @@ class OrderService:
                 'price': str(entry_price),
                 'timeInForce': 'GTC',
                 'positionIdx': 0,
-                'reduceOnly': False
+                'reduceOnly': is_reduce_only
             }
             
-            # 스탑로스/테이크프로핏 설정
-            if stop_loss:
-                order_params['stopLoss'] = str(stop_loss)
-            if take_profit:
-                order_params['takeProfit'] = str(take_profit)
+            # TP/SL이 필요한 경우에만 설정
+            if needs_sl_tp:
+                if stop_loss:
+                    order_params['stopLoss'] = str(stop_loss)
+                if take_profit:
+                    order_params['takeProfit'] = str(take_profit)
                 
             logger.info(f"주문 실행 시도: {order_params}")
             

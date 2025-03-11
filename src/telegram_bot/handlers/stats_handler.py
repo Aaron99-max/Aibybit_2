@@ -19,6 +19,9 @@ class StatsHandler(BaseHandler):
 
     async def daily_stats(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """일일 거래 통계 조회"""
+        if not await self.check_permission(update):
+            return
+            
         try:
             # 오늘 날짜의 포지션 조회
             today = datetime.now().strftime('%Y%m%d')
@@ -36,6 +39,9 @@ class StatsHandler(BaseHandler):
 
     async def monthly_stats(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """월간 거래 통계 조회"""
+        if not await self.check_permission(update):
+            return
+            
         try:
             # 이번 달 포지션 조회
             current_month = datetime.now().strftime('%Y%m')
@@ -69,6 +75,9 @@ class StatsHandler(BaseHandler):
         /stats 30 : 30일 통계
         /stats 90,30,7,1 : 여러 기간 통계
         """
+        if not await self.check_permission(update):
+            return
+            
         try:
             # 기본값: 90일
             periods = []
@@ -183,7 +192,7 @@ class StatsHandler(BaseHandler):
 
     async def handle(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """통계 명령어 처리"""
-        if not await self.check_admin(update):
+        if not await self.check_permission(update):
             return
             
         try:

@@ -2,7 +2,12 @@
 
 python src/main.py
 
+git config --global user.email "mhyoon99@naver.com"
+git config --global user.name "Aaron99-max"
+
 python -m pytest tests/test_trade_manager.py -v
+
+> git show c521bb39e1e3dd8a3c0fd508fc3117106e2f29b1:src/telegram_bot/bot.py
 
 주요 변경사항:
 주문 실행 전에 현재 포지션 확인

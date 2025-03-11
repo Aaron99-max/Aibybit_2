@@ -129,35 +129,6 @@ class TelegramBot:
             self.trade_history_service
         )
 
-        # 명령어 핸들러 등록
-        handlers = [
-            # 관리자 권한 체크 추가
-            CommandHandler("help", self._check_admin(self.system_handler.handle_help)),
-            CommandHandler("stop", self._check_admin(self.system_handler.handle_stop)),
-            CommandHandler("analyze", self._check_admin(self.analysis_handler.handle_analyze)),
-            CommandHandler("status", self._check_admin(self.trading_handler.handle_status)),
-            CommandHandler("balance", self._check_admin(self.trading_handler.handle_balance)),
-            CommandHandler("position", self._check_admin(self.trading_handler.handle_position)),
-            CommandHandler("stats", self._check_admin(self.stats_handler.handle)),
-            CommandHandler("trade", self._check_admin(self.trading_handler.handle_trade))
-        ]
-
-        for handler in handlers:
-            self.application.add_handler(handler)
-
-    def _check_admin(self, handler):
-        """관리자 권한 체크 데코레이터"""
-        async def wrapped(update: Update, context: ContextTypes.DEFAULT_TYPE):
-            if not update.effective_chat:
-                return
-            
-            if update.effective_chat.id != self.admin_chat_id:
-                await self.send_message("⛔️ 관리자만 사용할 수 있는 명령어입니다.", update.effective_chat.id)
-                return
-            
-            return await handler(update, context)
-        return wrapped
-
     async def send_message_to_all(self, message: str, msg_type: str = None):
         """모든 채팅방에 메시지 전송"""
         try:
@@ -206,15 +177,42 @@ class TelegramBot:
             # 거래 내역 서비스 초기화
             await self.trade_history_service.initialize()
             
-            logger.info("Application 빌드 시작...")
-            
-            # 봇 빌더 설정
+            # 봇 초기화
             self.application = (
                 Application.builder()
                 .token(self.config.bot_token)
                 .build()
             )
             
+            # 명령어 핸들러 등록
+            logger.info("명령어 핸들러 등록 시작...")
+            
+            # 시스템 명령어
+            self.application.add_handler(CommandHandler("help", self.system_handler.handle_help))
+            self.application.add_handler(CommandHandler("stop", self.system_handler.handle_stop))
+            self.application.add_handler(CommandHandler("monitor_start", self.system_handler.handle_start_monitoring))
+            self.application.add_handler(CommandHandler("monitor_stop", self.system_handler.handle_stop_monitoring))
+            
+            # 분석 명령어
+            self.application.add_handler(CommandHandler("analyze", self.analysis_handler.handle_analyze))
+            
+            # 거래 명령어
+            self.application.add_handler(CommandHandler("status", self.trading_handler.handle_status))
+            self.application.add_handler(CommandHandler("balance", self.trading_handler.handle_balance))
+            self.application.add_handler(CommandHandler("position", self.trading_handler.handle_position))
+            self.application.add_handler(CommandHandler("trade", self.trading_handler.handle_trade))
+            
+            # 통계 명령어
+            self.application.add_handler(CommandHandler("stats", self.stats_handler.handle))
+            self.application.add_handler(CommandHandler("daily", self.stats_handler.daily_stats))
+            self.application.add_handler(CommandHandler("monthly", self.stats_handler.monthly_stats))
+            
+            # 에러 핸들러 등록
+            self.application.add_error_handler(self._error_handler)
+            
+            logger.info("명령어 핸들러 등록 완료")
+            
+            # 봇 초기화 완료
             logger.info("봇 초기화 완료, 시작 준비 중...")
             
         except Exception as e:
@@ -260,27 +258,30 @@ class TelegramBot:
             raise
 
     async def stop(self):
-        """봇 중지"""
+        """봇 종료"""
         try:
-            # AutoAnalyzer 중지
-            if self.auto_analyzer:
+            logger.info("봇 종료 시작...")
+
+            # 모든 작업 중지
+            if hasattr(self, 'auto_analyzer') and self.auto_analyzer.is_running:
                 await self.auto_analyzer.stop()
-            
-            # Application 중지
-            if self.application:
+            if hasattr(self, 'profit_monitor') and self.profit_monitor.is_running:
+                await self.profit_monitor.stop()
+
+            # Application 종료
+            if hasattr(self, 'application'):
                 await self.application.stop()
                 await self.application.shutdown()
-            
-            # 종료 이벤트 설정
-            self._stop_event.set()
-            
-            logger.info("봇이 정상적으로 중지되었습니다")
-            return True
-            
+
+            # Bybit 클라이언트 종료
+            if self.bybit_client:
+                await self.bybit_client.close()
+
+            logger.info("봇이 성공적으로 종료되었습니다")
+
         except Exception as e:
-            logger.error(f"봇 중지 중 오류: {str(e)}")
+            logger.error(f"봇 종료 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
-            return False
 
     async def send_to_admin(self, message: str):
         """관리자에게 메시지 전송"""

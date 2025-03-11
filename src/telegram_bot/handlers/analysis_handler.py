@@ -13,6 +13,9 @@ class AnalysisHandler(BaseHandler):
 
     async def handle_analyze(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """분석 명령어 처리"""
+        if not await self.check_permission(update):
+            return
+            
         try:
             if not update.effective_chat:
                 return

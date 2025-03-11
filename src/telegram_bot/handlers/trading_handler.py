@@ -55,19 +55,21 @@ class TradingHandler(BaseHandler):
         """관리자 채팅방 여부 확인"""
         return chat_id == self.bot.admin_chat_id
 
+    async def check_permission(self, update: Update) -> bool:
+        """관리자 권한 체크"""
+        chat_id = update.effective_chat.id
+        return chat_id == self.bot.admin_chat_id
+
     async def handle_position(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """포지션 조회 명령어 처리"""
-        if not await self.check_admin(update):
+        if not await self.check_permission(update):
             return
+            
         try:
             if not update.effective_chat:
                 return
             
             chat_id = update.effective_chat.id
-            # 관리자만 명령어 실행 가능
-            if not self.can_execute_command(chat_id):
-                return
-                
             logger.info(f"[Position] 포지션 조회 시작 (chat_id: {chat_id})")
 
             positions = await self.position_service.get_positions('BTCUSDT')
@@ -85,38 +87,16 @@ class TradingHandler(BaseHandler):
             logger.error(f"[Position] 포지션 조회 중 오류: {str(e)}")
             await self.send_message("❌ 포지션 조회 중 오류가 발생했습니다", chat_id)
 
-    async def _format_and_send_position(self, position: dict, chat_id: int):
-        """포지션 정보 포맷팅 및 전송"""
-        try:
-            message = f"""
-🔍 현재 포지션 정보:
-
-• 심볼: {position.get('symbol', 'N/A')}
-• 방향: {position.get('side', 'N/A')}
-• 크기: {position.get('size', position.get('contracts', 'N/A'))}
-• 레버리지: {position.get('leverage', 'N/A')}x
-• 진입가: ${float(position.get('entryPrice', 0)):,.2f}
-• 마크가격: ${float(position.get('markPrice', 0)):,.2f}
-• 미현 손익: ${float(position.get('unrealizedPnl', 0)):,.2f}
-"""
-            logger.info(f"포맷팅된 메시지:\n{message}")
-            await self.send_message(message, chat_id)
-            return True
-        except Exception as e:
-            logger.error(f"포지션 정보 포맷팅/전송 중 오류: {str(e)}")
-            return False
-
     async def handle_status(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """현재 상태 조회"""
+        if not await self.check_permission(update):
+            return
+            
         try:
             if not update.effective_chat:
                 return
             
             chat_id = update.effective_chat.id
-            # 관리자 채팅방이 아니면 조용히 시
-            if chat_id != self.bot.admin_chat_id:
-                return
-
             logger.info(f"[Status] 상태 조회 시작 (chat_id: {chat_id})")
             
             # 시장 데이터 조회
@@ -128,7 +108,7 @@ class TradingHandler(BaseHandler):
                 'profit_monitor': self.bot.profit_monitor.is_running()
             }
             
-            # 시지 포맷팅
+            # 메시지 포맷팅
             message = self.bot.message_formatter.format_status(
                 market_data=market_data,
                 bot_status=bot_status
@@ -144,6 +124,9 @@ class TradingHandler(BaseHandler):
 
     async def handle_balance(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """잔고 조회 명령어 처리"""
+        if not await self.check_permission(update):
+            return
+            
         try:
             chat_id = update.effective_chat.id
             logger.info(f"[Balance] 잔고 조회 시작 (chat_id: {chat_id})")
@@ -164,6 +147,9 @@ class TradingHandler(BaseHandler):
     @command_handler
     async def handle_trade(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """수동 거래 명령 처리"""
+        if not await self.check_permission(update):
+            return
+            
         try:
             trade_params = self._parse_trade_params(context.args)
             result = await self.trade_manager.execute_trade(trade_params)

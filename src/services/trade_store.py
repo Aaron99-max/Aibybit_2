@@ -87,7 +87,7 @@ class TradeStore:
                 # 마지막 업데이트 시간 저장
                 if positions_data:
                     latest_timestamp = max(p['timestamp'] for p in positions_data)
-                    self._save_last_update(latest_timestamp)
+                    self.save_last_update(latest_timestamp)
 
             return True
 
@@ -168,18 +168,25 @@ class TradeStore:
             logger.error(f"포지션 데이터 확인 실패: {str(e)}")
             return False
 
-    def _save_last_update(self, timestamp: int):
-        """마지막 업데이트 시간 저장"""
-        with open(self.last_update_file, 'w') as f:
-            json.dump({'last_update': timestamp}, f)
-
     def get_last_update(self) -> int:
         """마지막 업데이트 시간 조회"""
-        if self.last_update_file.exists():
-            with open(self.last_update_file, 'r') as f:
-                data = json.load(f)
-                return data.get('last_update', 0)
-        return 0
+        try:
+            if self.last_update_file.exists():
+                with open(self.last_update_file, 'r') as f:
+                    data = json.load(f)
+                    return data.get('last_update', 0)
+            return 0
+        except Exception as e:
+            logger.error(f"마지막 업데이트 시간 로드 실패: {e}")
+            return 0
+            
+    def save_last_update(self, timestamp: int):
+        """마지막 업데이트 시간 저장"""
+        try:
+            with open(self.last_update_file, 'w') as f:
+                json.dump({'last_update': timestamp}, f)
+        except Exception as e:
+            logger.error(f"마지막 업데이트 시간 저장 실패: {e}")
 
     def load_positions(self) -> List[Dict]:
         """저장된 모든 포지션 데이터 로드"""

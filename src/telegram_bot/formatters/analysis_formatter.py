@@ -202,19 +202,27 @@ class AnalysisFormatter(BaseFormatter):
         auto_trading = trading.get('auto_trading_enabled', False)
         message += f"• 자동매매: {'활성화' if auto_trading else '비활성화'}\n"
         
+        # 포지션 방향 표시 개선
         position = trading.get('position_suggestion', '-')
-        message += f"• 포지션: {self.translate(position)}\n"
+        position_side = '숏' if position.upper() == 'SELL' else '롱' if position.upper() == 'BUY' else '관망'
+        position_emoji = "🔴" if position.upper() == "SELL" else "🟢" if position.upper() == "BUY" else "⚪"
+        message += f"• 포지션: {position_emoji} {position_side}\n"
         
         # 현재가 표시
         current_price = trading.get('current_price')
         if current_price:
             message += f"• 현재가: {self.format_price(current_price)}\n"
         
-        # HOLD가 아닐 때만 진입가 표시
+        # HOLD가 아닐 때만 진입가와 수량 표시
         if position.upper() != 'HOLD':
             entry_points = trading.get('entry_points', [])
             if entry_points and len(entry_points) > 0:
                 message += f"• 진입가: {self.format_price(entry_points[0])}\n"
+            
+            # BTC 수량 표시 추가
+            btc_amount = trading.get('btc_amount')
+            if btc_amount:
+                message += f"• BTC 수량: {btc_amount:.3f} BTC\n"  # 소수점 3자리로 수정
             
             stop = trading.get('stop_loss')
             if stop:
@@ -259,6 +267,11 @@ class AnalysisFormatter(BaseFormatter):
             kst = pytz.timezone('Asia/Seoul')
             current_time = datetime.now(kst).strftime('%Y-%m-%d %H:%M:%S KST')
 
+            # 포지션 방향 결정
+            position = signals.get('position_suggestion', '관망')
+            position_side = '숏' if position.upper() == 'SELL' else '롱' if position.upper() == 'BUY' else '관망'
+            position_emoji = "🔴" if position.upper() == "SELL" else "🟢" if position.upper() == "BUY" else "⚪"
+
             lines = [
                 f"📊 1h 분석 ({current_time})\n",
                 
@@ -280,7 +293,7 @@ class AnalysisFormatter(BaseFormatter):
                 f"• 설명: {technical.get('divergence', {}).get('description', '현재 다이버전스 없음')}\n",
 
                 "💡 매매 신호:",
-                f"• 포지션: {self.translate(signals.get('position_suggestion', '관망'))}",
+                f"• 포지션: {position_emoji} {position_side}",
                 f"• 진입가: ${float(signals.get('entry_price', 0)):,.1f}",
                 f"• 손절가: ${float(signals.get('stop_loss', 0)):,.1f}",
                 f"• 목표가: ${float(signals.get('take_profit1', 0)):,.1f}, ${float(signals.get('take_profit2', 0)):,.1f}",

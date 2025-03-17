@@ -89,25 +89,27 @@ class OrderFormatter:
 
             # 주문 정보 추출
             entry_price = float(order.get('price', order.get('entry_price', 0)))
-            btc_quantity = float(order.get('qty', 0))
+            btc_quantity = float(order.get('qty', order.get('amount', 0)))  
             position_size = float(order.get('position_size', 0))
             stop_loss = float(order.get('stopLoss', order.get('stop_loss', 0)))
             take_profit = float(order.get('takeProfit', order.get('take_profit', 0)))
             
             # 이모지 설정
-            side_emoji = "🟢" if order.get('side') == 'Buy' else "🔴"
+            side = order.get('side', '').lower()
+            position_side = '숏' if side == 'sell' else '롱'
+            side_emoji = "🔴" if side == 'sell' else "🟢"
 
             message = [
                 f"📝 {side_emoji} 주문 생성 완료",
                 "",
                 "📋 주문 정보:",
                 f"• 심볼: {order.get('symbol', '-')}",
-                f"• 방향: {'롱' if order.get('side') == 'Buy' else '숏'}",
+                f"• 포지션: {side_emoji} {position_side}",
                 f"• 레버리지: {order.get('leverage', 1)}x",
                 "",
                 "💰 거래 정보:",
                 f"• 진입가: ${entry_price:,.2f}",
-                f"• 수량: {position_size:.1f}% ({btc_quantity:.3f} BTC)",
+                f"• 수량: {position_size:.1f}% ({self._format_number(btc_quantity, 3)} BTC)",  
                 f"• 손절가: ${stop_loss:,.2f}",
                 f"• 익절가: ${take_profit:,.2f}",
                 "",

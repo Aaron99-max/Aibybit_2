@@ -330,6 +330,16 @@ class BybitClient:
             logger.error(traceback.format_exc())
             return None
 
+    async def v5_get_wallet_balance(self, params: Dict = None) -> Dict:
+        """V5 API 지갑 잔고 조회"""
+        default_params = {
+            'accountType': 'UNIFIED',
+            'coin': 'USDT'
+        }
+        if params:
+            default_params.update(params)
+        return await self._request("GET", "/v5/account/wallet-balance", default_params)
+
     def safe_float(self, value, default=0.0):
         """안전한 float 변환"""
         try:

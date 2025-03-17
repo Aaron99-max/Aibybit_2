@@ -21,34 +21,34 @@ class BalanceService:
 
     @error_handler
     async def get_balance(self) -> Optional[Dict]:
-        """잔고 조회"""
-        # API 호출
-        response = await self.bybit_client.get_balance()
-        
-        # 응답 검증
-        if not response or response.get('retCode') != 0:
-            logger.error(f"잔고 조회 실패: {response}")
-            return None
+        """잔고 조회 - CCXT 사용"""
+        try:
+            # CCXT를 통한 잔고 조회
+            balance = await self.bybit_client.exchange.fetch_balance({
+                'type': 'unified',
+                'accountType': 'UNIFIED'
+            })
             
-        # 데이터 추출
-        wallet_info = response.get('result', {}).get('list', [{}])[0]
-        
-        # 로깅
-        logger.debug(f"지갑 정보: {wallet_info}")
-        
-        # 데이터 가공
-        total_equity = self.safe_float(wallet_info.get('totalEquity'))
-        used_margin = self.safe_float(wallet_info.get('totalInitialMargin'))
-        available_balance = self.safe_float(wallet_info.get('totalAvailableBalance'))
-        
-        # 응답 포맷팅
-        return {
-            'timestamp': int(time.time() * 1000),
-            'currencies': {
-                'USDT': {
-                    'total_equity': total_equity,
-                    'used_margin': used_margin,
-                    'available_balance': available_balance
+            if not balance:
+                logger.error("잔고 조회 실패: 응답 없음")
+                return None
+
+            # USDT 잔고 정보 추출
+            usdt = balance.get('USDT', {})
+            
+            # 응답 포맷팅
+            return {
+                'timestamp': int(time.time() * 1000),
+                'currencies': {
+                    'USDT': {
+                        'total_equity': self.safe_float(usdt.get('total')),
+                        'used_margin': self.safe_float(usdt.get('used')),
+                        'available_balance': self.safe_float(usdt.get('free'))
+                    }
                 }
             }
-        } 
+            
+        except Exception as e:
+            logger.error(f"잔고 조회 중 오류 발생: {str(e)}")
+            logger.error(traceback.format_exc())
+            return None

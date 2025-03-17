@@ -203,14 +203,14 @@ class TelegramBot:
             self.application.add_handler(CommandHandler("trade", self.trading_handler.handle_trade))
             
             # 통계 명령어
-            self.application.add_handler(CommandHandler("stats", self.stats_handler.handle))
             self.application.add_handler(CommandHandler("daily", self.stats_handler.daily_stats))
             self.application.add_handler(CommandHandler("monthly", self.stats_handler.monthly_stats))
+            self.application.add_handler(CommandHandler("stats", self.stats_handler.stats))
             
             # 에러 핸들러 등록
             self.application.add_error_handler(self._error_handler)
             
-            logger.info("명령어 핸들러 등록 완료")
+            logger.info("모든 핸들러 등록 완료")
             
             # 봇 초기화 완료
             logger.info("봇 초기화 완료, 시작 준비 중...")

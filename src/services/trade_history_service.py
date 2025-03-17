@@ -14,42 +14,40 @@ class TradeHistoryService:
     def __init__(self, bybit_client):
         self.bybit_client = bybit_client
         self.trade_store = TradeStore()
-        # 디버그 로거 설정
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.DEBUG)
+
+    def _load_last_update(self):
+        """마지막 업데이트 시간 로드"""
+        return self.trade_store.get_last_update()
+
+    def _save_last_update(self, timestamp):
+        """마지막 업데이트 시간 저장"""
+        self.trade_store.save_last_update(timestamp)
 
     async def initialize(self):
         """포지션 정보 초기화"""
         try:
-            logger.info("=== 포지션 정보 초기화 시작 ===")
+            # 마지막 업데이트 시간부터 현재까지의 데이터 조회
+            start_timestamp = self.trade_store.get_last_update()
+            end_timestamp = int(datetime.now().timestamp() * 1000)
             
-            # 조회 기간 설정 (90일)
-            end_date = datetime.now()
-            start_date = end_date - timedelta(days=90)
+            positions = await self.fetch_and_update_positions(start_timestamp, end_timestamp)
+            logger.info(f"포지션 정보 초기화 완료: {len(positions)}건")
             
-            start_timestamp = int(start_date.timestamp() * 1000)
-            end_timestamp = int(end_date.timestamp() * 1000)
+            return positions
             
-            logger.info(f"조회 기간: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
-            
-            # 저장된 데이터 확인
-            existing_positions = self.trade_store.get_positions(start_timestamp, end_timestamp)
-            logger.info(f"기존 데이터: {len(existing_positions)}건")
-            
-            if not existing_positions:
-                logger.info("기존 데이터가 없습니다. 전체 기간 조회를 시작합니다.")
-                await self.fetch_and_update_positions(
-                    start_time=start_timestamp,
-                    end_time=end_timestamp,
-                    force_full_update=True
-                )
-
         except Exception as e:
-            logger.error(f"포지션 정보 초기화 실패: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"포지션 정보 초기화 실패: {e}")
+            return []
 
     def _find_missing_periods(self, existing_trades, start_timestamp, end_timestamp):
         """누락된 기간 찾기"""
+        # 마지막 업데이트 시간 이후의 데이터만 조회
+        last_update = self.trade_store.get_last_update()
+        if start_timestamp < last_update:
+            start_timestamp = last_update
+        
         if not existing_trades:
             return [(start_timestamp, end_timestamp)]
         
@@ -97,169 +95,87 @@ class TradeHistoryService:
         return missing_periods
 
     async def _fetch_trades_for_period(self, start_time: int, end_time: int):
-        """특정 기간의 포지션 정보 조회"""
+        """특정 기간의 포지션 정보 조회 (CCXT 사용)"""
         try:
             positions = []
-            cursor = None
             
-            while True:
+            # 7일 단위로 나누어 조회 (7일 = 604800000 밀리초)
+            current_start = start_time
+            while current_start < end_time:
+                current_end = min(current_start + 604800000, end_time)
+                
                 params = {
                     'category': 'linear',
                     'symbol': 'BTCUSDT',
                     'limit': 100,
-                    'startTime': start_time,
-                    'endTime': end_time
+                    'startTime': str(current_start),
+                    'endTime': str(current_end)
                 }
-                if cursor:
-                    params['cursor'] = cursor
-
-                # closed-pnl API 사용
-                response = await self.bybit_client.v5_get_closed_pnl(params)
                 
-                if not response or 'result' not in response:
-                    logger.error(f"API 응답 오류: {response}")
-                    break
-
-                result = response['result']
-                list_data = result.get('list', [])
+                logger.debug(f"CCXT fetch_my_trades 호출 - params: {params}")
+                trades = await self.bybit_client.exchange.fetch_my_trades(
+                    symbol='BTC/USDT:USDT',
+                    since=current_start,
+                    limit=100,
+                    params=params
+                )
                 
-                if not list_data:
-                    break
-
-                # 디버그 로깅 추가
-                logger.debug(f"API 응답 데이터: {list_data[0] if list_data else 'empty'}")
-
-                for pnl in list_data:
-                    # closed-pnl 데이터를 포지션 형식으로 매핑
-                    mapped_position = {
-                        'id': pnl.get('orderId', ''),
-                        'timestamp': int(pnl.get('updatedTime', 0)),
-                        'symbol': pnl.get('symbol', ''),
-                        'side': pnl.get('side', ''),
-                        'position_side': pnl.get('positionIdx', ''),
-                        'type': pnl.get('orderType', ''),
-                        'entry_price': float(pnl.get('avgEntryPrice', 0)),
-                        'exit_price': float(pnl.get('avgExitPrice', 0)),
-                        'size': float(pnl.get('qty', 0)),
-                        'leverage': float(pnl.get('leverage', 1)),
-                        'entry_value': float(pnl.get('entryRealised', 0)),
-                        'exit_value': float(pnl.get('exitRealised', 0)),
-                        'pnl': float(pnl.get('closedPnl', 0)),
-                        'created_time': int(pnl.get('createdTime', 0)),
-                        'closed_time': int(pnl.get('updatedTime', 0)),
-                        'closed_size': float(pnl.get('qty', 0)),
-                        'exec_type': pnl.get('execType', ''),
-                        'fill_count': 1
-                    }
-                    positions.append(mapped_position)
-
-                cursor = result.get('nextPageCursor')
-                if not cursor:
-                    break
-
+                if trades:
+                    positions.extend(self._convert_trades_to_positions(trades))
+                
+                # 다음 기간으로 이동
+                current_start = current_end + 1
+                
+                # API 호출 간격 조절
+                await asyncio.sleep(0.1)
+            
             logger.info(f"포지션 정보 {len(positions)}건 조회 완료")
-            if positions:
-                self.trade_store._save_last_update(max(int(p.get('timestamp', 0)) for p in positions))
             return positions
+
+        except Exception as e:
+            logger.error(f"거래 조회 중 오류 발생: {str(e)}")
+            logger.error(traceback.format_exc())
+            return []
+
+    async def fetch_and_update_positions(self, start_time: Optional[int] = None, end_time: Optional[int] = None, force_full_update: bool = False):
+        """포지션 정보 조회 및 업데이트"""
+        try:
+            if not start_time:
+                start_time = int((datetime.now() - timedelta(days=90)).timestamp() * 1000)
+            if not end_time:
+                end_time = int(datetime.now().timestamp() * 1000)
+
+            # 기존 데이터 조회
+            existing_trades = self.trade_store.get_positions(start_time, end_time)
+            
+            # 누락된 기간 찾기
+            if force_full_update:
+                missing_periods = [(start_time, end_time)]
+            else:
+                missing_periods = self._find_missing_periods(existing_trades, start_time, end_time)
+            
+            total_positions = []
+            for period_start, period_end in missing_periods:
+                positions = await self._fetch_trades_for_period(period_start, period_end)
+                if positions:
+                    total_positions.extend(positions)
+                    
+                    # 데이터 저장
+                    self.trade_store.save_positions(positions)
+                    
+                    # 마지막 업데이트 시간 저장
+                    max_timestamp = max(int(p.get('timestamp', 0)) for p in positions)
+                    self._save_last_update(max_timestamp)
+                
+                # API 호출 간격 조절
+                await asyncio.sleep(0.1)
+            
+            return total_positions
 
         except Exception as e:
             logger.error(f"포지션 정보 업데이트 실패: {str(e)}")
             logger.error(traceback.format_exc())
             return []
-
-    async def _fetch_trades_with_pagination(self, start_time: int, end_time: int) -> List[Dict]:
-        """페이지네이션을 사용하여 거래 내역 조회"""
-        trades = []
-        cursor = None
-        
-        try:
-            # 바이빗 서버 시간 조회 수정
-            server_time = int(time.time() * 1000)  # 로컬 시간으로 대체
-            ninety_days_ago = server_time - (90 * 24 * 60 * 60 * 1000)
-            
-            # 시작 시간이 90일 이전이면 조정
-            if start_time < ninety_days_ago:
-                logger.warning(f"시작 시간이 90일 이전입니다. {datetime.fromtimestamp(start_time/1000)} -> {datetime.fromtimestamp(ninety_days_ago/1000)}")
-                start_time = ninety_days_ago
-            
-            while True:
-                try:
-                    params = {
-                        "category": "linear",
-                        "symbol": "BTCUSDT",
-                        "limit": 100,
-                        "startTime": start_time,  # 밀리초 단위 유지
-                        "endTime": end_time,      # 밀리초 단위 유지
-                        "execType": "Trade",      # orderType 대신 execType 사용
-                        "recvWindow": 5000
-                    }
-                    
-                    if cursor:
-                        params["cursor"] = cursor
-                    
-                    logger.debug(f"API 요청 파라미터: {params}")
-                    
-                    # API 호출
-                    batch = await self.bybit_client.fetch_my_trades(
-                        symbol="BTCUSDT",
-                        params=params
-                    )
-                    
-                    if not batch:
-                        break
-                        
-                    trades.extend(batch)
-                    logger.debug(f"조회된 거래 수: {len(batch)}건")
-                    
-                    # 다음 페이지 커서 확인
-                    if isinstance(batch[-1].get('info'), dict):
-                        cursor = batch[-1]['info'].get('nextPageCursor')
-                        if not cursor:
-                            break
-                    else:
-                        break
-                    
-                    await asyncio.sleep(1)
-                    
-                except Exception as e:
-                    logger.error(f"거래 조회 중 오류 발생: {str(e)}")
-                    logger.error(traceback.format_exc())
-                    await asyncio.sleep(2)
-                    break
-                
-        except Exception as e:
-            logger.error(f"거래 조회 실패: {str(e)}")
-            return []
-        
-        return trades 
-
-    def _validate_trades(self, trades: List[Dict]) -> List[Dict]:
-        """거래 데이터 유효성 검사"""
-        valid_trades = []
-        for trade in trades:
-            try:
-                # 필수 필드 확인
-                required_fields = ['timestamp', 'side', 'price', 'amount', 'info']
-                if all(field in trade for field in required_fields):
-                    valid_trades.append(trade)
-                else:
-                    logger.warning(f"유효하지 않은 거래 데이터: {trade}")
-            except Exception as e:
-                logger.error(f"거래 데이터 검증 중 오류: {str(e)}")
-        return valid_trades
-
-    async def _save_trades(self, trades: List[Dict]) -> int:
-        """거래 내역 저장"""
-        saved_count = 0
-        for trade in trades:
-            # 원본 API 응답 데이터를 포함하여 저장
-            trade_data = {
-                **trade,
-                'raw_info': trade.get('info', {})  # 원본 API 응답 데이터 저장
-            }
-            if self.trade_store.save_trade(trade_data):
-                saved_count += 1
-        return saved_count
 
     async def get_positions(self, start_time: int, end_time: int) -> List[Dict]:
         """포지션 정보 조회"""
@@ -272,12 +188,9 @@ class TradeHistoryService:
                 "limit": 100
             }
             
-            # 디버그 로그 추가
             logger.debug(f"API 요청 파라미터: {params}")
             
             response = await self.bybit_client.v5_get_closed_pnl(params)
-            # 응답 로그 추가
-            logger.debug(f"API 응답: {response}")
             
             if response and response.get('retCode') == 0:
                 positions = response.get('result', {}).get('list', [])
@@ -286,15 +199,16 @@ class TradeHistoryService:
                     
                     processed_positions = []
                     for p in positions:
-                        # 실제 포지션 방향 계산 (Sell로 청산 = 롱 포지션)
-                        position_side = 'Long' if p.get('side') == 'Sell' else 'Short'
+                        # 실제 포지션 방향 계산 (진입 시점의 side 기준)
+                        entry_side = p.get('side')
+                        position_side = 'Long' if entry_side == 'Buy' else 'Short'
                         
                         processed_position = {
                             'id': p.get('orderId'),
                             'timestamp': int(p.get('updatedTime')),
                             'symbol': 'BTCUSDT',
-                            'side': p.get('side'),
-                            'position_side': position_side,  # 포지션 방향 추가
+                            'side': entry_side,
+                            'position_side': position_side,  # 수정된 포지션 방향
                             'type': p.get('orderType'),
                             'entry_price': float(p.get('avgEntryPrice', 0)),
                             'exit_price': float(p.get('avgExitPrice', 0)),
@@ -320,34 +234,6 @@ class TradeHistoryService:
             logger.error(f"포지션 조회 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             return []
-
-    async def fetch_and_update_positions(self, start_time=None, end_time=None, force_full_update=False):
-        """포지션 정보 업데이트"""
-        try:
-            if start_time is None:
-                start_time = int(time.time() * 1000)
-            if end_time is None:
-                end_time = start_time + (90 * 24 * 60 * 60 * 1000)
-            
-            # 7일씩 나누어 조회
-            current_start = start_time
-            while current_start < end_time:
-                current_end = min(current_start + (7 * 24 * 60 * 60 * 1000), end_time)
-                
-                logger.info(f"기간별 조회: {datetime.fromtimestamp(current_start/1000).strftime('%Y-%m-%d')} ~ {datetime.fromtimestamp(current_end/1000).strftime('%Y-%m-%d')}")
-                
-                positions = await self.get_positions(current_start, current_end)
-                if positions:
-                    if self.trade_store.save_positions(positions):
-                        logger.info(f"포지션 정보 {len(positions)}건 저장 완료")
-                
-                current_start = current_end
-                await asyncio.sleep(1)  # API 호출 간격 조절
-                
-        except Exception as e:
-            logger.error(f"포지션 정보 업데이트 실패: {str(e)}")
-            logger.error(traceback.format_exc())
-            raise
 
     async def get_position_stats(self, days: int) -> Dict:
         """포지션 통계 조회"""
@@ -423,3 +309,66 @@ class TradeHistoryService:
                 logger.error(f"원본 데이터: {p}")
             
         return processed 
+
+    def _convert_trades_to_positions(self, trades):
+        """CCXT 거래 데이터를 포지션 형식으로 매핑"""
+        positions = []
+        try:
+            for trade in trades:
+                # 거래 방향 확인
+                side = trade.get('side', '').lower()
+                is_close = trade.get('reduceOnly', False)
+                
+                # 포지션 방향 결정
+                # reduceOnly가 True면 청산 거래, False면 진입 거래
+                if is_close:
+                    position_side = 'Long' if side == 'sell' else 'Short'  # 청산 시에는 반대 방향이 포지션 방향
+                else:
+                    position_side = 'Long' if side == 'buy' else 'Short'  # 진입 시에는 같은 방향이 포지션 방향
+                
+                # 수량은 양수로 저장 (부호는 position_side로 구분)
+                size = abs(float(trade.get('amount', 0)))
+                
+                # 가격 정보
+                price = float(trade.get('price', 0))
+                
+                # 수수료 계산
+                fee = float(trade.get('fee', {}).get('cost', 0))
+                
+                # 거래 가치 계산
+                value = size * price
+                
+                # 생성 시간과 종료 시간
+                created_time = trade.get('timestamp', 0)
+                closed_time = trade.get('timestamp', 0)
+                
+                mapped_position = {
+                    'id': trade.get('id', ''),
+                    'timestamp': closed_time,
+                    'symbol': 'BTCUSDT',
+                    'side': side.capitalize(),
+                    'position_side': position_side,
+                    'type': trade.get('type', 'limit').capitalize(),
+                    'entry_price': price,
+                    'exit_price': price,
+                    'size': size,
+                    'leverage': float(trade.get('leverage', 1)) if 'leverage' in trade else 1,
+                    'entry_value': value,
+                    'exit_value': value,
+                    'pnl': float(trade.get('realizedPnl', 0)) if 'realizedPnl' in trade else 0,
+                    'created_time': created_time,
+                    'closed_time': closed_time,
+                    'closed_size': size,
+                    'exec_type': 'Trade',
+                    'fill_count': 1
+                }
+                positions.append(mapped_position)
+                
+                logger.debug(f"변환된 포지션: {json.dumps(mapped_position, indent=2)}")
+                
+            return positions
+            
+        except Exception as e:
+            logger.error(f"거래 데이터 변환 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
+            return []

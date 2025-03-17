@@ -1,0 +1,109 @@
+2025-03-11 13:54:27,873 - telegram_bot.bot - ERROR - 봇 초기화 실패: 'TelegramBot' object has no attribute 'send_message_to_admin'
+2025-03-11 13:54:27,873 - telegram_bot.bot - ERROR - 봇 실행 중 오류: 'TelegramBot' object has no attribute 'send_message_to_admin'
+2025-03-11 13:54:27,894 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 233, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 220, in initialize
+    await self.send_message_to_admin("🤖 바이빗 트레이딩 봇이 시작되었습니다")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'send_message_to_admin'
+
+2025-03-11 13:54:27,895 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'send_message_to_admin'
+2025-03-11 13:54:27,908 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 98, in main
+    await telegram_bot.run()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 233, in run
+    await self.initialize()
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 220, in initialize
+    await self.send_message_to_admin("🤖 바이빗 트레이딩 봇이 시작되었습니다")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'send_message_to_admin'
+
+2025-03-11 13:55:49,336 - telegram_bot.bot - ERROR - 관리자 메시지 전송 실패: name 'ParseMode' is not defined
+2025-03-11 13:58:25,301 - telegram_bot.bot - ERROR - 관리자 메시지 전송 실패: name 'ParseMode' is not defined
+2025-03-11 13:58:35,197 - order_service - ERROR - 포지션 관리 중 오류: 'OrderService' object has no attribute 'create_market_order'
+2025-03-11 13:58:35,224 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 129, in manage_existing_position
+    if not await self.create_market_order(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'OrderService' object has no attribute 'create_market_order'
+
+2025-03-11 14:12:21,315 - exchange.bybit_client - ERROR - 주문 API 오류: {'retCode': 10001, 'retMsg': 'TakeProfit:546000000 set for Buy position should be higher than base_price:556361000??LastPrice', 'result': {}, 'retExtInfo': {}, 'time': 1741669941463}
+2025-03-11 14:12:21,316 - order_service - ERROR - 포지션 크기 조정 실패: None
+2025-03-11 14:17:49,810 - main - ERROR - 실행 중 에러 발생: 'TelegramBot' object has no attribute 'run'
+2025-03-11 14:17:49,810 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 98, in main
+    await telegram_bot.run()
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'run'
+
+2025-03-11 14:19:08,055 - order_service - ERROR - 포지션 관리 중 오류: 'available_balance'
+2025-03-11 14:19:08,056 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 165, in manage_existing_position
+    logger.info(f"가용 잔고: ${balance['available_balance']}, 총 자산: ${balance['total_equity']}, 미실현 손익: ${balance['unrealised_pnl']}")
+                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'available_balance'
+
+2025-03-11 14:24:42,293 - order_service - ERROR - 포지션 관리 중 오류: OrderService._calculate_position_size() got an unexpected keyword argument 'unrealised_pnl'
+2025-03-11 14:24:42,293 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 170, in manage_existing_position
+    target_size = await self._calculate_position_size(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: OrderService._calculate_position_size() got an unexpected keyword argument 'unrealised_pnl'
+
+2025-03-11 14:27:58,307 - order_service - ERROR - 주문 생성 중 오류: 'leverage'
+2025-03-11 14:27:58,307 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 220, in create_order
+    target_value = available_balance * (params['position_size'] / 100) * params['leverage']
+                                                                         ~~~~~~^^^^^^^^^^^^
+KeyError: 'leverage'
+
+2025-03-11 14:35:10,345 - order_service - ERROR - 주문 생성 중 오류: 'BybitClient' object has no attribute 'create_order'
+2025-03-11 14:35:10,346 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 260, in create_order
+    response = await self.bybit_client.create_order(**order_params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'create_order'
+
+2025-03-11 15:48:29,984 - telegram_bot.bot - ERROR - 봇 종료 중 오류: 'bool' object is not callable
+2025-03-11 15:48:29,988 - telegram_bot.bot - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\bot.py", line 266, in stop
+    if self.auto_analyzer.is_running():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'bool' object is not callable
+
+2025-03-11 15:48:30,056 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Application:7822401030:update_fetcher' coro=<Application._update_fetcher() done, defined at C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py:1145> exception=SystemExit(0)>
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 109, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1170, in _update_fetcher
+    await self.__process_update_wrapper(update)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1182, in __process_update_wrapper
+    await self._update_processor.process_update(update, self.process_update(update))
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_baseupdateprocessor.py", line 151, in process_update
+    await self.do_process_update(update, coroutine)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_baseupdateprocessor.py", line 176, in do_process_update
+    await coroutine
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\src\telegram_bot\handlers\system_handler.py", line 88, in handle_stop
+    sys.exit(0)
+SystemExit: 0

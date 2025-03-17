@@ -32,10 +32,10 @@ class AutoAnalyzer:
             logger.info("스케줄러 설정 시작")
             self.scheduler = AsyncIOScheduler(timezone='Asia/Seoul')
             self.scheduler.add_job(
-                self._scheduled_analysis,  # 래퍼 함수 사용
-                'interval',  # cron 대신 interval 사용
-                minutes=60,  # 60분마다
-                next_run_time=self._get_next_hour(),  # 다음 정시에 시작
+                self._scheduled_analysis,
+                'cron',  # interval에서 cron으로 변경
+                hour='*',  # 매시간
+                minute='0',  # 정각
                 id='hourly_analysis',
                 replace_existing=True
             )
@@ -113,14 +113,7 @@ class AutoAnalyzer:
                 return
 
             current_time = datetime.now()
-            # 마지막 실행 시간 체크
-            if not manual and self.last_run_time:
-                time_diff = (current_time - self.last_run_time).total_seconds()
-                if time_diff < 3600:  # 1시간(3600초) 미만이면 스킵
-                    logger.info(f"마지막 실행 후 {time_diff}초 경과 - 스킵")
-                    return
-
-            logger.info("🔄' 1시간봉 분석 시작 " + ("(수동)" if manual else "(자동)") + " ...")
+            logger.info(f"시장 분석 시작 - {current_time} {'(수동)' if manual else '(자동)'}")
             
             # 분석 실행
             analysis_result = await self._run_analysis()
@@ -138,7 +131,9 @@ class AutoAnalyzer:
             # 매매 신호 처리
             await self._handle_trading_signals(analysis_result['trading_signals'])
             
+            # 마지막 실행 시간 업데이트
             self.last_run_time = current_time
+            logger.info(f"시장 분석 완료 - {current_time}")
             
         except Exception as e:
             logger.error(f"시장 분석 중 오류 발생: {str(e)}")

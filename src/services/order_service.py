@@ -56,7 +56,6 @@ class OrderService:
             
             # 2. 현재 포지션 확인
             current_position = await self.position_service.get_position(signal['symbol'])
-            logger.info(f"현재 포지션: {current_position}")
             
             # 3. 포지션 없는 경우 신규 진입 (size가 0이거나 current_position이 None인 경우)
             if not current_position or float(current_position.get('size', 0)) == 0:
@@ -77,8 +76,20 @@ class OrderService:
         try:
             logger.info(f"신규 포지션 생성 시도: {order_info}")
             
-            # 레버리지 설정
+            # CCXT 형식에 맞게 side 변환
+            side = order_info.get('side', '')
+            side = 'Buy' if side.upper() == 'BUY' else 'Sell'
+            
+            # 나머지 주문 정보
+            symbol = order_info.get('symbol', self.symbol)
             leverage = order_info.get('leverage', 1)
+            position_size = order_info.get('position_size', 0)
+            entry_price = order_info.get('entry_price', 0)
+            stop_loss = order_info.get('stop_loss', 0)
+            take_profit = order_info.get('take_profit', 0)
+            is_btc_unit = order_info.get('is_btc_unit', False)
+            
+            # 레버리지 설정
             logger.info(f"레버리지 설정 시도: {leverage}x")
             await self.set_leverage(leverage)
             logger.info(f"레버리지 설정 확인: {leverage}x")
@@ -95,25 +106,25 @@ class OrderService:
             btc_qty = await self._calculate_position_size(
                 total_equity=balance['total_equity'],
                 unrealized_pnl=balance['unrealized_pnl'],
-                position_ratio=order_info['position_size'] / 100,  # percentage to decimal
+                position_ratio=position_size / 100,  # percentage to decimal
                 leverage=leverage,
-                entry_price=order_info['entry_price'],
-                is_btc_unit=order_info.get('is_btc_unit', False)
+                entry_price=entry_price,
+                is_btc_unit=is_btc_unit
             )
             
             # CCXT 주문 파라미터 설정
             order_params = {
-                'symbol': order_info['symbol'],
-                'side': order_info['side'],
+                'symbol': symbol,
+                'side': side,
                 'type': 'limit',
                 'amount': btc_qty,
-                'price': order_info['entry_price'],
+                'price': entry_price,
                 'params': {
                     'category': 'linear',
                     'timeInForce': 'GTC',
                     'positionIdx': 0,
-                    'stopLoss': str(order_info['stop_loss']),
-                    'takeProfit': str(order_info['take_profit'])  # take_profit으로 통일
+                    'stopLoss': str(stop_loss),
+                    'takeProfit': str(take_profit)  # take_profit으로 통일
                 }
             }
             
@@ -130,13 +141,13 @@ class OrderService:
                 if self.telegram_bot and not skip_notification:
                     formatted_message = self.order_formatter.format_order({
                         'type': 'new_position',
-                        'symbol': order_info['symbol'],
-                        'side': order_info['side'],
+                        'symbol': symbol,
+                        'side': side,
                         'qty': btc_qty,
-                        'price': order_info['entry_price'],
+                        'price': entry_price,
                         'leverage': leverage,
-                        'stop_loss': order_info['stop_loss'],
-                        'take_profit': order_info['take_profit']  # take_profit으로 통일
+                        'stop_loss': stop_loss,
+                        'take_profit': take_profit  # take_profit으로 통일
                     })
                     await self.telegram_bot.send_message_to_all(formatted_message, self.MSG_TYPE_ORDER)
                 
@@ -307,20 +318,8 @@ class OrderService:
                         # 이 경우 TP/SL 설정 필요
                         needs_sl_tp = True
             
-            # 주문 상세 정보 로깅
-            order_info = {
-                "symbol": symbol,
-                "side": side,
-                "leverage": leverage,
-                "position_size": position_size,
-                "entry_price": entry_price,
-                "stop_loss": stop_loss,
-                "take_profit": take_profit,
-                "is_btc_unit": is_btc_unit,
-                "is_reduce_only": is_reduce_only,
-                "needs_sl_tp": needs_sl_tp
-            }
-            logger.info(f"주문 상세 정보: {json.dumps(order_info, indent=2)}")
+            # 주문 상세 정보 로깅 (한 번만)
+            logger.info(f"매매 신호 실행: {json.dumps({'symbol': symbol, 'side': side, 'leverage': leverage, 'position_size': position_size, 'entry_price': entry_price, 'stop_loss': stop_loss, 'take_profit': take_profit, 'is_btc_unit': is_btc_unit, 'is_reduce_only': is_reduce_only, 'needs_sl_tp': needs_sl_tp}, indent=2)}")
             
             # 잔고 조회
             balance = await self.balance_service.get_balance()
@@ -376,16 +375,21 @@ class OrderService:
     async def create_market_order(self, symbol: str, side: str, size: float, reduce_only: bool = False) -> bool:
         """시장가 주문 생성"""
         try:
+            # CCXT 형식에 맞게 side 변환
+            side = 'Buy' if side.upper() == 'BUY' else 'Sell'
+            
+            params = {
+                'category': 'linear',
+                'reduceOnly': reduce_only
+            }
+            
             # 주문 파라미터 설정
             order_params = {
                 'symbol': symbol,
                 'side': side,
                 'type': 'market',
                 'amount': size,
-                'params': {
-                    'category': 'linear',
-                    'reduceOnly': reduce_only
-                }
+                'params': params
             }
             
             # CCXT를 통한 주문 실행
@@ -403,23 +407,19 @@ class OrderService:
             logger.error(traceback.format_exc())
             return False
 
-    async def set_leverage(self, leverage: int) -> bool:
+    async def set_leverage(self, leverage: int) -> None:
         """레버리지 설정"""
         try:
-            logger.info(f"레버리지 설정 시도: {leverage}x")
-            
-            # CCXT에서는 symbol 파라미터를 별도로 전달해야 함
-            await self.bybit_client.exchange.set_leverage(leverage, self.symbol, {
-                'marginMode': 'isolated'
-            })
-            
-            logger.info(f"레버리지 설정 확인: {leverage}x")
-            return True
-            
+            await self.bybit_client.exchange.set_leverage(
+                leverage=leverage,
+                symbol=self.symbol,
+                params={'category': 'linear'}
+            )
         except Exception as e:
-            logger.error(f"레버리지 설정 중 오류: {str(e)}")
-            logger.error(traceback.format_exc())
-            return False
+            if "leverage not modified" in str(e):
+                logger.info(f"레버리지가 이미 {leverage}x로 설정되어 있습니다")
+            else:
+                raise e
 
     async def _calculate_position_size(self, total_equity: float, unrealized_pnl: float, 
                                 position_ratio: float, leverage: int, entry_price: float, is_btc_unit: bool = False) -> float:
@@ -436,21 +436,36 @@ class OrderService:
             float: BTC 수량
         """
         try:
-            # 순수 자산 계산
-            net_equity = total_equity - unrealized_pnl
-            logger.info(f"순수 자산: ${net_equity}")
+            # BTC 단위로 직접 지정된 경우
+            if is_btc_unit:
+                btc_size = position_ratio  # position_ratio가 직접 BTC 수량
+                logger.info(f"직접 지정된 BTC 수량: {btc_size}")
+            else:
+                # 순수 자산 계산
+                net_equity = total_equity - unrealized_pnl
+                logger.info(f"순수 자산: ${net_equity:,.2f}")
+                
+                # USDT 값 계산 (레버리지 적용)
+                position_value = net_equity * position_ratio * leverage
+                logger.info(f"포지션 가치(USDT): ${position_value:,.2f}")
+                
+                # BTC 수량 계산
+                btc_size = position_value / entry_price
+                logger.info(f"계산된 BTC 수량: {btc_size:.3f}")
             
-            # USDT 값 계산
-            position_value = net_equity * position_ratio * leverage
-            logger.info(f"포지션 가치(USDT): ${position_value}")
+            # 최소 주문 수량 확인 (0.001 BTC)
+            if btc_size < 0.001:
+                logger.warning("계산된 수량이 최소 주문 수량보다 작습니다. 최소 수량으로 설정합니다.")
+                btc_size = 0.001
             
-            # BTC 수량 계산
-            btc_size = position_value / entry_price
-            logger.info(f"계산된 BTC 수량: {btc_size}")
+            # 최대 주문 수량 확인 (10 BTC)
+            if btc_size > 10:
+                logger.warning("계산된 수량이 최대 주문 수량을 초과합니다. 최대 수량으로 제한합니다.")
+                btc_size = 10
             
-            # 최종 반올림
+            # 최종 반올림 (소수점 3자리)
             final_size = round(btc_size, 3)
-            logger.info(f"최종 BTC 수량(반올림): {final_size}")
+            logger.info(f"최종 BTC 수량(반올림): {final_size:.3f}")
             
             if final_size <= 0:
                 logger.error("계산된 포지션 크기가 0 이하입니다!")
@@ -461,7 +476,7 @@ class OrderService:
         except Exception as e:
             logger.error(f"포지션 크기 계산 중 오류 발생: {str(e)}")
             logger.error(traceback.format_exc())
-            raise  # 에러를 상위로 전파
+            raise
 
     async def get_unrealized_pnl(self) -> float:
         """현재 포지션의 미실현 손익 조회"""
@@ -525,22 +540,22 @@ class OrderService:
     async def execute_trade(self, signals: Dict) -> bool:
         """매매 신호 실행"""
         try:
-            logger.info(f"매매 신호 실행: {signals}")
-
             # 주문 파라미터 설정
             order_params = {
-                'symbol': self.symbol,  # 기본 심볼 사용
-                'side': 'Buy' if signals['position_suggestion'] == 'BUY' else 'Sell',
+                'symbol': signals.get('symbol', self.symbol),  # signals에서 심볼을 가져오거나 기본값 사용
+                'side': signals.get('side', 'Buy' if signals['position_suggestion'] == 'BUY' else 'Sell'),
                 'leverage': signals['leverage'],
                 'position_size': signals['position_size'],
                 'entry_price': signals['entry_price'],
                 'stop_loss': signals['stop_loss'],
                 'take_profit': signals['take_profit1'],  # take_profit1을 take_profit으로 사용
-                'is_btc_unit': False
+                'is_btc_unit': signals.get('is_btc_unit', False)
             }
             
-            logger.info(f"주문 시도: {order_params}")
-            logger.info(f"주문 상세 정보: {json.dumps(order_params, indent=2)}")
+            # 주문 상세 정보 로깅 (한 번만)
+            logger.info(f"매매 신호 실행: {json.dumps(order_params, indent=2)}")
+            
+            # 주문 실행
             return await self.place_order(order_params)
             
         except Exception as e:

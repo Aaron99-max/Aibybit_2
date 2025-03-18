@@ -90,7 +90,7 @@ class OrderFormatter:
             # 주문 정보 추출
             entry_price = float(order.get('price', order.get('entry_price', 0)))
             btc_quantity = float(order.get('qty', order.get('amount', 0)))  
-            position_size = float(order.get('position_size', 0))
+            leverage = int(order.get('leverage', 1))
             stop_loss = float(order.get('stopLoss', order.get('stop_loss', 0)))
             take_profit = float(order.get('takeProfit', order.get('take_profit', 0)))
             
@@ -99,31 +99,24 @@ class OrderFormatter:
             position_side = '숏' if side == 'sell' else '롱'
             side_emoji = "🔴" if side == 'sell' else "🟢"
 
-            message = [
-                f"📝 {side_emoji} 주문 생성 완료",
-                "",
-                "📋 주문 정보:",
-                f"• 심볼: {order.get('symbol', '-')}",
-                f"• 포지션: {side_emoji} {position_side}",
-                f"• 레버리지: {order.get('leverage', 1)}x",
-                "",
-                "💰 거래 정보:",
-                f"• 진입가: ${entry_price:,.2f}",
-                f"• 수량: {position_size:.1f}% ({self._format_number(btc_quantity, 3)} BTC)",  
-                f"• 손절가: ${stop_loss:,.2f}",
-                f"• 익절가: ${take_profit:,.2f}",
-                "",
-                "📊 상태:",
-                f"• 주문상태: {order.get('status', 'NEW')}",
-                f"• 주문ID: {order.get('orderId', '-')}"
-            ]
-
-            return "\n".join(message)
-
+            # 메시지 구성
+            message = (
+                f"🤖 자동매매 신호\n\n"
+                f"{side_emoji} {position_side} 포지션\n"
+                f"레버리지: {leverage}x\n"
+                f"주문수량: {btc_quantity:.3f} BTC\n"
+                f"진입가격: ${entry_price:,.0f}\n"
+                f"손절가격: ${stop_loss:,.0f}\n"
+                f"목표가격: ${take_profit:,.0f}\n\n"
+                f"시간: {self._get_current_time()}"
+            )
+            
+            return message
+            
         except Exception as e:
-            logger.error(f"주문 포맷팅 중 오류: {str(e)}")
+            logger.error(f"주문 정보 포맷팅 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
-            return "주문 포맷팅 실패"
+            return "주문 정보 포맷팅 실패"
 
     @classmethod
     def format_open_orders(cls, orders: List[Dict]) -> str:

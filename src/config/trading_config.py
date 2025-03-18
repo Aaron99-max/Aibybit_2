@@ -18,7 +18,7 @@ class TradingConfig:
         # 레버리지 차이 허용 범위만 설정
         self.leverage_settings = {
             "max_difference": 2,  # 허용 가능한 최대 레버리지 차이
-            "default": 3,        # 기본 레버리지
+            "default": 5,        # 기본 레버리지 (3 -> 5로 수정)
             "min": 1,           # 최소 레버리지
             "max": 10          # 최대 레버리지
         }
@@ -33,10 +33,13 @@ class TradingConfig:
         # 자동매매 설정
         self.auto_trading = {
             "enabled": True,  # 전체 자동매매 on/off
-            "follow_gpt": True  # GPT 신호 그대로 따를지
+            "follow_gpt": True,  # GPT 신호 그대로 따를지
+            "confidence": {
+                "min": 60  # 60% 이상일 때만 자동매매 활성화
+            }
         }
         
-        # 자동매매 신뢰도 기준
+        # 자동매매 신뢰도 기준 (이전 버전과의 호환성을 위해 유지)
         self.min_confidence = 60  # 60% 이상일 때만 자동매매 활성화
         
         # Bybit 관련 설정

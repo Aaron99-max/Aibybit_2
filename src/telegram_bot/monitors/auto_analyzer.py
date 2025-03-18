@@ -176,38 +176,45 @@ class AutoAnalyzer:
         if self.telegram_bot:
             await self.telegram_bot.send_message_to_all(f"❌ {message}", self.telegram_bot.MSG_TYPE_ANALYSIS)
 
-    async def _handle_trading_signals(self, signals: Dict):
+    async def _handle_trading_signals(self, analysis_result: Dict):
         """매매 신호 처리"""
         try:
+            signals = analysis_result.get('trading_signals', {})
             if not signals or 'position_suggestion' not in signals:
                 return
                 
             position_suggestion = signals['position_suggestion']
             logger.info(f"분석 결과 position_suggestion: {position_suggestion}")
             
+            # 자동매매 상태 및 신뢰도 확인
+            auto_trading_enabled = trading_config.auto_trading['enabled']
+            confidence = analysis_result.get('market_summary', {}).get('confidence', 0)
+            confidence_sufficient = confidence >= trading_config.min_confidence
+
+            if not auto_trading_enabled:
+                logger.info("자동매매가 비활성화 상태입니다")
+                return
+
+            if not confidence_sufficient:
+                logger.info(f"신뢰도 부족 (현재: {confidence}%, 최소: {trading_config.min_confidence}%)")
+                return
+            
             # HOLD가 아닐 때만 자동매매 실행
             if position_suggestion != 'HOLD':
                 logger.info(f"매매 신호 감지: {position_suggestion}")
                 
-                # 매매 신호를 trade_manager로 전달
+                # trading_signals에 필요한 정보 추가
+                signals.update({
+                    'symbol': 'BTCUSDT',
+                    'side': 'BUY' if position_suggestion == 'BUY' else 'SELL',
+                    'is_btc_unit': False
+                })
+                
+                # 매매 신호를 order_service로 전달
                 trade_result = await self.order_service.execute_trade(signals)
                 
-                if trade_result:
-                    order_info = {
-                        'symbol': 'BTCUSDT',
-                        'side': 'BUY' if position_suggestion == 'BUY' else 'SELL',
-                        'leverage': signals['leverage'],
-                        'price': signals['entry_price'],
-                        'amount': signals['position_size'],
-                        'status': 'NEW',
-                        'stopLoss': signals['stop_loss'],
-                        'takeProfit': signals['take_profit1'],
-                        'is_btc_unit': False,
-                        'position_size': signals['position_size']
-                    }
-                    message = self.order_formatter.format_order(order_info)
-                    await self.telegram_bot.send_message_to_all(message, self.telegram_bot.MSG_TYPE_TRADE)
-                else:
+                # 실패한 경우에만 에러 메시지 전송
+                if not trade_result:
                     error_msg = self.order_formatter.format_order_failure(signals, "자동매매 실행 실패")
                     await self.telegram_bot.send_message_to_all(error_msg, self.telegram_bot.MSG_TYPE_TRADE)
             else:

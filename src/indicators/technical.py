@@ -97,22 +97,22 @@ class TechnicalIndicators:
             current_rsi = df['rsi'].iloc[-1]
             prev_rsi = df['rsi'].iloc[-2]
             
-            # 베어리시 다이버전스
-            if (current_price >= price_high * 0.998 and  # 가격이 신고점 근처
-                current_rsi < rsi_high * 0.95 and        # RSI는 이전 고점보다 낮음
-                current_rsi < prev_rsi):                 # RSI 하락 중
+            # 베어리시 다이버전스 (가격은 상승, RSI는 하락)
+            if (current_price >= price_high * 0.995 and    # 가격이 고점의 99.5% 이상
+                current_rsi < rsi_high * 0.98 and          # RSI는 이전 고점의 98% 미만
+                current_rsi < prev_rsi):                   # RSI는 하락 중
                 return {
                     "type": "베어리시",
-                    "description": f"가격은 신고점({current_price:.0f}) 도달, RSI({current_rsi:.1f})는 이전 고점({rsi_high:.1f})보다 낮음"
+                    "description": f"가격 상승({current_price:.0f}), RSI 하락({current_rsi:.1f} < {rsi_high:.1f})"
                 }
                 
-            # 불리시 다이버전스
-            if (current_price <= price_low * 1.002 and   # 가격이 신저점 근처
-                current_rsi > rsi_low * 1.05 and         # RSI는 이전 저점보다 높음
-                current_rsi > prev_rsi):                 # RSI 상승 중
+            # 불리시 다이버전스 (가격은 하락, RSI는 상승)
+            if (current_price <= price_low * 1.005 and     # 가격이 저점의 100.5% 이하
+                current_rsi > rsi_low * 1.02 and           # RSI는 이전 저점의 102% 초과
+                current_rsi > prev_rsi):                   # RSI는 상승 중
                 return {
                     "type": "불리시",
-                    "description": f"가격은 신저점({current_price:.0f}) 도달, RSI({current_rsi:.1f})는 이전 저점({rsi_low:.1f})보다 높음"
+                    "description": f"가격 하락({current_price:.0f}), RSI 상승({current_rsi:.1f} > {rsi_low:.1f})"
                 }
                 
             return {"type": "없음", "description": "현재 다이버전스 없음"}

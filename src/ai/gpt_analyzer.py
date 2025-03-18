@@ -40,7 +40,10 @@ class GPTAnalyzer:
             self.market_data_service = MarketDataService(bybit_client)
 
         # 프롬프트 템플릿 수정
-        self.SYSTEM_PROMPT = """당신은 1시간 봉을 기준으로 비트코인 선물 거래를 하는 트레이더입니다.
+        leverage_settings = trading_config.leverage_settings
+        position_settings = trading_config.position_settings
+        
+        self.SYSTEM_PROMPT = f"""당신은 1시간 봉을 기준으로 비트코인 선물 거래를 하는 트레이더입니다.
 
 *** 매매 포지션별 가격 설정 규칙 ***
 
@@ -70,26 +73,26 @@ class GPTAnalyzer:
 6. confidence: 0-100 사이의 정수
 
 응답 형식:
-{
-    "market_summary": {
+{{
+    "market_summary": {{
         "market_phase": "상승" 또는 "하락" 또는 "횡보",
         "overall_sentiment": "긍정" 또는 "부정" 또는 "중립",
         "short_sentiment": "긍정" 또는 "부정" 또는 "중립",
         "volume_status": "거래량 증가" 또는 "거래량 감소" 또는 "거래량 보통",
         "risk_level": "높음" 또는 "중간" 또는 "낮음",
         "confidence": 0-100 사이 정수
-    },
-    "trading_signals": {
+    }},
+    "trading_signals": {{
         "position_suggestion": "BUY" 또는 "SELL" 또는 "HOLD",
-        "leverage": 1-10 사이 정수,
-        "position_size": 5-20 사이 정수,
+        "leverage": {leverage_settings['min']}-{leverage_settings['max']} 사이 정수 (기본값: {leverage_settings['default']}),
+        "position_size": {position_settings['min']}-{position_settings['max']} 사이 정수 (기본값: {position_settings['default']}),
         "entry_price": 현재가,
         "stop_loss": 포지션에 맞는 적절한 손절가,
         "take_profit1": 포지션에 맞는 적절한 1차 익절가,
         "take_profit2": 포지션에 맞는 적절한 2차 익절가,
         "reason": "매매 사유"
-    }
-}
+    }}
+}}
 
 주의사항:
 1. 매도(SELL) 포지션에서는 반드시:
@@ -105,7 +108,7 @@ class GPTAnalyzer:
    • 횡보장: 변동성이 낮거나 명확한 신호가 없을 때는 HOLD
 
 3. 리스크 관리:
-   - 레버리지는 1-10배 사이로 제한
+   - 레버리지는 {leverage_settings['min']}-{leverage_settings['max']}배 사이로 제한
    - 손절가/이익실현가 설정 규칙:
     • 매수(BUY) 포지션:
       - Stop Loss는 진입가보다 낮게 

@@ -41,7 +41,7 @@ class TradeManager:
                 'leverage': signals['leverage'],
                 'entry_price': signals['entry_price'],
                 'stop_loss': signals['stop_loss'],
-                'take_profit1': signals['take_profit1'],
+                'take_profit': signals['take_profit1'],  # take_profit1을 take_profit으로 매핑
                 'take_profit2': signals.get('take_profit2')  # 옵션
             }
             
@@ -79,4 +79,3 @@ class TradeManager:
         except Exception as e:
             logger.error(f"자동매매 조건 체크 중 오류: {str(e)}")
             return False
-

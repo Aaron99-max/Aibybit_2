@@ -101,7 +101,7 @@ class OrderService:
                 is_btc_unit=order_info.get('is_btc_unit', False)
             )
             
-            # 주문 파라미터 설정
+            # CCXT 주문 파라미터 설정
             order_params = {
                 'symbol': order_info['symbol'],
                 'side': order_info['side'],
@@ -113,7 +113,7 @@ class OrderService:
                     'timeInForce': 'GTC',
                     'positionIdx': 0,
                     'stopLoss': str(order_info['stop_loss']),
-                    'takeProfit': str(order_info['take_profit'])
+                    'takeProfit': str(order_info['take_profit'])  # take_profit으로 통일
                 }
             }
             
@@ -136,7 +136,7 @@ class OrderService:
                         'price': order_info['entry_price'],
                         'leverage': leverage,
                         'stop_loss': order_info['stop_loss'],
-                        'take_profit': order_info['take_profit']
+                        'take_profit': order_info['take_profit']  # take_profit으로 통일
                     })
                     await self.telegram_bot.send_message_to_all(formatted_message, self.MSG_TYPE_ORDER)
                 

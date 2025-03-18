@@ -151,8 +151,12 @@ class TradingHandler(BaseHandler):
             return
             
         try:
+            if not update.effective_chat:
+                return
+                
+            chat_id = update.effective_chat.id
             trade_params = self._parse_trade_params(context.args)
-            result = await self.trade_manager.execute_trade(trade_params)
+            result = await self.trade_manager.execute_trade(trade_params)  # execute_trade 사용
             
             if result:
                 await self.send_message("✅ 주문이 성공적으로 실행되었습니다", chat_id)
@@ -161,6 +165,46 @@ class TradingHandler(BaseHandler):
                 
         except Exception as e:
             logger.error(f"거래 처리 중 오류: {str(e)}")
+            if update.effective_chat:
+                await self.send_message("❌ 거래 처리 중 오류가 발생했습니다", update.effective_chat.id)
+
+    def _parse_trade_params(self, args: List[str]) -> Dict:
+        """거래 파라미터 파싱"""
+        try:
+            if len(args) < 6:
+                raise ValueError("필수 파라미터 부족")
+            
+            direction, leverage, size, entry, stop, target = args
+            
+            if direction.lower() in ['long', 'buy', '매수', 'l', 'b']:
+                position_suggestion = 'BUY'
+            elif direction.lower() in ['short', 'sell', '매도', 's']:
+                position_suggestion = 'SELL'
+            else:
+                raise ValueError("포지션은 'LONG/SHORT/매수/매도'여야 합니다")
+
+            # trade_manager.py의 기대 형식에 맞춰 변환
+            return {
+                'trading_signals': {
+                    'position_suggestion': position_suggestion,
+                    'leverage': int(leverage),
+                    'position_size': float(size),
+                    'entry_price': float(entry),
+                    'stop_loss': float(stop),
+                    'take_profit1': float(target),
+                    'take_profit2': None
+                },
+                'market_summary': {
+                    'confidence': 100  # 수동 거래는 100% 신뢰도로 처리
+                }
+            }
+            
+        except (ValueError, IndexError) as e:
+            logger.error(f"거래 파라미터 파싱 오류: {str(e)}")
+            raise ValueError(
+                "올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>\n"
+                "예: /trade LONG 10 5 50000 49000 51000"
+            )
 
     def set_market_data_service(self, market_data_service):
         """MarketDataService 설정"""
@@ -208,38 +252,6 @@ class TradingHandler(BaseHandler):
         except Exception as e:
             logger.error(f"거래 처리 중 오류: {str(e)}")
             await self.send_message("❌ 오류 발생", chat_id)
-
-    def _parse_trade_params(self, args: List[str]) -> Dict:
-        """거래 파라미터 파싱"""
-        try:
-            if len(args) < 6:
-                raise ValueError("필수 파라미터 부족")
-            
-            direction, leverage, size, entry, stop, target = args
-            
-            if direction.lower() in ['long', 'buy', '매수', 'l', 'b']:
-                side = 'Buy'
-            elif direction.lower() in ['short', 'sell', '매도', 's']:
-                side = 'Sell'
-            else:
-                raise ValueError("포지션은 'LONG/SHORT/매수/매도'여야 합니다")
-
-            return {
-                'side': side,
-                'leverage': int(leverage),
-                'size': float(size),
-                'entry_price': float(entry),
-                'stopLoss': float(stop),
-                'takeProfit': float(target),
-                'symbol': 'BTCUSDT'
-            }
-            
-        except (ValueError, IndexError) as e:
-            logger.error(f"거래 파라미터 파싱 오류: {str(e)}")
-            raise ValueError(
-                "올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>\n"
-                "예: /trade LONG 10 5 50000 49000 51000"
-            )
 
     async def handle_auto_trading(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """자동매매 설정 제어 (/auto_trading on/off/status)"""

@@ -1,0 +1,88 @@
+2025-03-17 14:43:06,423 - services.trade_history_service - ERROR - 거래 조회 중 오류 발생: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1742190185827}
+2025-03-17 14:43:06,433 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 114, in _fetch_trades_for_period
+    trades = await self.bybit_client.exchange.fetch_my_trades(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 4609, in fetch_my_trades
+    response = await self.privateGetV5ExecutionList(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 221, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 7046, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2252, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: bybit {"retCode":10001,"retMsg":"The time range between startTime and endTime cannot exceed 7 days.","result":{},"retExtInfo":{},"time":1742190185827}
+
+2025-03-17 15:26:10,882 - order_service - ERROR - 신규 포지션 생성 중 오류: TelegramBot.send_message() missing 1 required positional argument: 'chat_id'
+2025-03-17 15:26:10,883 - order_service - ERROR - 상세 에러: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 140, in create_new_position
+    await self.telegram_bot.send_message(formatted_message)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TelegramBot.send_message() missing 1 required positional argument: 'chat_id'
+
+2025-03-17 15:29:42,099 - order_service - ERROR - 신규 포지션 생성 중 오류: 'OrderService' object has no attribute 'get_balance'
+2025-03-17 15:29:42,099 - order_service - ERROR - 상세 에러: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 82, in create_new_position
+    balance = await self.get_balance()
+                    ^^^^^^^^^^^^^^^^
+AttributeError: 'OrderService' object has no attribute 'get_balance'
+
+2025-03-17 15:34:05,449 - order_service - ERROR - 잔고 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_wallet_balance'
+2025-03-17 15:34:05,457 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 506, in get_balance
+    balance = await self.bybit_client.v5_get_wallet_balance()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_wallet_balance'
+
+2025-03-17 15:34:05,458 - order_service - ERROR - 잔고 조회 실패
+2025-03-17 15:39:02,849 - order_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1742193541151yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&coin=USDT&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1742193541151&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1742193542264}
+2025-03-17 15:39:02,849 - order_service - ERROR - 잔고 조회 실패
+2025-03-17 15:57:47,144 - order_service - ERROR - 잔고 조회 실패: {'retCode': 10004, 'retMsg': 'error sign! origin_string[1742194666141yjHTlVOB6X6Man1Ah55000accountType=UNIFIED&coin=USDT&api_key=yjHTlVOB6X6Man1Ah5&timestamp=1742194666141&recv_window=5000]', 'result': {}, 'retExtInfo': {}, 'time': 1742194666568}
+2025-03-17 15:57:47,144 - order_service - ERROR - 잔고 조회 실패
+2025-03-17 16:00:19,213 - order_service - ERROR - 레버리지 설정 중 오류: bybit setLeverage() requires a symbol argument
+2025-03-17 16:00:19,227 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 362, in set_leverage
+    await self.bybit_client.exchange.set_leverage({
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 5823, in set_leverage
+    self.check_required_symbol('setLeverage', symbol)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2941, in check_required_symbol
+    self.check_required_argument(methodName, symbol, 'symbol')
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2921, in check_required_argument
+    raise ArgumentsRequired(message)
+ccxt.base.errors.ArgumentsRequired: bybit setLeverage() requires a symbol argument
+
+2025-03-17 16:00:19,808 - order_service - ERROR - 신규 포지션 생성 중 오류: 'TelegramBot' object has no attribute 'MSG_TYPE_ORDER'
+2025-03-17 16:00:19,812 - order_service - ERROR - 상세 에러: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 138, in create_new_position
+    await self.telegram_bot.send_message_to_all(formatted_message, self.telegram_bot.MSG_TYPE_ORDER)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TelegramBot' object has no attribute 'MSG_TYPE_ORDER'
+
+2025-03-17 16:03:42,075 - order_service - ERROR - 레버리지 설정 중 오류: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742195021492}
+2025-03-17 16:03:42,083 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 410, in set_leverage
+    await self.bybit_client.exchange.set_leverage(leverage, self.symbol, {
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 5852, in set_leverage
+    response = await self.privatePostV5PositionSetLeverage(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 221, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 7046, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2252, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742195021492}
+

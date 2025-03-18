@@ -1,6 +1,0 @@
-1. 포지션 크기, 방향 체크, 포지션 없으면 신규, 포지션이  있으면  
-1.1 다음주문 "side" 체크,  "side"가 같으면 포지션추가, "orderQty" 를 체크 "execQty"가  "orderQty"가 될때까지는 추가
-1.2  "side"가 다르면 포지션 청산, "closedSize" 를 체크 "closedSize"가  "orderQty"가 될때까지는 청산
-1.3  "closedSize"가  "orderQty"를 넘으면 신규 포지션
-
-

@@ -17,7 +17,17 @@ class TradingConfig:
         
         # 레버리지 차이 허용 범위만 설정
         self.leverage_settings = {
-            "max_difference": 2  # 허용 가능한 최대 레버리지 차이
+            "max_difference": 2,  # 허용 가능한 최대 레버리지 차이
+            "default": 3,        # 기본 레버리지
+            "min": 1,           # 최소 레버리지
+            "max": 10          # 최대 레버리지
+        }
+        
+        # 포지션 크기 설정
+        self.position_settings = {
+            "default": 10,     # 기본 포지션 크기 (%)
+            "min": 5,         # 최소 포지션 크기 (%)
+            "max": 20         # 최대 포지션 크기 (%)
         }
         
         # 자동매매 설정

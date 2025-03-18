@@ -123,13 +123,21 @@ class AutoAnalyzer:
             # 결과 저장
             self.storage_formatter.save_analysis('1h', analysis_result)
             
+            # 자동매매 상태 확인
+            auto_trading_enabled = trading_config.auto_trading['enabled']
+            confidence = analysis_result.get('market_summary', {}).get('confidence', 0)
+            confidence_sufficient = confidence >= trading_config.min_confidence
+            
             # 분석 결과 알림 전송
             if self.telegram_bot:
-                message = self.analysis_formatter.format_analysis(analysis_result)
+                message = self.analysis_formatter.format_analysis(
+                    analysis_result,
+                    auto_trading_status=f"자동매매: {'활성화' if auto_trading_enabled and confidence_sufficient else '비활성화'} (신뢰도: {confidence}%)"
+                )
                 await self.telegram_bot.send_message_to_all(message, self.telegram_bot.MSG_TYPE_ANALYSIS)
             
             # 매매 신호 처리
-            await self._handle_trading_signals(analysis_result['trading_signals'])
+            await self._handle_trading_signals(analysis_result)
             
             # 마지막 실행 시간 업데이트
             self.last_run_time = current_time

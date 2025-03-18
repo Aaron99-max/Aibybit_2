@@ -27,7 +27,7 @@ class TradingConfig:
         self.position_settings = {
             "default": 10,     # 기본 포지션 크기 (%)
             "min": 5,         # 최소 포지션 크기 (%)
-            "max": 20         # 최대 포지션 크기 (%)
+            "max": 30         # 최대 포지션 크기 (%)
         }
         
         # 자동매매 설정
@@ -37,7 +37,7 @@ class TradingConfig:
         }
         
         # 자동매매 신뢰도 기준
-        self.min_confidence = 70  # 70% 이상일 때만 자동매매 활성화
+        self.min_confidence = 60  # 60% 이상일 때만 자동매매 활성화
         
         # Bybit 관련 설정
         self.bybit = type('BybitConfig', (), {

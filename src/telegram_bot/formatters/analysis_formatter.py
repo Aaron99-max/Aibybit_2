@@ -135,133 +135,15 @@ class AnalysisFormatter(BaseFormatter):
             return self.EMOJIS['volume_down']
         return self.EMOJIS['volume_neutral']
 
-    def format_market_summary(self, market: Dict) -> str:
-        """시장 요약 정보 포맷팅
-
-        Args:
-            market (Dict): 시장 요약 데이터
-
-        Returns:
-            str: 포맷팅된 시장 요약 문자열
-        """
-        message = f"{self.EMOJIS['market']} 시장 요약:\n"
-        
-        market_phase = market.get('market_phase', '-')
-        message += f"• 시장 단계: {self.translate(market_phase)}\n"
-        message += f"• 전반적 심리: {self.translate(market.get('overall_sentiment', '-'))}\n"
-        message += f"• 단기 심리: {self.translate(market.get('short_sentiment', '-'))}\n"
-        message += f"• 거래량: {self.translate(market.get('volume_status', '-'))}\n"
-        message += f"• 리스크: {self.translate(market.get('risk_level', '-'))}\n"
-        
-        confidence = market.get('confidence')
-        if isinstance(confidence, (int, float)):
-            message += f"• 신뢰도: {confidence:.1f}%\n"
-        
-        return message
-
-    def format_technical_analysis(self, ta: Dict, timeframe: str = None) -> str:
-        """기술적 분석 결과 포맷팅"""
-        message = f"{self.EMOJIS['technical']} 기술적 분석:\n"
-        
-        trend = ta.get('trend', '-')
-        message += f"• 추세: {self.translate(trend)}\n"
-        message += f"• 강도: {ta.get('strength', '-')}\n"
-        
-        # indicators 섹션
-        indicators = ta.get('indicators', {})
-        if indicators:
-            message += f"• RSI: {indicators.get('rsi', '-')}\n"
-            message += f"• MACD: {indicators.get('macd', '-')}\n"
-            message += f"• 볼린저: {indicators.get('bollinger', '-')}\n"
-            
-            # final이 아닐 때만 다이버전스 정보 포함
-            if timeframe != 'final' and 'divergence' in indicators:
-                divergence = indicators['divergence']
-                if divergence.get('type') != '없음':
-                    message += f"\n🔄 다이버전스:\n"
-                    message += f"• 유형: {divergence.get('type')}\n"
-                    message += f"• 설명: {divergence.get('description')}\n"
-        
-        return message
-
-    def format_trading_strategy(self, trading: Dict) -> str:
-        """거래 전략 포맷팅
-
-        Args:
-            trading (Dict): 거래 전략 데이터
-
-        Returns:
-            str: 포맷팅된 거래 전략 문자열
-        """
-        if not trading:
-            return ""
-            
-        message = f"{self.EMOJIS['strategy']} 거래 전략:\n"
-        
-        # 자동매매 상태 표시
-        auto_trading = trading.get('auto_trading_enabled', False)
-        message += f"• 자동매매: {'활성화' if auto_trading else '비활성화'}\n"
-        
-        # 포지션 방향 표시 개선
-        position = trading.get('position_suggestion', '-')
-        position_side = '숏' if position.upper() == 'SELL' else '롱' if position.upper() == 'BUY' else '관망'
-        position_emoji = "🔴" if position.upper() == "SELL" else "🟢" if position.upper() == "BUY" else "⚪"
-        message += f"• 포지션: {position_emoji} {position_side}\n"
-        
-        # 현재가 표시
-        current_price = trading.get('current_price')
-        if current_price:
-            message += f"• 현재가: {self.format_price(current_price)}\n"
-        
-        # HOLD가 아닐 때만 진입가와 수량 표시
-        if position.upper() != 'HOLD':
-            entry_points = trading.get('entry_points', [])
-            if entry_points and len(entry_points) > 0:
-                message += f"• 진입가: {self.format_price(entry_points[0])}\n"
-            
-            # BTC 수량 표시 추가
-            btc_amount = trading.get('btc_amount')
-            if btc_amount:
-                message += f"• BTC 수량: {btc_amount:.3f} BTC\n"  # 소수점 3자리로 수정
-            
-            stop = trading.get('stop_loss')
-            if stop:
-                message += f"• 손절가: {self.format_price(stop)}\n"
-            
-            targets = trading.get('take_profit', [])
-            if targets:
-                formatted_targets = [self.format_price(price) for price in targets]
-                message += f"• 목표가: {', '.join(formatted_targets)}\n"
-        else:
-            # HOLD일 때 이유나 조건 설명 추가
-            reason = trading.get('hold_reason', '시장 상황이 불안정하여 관망 추천')
-            message += f"• 사유: {reason}\n"
-            
-            # 다음 진입 조건이 있다면 표시
-            entry_condition = trading.get('entry_condition')
-            if entry_condition:
-                message += f"• 진입 조건: {entry_condition}\n"
-        
-        leverage = trading.get('leverage')
-        if leverage:
-            message += f"• 레버리지: {leverage}x\n"
-        
-        position_size = trading.get('position_size')
-        if position_size:
-            message += f"• 포지션 크기: {position_size}%\n"
-        
-        return message
-
-    def format_analysis(self, analysis: Dict) -> str:
+    def format_analysis(self, analysis_result: Dict, auto_trading_status: str = None) -> str:
         """분석 결과 포맷팅"""
         try:
-            if not analysis:
+            if not analysis_result:
                 return "❌ 분석 결과 없음"
 
-            market = analysis.get('market_summary', {})
-            technical = analysis.get('technical_analysis', {})
-            signals = analysis.get('trading_signals', {})
-            auto_trading = analysis.get('auto_trading', {})
+            market = analysis_result.get('market_summary', {})
+            technical = analysis_result.get('technical_analysis', {})
+            signals = analysis_result.get('trading_signals', {})
 
             # 현재 시간을 KST로 변환
             kst = pytz.timezone('Asia/Seoul')
@@ -274,6 +156,9 @@ class AnalysisFormatter(BaseFormatter):
 
             lines = [
                 f"📊 1h 분석 ({current_time})\n",
+                
+                # 자동매매 상태
+                f"⚙️ {auto_trading_status}\n" if auto_trading_status else "",
                 
                 "🌍 시장 요약:",
                 f"• 시장 단계: {self.translate(market.get('market_phase', '-'))}",
@@ -299,23 +184,15 @@ class AnalysisFormatter(BaseFormatter):
                 f"• 목표가: ${float(signals.get('take_profit1', 0)):,.1f}, ${float(signals.get('take_profit2', 0)):,.1f}",
                 f"• 레버리지: {signals.get('leverage', 1)}x",
                 f"• 포지션 크기: {signals.get('position_size', 10)}%",
-                f"• 사유: {signals.get('reason', '알 수 없음')}\n",
-
-                "🤖 자동매매:",
-                f"• 상태: {'활성화' if auto_trading.get('enabled', False) else '비활성화'}",
                 f"• 사유: {signals.get('reason', '알 수 없음')}"
             ]
 
-            return "\n".join(lines)
+            return "\n".join(line for line in lines if line)
 
         except Exception as e:
             logger.error(f"분석 결과 포맷팅 중 오류: {str(e)}")
             logger.error(traceback.format_exc())
             return "❌ 분석 결과 포맷팅 실패"
-
-    def format_final_analysis(self, analysis: Dict) -> str:
-        """Final 분석 결과 포맷팅"""
-        return self.format_analysis(analysis)
 
     def format_balance(self, balance_data: Dict) -> str:
         """잔고 정보를 포맷팅"""
@@ -391,126 +268,6 @@ class AnalysisFormatter(BaseFormatter):
         except Exception as e:
             logger.error(f"상태 포맷팅 중 오류: {str(e)}")
             return "상태 포맷팅 오류"
-
-    def format_analysis_result(self, analysis: Dict, timeframe: str) -> str:
-        """분석 결과 포맷팅"""
-        try:
-            if not analysis:
-                return "❌ 분석 결과가 없습니다."
-
-            # 저장된 시간 사용
-            time_str = analysis.get('saved_at', 
-                datetime.now(pytz.timezone('Asia/Seoul')).strftime('%Y-%m-%d %H:%M:%S KST')
-            )
-
-            message = [
-                f"📊 {timeframe} 분석 ({time_str})\n",
-                
-                "🌍 시장 요약:",
-                f"• 시장 단계: {self.translate(analysis.get('market_summary', {}).get('market_phase', '알 수 없음'))}",
-                f"• 전반적 심리: {self.translate(analysis.get('market_summary', {}).get('sentiment', '알 수 없음'))}",
-                f"• 단기 심리: {self.translate(analysis.get('market_summary', {}).get('short_term', '알 수 없음'))}",
-                f"• 거래량: {self.translate(analysis.get('market_summary', {}).get('volume', '보통'))}",
-                f"• 리스크: {self.translate(analysis.get('market_summary', {}).get('risk', '보통'))}",
-                f"• 신뢰도: {analysis.get('market_summary', {}).get('confidence', 0)}%\n",
-
-                "📈 기술적 분석:",
-                f"• 추세: {self.translate(analysis.get('technical_analysis', {}).get('trend', '알 수 없음'))}",
-                f"• 강도: {analysis.get('technical_analysis', {}).get('strength', 0):.1f}",
-                f"• RSI: {analysis.get('technical_analysis', {}).get('indicators', {}).get('rsi', 0):.2f}",
-                f"• MACD: {self._translate_macd(analysis.get('technical_analysis', {}).get('indicators', {}).get('macd', 'NEUTRAL'))}",
-                f"• 볼린저밴드: {self._translate_bollinger(analysis.get('technical_analysis', {}).get('indicators', {}).get('bollinger', 'MIDDLE'))}",
-                f"• 다이버전스: {analysis.get('technical_analysis', {}).get('indicators', {}).get('divergence_type', '없음')}",
-                f"• 설명: {analysis.get('technical_analysis', {}).get('indicators', {}).get('divergence_desc', '정보 없음')}\n",
-
-                "⚠️ 주요 알림:" if analysis.get('alerts') else "",
-                "\n".join([f"• {alert}" for alert in analysis.get('alerts', [])]) + "\n" if analysis.get('alerts') else "",
-
-                "💡 매매 신호:",
-                f"• 포지션: {self.translate(analysis.get('trading_signals', {}).get('position_suggestion', '관망'))}",
-                f"• 진입가: ${float(analysis.get('trading_signals', {}).get('entry_price', 0)):,.1f}",
-                f"• 손절가: ${float(analysis.get('trading_signals', {}).get('stop_loss', 0)):,.1f}",
-                f"• 목표가: ${float(analysis.get('trading_signals', {}).get('take_profit1', 0)):,.1f}, ${float(analysis.get('trading_signals', {}).get('take_profit2', 0)):,.1f}",
-                f"• 레버리지: {analysis.get('trading_signals', {}).get('leverage', 1)}x",
-                f"• 포지션 크기: {analysis.get('trading_signals', {}).get('size', 10)}%",
-                f"• 사유: {analysis.get('trading_signals', {}).get('reason', '알 수 없음')}\n",
-
-                "🤖 자동매매:",
-                f"• 상태: {'활성화' if analysis.get('auto_trading', {}).get('enabled', False) else '비활성화'}",
-                f"• 사유: {analysis.get('trading_signals', {}).get('reason', '알 수 없음')}"
-            ]
-
-            return "\n".join(filter(None, message))
-
-        except Exception as e:
-            logger.error(f"분석 결과 포맷팅 중 오류: {str(e)}")
-            return "❌ 포맷팅 오류"
-
-    def _format_market_summary(self, analysis: Dict) -> str:
-        """시장 요약 포맷팅"""
-        try:
-            market_summary = analysis.get('market_summary', {})
-            if not market_summary:
-                return ""
-            
-            message = [
-                "🌍 시장 요약:",
-                f"• 현재가: ${market_summary.get('current_price', 0):,.2f}",
-                f"• 추세: {self.translate(market_summary.get('trend', '정보 없음'))}",
-                f"• 강도: {market_summary.get('strength', 0)}%",
-                f"• 신뢰도: {market_summary.get('confidence', 0)}%"
-            ]
-            
-            return "\n".join(message)
-            
-        except Exception as e:
-            logger.error(f"시장 요약 포맷팅 중 오류: {str(e)}")
-            return ""
-
-    def _format_technical_analysis(self, analysis: Dict) -> str:
-        """기술적 분석 포맷팅"""
-        try:
-            technical = analysis.get('technical_analysis', {})
-            if not technical:
-                return ""
-            
-            message = [
-                "\n📈 기술적 분석:",
-                f"• RSI: {technical.get('rsi', 0)}",
-                f"• MACD: {self._translate_macd(technical.get('macd', 'NEUTRAL'))}",
-                f"• 볼린저: {self._translate_bollinger(technical.get('bollinger', 'MIDDLE'))}",
-                f"• 다이버전스: {technical.get('divergence', {}).get('type', '없음')}",
-                f"• 설명: {technical.get('divergence', {}).get('description', '현재 다이버전스 없음')}"
-            ]
-            
-            return "\n".join(message)
-            
-        except Exception as e:
-            logger.error(f"기술적 분석 포맷팅 중 오류: {str(e)}")
-            return ""
-
-    def _format_trading_signals(self, analysis: Dict) -> str:
-        """거래 전략 포맷팅"""
-        try:
-            trading = analysis.get('trading_signals', {})
-            if not trading:
-                return ""
-            
-            message = [
-                "\n💡 매매 신호:",
-                f"• 포지션: {self.translate(trading.get('position_suggestion', '관망'))}",
-                f"• 진입가: ${trading.get('entry_price', 0):,.2f}",
-                f"• 손절가: ${trading.get('stop_loss', 0):,.2f}",
-                f"• 익절가: ${trading.get('take_profit', 0):,.2f}",
-                f"• 레버리지: {trading.get('leverage', 1)}x",
-                f"• 사유: {trading.get('reason', '정보 없음')}"
-            ]
-            
-            return "\n".join(message)
-            
-        except Exception as e:
-            logger.error(f"매매 신호 포맷팅 중 오류: {str(e)}")
-            return ""
 
     def translate(self, text: str) -> str:
         """번역 처리"""

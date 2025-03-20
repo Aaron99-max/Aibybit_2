@@ -5,18 +5,11 @@
     "symbol": "BTCUSDT",
     "side": "Sell",
     "position_side": "Long",
-    "type": "Market",
+    "size": 8.668,
     "entry_price": 32599.9237,
     "exit_price": 25768.4,
-    "size": 8.668,
     "leverage": 5,
-    "entry_value": 282576.1378,
-    "exit_value": 223360.4912,
-    "pnl": -59493.90056772,
-    "created_time": 1734592607092,
-    "closed_time": 1734592607096,
-    "closed_size": 8.668,
-    "exec_type": "BustTrade",
-    "fill_count": 1
+    "value": 0.0,
+    "pnl": -59493.90056772
   }
 ]

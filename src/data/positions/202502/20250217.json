@@ -5,19 +5,12 @@
     "symbol": "BTCUSDT",
     "side": "Sell",
     "position_side": "Long",
-    "type": "Market",
+    "size": 0.001,
     "entry_price": 90026.0,
     "exit_price": 89700.4,
-    "size": 0.001,
     "leverage": 5,
-    "entry_value": 90.026,
-    "exit_value": 89.7004,
-    "pnl": -0.42444952,
-    "created_time": 1739766705908,
-    "closed_time": 1739766706409,
-    "closed_size": 0.001,
-    "exec_type": "Trade",
-    "fill_count": 1
+    "value": 0.0,
+    "pnl": -0.42444952
   },
   {
     "id": "1cf49a2d-2c0c-492b-8216-c7b6bff7e30a",
@@ -25,18 +18,11 @@
     "symbol": "BTCUSDT",
     "side": "Sell",
     "position_side": "Long",
-    "type": "Market",
+    "size": 0.001,
     "entry_price": 92399.2,
     "exit_price": 90356.9,
-    "size": 0.001,
     "leverage": 5,
-    "entry_value": 92.3992,
-    "exit_value": 90.3569,
-    "pnl": -2.14281586,
-    "created_time": 1739766559837,
-    "closed_time": 1739766560337,
-    "closed_size": 0.001,
-    "exec_type": "Trade",
-    "fill_count": 1
+    "value": 0.0,
+    "pnl": -2.14281586
   }
 ]

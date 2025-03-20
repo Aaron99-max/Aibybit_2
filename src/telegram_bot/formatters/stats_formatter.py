@@ -10,69 +10,44 @@ class StatsFormatter(BaseFormatter):
         """거래 통계 포맷팅"""
         try:
             # 시간대별 성과 포맷팅
-            time_perf = stats['time_performance']
+            time_perf = stats.get('time_performance', {})
             time_performance = "\n".join([
                 f"• {market.upper()}: {data['trades']}건, ${self.format_number(data['profit'])}"
                 for market, data in time_perf.items()
             ])
 
-            # 패턴 분석 포맷팅
-            entry_patterns = ", ".join([f"{p[0]}({p[1]}회)" for p in stats['entry_patterns'][:2]])
-            exit_patterns = ", ".join([f"{p[0]}({p[1]}회)" for p in stats['exit_patterns'][:2]])
-            time_patterns = ", ".join([f"{p[0]}({p[1]}회)" for p in stats['time_patterns'][:2]])
-
             return f"""
-📊 거래 통계 ({stats['period']})
+📊 거래 통계 ({stats.get('period', '')})
 
 💰 수익 현황:
-• 총 수익: ${self.format_number(stats['total_profit'])}
-• 평균 수익: ${self.format_number(stats['average_profit'])}
-• 평균 손실: ${self.format_number(stats['average_loss'])}
-• 최대 수익: ${self.format_number(stats['max_profit'])}
-• 최대 손실: ${self.format_number(stats['max_loss'])}
+• 총 수익: ${self.format_number(stats.get('total_profit', 0))}
+• 평균 수익: ${self.format_number(stats.get('average_profit', 0))}
+• 평균 손실: ${self.format_number(stats.get('average_loss', 0))}
+• 최대 수익: ${self.format_number(stats.get('max_profit', 0))}
+• 최대 손실: ${self.format_number(stats.get('max_loss', 0))}
 
 📈 거래 실적:
-• 총 거래: {stats['total_trades']}회
-• 성공: {stats['winning_trades']}회
-• 실패: {stats['losing_trades']}회
-• 승률: {self.format_number(stats['win_rate'])}%
-• 수익률: {self.format_number(stats['profit_factor'])}
+• 총 거래: {stats.get('total_trades', 0)}회
+• 성공: {stats.get('winning_trades', 0)}회
+• 실패: {stats.get('losing_trades', 0)}회
+• 승률: {self.format_number(stats.get('win_rate', 0))}%
+• 수익률: {self.format_number(stats.get('profit_factor', 0))}
 
 🔄 포지션별 실적:
-• 롱: {stats['long_trades']}회 (${self.format_number(stats['long_profit'])})
-• 숏: {stats['short_trades']}회 (${self.format_number(stats['short_profit'])})
+• 롱: {stats.get('long_trades', 0)}회 (${self.format_number(stats.get('long_profit', 0))})
+• 숏: {stats.get('short_trades', 0)}회 (${self.format_number(stats.get('short_profit', 0))})
 
 ⏰ 시간대별 성과:
 {time_performance}
 
-📊 거래 패턴:
-• 주요 진입: {entry_patterns}
-• 주요 청산: {exit_patterns}
-• 선호 시간대: {time_patterns}
-
 📉 리스크 지표:
-• 최대 손실폭: ${self.format_number(stats['max_drawdown'])}
-• 샤프 비율: {self.format_number(stats['sharpe_ratio'])}
-• 리스크/리워드: {self.format_number(stats['risk_reward_ratio'])}
-
-마지막 업데이트: {stats['last_updated']}
+• 최대 손실폭: ${self.format_number(stats.get('max_drawdown', 0))}
+• 샤프 비율: {self.format_number(stats.get('sharpe_ratio', 0))}
+• 리스크/리워드: {self.format_number(stats.get('risk_reward_ratio', 0))}
 """
         except Exception as e:
             logger.error(f"통계 포맷팅 실패: {str(e)}")
             return "통계 데이터 포맷팅 중 오류가 발생했습니다."
-
-    # BaseFormatter의 추상 메서드 구현
-    def format_balance(self, balance: Dict) -> str:
-        """잔고 정보 포맷팅 (StatsFormatter에서는 미사용)"""
-        return "Not implemented"
-
-    def format_position(self, position: Dict) -> str:
-        """포지션 정보 포맷팅 (StatsFormatter에서는 미사용)"""
-        return "Not implemented"
-
-    def format_status(self, status: Dict) -> str:
-        """상태 정보 포맷팅 (StatsFormatter에서는 미사용)"""
-        return "Not implemented"
 
     def format_daily_stats(self, positions: List[Dict]) -> str:
         """일일 포지션 통계 포맷팅"""
@@ -170,3 +145,16 @@ class StatsFormatter(BaseFormatter):
 • 숏: {len(short_positions)}회 (${self.format_number(short_pnl)})
 """
         return message.strip()
+
+    # BaseFormatter의 추상 메서드 구현
+    def format_balance(self, balance: Dict) -> str:
+        """잔고 정보 포맷팅 (StatsFormatter에서는 미사용)"""
+        return "Not implemented"
+
+    def format_position(self, position: Dict) -> str:
+        """포지션 정보 포맷팅 (StatsFormatter에서는 미사용)"""
+        return "Not implemented"
+
+    def format_status(self, status: Dict) -> str:
+        """상태 정보 포맷팅 (StatsFormatter에서는 미사용)"""
+        return "Not implemented"

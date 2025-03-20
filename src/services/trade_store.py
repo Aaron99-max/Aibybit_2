@@ -37,26 +37,19 @@ class TradeStore:
                         'positions': []
                     }
                 
-                # 포지션 데이터 변환
+                # 포지션 데이터 변환 (필수 필드만 저장)
                 position_data = {
                     'id': position.get('id'),
                     'timestamp': timestamp,
                     'symbol': position.get('symbol'),
                     'side': position.get('side'),
                     'position_side': position.get('position_side'),
-                    'type': position.get('type'),
+                    'size': float(position.get('size', 0)),
                     'entry_price': float(position.get('entry_price', 0)),
                     'exit_price': float(position.get('exit_price', 0)),
-                    'size': float(position.get('size', 0)),
                     'leverage': int(position.get('leverage', 1)),
-                    'entry_value': float(position.get('entry_value', 0)),
-                    'exit_value': float(position.get('exit_value', 0)),
-                    'pnl': float(position.get('pnl', 0)),
-                    'created_time': int(position.get('created_time', 0)),
-                    'closed_time': int(position.get('closed_time', 0)),
-                    'closed_size': float(position.get('closed_size', 0)),
-                    'exec_type': position.get('exec_type'),
-                    'fill_count': int(position.get('fill_count', 0))
+                    'value': float(position.get('value', 0)),
+                    'pnl': float(position.get('pnl', 0))
                 }
                 
                 positions_by_date[date_str]['positions'].append(position_data)
@@ -71,14 +64,26 @@ class TradeStore:
                 month_dir.mkdir(exist_ok=True)
                 position_file = month_dir / f"{date_str}.json"
                 
-                # 기존 데이터 로드 및 병합
+                # 기존 데이터 로드
                 existing_positions = []
                 if position_file.exists():
                     with open(position_file, 'r') as f:
                         existing_positions = json.load(f)
                 
-                # 기존 데이터와 새 데이터 병합
-                existing_positions.extend(positions_data)
+                # 기존 데이터와 새 데이터 병합 (중복 제거)
+                existing_ids = {p['id']: i for i, p in enumerate(existing_positions)}
+                
+                for new_position in positions_data:
+                    position_id = new_position['id']
+                    if position_id in existing_ids:
+                        # 기존 포지션 업데이트
+                        existing_positions[existing_ids[position_id]] = new_position
+                    else:
+                        # 새 포지션 추가
+                        existing_positions.append(new_position)
+                
+                # timestamp 기준으로 정렬
+                existing_positions.sort(key=lambda x: x['timestamp'], reverse=True)
                 
                 # 파일 저장
                 with open(position_file, 'w') as f:
@@ -142,11 +147,11 @@ class TradeStore:
             while current <= end:
                 date_str = current.strftime('%Y%m%d')
                 daily_positions = self.get_positions(date_str=date_str)
-                logger.info(f"날짜: {date_str}, 포지션 수: {len(daily_positions)}건")
                 positions.extend(daily_positions)
                 current += timedelta(days=1)
             
-            logger.info(f"총 {len(positions)}건의 포지션 데이터 로드됨")
+            # timestamp 기준으로 정렬
+            positions.sort(key=lambda x: x['timestamp'], reverse=True)
             return positions
             
         except Exception as e:
@@ -156,17 +161,6 @@ class TradeStore:
     def get_daily_positions(self, date_str: str) -> List[Dict]:
         """일별 포지션 조회"""
         return self.get_positions(date_str=date_str)
-
-    def has_positions(self, date_str: str) -> bool:
-        """해당 날짜의 포지션 데이터가 있는지 확인"""
-        try:
-            month_str = date_str[:6]  # YYYYMM
-            position_file = self.positions_dir / month_str / f"{date_str}.json"
-            return position_file.exists()
-            
-        except Exception as e:
-            logger.error(f"포지션 데이터 확인 실패: {str(e)}")
-            return False
 
     def get_last_update(self) -> int:
         """마지막 업데이트 시간 조회"""
@@ -187,48 +181,3 @@ class TradeStore:
                 json.dump({'last_update': timestamp}, f)
         except Exception as e:
             logger.error(f"마지막 업데이트 시간 저장 실패: {e}")
-
-    def load_positions(self) -> List[Dict]:
-        """저장된 모든 포지션 데이터 로드"""
-        try:
-            positions = []
-            data_dir = Path("src/data/positions")
-            
-            # 모든 연도/월 디렉토리 순회
-            for year_dir in sorted(data_dir.glob("*")):
-                if not year_dir.is_dir():
-                    continue
-            
-                # 각 월 디렉토리 내의 모든 JSON 파일 순회
-                for day_file in sorted(year_dir.glob("*/*.json")):
-                    with open(day_file, 'r') as f:
-                        data = json.load(f)
-                        
-                        # 각 포지션의 ID와 파일명 출력
-                        for p in data:
-                            logger.info(f"파일: {day_file.name}, ID: {p.get('id')}, Side: {p.get('side')}")
-                        
-                        positions.extend(data)
-            
-            # 최종 데이터 확인
-            logger.info("\n=== 최종 데이터 확인 ===")
-            logger.info(f"총 포지션 수: {len(positions)}")
-            
-            # ID별 중복 체크
-            id_counts = {}
-            for p in positions:
-                id = p.get('id')
-                id_counts[id] = id_counts.get(id, 0) + 1
-            
-            # 중복된 ID 출력
-            duplicates = {id: count for id, count in id_counts.items() if count > 1}
-            if duplicates:
-                logger.info("=== 중복된 ID 목록 ===")
-                for id, count in duplicates.items():
-                    logger.info(f"ID: {id} ({count}회)")
-            
-            return positions
-            
-        except Exception as e:
-            logger.error(f"포지션 데이터 로드 중 오류: {str(e)}")
-            return []

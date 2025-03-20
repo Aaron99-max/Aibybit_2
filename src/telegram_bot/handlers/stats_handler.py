@@ -168,21 +168,14 @@ class StatsHandler(BaseHandler):
 
     def _format_period_stats(self, positions: List[Dict], period: str) -> str:
         """기간별 통계 포맷팅"""
-        # 마지막 업데이트 시간 확인
-        last_update = None
-        if positions:
-            update_times = [float(p.get('update_time', 0)) for p in positions if p.get('update_time')]
-            if update_times:
-                last_update = datetime.fromtimestamp(max(update_times) / 1000)
-
         total_pnl = sum(float(p['pnl']) for p in positions)
         winning_trades = len([p for p in positions if float(p['pnl']) > 0])
         losing_trades = len([p for p in positions if float(p['pnl']) < 0])
         total_trades = len(positions)
         
-        # 롱/숏 구분 (position_side가 없으면 side로 계산)
-        long_positions = [p for p in positions if p.get('position_side', 'Long' if p['side'] == 'Sell' else 'Short') == 'Long']
-        short_positions = [p for p in positions if p.get('position_side', 'Short' if p['side'] == 'Buy' else 'Long') == 'Short']
+        # 롱/숏 구분
+        long_positions = [p for p in positions if p['side'] == 'Buy']
+        short_positions = [p for p in positions if p['side'] == 'Sell']
         
         long_pnl = sum(float(p['pnl']) for p in long_positions)
         short_pnl = sum(float(p['pnl']) for p in short_positions)
@@ -219,11 +212,8 @@ class StatsHandler(BaseHandler):
 
 🔄 포지션별 실적:
 • 롱: {len(long_positions)}회 (${self.formatter.format_number(long_pnl)})
-• 숏: {len(short_positions)}회 (${self.formatter.format_number(short_pnl)})"""
-
-        if last_update:
-            message += f"\n\n⏰ 마지막 업데이트: {last_update.strftime('%Y-%m-%d %H:%M:%S')}"
-            
+• 숏: {len(short_positions)}회 (${self.formatter.format_number(short_pnl)})
+"""
         return message.strip()
 
     def get_handlers(self):

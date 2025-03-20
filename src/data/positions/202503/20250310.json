@@ -1,0 +1,54 @@
+[
+  {
+    "id": "2c455a62-f9e2-43e2-b518-ac580e23ccfc",
+    "timestamp": 1741588351662,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "position_side": "Short",
+    "size": 0.143,
+    "entry_price": 73292.7,
+    "exit_price": 73499.9924,
+    "leverage": 5,
+    "value": 0.0,
+    "pnl": -37.51974562
+  },
+  {
+    "id": "1d9460c8-d1c4-4292-aeb3-54646c05f1b0",
+    "timestamp": 1741588351163,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "position_side": "Short",
+    "size": 0.146,
+    "entry_price": 73292.7,
+    "exit_price": 73317.1,
+    "leverage": 5,
+    "value": 0.0,
+    "pnl": -0.23814884
+  },
+  {
+    "id": "3cee5161-4d8d-4e76-8181-fcde29868777",
+    "timestamp": 1741588094259,
+    "symbol": "BTCUSDT",
+    "side": "Buy",
+    "position_side": "Short",
+    "size": 0.217,
+    "entry_price": 73292.7,
+    "exit_price": 72400.0,
+    "leverage": 5,
+    "value": 0.0,
+    "pnl": 179.89316607
+  },
+  {
+    "id": "6fdc3e97-f60b-45ef-9d07-3487d10ec50e",
+    "timestamp": 1741582264497,
+    "symbol": "BTCUSDT",
+    "side": "Sell",
+    "position_side": "Long",
+    "size": 0.363,
+    "entry_price": 73300.0,
+    "exit_price": 73280.0275,
+    "leverage": 5,
+    "value": 0.0,
+    "pnl": -36.5147025
+  }
+]

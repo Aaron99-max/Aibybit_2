@@ -59,11 +59,7 @@ async def main():
         # Bybit 클라이언트 초기화
         logger.info("Bybit 테스트넷 클라이언트 초기화 중...")
         bybit_config = BybitConfig()
-        bybit_client = BybitClient(
-            api_key=bybit_config.api_key,
-            api_secret=bybit_config.api_secret,
-            testnet=bybit_config.testnet
-        )
+        bybit_client = BybitClient(config=bybit_config)
         
         # 서비스 초기화 (순서 중요)
         logger.info("서비스 초기화 중...")

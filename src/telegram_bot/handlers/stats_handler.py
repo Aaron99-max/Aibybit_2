@@ -168,31 +168,32 @@ class StatsHandler(BaseHandler):
 
     def _format_period_stats(self, positions: List[Dict], period: str) -> str:
         """기간별 통계 포맷팅"""
-        total_pnl = sum(float(p['pnl']) for p in positions)
-        winning_trades = len([p for p in positions if float(p['pnl']) > 0])
-        losing_trades = len([p for p in positions if float(p['pnl']) < 0])
+        total_pnl = sum(float(p.get('pnl', 0)) for p in positions)
+        winning_trades = len([p for p in positions if float(p.get('pnl', 0)) > 0])
+        losing_trades = len([p for p in positions if float(p.get('pnl', 0)) < 0])
         total_trades = len(positions)
         
-        # 롱/숏 구분
-        long_positions = [p for p in positions if p['side'] == 'Buy']
-        short_positions = [p for p in positions if p['side'] == 'Sell']
+        # 롱/숏 구분 - position_side 기준으로 분류
+        long_positions = [p for p in positions if p.get('position_side') == 'Long']
+        short_positions = [p for p in positions if p.get('position_side') == 'Short']
         
-        long_pnl = sum(float(p['pnl']) for p in long_positions)
-        short_pnl = sum(float(p['pnl']) for p in short_positions)
+        # 각 포지션별 PnL 계산
+        long_pnl = sum(float(p.get('pnl', 0)) for p in long_positions)
+        short_pnl = sum(float(p.get('pnl', 0)) for p in short_positions)
         
         # 승률 계산
         win_rate = (winning_trades / total_trades * 100) if total_trades > 0 else 0
         
         # 평균 수익/손실
-        winning_pnls = [float(p['pnl']) for p in positions if float(p['pnl']) > 0]
-        losing_pnls = [float(p['pnl']) for p in positions if float(p['pnl']) < 0]
+        winning_pnls = [float(p.get('pnl', 0)) for p in positions if float(p.get('pnl', 0)) > 0]
+        losing_pnls = [float(p.get('pnl', 0)) for p in positions if float(p.get('pnl', 0)) < 0]
         
         avg_profit = sum(winning_pnls) / len(winning_pnls) if winning_pnls else 0
         avg_loss = sum(losing_pnls) / len(losing_pnls) if losing_pnls else 0
         
         # 최대 수익/손실
-        max_profit = max([float(p['pnl']) for p in positions]) if positions else 0
-        max_loss = min([float(p['pnl']) for p in positions]) if positions else 0
+        max_profit = max([float(p.get('pnl', 0)) for p in positions]) if positions else 0
+        max_loss = min([float(p.get('pnl', 0)) for p in positions]) if positions else 0
         
         message = f"""
 📊 {period} 거래 통계

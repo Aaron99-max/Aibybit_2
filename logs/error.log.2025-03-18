@@ -1,0 +1,120 @@
+2025-03-18 12:16:22,982 - trading_handler - ERROR - 거래 파라미터 파싱 오류: 필수 파라미터 부족
+2025-03-18 12:16:22,985 - trading_handler - ERROR - 거래 처리 중 오류: 올바른 형식: /trade <LONG|SHORT> <레버리지> <포지션크기> <진입가> <손절가> <익절가>
+예: /trade LONG 10 5 50000 49000 51000
+2025-03-18 12:17:21,814 - trade_manager - ERROR - 매매 신호 없음
+2025-03-18 12:17:21,814 - trading_handler - ERROR - 거래 처리 중 오류: name 'chat_id' is not defined
+2025-03-18 12:21:58,176 - trade_manager - ERROR - 매매 신호 없음
+2025-03-18 12:27:18,914 - order_service - ERROR - 신규 포지션 생성 중 오류: 'take_profit'
+2025-03-18 12:27:18,930 - order_service - ERROR - 상세 에러: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 116, in create_new_position
+    'takeProfit': str(order_info['take_profit'])
+                      ~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'take_profit'
+
+2025-03-18 12:32:55,260 - order_service - ERROR - 레버리지 설정 중 오류: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742268775400}
+2025-03-18 12:32:55,268 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 412, in set_leverage
+    await self.bybit_client.exchange.set_leverage(leverage, self.symbol, {
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 5852, in set_leverage
+    response = await self.privatePostV5PositionSetLeverage(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 221, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 7046, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2252, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742268775400}
+
+2025-03-18 13:43:52,468 - order_service - ERROR - 레버리지 설정 중 오류: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742273032616}
+2025-03-18 13:43:52,474 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 412, in set_leverage
+    await self.bybit_client.exchange.set_leverage(leverage, self.symbol, {
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 5852, in set_leverage
+    response = await self.privatePostV5PositionSetLeverage(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 221, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 7046, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2252, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742273032616}
+
+2025-03-18 13:56:41,897 - order_service - ERROR - 레버리지 설정 중 오류: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742273802047}
+2025-03-18 13:56:41,897 - order_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 399, in set_leverage
+    await self.bybit_client.exchange.set_leverage(leverage, self.symbol, {
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 5852, in set_leverage
+    response = await self.privatePostV5PositionSetLeverage(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 221, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 7046, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2252, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1742273802047}
+
+2025-03-18 13:56:42,458 - order_service - ERROR - 신규 포지션 생성 중 오류: bybit {"retCode":10001,"retMsg":"Side invalid","result":{},"retExtInfo":{},"time":1742273802610}
+2025-03-18 13:56:42,462 - order_service - ERROR - 상세 에러: Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\order_service.py", line 121, in create_new_position
+    order_result = await self.bybit_client.exchange.create_order(**order_params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 3637, in create_order
+    response = await self.privatePostV5OrderCreate(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1889, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 1886, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 221, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\bybit.py", line 7046, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\ccxt\async_support\base\exchange.py", line 2252, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: bybit {"retCode":10001,"retMsg":"Side invalid","result":{},"retExtInfo":{},"time":1742273802610}
+
+2025-03-18 14:22:11,268 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'TelegramBot' object has no attribute 'profit_monitor'
+2025-03-18 16:14:39,684 - services.trade_history_service - ERROR - 거래 데이터 변환 중 오류: 'NoneType' object has no attribute 'capitalize'
+2025-03-18 16:14:39,686 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 351, in _convert_trades_to_positions
+    'type': trade.get('type', 'limit').capitalize(),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'capitalize'
+
+2025-03-18 16:14:41,872 - services.trade_history_service - ERROR - 거래 데이터 변환 중 오류: 'NoneType' object has no attribute 'capitalize'
+2025-03-18 16:14:41,872 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 351, in _convert_trades_to_positions
+    'type': trade.get('type', 'limit').capitalize(),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'capitalize'
+
+2025-03-18 16:21:27,718 - main - ERROR - 실행 중 에러 발생: BybitClient.__init__() got an unexpected keyword argument 'api_key'
+2025-03-18 16:21:27,723 - main - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\main.py", line 62, in main
+    bybit_client = BybitClient(
+                   ^^^^^^^^^^^^
+TypeError: BybitClient.__init__() got an unexpected keyword argument 'api_key'
+

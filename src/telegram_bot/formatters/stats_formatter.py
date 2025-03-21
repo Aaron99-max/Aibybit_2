@@ -93,39 +93,36 @@ class StatsFormatter(BaseFormatter):
 """
         return message.strip()
 
-    def format_monthly_stats(self, positions: List[Dict]) -> str:
-        """월간 포지션 통계 포맷팅"""
+    def format_weekly_stats(self, positions: List[Dict]) -> str:
         if not positions:
-            return "📊 이번 달은 청산된 포지션이 없습니다."
-        
-        total_pnl = sum(float(p['pnl']) for p in positions)
-        winning_trades = len([p for p in positions if float(p['pnl']) > 0])
-        losing_trades = len([p for p in positions if float(p['pnl']) < 0])
-        total_trades = len(positions)
-        
-        # 롱/숏 구분
-        long_positions = [p for p in positions if p['side'] == 'Buy']
-        short_positions = [p for p in positions if p['side'] == 'Sell']
-        
-        long_pnl = sum(float(p['pnl']) for p in long_positions)
-        short_pnl = sum(float(p['pnl']) for p in short_positions)
-        
+            return "거래 내역이 없습니다."
+
+        # 기본 통계 계산
+        total_pnl = sum(p.get('pnl', 0) for p in positions)
+        profits = [p.get('pnl', 0) for p in positions if p.get('pnl', 0) > 0]
+        losses = [p.get('pnl', 0) for p in positions if p.get('pnl', 0) < 0]
+
         # 승률 계산
+        total_trades = len(positions)
+        winning_trades = len(profits)
+        losing_trades = len(losses)
         win_rate = (winning_trades / total_trades * 100) if total_trades > 0 else 0
+
+        # 평균/최대 손익 계산
+        avg_profit = sum(profits) / len(profits) if profits else 0
+        avg_loss = sum(losses) / len(losses) if losses else 0
+        max_profit = max(profits) if profits else 0
+        max_loss = min(losses) if losses else 0
+
+        # 포지션별 분류 - position_side 기준으로 분류
+        long_positions = [p for p in positions if p.get('position_side') == 'Long']
+        short_positions = [p for p in positions if p.get('position_side') == 'Short']
         
-        # 평균 수익/손실
-        winning_pnls = [float(p['pnl']) for p in positions if float(p['pnl']) > 0]
-        losing_pnls = [float(p['pnl']) for p in positions if float(p['pnl']) < 0]
-        
-        avg_profit = sum(winning_pnls) / len(winning_pnls) if winning_pnls else 0
-        avg_loss = sum(losing_pnls) / len(losing_pnls) if losing_pnls else 0
-        
-        # 최대 수익/손실
-        max_profit = max([float(p['pnl']) for p in positions]) if positions else 0
-        max_loss = min([float(p['pnl']) for p in positions]) if positions else 0
-        
-        message = f"""
-📊 월간 거래 통계
+        # 각 포지션별 PnL 계산
+        long_pnl = sum(p.get('pnl', 0) for p in long_positions)
+        short_pnl = sum(p.get('pnl', 0) for p in short_positions)
+
+        return f"""📊 7일 거래 통계
 
 💰 수익 현황:
 • 총 수익: ${self.format_number(total_pnl)}
@@ -142,9 +139,55 @@ class StatsFormatter(BaseFormatter):
 
 🔄 포지션별 실적:
 • 롱: {len(long_positions)}회 (${self.format_number(long_pnl)})
-• 숏: {len(short_positions)}회 (${self.format_number(short_pnl)})
-"""
-        return message.strip()
+• 숏: {len(short_positions)}회 (${self.format_number(short_pnl)})"""
+
+    def format_monthly_stats(self, positions: List[Dict]) -> str:
+        if not positions:
+            return "거래 내역이 없습니다."
+
+        # 기본 통계 계산
+        total_pnl = sum(p.get('pnl', 0) for p in positions)
+        profits = [p.get('pnl', 0) for p in positions if p.get('pnl', 0) > 0]
+        losses = [p.get('pnl', 0) for p in positions if p.get('pnl', 0) < 0]
+
+        # 승률 계산
+        total_trades = len(positions)
+        winning_trades = len(profits)
+        losing_trades = len(losses)
+        win_rate = (winning_trades / total_trades * 100) if total_trades > 0 else 0
+
+        # 평균/최대 손익 계산
+        avg_profit = sum(profits) / len(profits) if profits else 0
+        avg_loss = sum(losses) / len(losses) if losses else 0
+        max_profit = max(profits) if profits else 0
+        max_loss = min(losses) if losses else 0
+
+        # 포지션별 분류 - position_side 기준으로 분류
+        long_positions = [p for p in positions if p.get('position_side') == 'Long']
+        short_positions = [p for p in positions if p.get('position_side') == 'Short']
+        
+        # 각 포지션별 PnL 계산
+        long_pnl = sum(p.get('pnl', 0) for p in long_positions)
+        short_pnl = sum(p.get('pnl', 0) for p in short_positions)
+
+        return f"""📊 월간 거래 통계
+
+💰 수익 현황:
+• 총 수익: ${self.format_number(total_pnl)}
+• 평균 수익: ${self.format_number(avg_profit)}
+• 평균 손실: ${self.format_number(avg_loss)}
+• 최대 수익: ${self.format_number(max_profit)}
+• 최대 손실: ${self.format_number(max_loss)}
+
+📈 거래 실적:
+• 총 거래: {total_trades}회
+• 성공: {winning_trades}회
+• 실패: {losing_trades}회
+• 승률: {self.format_number(win_rate)}%
+
+🔄 포지션별 실적:
+• 롱: {len(long_positions)}회 (${self.format_number(long_pnl)})
+• 숏: {len(short_positions)}회 (${self.format_number(short_pnl)})"""
 
     # BaseFormatter의 추상 메서드 구현
     def format_balance(self, balance: Dict) -> str:

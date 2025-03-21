@@ -1,0 +1,358 @@
+2025-03-20 14:38:51,061 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:51,063 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:52,071 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:52,079 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:53,096 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:53,096 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:54,098 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:54,100 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:55,085 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:55,088 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:56,088 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:56,088 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:57,091 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:57,093 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:58,097 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:58,097 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:38:59,095 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:38:59,095 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:39:00,099 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:39:00,100 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:39:01,099 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:39:01,100 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:39:02,116 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:39:02,116 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:39:03,116 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+2025-03-20 14:39:03,116 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.private_get_v5_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'private_get_v5_position_closed_pnl'
+
+2025-03-20 14:41:21,929 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:21,930 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:22,934 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:22,935 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:23,937 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:23,938 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:24,953 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:24,953 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:25,969 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:25,970 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:26,985 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:26,985 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:28,004 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:28,004 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:29,016 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:29,018 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 14:41:30,033 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+2025-03-20 14:41:30,035 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.v5_get_position_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'v5_get_position_closed_pnl'
+
+2025-03-20 15:01:48,004 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:48,004 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:49,006 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:49,009 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:50,015 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:50,016 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:51,029 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:51,032 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:52,050 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:52,051 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:53,065 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:53,066 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:54,081 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:54,081 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:55,088 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:55,088 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:56,102 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:56,103 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:57,113 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:57,113 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:58,134 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:58,135 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:01:59,143 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:01:59,143 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 15:02:00,151 - services.trade_history_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_closed_pnl'
+2025-03-20 15:02:00,151 - services.trade_history_service - ERROR - Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\src\services\trade_history_service.py", line 279, in get_positions
+    response = await self.bybit_client.get_closed_pnl(params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BybitClient' object has no attribute 'get_closed_pnl'
+
+2025-03-20 16:13:13,345 - telegram.ext.Updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-03-20 16:13:13,385 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\oasis\Aibybit_2\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 292, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-03-20 16:23:04,275 - trading_handler - ERROR - [Status] 상태 조회 중 오류: 'TelegramBot' object has no attribute 'profit_monitor'
+2025-03-20 18:00:04,404 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 18:00:04,785 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 19:00:04,635 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 19:00:05,016 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 20:00:05,838 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 20:00:06,213 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 21:00:06,335 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 21:00:06,714 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 22:00:04,438 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 22:00:04,818 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 23:00:05,092 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'
+2025-03-20 23:00:05,479 - position_service - ERROR - 포지션 조회 중 오류: 'BybitClient' object has no attribute 'get_positions'

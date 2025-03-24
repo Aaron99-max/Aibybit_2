@@ -75,6 +75,7 @@ class AutoAnalyzer:
             
             # 시작 즉시 한 번 실행
             logger.info("초기 분석 실행 시작")
+            await asyncio.sleep(1)  # 봇 시작 메시지가 먼저 전송되도록 대기
             await self._scheduled_analysis()
             logger.info("초기 분석 실행 완료")
         except Exception as e:

@@ -53,7 +53,16 @@ class MonitorManager:
             
             # 각 모니터 중지
             for monitor in self._monitors:
-                await monitor.stop()
+                try:
+                    # 웹소켓 콜백 제거
+                    if hasattr(monitor, 'ws_client'):
+                        monitor.ws_client.remove_callback('order')
+                        monitor.ws_client.remove_callback('position')
+                        monitor.ws_client.remove_callback('execution')
+                    # 모니터 중지
+                    await monitor.stop()
+                except Exception as e:
+                    logger.error(f"모니터 {monitor.__class__.__name__} 중지 중 오류: {str(e)}")
             
         except Exception as e:
             logger.error(f"모니터링 중지 중 에러: {str(e)}")

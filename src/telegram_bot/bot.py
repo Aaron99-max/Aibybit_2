@@ -234,20 +234,18 @@ class TelegramBot:
             # 기존 웹훅 제거
             await self.application.bot.delete_webhook()
             
-            # 자동 분석기 시작
-            await self.auto_analyzer.start()
-            
             # 모니터링 시작
             await self.monitor_manager.start_all_monitors()
+            
+            # 봇 시작 알람 전송
+            await self.send_message_to_all("🤖 바이빗 트레이딩 봇이 시작되었습니다", self.MSG_TYPE_SYSTEM)
+            
+            # 자동 분석기 시작
+            await self.auto_analyzer.start()
             
             # 봇 시작
             await self.application.initialize()
             await self.application.start()
-            
-            # 시작 메시지 전송
-            start_message = "🤖 바이빗 트레이딩 봇이 시작되었습니다"
-            logger.info(start_message)
-            await self.send_message_to_all(start_message, self.MSG_TYPE_SYSTEM)
             
             # 업데이터 시작
             await self.application.updater.start_polling(
@@ -271,27 +269,34 @@ class TelegramBot:
         """봇 종료"""
         try:
             logger.info("봇 종료 시작...")
-
-            # 모든 작업 중지
-            if hasattr(self, 'auto_analyzer') and self.auto_analyzer.is_running:
-                await self.auto_analyzer.stop()
-            if hasattr(self, 'profit_monitor') and self.profit_monitor.is_running:
-                await self.profit_monitor.stop()
-
-            # Application 종료
-            if hasattr(self, 'application'):
-                await self.application.stop()
-                await self.application.shutdown()
-
-            # Bybit 클라이언트 종료
-            if self.bybit_client:
-                await self.bybit_client.close()
-
+            
+            # 1. 텔레그램 봇 종료
+            logger.info("텔레그램 봇 종료 중...")
+            await self.application.stop()
+            await self.application.shutdown()
+            
+            # 2. 자동 분석기 중지
+            logger.info("자동 분석기 종료 중...")
+            await self.auto_analyzer.stop()
+            
+            # 3. 모니터링 중지 (웹소켓 콜백 제거)
+            logger.info("모니터링 종료 중...")
+            await self.monitor_manager.stop_all_monitors()
+            
+            # 4. 웹소켓 연결 종료
+            logger.info("웹소켓 연결 종료 중...")
+            await self.bybit_client.ws_client.stop()
+            
+            # 5. Bybit 클라이언트 종료
+            logger.info("Bybit 클라이언트 종료 중...")
+            await self.bybit_client.close()
+            
             logger.info("봇이 성공적으로 종료되었습니다")
-
+            
         except Exception as e:
-            logger.error(f"봇 종료 중 오류: {str(e)}")
+            logger.error(f"봇 종료 중 오류 발생: {str(e)}")
             logger.error(traceback.format_exc())
+            raise
 
     async def send_to_admin(self, message: str):
         """관리자에게 메시지 전송"""
@@ -319,6 +324,18 @@ class TelegramBot:
             )
         except Exception as e:
             logger.error(f"메시지 전송 실패 (chat_id: {chat_id}): {str(e)}")
+
+    async def send_order_notification(self, message: str):
+        """주문 알림 전송"""
+        await self.send_message_to_all(message, self.MSG_TYPE_ORDER)
+
+    async def send_position_notification(self, message: str):
+        """포지션 알림 전송"""
+        await self.send_message_to_all(message, self.MSG_TYPE_POSITION)
+
+    async def send_execution_notification(self, message: str):
+        """체결 알림 전송"""
+        await self.send_message_to_all(message, self.MSG_TYPE_EXECUTION)
 
     async def _handle_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """도움말 명령어 처리"""

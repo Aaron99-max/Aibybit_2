@@ -26,6 +26,8 @@ class BybitWebsocketClient:
             'position': [],
             'execution': []
         }
+        self._monitoring_task = None
+        self._stop_event = asyncio.Event()
         
         # SSL 컨텍스트 설정
         self.ssl_context = ssl.create_default_context(cafile=certifi.where())
@@ -132,7 +134,16 @@ class BybitWebsocketClient:
 
     async def start_monitoring(self):
         """실시간 모니터링 시작"""
-        while True:
+        if self._monitoring_task is not None:
+            logger.warning("모니터링이 이미 실행 중입니다")
+            return
+
+        self._stop_event.clear()
+        self._monitoring_task = asyncio.create_task(self._monitoring_loop())
+
+    async def _monitoring_loop(self):
+        """실제 모니터링 루프"""
+        while not self._stop_event.is_set():
             try:
                 if not self.is_connected:
                     await self.connect()
@@ -141,13 +152,27 @@ class BybitWebsocketClient:
                 data = json.loads(message)
                 
                 # 토픽별 처리
-                if 'topic' in data:
-                    if data['topic'] == 'order':
-                        await self._handle_order_update(data)
-                    elif data['topic'] == 'position':
-                        await self._handle_position_update(data)
-                    elif data['topic'] == 'execution':
-                        await self._handle_execution_update(data)
+                if 'topic' in data and 'data' in data:
+                    topic = data['topic']
+                    topic_data = data['data']
+                    
+                    # data가 리스트인 경우 각각의 항목 처리
+                    if isinstance(topic_data, list):
+                        for item in topic_data:
+                            if topic == 'order':
+                                await self._handle_order_update({'topic': topic, 'data': item})
+                            elif topic == 'position':
+                                await self._handle_position_update({'topic': topic, 'data': item})
+                            elif topic == 'execution':
+                                await self._handle_execution_update({'topic': topic, 'data': item})
+                    else:
+                        # 단일 데이터 처리
+                        if topic == 'order':
+                            await self._handle_order_update(data)
+                        elif topic == 'position':
+                            await self._handle_position_update(data)
+                        elif topic == 'execution':
+                            await self._handle_execution_update(data)
                 
             except websockets.ConnectionClosed:
                 logger.warning("웹소켓 연결 끊김, 재연결 시도...")
@@ -161,11 +186,23 @@ class BybitWebsocketClient:
     async def stop(self):
         """웹소켓 연결 종료"""
         try:
+            self._stop_event.set()
+            
+            if self._monitoring_task:
+                logger.info("모니터링 태스크 종료 중...")
+                self._monitoring_task.cancel()
+                try:
+                    await self._monitoring_task
+                except asyncio.CancelledError:
+                    pass
+                self._monitoring_task = None
+
             if self.ws:
                 logger.info("웹소켓 연결 종료 중...")
                 await self.ws.close()
                 self.ws = None
                 self.is_connected = False
-                logger.info("웹소켓 연결이 종료되었습니다.")
+                logger.info("웹소켓 연결이 종료되었습니다")
+                
         except Exception as e:
             logger.error(f"웹소켓 연결 종료 중 오류: {str(e)}")

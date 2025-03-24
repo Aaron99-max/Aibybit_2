@@ -106,7 +106,7 @@ class OrderService:
             btc_qty = await self._calculate_position_size(
                 total_equity=balance['total_equity'],
                 unrealized_pnl=balance['unrealized_pnl'],
-                position_ratio=position_size / 100,  # percentage to decimal
+                percentage=position_size / 100,  # percentage to decimal
                 leverage=leverage,
                 entry_price=entry_price,
                 is_btc_unit=is_btc_unit
@@ -164,16 +164,16 @@ class OrderService:
     async def manage_existing_position(self, current_position: Dict, signal: Dict) -> bool:
         """기존 포지션 관리"""
         try:
-            current_side = current_position['side']
-            current_leverage = int(current_position['leverage'])
-            target_leverage = int(signal['leverage'])
+            # 현재 포지션과 신호의 방향 비교
+            current_side = current_position['side']  # Long or Short
+            signal_side = signal['side'].upper()  # BUY -> Long, SELL -> Short로 변환
+            signal_side = 'Long' if signal_side == 'BUY' else 'Short'
             
-            # 포지션 방향이 같은 경우 (Short-Sell 또는 Long-Buy)
-            is_same_direction = (current_side == 'Short' and signal['side'] == 'Sell') or \
-                              (current_side == 'Long' and signal['side'] == 'Buy')
-            
-            if not is_same_direction:
-                logger.info("포지션 방향이 다름 - 시장가 청산 후 신규 진입")
+            # 방향이 다른 경우 -> 시장가 청산 후 신규 진입
+            if current_side != signal_side:
+                logger.info(f"포지션 방향이 다름 (현재: {current_side}, 신호: {signal_side}) - 시장가 청산 후 신규 진입")
+                
+                # 시장가 청산
                 if not await self.create_market_order(
                     symbol=current_position['symbol'].split(':')[0],
                     side='Buy' if current_position['side'] == 'Short' else 'Sell',
@@ -191,12 +191,16 @@ class OrderService:
                         'qty': abs(current_position['size']),
                         'price': current_position['entry_price'],
                         'status': 'FILLED',
-                        'reason': '포지션 방향 변경'
+                        'reason': f'반대 방향 신호 감지 ({current_side} → {signal_side})'
                     })
                     await self.telegram_bot.send_message_to_all(close_message, self.MSG_TYPE_ORDER)
                 
-                # 신규 진입 시 알림 스킵 (청산 알림만 보냄)
+                # 신규 진입
                 return await self.create_new_position(signal, skip_notification=True)
+            
+            # 레버리지 확인
+            current_leverage = current_position['leverage']
+            target_leverage = signal.get('leverage', trading_config.leverage_settings['default'])
             
             # 레버리지 차이 확인
             leverage_diff = abs(current_leverage - target_leverage)
@@ -243,6 +247,7 @@ class OrderService:
             # 목표 포지션 크기 계산
             target_size = await self._calculate_position_size(
                 total_equity=float(usdt_balance['total_equity']),
+                unrealized_pnl=float(usdt_balance.get('unrealized_pnl', 0)),
                 percentage=signal['position_size'],
                 leverage=signal['leverage'],
                 entry_price=signal['entry_price']
@@ -253,8 +258,10 @@ class OrderService:
             size_diff = target_size - current_size
             
             if abs(size_diff) < 0.001:  # 최소 변경 크기
-                logger.info("포지션 크기 차이가 미미함 - 조정 불필요")
+                logger.info(f"포지션 크기 차이가 미미함 - 조정 불필요 (현재: {current_size:.3f} BTC, 목표: {target_size:.3f} BTC)")
                 return True
+            
+            logger.info(f"포지션 크기 조정 필요 - 현재: {current_size:.3f} BTC, 목표: {target_size:.3f} BTC, 차이: {size_diff:.3f} BTC")
             
             # 크기 조정 주문
             order_side = signal['side']
@@ -422,13 +429,13 @@ class OrderService:
                 raise e
 
     async def _calculate_position_size(self, total_equity: float, unrealized_pnl: float, 
-                                position_ratio: float, leverage: int, entry_price: float, is_btc_unit: bool = False) -> float:
+                                percentage: float, leverage: int, entry_price: float, is_btc_unit: bool = False) -> float:
         """
         포지션 크기 계산 (BTC)
         Args:
             total_equity: 총 자산 (USDT)
             unrealized_pnl: 미실현 손익 (USDT)
-            position_ratio: 포지션 크기 (0.0 ~ 1.0)
+            percentage: 포지션 크기 (0.0 ~ 1.0)
             leverage: 레버리지
             entry_price: 진입가격
             is_btc_unit: BTC 단위로 직접 지정 여부
@@ -438,7 +445,7 @@ class OrderService:
         try:
             # BTC 단위로 직접 지정된 경우
             if is_btc_unit:
-                btc_size = position_ratio  # position_ratio가 직접 BTC 수량
+                btc_size = percentage  # percentage가 직접 BTC 수량
                 logger.info(f"직접 지정된 BTC 수량: {btc_size}")
             else:
                 # 순수 자산 계산
@@ -446,7 +453,7 @@ class OrderService:
                 logger.info(f"순수 자산: ${net_equity:,.2f}")
                 
                 # USDT 값 계산 (레버리지 적용)
-                position_value = net_equity * position_ratio * leverage
+                position_value = net_equity * percentage * leverage
                 logger.info(f"포지션 가치(USDT): ${position_value:,.2f}")
                 
                 # BTC 수량 계산

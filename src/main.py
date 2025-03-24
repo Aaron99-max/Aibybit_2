@@ -20,6 +20,7 @@ import traceback
 from dotenv import load_dotenv
 from config.logging_config import setup_logging
 from config import Config
+import signal
 
 # 환경 변수 로드
 load_dotenv()  
@@ -52,25 +53,22 @@ async def main():
         logger.info("=== 메인 프로그램 시작 ===")
         
         # Config 초기화
-        Config.reset()
+        Config.initialize()
+        logger.info("Config 초기화됨")
         
-        # 로깅 설정 초기화
-        setup_logging()
-        
-        # 환경변수 로드
         logger.info("환경변수 및 설정 초기화 중...")
+        telegram_config = TelegramConfig()
         
         # Bybit 클라이언트 초기화
         logger.info("Bybit 테스트넷 클라이언트 초기화 중...")
-        bybit_config = BybitConfig()
-        bybit_client = BybitClient(config=bybit_config)
+        bybit_client = BybitClient()
         
-        # 웹소켓 연결 시작
+        # 웹소켓 연결
         logger.info("웹소켓 연결 시작...")
-        await bybit_client.start_ws()
+        await bybit_client.ws_client.start()
         
-        # 서비스 초기화 (순서 중요)
-        logger.info("서비스 초기화 중...")
+        # 서비스 초기화
+        market_data_service = MarketDataService(bybit_client)
         position_service = PositionService(bybit_client)
         balance_service = BalanceService(bybit_client)
         order_service = OrderService(
@@ -78,19 +76,10 @@ async def main():
             position_service=position_service,
             balance_service=balance_service
         )
-        trade_manager = TradeManager(order_service)  # position_service 대신 order_service 사용
-        
-        # 마켓 데이터 서비스 초기화
-        logger.info("마켓 데이터 서비스 중...")
-        market_data_service = MarketDataService(bybit_client)
-        await market_data_service.initialize()
-        
-        # 설정 로드 (한 번만)
-        telegram_config = config.telegram  # 싱글톤 인스턴스 사용
         
         # 봇 초기화
         telegram_bot = TelegramBot(
-            config=telegram_config,  # 기존 config 인스턴스 전달
+            config=telegram_config,
             bybit_client=bybit_client,
             market_data_service=market_data_service
         )
@@ -98,21 +87,44 @@ async def main():
         # OrderService에 telegram_bot 설정
         order_service.telegram_bot = telegram_bot
         
+        # 종료 시그널 핸들러 설정
+        def signal_handler():
+            logger.info("종료 시그널 감지됨")
+            asyncio.create_task(telegram_bot.stop())
+        
+        # Ctrl+C 핸들러 설정
+        loop = asyncio.get_event_loop()
+        for sig in (signal.SIGINT, signal.SIGTERM):
+            loop.add_signal_handler(sig, signal_handler)
+        
         # 봇 실행
-        await telegram_bot.run()
+        try:
+            await telegram_bot.run()
+        except asyncio.CancelledError:
+            logger.info("봇 실행이 취소되었습니다")
+        finally:
+            # 봇 종료
+            await telegram_bot.stop()
+            # 웹소켓 종료
+            await bybit_client.close()
+            # 프로세스 종료
+            os._exit(0)
         
     except Exception as e:
         logger.error(f"실행 중 에러 발생: {str(e)}")
         logger.error(traceback.format_exc())
-    finally:
-        if 'bybit_client' in locals():
-            await bybit_client.close()
+        os._exit(1)
 
 if __name__ == "__main__":
+    # Windows에서 asyncio 이벤트 루프 정책 설정
+    if platform.system() == 'Windows':
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    
+    # 메인 실행
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        pass
+        logger.info("프로그램이 Ctrl+C로 종료되었습니다")
     except Exception as e:
         logger.error(f"메인 루프 오류: {e}")
         os._exit(1)

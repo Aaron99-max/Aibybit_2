@@ -10,7 +10,6 @@ from indicators.technical import TechnicalIndicators
 from ai.gpt_analyzer import GPTAnalyzer
 import platform
 import time
-from config import config
 from config.telegram_config import TelegramConfig
 from services.market_data_service import MarketDataService
 from trade.trade_manager import TradeManager
@@ -19,7 +18,7 @@ from ai.ai_trader import AITrader
 import traceback
 from dotenv import load_dotenv
 from config.logging_config import setup_logging
-from config import Config
+from config.config import Config
 import signal
 
 # 환경 변수 로드
@@ -65,7 +64,8 @@ async def main():
         
         # 웹소켓 연결
         logger.info("웹소켓 연결 시작...")
-        await bybit_client.ws_client.start()
+        await bybit_client.ws_client.connect()
+        await bybit_client.ws_client.start_monitoring()
         
         # 서비스 초기화
         market_data_service = MarketDataService(bybit_client)
@@ -88,14 +88,18 @@ async def main():
         order_service.telegram_bot = telegram_bot
         
         # 종료 시그널 핸들러 설정
-        def signal_handler():
-            logger.info("종료 시그널 감지됨")
-            asyncio.create_task(telegram_bot.stop())
-        
-        # Ctrl+C 핸들러 설정
-        loop = asyncio.get_event_loop()
-        for sig in (signal.SIGINT, signal.SIGTERM):
-            loop.add_signal_handler(sig, signal_handler)
+        if platform.system() != 'Windows':
+            def signal_handler():
+                logger.info("종료 시그널 감지됨")
+                asyncio.create_task(telegram_bot.stop())
+            
+            # Ctrl+C 핸들러 설정
+            loop = asyncio.get_event_loop()
+            for sig in (signal.SIGINT, signal.SIGTERM):
+                loop.add_signal_handler(sig, signal_handler)
+        else:
+            # Windows에서는 KeyboardInterrupt 예외로 처리
+            logger.info("Windows 환경에서는 Ctrl+C로 프로그램을 종료할 수 있습니다.")
         
         # 봇 실행
         try:

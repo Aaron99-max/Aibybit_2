@@ -37,6 +37,10 @@ logger = logging.getLogger('main')
 
 # 프로젝트 루트 디렉토리를 Python 경로에 추가
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+src_path = os.path.join(project_root, 'src')
+if src_path not in sys.path:
+    sys.path.insert(0, src_path)
+
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
@@ -60,6 +64,10 @@ async def main():
         logger.info("Bybit 테스트넷 클라이언트 초기화 중...")
         bybit_config = BybitConfig()
         bybit_client = BybitClient(config=bybit_config)
+        
+        # 웹소켓 연결 시작
+        logger.info("웹소켓 연결 시작...")
+        await bybit_client.start_ws()
         
         # 서비스 초기화 (순서 중요)
         logger.info("서비스 초기화 중...")

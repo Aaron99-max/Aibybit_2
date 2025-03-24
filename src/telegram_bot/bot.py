@@ -43,6 +43,7 @@ from .formatters.order_formatter import OrderFormatter
 from services.balance_service import BalanceService
 from services.trade_history_service import TradeHistoryService
 from .handlers.stats_handler import StatsHandler
+from .monitors.monitor_manager import MonitorManager
 
 class TelegramBot:
     # 메시지 타입 정의
@@ -50,6 +51,9 @@ class TelegramBot:
     MSG_TYPE_ANALYSIS = 'analysis'  # 분석 결과
     MSG_TYPE_TRADE = 'trade'  # 거래 알림
     MSG_TYPE_SYSTEM = 'system'  # 시스템 알림
+    MSG_TYPE_ORDER = 'order'  # 주문 알림
+    MSG_TYPE_POSITION = 'position'  # 포지션 알림
+    MSG_TYPE_EXECUTION = 'execution'  # 체결 알림
 
     def __init__(self, config: TelegramConfig, bybit_client: BybitClient, 
                  trade_manager: TradeManager = None,
@@ -68,6 +72,9 @@ class TelegramBot:
         )
         self.market_data_service = market_data_service or MarketDataService(bybit_client)
         self.trade_history_service = TradeHistoryService(bybit_client)
+        
+        # 모니터 매니저 초기화
+        self.monitor_manager = MonitorManager(self, bybit_client)
         
         # 종료 이벤트 초기화
         self._stop_event = asyncio.Event()
@@ -227,6 +234,12 @@ class TelegramBot:
             # 기존 웹훅 제거
             await self.application.bot.delete_webhook()
             
+            # 자동 분석기 시작
+            await self.auto_analyzer.start()
+            
+            # 모니터링 시작
+            await self.monitor_manager.start_all_monitors()
+            
             # 봇 시작
             await self.application.initialize()
             await self.application.start()
@@ -235,9 +248,6 @@ class TelegramBot:
             start_message = "🤖 바이빗 트레이딩 봇이 시작되었습니다"
             logger.info(start_message)
             await self.send_message_to_all(start_message, self.MSG_TYPE_SYSTEM)
-            
-            # 모니터링 시작
-            await self.auto_analyzer.start()
             
             # 업데이터 시작
             await self.application.updater.start_polling(

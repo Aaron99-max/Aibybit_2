@@ -30,8 +30,16 @@ class PositionService:
         """포지션 조회"""
         try:
             symbol = symbol or self.symbol
-            positions = await self.bybit_client.get_positions(symbol)
+            params = {
+                "category": "linear",
+                "symbol": symbol
+            }
+            response = await self.bybit_client.v5_get_positions(params)
             
+            if not response or response.get('retCode') != 0:
+                return {}
+                
+            positions = response.get('result', {}).get('list', [])
             if not positions:
                 return {}
                 
@@ -40,9 +48,9 @@ class PositionService:
             return {
                 'symbol': position.get('symbol', ''),
                 'side': position.get('side', '').title(),
-                'size': abs(float(position.get('contracts', 0))),
+                'size': abs(float(position.get('size', 0))),
                 'leverage': int(float(position.get('leverage', 1))),
-                'entryPrice': float(position.get('entryPrice', 0)),
+                'entryPrice': float(position.get('avgPrice', 0)),
                 'markPrice': float(position.get('markPrice', 0)),
                 'unrealisedPnl': float(position.get('unrealizedPnl', 0)),
                 'stopLoss': float(position.get('stopLoss', 0)),
@@ -60,7 +68,11 @@ class PositionService:
             logger.info(f"포지션 목록 조회 시작: {symbol}")
             
             # API 호출
-            response = await self.bybit_client.get_positions(symbol)
+            params = {
+                "category": "linear",
+                "symbol": symbol
+            }
+            response = await self.bybit_client.v5_get_positions(params)
             
             # 응답 검증
             if not response or response.get('retCode') != 0:

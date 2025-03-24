@@ -80,12 +80,23 @@ class SystemHandler(BaseHandler):
             # 모든 채팅방에 중지 메시지 전송
             await self.bot.send_message_to_all("🔴 바이빗 트레이딩 봇이 중지되었습니다")
             
-            # 강제 종료
+            # 모니터링 중지
+            await self.bot.monitor_manager.stop_all_monitors()
+            
+            # 웹소켓 연결 종료
+            await self.bot.bybit_client.ws_client.stop()
+            
+            # 봇 애플리케이션 종료
+            await self.bot.application.stop()
+            await self.bot.application.shutdown()
+            
+            # 프로세스 종료
             logger.info("프로세스 종료")
             os._exit(0)
             
         except Exception as e:
             logger.error(f"봇 종료 중 오류: {str(e)}")
+            logger.error(traceback.format_exc())
             os._exit(1)
 
     async def handle_start_monitoring(self, update: Update, context: ContextTypes.DEFAULT_TYPE):

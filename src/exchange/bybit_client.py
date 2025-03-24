@@ -1,15 +1,18 @@
-import ccxt.async_support as ccxt
-import logging
+import os
+import json
+import time
 import hmac
 import hashlib
-import time
+import logging
 import aiohttp
-import json
-from typing import Dict
-from config.bybit_config import BybitConfig
+import ccxt.async_support as ccxt
 import traceback
 import ssl
 import certifi
+import asyncio
+from typing import Dict, Optional, List
+from config.bybit_config import BybitConfig
+from .websocket_client import BybitWebsocketClient
 
 logger = logging.getLogger(__name__)
 
@@ -26,6 +29,9 @@ class BybitClient:
         
         # SSL 컨텍스트 설정
         self.ssl_context = ssl.create_default_context(cafile=certifi.where())
+        
+        # WebSocket 클라이언트 초기화
+        self.ws_client = BybitWebsocketClient(self.config)
         
         # CCXT exchange 객체 초기화 (market_data_service에서 필요)
         self.exchange = ccxt.bybit({
@@ -50,6 +56,9 @@ class BybitClient:
         if self.config.testnet:
             self.exchange.set_sandbox_mode(True)
 
+        # 세션 초기화
+        self.session = None
+        
     async def _should_sync_time(self):
         """시간 동기화가 필요한지 확인"""
         current_time = int(time.time())
@@ -178,20 +187,15 @@ class BybitClient:
             logger.error(f"API 호출 실패: {str(e)}")
             return None
 
-    async def v5_get_positions(self, symbol: str = None) -> Dict:
-        """포지션 조회"""
+    async def v5_get_positions(self, params: Dict) -> Dict:
+        """V5 API position/list 조회"""
         try:
-            params = {
-                "category": "linear",
-                "symbol": symbol
-            }
-            response = await self.v5_get("/position/list", params)
-            if response and response.get('retCode') == 0:
-                return response.get('result', {}).get('list', [])
-            return []
+            response = await self.exchange.private_get_v5_position_list(params)
+            return response
         except Exception as e:
             logger.error(f"포지션 조회 중 오류: {str(e)}")
-            return []
+            logger.error(traceback.format_exc())
+            return {}
 
     async def v5_get_executions(self, params: Dict) -> Dict:
         """V5 API execution/list 조회"""
@@ -275,3 +279,14 @@ class BybitClient:
         except Exception as e:
             logger.error(f"잔고 조회 API 호출 실패: {str(e)}")
             return {}
+
+    async def start_ws(self):
+        """웹소켓 연결 시작"""
+        try:
+            logger.info("웹소켓 연결 시작...")
+            await self.ws_client.connect()
+            asyncio.create_task(self.ws_client.start_monitoring())
+            logger.info("웹소켓 모니터링 시작됨")
+        except Exception as e:
+            logger.error(f"웹소켓 시작 실패: {str(e)}")
+            logger.error(traceback.format_exc())
